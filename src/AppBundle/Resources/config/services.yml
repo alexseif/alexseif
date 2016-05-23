@@ -1,0 +1,5 @@
+sservices:
+    onconnect.listener:
+        class: AppBundle\EventListener\OnConnect
+        tags:
+            - { name: doctrine.event_listener, event: postConnect }
