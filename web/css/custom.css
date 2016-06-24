@@ -1,3 +1,36 @@
+body{background: #222222;color: #ffffff;}
+#page-wrapper{height: 100vh;width: 100vw;background-color: black;}
+.left-side, .right-side{height: 100vh;border-left: 1px solid #464545;text-align: center;}
+.left-side{font-size:2em;}
+.intro{text-align: left;position: absolute;top: 65px;left: 80px;}
+.my-photo{position: relative;min-width: 150px;min-height: 150px;width: 150px;height: 150px;max-width: 250px;max-height: 250px;overflow: hidden;border-radius: 50%;margin-left: auto;margin-right: auto;}
+.my-photo img {position: absolute;left: 50%;top: 50%;height: 100%;width: auto;-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}
+.logo{position: relative;max-width: 300px;margin-left: auto;margin-right: auto;}
+.mt-40{margin-top: 40px;}
+.mt-20{margin-top: 20px;}
+.line, .logo{
+    /*animation-name: two_move;*/
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+@keyframes two_move {
+    from {
+        top: 0px;
+    }
+    100% {
+        top: 100px;
+    }
+}
+/*.animated{animation-duration: 3s;animation-fill-mode: both;}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.fadeIn{animation-name: fadeIn;}*/
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
@@ -25,8 +58,9 @@
 .text-bg-warning{background-color:#ff9800}
 
 /* homepage */
-.interactive-title{background: #0c84e4;padding-top: 2px;padding-bottom: 2px;color: whitesmoke; font-weight: 900;}
-#interactive-text span{padding-left: 8px;padding-right: 8px;}
+.interactive-title{padding-top: 2px;padding-bottom: 2px;color: whitesmoke; font-weight: 900;}
+#interactive-text{padding-left: 8px;padding-right: 8px;}
+.intr-spacer{height: 200px;}
 .right-to-left {
     display: block;
     margin-right: auto;
