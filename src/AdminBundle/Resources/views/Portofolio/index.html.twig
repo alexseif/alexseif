@@ -1,0 +1,31 @@
+{% extends 'AdminBundle:Default:base.html.twig' %}
+
+{% block container %}
+  <h1>Portofolio list</h1>
+  <a href="{{ path('portofolio_new') }}">Create a new entry</a>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Portofolioorder</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for portofolio in portofolios %}
+        <tr>
+          <td>{{ portofolio.title }}</td>
+          <td>{{ portofolio.price }}</td>
+          <td>{{ portofolio.portofolioOrder }}</td>
+          <td>
+            <a href="{{ path('portofolio_show', { 'id': portofolio.id }) }}">show</a>
+            <a href="{{ path('portofolio_edit', { 'id': portofolio.id }) }}">edit</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
