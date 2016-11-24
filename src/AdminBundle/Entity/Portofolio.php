@@ -3,12 +3,15 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Portofolio
  *
  * @ORM\Table(name="portofolio")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\PortofolioRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Portofolio
 {
@@ -56,6 +59,26 @@ class Portofolio
    * @ORM\Column(name="portofolio_order", type="integer")
    */
   private $portofolioOrder = 0;
+
+  /**
+   * @var File
+   * 
+   * @ORM\OneToMany(targetEntity="PortofolioImages", mappedBy="portofolio", cascade={"persist", "remove"})
+   * */
+  private $portofolioImages;
+
+  /**
+   * @var ArrayCollection
+   */
+  private $uploadedFiles;
+
+  /**
+   * Constructor
+   */
+  public function __construct()
+  {
+    $this->portofolioImages = new \Doctrine\Common\Collections\ArrayCollection();
+  }
 
   /**
    * Get id
@@ -180,6 +203,76 @@ class Portofolio
   public function getPortofolioOrder()
   {
     return $this->portofolioOrder;
+  }
+
+  /**
+   * Add portofolioImage
+   *
+   * @param \AdminBundle\Entity\PortofolioImages $portofolioImage
+   *
+   * @return Portofolio
+   */
+  public function addPortofolioImage(\AdminBundle\Entity\PortofolioImages $portofolioImage)
+  {
+
+    $this->portofolioImages[] = $portofolioImage;
+    $portofolioImage->setPortofolio($this);
+
+    return $this;
+  }
+
+  /**
+   * Remove portofolioImage
+   *
+   * @param \AdminBundle\Entity\PortofolioImages $portofolioImage
+   */
+  public function removePortofolioImage(\AdminBundle\Entity\PortofolioImages $portofolioImage)
+  {
+    $this->portofolioImages->removeElement($portofolioImage);
+  }
+
+  /**
+   * Get portofolioImages
+   *
+   * @return \Doctrine\Common\Collections\Collection
+   */
+  public function getPortofolioImages()
+  {
+    return $this->portofolioImages;
+  }
+
+  /**
+   * @return ArrayCollection
+   */
+  public function getUploadedFiles()
+  {
+    return $this->uploadedFiles;
+  }
+
+  /**
+   * @param ArrayCollection $uploadedFiles
+   */
+  public function setUploadedFiles($uploadedFiles)
+  {
+    $this->uploadedFiles = $uploadedFiles;
+  }
+
+  /**
+   * @ORM\PreFlush()
+   */
+  public function upload()
+  {
+    if ($this->uploadedFiles) {
+      foreach ($this->uploadedFiles as $uploadedFile) {
+        if ($uploadedFile) {
+          $file = new PortofolioImages();
+          $file->upload($uploadedFile);
+          $this->getPortofolioImages()->add($file);
+          $file->setPortofolio($this);
+          unset($uploadedFile);
+        }
+      }
+    }
   }
 
 }
