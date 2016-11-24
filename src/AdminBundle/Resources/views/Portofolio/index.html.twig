@@ -1,15 +1,17 @@
 {% extends 'AdminBundle:Default:base.html.twig' %}
 
-{% block container %}
-  <h1>Portofolio list</h1>
-  <a href="{{ path('portofolio_new') }}">Create a new entry</a>
+{% block pageActions %}
+<a href="{{ path('portofolio_new') }}">Create a new entry</a>
+{% endblock %}
+{% block adminPanelTitle %}Portofolio list{% endblock %}
+{% block adminPanelBody %}
 
   <table class="table table-bordered">
     <thead>
       <tr>
         <th>Title</th>
         <th>Price</th>
-        <th>Portofolioorder</th>
+        <th>Order</th>
         <th>Actions</th>
       </tr>
     </thead>

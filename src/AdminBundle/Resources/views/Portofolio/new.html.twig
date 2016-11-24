@@ -1,8 +1,10 @@
 {% extends 'AdminBundle:Default:base.html.twig' %}
 
+{% block pageActions %}
+  <a href="{{ path('portofolio_index') }}">Back to the list</a>
+{% endblock %}
 {% block container %}
   <h1>Portofolio creation</h1>
-  <a href="{{ path('portofolio_index') }}">Back to the list</a>
 
   {{ form_start(form) }}
   {{ form_widget(form) }}
