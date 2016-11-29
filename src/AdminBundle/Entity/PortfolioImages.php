@@ -8,13 +8,13 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * PortofolioImages
+ * PortfolioImages
  *
- * @ORM\Table(name="portofolio_images")
- * @ORM\Entity(repositoryClass="AdminBundle\Repository\PortofolioImagesRepository")
+ * @ORM\Table(name="portfolio_images")
+ * @ORM\Entity(repositoryClass="AdminBundle\Repository\PortfolioImagesRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class PortofolioImages
+class PortfolioImages
 {
 
   /**
@@ -46,10 +46,10 @@ class PortofolioImages
   private $file;
 
   /**
-   * @ORM\ManyToOne(targetEntity="Portofolio", inversedBy="portofolioImages")
-   * @ORM\JoinColumn(name="protofolio_id", referencedColumnName="id", onDelete="CASCADE")
+   * @ORM\ManyToOne(targetEntity="Portfolio", inversedBy="images")
+   * @ORM\JoinColumn(name="protfolio_id", referencedColumnName="id", onDelete="CASCADE")
    * */
-  private $portofolio;
+  private $portfolio;
 
   /**
    * Get id
@@ -66,7 +66,7 @@ class PortofolioImages
    *
    * @param string $name
    *
-   * @return PortofolioImages
+   * @return PortfolioImages
    */
   public function setName($name)
   {
@@ -90,7 +90,7 @@ class PortofolioImages
    *
    * @param string $path
    *
-   * @return PortofolioImages
+   * @return PortfolioImages
    */
   public function setPath($path)
   {
@@ -110,27 +110,27 @@ class PortofolioImages
   }
 
   /**
-   * Set portofolio
+   * Set portfolio
    *
-   * @param \AdminBundle\Entity\Portofolio $portofolio
+   * @param \AdminBundle\Entity\Portfolio $portfolio
    *
-   * @return PortofolioImages
+   * @return PortfolioImages
    */
-  public function setPortofolio(\AdminBundle\Entity\Portofolio $portofolio = null)
+  public function setPortfolio(\AdminBundle\Entity\Portfolio $portfolio = null)
   {
-    $this->portofolio = $portofolio;
+    $this->portfolio = $portfolio;
 
     return $this;
   }
 
   /**
-   * Get portofolio
+   * Get portfolio
    *
-   * @return \AdminBundle\Entity\Portofolio
+   * @return \AdminBundle\Entity\Portfolio
    */
-  public function getPortofolio()
+  public function getPortfolio()
   {
-    return $this->portofolio;
+    return $this->portfolio;
   }
 
   /**
@@ -156,7 +156,7 @@ class PortofolioImages
   {
     // the absolute directory path where uploaded
     // documents should be saved
-    return $this->getParameter('brochures_directory');
+    return $this->container->getParameter('portfolio_directory');
   }
 
   /**
@@ -164,7 +164,7 @@ class PortofolioImages
    */
   protected function getUploadDir()
   {
-    return 'images/portofolio';
+    return 'images/portfolio';
   }
 
   /**

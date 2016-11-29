@@ -6,14 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
- * Portofolio
+ * Portfolio
  *
- * @ORM\Table(name="portofolio")
- * @ORM\Entity(repositoryClass="AdminBundle\Repository\PortofolioRepository")
+ * @ORM\Table(name="portfolio")
+ * @ORM\Entity(repositoryClass="AdminBundle\Repository\PortfolioRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class Portofolio
+class Portfolio
 {
 
   /**
@@ -56,16 +57,16 @@ class Portofolio
   /**
    * @var int
    *
-   * @ORM\Column(name="portofolio_order", type="integer")
+   * @ORM\Column(name="portfolio_order", type="integer")
    */
-  private $portofolioOrder = 0;
+  private $order = 0;
 
   /**
    * @var File
    * 
-   * @ORM\OneToMany(targetEntity="PortofolioImages", mappedBy="portofolio", cascade={"persist", "remove"})
+   * @ORM\OneToMany(targetEntity="PortfolioImages", mappedBy="portfolio", cascade={"persist", "remove"})
    * */
-  private $portofolioImages;
+  private $images;
 
   /**
    * @var ArrayCollection
@@ -77,7 +78,7 @@ class Portofolio
    */
   public function __construct()
   {
-    $this->portofolioImages = new \Doctrine\Common\Collections\ArrayCollection();
+    $this->images = new \Doctrine\Common\Collections\ArrayCollection();
   }
 
   /**
@@ -94,7 +95,7 @@ class Portofolio
    * Set title
    *
    * @param string $title
-   * @return Portofolio
+   * @return Portfolio
    */
   public function setTitle($title)
   {
@@ -117,7 +118,7 @@ class Portofolio
    * Set subtitle
    *
    * @param string $subtitle
-   * @return Portofolio
+   * @return Portfolio
    */
   public function setSubtitle($subtitle)
   {
@@ -140,7 +141,7 @@ class Portofolio
    * Set description
    *
    * @param string $description
-   * @return Portofolio
+   * @return Portfolio
    */
   public function setDescription($description)
   {
@@ -163,7 +164,7 @@ class Portofolio
    * Set price
    *
    * @param integer $price
-   * @return Portofolio
+   * @return Portfolio
    */
   public function setPrice($price)
   {
@@ -183,62 +184,26 @@ class Portofolio
   }
 
   /**
-   * Set portofolioOrder
+   * Set Portofolio Order
    *
-   * @param integer $portofolioOrder
-   * @return Portofolio
+   * @param integer $portfolioOrder
+   * @return Portfolio
    */
-  public function setPortofolioOrder($portofolioOrder)
+  public function setOrder($order)
   {
-    $this->portofolioOrder = $portofolioOrder;
+    $this->order = $order;
 
     return $this;
   }
 
   /**
-   * Get portofolioOrder
+   * Get Portfolio Order
    *
    * @return integer 
    */
-  public function getPortofolioOrder()
+  public function getOrder()
   {
-    return $this->portofolioOrder;
-  }
-
-  /**
-   * Add portofolioImage
-   *
-   * @param \AdminBundle\Entity\PortofolioImages $portofolioImage
-   *
-   * @return Portofolio
-   */
-  public function addPortofolioImage(\AdminBundle\Entity\PortofolioImages $portofolioImage)
-  {
-
-    $this->portofolioImages[] = $portofolioImage;
-    $portofolioImage->setPortofolio($this);
-
-    return $this;
-  }
-
-  /**
-   * Remove portofolioImage
-   *
-   * @param \AdminBundle\Entity\PortofolioImages $portofolioImage
-   */
-  public function removePortofolioImage(\AdminBundle\Entity\PortofolioImages $portofolioImage)
-  {
-    $this->portofolioImages->removeElement($portofolioImage);
-  }
-
-  /**
-   * Get portofolioImages
-   *
-   * @return \Doctrine\Common\Collections\Collection
-   */
-  public function getPortofolioImages()
-  {
-    return $this->portofolioImages;
+    return $this->order;
   }
 
   /**
@@ -258,21 +223,37 @@ class Portofolio
   }
 
   /**
-   * @ORM\PreFlush()
+   * Add image
+   *
+   * @param \AdminBundle\Entity\PortfolioImages $image
+   *
+   * @return Portfolio
    */
-  public function upload()
+  public function addImage(\AdminBundle\Entity\PortfolioImages $image)
   {
-    if ($this->uploadedFiles) {
-      foreach ($this->uploadedFiles as $uploadedFile) {
-        if ($uploadedFile) {
-          $file = new PortofolioImages();
-          $file->upload($uploadedFile);
-          $this->getPortofolioImages()->add($file);
-          $file->setPortofolio($this);
-          unset($uploadedFile);
-        }
-      }
-    }
+    $this->images[] = $image;
+
+    return $this;
+  }
+
+  /**
+   * Remove image
+   *
+   * @param \AdminBundle\Entity\PortfolioImages $image
+   */
+  public function removeImage(\AdminBundle\Entity\PortfolioImages $image)
+  {
+    $this->images->removeElement($image);
+  }
+
+  /**
+   * Get images
+   *
+   * @return \Doctrine\Common\Collections\Collection
+   */
+  public function getImages()
+  {
+    return $this->images;
   }
 
 }

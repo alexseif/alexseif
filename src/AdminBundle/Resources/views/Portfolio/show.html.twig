@@ -1,31 +1,36 @@
 {% extends 'AdminBundle:Default:base.html.twig' %}
 
 {% block container %}
-  <a href="{{ path('portofolio_index') }}">Back to the list</a>
-  <h1>Portofolio <small>{{ portofolio.title }}</small></h1>
+  <a href="{{ path('portfolio_index') }}">Back to the list</a>
+  <h1>Portofolio <small>{{ portfolio.title }}</small></h1>
   <ul class="list-group">
     <li class="list-group-item">
       <span class="badge">Title</span>
-      {{ portofolio.title }}
+      {{ portfolio.title }}
     </li>
     <li class="list-group-item">
       <span class="badge">Subtitle</span>
-      {{ portofolio.subtitle }}
+      {{ portfolio.subtitle }}
     </li>
     <li class="list-group-item">
       <span class="badge">Description</span>
-      {{ portofolio.description }}
+      {{ portfolio.description }}
     </li>
     <li class="list-group-item">
       <span class="badge">Price</span>
-      {{ portofolio.price|localizedcurrency('USD') }}
+      {{ portfolio.price|localizedcurrency('USD') }}
     </li>
     <li class="list-group-item">
       <span class="badge">Portofolio Order</span>
-      {{ portofolio.portofolioOrder }}
+      {{ portfolio.portfolioOrder }}
     </li>
   </ul>
-  <a href="{{ path('portofolio_edit', { 'id': portofolio.id }) }}">Edit</a>
+  <div class="">
+    {% for image in portfolio.images %}
+      <img src="{{ image.path }}" />
+    {% endfor %}
+  </div>
+  <a href="{{ path('portfolio_edit', { 'id': portfolio.id }) }}">Edit</a>
   {{ form_start(delete_form) }}
   <input type="submit" value="Delete">
   {{ form_end(delete_form) }}

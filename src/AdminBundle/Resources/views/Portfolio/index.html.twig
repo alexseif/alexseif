@@ -1,7 +1,7 @@
 {% extends 'AdminBundle:Default:base.html.twig' %}
 
 {% block pageActions %}
-<a href="{{ path('portofolio_new') }}">Create a new entry</a>
+<a href="{{ path('portfolio_new') }}">Create a new entry</a>
 {% endblock %}
 {% block adminPanelTitle %}Portofolio list{% endblock %}
 {% block adminPanelBody %}
@@ -16,14 +16,14 @@
       </tr>
     </thead>
     <tbody>
-      {% for portofolio in portofolios %}
+      {% for portfolio in portfolios %}
         <tr>
-          <td>{{ portofolio.title }}</td>
-          <td>{{ portofolio.price }}</td>
-          <td>{{ portofolio.portofolioOrder }}</td>
+          <td>{{ portfolio.title }}</td>
+          <td>{{ portfolio.price }}</td>
+          <td>{{ portfolio.portfolioOrder }}</td>
           <td>
-            <a href="{{ path('portofolio_show', { 'id': portofolio.id }) }}">show</a>
-            <a href="{{ path('portofolio_edit', { 'id': portofolio.id }) }}">edit</a>
+            <a href="{{ path('portfolio_show', { 'id': portfolio.id }) }}">show</a>
+            <a href="{{ path('portfolio_edit', { 'id': portfolio.id }) }}">edit</a>
           </td>
         </tr>
       {% endfor %}

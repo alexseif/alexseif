@@ -4,9 +4,10 @@ namespace AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PortofolioType extends AbstractType
+class PortfolioImagesType extends AbstractType
 {
 
   /**
@@ -16,17 +17,9 @@ class PortofolioType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-        ->add('title')
-        ->add('subtitle')
-        ->add('description')
-        ->add('price', \Symfony\Component\Form\Extension\Core\Type\MoneyType::class)
-        ->add('portofolioOrder')
-        ->add('uploadedFiles', \Symfony\Component\Form\Extension\Core\Type\FileType::class, array(
+        ->add('file', \Symfony\Component\Form\Extension\Core\Type\FileType::class, array(
           'multiple' => true,
-          'data_class' => null,
-          'required' => false,
-            )
-    );
+    ));
   }
 
   /**
@@ -35,7 +28,7 @@ class PortofolioType extends AbstractType
   public function configureOptions(OptionsResolver $resolver)
   {
     $resolver->setDefaults(array(
-      'data_class' => 'AdminBundle\Entity\Portofolio'
+      'data_class' => 'AdminBundle\Entity\PortfolioImages'
     ));
   }
 
