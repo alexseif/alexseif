@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Portfolios list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for portfolio in portfolios %}
+            <tr>
+                <td><a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}">{{ portfolio.id }}</a></td>
+                <td>{{ portfolio.title }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_portfolio_new') }}">Create a new portfolio</a>
+        </li>
+    </ul>
+{% endblock %}

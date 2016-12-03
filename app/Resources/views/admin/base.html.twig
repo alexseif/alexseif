@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class='full'>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+      {# <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> #}
+      <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  </head>
+  <body>
+    {% block body %}
+      {% include ':admin:nav.html.twig' %}
+    {% block content %}{% endblock %}
+  {% endblock %}
+  {% block javascripts %}
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  {% endblock %}
+</body>
+</html>
