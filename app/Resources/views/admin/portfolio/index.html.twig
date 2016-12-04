@@ -10,21 +10,19 @@
     <thead>
       <tr>
         <th>Title</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
       {% for portfolio in portfolios %}
         <tr>
-          <td>{{ portfolio.title }}</td>
-          <td>
-            <div class="btn-group btn-group-sm">
-            <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}"
-               class="btn btn-info">
-              <span class="glyphicon glyphicon-folder-open"></span></a>
-            <a href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}"
-               class="btn btn-primary">
-              <span class="glyphicon glyphicon-pencil"></span></a>
+          <td>{{ portfolio.title }}
+            <div class="btn-group btn-group-sm pull-right">
+              <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}"
+                 class="btn btn-info">
+                <span class="glyphicon glyphicon-folder-open"></span></a>
+              <a href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}"
+                 class="btn btn-primary">
+                <span class="glyphicon glyphicon-pencil"></span></a>
             </div>
           </td>
         </tr>
