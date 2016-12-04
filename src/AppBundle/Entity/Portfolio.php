@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Portfolio
@@ -29,8 +30,14 @@ class Portfolio
    */
   private $title;
 
+  /**
+   * @Gedmo\Slug(fields={"title"})
+   * @ORM\Column(length=128, unique=true)
+   */
+  private $slug;
+
 //TODO: URL
-  
+
   /**
    * Get id
    *
@@ -63,6 +70,11 @@ class Portfolio
   public function getTitle()
   {
     return $this->title;
+  }
+
+  public function getSlug()
+  {
+    return $this->slug;
   }
 
 }

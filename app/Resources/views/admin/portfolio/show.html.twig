@@ -12,7 +12,12 @@
   {% endblock %}
 
 {% block adminPageContent %}
-  {{ portfolio.title }}
+  <ul class="list-group">
+    <li class="list-group-item"><span class="badge">Title</span>
+      {{ portfolio.title }}</li>
+    <li class="list-group-item"><span class="badge">Slug</span>
+      {{ portfolio.slug }}</li>
+  </ul>
   {{ form_start(portfolio_delete_form, {'attr':{'id':'portfolio_delete'} }) }}{{ form_end(portfolio_delete_form) }}
 {% endblock %}
 

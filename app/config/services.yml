@@ -11,3 +11,6 @@ services:
       class: Twig_Extensions_Extension_Intl
       tags:
           - { name: twig.extension }
+
+imports:
+    - { resource: '@AppBundle/Resources/config/services.yml' }
