@@ -50,6 +50,8 @@ class AdminPortfolioController extends Controller
       $em->persist($portfolio);
       $em->flush($portfolio);
 
+      $this->addFlash('success', $portfolio->getTitle() . ' created');
+
       return $this->redirectToRoute('admin_portfolio_show', array('id' => $portfolio->getId()));
     }
 
@@ -89,8 +91,8 @@ class AdminPortfolioController extends Controller
 
     if ($editForm->isSubmitted() && $editForm->isValid()) {
       $this->getDoctrine()->getManager()->flush();
-
-      return $this->redirectToRoute('admin_portfolio_edit', array('id' => $portfolio->getId()));
+      $this->addFlash('success', $portfolio->getTitle() . ' updated');
+      return $this->redirectToRoute('admin_portfolio_show', array('id' => $portfolio->getId()));
     }
 
     return $this->render('admin/portfolio/edit.html.twig', array(
@@ -116,6 +118,7 @@ class AdminPortfolioController extends Controller
       $em->remove($portfolio);
       $em->flush($portfolio);
     }
+    $this->addFlash('success', $portfolio->getTitle() . ' deleted');
 
     return $this->redirectToRoute('admin_portfolio_index');
   }
