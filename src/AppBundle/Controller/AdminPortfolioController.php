@@ -55,7 +55,7 @@ class AdminPortfolioController extends Controller
 
     return $this->render('admin/portfolio/new.html.twig', array(
           'portfolio' => $portfolio,
-          'form' => $form->createView(),
+          'portfolio_form' => $form->createView(),
     ));
   }
 
@@ -71,7 +71,7 @@ class AdminPortfolioController extends Controller
 
     return $this->render('admin/portfolio/show.html.twig', array(
           'portfolio' => $portfolio,
-          'delete_form' => $deleteForm->createView(),
+          'portfolio_delete_form' => $deleteForm->createView(),
     ));
   }
 
@@ -95,8 +95,8 @@ class AdminPortfolioController extends Controller
 
     return $this->render('admin/portfolio/edit.html.twig', array(
           'portfolio' => $portfolio,
-          'edit_form' => $editForm->createView(),
-          'delete_form' => $deleteForm->createView(),
+          'portfolio_form' => $editForm->createView(),
+          'portfolio_delete_form' => $deleteForm->createView(),
     ));
   }
 

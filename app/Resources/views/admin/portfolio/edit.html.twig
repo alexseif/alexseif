@@ -1,21 +1,19 @@
-{% extends 'base.html.twig' %}
+{% extends ':admin:base.html.twig' %}
 
-{% block body %}
-    <h1>Portfolio edit</h1>
+{% block adminPageTitle %}Portfolio <small>{{portfolio.title}}</small>{% endblock %}
+{% block adminPageActions %}
+  <a href="{{ path('admin_portfolio_index') }}" class="btn btn-default">
+    <span class="glyphicon glyphicon-arrow-left"></span></a>
+  <button type="submit" value="Delete" class="btn btn-danger btn-sm delete-btn"
+          data-id="portfolio_delete"><span 
+      class="glyphicon glyphicon-trash"></span></button>
+  {% endblock %}
+  {% block adminPageContent %}
+    {{ form_start(portfolio_form) }}
+    {{ form_row(portfolio_form.title) }}
+  <button type="submit" value="Save" class="btn btn-primary btn-sm pull-right">
+    <span class="glyphicon glyphicon-floppy-disk"></span></button>
+    {{ form_end(portfolio_form) }}
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('admin_portfolio_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+  {{ form_start(portfolio_delete_form, {'attr':{'id':'portfolio_delete'} }) }}{{ form_end(portfolio_delete_form) }}
 {% endblock %}

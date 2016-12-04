@@ -1,39 +1,35 @@
-{% extends 'base.html.twig' %}
+{% extends ':admin:base.html.twig' %}
 
-{% block body %}
-    <h1>Portfolios list</h1>
+{% block adminPageTitle %}Portfolios{% endblock %}
+{% block adminPageActions %}
+  <a href="{{ path('admin_portfolio_new') }}" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
+  {% endblock %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for portfolio in portfolios %}
-            <tr>
-                <td><a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}">{{ portfolio.id }}</a></td>
-                <td>{{ portfolio.title }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('admin_portfolio_new') }}">Create a new portfolio</a>
-        </li>
-    </ul>
+{% block adminPageContent %}
+  <table class="table table-bordered table-stripped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for portfolio in portfolios %}
+        <tr>
+          <td>{{ portfolio.title }}</td>
+          <td>
+            <div class="btn-group btn-group-sm">
+            <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}"
+               class="btn btn-info">
+              <span class="glyphicon glyphicon-folder-open"></span></a>
+            <a href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}"
+               class="btn btn-primary">
+              <span class="glyphicon glyphicon-pencil"></span></a>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
+
