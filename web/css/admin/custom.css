@@ -8,3 +8,8 @@ and open the template in the editor.
     Author     : Alex Seif <me@alexseif.com>
 */
 th{font-size:18px;}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  border: 1px solid #464545;
+  background: #464545;
+  color: #ffffff;
+}

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}myApp{% endblock %}
+
+{% block panelTitle %}myApp{% endblock %}
+{% block panelBody %}
+    <div class="panel-body">
+        {% block fos_user_content %}{% endblock %}
+    </div>
+{% endblock %}

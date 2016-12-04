@@ -12,9 +12,9 @@
         <th>Title</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="sortable" data-url="{{ path('admin_portfolio_position') }}">
       {% for portfolio in portfolios %}
-        <tr>
+        <tr data-id="portfolio_{{ portfolio.id }}" data-order="id_{{ portfolio.id }}">
           <td>{{ portfolio.title }}
             <div class="btn-group btn-group-sm pull-right">
               <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}"

@@ -72,6 +72,11 @@ class Portfolio
   private $publishedAt;
 
   /**
+   * @ORM\Column(type="integer")
+   */
+  private $position;
+
+  /**
    * Get id
    *
    * @return int
@@ -242,6 +247,30 @@ class Portfolio
   public function getPublishedAt()
   {
     return $this->publishedAt;
+  }
+
+  /**
+   * Set position
+   *
+   * @param integer $position
+   *
+   * @return Portfolio
+   */
+  public function setPosition($position)
+  {
+    $this->position = $position;
+
+    return $this;
+  }
+
+  /**
+   * Get position
+   *
+   * @return integer
+   */
+  public function getPosition()
+  {
+    return $this->position;
   }
 
 }

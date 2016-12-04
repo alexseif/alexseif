@@ -26,7 +26,7 @@ class AdminPortfolioController extends Controller
   {
     $em = $this->getDoctrine()->getManager();
 
-    $portfolios = $em->getRepository('AppBundle:Portfolio')->findAll();
+    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(array(),array('position'=>'ASC'));
 
     return $this->render('admin/portfolio/index.html.twig', array(
           'portfolios' => $portfolios,
@@ -100,6 +100,27 @@ class AdminPortfolioController extends Controller
           'portfolio_form' => $editForm->createView(),
           'portfolio_delete_form' => $deleteForm->createView(),
     ));
+  }
+
+  /**
+   * Displays a form to edit an existing portfolio entity.
+   *
+   * @Route("/position", name="admin_portfolio_position")
+   * @Method("POST")
+   */
+  public function positionAction(Request $request)
+  {
+    $em = $this->getDoctrine()->getManager();
+
+    if ($request->isXMLHttpRequest()) {
+      $portfolios = $request->get('portfolios');
+      foreach ($portfolios as $position => $portfolioId) {
+        $task = $em->find(Portfolio::class, $portfolioId);
+        $task->setPosition($position);
+      }
+      $em->flush();
+      return new \Symfony\Component\HttpFoundation\JsonResponse();
+    }
   }
 
   /**
