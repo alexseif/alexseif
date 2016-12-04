@@ -16,12 +16,18 @@ class PortfolioType extends AbstractType
   {
     $builder->add('title')->add('subtitle')->add('description')
         ->add('url', \Symfony\Component\Form\Extension\Core\Type\UrlType::class, array(
-          'required' => false
+          'required' => false,
+          'label' => 'URL'
         ))
         ->add('price', \Symfony\Component\Form\Extension\Core\Type\MoneyType::class, array(
           'required' => false,
           'currency' => 'EGP',
           'divisor' => 100
+        ))
+        ->add('publishedAt', \Symfony\Component\Form\Extension\Core\Type\DateType::class, array(
+          'widget' => 'single_text',
+          'format' => 'yyyy-MM-dd',
+          'required' => false
     ));
   }
 

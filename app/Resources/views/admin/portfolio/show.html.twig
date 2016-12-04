@@ -33,6 +33,10 @@
       <li class="list-group-item"><span class="badge">Price</span>
         {{ (portfolio.price/100)|localizedcurrency('EGP') }}</li>
       {% endif %}
+    {% if portfolio.publishedAt %}
+      <li class="list-group-item"><span class="badge">Published At</span>
+        {{ portfolio.publishedAt|date('M-Y') }}</li>
+      {% endif %}
   </ul>
   {{ form_start(portfolio_delete_form, {'attr':{'id':'portfolio_delete'} }) }}{{ form_end(portfolio_delete_form) }}
 {% endblock %}

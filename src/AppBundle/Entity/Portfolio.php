@@ -65,6 +65,13 @@ class Portfolio
   private $price;
 
   /**
+   * @var datetime
+   *
+   * @ORM\Column(name="published_at", type="datetime", nullable=true)
+   */
+  private $publishedAt;
+
+  /**
    * Get id
    *
    * @return int
@@ -165,52 +172,76 @@ class Portfolio
     return $this->subtitle;
   }
 
+  /**
+   * Set description
+   *
+   * @param string $description
+   *
+   * @return Portfolio
+   */
+  public function setDescription($description)
+  {
+    $this->description = $description;
 
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Portfolio
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
+    return $this;
+  }
 
-        return $this;
-    }
+  /**
+   * Get description
+   *
+   * @return string
+   */
+  public function getDescription()
+  {
+    return $this->description;
+  }
 
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
+  /**
+   * Set price
+   *
+   * @param integer $price
+   *
+   * @return Portfolio
+   */
+  public function setPrice($price)
+  {
+    $this->price = $price;
 
-    /**
-     * Set price
-     *
-     * @param integer $price
-     *
-     * @return Portfolio
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
+    return $this;
+  }
 
-        return $this;
-    }
+  /**
+   * Get price
+   *
+   * @return integer
+   */
+  public function getPrice()
+  {
+    return $this->price;
+  }
 
-    /**
-     * Get price
-     *
-     * @return integer
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
+  /**
+   * Set publishedAt
+   *
+   * @param \DateTime $publishedAt
+   *
+   * @return Portfolio
+   */
+  public function setPublishedAt($publishedAt)
+  {
+    $this->publishedAt = $publishedAt;
+
+    return $this;
+  }
+
+  /**
+   * Get publishedAt
+   *
+   * @return \DateTime
+   */
+  public function getPublishedAt()
+  {
+    return $this->publishedAt;
+  }
+
 }
