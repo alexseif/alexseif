@@ -4,6 +4,8 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use DoctrineExtensions\Taggable\Taggable;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Portfolio
@@ -11,7 +13,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Table(name="portfolio")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PortfolioRepository")
  */
-class Portfolio
+class Portfolio implements Taggable
 {
 
   /**
@@ -75,6 +77,7 @@ class Portfolio
    * @ORM\Column(type="integer")
    */
   private $position;
+  private $tags;
 
   /**
    * Get id
@@ -271,6 +274,23 @@ class Portfolio
   public function getPosition()
   {
     return $this->position;
+  }
+
+  public function getTags()
+  {
+    $this->tags = $this->tags ?: new ArrayCollection();
+
+    return $this->tags;
+  }
+
+  public function getTaggableType()
+  {
+    return 'portfolio';
+  }
+
+  public function getTaggableId()
+  {
+    return $this->getId();
   }
 
 }

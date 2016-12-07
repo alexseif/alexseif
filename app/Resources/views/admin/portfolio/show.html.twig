@@ -12,32 +12,43 @@
   {% endblock %}
 
 {% block adminPageContent %}
-  <ul class="list-group">
-    <li class="list-group-item"><span class="badge">Title</span>
-      {{ portfolio.title }}</li>
-    <li class="list-group-item"><span class="badge">Slug</span>
-      {{ portfolio.slug }}</li>
-      {% if portfolio.subtitle %}
-      <li class="list-group-item"><span class="badge">Subtitle</span>
-        {{ portfolio.subtitle }}</li>
-      {% endif %}
-      {% if portfolio.description %}
-      <li class="list-group-item"><span class="badge">Description</span>
-        {{ portfolio.description }}</li>
-      {% endif %}
-      {% if portfolio.url %}
-      <li class="list-group-item"><span class="badge">URL</span>
-        {{ portfolio.url }}</li>
-      {% endif %}
-      {% if portfolio.price %}
-      <li class="list-group-item"><span class="badge">Price</span>
-        {{ (portfolio.price/100)|localizedcurrency('EGP') }}</li>
-      {% endif %}
-    {% if portfolio.publishedAt %}
-      <li class="list-group-item"><span class="badge">Published At</span>
-        {{ portfolio.publishedAt|date('M-Y') }}</li>
-      {% endif %}
-  </ul>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <ul class="list-group">
+        <li class="list-group-item"><span class="badge">Title</span>
+          {{ portfolio.title }}</li>
+        <li class="list-group-item"><span class="badge">Slug</span>
+          {{ portfolio.slug }}</li>
+          {% if portfolio.subtitle %}
+          <li class="list-group-item"><span class="badge">Subtitle</span>
+            {{ portfolio.subtitle }}</li>
+          {% endif %}
+          {% if portfolio.description %}
+          <li class="list-group-item"><span class="badge">Description</span>
+            {{ portfolio.description }}</li>
+          {% endif %}
+          {% if portfolio.url %}
+          <li class="list-group-item"><span class="badge">URL</span>
+            {{ portfolio.url }}</li>
+          {% endif %}
+          {% if portfolio.price %}
+          <li class="list-group-item"><span class="badge">Price</span>
+            {{ (portfolio.price/100)|localizedcurrency('EGP') }}</li>
+          {% endif %}
+          {% if portfolio.tags %}
+          <li class="list-group-item"><span class="badge">Tags</span>
+            {% for tag in portfolio.tags %}
+              <span class="label label-default">{{ tag }}</span>
+            {% endfor %}
+          {% endif %}
+          {% if portfolio.publishedAt %}
+          <li class="list-group-item"><span class="badge">Published At</span>
+            {{ portfolio.publishedAt|date('M-Y') }}</li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+
   {{ form_start(portfolio_delete_form, {'attr':{'id':'portfolio_delete'} }) }}{{ form_end(portfolio_delete_form) }}
 {% endblock %}
 

@@ -28,6 +28,9 @@ class PortfolioType extends AbstractType
           'widget' => 'single_text',
           'format' => 'yyyy-MM-dd',
           'required' => false
+        ))
+        ->add('tags', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
+          'mapped' => false
     ));
   }
 

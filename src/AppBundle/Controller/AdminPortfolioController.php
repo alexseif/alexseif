@@ -26,7 +26,7 @@ class AdminPortfolioController extends Controller
   {
     $em = $this->getDoctrine()->getManager();
 
-    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(array(),array('position'=>'ASC'));
+    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(array(), array('position' => 'ASC'));
 
     return $this->render('admin/portfolio/index.html.twig', array(
           'portfolios' => $portfolios,
@@ -46,9 +46,17 @@ class AdminPortfolioController extends Controller
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
+
+      $tagManager = $this->get('fpn_tag.tag_manager');
+      $tagNames = $tagManager->splitTagNames('Clark Kent, Loïs Lane, Superman');
+      $tags = $tagManager->loadOrCreateTags($tagNames);
+      $tagManager->addTags($tags, $portfolio);
+
       $em = $this->getDoctrine()->getManager();
       $em->persist($portfolio);
       $em->flush($portfolio);
+
+      $tagManager->saveTagging($portfolio);
 
       $this->addFlash('success', $portfolio->getTitle() . ' created');
 
@@ -64,42 +72,19 @@ class AdminPortfolioController extends Controller
   /**
    * Finds and displays a portfolio entity.
    *
-   * @Route("/{id}", name="admin_portfolio_show")
+   * @Route("/tags", name="admin_portfolio_tags")
    * @Method("GET")
    */
-  public function showAction(Portfolio $portfolio)
+  public function tagsAction()
   {
-    $deleteForm = $this->createDeleteForm($portfolio);
-
-    return $this->render('admin/portfolio/show.html.twig', array(
-          'portfolio' => $portfolio,
-          'portfolio_delete_form' => $deleteForm->createView(),
-    ));
-  }
-
-  /**
-   * Displays a form to edit an existing portfolio entity.
-   *
-   * @Route("/{id}/edit", name="admin_portfolio_edit")
-   * @Method({"GET", "POST"})
-   */
-  public function editAction(Request $request, Portfolio $portfolio)
-  {
-    $deleteForm = $this->createDeleteForm($portfolio);
-    $editForm = $this->createForm('AppBundle\Form\PortfolioType', $portfolio);
-    $editForm->handleRequest($request);
-
-    if ($editForm->isSubmitted() && $editForm->isValid()) {
-      $this->getDoctrine()->getManager()->flush();
-      $this->addFlash('success', $portfolio->getTitle() . ' updated');
-      return $this->redirectToRoute('admin_portfolio_show', array('id' => $portfolio->getId()));
+    $em = $this->getDoctrine()->getManager();
+    $tagRepo = $em->getRepository('AppBundle\\Entity\\Tag');
+    $tags = $tagRepo->findAll();
+    $tagsResponse = array();
+    foreach ($tags as $tag) {
+      $tagsResponse[] = $tag->getName();
     }
-
-    return $this->render('admin/portfolio/edit.html.twig', array(
-          'portfolio' => $portfolio,
-          'portfolio_form' => $editForm->createView(),
-          'portfolio_delete_form' => $deleteForm->createView(),
-    ));
+    return new \Symfony\Component\HttpFoundation\JsonResponse($tagsResponse);
   }
 
   /**
@@ -121,6 +106,72 @@ class AdminPortfolioController extends Controller
       $em->flush();
       return new \Symfony\Component\HttpFoundation\JsonResponse();
     }
+  }
+
+  /**
+   * Finds and displays a portfolio entity.
+   *
+   * @Route("/{id}", name="admin_portfolio_show")
+   * @Method("GET")
+   */
+  public function showAction(Portfolio $portfolio)
+  {
+    $deleteForm = $this->createDeleteForm($portfolio);
+
+    $tagManager = $this->get('fpn_tag.tag_manager');
+    $tagManager->loadTagging($portfolio);
+
+    return $this->render('admin/portfolio/show.html.twig', array(
+          'portfolio' => $portfolio,
+          'portfolio_delete_form' => $deleteForm->createView(),
+    ));
+  }
+
+  /**
+   * Displays a form to edit an existing portfolio entity.
+   *
+   * @Route("/{id}/edit", name="admin_portfolio_edit")
+   * @Method({"GET", "POST"})
+   */
+  public function editAction(Request $request, Portfolio $portfolio)
+  {
+    $deleteForm = $this->createDeleteForm($portfolio);
+
+    $tagManager = $this->get('fpn_tag.tag_manager');
+    $tagManager->loadTagging($portfolio);
+
+    foreach ($portfolio->getTags() as $tag) {
+      $tagsResponse[] = $tag->getName();
+    }
+
+    $editForm = $this->createForm('AppBundle\Form\PortfolioType', $portfolio);
+
+    $editForm->get('tags')->setData(implode(',',$tagsResponse));
+    
+    $editForm->handleRequest($request);
+
+    if ($editForm->isSubmitted() && $editForm->isValid()) {
+      
+      $tagData = $editForm->get('tags')->getData();
+      $tagNames = $tagManager->splitTagNames($tagData);
+      
+      $tags = $tagManager->loadOrCreateTags($tagNames);
+
+      $tagManager->replaceTags($tags, $portfolio);
+
+      $this->getDoctrine()->getManager()->flush();
+
+      $tagManager->saveTagging($portfolio);
+
+      $this->addFlash('success', $portfolio->getTitle() . ' updated');
+      return $this->redirectToRoute('admin_portfolio_show', array('id' => $portfolio->getId()));
+    }
+
+    return $this->render('admin/portfolio/edit.html.twig', array(
+          'portfolio' => $portfolio,
+          'portfolio_form' => $editForm->createView(),
+          'portfolio_delete_form' => $deleteForm->createView(),
+    ));
   }
 
   /**
