@@ -30,7 +30,8 @@ class PortfolioType extends AbstractType
           'required' => false
         ))
         ->add('tags', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
-          'mapped' => false
+          'mapped' => false,
+          'required' => false
     ));
   }
 
