@@ -3,8 +3,10 @@
   {{ parent() }}
   <link rel="stylesheet" type="text/css" href="/css/portfolio.css" />
 {% endblock %}
+
 {% block content %}
   <div class="portfolio">
+    
     <section class="ig">
       {% for portfolio in portfolios %}
         <article>
@@ -94,8 +96,10 @@
       <a class="la"><div></div></a>
       <a class="ra"><div></div></a>
     </div>
+    
   </div>
 {% endblock %}
+
 {% block javascripts %}
   {{ parent() }}
   <script type="text/javascript" src="/js/portfolio.js"></script>
