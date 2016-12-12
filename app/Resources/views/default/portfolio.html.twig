@@ -5,20 +5,20 @@
 {% endblock %}
 {% block content %}
   <div class="portfolio">
-    <section class="image-grid">
+    <section class="ig">
       {% for portfolio in portfolios %}
         <article>
-          <div class="image__cell is-collapsed">
+          <div class="ic is-collapsed">
             <div class="image--basic">
-              <a href="#expand-jump-1">
+              <a>
                 <img src="http://placehold.it/350x350" title="{PlaceHolder}" 
                      alt="{{ portfolio.title }}"
-                     id="expand-jump-1" class="basic__img" />
+                     class="basic__img" />
               </a>
               <div class="arrow--up"></div>
             </div>
             <div class="image--expand">
-              <a href="#close-jump-1" class="expand__close"></a>
+              <a class="expand__close"></a>
               <img src="http://placehold.it/650x650" title="{PlaceHolder}" 
                    alt="{{ portfolio.title }}"
                    class="image--large" />
@@ -27,7 +27,7 @@
               <h3 class="subtitle">{{ portfolio.subtitle }}</h3>
               <p class="description">{{ portfolio.description }}</p>
               <span class="price">{{ portfolio.price|localizedcurrency('EGP') }}</span>
-              <time datetime="2007-08-29T13:58Z">
+              <time datetime="2007-08-29">
                 {{ portfolio.publishedAt|localizeddate }}
               </time>
               <a href="{{ portfolio.url }}" class="url">{{ portfolio.url }}</a>
@@ -39,18 +39,24 @@
         </article>
       {% endfor %}
     </section>
-    <section class="dt">
-      <a href="javascript:void(0)" class="close-btn" aria-label="Close" 
-         role="button"></a>
+
+    <div class="dt">
+      <a href="javascript:void(0)" class="cb" aria-label="Close" role="button"></a>
       <div class="img">
-        <img src="http://placehold.it/650x450" title="{PlaceHolder}" alt="Alt"/>  
+        <img src="http://placehold.it/650x450" title="{PlaceHolder}" alt="Alt"/>
       </div>
       <div class="hs" style="height: 450px;"></div>
       <div class="dr">
         <div class="drt">
-          <h2><a href="">Portfolio title</a></h2>
+          <h2><a href="" target="_blank">Portfolio title</a></h2>
           <span>Portfolio subtitle</span>
           <p>Portfolio description</p>
+          <p style="text-align:center;">
+            <small>EGP 30,000.00</small>&nbsp;-&nbsp;
+            <small><a href="http://placehold.it/" target="_blank">
+                http://placehold.it/</a></small>&nbsp;-&nbsp;
+            <small>2007-08-29</small>
+          </p>
           <div class="btns">
             <a><span><i class="glyphicon glyphicon-new-window"></i> 
                 &nbsp;Open</span></a>
@@ -64,14 +70,28 @@
         </div>
         <div class="vs"></div>
         <div class="drb">
-          PHP; Web Presence; Travel;
-          <br/>
-          And maybe more images
+          <div class="tags">
+            <a><img src="http://placehold.it/80x80" title="{PlaceHolder}" alt="Alt"/></a>
+            <a><img src="http://placehold.it/80x80" title="{PlaceHolder}" alt="Alt"/></a>
+            <a><img src="http://placehold.it/80x80" title="{PlaceHolder}" alt="Alt"/></a>
+            <a><img src="http://placehold.it/80x80" title="{PlaceHolder}" alt="Alt"/></a>
+            <a><img src="http://placehold.it/80x80" title="{PlaceHolder}" alt="Alt"/></a>
+          </div>
+          <div>
+            <span class="label label-default">PHP</span>
+            <span class="label label-default">Travel</span>
+            <span class="label label-default">Web Presence</span>
+            <span class="label label-default">eCommerce</span>
+            <span class="label label-default">Newspaper</span>
+          </div>
+        </div>
+        <div class="ft">
+          <a><small>Send Feedback</small></a>
         </div>
       </div>
       <a class="la"><div></div></a>
       <a class="ra"><div></div></a>
-    </section>
+    </div>
   </div>
 {% endblock %}
 {% block javascripts %}

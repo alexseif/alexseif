@@ -2,10 +2,10 @@
  * The following content was designed & implemented under AlexSeif.com
  */
 $(function () {
-  var $cell = $('.image__cell');
+  var $cell = $('.ic');
 
   $cell.find('.image--basic').click(function () {
-    var $thisCell = $(this).closest('.image__cell');
+    var $thisCell = $(this).closest('.ic');
 
     if ($thisCell.hasClass('is-collapsed')) {
       $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed');
@@ -17,7 +17,7 @@ $(function () {
 
   $cell.find('.expand__close').click(function () {
 
-    var $thisCell = $(this).closest('.image__cell');
+    var $thisCell = $(this).closest('.ic');
 
     $thisCell.removeClass('is-expanded').addClass('is-collapsed');
   });
