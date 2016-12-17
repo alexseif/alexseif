@@ -14,14 +14,7 @@ class DefaultController extends Controller
    */
   public function indexAction(Request $request)
   {
-//        return $this->render('default/index.html.twig');
-    $em = $this->getDoctrine()->getManager();
-
-    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
-        array(), array('position' => 'ASC'));
-    return $this->render('default/portfolio.html.twig', array(
-          'portfolios' => $portfolios
-    ));
+    return $this->render('default/index.html.twig');
   }
 
   /**
@@ -29,7 +22,13 @@ class DefaultController extends Controller
    */
   public function portfolioAction(Request $request)
   {
-    return $this->render('default/portfolio.html.twig');
+    $em = $this->getDoctrine()->getManager();
+
+    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
+        array(), array('position' => 'ASC'));
+    return $this->render('default/portfolio.html.twig', array(
+          'portfolios' => $portfolios
+    ));
   }
 
 }
