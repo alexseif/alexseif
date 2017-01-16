@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container">
+    <div class='text-center'>
+      Hi I'm <h1>Alex Seif</h1>
+      <div id="me">
+        <img src='/images/alexseif.jpg' height='100%' width='auto'/>
+      </div>
+    </div>
+    <div class="topic-outline">
+      <ul>
+        <li>I build <strong>Websites</strong></li>
+        <li><strong>Websites</strong> are today's medium to deliver your <em>message</em></li>
+        <li>My <em>clients</em> use their <strong>Website</strong> to enrich their visitor's experience</li>
+        <li>I use my skill set to aid my <em>clients'</em> achieve their end goals</li>
+      </ul>
+    </div>
+    <div id="site-description">
+{#      <p>typed placeholder</p>#}
+    </div>
+    <div id="skills-animated">
+      <span class="skills-interactive"></span>
+    </div>
+  </div>
+  {# TODO: http://www.mattboldt.com/demos/typed-js/ #}
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script type="text/javascript" src="/js/typed.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      var d = 1000;
+      $('.animated').each(function () {
+        $(this).delay(d).fadeIn(2000);
+        d += 1000;
+      });
+      $(window).resize(function () {
+        $width = $(window).width();
+        $('.my-photo').width($width * 0.16);
+        $('.my-photo').height($width * 0.16);
+      });
+
+      $(".skills-interactive").typed({
+{#        stringsElement: $('#site-description'),#}
+        // typing speed
+        typeSpeed: 30,
+        // time before typing starts
+        startDelay: 0,
+        // backspacing speed
+        backSpeed: 0,
+        // time before backspacing
+        backDelay: 2000,
+        // loop
+        loop: false,
+        // false = infinite
+        loopCount: 2,
+        // show cursor
+        showCursor: true,
+        // character for cursor
+        cursorChar: "|",
+        // attribute to type (null == text)
+        attr: null,
+        // either html or text
+        contentType: 'html',
+        preStringTyped: function (count) {
+          switch (count) {
+            case 1:
+              $('#pre-intr-text').text("more");
+              break;
+            case 2:
+            case 3:
+              $('#pre-intr-text').text("");
+              break;
+            default:
+              $('#pre-intr-text').text("your");
+              break;
+          }
+        },
+      });
+    });
+  </script>
+{% endblock %}

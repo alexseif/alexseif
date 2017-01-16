@@ -10,11 +10,18 @@ class DefaultController extends Controller
 {
 
   /**
-   * @Route("/", name="homepage")
+   * @Route("/", name="coming-soon")
+   */
+  public function comingSoonAction(Request $request)
+  {
+    return $this->render('default/comingSoon.html.twig');
+  }
+  /**
+   * @Route("/beta", name="homepage")
    */
   public function indexAction(Request $request)
   {
-    return $this->render('default/index.html.twig');
+    return $this->render('default/beta.html.twig');
   }
 
   /**
