@@ -2,10 +2,33 @@
 {% block stylesheets %}
   {{ parent() }}
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/jquery.fullPage.min.css" />
+  <link rel="stylesheet" href="/css/beta.css" />
 {% endblock %}
 {% block body %}
-  {# TODO: http://alvarotrigo.com/fullPage/#firstPage #}
-  {# TODO: http://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp #}
+  <div id="loadingPage">
+    <div class="contentArea">
+      <!-- Loader -->
+      <div class="post-wrapper">
+        <div class="timeline-item">
+          <div class="animated-background">
+            <div class="background-masker header-top"></div>
+            <div class="background-masker header-left"></div>
+            <div class="background-masker header-right"></div>
+            <div class="background-masker header-bottom"></div>
+            <div class="background-masker subheader-left"></div>
+            <div class="background-masker subheader-right"></div>
+            <div class="background-masker subheader-bottom"></div>
+            <div class="background-masker content-top"></div>
+            <div class="background-masker content-first-end"></div>
+            <div class="background-masker content-second-line"></div>
+            <div class="background-masker content-second-end"></div>
+            <div class="background-masker content-third-line"></div>
+            <div class="background-masker content-third-end"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <ul id="myMenu" style="position: fixed;">
     <li data-menuanchor="Hello" class="active"><a href="#Hello">Hello</a></li>
     <li data-menuanchor="Page2"><a href="#Page2">Second section</a></li>
@@ -13,211 +36,13 @@
     <li data-menuanchor="Footer"><a href="#Footer">Fourth section</a></li>
     <li data-menuanchor="More"><a href="#More">Fourth section</a></li>
   </ul>
+  {# TODO: http://alvarotrigo.com/fullPage/#firstPage #}
+  {# TODO: http://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp #}
+  {# TODO: https://www.facebook.com/alex.seif/timeline/story?ut=32&wstart=-2051193600&wend=2147483647&hash=10157968362415012&pagefilter=3&ustart=1 #}
   <div id="fullpage">
     <div class="section" data-anchor="Hello">
-      <style>
-        a {
-          color: #365899;
-          cursor: pointer;
-          text-decoration: none;
-        }
-        .clearfix:after {
-          clear: both;
-          content: ".";
-          display: block;
-          font-size: 0;
-          height: 0;
-          line-height: 0;
-          visibility: hidden;
-        }
-        div#contentArea{width: 502px;margin: 0 auto;}
-        @keyframes placeHolderShimmer{
-          0%{
-            background-position: -468px 0
-          }
-          100%{
-            background-position: 468px 0
-          }
-        }
-
-        .animated-background {
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-          animation-iteration-count: infinite;
-          animation-name: placeHolderShimmer;
-          animation-timing-function: linear;
-          background: #f6f7f8;
-          background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-          background-size: 800px 104px;
-          height: 96px;
-          position: relative;
-        }
-        .background-masker {
-          background: #fff;
-          position: absolute;
-        }
-
-        /* Every thing below this is just positioning */
-
-        .background-masker.header-top,
-        .background-masker.header-bottom,
-        .background-masker.subheader-bottom {
-          top: 0;
-          left: 40px;
-          right: 0;
-          height: 10px;
-        }
-
-        .background-masker.header-left,
-        .background-masker.subheader-left,
-        .background-masker.header-right,
-        .background-masker.subheader-right {
-          top: 10px;
-          left: 40px;
-          height: 8px;
-          width: 10px;
-        }
-
-        .background-masker.header-bottom {
-          top: 18px;
-          height: 6px;
-        }
-
-        .background-masker.subheader-left,
-        .background-masker.subheader-right {
-          top: 24px;
-          height: 6px;
-        }
-
-
-        .background-masker.header-right,
-        .background-masker.subheader-right {
-          width: auto;
-          left: 300px;
-          right: 0;
-        }
-
-        .background-masker.subheader-right {
-          left: 230px;
-        }
-
-        .background-masker.subheader-bottom {
-          top: 30px;
-          height: 10px;
-        }
-
-        .background-masker.content-top,
-        .background-masker.content-second-line,
-        .background-masker.content-third-line,
-        .background-masker.content-second-end,
-        .background-masker.content-third-end,
-        .background-masker.content-first-end {
-          top: 40px;
-          left: 0;
-          right: 0;
-          height: 6px;
-        }
-
-        .background-masker.content-top {
-          height:20px;
-        }
-
-        .background-masker.content-first-end,
-        .background-masker.content-second-end,
-        .background-masker.content-third-end{
-          width: auto;
-          left: 380px;
-          right: 0;
-          top: 60px;
-          height: 8px;
-        }
-
-        .background-masker.content-second-line  {
-          top: 68px;
-        }
-
-        .background-masker.content-second-end {
-          left: 420px;
-          top: 74px;
-        }
-
-        .background-masker.content-third-line {
-          top: 82px;
-        }
-
-        .background-masker.content-third-end {
-          left: 300px;
-          top: 88px;
-        }
-
-        .post-wrapper{
-          background: #fff;
-          border: 1px solid;
-          border-color: #e5e6e9 #dfe0e4 #d0d1d5;
-          border-radius: 3px;
-          padding: 12px;
-
-          margin: 0 auto;
-          width: 100%;
-        }
-        .post{
-
-        }
-        a.post-profile-img{float:left;margin-right: 8px;}
-        a.post-profile-img:after {
-          border: 1px solid rgba(0, 0, 0, .1);
-          bottom: 0;
-          content: '';
-          left: 0;
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-        .name {
-          margin: 0;
-          margin-bottom: 2px;
-          padding-right: 22px;
-          font-size: 14px;
-          font-weight: normal;
-          line-height: 1.38;
-        }
-        .name a{font-weight: bold;}
-        .subtitle{
-          position: relative;
-          color: #90949c;
-          font-size: 14px;
-          font-weight: normal;
-          line-height: 1.38;
-        }
-        .post-body div{
-          font-size: 24px;
-          font-weight: 300;
-          letter-spacing: 0;
-          line-height: 28px;
-          margin: 7px 0 7px 0;
-        }
-      </style>      
-      <div id="contentArea" role="main">
-        <div class="post-wrapper" style='min-height:200px;'>
-          <div class="timeline-item">
-            <div class="animated-background">
-              <div class="background-masker header-top"></div>
-              <div class="background-masker header-left"></div>
-              <div class="background-masker header-right"></div>
-              <div class="background-masker header-bottom"></div>
-              <div class="background-masker subheader-left"></div>
-              <div class="background-masker subheader-right"></div>
-              <div class="background-masker subheader-bottom"></div>
-              <div class="background-masker content-top"></div>
-              <div class="background-masker content-first-end"></div>
-              <div class="background-masker content-second-line"></div>
-              <div class="background-masker content-second-end"></div>
-              <div class="background-masker content-third-line"></div>
-              <div class="background-masker content-third-end"></div>
-            </div>
-          </div>
-        </div>
-        <div class="post-wrapper">
+      <div class="contentArea" role="main">
+        <div class="post-wrapper hide">
           <div class="post">
             <div class="post-header clearfix">
               <a href="" class="post-profile-img">
@@ -231,7 +56,7 @@
                       <div class='subtitle'>
                         Software Engineer 10 years 
                         <span role="presentation" aria-hidden="true"> · </span>
-                        <span class='glyphicon glyphicon-globe'></span>
+                        <span class='glyphicon glyphicon-globe' style='font-size: 12px;'></span>
                       </div>
                     </div>
                   </div>
@@ -293,70 +118,71 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/jquery.fullPage.min.js"></script>
   <script type="text/javascript" src="/js/typed.min.js"></script>
   <script type="text/javascript">
-    $(document).ready(function () {
+    function initPage() {
       $('#fullpage').fullpage({
         anchors: ['Hello', 'Page2', 'Page3', 'Footer', 'More'],
         menu: '#myMenu',
         sectionsColor: ['#e9ebee', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-        afterLoad: function (anchorLink, index) {
-          switch (anchorLink) {
-            case 'Hello':
-              setTimeout(
-                      function () {
-    {#                        $('.timeline-item').html('Hi I\'m Alex');#}
-                        }
-                , 2000);
+        afterLoad: pageManagement
+      });
+      setTimeout(function () {
+        $('.post-wrapper.hide').removeClass('hide');
+        $('#loadingPage').hide();
+      }, 1000);
+    }
+    function pageManagement(anchorLink, index) {
+      switch (anchorLink) {
+        case 'Hello':
+          setTimeout(function () {
+    {# $('.timeline-item').html('Hi I\'m Alex');#}
+            }, 2000);
+            break;
+          case 'Page3':
+            typedManagement();
+            break;
+        }
+      }
+      function typedManagement() {
+        $(".skills-interactive").typed({
+    {# stringsElement: $('#site-description'),#}
+          // typing speed
+          typeSpeed: 30,
+          // time before typing starts
+          startDelay: 0,
+          // backspacing speed
+          backSpeed: 0,
+          // time before backspacing
+          backDelay: 2000,
+          // loop
+          loop: false,
+          // false = infinite
+          loopCount: 2,
+          // show cursor
+          showCursor: true,
+          // character for cursor
+          cursorChar: "|",
+          // attribute to type (null == text)
+          attr: null,
+          // either html or text
+          contentType: 'html',
+          preStringTyped: function (count) {
+            switch (count) {
+              case 1:
+                $('#pre-intr-text').text("more");
                 break;
-              case 'Page3':
-                $(window).resize(function () {
-                  $width = $(window).width();
-                  $('.my-photo').width($width * 0.16);
-                  $('.my-photo').height($width * 0.16);
-                });
-                $(".skills-interactive").typed({
-    {#        stringsElement: $('#site-description'),#}
-                  // typing speed
-                  typeSpeed: 30,
-                  // time before typing starts
-                  startDelay: 0,
-                  // backspacing speed
-                  backSpeed: 0,
-                  // time before backspacing
-                  backDelay: 2000,
-                  // loop
-                  loop: false,
-                  // false = infinite
-                  loopCount: 2,
-                  // show cursor
-                  showCursor: true,
-                  // character for cursor
-                  cursorChar: "|",
-                  // attribute to type (null == text)
-                  attr: null,
-                  // either html or text
-                  contentType: 'html',
-                  preStringTyped: function (count) {
-                    switch (count) {
-                      case 1:
-                        $('#pre-intr-text').text("more");
-                        break;
-                      case 2:
-                      case 3:
-                        $('#pre-intr-text').text("");
-                        break;
-                      default:
-                        $('#pre-intr-text').text("your");
-                        break;
-                    }
-                  },
-                });
+              case 2:
+              case 3:
+                $('#pre-intr-text').text("");
+                break;
+              default:
+                $('#pre-intr-text').text("your");
                 break;
             }
-          }
+          },
         });
-      });
+      }
       $(function () {
-
+        initPage();
       });
   </script>
 {% endblock %}
