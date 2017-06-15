@@ -24,6 +24,14 @@ class DefaultController extends Controller
   {
     return $this->render('default/beta.html.twig');
   }
+  
+  /**
+   * @Route("/minimalist", name="minimalist")
+   */
+  public function minimalistAction(Request $request)
+  {
+    return $this->render('default/minimalist.html.twig');
+  }
 
   /**
    * @Route("/portfolio", name="portfolio")
