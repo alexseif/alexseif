@@ -24,13 +24,17 @@ class DefaultController extends Controller
   {
     return $this->render('default/beta.html.twig');
   }
-  
+
   /**
    * @Route("/minimalist", name="minimalist")
    */
   public function minimalistAction(Request $request)
   {
-    return $this->render('default/minimalist.html.twig');
+    $em = $this->getDoctrine()->getManager();
+
+    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
+        array(), array('position' => 'ASC'));
+    return $this->render('default/minimalist.html.twig', array('portfolios' => $portfolios));
   }
 
   /**

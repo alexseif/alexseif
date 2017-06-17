@@ -5,6 +5,10 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PortfolioType extends AbstractType
 {
@@ -15,21 +19,22 @@ class PortfolioType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder->add('title')->add('subtitle')->add('description')
-        ->add('url', \Symfony\Component\Form\Extension\Core\Type\UrlType::class, array(
+        ->add('url', UrlType::class, array(
           'required' => false,
           'label' => 'URL'
         ))
-        ->add('price', \Symfony\Component\Form\Extension\Core\Type\MoneyType::class, array(
+        ->add('price', MoneyType::class, array(
           'required' => false,
           'currency' => 'EGP',
           'divisor' => 100
         ))
-        ->add('publishedAt', \Symfony\Component\Form\Extension\Core\Type\DateType::class, array(
+        ->add('publishedAt', DateType::class, array(
           'widget' => 'single_text',
           'format' => 'yyyy-MM-dd',
           'required' => false
         ))
-        ->add('tags', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
+        ->add('position')
+        ->add('tags', TextType::class, array(
           'mapped' => false,
           'required' => false
     ));

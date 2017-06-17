@@ -76,7 +76,7 @@ class Portfolio implements Taggable
   /**
    * @ORM\Column(type="integer")
    */
-  private $position =0;
+  private $position = 0;
   private $tags;
 
   /**
