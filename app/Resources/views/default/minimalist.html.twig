@@ -16,12 +16,12 @@
   <div class="background"></div>
   <section class="hello">
     <div class="wrapper">
-      <h3>Alex Seif</h3>
+      <h1>Alex Seif</h1>
       <h2 class="thingos">
         <span class="sr">Software Engineer<br/></span>
-        <span class="sr">Available for freelance<br/></span>
-        <span class="sr">{{ ("now"|date("Y")) - 2004 }} years experience<br/></span>
-        <span class="sr">Based in Alexandria, Egypt<br/></span>
+          {# <span class="sr">Available for freelance<br/></span> #}
+        <span class="sr">{{ ("now"|date("Y")) - 2004 }} yrs experience<br/></span>
+        <span class="sr">Based in Alexandria, Egypt</span>
       </h2>
       <div class="bottom-section">
         <h2>Email
@@ -166,11 +166,11 @@
 
     window.sr = ScrollReveal({reset: true});
     {#    sr.reveal('.sr', {mobile: false, delay: 10, scale: .95});#}
-    sr.reveal('.sr');
+      sr.reveal('.sr');
 
-    $(".baseline-toggle").click(function () {
-      $(".baseline").css('opacity', 1);
-      $(".baseline").toggle();
-    });
+      $(".baseline-toggle").click(function () {
+        $(".baseline").css('opacity', 1);
+        $(".baseline").toggle();
+      });
   </script>
 {% endblock %}
