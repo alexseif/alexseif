@@ -25,19 +25,19 @@
       </h2>
       <div class="bottom-section">
         <h2>Email
-          <span id=cycling-1>
+          <span id="cycling-1">
             <a href="mailto:contact@alexseif.com">for a project</a>
           </span>
-          <span id=cycling-2>
+          <span id="cycling-2" style="display: none;">
             <a href="mailto:contact@alexseif.com">for a <span>&#127829;</span><span>&#127881;</span></a>
           </span>
-          <span id=cycling-3>
+          <span id="cycling-3" style="display: none;">
             <a href="mailto:contact@alexseif.com"><span>to make &#128241;</span></a>
           </span>
-          <span id=cycling-4>
+          <span id="cycling-4" style="display: none;">
             <a href="mailto:contact@alexseif.com">for a <span>&#127940;</span></a>
           </span>
-          <span id=cycling-5>
+          <span id="cycling-5" style="display: none;">
             <a href="mailto:contact@alexseif.com">to <span>&#128397;</span> ideas</a>
           </span>
         </h2>
@@ -162,17 +162,11 @@
           }
         },
       });
-      var divsPeople = $('span[id^="people-"]').hide(),
-              i = 0;
-      (function cycle() {
-        divsPeople.eq(i).fadeIn(200).delay(1000).fadeOut(200, cycle);
-        i = ++i % divsPeople.length;
-      }
-      )();
     });
 
-    window.sr = ScrollReveal();
-    sr.reveal('.sr', {mobile: false, delay: 10, scale: .95});
+    window.sr = ScrollReveal({reset: true});
+    {#    sr.reveal('.sr', {mobile: false, delay: 10, scale: .95});#}
+    sr.reveal('.sr');
 
     $(".baseline-toggle").click(function () {
       $(".baseline").css('opacity', 1);
