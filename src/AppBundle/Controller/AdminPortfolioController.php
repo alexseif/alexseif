@@ -29,7 +29,7 @@ class AdminPortfolioController extends Controller
     $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
         array(), array(
       'position' => 'ASC',
-      'publishedAt' => 'ASC'
+      'publishedAt' => 'DESC'
     ));
 
     return $this->render('admin/portfolio/index.html.twig', array(
