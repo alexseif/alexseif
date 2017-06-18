@@ -33,7 +33,6 @@ class PortfolioType extends AbstractType
           'format' => 'yyyy-MM-dd',
           'required' => false
         ))
-        ->add('position')
         ->add('tags', TextType::class, array(
           'mapped' => false,
           'required' => false
