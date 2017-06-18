@@ -52,8 +52,10 @@
       <ul>
         {% for portfolio in portfolios %}
           <li class="sr">
-            <h3>{{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt|date("Y")}}</span></h3>
-            <p>{{ portfolio.subtitle }}</p>
+            <h3>
+              {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
+            </h3>
+            <p>{{ portfolio.description }}</p>
           </li>
         {% endfor %}
       </ul>
