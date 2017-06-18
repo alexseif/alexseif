@@ -10,25 +10,9 @@ class DefaultController extends Controller
 {
 
   /**
-   * @Route("/", name="coming-soon")
+   * @Route("/", name="home")
    */
   public function comingSoonAction(Request $request)
-  {
-    return $this->render('default/comingSoon.html.twig');
-  }
-
-  /**
-   * @Route("/beta", name="homepage")
-   */
-  public function indexAction(Request $request)
-  {
-    return $this->render('default/beta.html.twig');
-  }
-
-  /**
-   * @Route("/minimalist", name="minimalist")
-   */
-  public function minimalistAction(Request $request)
   {
     $em = $this->getDoctrine()->getManager();
 
@@ -38,6 +22,14 @@ class DefaultController extends Controller
       'publishedAt' => 'DESC'
     ));
     return $this->render('default/minimalist.html.twig', array('portfolios' => $portfolios));
+  }
+
+  /**
+   * @Route("/beta", name="homepage")
+   */
+  public function indexAction(Request $request)
+  {
+    return $this->render('default/beta.html.twig');
   }
 
   /**
