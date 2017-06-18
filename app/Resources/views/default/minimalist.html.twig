@@ -1,7 +1,5 @@
 {# TODO: Email #}
 {# TODO: Tags #}
-{# TODO: Section Also #}
-{# TODO: Section End #}
 {# based on http://dandalzotto.com and https://www.livingbreathing.com #}
 {# https://github.com/jlmakes/scrollreveal #}
 {# Checkout http://petravic.us #}
@@ -65,16 +63,17 @@
     <div class="wrapper">
       <ul>
         <li class="sr">
-          <h1>I run</h1>
-          <p>Designer Partner at <a target='_blank' href='http://livingbreathing.com'>Living Breathing</a>, a brand and product design studio based in Alexandria, Egypt. We&rsquo;d love to work with you.</p>
+          <h1>Make it</h1>
+          <p>Reflect your establishement online and claim your digital space. I&rsquo;d love to <a href="mailto:contact@alexseif.com">build it for you.</a></p>
         </li>
         <li class="sr">
-          <h1>I ship</h1>
-          <p>Design Director at a startup reimagining legal agreements (without the pain of the legal process). Get <a target='_blank' href='http://getoutlaw.com'>Outlaw</a>.</p>
+          <h1>Deliver it</h1>
+          <p>Reach the people that matter to your business on your terms. Get <a href="mailto:contact@alexseif.com">professional support</a> promoting you.</p>
         </li>
         <li class="sr">
-          <h1>I make</h1>
-          <p>Co-founder + Creative Director of a boutique skincare startup that doesn&rsquo;t hide behind the fine print. Live simply. Live clean. Live <a target='_blank' href='http://livebare.co'>Bare</a>.</p>
+          <h1>Run it</h1>
+          <p>Enrich your relation with your <span id=interactive-text>customers.</span><br/>
+            Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
         </li>
       </ul>
     </div>
@@ -88,12 +87,10 @@
       </div>
       <div class="links sr">
         <a href="mailto:contact@alexseif.com">Email</a>
-        <a href="http://www.linkedin.com/in/mrdandalzotto/">LinkedIn</a>
-        <a href="http://www.livingbreathing.com">Studio</a>
-        </ul>
+        <a href="https://www.linkedin.com/in/alexseif/">LinkedIn</a>
       </div>
       <div class="footnote">
-        Built with Harp.js / Sass / and a <a class='baseline-toggle'>20px baseline</a> grid
+        Built with care
       </div>
     </div>
   </section>
@@ -102,6 +99,7 @@
 {% block javascripts %}
   {{ parent() }}
   <script src="/js/scrollreveal.min.js"></script>
+  <script type="text/javascript" src="/js/typed.min.js"></script>
   <script>
     //jquery
     $(document).ready(function () {
@@ -115,6 +113,60 @@
       (function cycle() {
         divs.eq(i).fadeIn(200).delay(1000).fadeOut(200, cycle);
         i = ++i % divs.length;
+      }
+      )();
+
+      //cycle through people
+      $("#interactive-text").typed({
+        strings: [
+          "customers.",
+          "employees.",
+          "community.",
+          "patients.",
+          "clients."
+        ],
+        // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+        stringsElement: null,
+        // typing speed
+        typeSpeed: 30,
+        // time before typing starts
+        startDelay: 0,
+        // backspacing speed
+        backSpeed: 0,
+        // time before backspacing
+        backDelay: 2000,
+        // loop
+        loop: true,
+        // false = infinite
+        loopCount: 2,
+        // show cursor
+        showCursor: true,
+        // character for cursor
+        cursorChar: "|",
+        // attribute to type (null == text)
+        attr: null,
+        // either html or text
+        contentType: 'text',
+        preStringTyped: function (count) {
+          switch (count) {
+            case 1:
+              $('#pre-intr-text').text("more");
+              break;
+            case 2:
+            case 3:
+              $('#pre-intr-text').text("");
+              break;
+            default:
+              $('#pre-intr-text').text("your");
+              break;
+          }
+        },
+      });
+      var divsPeople = $('span[id^="people-"]').hide(),
+              i = 0;
+      (function cycle() {
+        divsPeople.eq(i).fadeIn(200).delay(1000).fadeOut(200, cycle);
+        i = ++i % divsPeople.length;
       }
       )();
     });
