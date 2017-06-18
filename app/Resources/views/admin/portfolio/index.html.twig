@@ -10,6 +10,7 @@
     <thead>
       <tr>
         <th>Title</th>
+        <th>Date</th>
       </tr>
     </thead>
     <tbody class="sortable" data-url="{{ path('admin_portfolio_position') }}">
@@ -25,6 +26,7 @@
                 <span class="glyphicon glyphicon-pencil"></span></a>
             </div>
           </td>
+          <td>{{ portfolio.publishedAt|date }}</td>
         </tr>
       {% endfor %}
     </tbody>

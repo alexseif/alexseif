@@ -26,7 +26,11 @@ class AdminPortfolioController extends Controller
   {
     $em = $this->getDoctrine()->getManager();
 
-    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(array(), array('position' => 'ASC'));
+    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
+        array(), array(
+      'position' => 'ASC',
+      'publishedAt' => 'ASC'
+    ));
 
     return $this->render('admin/portfolio/index.html.twig', array(
           'portfolios' => $portfolios,
@@ -146,15 +150,15 @@ class AdminPortfolioController extends Controller
 
     $editForm = $this->createForm('AppBundle\Form\PortfolioType', $portfolio);
 
-    $editForm->get('tags')->setData(implode(',',$tagsResponse));
-    
+    $editForm->get('tags')->setData(implode(',', $tagsResponse));
+
     $editForm->handleRequest($request);
 
     if ($editForm->isSubmitted() && $editForm->isValid()) {
-      
+
       $tagData = $editForm->get('tags')->getData();
       $tagNames = $tagManager->splitTagNames($tagData);
-      
+
       $tags = $tagManager->loadOrCreateTags($tagNames);
 
       $tagManager->replaceTags($tags, $portfolio);

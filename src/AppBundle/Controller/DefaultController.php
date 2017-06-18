@@ -33,7 +33,10 @@ class DefaultController extends Controller
     $em = $this->getDoctrine()->getManager();
 
     $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
-        array(), array('position' => 'ASC'));
+        array(), array(
+      'position' => 'ASC',
+      'publishedAt' => 'ASC'
+    ));
     return $this->render('default/minimalist.html.twig', array('portfolios' => $portfolios));
   }
 
