@@ -11,6 +11,16 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
       <link rel="stylesheet" href="/css/common.css" />
     {% endblock %}
+    {% if ("prod" == app.environment) %}
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8657000585167176",
+          enable_page_level_ads: true
+        });
+      </script>
+    {% endif %}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
   </head>
