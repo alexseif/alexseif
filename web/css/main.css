@@ -85,7 +85,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 article,
@@ -99,79 +99,79 @@ hgroup,
 menu,
 nav,
 section {
-  display: block
+  display: block;
 }
 
 body {
-  line-height: 1
+  line-height: 1;
 }
 
 ol,
 ul {
   list-style: none;
   padding: 0;
-  margin: 0
+  margin: 0;
 }
 
 blockquote,
 q {
-  quotes: none
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after {
   content: '';
-  content: none
+  content: none;
 }
 
 q:before,
 q:after {
   content: '';
-  content: none
+  content: none;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0
+  border-spacing: 0;
 }
 
 @-webkit-keyframes twirlbaby {
   from {
     -webkit-transform: rotate(-20deg);
-    transform: rotate(-20deg)
+    transform: rotate(-20deg);
   }
   to {
     -webkit-transform: rotate(20deg);
-    transform: rotate(20deg)
+    transform: rotate(20deg);
   }
 }
 
 @keyframes twirlbaby {
   from {
     -webkit-transform: rotate(-20deg);
-    transform: rotate(-20deg)
+    transform: rotate(-20deg);
   }
   to {
     -webkit-transform: rotate(20deg);
-    transform: rotate(20deg)
+    transform: rotate(20deg);
   }
 }
 
 @-webkit-keyframes background-in {
   0% {
-    opacity: 0
+    opacity: 0;
   }
   100% {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @keyframes background-in {
   0% {
-    opacity: 0
+    opacity: 0;
   }
   100% {
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -180,13 +180,13 @@ h1 {
   font-family: Roboto, Arial Narrow, _sans;
   font-size: 58px;
   line-height: 40px;
-  padding-top: 0
+  padding-top: 0;
 }
 
 @media only screen and (min-width:768px) {
   h1 {
     font-size: 94px;
-    line-height: 80px
+    line-height: 80px;
   }
 }
 
@@ -195,14 +195,14 @@ h2 {
   font-size: 30px;
   line-height: 40px;
   padding: 0;
-  padding-top: 0
+  padding-top: 0;
 }
 
 @media only screen and (min-width:1400px) {
   h2 {
     font-size: 36px;
     line-height: 50px;
-    padding-top: 16px
+    padding-top: 16px;
   }
 }
 
@@ -212,7 +212,7 @@ h3 {
   font-size: 26px;
   line-height: 32px;
   padding-top: 4px;
-  padding-bottom: 4px
+  padding-bottom: 4px;
 }
 
 p {
@@ -220,13 +220,13 @@ p {
   font-size: 16px;
   line-height: 25px;
   padding-top: 4px;
-  opacity: .95
+  opacity: .95;
 }
 
 @media only screen and (min-width:1400px) {
   p {
     font-size: 20px;
-    line-height: 30px
+    line-height: 30px;
   }
 }
 
@@ -235,7 +235,7 @@ a {
   text-decoration: none;
   position: relative;
   display: inline;
-  transition: color 0.2s ease-in-out
+  transition: color 0.2s ease-in-out;
 }
 
 a:after {
@@ -246,20 +246,20 @@ a:after {
   left: 0;
   width: 100%;
   height: 1px;
-  background: white
+  background: white;
 }
 
 a:hover {
-  color: #00BFD0
+  color: #00BFD0;
 }
 
 a:hover:after {
-  background-color: #00BFD0
+  background-color: #00BFD0;
 }
 
 html {
   font-size: 62.5%;
-  height: 100%
+  height: 100%;
 }
 
 body {
@@ -269,28 +269,11 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 1.6rem;
   min-height: 100%;
-  position: relative
+  position: relative;
 }
 
 body:hover {
-  cursor: default
-}
-
-#awwwards {
-  display: none;
-  position: fixed;
-  top: auto;
-  bottom: 20px
-}
-
-@media only screen and (min-width:768px) {
-  #awwwards {
-    display: block
-  }
-}
-
-#awwwards a:after {
-  display: none!important
+  cursor: default;
 }
 
 .background {
@@ -302,102 +285,102 @@ body:hover {
   left: 0;
   -webkit-animation: background-in 2s 1;
   animation: background-in 2s 1;
-  background-image: linear-gradient(to top, #3E4252 10%, #1D1F29 90%)
+  background-image: linear-gradient(to top, #3E4252 10%, #1D1F29 90%);
 }
 
 section {
   position: relative;
   z-index: 2;
   display: block;
-  width: 100%
+  width: 100%;
 }
 
 section .wrapper {
-  width: inherit
+  width: inherit;
 }
 
 @media only screen and (min-width:1400px) {
   section .wrapper {
     margin: 0 auto;
-    max-width: 85%
+    max-width: 85%;
   }
 }
 
 .hello {
   transition: padding 0.2s ease-in-out;
-  padding: 40px
+  padding: 40px;
 }
 
 @media only screen and (min-width:768px) {
   .hello {
-    padding: 40px
+    padding: 40px;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .hello {
-    padding: 80px
+    padding: 80px;
   }
 }
 
-.hello h3 {
+.hello h1 {
   margin-bottom: 20px;
   font-size: 40px;
 }
 
 .hello .bottom-section {
   transition: all 0.2s ease-in-out;
-  margin-top: 240px
+  margin-top: 240px;
 }
 
 @media only screen and (min-width:768px) {
   .hello .bottom-section {
-    margin-top: 480px
+    margin-top: 480px;
   }
 }
 
 .hello .bottom-section h2 {
   line-height: 40px;
-  display: inline-block
+  display: inline-block;
 }
 
 .hello .bottom-section h2 span {
-  display: inline-block
+  display: inline-block;
 }
 
 .hello .bottom-section h2 span span {
   -webkit-filter: grayscale(100%) brightness(1.2);
-  filter: grayscale(100%) brightness(1.2)
+  filter: grayscale(100%) brightness(1.2);
 }
 
 .projects {
   background-color: #1D1F29;
   width: 100%;
   transition: padding 0.2s ease-in-out;
-  padding: 40px
+  padding: 40px;
 }
 
 @media only screen and (min-width:1024px) {
   .projects {
-    padding: 80px
+    padding: 80px;
   }
 }
 
 .projects .title {
   margin-top: 20px;
-  margin-bottom: 40px
+  margin-bottom: 40px;
 }
 
 @media only screen and (min-width:768px) {
   .projects .title {
     margin-top: 40px;
-    margin-bottom: 80px
+    margin-bottom: 80px;
   }
 }
 
 @media only screen and (min-width:1400px) {
   .projects .title {
-    margin-top: 0
+    margin-top: 0;
   }
 }
 
@@ -414,27 +397,27 @@ section .wrapper {
     -ms-flex-align: start;
     align-items: flex-start;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
 }
 
 .projects ul li {
-  min-height: 200px
+  min-height: 200px;
 }
 
 .projects ul li:hover span {
   transition: opacity 0.2s ease-in-out;
-  opacity: .5
+  opacity: .5;
 }
 
 .projects ul li span {
   color: white;
   transition: opacity 0.2s ease-in-out;
-  opacity: 0
+  opacity: 0;
 }
 
 .projects ul li p {
-  padding-top: 20px
+  padding-top: 20px;
 }
 
 @media only screen and (min-width:768px) {
@@ -442,14 +425,14 @@ section .wrapper {
     margin-bottom: 0;
     min-height: 240px;
     -ms-flex-preferred-size: 33.33%;
-    flex-basis: 33.33%
+    flex-basis: 33.33%;
   }
   .projects ul li h3,
   .projects ul li p {
-    padding-right: 40px
+    padding-right: 40px;
   }
   .projects ul li p {
-    padding-top: 20px
+    padding-top: 20px;
   }
 }
 
@@ -457,17 +440,17 @@ section .wrapper {
   .projects ul li {
     min-height: 320px;
     -ms-flex-preferred-size: 25%;
-    flex-basis: 25%
+    flex-basis: 25%;
   }
   .projects ul li h3,
   .projects ul li p {
-    padding-right: 60px
+    padding-right: 60px;
   }
   .projects ul li:nth-child(1),
   .projects ul li:nth-child(10),
   .projects ul li:nth-child(11) {
     -ms-flex-preferred-size: 50%;
-    flex-basis: 50%
+    flex-basis: 50%;
   }
   .projects ul li:nth-child(1) p,
   .projects ul li:nth-child(10) p,
@@ -478,7 +461,7 @@ section .wrapper {
     padding: 0;
     padding-top: 0;
     padding-top: 20px;
-    padding-right: 80px
+    padding-right: 80px;
   }
 }
 
@@ -488,7 +471,7 @@ section .wrapper {
   .projects ul li:nth-child(11) p {
     font-size: 36px;
     line-height: 50px;
-    padding-top: 16px
+    padding-top: 16px;
   }
 }
 
@@ -499,61 +482,61 @@ section .wrapper {
   .projects ul li:nth-child(11),
   .projects ul li:nth-child(12),
   .projects ul li:nth-child(13) {
-    min-height: 240px
+    min-height: 240px;
   }
 }
 
 @media only screen and (min-width:1400px) {
   .projects ul li {
-    min-height: 350px
+    min-height: 350px;
   }
 }
 
 .also {
   transition: padding 0.2s ease-in-out;
-  padding: 40px
+  padding: 40px;
 }
 
 @media only screen and (min-width:768px) {
   .also {
-    padding: 40px
+    padding: 40px;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .also {
-    padding: 80px
+    padding: 80px;
   }
 }
 
 .also h3 {
-  margin-bottom: 80px
+  margin-bottom: 80px;
 }
 
 .also ul li {
   clear: left;
   display: block;
-  margin-bottom: 80px
+  margin-bottom: 80px;
 }
 
 .also ul li:last-child {
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width:768px) {
   .also ul li {
-    min-height: 160px
+    min-height: 160px;
   }
   .also ul li:last-child {
     margin-bottom: 40px;
-    min-height: 120px
+    min-height: 120px;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .also ul li:last-child {
     margin-bottom: 40px;
-    min-height: 0
+    min-height: 0;
   }
 }
 
@@ -563,13 +546,13 @@ section .wrapper {
   font-size: 58px;
   line-height: 40px;
   padding-top: 0;
-  padding-bottom: 20px
+  padding-bottom: 20px;
 }
 
 @media only screen and (min-width:768px) {
   .also ul li h1 {
     font-size: 94px;
-    line-height: 80px
+    line-height: 80px;
   }
 }
 
@@ -577,19 +560,19 @@ section .wrapper {
   .also ul li h1 {
     width: 50%;
     float: left;
-    padding-right: 40px
+    padding-right: 40px;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .also ul li h1 {
-    width: 37.5%
+    width: 37.5%;
   }
 }
 
 @media only screen and (min-width:1400px) {
   .also ul li h1 {
-    padding-top: 20px
+    padding-top: 20px;
   }
 }
 
@@ -598,77 +581,77 @@ section .wrapper {
   font-size: 30px;
   line-height: 40px;
   padding: 0;
-  padding-top: 0
+  padding-top: 0;
 }
 
 @media only screen and (min-width:1400px) {
   .also ul li p {
     font-size: 36px;
     line-height: 50px;
-    padding-top: 16px
+    padding-top: 16px;
   }
 }
 
 @media only screen and (min-width:768px) {
   .also ul li p {
     width: 50%;
-    display: inline-block
+    display: inline-block;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .also ul li p {
-    width: 62.5%
+    width: 62.5%;
   }
 }
 
 .end {
   background-color: #1D1F29;
   transition: padding 0.2s ease-in-out;
-  padding: 40px
+  padding: 40px;
 }
 
 @media only screen and (min-width:768px) {
   .end {
-    padding: 40px
+    padding: 40px;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .end {
-    padding: 80px
+    padding: 80px;
   }
 }
 
 .end .notes {
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width:768px) {
   .end .notes {
     width: 50%;
     float: left;
-    padding-right: 40px
+    padding-right: 40px;
   }
 }
 
 @media only screen and (min-width:1024px) {
   .end .notes {
-    width: 37.5%
+    width: 37.5%;
   }
 }
 
 .end .notes h2 {
   padding-top: 0;
-  margin-bottom: 40px
+  margin-bottom: 40px;
 }
 
 .end .notes p {
-  position: relative
+  position: relative;
 }
 
 .end .notes p:last-child {
-  padding-top: 8px
+  padding-top: 8px;
 }
 
 .end .notes p span {
@@ -680,12 +663,12 @@ section .wrapper {
   -webkit-animation: twirlbaby .3s linear infinite;
   animation: twirlbaby .3s linear infinite;
   -webkit-animation-direction: alternate;
-  animation-direction: alternate
+  animation-direction: alternate;
 }
 
 .end .links {
   margin-top: 20px;
-  min-height: 320px
+  min-height: 320px;
 }
 
 .end .links a {
@@ -694,21 +677,21 @@ section .wrapper {
   line-height: 40px;
   padding: 0;
   padding-top: 0;
-  margin-right: 10px
+  margin-right: 10px;
 }
 
 @media only screen and (min-width:1400px) {
   .end .links a {
     font-size: 36px;
     line-height: 50px;
-    padding-top: 16px
+    padding-top: 16px;
   }
 }
 
 @media only screen and (min-width:768px) {
   .end .links a {
     margin-right: 0;
-    margin-left: 20px
+    margin-left: 20px;
   }
 }
 
@@ -717,13 +700,29 @@ section .wrapper {
     margin-top: 0;
     width: 50%;
     display: inline-block;
-    text-align: right
+    text-align: right;
   }
 }
 
+@media only screen and (max-width:600px) {
+  .hello h1 {
+    font-size: 30px;
+  }
+  .also ul li h1, h1 {
+    font-size: 48px;
+    line-height: 30px;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+}
 @media only screen and (min-width:1024px) {
   .end .links {
-    width: 62.5%
+    width: 62.5%;
   }
 }
 
@@ -731,11 +730,11 @@ section .wrapper {
   color: #656581;
   clear: left;
   font-size: 12px;
-  line-height: 40px
+  line-height: 40px;
 }
 
 .end .footnote a {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .baseline {
@@ -750,5 +749,5 @@ section .wrapper {
   position: absolute;
   z-index: 5;
   top: 0;
-  left: 0
+  left: 0;
 }
