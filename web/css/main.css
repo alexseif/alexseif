@@ -330,12 +330,18 @@ section .wrapper {
 
 .hello .bottom-section {
   transition: all 0.2s ease-in-out;
-  margin-top: 240px;
+  /*margin-top: 240px;*/
+  /*
+  TODO: better calc to margin across diferrent devices 
+  Note small devices in landscape fuck it up
+  And large HD screens 
+  ALSO maybe change font sizes to em */
+  margin-top: calc(100vh - 30em);
 }
 
 @media only screen and (min-width:768px) {
   .hello .bottom-section {
-    margin-top: 480px;
+    /*margin-top: 480px;*/
   }
 }
 
