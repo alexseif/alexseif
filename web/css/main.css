@@ -336,7 +336,7 @@ section .wrapper {
   Note small devices in landscape fuck it up
   And large HD screens 
   ALSO maybe change font sizes to em */
-  margin-top: calc(100vh - 30em);
+  margin-top: calc(60vh - 9.25em);
 }
 
 @media only screen and (min-width:768px) {
