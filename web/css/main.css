@@ -757,3 +757,23 @@ section .wrapper {
   top: 0;
   left: 0;
 }
+
+.flg-hldr{
+  position: relative;
+}
+.flg-hldr img{
+  -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(30%);
+  -webkit-transition: height 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: height 0.5s;
+  height: 0;
+  width: 1em;
+  position: absolute;
+  top: 1em;
+  left: 0.7em;
+}
+.flg-hldr:hover img{
+  -webkit-transition: height 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: height 0.5s;
+  height: 0.75em;
+}
