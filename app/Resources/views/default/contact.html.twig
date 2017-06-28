@@ -1,11 +1,13 @@
-{# based on http://dandalzotto.com and https://www.livingbreathing.com #}
-{# https://fonts.google.com/specimen/Roboto #}
 {% extends 'base.html.twig' %}
 {% block title %}Alex Seif - Software Engineer{% endblock %}
 {% block stylesheets %}
   {{ parent() }}
   <link href="/css/main.css" type="text/css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+  <style type="text/css">
+  	a.location{font-size: 85% !important;}
+  	a.location:after{background:none;}
+  </style>
 {% endblock %}
 {% block body %}
   <div class="background"></div>
@@ -20,7 +22,7 @@
           <span class="flg-hldr">Al<img src="/images/218px-Flag_of_Alexandria.svg.png"/>exandria</span>, 
           <span class="flg-hldr"><img src="/images/218px-Flag_of_Egypt.svg.png"/>Egypt</span></span>
       </h2>
-      <div class="bottom-section">
+      <div class="">
         <h2>Email
           <span id="cycling-1">
             <a href="mailto:contact@alexseif.com">for a project</a>
@@ -41,40 +43,6 @@
       </div>
     </div>
   </section>
-  <section class="projects">
-    <div class="wrapper">
-      <h1 class="title">Work</h1>
-      <ul>
-        {% for portfolio in portfolios %}
-          <li class="sr">
-            <h3>
-              {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
-            </h3>
-            <p>{{ portfolio.subtitle }}</p>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-  <section class="also">
-    <div class="wrapper">
-      <ul>
-        <li class="sr">
-          <h1>Make it</h1>
-          <p>Reflect your establishement online and claim your digital space. I&rsquo;d love to <a href="mailto:contact@alexseif.com">build it for you.</a></p>
-        </li>
-        <li class="sr">
-          <h1>Deliver it</h1>
-          <p>Reach the people that matter to your business on your terms. Get <a href="mailto:contact@alexseif.com">professional support</a> promoting you.</p>
-        </li>
-        <li class="sr">
-          <h1>Run it</h1>
-          <p>Enrich your relation with your <span id=interactive-text>customers.</span><br/>
-            Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
-        </li>
-      </ul>
-    </div>
-  </section>
   <section class="end">
     <div class="wrapper">
       <div class="notes sr">
@@ -83,10 +51,12 @@
         <p><span>&#9757;</span>No recruitment agencies.</p>
       </div>
       <div class="links sr">
-        <a href="mailto:contact@alexseif.com">Email</a>
-        <a href="https://www.linkedin.com/in/alexseif/">LinkedIn</a>
-      </div>
-      <div class="footnote">
+        <a href="mailto:contact@alexseif.com" target="_blank">Email</a>
+        <a href="https://www.linkedin.com/in/alexseif/" target="_blank">LinkedIn</a><br/>
+		<a class="location" href="https://goo.gl/maps/w2DukenYUQk" target="_blank">159 Tiba st., Sporting, Alexandria Governorate, Egypt</a><br/>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.0749954702223!2d29.929544551271878!3d31.218651581379497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c48976d36689%3A0xfda641518bb08ad5!2s159+Tiba%2C+Al+Ibrahimeyah+Bahri+WA+Sidi+Gaber%2C+Qism+Sidi+Gabir%2C+Alexandria+Governorate%2C+Egypt!5e0!3m2!1sen!2s!4v1498658685555" width="250" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+	<div class="footnote">
         Built with care
       </div>
     </div>
