@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block title %}Alex Seif - Software Engineer{% endblock %}
+{% block body %}
+  <style type="text/css">
+    @font-face {
+      font-family: djbDigital;
+      src: url(/fonts/DJB_Get_Digital.ttf);
+    }
+    .background {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      -webkit-animation: background-in 2s 1;
+      animation: background-in 2s 1;
+      background-image: linear-gradient(to top, #323844 10%, #323844 90%);
+    }
+    body{
+      font-family: "djbDigital";
+      text-align: center;
+      color: #8FD24E;
+    }
+    section {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      transition: padding 0.2s ease-in-out;
+      padding: 40px;
+    }
+
+    section .wrapper {
+      width: inherit;
+    }
+
+    @media only screen and (min-width:1400px) {
+      section .wrapper {
+        margin: 0 auto;
+        max-width: 85%;
+      }
+    }
+    @media only screen and (min-width:768px) {
+      section {
+        padding: 40px;
+      }
+    }
+
+    @media only screen and (min-width:1024px) {
+      section {
+        padding: 80px;
+      }
+    }
+    #responsive_headline{
+      font-size: 10em;
+    }
+  </style>
+  <div class="background"></div>
+  <section>
+    <div class="wrapper">
+      <h1 id="responsive_headline">THE ELDERS OF THE INTERNET KNOW WHO I AM</h1>
+    </div>
+  </section>
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script src="/js/jquery.fittext.js"></script>
+  <script>
+    $("#responsive_headline").fitText();
+  </script>
+{% endblock %}
