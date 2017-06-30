@@ -85,6 +85,8 @@
       <div class="links sr">
         <a href="mailto:contact@alexseif.com">Email</a>
         <a href="https://www.linkedin.com/in/alexseif/">LinkedIn</a>
+        <a href="{{ path('about')}}">About</a>
+
       </div>
       <div class="footnote">
         Built with care
@@ -99,69 +101,69 @@
   <script type="text/javascript" src="/js/typed.min.js"></script>
   <script>
     //jquery
-      $(document).ready(function () {
-        //hide baseline
-        $(".baseline").hide();
+    $(document).ready(function () {
+      //hide baseline
+      $(".baseline").hide();
 
 
-        //cycle through emoji greetings
-        var divs = $('span[id^="cycling-"]').hide(),
-                i = 0;
-        (function cycle() {
-          divs.eq(i).fadeIn(200).delay(1000).fadeOut(200, cycle);
-          i = ++i % divs.length;
-        }
-        )();
+      //cycle through emoji greetings
+      var divs = $('span[id^="cycling-"]').hide(),
+              i = 0;
+      (function cycle() {
+        divs.eq(i).fadeIn(200).delay(1000).fadeOut(200, cycle);
+        i = ++i % divs.length;
+      }
+      )();
 
-        //cycle through people
-        $("#interactive-text").typed({
-          strings: [
-            "customers.",
-            "employees.",
-            "community.",
-            "patients.",
-            "clients."
-          ],
-          // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
-          stringsElement: null,
-          // typing speed
-          typeSpeed: 30,
-          // time before typing starts
-          startDelay: 0,
-          // backspacing speed
-          backSpeed: 0,
-          // time before backspacing
-          backDelay: 2000,
-          // loop
-          loop: true,
-          // false = infinite
-          loopCount: 2,
-          // show cursor
-          showCursor: true,
-          // character for cursor
-          cursorChar: "|",
-          // attribute to type (null == text)
-          attr: null,
-          // either html or text
-          contentType: 'text',
-          preStringTyped: function (count) {
-            switch (count) {
-              case 1:
-                $('#pre-intr-text').text("more");
-                break;
-              case 2:
-              case 3:
-                $('#pre-intr-text').text("");
-                break;
-              default:
-                $('#pre-intr-text').text("your");
-                break;
-            }
-          },
-        });
+      //cycle through people
+      $("#interactive-text").typed({
+        strings: [
+          "customers.",
+          "employees.",
+          "community.",
+          "patients.",
+          "clients."
+        ],
+        // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+        stringsElement: null,
+        // typing speed
+        typeSpeed: 30,
+        // time before typing starts
+        startDelay: 0,
+        // backspacing speed
+        backSpeed: 0,
+        // time before backspacing
+        backDelay: 2000,
+        // loop
+        loop: true,
+        // false = infinite
+        loopCount: 2,
+        // show cursor
+        showCursor: true,
+        // character for cursor
+        cursorChar: "|",
+        // attribute to type (null == text)
+        attr: null,
+        // either html or text
+        contentType: 'text',
+        preStringTyped: function (count) {
+          switch (count) {
+            case 1:
+              $('#pre-intr-text').text("more");
+              break;
+            case 2:
+            case 3:
+              $('#pre-intr-text').text("");
+              break;
+            default:
+              $('#pre-intr-text').text("your");
+              break;
+          }
+        },
       });
+    });
 
-      window.sr = ScrollReveal({reset: true});
+    window.sr = ScrollReveal({reset: true});
     {#    sr.reveal('.sr', {mobile: false, delay: 10, scale: .95});#}
       sr.reveal('.sr');
 

@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+
 //TODO: properly rename these functions
   /**
    * @Route("/", name="home")
@@ -22,6 +23,14 @@ class DefaultController extends Controller
       'publishedAt' => 'DESC'
     ));
     return $this->render('default/minimalist.html.twig', array('portfolios' => $portfolios));
+  }
+
+  /**
+   * @Route("/about", name="about")
+   */
+  public function aboutAction()
+  {
+    return $this->render('default/about.html.twig');
   }
 
   /**
