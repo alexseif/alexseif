@@ -1,0 +1,128 @@
+/*
+The following content was designed & implemented under AlexSeif.com
+*/
+/* 
+    Created on : Jul 4, 2017, 5:29:50 PM
+    Author     : Alex Seif <me@alexseif.com>
+*/
+@font-face {
+  font-family: djbDigital;
+  src: url(/fonts/DJB_Get_Digital.ttf);
+}
+body{
+  color: #0083CA;
+}
+.about-background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: #1A2029;
+}
+
+#responsive_headline{
+  font-family: "djbDigital";
+  text-align: center;
+}
+section {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  transition: padding 0.2s ease-in-out;
+  padding: 40px;
+}
+
+section .wrapper {
+  width: inherit;
+}
+
+@media only screen and (min-width:1400px) {
+  section .wrapper {
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+@media only screen and (min-width:768px) {
+  section {
+    padding: 40px;
+  }
+}
+
+@media only screen and (min-width:1024px) {
+  section {
+    padding: 80px;
+  }
+}
+.logo{
+  text-align: center;
+}    
+.logo a{
+  color: #0083CA;
+}
+.logo a:hover,
+.logo a:hover .hexagon{
+  text-decoration: none;
+  color: #0083CA;
+  box-shadow: 0px 0px 20px #0083CA;
+  text-shadow: 0px 0px 20px #0083CA;
+  transition: text-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+#responsive_headline{
+  font-size: 10em;
+  line-height: initial;
+}
+/*Thanx to http://csshexagon.com/ */
+.hexagon {
+  position: relative;
+  width: 50px; 
+  height: 28.87px;
+  background-color: #1a2029;
+  margin: 114.43px auto 14.43px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  border-left: solid 2px #0083ca;
+  border-right: solid 2px #0083ca;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 35.36px;
+  height: 35.36px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 5.3223px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.hexagon:before {
+  top: -17.6777px;
+  border-top: solid 2.8284px #0083ca;
+  border-right: solid 2.8284px #0083ca;
+}
+
+.hexagon:after {
+  bottom: -17.6777px;
+  border-bottom: solid 2.8284px #0083ca;
+  border-left: solid 2.8284px #0083ca;
+}
+
+/*cover up extra shadows*/
+.hexagon span {
+  display: block;
+  position: absolute;
+  top:1.1547005383792515px;
+  left: 0;
+  width:46px;
+  height:26.5581px;
+  z-index: 2;
+  background: inherit;
+}
