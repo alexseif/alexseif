@@ -24,12 +24,7 @@ class DefaultController extends Controller
     ));
     return $this->render('default/minimalist.html.twig', array('portfolios' => $portfolios));
   }
-/**
- * @Route("google3bf83989dd3d0ed7.html", name="google-test")
- */
-  public function googleAction(){
-    return $this->render('default/google3bf83989dd3d0ed7.html.twig');
-  }
+
   /**
    * @Route("/about", name="about")
    */
