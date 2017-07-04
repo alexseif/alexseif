@@ -9,14 +9,13 @@
 {% endblock %}
 {% block body %}
   <div class="background"></div>
-  <section class="hello">
+  <section class="hello" itemscope itemtype="http://data-vocabulary.org/Person">
     <div class="wrapper">
-      <h1>Alex Seif</h1>
+      <h1 itemprop="name">Alex Seif</h1>
       <h2 class="thingos">
-        <span class="sr">Software Engineer<br/></span>
-          {# <span class="sr">Available for freelance<br/></span> #}
-        <span class="sr">{{ ("now"|date("Y")) - 2004 }} yrs experience<br/></span>
-        <span class="sr">Based in 
+        <span class="sr" itemprop="title">Software Engineer<br/></span>
+        <span class="sr" itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience<br/></span>
+        <span class="sr" itemprop="workLocation">Based in 
           <span class="flg-hldr">Al<img src="/images/218px-Flag_of_Alexandria.svg.png"/>exandria</span>, 
           <span class="flg-hldr"><img src="/images/218px-Flag_of_Egypt.svg.png"/>Egypt</span></span>
       </h2>
