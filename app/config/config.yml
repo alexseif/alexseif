@@ -78,7 +78,9 @@ fos_user:
     db_driver: orm 
     firewall_name: main
     user_class: AppBundle\Entity\User
-    
+    from_email:
+       address: me@alexseif.com
+       sender_name: Alex Seif
 fpn_tag:
     model:
         tag_class:     AppBundle\Entity\Tag
