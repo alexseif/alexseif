@@ -3,75 +3,79 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
 
-//TODO: properly rename these functions
   /**
    * @Route("/", name="home")
+   * @Template("default/minimalist.html.twig")
    */
-  public function comingSoonAction(Request $request)
+  public function indexAction()
   {
-    $em = $this->getDoctrine()->getManager();
-
-    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
-        array(), array(
-      'position' => 'ASC',
-      'publishedAt' => 'DESC'
-    ));
-    return $this->render('default/minimalist.html.twig', array('portfolios' => $portfolios));
+    return array('portfolios' => $this->getPortfoliosForDisplay());
+  }
+  /**
+   * @Route("/house", name="house")
+   * @Template("default/house.html.twig")
+   */
+  public function houseAction()
+  {
+    return array();
   }
 
   /**
    * @Route("/about", name="about")
+   * @Template("default/about.html.twig")
    */
   public function aboutAction()
   {
-    return $this->render('default/about.html.twig');
+    return array();
   }
 
   /**
    * @Route("/contact", name="contact")
+   * @Template("default/contact.html.twig")
    */
-  public function contactAction(Request $request)
+  public function contactAction()
   {
-    return $this->render('default/contact.html.twig');
+    return array();
   }
 
   /**
    * @Route("/beta", name="homepage")
+   * @Template("default/beta.html.twig")
    */
-  public function indexAction(Request $request)
+  public function betaAction()
   {
-    return $this->render('default/beta.html.twig');
+    return array();
   }
 
   /**
    * @Route("/portfolio", name="portfolio")
+   * @Template("default/portfolio.html.twig")
    */
-  public function portfolioAction(Request $request)
+  public function portfolioAction()
   {
-    $em = $this->getDoctrine()->getManager();
 
-    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
-        array(), array('position' => 'ASC'));
-    return $this->render('default/portfolio.html.twig', array(
-          'portfolios' => $portfolios
-    ));
+    return array(
+      'portfolios' => $this->getPortfoliosForDisplay()
+    );
   }
 
   /**
    * @Route("/secret", name="secret")
+   * @Template("default/secret.html.twig")
    */
-  public function secretAction(Request $request)
+  public function secretAction()
   {
     $secret = $this->random_str(40);
-    return $this->render('default/secret.html.twig', array(
-          'secret' => $secret
-    ));
+    return array(
+      'secret' => $secret
+    );
   }
 
   /**
@@ -94,6 +98,17 @@ class DefaultController extends Controller
       $str .= $keyspace[random_int(0, $max)];
     }
     return $str;
+  }
+
+  public function getPortfoliosForDisplay()
+  {
+    $em = $this->getDoctrine()->getManager();
+
+    return $em->getRepository('AppBundle:Portfolio')->findBy(
+            array(), array(
+          'position' => 'ASC',
+          'publishedAt' => 'DESC'
+    ));
   }
 
 }
