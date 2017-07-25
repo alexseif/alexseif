@@ -10,14 +10,21 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
 
-//TODO: properly rename these functions
   /**
    * @Route("/", name="home")
    * @Template("default/minimalist.html.twig")
    */
-  public function indexAction(Request $request)
+  public function indexAction()
   {
     return array('portfolios' => $this->getPortfoliosForDisplay());
+  }
+  /**
+   * @Route("/house", name="house")
+   * @Template("default/house.html.twig")
+   */
+  public function houseAction()
+  {
+    return array();
   }
 
   /**
@@ -33,7 +40,7 @@ class DefaultController extends Controller
    * @Route("/contact", name="contact")
    * @Template("default/contact.html.twig")
    */
-  public function contactAction(Request $request)
+  public function contactAction()
   {
     return array();
   }
@@ -42,7 +49,7 @@ class DefaultController extends Controller
    * @Route("/beta", name="homepage")
    * @Template("default/beta.html.twig")
    */
-  public function betaAction(Request $request)
+  public function betaAction()
   {
     return array();
   }
@@ -51,7 +58,7 @@ class DefaultController extends Controller
    * @Route("/portfolio", name="portfolio")
    * @Template("default/portfolio.html.twig")
    */
-  public function portfolioAction(Request $request)
+  public function portfolioAction()
   {
 
     return array(
@@ -63,7 +70,7 @@ class DefaultController extends Controller
    * @Route("/secret", name="secret")
    * @Template("default/secret.html.twig")
    */
-  public function secretAction(Request $request)
+  public function secretAction()
   {
     $secret = $this->random_str(40);
     return array(
