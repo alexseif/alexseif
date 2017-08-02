@@ -20,6 +20,7 @@ class AppKernel extends Kernel
       new FOS\UserBundle\FOSUserBundle(),
       new FPN\TagBundle\FPNTagBundle(),
       new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+      new Symfony\Bundle\AsseticBundle\AsseticBundle(),
       new AppBundle\AppBundle(),
     );
 

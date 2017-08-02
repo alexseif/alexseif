@@ -78,7 +78,9 @@ fos_user:
     db_driver: orm 
     firewall_name: main
     user_class: AppBundle\Entity\User
-    
+    from_email:
+       address: "%mailer_user%"
+       sender_name: "%mailer_name%"
 fpn_tag:
     model:
         tag_class:     AppBundle\Entity\Tag
@@ -89,3 +91,11 @@ doctrine_migrations:
   namespace: Application\Migrations
   table_name: migration_versions
   name: Application Migrations
+  
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+        scssphp:
+            formatter: 'Leafo\ScssPhp\Formatter\Compressed'

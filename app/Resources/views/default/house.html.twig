@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+  {{ parent() }}
+  {% stylesheets filter="scssphp" output="css/app.css"
+            "css/house.scss"
+  %}
+  <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+{% endblock %}
+{% block body %}
+  <div class="house" id="house" data-rooms="6">
+    <div class="house-wings" data-flip-key="wings">
+      <div class="house-left-wing">
+        <div class="house-window"></div>
+        <div class="house-window"></div>
+        <div class="house-sparkle">
+          <div class="house-sparkle-dots"></div>
+        </div>
+      </div>
+      <div class="house-right-wing">      
+        <div class="house-window"></div>
+        <div class="house-window"></div>
+        <div class="house-sparkle">
+          <div class="house-sparkle-dots"></div>
+        </div>
+      </div>
+      <div class="house-roof">
+        <div class="house-ledge"></div>
+      </div>
+    </div>
+    <div class="house-front" data-flip-key="front">
+      <div class="house-chimney hide"></div>
+      <div class="house-facade"></div>
+      <div class="house-window">
+        <div class="house-sparkle">
+          <div class="house-sparkle-dots"></div>
+        </div>
+      </div>
+      <div class="house-doorway">
+        <div class="house-stairs"></div>
+        <div class="house-door"></div>
+      </div>
+      <div class="house-gable">      
+        <div class="house-roof">
+          <div class="house-ledge hide"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <label class="house-label" for="range" id="label">Grow your business</label>
+  <input type="range" min="3" max="6" step="1" value="6" id="range" class="hide"/>
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script src="/js/flipping.animationFrame.js"></script>
+  <script src="/js/house.js"></script>
+  <script>
+    var noRooms = 3;
+    setInterval(function () {
+      switch (noRooms) {
+        case 3:
+        case 4:
+        case 5:
+          ++noRooms;
+          break;
+        default:
+          noRooms = 3;
+          break;
+      }
+      update(noRooms);
+
+    }, 2000);
+
+  </script>
+{% endblock %}
