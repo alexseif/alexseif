@@ -1,8 +1,7 @@
-{% extends 'base.html.twig' %}
+{% extends 'default/base-minimalist.html.twig' %}
 {% block title %}About Alex Seif [Vanity page]{% endblock %}
 {% block stylesheets %}
   {{ parent() }}
-  <link href="/css/main.css" type="text/css" rel="stylesheet" />
   <link href="/css/about.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 {% block meta %}
@@ -12,7 +11,8 @@
   <meta property="og:description" content="THE ELDERS OF THE INTERNET KNOW WHO I AM"/>	
 {% endblock %}
 {% block body %}
-  <div class="about-background"></div>
+  {#  <div class="background"></div> #}
+  {#  <div class="about-background"></div> #}
   <section>
     <div class="wrapper">
       <h1 id="responsive_headline">THE ELDERS OF THE INTERNET KNOW WHO I AM</h1>

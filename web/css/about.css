@@ -25,6 +25,8 @@ body{
 #responsive_headline{
   font-family: "djbDigital";
   text-align: center;
+  font-size: 10em;
+  line-height: initial;
 }
 section {
   position: relative;
@@ -72,20 +74,16 @@ section .wrapper {
   transition: box-shadow 0.2s ease-in-out;
 }
 
-#responsive_headline{
-  font-size: 10em;
-  line-height: initial;
-}
 /*Thanx to http://csshexagon.com/ */
 .hexagon {
   position: relative;
   width: 50px; 
   height: 28.87px;
-  background-color: #1a2029;
+  background-color: #1D1F29;
   margin: 114.43px auto 14.43px;
   box-shadow: 0 0 20px rgba(0,0,0,0.6);
-  border-left: solid 2px #0083ca;
-  border-right: solid 2px #0083ca;
+  border-left: solid 2px #0083CA;
+  border-right: solid 2px #0083CA;
 }
 
 .hexagon:before,
@@ -105,14 +103,14 @@ section .wrapper {
 
 .hexagon:before {
   top: -17.6777px;
-  border-top: solid 2.8284px #0083ca;
-  border-right: solid 2.8284px #0083ca;
+  border-top: solid 2.8284px #0083CA;
+  border-right: solid 2.8284px #0083CA;
 }
 
 .hexagon:after {
   bottom: -17.6777px;
-  border-bottom: solid 2.8284px #0083ca;
-  border-left: solid 2.8284px #0083ca;
+  border-bottom: solid 2.8284px #0083CA;
+  border-left: solid 2.8284px #0083CA;
 }
 
 /*cover up extra shadows*/
