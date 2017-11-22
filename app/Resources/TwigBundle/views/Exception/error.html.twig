@@ -1,0 +1,18 @@
+{# app/Resources/TwigBundle/views/Exception/error.html.twig #}
+{% extends 'default/base-minimalist.html.twig' %}
+
+{% block body %}
+  <div class="background"></div>
+  <section class="hello">
+
+    <div class="wrapper">
+      <h1 class="title">Error</h1>
+
+      <p>
+        General error. Checkout for any URL
+        misspelling or <a href="{{ path('homepage') }}">return to the homepage</a>.
+      </p>      
+    </div>
+  </section>
+
+{% endblock %}
