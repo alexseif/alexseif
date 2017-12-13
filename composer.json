@@ -30,8 +30,7 @@
     "beberlei/DoctrineExtensions": "^1.0",
     "symfony/assetic-bundle": "^2.8",
     "leafo/scssphp": "^0.6.7",
-    "patchwork/jsqueeze": "^2.0",
-    "collizo4sky/omnipay-2checkout": "^1.6"
+    "patchwork/jsqueeze": "^2.0"
   },
   "require-dev": {
     "sensio/generator-bundle": "~3.0",
@@ -54,8 +53,7 @@
     ]
   },
   "config": {
-    "bin-dir": "bin",
-    "disable-tls":true
+    "bin-dir": "bin"
   },
   "extra": {
     "symfony-app-dir": "app",
