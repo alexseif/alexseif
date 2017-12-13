@@ -11,13 +11,14 @@ class DefaultController extends Controller
 {
 
   /**
-   * @Route("/", name="home")
+   * @Route("/", name="homepage")
    * @Template("default/minimalist.html.twig")
    */
   public function indexAction()
   {
     return array('portfolios' => $this->getPortfoliosForDisplay());
   }
+
   /**
    * @Route("/house", name="house")
    * @Template("default/house.html.twig")
@@ -46,7 +47,7 @@ class DefaultController extends Controller
   }
 
   /**
-   * @Route("/beta", name="homepage")
+   * @Route("/beta", name="beta")
    * @Template("default/beta.html.twig")
    */
   public function betaAction()

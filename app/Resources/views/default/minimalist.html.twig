@@ -1,12 +1,5 @@
-{# based on http://dandalzotto.com and https://www.livingbreathing.com #}
-{# https://fonts.google.com/specimen/Roboto #}
-{% extends 'base.html.twig' %}
+{% extends 'default/base-minimalist.html.twig' %}
 {% block title %}Alex Seif - Software Engineer{% endblock %}
-{% block stylesheets %}
-  {{ parent() }}
-  <link href="/css/main.css" type="text/css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-{% endblock %}
 {% block body %}
   <div class="background"></div>
   <section class="hello" itemscope itemtype="http://data-vocabulary.org/Person">
@@ -16,8 +9,9 @@
         <span class="sr" itemprop="title">Software Engineer<br/></span>
         <span class="sr" itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience<br/></span>
         <span class="sr" itemprop="workLocation">Based in 
-          <span class="flg-hldr">Al<img src="/images/218px-Flag_of_Alexandria.svg.png"/>exandria</span>, 
-          <span class="flg-hldr"><img src="/images/218px-Flag_of_Egypt.svg.png"/>Egypt</span></span>
+          <span class="flg-hldr">Alexandria<img src="/images/218px-Flag_of_Alexandria.svg.png"/></span>, 
+          <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png"/></span>
+        </span>
       </h2>
       <div class="bottom-section">
         <h2>Email
@@ -40,21 +34,6 @@
       </div>
     </div>
   </section>
-  <section class="projects">
-    <div class="wrapper">
-      <h1 class="title">Work</h1>
-      <ul>
-        {% for portfolio in portfolios %}
-          <li class="sr">
-            <h3>
-              {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
-            </h3>
-            <p>{{ portfolio.subtitle }}</p>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
   <section class="also">
     <div class="wrapper">
       <ul>
@@ -71,6 +50,21 @@
           <p>Enrich your relation with your <span id=interactive-text>customers.</span><br/>
             Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
         </li>
+      </ul>
+    </div>
+  </section>
+  <section class="projects">
+    <div class="wrapper">
+      <h1 class="title">Work</h1>
+      <ul>
+        {% for portfolio in portfolios %}
+          <li class="sr">
+            <h3>
+              {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
+            </h3>
+            <p>{{ portfolio.subtitle }}</p>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </section>

@@ -251,6 +251,7 @@ a:after {
 
 a:hover {
   color: #00BFD0;
+  cursor: url("/images/cursor.png") 25 25, auto;
 }
 
 a:hover:after {
@@ -293,6 +294,9 @@ section {
   z-index: 2;
   display: block;
   width: 100%;
+}
+section:nth-child(odd){
+  background-color: #1D1F29;
 }
 
 section .wrapper {
@@ -360,7 +364,6 @@ section .wrapper {
 }
 
 .projects {
-  background-color: #1D1F29;
   width: 100%;
   transition: padding 0.2s ease-in-out;
   padding: 40px;
@@ -766,14 +769,15 @@ section .wrapper {
   filter: grayscale(30%);
   -webkit-transition: height 0.5s; /* For Safari 3.1 to 6.0 */
   transition: height 0.5s;
-  height: 0;
-  width: 1em;
-  position: absolute;
-  top: 1em;
-  left: 0.7em;
+  height: 2em;
+  width: 0;
+  position: fixed;
+  top: 30%;
+  right: 5%;
+  filter: saturate(50%);
 }
 .flg-hldr:hover img{
-  -webkit-transition: height 0.5s; /* For Safari 3.1 to 6.0 */
-  transition: height 0.5s;
-  height: 0.75em;
+  -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: width 0.5s;
+  width: 3em;
 }
