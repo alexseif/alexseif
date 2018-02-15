@@ -16,7 +16,7 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 /**
  * Backups controller.
  *
- * @Route("/backups")
+ * @Route("admin/backups")
  */
 class BackupsController extends Controller
 {
@@ -35,7 +35,7 @@ class BackupsController extends Controller
       $finder = null;
     }
 
-    return $this->render('backups/index.html.twig', array(
+    return $this->render('admin/backups/index.html.twig', array(
           'finder' => $finder
     ));
   }

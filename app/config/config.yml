@@ -105,10 +105,10 @@ zenstruck_backup:
         daily:
             timestamp:
                 format: Ymd-His
-                prefix: myapp-
+                prefix: alexseif-
         snapshot:
             timestamp:
-                prefix: myapp-
+                prefix: alexseif-
     sources:
         database: 
             mysqldump: 
