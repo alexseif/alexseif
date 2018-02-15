@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Backups{% endblock %}
+{% block floatingActions %}{{ a.add('backups_generate') }}{% endblock %}
+{% block panelTitle %}Backups{% endblock %}
+{% block panelBody %}
+  <ul class="list-group">
+    {% if finder and finder|length > 0%}
+      {% for f in finder %}
+        <li class="list-group-item">
+          <a href="{{ path('backups_download', {'file':f.filename}) }}">{{ f.filename }}</a>
+        </li>
+      {% endfor %}
+    {% else %}
+      <li class="list-group-item list-group-item-warning">No Backups</li>
+
+    {% endif %}
+  </ul>
+{% endblock %}
