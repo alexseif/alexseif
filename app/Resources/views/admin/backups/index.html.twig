@@ -1,10 +1,18 @@
-{% extends "::base.html.twig" %}
+{% extends ':admin:base.html.twig' %}
 
 {% block title %}Backups{% endblock %}
-{% block floatingActions %}{{ a.add('backups_generate') }}{% endblock %}
-{% block panelTitle %}Backups{% endblock %}
-{% block panelBody %}
-  <ul class="list-group">
+
+ 
+
+
+
+{% block adminPageTitle %}Backups{% endblock %}
+{% block adminPageActions %}
+  <a href="{{ path('backups_generate') }}" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
+  {% endblock %}
+
+{% block adminPageContent %}
+   <ul class="list-group">
     {% if finder and finder|length > 0%}
       {% for f in finder %}
         <li class="list-group-item">
@@ -17,3 +25,4 @@
     {% endif %}
   </ul>
 {% endblock %}
+
