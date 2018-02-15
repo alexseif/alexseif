@@ -99,3 +99,33 @@ assetic:
         cssrewrite: ~
         scssphp:
             formatter: 'Leafo\ScssPhp\Formatter\Compressed'
+            
+zenstruck_backup:
+    namers:
+        daily:
+            timestamp:
+                format: Ymd-His
+                prefix: myapp-
+        snapshot:
+            timestamp:
+                prefix: myapp-
+    sources:
+        database: 
+            mysqldump: 
+                host:       "%database_host%"
+                database:   "%database_name%"
+                user:       "%database_user%"
+                password:   "%database_password%"
+    processors:
+        gzip: { gzip:~ }
+    destinations:
+        dir: 
+            stream: 
+                directory: "%kernel.root_dir%/../backups"
+    profiles:
+        daily:
+            scratch_dir: "%kernel.cache_dir%/backups"
+            sources: [database]
+            namer: daily
+            processor: gzip
+            destinations: [dir]
