@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Careers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Jobtype</th>
+                <th>Role</th>
+                <th>Experience</th>
+                <th>Location</th>
+                <th>Technology</th>
+                <th>Company</th>
+                <th>Responsbilities</th>
+                <th>Skills</th>
+                <th>Additional</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for career in careers %}
+            <tr>
+                <td><a href="{{ path('admin_career_show', { 'id': career.id }) }}">{{ career.id }}</a></td>
+                <td>{{ career.title }}</td>
+                <td>{{ career.jobType }}</td>
+                <td>{{ career.role }}</td>
+                <td>{{ career.experience }}</td>
+                <td>{{ career.location }}</td>
+                <td>{{ career.technology }}</td>
+                <td>{{ career.company }}</td>
+                <td>{{ career.responsbilities }}</td>
+                <td>{{ career.skills }}</td>
+                <td>{{ career.additional }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_career_show', { 'id': career.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_career_edit', { 'id': career.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_career_new') }}">Create a new career</a>
+        </li>
+    </ul>
+{% endblock %}
