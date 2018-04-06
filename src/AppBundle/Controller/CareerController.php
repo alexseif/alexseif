@@ -26,7 +26,7 @@ class CareerController extends Controller
 
         $careers = $em->getRepository('AppBundle:Career')->findAll();
 
-        return $this->render('career/index.html.twig', array(
+        return $this->render('admin/career/index.html.twig', array(
             'careers' => $careers,
         ));
     }
@@ -51,7 +51,7 @@ class CareerController extends Controller
             return $this->redirectToRoute('admin_career_show', array('id' => $career->getId()));
         }
 
-        return $this->render('career/new.html.twig', array(
+        return $this->render('admin/career/new.html.twig', array(
             'career' => $career,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class CareerController extends Controller
     {
         $deleteForm = $this->createDeleteForm($career);
 
-        return $this->render('career/show.html.twig', array(
+        return $this->render('admin/career/show.html.twig', array(
             'career' => $career,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class CareerController extends Controller
             return $this->redirectToRoute('admin_career_edit', array('id' => $career->getId()));
         }
 
-        return $this->render('career/edit.html.twig', array(
+        return $this->render('admin/career/edit.html.twig', array(
             'career' => $career,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

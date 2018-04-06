@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends ':admin:base.html.twig' %}
 
-{% block body %}
-    <h1>Careers list</h1>
+{% block adminPageTitle %}Careers{% endblock %}
+{% block adminPageActions %}
+  <a href="{{ path('admin_career_new') }}" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
+  {% endblock %}
 
-    <table>
+{% block adminPageContent %}
+  <table class="table table-bordered table-stripped">
         <thead>
             <tr>
                 <th>Id</th>

@@ -12,357 +12,456 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Career
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255)
-     */
-    private $title;
+  /**
+   * @var int
+   *
+   * @ORM\Column(name="id", type="integer")
+   * @ORM\Id
+   * @ORM\GeneratedValue(strategy="AUTO")
+   */
+  private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="job_type", type="string", length=255, nullable=true)
-     */
-    private $jobType;
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="title", type="string", length=255)
+   */
+  private $title;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="role", type="string", length=255, nullable=true)
-     */
-    private $role;
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="job_type", type="string", length=255, nullable=true)
+   */
+  private $jobType;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="experience", type="string", length=255, nullable=true)
-     */
-    private $experience;
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="role", type="string", length=255, nullable=true)
+   */
+  private $role;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="location", type="string", length=255, nullable=true)
-     */
-    private $location;
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="experience", type="string", length=255, nullable=true)
+   */
+  private $experience;
 
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="technology", type="json_array"), nullable=true)
-     */
-    private $technology;
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="location", type="string", length=255, nullable=true)
+   */
+  private $location;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="company", type="text", nullable=true)
-     */
-    private $company;
+  /**
+   * @var array
+   *
+   * @ORM\Column(name="technology", type="json_array"), nullable=true)
+   */
+  private $technology;
 
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="responsbilities", type="json_array", nullable=true)
-     */
-    private $responsbilities;
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="company", type="text", nullable=true)
+   */
+  private $company;
 
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="skills", type="json_array", nullable=true)
-     */
-    private $skills;
+  /**
+   * @var array
+   *
+   * @ORM\Column(name="responsbilities", type="json_array", nullable=true)
+   */
+  private $responsbilities;
 
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="additional", type="json_array", nullable=true)
-     */
-    private $additional;
+  /**
+   * @var array
+   *
+   * @ORM\Column(name="skills", type="json_array", nullable=true)
+   */
+  private $skills;
 
+  /**
+   * @var array
+   *
+   * @ORM\Column(name="additional", type="json_array", nullable=true)
+   */
+  private $additional;
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+  /**
+   * @var datetime
+   *
+   * @ORM\Column(name="published_at", type="datetime", nullable=true)
+   */
+  private $publishedAt;
 
-    /**
-     * Set title
-     *
-     * @param string $title
-     *
-     * @return Career
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
+  /**
+   * @var datetime
+   *
+   * @ORM\Column(name="created_at", type="datetime")
+   */
+  private $createdAt;
 
-        return $this;
-    }
+  /**
+   * @var boolean
+   *
+   * @ORM\Column(name="available", type="boolean")
+   */
+  private $available;
 
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
+  public function __construct()
+  {
+    $this->createdAt = new \DateTime();
+  }
 
-    /**
-     * Set jobType
-     *
-     * @param string $jobType
-     *
-     * @return Career
-     */
-    public function setJobType($jobType)
-    {
-        $this->jobType = $jobType;
+  /**
+   * Get id
+   *
+   * @return int
+   */
+  public function getId()
+  {
+    return $this->id;
+  }
 
-        return $this;
-    }
+  /**
+   * Set title
+   *
+   * @param string $title
+   *
+   * @return Career
+   */
+  public function setTitle($title)
+  {
+    $this->title = $title;
 
-    /**
-     * Get jobType
-     *
-     * @return string
-     */
-    public function getJobType()
-    {
-        return $this->jobType;
-    }
+    return $this;
+  }
 
-    /**
-     * Set role
-     *
-     * @param string $role
-     *
-     * @return Career
-     */
-    public function setRole($role)
-    {
-        $this->role = $role;
+  /**
+   * Get title
+   *
+   * @return string
+   */
+  public function getTitle()
+  {
+    return $this->title;
+  }
 
-        return $this;
-    }
+  /**
+   * Set jobType
+   *
+   * @param string $jobType
+   *
+   * @return Career
+   */
+  public function setJobType($jobType)
+  {
+    $this->jobType = $jobType;
 
-    /**
-     * Get role
-     *
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
+    return $this;
+  }
 
-    /**
-     * Set experienceLevel
-     *
-     * @param string $experienceLevel
-     *
-     * @return Career
-     */
-    public function setExperienceLevel($experienceLevel)
-    {
-        $this->experience = $experienceLevel;
+  /**
+   * Get jobType
+   *
+   * @return string
+   */
+  public function getJobType()
+  {
+    return $this->jobType;
+  }
 
-        return $this;
-    }
+  /**
+   * Set role
+   *
+   * @param string $role
+   *
+   * @return Career
+   */
+  public function setRole($role)
+  {
+    $this->role = $role;
 
-    /**
-     * Get experienceLevel
-     *
-     * @return string
-     */
-    public function getExperienceLevel()
-    {
-        return $this->experience;
-    }
+    return $this;
+  }
 
-    /**
-     * Set location
-     *
-     * @param string $location
-     *
-     * @return Career
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
+  /**
+   * Get role
+   *
+   * @return string
+   */
+  public function getRole()
+  {
+    return $this->role;
+  }
 
-        return $this;
-    }
+  /**
+   * Set experienceLevel
+   *
+   * @param string $experienceLevel
+   *
+   * @return Career
+   */
+  public function setExperienceLevel($experienceLevel)
+  {
+    $this->experience = $experienceLevel;
 
-    /**
-     * Get location
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
+    return $this;
+  }
 
-    /**
-     * Set technology
-     *
-     * @param array $technology
-     *
-     * @return Career
-     */
-    public function setTechnology($technology)
-    {
-        $this->technology = $technology;
+  /**
+   * Get experienceLevel
+   *
+   * @return string
+   */
+  public function getExperienceLevel()
+  {
+    return $this->experience;
+  }
 
-        return $this;
-    }
+  /**
+   * Set location
+   *
+   * @param string $location
+   *
+   * @return Career
+   */
+  public function setLocation($location)
+  {
+    $this->location = $location;
 
-    /**
-     * Get technology
-     *
-     * @return array
-     */
-    public function getTechnology()
-    {
-        return $this->technology;
-    }
+    return $this;
+  }
 
-    /**
-     * Set company
-     *
-     * @param string $company
-     *
-     * @return Career
-     */
-    public function setCompany($company)
-    {
-        $this->company = $company;
+  /**
+   * Get location
+   *
+   * @return string
+   */
+  public function getLocation()
+  {
+    return $this->location;
+  }
 
-        return $this;
-    }
+  /**
+   * Set technology
+   *
+   * @param array $technology
+   *
+   * @return Career
+   */
+  public function setTechnology($technology)
+  {
+    $this->technology = $technology;
 
-    /**
-     * Get company
-     *
-     * @return string
-     */
-    public function getCompany()
-    {
-        return $this->company;
-    }
+    return $this;
+  }
 
-    /**
-     * Set responsbilities
-     *
-     * @param array $responsbilities
-     *
-     * @return Career
-     */
-    public function setResponsbilities($responsbilities)
-    {
-        $this->responsbilities = $responsbilities;
+  /**
+   * Get technology
+   *
+   * @return array
+   */
+  public function getTechnology()
+  {
+    return $this->technology;
+  }
 
-        return $this;
-    }
+  /**
+   * Set company
+   *
+   * @param string $company
+   *
+   * @return Career
+   */
+  public function setCompany($company)
+  {
+    $this->company = $company;
 
-    /**
-     * Get responsbilities
-     *
-     * @return array
-     */
-    public function getResponsbilities()
-    {
-        return $this->responsbilities;
-    }
+    return $this;
+  }
 
-    /**
-     * Set skills
-     *
-     * @param array $skills
-     *
-     * @return Career
-     */
-    public function setSkills($skills)
-    {
-        $this->skills = $skills;
+  /**
+   * Get company
+   *
+   * @return string
+   */
+  public function getCompany()
+  {
+    return $this->company;
+  }
 
-        return $this;
-    }
+  /**
+   * Set responsbilities
+   *
+   * @param array $responsbilities
+   *
+   * @return Career
+   */
+  public function setResponsbilities($responsbilities)
+  {
+    $this->responsbilities = $responsbilities;
 
-    /**
-     * Get skills
-     *
-     * @return array
-     */
-    public function getSkills()
-    {
-        return $this->skills;
-    }
+    return $this;
+  }
 
-    /**
-     * Set additional
-     *
-     * @param array $additional
-     *
-     * @return Career
-     */
-    public function setAdditional($additional)
-    {
-        $this->additional = $additional;
+  /**
+   * Get responsbilities
+   *
+   * @return array
+   */
+  public function getResponsbilities()
+  {
+    return $this->responsbilities;
+  }
 
-        return $this;
-    }
+  /**
+   * Set skills
+   *
+   * @param array $skills
+   *
+   * @return Career
+   */
+  public function setSkills($skills)
+  {
+    $this->skills = $skills;
 
-    /**
-     * Get additional
-     *
-     * @return array
-     */
-    public function getAdditional()
-    {
-        return $this->additional;
-    }
+    return $this;
+  }
 
-    /**
-     * Set experience
-     *
-     * @param string $experience
-     *
-     * @return Career
-     */
-    public function setExperience($experience)
-    {
-        $this->experience = $experience;
+  /**
+   * Get skills
+   *
+   * @return array
+   */
+  public function getSkills()
+  {
+    return $this->skills;
+  }
 
-        return $this;
-    }
+  /**
+   * Set additional
+   *
+   * @param array $additional
+   *
+   * @return Career
+   */
+  public function setAdditional($additional)
+  {
+    $this->additional = $additional;
 
-    /**
-     * Get experience
-     *
-     * @return string
-     */
-    public function getExperience()
-    {
-        return $this->experience;
-    }
+    return $this;
+  }
+
+  /**
+   * Get additional
+   *
+   * @return array
+   */
+  public function getAdditional()
+  {
+    return $this->additional;
+  }
+
+  /**
+   * Set experience
+   *
+   * @param string $experience
+   *
+   * @return Career
+   */
+  public function setExperience($experience)
+  {
+    $this->experience = $experience;
+
+    return $this;
+  }
+
+  /**
+   * Get experience
+   *
+   * @return string
+   */
+  public function getExperience()
+  {
+    return $this->experience;
+  }
+
+  /**
+   * Set publishedAt
+   *
+   * @param \DateTime $publishedAt
+   *
+   * @return Career
+   */
+  public function setPublishedAt($publishedAt)
+  {
+    $this->publishedAt = $publishedAt;
+
+    return $this;
+  }
+
+  /**
+   * Get publishedAt
+   *
+   * @return \DateTime
+   */
+  public function getPublishedAt()
+  {
+    return $this->publishedAt;
+  }
+
+  /**
+   * Set createdAt
+   *
+   * @param \DateTime $createdAt
+   *
+   * @return Career
+   */
+  public function setCreatedAt($createdAt)
+  {
+    $this->createdAt = $createdAt;
+
+    return $this;
+  }
+
+  /**
+   * Get createdAt
+   *
+   * @return \DateTime
+   */
+  public function getCreatedAt()
+  {
+    return $this->createdAt;
+  }
+
+  /**
+   * Set available
+   *
+   * @param boolean $available
+   *
+   * @return Career
+   */
+  public function setAvailable($available)
+  {
+    $this->available = $available;
+
+    return $this;
+  }
+
+  /**
+   * Get available
+   *
+   * @return boolean
+   */
+  public function getAvailable()
+  {
+    return $this->available;
+  }
+
 }

@@ -1,0 +1,24 @@
+{% extends ':admin:base.html.twig' %}
+
+{% block adminPageTitle %}Career <small>{{career.title}}</small>{% endblock %}
+
+{% block adminPageActions %}
+  <a href="{{ path('admin_career_index') }}" class="btn btn-default">
+    <span class="glyphicon glyphicon-arrow-left"></span></a>
+  <button type="submit" value="Delete" class="btn btn-danger btn-sm delete-btn"
+          data-id="career_delete"><span 
+      class="glyphicon glyphicon-trash"></span></button>
+
+{% endblock %}
+
+{% block adminPageContent %}
+  {{ form_start(edit_form) }}
+  {{ form_widget(edit_form) }}
+  <button type="submit" value="Save" class="btn btn-primary btn-sm pull-right">
+    <span class="glyphicon glyphicon-floppy-disk"></span></button>
+    {{ form_end(edit_form) }}
+
+  {{ form_start(delete_form) }}
+  <input type="submit" value="Delete">
+  {{ form_end(delete_form) }}
+{% endblock %}
