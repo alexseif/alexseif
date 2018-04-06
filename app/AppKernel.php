@@ -23,6 +23,7 @@ class AppKernel extends Kernel
       new Symfony\Bundle\AsseticBundle\AsseticBundle(),
       new AppBundle\AppBundle(),
       new Zenstruck\BackupBundle\ZenstruckBackupBundle(),
+      new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
     );
 
     if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
