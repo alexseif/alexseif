@@ -57,7 +57,10 @@
   },
   "config": {
     "bin-dir": "bin",
-    "disable-tls": true
+    "disable-tls": true,
+    "platform": {
+      "php": "7.0.6"
+    }
   },
   "extra": {
     "symfony-app-dir": "app",
