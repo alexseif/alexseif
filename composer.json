@@ -24,15 +24,15 @@
     "twig/extensions": "^1.4",
     "stof/doctrine-extensions-bundle": "^1.2",
     "friendsofsymfony/user-bundle": "~2.0@dev",
+    "zenstruck/backup-bundle": "^1.2",
+    "paragonie/random_compat": "^2.0",
     "fpn/tag-bundle": "^0.9.0",
+    "doctrine/doctrine-migrations-bundle": "1.0",
     "gedmo/doctrine-extensions": "^2.4",
     "beberlei/DoctrineExtensions": "^1.0",
     "symfony/assetic-bundle": "^2.8",
     "leafo/scssphp": "^0.6.7",
-    "patchwork/jsqueeze": "^2.0",
-    "zenstruck/backup-bundle": "^1.2",
-    "paragonie/random_compat": "^2.0",
-    "doctrine/doctrine-migrations-bundle": "^1.3"
+    "patchwork/jsqueeze": "^2.0"
   },
   "require-dev": {
     "sensio/generator-bundle": "~3.0",
@@ -56,7 +56,7 @@
   },
   "config": {
     "bin-dir": "bin",
-    "disable-tls":true
+    "disable-tls": true
   },
   "extra": {
     "symfony-app-dir": "app",
