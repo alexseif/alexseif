@@ -22,7 +22,6 @@
   <section>
     <div class="wrapper">
       {% for career in careers %}
-        {{ dump(career) }}
         <a href="{{ career.link }}">{{ career.title }}</a>
       {% endfor %}
 
