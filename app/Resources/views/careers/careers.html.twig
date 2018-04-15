@@ -1,0 +1,31 @@
+{% extends 'default/base-minimalist.html.twig' %}
+{% block title %}PHP Web Developer | Alex Seif{% endblock %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link href="/css/careers.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+  <meta property="og:title" content="PHP Web Developer | Alex Seif"/>
+  <meta property="og:image" content="http://alexseif.com/images/alex-seif-business-card.png"/>
+  <meta property="og:site_name" content="Alex Seif"/>
+  <meta property="og:description" content="THE ELDERS OF THE INTERNET KNOW WHO I AM"/>	
+{% endblock %}
+{% block body %}
+  <header>
+    <div class="logo">
+      <a href="{{path('homepage')}}">
+        <div class="hexagon"><span></span></div>
+        <h2>ALEX SEIF</h2>
+      </a>
+    </div>
+  </header>
+  <section>
+    <div class="wrapper">
+      {% for career in careers %}
+        {{ dump(career) }}
+        <a href="{{ career.link }}">{{ career.title }}</a>
+      {% endfor %}
+
+    </div>
+  </section>
+{% endblock %}

@@ -16,7 +16,7 @@ framework:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
     form:            ~
-    csrf_protection: ~
+    csrf_protection: ~app/console doctrine:migrations:migrate --no-interaction
     validation:      { enable_annotations: true }
     #serializer:      { enable_annotations: true }
     templating:
