@@ -1,4 +1,4 @@
-{% extends 'default/base-minimalist.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block title %}PHP Web Developer | Alex Seif{% endblock %}
 {% block stylesheets %}
   {{ parent() }}
@@ -148,12 +148,14 @@
           </li>
         </ul>
         <hr/>
-        <a href="https://goo.gl/forms/pTj2ttuh6NAFdSgn1" target="_blank"
-           class="btn btn-default btn-lg">Apply</a>
-        <br class="clearfix"/>
-        <p>
-          If you have any existing open source software that you've developed (these could be your own software or patches to other packages), please share the URLs for the source. Links to your projects on GitHub.
+        <p class="text-center">
+          <a href="https://goo.gl/forms/pTj2ttuh6NAFdSgn1" target="_blank"
+             class="btn btn-primary btn-lg">Apply</a>
         </p>
+        
+        <blockquote>
+          If you have any existing open source software that you've developed (these could be your own software or patches to other packages), please share the URLs for the source. Links to your projects on GitHub.
+        </blockquote>
       </div>
     </div>
   </section>
