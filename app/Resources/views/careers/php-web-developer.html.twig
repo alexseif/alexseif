@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
-{% block title %}PHP Web Developer | Alex Seif{% endblock %}
+{% block title %}PHP Web Developer Wanted | Alex Seif{% endblock %}
 {% block stylesheets %}
   {{ parent() }}
+  <link href="/css/main.css" type="text/css" rel="stylesheet" />
   <link href="/css/careers.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 {% block meta %}
@@ -14,7 +15,6 @@
   <header>
     <div class="logo">
       <a href="{{path('homepage')}}">
-        <div class="hexagon"><span></span></div>
         <h2>ALEX SEIF</h2>
       </a>
     </div>
