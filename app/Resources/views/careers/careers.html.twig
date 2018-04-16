@@ -14,17 +14,20 @@
   <header>
     <div class="logo">
       <a href="{{path('homepage')}}">
-        <div class="hexagon"><span></span></div>
         <h2>ALEX SEIF</h2>
       </a>
     </div>
   </header>
   <section>
     <div class="wrapper">
+      <p>Available Jobs</p>
+      <ul class="list-group">
       {% for career in careers %}
+        <li class="list-group-item">
         <a href="{{ career.link }}">{{ career.title }}</a>
+        </li>
       {% endfor %}
-
+      </ul>
     </div>
   </section>
 {% endblock %}

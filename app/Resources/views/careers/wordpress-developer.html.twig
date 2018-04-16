@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+{% block title %}WordPress Developer Wanted | Alex Seif{% endblock %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link href="/css/main.css" type="text/css" rel="stylesheet" />
+  <link href="/css/careers.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+  <meta property="og:title" content="WordPress Developer Wanted | Alex Seif"/>
+  <meta property="og:image" content="http://alexseif.com/images/alex-seif-business-card.png"/>
+  <meta property="og:site_name" content="Alex Seif"/>
+  <meta property="og:description" conten="Multiple positions and opportunities are available for WordPress developers, who share our values and that are proficient at their relative level of experience."/>	
+{% endblock %}
+{% block body %}
+  <header>
+    <div class="logo">
+      <a href="{{path('homepage')}}">
+        <h2>ALEX SEIF</h2>
+      </a>
+    </div>
+  </header>
+  <section>
+    <div class="wrapper">
+      <h1>WordPress Developer Wanted</h1>
+      <div class="container">
+        <p>
+          Multiple positions and opportunities are available for WordPress developers, who share our values and that are proficient at their relative level of experience.
+        </p>
+        <table class="table">
+          <tr>
+            <td>
+              <strong>Job Type</strong>
+            </td>
+            <td>
+              <span class="label label-default">Full Time</span>
+              <span class="label label-default">Part Time</span>
+              <span class="label label-default">Contract</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Experience Level</strong> 
+            </td>
+            <td>
+              <span class="label label-default">Junior</span>
+              <span class="label label-default">Mid-level</span>
+              <span class="label label-default">Senior</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Role</strong> 
+            </td>
+            <td>
+              <span class="label label-default">Full Stack Developer</span>
+              <span class="label label-default">BackEnd Developer</span>
+              <span class="label label-default">Web Developer</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Location:</strong> 
+            </td>
+            <td>
+              <span class="label label-default">Cairo</span>
+              <span class="label label-default">Alexandria</span>
+              <span class="label label-default">Remote</span>
+            </td>
+          </tr>
+        </table>
+        <dl>
+          <dt><h3>WordPress</h3></dt>
+          <dd>
+            <p>
+              WordPress is one of the most powerful open source blogging and content management systems available online today. Clients love it because it’s easy to set up, there are a variety of plugins, and it has a user-friendly approach. Developers like it because it has understandable functionality, which means it’s easy enough to set up yet still gives decent quality. As a result, the number of sites using WordPress is growing, and it’s becoming more important than ever to be able to separate great WordPress developers from the rest of the pack.
+            </p>
+          </dd>
+        </dl>
+        <h2>Job Description</h2>
+        <p>
+          We are seeking a WordPress Developer responsible for both back-end and front-end development, including creating WordPress themes and plugins. This position requires a combination of programming skills (namely PHP, HTML5, CSS3, and JavaScript) and aesthetics (understanding element arrangements on the screen, the color and font choices, and so on). The candidate should have a strong understanding of industry trends and content management systems. Experience with the responsive and adaptive design is strongly preferred. Also, an understanding of the entire web development process, including design, development, and deployment is preferred.
+        </p>
+        <h2>
+          Responsibilities
+        </h2>
+        <ul>
+          <li>
+            Designing and implementing new features and functionality
+          </li>
+          <li>
+            Establishing and guiding the website’s architecture
+          </li>
+          <li>
+            Ensuring high-performance and availability, and managing all technical aspects of the CMS
+          </li>
+          <li>
+            Helping formulate an effective, responsive design and turning it into a working theme and plugin.
+          </li>
+        </ul>
+        <h2>
+          Skills And Qualifications
+        </h2>
+        <ul>
+          <li>
+            Good understanding of front-end technologies, including HTML5, CSS3, JavaScript, jQuery
+          </li>
+          <li>
+            Experience building user interfaces for websites and/or web applications
+          </li>
+          <li>
+            Experience designing and developing responsive design websites
+          </li>
+          <li>
+            Comfortable working with debugging tools like Firebug, Chrome inspector, etc.
+          </li>
+          <li>
+            Ability to understand CSS changes and their ramifications to ensure consistent style across platforms and browsers
+          </li>
+          <li>
+            Ability to convert comprehensive layout and wireframes into working HTML pages
+          </li>
+          <li>
+            Knowledge of how to interact with RESTful APIs and formats (JSON, XML)
+          </li>
+          <li>
+            Proficient understanding of code versioning tools (such as Git)
+          </li>
+          <li>
+            Strong understanding of PHP back-end development
+          </li>
+        </ul>
+        <hr/>
+        <p class="text-center">
+          <a href="https://goo.gl/forms/pTj2ttuh6NAFdSgn1" target="_blank"
+             class="btn btn-primary btn-lg">Apply</a>
+        </p>
+
+        <blockquote>
+          If you have any existing open source software that you've developed (these could be your own software or patches to other packages), please share the URLs for the source. Links to your projects on GitHub.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+{% endblock %}
