@@ -26,7 +26,15 @@ class CareersController extends Controller
       array(
         "title" => "PHP Web Developer",
         "link" => $this->generateUrl('php_developer')
-      )
+      ),
+      array(
+        "title" => "WordPress Developer",
+        "link" => $this->generateUrl('wordpress_developer')
+      ),
+      array(
+        "title" => "Drupal Developer",
+        "link" => $this->generateUrl('drupal_developer')
+      ),
     );
     return array(
       "careers" => $careers
@@ -35,9 +43,27 @@ class CareersController extends Controller
 
   /**
    * @Route("/php-web-developer", name="php_developer")
-   * @Template("careers/career.html.twig")
+   * @Template("careers/php-web-developer.html.twig")
    */
   public function phpDeveloperAction()
+  {
+    return array();
+  }
+
+  /**
+   * @Route("/wordpress-developer", name="wordpress_developer")
+   * @Template("careers/wordpress-developer.html.twig")
+   */
+  public function wordpressDeveloperAction()
+  {
+    return array();
+  }
+
+  /**
+   * @Route("/drupal-developer", name="drupal_developer")
+   * @Template("careers/drupal-developer.html.twig")
+   */
+  public function drupalDeveloperAction()
   {
     return array();
   }
