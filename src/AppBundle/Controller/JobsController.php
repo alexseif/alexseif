@@ -101,7 +101,7 @@ class JobsController extends Controller
 
   public function generateWordpress()
   {
-    $this->jobs['wordpress_developer']['title'] = "WordPress Web Developer Wanted";
+    $this->jobs['wordpress_developer']['title'] = "WordPress Developer Wanted";
     $this->jobs['wordpress_developer']['link'] = $this->generateUrl('wordpress_developer');
     $this->jobs['wordpress_developer']['definition']['title'] = "WordPress";
     $this->jobs['wordpress_developer']['definition']['text'] = "WordPress is one of the most powerful open source blogging and content management systems available online today. Clients love it because it’s easy to set up, there are a variety of plugins, and it has a user-friendly approach. Developers like it because it has understandable functionality, which means it’s easy enough to set up yet still gives decent quality. As a result, the number of sites using WordPress is growing, and it’s becoming more important than ever to be able to separate great WordPress developers from the rest of the pack.";
@@ -124,7 +124,7 @@ class JobsController extends Controller
 
   public function generateDrupal()
   {
-    $this->jobs['drupal_developer']['title'] = "Drupal Web Developer Wanted";
+    $this->jobs['drupal_developer']['title'] = "Drupal Developer Wanted";
     $this->jobs['drupal_developer']['link'] = $this->generateUrl('drupal_developer');
     $this->jobs['drupal_developer']['definition']['title'] = "Drupal";
     $this->jobs['drupal_developer']['definition']['text'] = "Drupal is internationally used by a vast and diverse community, building and creating a strong open source content management platform prompting millions of websites and applications worldwide.";
