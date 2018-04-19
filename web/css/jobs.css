@@ -48,4 +48,5 @@ strong{ font-weight: bold;}
 ul{ margin: 5px; list-style-type: circle;}
 li{ padding: 5px;}
 
-a{color: black;}
+a{color: #000;}
+a:hover{cursor: pointer;}
