@@ -75,6 +75,7 @@ class JobsController extends Controller
   {
     $this->jobs['php_developer']['title'] = "PHP Web Developer Wanted";
     $this->jobs['php_developer']['link'] = $this->generateUrl('php_developer');
+    $this->jobs['php_developer']['image'] = "php_developer.png";
     $this->jobs['php_developer']['definition']['title'] = "PHP Developer";
     $this->jobs['php_developer']['definition']['text'] = "As a  PHP developer your  responsibilities are writing server-side web applications logic, develop back-end components, connect the application with the other (often third-party) web services, and support the front-end developers by integrating their work with the application. Furthermore you often develop and integrate plugins for certain popular frameworks.";
     $this->jobs['php_developer']['description'] = "We are looking for a PHP Developer responsible for managing back-end services and the interchange of data between the server and the users. You will be developing all server-side logic, defining and maintaining the central database, and ensuring high performance and responsiveness to requests from the front-end, as well as  integrating the front-end elements. Therefore, a good knowledge of front-end technologies is a must.";
@@ -103,6 +104,7 @@ class JobsController extends Controller
   {
     $this->jobs['wordpress_developer']['title'] = "WordPress Developer Wanted";
     $this->jobs['wordpress_developer']['link'] = $this->generateUrl('wordpress_developer');
+    $this->jobs['php_developer']['image'] = "wordpress_developer.png";
     $this->jobs['wordpress_developer']['definition']['title'] = "WordPress";
     $this->jobs['wordpress_developer']['definition']['text'] = "WordPress is one of the most powerful open source blogging and content management systems available online today. Clients love it because it’s easy to set up, there are a variety of plugins, and it has a user-friendly approach. Developers like it because it has understandable functionality, which means it’s easy enough to set up yet still gives decent quality. As a result, the number of sites using WordPress is growing, and it’s becoming more important than ever to be able to separate great WordPress developers from the rest of the pack.";
     $this->jobs['wordpress_developer']['description'] = "We are seeking a WordPress Developer responsible for both back-end and front-end development, including creating WordPress themes and plugins, This position requires a combination of programming skills (such as PHP, HTML5, CSS3, JavaScript) and aesthetics (understanding element arrangements on the screen, the color and font choices, etc.). Having a profound knowledge of the industry trends and content management systems and good experience with the responsive and adaptive design, in addition to an understanding of the entire web development process, including design, development, and deployment is preferred.";
@@ -126,6 +128,7 @@ class JobsController extends Controller
   {
     $this->jobs['drupal_developer']['title'] = "Drupal Developer Wanted";
     $this->jobs['drupal_developer']['link'] = $this->generateUrl('drupal_developer');
+    $this->jobs['php_developer']['image'] = "drupal_developer.png";
     $this->jobs['drupal_developer']['definition']['title'] = "Drupal";
     $this->jobs['drupal_developer']['definition']['text'] = "Drupal is internationally used by a vast and diverse community, building and creating a strong open source content management platform prompting millions of websites and applications worldwide.";
     $this->jobs['drupal_developer']['description'] = "We are looking for a Drupal Developer responsible for front-end development, theming and back-end/module development, combining   programming skills (PHP, HTML, CSS, JS, TWIG etc.) and aesthetics (understanding element arrangements on the screen, the color and font choices, etc. ). Having a profound knowledge of the industry trends, content management systems and  experience with responsive and adaptive design, in addition to an understanding of the entire web development process, including design, development and deployment knowledge, is preferred.";
