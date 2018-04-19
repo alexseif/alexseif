@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ job.title }} | Alex Seif{% endblock %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link href="/css/main.css" type="text/css" rel="stylesheet" />
+  <link href="/css/jobs.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+  <meta property="og:title" content="{{ job.title }} | Alex Seif"/>
+  <meta property="og:image" content="http://alexseif.com/images/alex-seif-business-card.png"/>
+  <meta property="og:site_name" content="Alex Seif"/>
+  <meta property="og:description" conten="Multiple positions and opportunities are available for Web developers, who share our values and that are proficient at their relative level of experience."/>	
+{% endblock %}
+{% block body %}
+  {% include 'jobs/header.html.twig' %}
+  <section>
+    <div class="wrapper">
+      <h1>{{ job.title }}</h1>
+      <div class="container">
+        {% include 'jobs/common-head.html.twig' %}
+        <dl>
+          <dt><h3>{{ job.definition.title }}</h3></dt>
+          <dd><p>{{ job.definition.text }}</p></dd>
+        </dl>
+        <h2>Job Description</h2>
+        <p>{{ job.description }}</p>
+        <h2>
+          Responsibilities
+        </h2>
+        <ul>
+          {% for responsibility in job.responsibilities %}
+            <li>
+              {{ responsibility }}
+            </li>
+          {% endfor %}
+        </ul>
+        <h2>
+          Skills And Qualifications
+        </h2>
+        <ul>
+          {% for skill in job.skills %}
+            <li>
+              {{ skill }}
+            </li>
+          {% endfor %}
+        </ul>
+        <hr/>
+        <p class="text-center">
+          <a href="https://goo.gl/forms/pTj2ttuh6NAFdSgn1" target="_blank"
+             class="btn btn-primary btn-lg">Apply</a>
+        </p>
+        <blockquote>
+          If you have any existing open source software that you've developed (these could be your own software or patches to other packages), please share the URLs for the source. Links to your projects on GitHub.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+{% endblock %}
