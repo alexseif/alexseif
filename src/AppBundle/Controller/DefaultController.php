@@ -80,6 +80,16 @@ class DefaultController extends Controller
   }
 
   /**
+   * @Route("/honeycomb", name="honeycomb")
+   * @Template("default/honeycomb.html.twig")
+   */
+  public function honeycombAction()
+  {
+    return array(
+    );
+  }
+
+  /**
    * Generate a random string, using a cryptographically secure
    * pseudorandom number generator (random_int)
    *
