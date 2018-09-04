@@ -1,0 +1,93 @@
+<?php
+
+namespace AppBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
+/**
+ * FrontEnd management controller 
+ * 
+ * @Route("/frontend")
+ */
+class FrontEndController extends Controller
+{
+
+  /**
+   * @Route("/", name="frontend_index")
+   * @Template("frontend/index.html.twig")
+   */
+  public function indexAction()
+  {
+    return array(
+      'frontend' => array()
+    );
+  }
+
+  /**
+   * @Route("/beta", name="beta")
+   * @Template("frontend/beta.html.twig")
+   */
+  public function betaAction()
+  {
+    return array();
+  }
+
+  /**
+   * @Route("/house", name="house")
+   * @Template("frontend/house.html.twig")
+   */
+  public function houseAction()
+  {
+    return array();
+  }
+
+  /**
+   * @Route("/ok", name="ok")
+   * @Template("frontend/ok.html.twig")
+   */
+  public function okAction()
+  {
+    return array();
+  }
+
+  /**
+   * @Route("/hexagon_social", name="hexagon_social")
+   * @Template("frontend/hexagon_social.html.twig")
+   */
+  public function hexagon_socialAction()
+  {
+    return array();
+  }
+
+  /**
+   * @Route("/hexagon_grid", name="hexagon_grid")
+   * @Template("frontend/hexagon_grid.html.twig")
+   */
+  public function hexagon_gridAction()
+  {
+    return array('portfolios' => $this->getPortfoliosForDisplay());
+  }
+
+  /**
+   * @Route("/honeycomb", name="honeycomb")
+   * @Template("frontend/honeycomb.html.twig")
+   */
+  public function honeycombAction()
+  {
+    return array();
+  }
+
+  public function getPortfoliosForDisplay()
+  {
+    $em = $this->getDoctrine()->getManager();
+
+    return $em->getRepository('AppBundle:Portfolio')->findBy(
+            array(), array(
+          'position' => 'ASC',
+          'publishedAt' => 'DESC'
+    ));
+  }
+
+}

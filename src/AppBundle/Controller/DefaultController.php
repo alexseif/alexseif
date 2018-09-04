@@ -20,33 +20,6 @@ class DefaultController extends Controller
   }
 
   /**
-   * @Route("/house", name="house")
-   * @Template("default/house.html.twig")
-   */
-  public function houseAction()
-  {
-    return array();
-  }
-
-  /**
-   * @Route("/ok", name="ok")
-   * @Template("default/ok.html.twig")
-   */
-  public function okAction()
-  {
-    return array();
-  }
-
-  /**
-   * @Route("/hexagon_social", name="hexagon_social")
-   * @Template("default/hexagon_social.html.twig")
-   */
-  public function hexagon_socialAction()
-  {
-    return array();
-  }
-
-  /**
    * @Route("/about", name="about")
    * @Template("default/about.html.twig")
    */
@@ -60,15 +33,6 @@ class DefaultController extends Controller
    * @Template("default/contact.html.twig")
    */
   public function contactAction()
-  {
-    return array();
-  }
-
-  /**
-   * @Route("/beta", name="beta")
-   * @Template("default/beta.html.twig")
-   */
-  public function betaAction()
   {
     return array();
   }
@@ -94,16 +58,6 @@ class DefaultController extends Controller
     $secret = $this->random_str(40);
     return array(
       'secret' => $secret
-    );
-  }
-
-  /**
-   * @Route("/honeycomb", name="honeycomb")
-   * @Template("default/honeycomb.html.twig")
-   */
-  public function honeycombAction()
-  {
-    return array(
     );
   }
 
