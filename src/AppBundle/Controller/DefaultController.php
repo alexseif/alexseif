@@ -27,6 +27,14 @@ class DefaultController extends Controller
   {
     return array();
   }
+  /**
+   * @Route("/ok", name="ok")
+   * @Template("default/ok.html.twig")
+   */
+  public function okAction()
+  {
+    return array();
+  }
 
   /**
    * @Route("/about", name="about")

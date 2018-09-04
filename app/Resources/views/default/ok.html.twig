@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+  {{ parent() }}
+  {% stylesheets filter="scssphp" output="css/app.css"
+            "css/ok.scss"
+  %}
+  <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+{% endblock %}
+{% block body %}
+  <div class="base">
+    <h1 id="ok" onclick="okFunction()">Ok</h1>
+  </div>
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script>
+    function okFunction() {
+      var ok = document.getElementById("ok");
+      ok.classList.toggle("hover");
+    }
+  </script>
+{% endblock %}
