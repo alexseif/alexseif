@@ -27,11 +27,21 @@ class DefaultController extends Controller
   {
     return array();
   }
+
   /**
    * @Route("/ok", name="ok")
    * @Template("default/ok.html.twig")
    */
   public function okAction()
+  {
+    return array();
+  }
+
+  /**
+   * @Route("/hexagon_social", name="hexagon_social")
+   * @Template("default/hexagon_social.html.twig")
+   */
+  public function hexagon_socialAction()
   {
     return array();
   }

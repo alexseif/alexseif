@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    .reviews{
+      margin-top: 28px;
+    }
+    .reviews div{
+      display: inline-block;
+      positon: absolute;
+      left: 260px;
+      //left: 156px;
+    }
+    .socials div{
+      display: inline-block;
+    }
+    .fa.fa-facebook, .fa.fa-linkedin, .fa.fa-google-plus, .fa.fa-youtube, .fa.fa-twitter, .fa.fa-rss, .fa.fa-yelp,.fa.fa-github,.fa.fa-linux, .fa.fa-music{
+      color: white;
+      font-size: 50px;
+      line-height: 60px;
+      text-shadow: 2px 2px 10px black;
+    }
+
+    #itunes{
+      width: 49px;
+      height: 49px;
+      border: 3px solid white;
+      border-radius: 50%;
+      positon: absolute;
+    }
+
+    .fa.fa-music{
+      font-size: 32px;
+      position: relative;
+      bottom: 8px;
+      right: 1px;
+      padding: 3px;
+    }
+
+    #hexagon {
+      width: 100px;
+      height: 60px;
+      background: #5F6062;
+      position: relative;
+      top: 100px;
+      text-align: center;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    #hexagon:before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 25px solid #5F6062;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    #hexagon:after {
+      content: "";
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 25px solid #5F6062;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    #hexagon:hover{
+      background: #EC008C;
+    }
+
+    #hexagon:hover:after{
+      border-top: 25px solid #EC008C;
+    }
+    #hexagon:hover:before{
+      border-bottom: 25px solid #EC008C;
+    }
+  </style>
+{% endblock %}
+{% block body %}
+  <div class="socials">
+    <div id="hexagon"><i class="fa fa-facebook"></i></div>
+    <div id="hexagon"><i class="fa fa-linkedin"></i></div>
+    <div id="hexagon"><i class="fa fa-google-plus"></i></div>
+    <div id="hexagon"><i class="fa fa-youtube"></i></div>
+    <div id="hexagon"><i class="fa fa-twitter"></i></div>
+    <div id="hexagon"><i class="fa fa-rss"></i></div>
+  </div>
+  <div class="reviews">
+    <div id="hexagon"><i class="fa fa-yelp"></i></div>
+    <div id="hexagon"><i class="fa fa-github"></i></div>
+    <div id="hexagon"><i class="fa fa-linux"></i></div>
+    <div id="hexagon"><div id="itunes"><i class="fa fa-music"></i></div></div>
+  </div>
+{% endblock %}
