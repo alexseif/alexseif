@@ -2,10 +2,11 @@
 {% block stylesheets %}
   {{ parent() }}
   <style>
-    font-family: 'Oswald', sans-serif;
 
     html { 
-      font-size: 62.5%; } 
+      font-family: 'Oswald', sans-serif;
+      font-size: 62.5%; 
+    } 
     body {
       font-size: 1.5em;
       line-height: 1.6;
@@ -15,7 +16,6 @@
       background-color: #f6f6f6;
       overflow-y: scroll;
     }
-
 
     /* Typography
     –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -41,7 +41,8 @@
     }
 
     p {
-      margin-top: 0; }
+      margin-top: 0; 
+    }
 
     * {
       box-sizing: border-box;
@@ -65,27 +66,11 @@
       z-index: 1;
     }
 
-
-
-
-
-
-
-
-
-
-
     .welcome {
       font-size: 60px;
       text-align: center;
       color: #333;
     }
-
-
-
-
-
-
 
     /********************************************************************************************************************************
                                                 Hexagon Intro Blocks
@@ -248,21 +233,6 @@
       background-position: right center;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     .hex-master-wrap {
       position: relative;
       /* width: 50%; */
@@ -280,7 +250,7 @@
       left: 0;
       border-left: 3px solid;
       border-right: 3px solid;
-      border-radius: 8px;
+{#      border-radius: 8px;#}
       z-index: 2;
       border-color: #333;
       -webkit-backface-visibility: hidden;
@@ -312,11 +282,6 @@
       z-index: -1;
       /* transform: rotate(60deg); */
     }
-
-
-
-
-
 
     .intro-block .grid-1,
     .intro-block .grid-2,
@@ -420,12 +385,6 @@
       transform: rotate(-60deg);
       overflow: hidden;
     }
-
-
-
-
-
-
 
     .hex-inner-2::before, .hex-inner-2::after {
       position: absolute;
