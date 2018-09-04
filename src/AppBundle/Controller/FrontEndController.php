@@ -71,6 +71,15 @@ class FrontEndController extends Controller
   }
 
   /**
+   * @Route("/hexagon_skill", name="hexagon_skill")
+   * @Template("frontend/hexagon_skill.html.twig")
+   */
+  public function hexagon_skillAction()
+  {
+    return array();
+  }
+
+  /**
    * @Route("/honeycomb", name="honeycomb")
    * @Template("frontend/honeycomb.html.twig")
    */
