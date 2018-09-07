@@ -2,7 +2,7 @@
 {% block stylesheets %}
   {{ parent() }}
   {% stylesheets filter="scssphp" output="css/app.css"
-            "css/hexagon_grid.scss"
+            "css/sass/hexagon_grid.scss"
   %}
   <link rel="stylesheet" href="{{ asset_url }}" />
   {% endstylesheets %}

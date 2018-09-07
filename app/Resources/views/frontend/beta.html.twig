@@ -2,7 +2,22 @@
 {% block stylesheets %}
   {{ parent() }}
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/jquery.fullPage.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="/css/beta.css" />
+  <style>
+    canvas {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  {% stylesheets filter="scssphp" output="css/app.css"
+            "css/sass/hexagon_skill.scss"
+  %}
+  <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
 {% endblock %}
 {% block body %}
   <div id="loadingPage">
@@ -31,6 +46,7 @@
   </div>
   <ul id="myMenu" style="position: fixed;">
     <li data-menuanchor="Hello" class="active"><a href="#Hello">Hello</a></li>
+    <li data-menuanchor="Skills"><a href="#Skills">Skills section</a></li>
     <li data-menuanchor="Page2"><a href="#Page2">Second section</a></li>
     <li data-menuanchor="Page3"><a href="#Page3">Third section</a></li>
     <li data-menuanchor="Footer"><a href="#Footer">Fourth section</a></li>
@@ -41,40 +57,13 @@
   {# TODO: https://www.facebook.com/alex.seif/timeline/story?ut=32&wstart=-2051193600&wend=2147483647&hash=10157968362415012&pagefilter=3&ustart=1 #}
   <div id="fullpage">
     <div class="section" data-anchor="Hello">
-      <div class="contentArea" role="main">
-        <div class="post-wrapper hide">
-          <div class="post">
-            <div class="post-header clearfix">
-              <a href="" class="post-profile-img">
-                <img src='/images/alexseif.jpg' height='40px' width='40px'/>
-              </a>
-              <div class="clearfix" style='overflow: hidden;'>
-                <div>
-                  <div>
-                    <div>
-                      <h1 class="name"><a href="">Alex Seif</a></h1></a>
-                      <div class='subtitle'>
-                        Software Engineer 10 years 
-                        <span role="presentation" aria-hidden="true"> · </span>
-                        <span class='glyphicon glyphicon-globe' style='font-size: 12px;'></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>              
-              </div>
-            </div>
-            <div class='post-body'>
-              <div><p>Scroll down let's do some business</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% include 'frontend/beta/hello_post.html.twig' %}
+    </div>
+    <div class="section" data-anchor="Skills">
+      {% include 'frontend/beta/hexagon_skills.html.twig' %}
     </div>
     <div class="section" data-anchor="Page2">
-      <div class="slide" data-anchor="Slide1"> Slide 1 </div>
-      <div class="slide" data-anchor="Slide2"> Slide 2 </div>
-      <div class="slide" data-anchor="Slide3"> Slide 3 </div>
-      <div class="slide" data-anchor="Slide4"> Slide 4 </div>
+      {% include 'frontend/beta/honeycomb.html.twig' %}
     </div>
     <div class="section" data-anchor="Page3">
       <div class="container">
@@ -115,12 +104,19 @@
   {{ parent() }}
   {#  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/vendors/jquery.easings.min.js"></script>#}
   {#  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/vendors/scrolloverflow.min.js"></script>#}
+  <script type="text/javascript" src="/js/honeycomb.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/jquery.fullPage.min.js"></script>
   <script type="text/javascript" src="/js/typed.min.js"></script>
+  {# BOF Hexagon Skills Js #}
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.ui.js"></script>
+  <script type="text/javascript" src="/js/hexagon_skills.js"></script>
+  {# EOF Hexagon Skills js #}
   <script type="text/javascript">
     function initPage() {
       $('#fullpage').fullpage({
-        anchors: ['Hello', 'Page2', 'Page3', 'Footer', 'More'],
+        anchors: ['Hello', 'Skills', 'Page2', 'Page3', 'Footer', 'More'],
         menu: '#myMenu',
         sectionsColor: ['#e9ebee', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
         afterLoad: pageManagement

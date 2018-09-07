@@ -88,6 +88,18 @@ class FrontEndController extends Controller
     return array();
   }
 
+  /**
+   * @Route("/portfolio", name="portfolio")
+   * @Template("frontend/portfolio.html.twig")
+   */
+  public function portfolioAction()
+  {
+
+    return array(
+      'portfolios' => $this->getPortfoliosForDisplay()
+    );
+  }
+
   public function getPortfoliosForDisplay()
   {
     $em = $this->getDoctrine()->getManager();

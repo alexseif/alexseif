@@ -38,18 +38,6 @@ class DefaultController extends Controller
   }
 
   /**
-   * @Route("/portfolio", name="portfolio")
-   * @Template("default/portfolio.html.twig")
-   */
-  public function portfolioAction()
-  {
-
-    return array(
-      'portfolios' => $this->getPortfoliosForDisplay()
-    );
-  }
-
-  /**
    * @Route("/secret", name="secret")
    * @Template("default/secret.html.twig")
    */

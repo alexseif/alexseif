@@ -2,7 +2,7 @@
 {% block stylesheets %}
   {{ parent() }}
   {% stylesheets filter="scssphp" output="css/app.css"
-            "css/ok.scss"
+            "css/sass/ok.scss"
   %}
   <link rel="stylesheet" href="{{ asset_url }}" />
   {% endstylesheets %}
