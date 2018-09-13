@@ -6,16 +6,16 @@
 
   <link rel="stylesheet" href="/css/beta.css" />
   <style>
+    body{
+      {# font-family: 'Oswald';#}
+    }
     canvas {
-
-      position: absolute;
+      {#      position: absolute;#}
       top: 0;
       left: 0;
     }
   </style>
-  {% stylesheets filter="scssphp" output="css/app.css"
-            "css/sass/hexagon_skill.scss"
-  %}
+  {% stylesheets "css/sass/hexagon_skill.scss" "css/sass/hexagon_social.scss" "css/sass/hexagon_grid.scss" filter="scssphp" output="css/app.css" %}
   <link rel="stylesheet" href="{{ asset_url }}" />
   {% endstylesheets %}
 {% endblock %}
@@ -63,9 +63,14 @@
       {% include 'frontend/beta/hexagon_skills.html.twig' %}
     </div>
     <div class="section" data-anchor="Page2">
-      {% include 'frontend/beta/honeycomb.html.twig' %}
+      {% include 'frontend/beta/hexagon_portfolio.html.twig' %}
     </div>
     <div class="section" data-anchor="Page3">
+      {% include 'frontend/beta/hexagon_social.html.twig' %}
+
+      {#      {% include 'frontend/beta/honeycomb.html.twig' %}#}
+    </div>
+    <div class="section" data-anchor="Page4">
       <div class="container">
         <div class='text-center'>
           Hi I'm <h1>Alex Seif</h1>
@@ -89,7 +94,9 @@
         </div>
       </div>
     </div>
-    <div class="section fp-auto-height fp-auto-height-responsive" data-anchor="Footer">Footer</div>
+    <div class="section fp-auto-height fp-auto-height-responsive" data-anchor="Footer">
+      {% include 'frontend/beta/hexagon_social.html.twig' %}
+    </div>
     <div class="section fp-auto-height fp-auto-height-responsive" data-anchor="More">More</div>
   </div>
   {# Lazy Loading #}
@@ -104,7 +111,7 @@
   {{ parent() }}
   {#  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/vendors/jquery.easings.min.js"></script>#}
   {#  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/vendors/scrolloverflow.min.js"></script>#}
-  <script type="text/javascript" src="/js/honeycomb.js"></script>
+{#  <script type="text/javascript" src="/js/honeycomb.js"></script>#}
   <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.2/jquery.fullPage.min.js"></script>
   <script type="text/javascript" src="/js/typed.min.js"></script>
   {# BOF Hexagon Skills Js #}
@@ -116,7 +123,7 @@
   <script type="text/javascript">
     function initPage() {
       $('#fullpage').fullpage({
-        anchors: ['Hello', 'Skills', 'Page2', 'Page3', 'Footer', 'More'],
+        anchors: ['Hello', 'Skills', 'Page2', 'Page3', 'Page4', 'Footer', 'More'],
         menu: '#myMenu',
         sectionsColor: ['#e9ebee', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
         afterLoad: pageManagement
@@ -134,7 +141,7 @@
             }, 2000);
             break;
           case 'Page3':
-            typedManagement();
+    {#            typedManagement();#}
             break;
         }
       }

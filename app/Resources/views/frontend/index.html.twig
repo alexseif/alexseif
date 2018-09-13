@@ -3,9 +3,16 @@
   {{ parent() }}
 {% endblock %}
 {% block body %}
-  <div>
-    Design 1
-  </div>
+  {#      <ul class="list-group">#}
+  <ul class="nav nav-pills nav-justified">
+    {% for link in links %}
+      <li>
+        <a href="{{ path(link) }}">
+          {{ link }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 {% endblock %}
 {% block javascripts %}
   {{ parent() }}

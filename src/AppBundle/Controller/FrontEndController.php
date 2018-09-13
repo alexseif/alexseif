@@ -21,7 +21,16 @@ class FrontEndController extends Controller
   public function indexAction()
   {
     return array(
-      'frontend' => array()
+      'links' => array(
+        'beta',
+        'house',
+        'ok',
+        'hexagon_social',
+        'hexagon_grid',
+        'hexagon_skill',
+        'honeycomb',
+        'portfolio'
+      )
     );
   }
 
@@ -31,7 +40,9 @@ class FrontEndController extends Controller
    */
   public function betaAction()
   {
-    return array();
+    return array(
+      'portfolios' => $this->getPortfoliosForDisplay()
+    );
   }
 
   /**
