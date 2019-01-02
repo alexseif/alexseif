@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+  {{ parent() }}
+{% endblock %}
+{% block body %}
+  {#      <ul class="list-group">#}
+  <ul class="nav nav-pills nav-justified">
+    {% for link in links %}
+      <li>
+        <a href="{{ path(link) }}">
+          {{ link }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+{% endblock %}

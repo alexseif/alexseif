@@ -296,7 +296,7 @@ section {
   width: 100%;
 }
 section:nth-child(odd){
-  background-color: #1D1F29;
+  background-color: rgb(29,31,41);
 }
 
 section .wrapper {

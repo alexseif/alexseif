@@ -20,15 +20,6 @@ class DefaultController extends Controller
   }
 
   /**
-   * @Route("/house", name="house")
-   * @Template("default/house.html.twig")
-   */
-  public function houseAction()
-  {
-    return array();
-  }
-
-  /**
    * @Route("/about", name="about")
    * @Template("default/about.html.twig")
    */
@@ -44,27 +35,6 @@ class DefaultController extends Controller
   public function contactAction()
   {
     return array();
-  }
-
-  /**
-   * @Route("/beta", name="beta")
-   * @Template("default/beta.html.twig")
-   */
-  public function betaAction()
-  {
-    return array();
-  }
-
-  /**
-   * @Route("/portfolio", name="portfolio")
-   * @Template("default/portfolio.html.twig")
-   */
-  public function portfolioAction()
-  {
-
-    return array(
-      'portfolios' => $this->getPortfoliosForDisplay()
-    );
   }
 
   /**
