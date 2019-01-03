@@ -35,9 +35,9 @@
 
         /* Style the header: fixed position (always stay at the top) */
         {#      https://www.w3schools.com/howto/howto_js_scroll_indicator.asp #}
-        .header-scroll {
+        .scroll-indicator{
           position: fixed;
-          top: 0;
+          bottom: 0;
           z-index: 5;
           width: 100%;
           background-color: #f1f1f1;
@@ -96,20 +96,23 @@
     {% endblock %}
   </head>
   <body>
-    <div class="header-scroll">
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div> 
-    </div>
     {% block body %}
       {% include ':default:nav.html.twig' %}
 
       {% block content %}
       {% endblock %}
     {% endblock %}
+    <div class="scroll-indicator">
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div> 
+    </div>
     {% block announcements %}
       <style>
-        section:nth-child(odd){
+        section:nth-child(odd) div{
+          z-index: 1;
+        }
+        section:nth-child(even) div{
           z-index: 3;
         }
         #announcements{
