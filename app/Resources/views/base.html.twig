@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <meta name="p:domain_verify" content="7e7bb326ce0e96557d40e49b8d8b8c22"/>
     <title>{% block title %}Alex Seif - Software Engineer{% endblock %}</title>
     {% block stylesheets %}
       <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -53,10 +52,51 @@
       {% include ':default:nav.html.twig' %}
     {% block content %}{% endblock %}
   {% endblock %}
+  {% block announcements %}
+    <style>
+      section:nth-child(odd){
+        z-index: 3;
+      }
+      #announcements{
+        position: fixed;
+        right: 0;
+        bottom: 10px;
+        z-index: 2;
+      }
+      .wise-owl{
+        width: 100px;
+        display: block;
+        cursor: pointer;
+      }
+      .wise-owl-msg {
+        background: rgba(0,0,0,0.5);
+        padding: 10px;
+        border-radius: 20px 20px 0 20px;
+        text-align: right;
+        right: 80px;
+        position: fixed;
+        bottom: 115px;
+      }
+    </style>
+    <div id="announcements">
+      <div class="wise-owl">
+        <img src="/images/owl.png" alt="" class="img-responsive"/>
+        <div class="wise-owl-msg" style='display: none;'>Contact me for updates on the portfolio</div>
+      </div>
+    </div>
+  {% endblock %}
   {% block javascripts %}
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.wise-owl').hover(function () {
+          $('.wise-owl-msg').fadeToggle();
+        });
+
+      });
+    </script>
   {% endblock %}
 </body>
 </html>
