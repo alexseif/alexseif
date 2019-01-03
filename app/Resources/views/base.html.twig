@@ -9,6 +9,30 @@
       <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
       <link rel="stylesheet" href="/css/common.css" />
+      <style>
+        /** overflow **/
+        body::-webkit-scrollbar-track
+        {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 10px;
+          {#          background-color: #F5F5F5;#}
+        }
+
+        body::-webkit-scrollbar
+        {
+          width: 12px;
+          {#          background-color: #F5F5F5;#}
+          background-color: rgb(29,31,41);
+        }
+
+        body::-webkit-scrollbar-thumb
+        {
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+          {#          background-color: #555;#}
+        }
+
+      </style>
     {% endblock %}
     {% if ("prod" == app.environment) %}
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -50,53 +74,55 @@
   <body>
     {% block body %}
       {% include ':default:nav.html.twig' %}
-    {% block content %}{% endblock %}
-  {% endblock %}
-  {% block announcements %}
-    <style>
-      section:nth-child(odd){
-        z-index: 3;
-      }
-      #announcements{
-        position: fixed;
-        right: 0;
-        bottom: 10px;
-        z-index: 2;
-      }
-      .wise-owl{
-        width: 100px;
-        display: block;
-        cursor: pointer;
-      }
-      .wise-owl-msg {
-        background: rgba(0,0,0,0.5);
-        padding: 10px;
-        border-radius: 20px 20px 0 20px;
-        text-align: right;
-        right: 80px;
-        position: fixed;
-        bottom: 115px;
-      }
-    </style>
-    <div id="announcements">
-      <div class="wise-owl">
-        <img src="/images/owl.png" alt="" class="img-responsive"/>
-        <div class="wise-owl-msg" style='display: none;'>Contact me for updates on the portfolio</div>
-      </div>
-    </div>
-  {% endblock %}
-  {% block javascripts %}
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $('.wise-owl').hover(function () {
-          $('.wise-owl-msg').fadeToggle();
-        });
 
-      });
-    </script>
-  {% endblock %}
-</body>
+      {% block content %}
+      {% endblock %}
+    {% endblock %}
+    {% block announcements %}
+      <style>
+        section:nth-child(odd){
+          z-index: 3;
+        }
+        #announcements{
+          position: fixed;
+          right: 0;
+          bottom: 10px;
+          z-index: 2;
+        }
+        .wise-owl{
+          width: 100px;
+          display: block;
+          cursor: pointer;
+        }
+        .wise-owl-msg {
+          background: rgba(0,0,0,0.5);
+          padding: 10px;
+          border-radius: 20px 20px 0 20px;
+          text-align: right;
+          right: 80px;
+          position: fixed;
+          bottom: 115px;
+        }
+      </style>
+      <div id="announcements">
+        <div class="wise-owl">
+          <img src="/images/owl.png" alt="" class="img-responsive"/>
+          <div class="wise-owl-msg" style='display: none;'>Contact me for updates on the portfolio</div>
+        </div>
+      </div>
+    {% endblock %}
+    {% block javascripts %}
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $('.wise-owl').hover(function () {
+            $('.wise-owl-msg').fadeToggle();
+          });
+
+        });
+      </script>
+    {% endblock %}
+  </body>
 </html>
