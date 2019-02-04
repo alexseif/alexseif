@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://alexseif.com/</loc>
+  </url>
+  <url>
+    <loc>https://alexseif.com/about</loc>
+  </url>
+  <url>
+    <loc>https://alexseif.com/jobs/</loc>
+  </url>
+  <url>
+    <loc>https://alexseif.com/jobs/php-web-developer</loc>
+  </url>
+  <url>
+    <loc>https://alexseif.com/jobs/wordpress-developer</loc>
+  </url>
+  <url>
+    <loc>https://alexseif.com/jobs/drupal-developer</loc>
+  </url>
+</urlset>
