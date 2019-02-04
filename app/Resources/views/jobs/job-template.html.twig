@@ -6,9 +6,7 @@
   <link href="/css/jobs.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 {% block meta %}
-  <meta property="og:title" content="{{ job.title }} | Alex Seif"/>
-  <meta property="og:image" content="http://alexseif.com/images/{{ job.image }}"/>
-  <meta property="og:site_name" content="Alex Seif"/>
+  {{ parent() }}
   <meta property="og:description" conten="Multiple positions and opportunities are available for Web developers, who share our values and that are proficient at their relative level of experience."/>	
 {% endblock %}
 {% block body %}

@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <link rel="canonical" href="https://alexseif.com/">
     <title>{% block title %}Alex Seif - Software Engineer{% endblock %}</title>
     {% block stylesheets %}
       <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -56,6 +55,7 @@
       <meta property="og:description" content="Software Engineer
             {{ ("now"|date("Y")) - 2004 }} yrs experience
             Based in Alexandria,  Egypt"/>	
+      <link rel="canonical" href="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}">
     {% endblock %}
   </head>
   <body>

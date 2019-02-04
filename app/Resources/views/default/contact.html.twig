@@ -5,8 +5,8 @@
   <link href="/css/main.css" type="text/css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
   <style type="text/css">
-  	a.location{font-size: 85% !important;}
-  	a.location:after{background:none;}
+    a.location{font-size: 85% !important;}
+    a.location:after{background:none;}
   </style>
 {% endblock %}
 {% block body %}
@@ -53,10 +53,10 @@
       <div class="links sr">
         <a href="mailto:contact@alexseif.com" target="_blank">Email</a>
         <a href="https://www.linkedin.com/in/alexseif/" target="_blank">LinkedIn</a><br/>
-		<a class="location" href="https://goo.gl/maps/w2DukenYUQk" target="_blank">159 Tiba st., Sporting, Alexandria Governorate, Egypt</a><br/>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.0749954702223!2d29.929544551271878!3d31.218651581379497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c48976d36689%3A0xfda641518bb08ad5!2s159+Tiba%2C+Al+Ibrahimeyah+Bahri+WA+Sidi+Gaber%2C+Qism+Sidi+Gabir%2C+Alexandria+Governorate%2C+Egypt!5e0!3m2!1sen!2s!4v1498658685555" width="250" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-	<div class="footnote">
+        <a class="location" href="https://goo.gl/maps/w2DukenYUQk" target="_blank">159 Tiba st., Sporting, Alexandria Governorate, Egypt</a><br/>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.0749954702223!2d29.929544551271878!3d31.218651581379497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c48976d36689%3A0xfda641518bb08ad5!2s159+Tiba%2C+Al+Ibrahimeyah+Bahri+WA+Sidi+Gaber%2C+Qism+Sidi+Gabir%2C+Alexandria+Governorate%2C+Egypt!5e0!3m2!1sen!2s!4v1498658685555" width="250" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="footnote">
         Built with care
       </div>
     </div>
@@ -69,69 +69,69 @@
   <script type="text/javascript" src="/js/typed.min.js"></script>
   <script>
     //jquery
-      $(document).ready(function () {
-        //hide baseline
-        $(".baseline").hide();
+    $(document).ready(function () {
+      //hide baseline
+      $(".baseline").hide();
 
 
-        //cycle through emoji greetings
-        var divs = $('span[id^="cycling-"]').hide(),
-                i = 0;
-        (function cycle() {
-          divs.eq(i).fadeIn(200).delay(1000).fadeOut(200, cycle);
-          i = ++i % divs.length;
-        }
-        )();
+      //cycle through emoji greetings
+      var divs = $('span[id^="cycling-"]').hide(),
+              i = 0;
+      (function cycle() {
+        divs.eq(i).fadeIn(200).delay(1000).fadeOut(200, cycle);
+        i = ++i % divs.length;
+      }
+      )();
 
-        //cycle through people
-        $("#interactive-text").typed({
-          strings: [
-            "customers.",
-            "employees.",
-            "community.",
-            "patients.",
-            "clients."
-          ],
-          // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
-          stringsElement: null,
-          // typing speed
-          typeSpeed: 30,
-          // time before typing starts
-          startDelay: 0,
-          // backspacing speed
-          backSpeed: 0,
-          // time before backspacing
-          backDelay: 2000,
-          // loop
-          loop: true,
-          // false = infinite
-          loopCount: 2,
-          // show cursor
-          showCursor: true,
-          // character for cursor
-          cursorChar: "|",
-          // attribute to type (null == text)
-          attr: null,
-          // either html or text
-          contentType: 'text',
-          preStringTyped: function (count) {
-            switch (count) {
-              case 1:
-                $('#pre-intr-text').text("more");
-                break;
-              case 2:
-              case 3:
-                $('#pre-intr-text').text("");
-                break;
-              default:
-                $('#pre-intr-text').text("your");
-                break;
-            }
-          },
-        });
+      //cycle through people
+      $("#interactive-text").typed({
+        strings: [
+          "customers.",
+          "employees.",
+          "community.",
+          "patients.",
+          "clients."
+        ],
+        // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+        stringsElement: null,
+        // typing speed
+        typeSpeed: 30,
+        // time before typing starts
+        startDelay: 0,
+        // backspacing speed
+        backSpeed: 0,
+        // time before backspacing
+        backDelay: 2000,
+        // loop
+        loop: true,
+        // false = infinite
+        loopCount: 2,
+        // show cursor
+        showCursor: true,
+        // character for cursor
+        cursorChar: "|",
+        // attribute to type (null == text)
+        attr: null,
+        // either html or text
+        contentType: 'text',
+        preStringTyped: function (count) {
+          switch (count) {
+            case 1:
+              $('#pre-intr-text').text("more");
+              break;
+            case 2:
+            case 3:
+              $('#pre-intr-text').text("");
+              break;
+            default:
+              $('#pre-intr-text').text("your");
+              break;
+          }
+        },
       });
+    });
 
-      window.sr = ScrollReveal({reset: true});
+    window.sr = ScrollReveal({reset: true});
     {#    sr.reveal('.sr', {mobile: false, delay: 10, scale: .95});#}
       sr.reveal('.sr');
 
