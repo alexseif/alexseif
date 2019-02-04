@@ -21,7 +21,7 @@ DirectoryIndex app.php
     RewriteEngine On
 
     RewriteCond %{SERVER_PORT} 80
-    RewriteRule ^(.*)$ https://www.example.com/$1 [R,L]
+    RewriteRule ^(.*)$ https://alexseif.com/$1 [R,L]
 
 
     # Determine the RewriteBase automatically and set it as environment variable.
