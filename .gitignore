@@ -13,3 +13,5 @@
 /nbproject
 /backups/*
 !backups/.gitkeep
+.htaccess
+web/.htaccess
