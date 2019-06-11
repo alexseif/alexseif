@@ -207,7 +207,7 @@ h2 {
 }
 
 h3 {
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-family: Roboto, Arial Narrow, _sans;
   font-size: 26px;
   line-height: 32px;
@@ -287,6 +287,18 @@ body:hover {
   -webkit-animation: background-in 2s 1;
   animation: background-in 2s 1;
   background-image: linear-gradient(to top, #3E4252 10%, #1D1F29 90%);
+  /*background-image: url('/images/Cairo-1.jpg');*/
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  filter: saturate(50%);
+  
+  /*-webkit-filter: grayscale(30%);  Safari 6.0 - 9.0 */
+  /*filter: grayscale(30%);*/
 }
 
 section {
@@ -765,8 +777,8 @@ section .wrapper {
   position: relative;
 }
 .flg-hldr img{
-  -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(30%);
+  /*-webkit-filter: grayscale(30%);  Safari 6.0 - 9.0 */
+  /*filter: grayscale(30%);*/
   -webkit-transition: height 0.5s; /* For Safari 3.1 to 6.0 */
   transition: height 0.5s;
   height: 2em;
@@ -774,10 +786,11 @@ section .wrapper {
   position: fixed;
   top: 30%;
   right: 5%;
-  filter: saturate(50%);
+  /*filter: saturate(50%);*/
 }
 .flg-hldr:hover img{
   -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
   transition: width 0.5s;
   width: 3em;
 }
+h2.thingos{padding: 0px;}
