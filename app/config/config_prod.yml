@@ -3,7 +3,7 @@ imports:
 
 #framework:
 #    validation:
-#        cache: validator.mapping.cache.apc
+#        cache: validator.mapping.cache.doctrine.apc
 #    serializer:
 #        cache: serializer.mapping.cache.apc
 
@@ -19,7 +19,7 @@ parameters:
 monolog:
     handlers:
         main:
-            type:         fingers_crossed
+            type: fingers_crossed
             action_level: error
             handler:      grouped
         grouped:
@@ -27,19 +27,8 @@ monolog:
             members: [nested, deduplicated]
         nested:
             type:  rotating_file
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
             level: debug
             max_files: 10
         console:
-            type:  console
-        deduplicated:
-            type:    deduplication
-            handler: swift
-        swift:
-            type:       swift_mailer
-            from_email: 'me@alexseif.com'
-            to_email:   'alex.seif@gmail.com'
-            subject:    'An Error Occurred! %%message%%'
-            level:      debug
-            formatter:  monolog.formatter.html
-            content_type: text/html
+            type: console

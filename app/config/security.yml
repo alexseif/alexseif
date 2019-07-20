@@ -1,5 +1,5 @@
 # To get started with security, check out the documentation:
-# http://symfony.com/doc/current/book/security.html
+# https://symfony.com/doc/current/security.html
 security:
   encoders:
     FOS\UserBundle\Model\UserInterface: bcrypt
@@ -13,7 +13,7 @@ security:
       id: fos_user.user_provider.username
 
   firewalls:
-    # disables authentication for assets and the profiler, adapt it according to your needs
+        # disables authentication for assets and the profiler, adapt it according to your needs
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
       security: false
@@ -28,7 +28,7 @@ security:
       anonymous:    true
 
   access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: ROLE_ADMIN }
-        - { path: ^/resetting, role: ROLE_ADMIN }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+    - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/register, role: ROLE_ADMIN }
+    - { path: ^/resetting, role: ROLE_ADMIN }
+    - { path: ^/admin/, role: ROLE_ADMIN }
