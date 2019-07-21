@@ -1,93 +1,3 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  box-sizing: border-box;
-}
-
 article,
 aside,
 details,
@@ -103,37 +13,10 @@ section {
 }
 
 body {
-  line-height: 1;
+  /*font-family: 'Cabin', sans-serif;*/
+  color: #FFF;
 }
 
-ol,
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after {
-  content: '';
-  content: none;
-}
-
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
 @-webkit-keyframes twirlbaby {
   from {
@@ -175,106 +58,14 @@ table {
   }
 }
 
-h1 {
-  text-transform: uppercase;
-  font-family: Roboto, Arial Narrow, _sans;
-  font-size: 58px;
-  line-height: 40px;
-  padding-top: 0;
+.page-elements{
+  font-family: 'Just Me Again Down Here', cursive;
+  position: fixed;
+  z-index: 10;
 }
 
-@media only screen and (min-width:768px) {
-  h1 {
-    font-size: 94px;
-    line-height: 80px;
-  }
-}
-
-h2 {
-  font-family: Helvetica Neue, Helvetica, Arial, _sans;
-  font-size: 30px;
-  line-height: 40px;
-  padding: 0;
-  padding-top: 0;
-}
-
-@media only screen and (min-width:1400px) {
-  h2 {
-    font-size: 36px;
-    line-height: 50px;
-    padding-top: 16px;
-  }
-}
-
-h3 {
-  /*text-transform: uppercase;*/
-  font-family: Roboto, Arial Narrow, _sans;
-  font-size: 26px;
-  line-height: 32px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-p {
-  font-family: Helvetica Neue, Helvetica, Arial, _sans;
-  font-size: 16px;
-  line-height: 25px;
-  padding-top: 4px;
-  opacity: .95;
-}
-
-@media only screen and (min-width:1400px) {
-  p {
-    font-size: 20px;
-    line-height: 30px;
-  }
-}
-
-a {
-  color: #F1F1F4;
-  text-decoration: none;
-  position: relative;
-  display: inline;
-  transition: color 0.2s ease-in-out;
-}
-
-a:after {
-  transition: background-color 0.2s ease-in-out;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: white;
-}
-
-a:hover {
-  color: #00BFD0;
-  cursor: url("/images/cursor.png") 25 25, auto;
-}
-
-a:hover:after {
-  background-color: #00BFD0;
-}
-
-html {
-  font-size: 62.5%;
-  height: 100%;
-}
-
-body {
-  background: #1D1F29;
-  font-family: Helvetica Neue, Helvetica, Arial, _sans;
-  color: #F1F1F4;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.6rem;
-  min-height: 100%;
-  position: relative;
-}
-
-body:hover {
-  cursor: default;
+.page-elements .branding a{
+  color: #fff;
 }
 
 .background {
@@ -294,9 +85,9 @@ body:hover {
   /* Add the blur effect */
   filter: blur(8px);
   -webkit-filter: blur(8px);
-  
+
   filter: saturate(50%);
-  
+
   /*-webkit-filter: grayscale(30%);  Safari 6.0 - 9.0 */
   /*filter: grayscale(30%);*/
 }
@@ -305,38 +96,50 @@ section {
   position: relative;
   z-index: 2;
   display: block;
-  width: 100%;
 }
+
 section:nth-child(odd){
   background-color: rgb(29,31,41);
 }
 
-section .wrapper {
-  width: inherit;
-}
-
-@media only screen and (min-width:1400px) {
-  section .wrapper {
-    margin: 0 auto;
-    max-width: 85%;
-  }
-}
-
-.hello {
+section.full-page{
+  height: 100vh;
+  max-width: 100vw;
   transition: padding 0.2s ease-in-out;
   padding: 40px;
 }
 
 @media only screen and (min-width:768px) {
-  .hello {
+  section.full-page {
     padding: 40px;
   }
 }
 
 @media only screen and (min-width:1024px) {
-  .hello {
+  section.full-page {
     padding: 80px;
   }
+}
+
+.intro{
+  height: 100vh;
+  max-width: 100vw;
+  transition: padding 0.2s ease-in-out;
+  padding: 40px;
+}
+
+.intro header{
+  width: 80%;
+  float: right;
+  position: relative;
+  top: 10vh;
+}
+
+.intro h1{
+  font-size: 10em;
+  line-height: 0.95;
+  font-weight: 900;
+  margin: 0 auto;
 }
 
 .hello h1 {
@@ -353,12 +156,6 @@ section .wrapper {
   And large HD screens 
   ALSO maybe change font sizes to em */
   margin-top: calc(60vh - 9.25em);
-}
-
-@media only screen and (min-width:768px) {
-  .hello .bottom-section {
-    /*margin-top: 480px;*/
-  }
 }
 
 .hello .bottom-section h2 {
@@ -563,7 +360,7 @@ section .wrapper {
 
 .also ul li h1 {
   text-transform: uppercase;
-  font-family: Roboto, Arial Narrow, _sans;
+  font-family: 'Darker Grotesque', Arial Narrow, _sans;
   font-size: 58px;
   line-height: 40px;
   padding-top: 0;

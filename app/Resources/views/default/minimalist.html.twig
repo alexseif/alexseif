@@ -1,8 +1,25 @@
-{% extends 'default/base-minimalist.html.twig' %}
+{% extends '::base.html.twig' %}
 {% block title %}Alex Seif - Software Engineer{% endblock %}
 {% block body %}
   <div class="background"></div>
-  <section class="hello" itemscope itemtype="http://data-vocabulary.org/Person">
+  <div class="page-elements">
+    <div class="branding">
+      <a href="#">Alex Seif</a>
+    </div>
+    <div class="navigation">
+      
+    </div>
+  </div>
+  <section class="intro h1-page">
+    <div class="wrapper">
+      <header>
+        <h1 class="fittext">
+          I create progress by designing and developing digital experiences
+        </h1>
+      </header>
+    </div>
+  </section>
+  <section class="hello full-page" itemscope itemtype="http://data-vocabulary.org/Person">
     <div class="wrapper">
       <h1 itemprop="name">Alex Seif</h1>
       <h2 class="thingos">
@@ -44,7 +61,7 @@
       </div>
     </div>
   </section>
-  <section class="also">
+  <section class="also full-page">
     <div class="wrapper">
       <ul>
         <li class="sr">
@@ -63,7 +80,7 @@
       </ul>
     </div>
   </section>
-  <section class="projects">
+  <section class="projects full-page">
     <div class="wrapper">
       <h1 class="title">Work</h1>
       <ul>
