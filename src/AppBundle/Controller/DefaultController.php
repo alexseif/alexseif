@@ -12,7 +12,7 @@ class DefaultController extends Controller
 
   /**
    * @Route("/", name="homepage")
-   * @Template("default/minimalist.html.twig")
+   * @Template("default/home.html.twig")
    */
   public function indexAction()
   {
