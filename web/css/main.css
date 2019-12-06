@@ -793,4 +793,5 @@ section .wrapper {
   transition: width 0.5s;
   width: 3em;
 }
-h2.thingos{padding: 0px;}
+.thingos{padding: 0px;max-width: 50%}
+
