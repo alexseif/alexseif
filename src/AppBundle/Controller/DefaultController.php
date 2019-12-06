@@ -16,7 +16,9 @@ class DefaultController extends Controller
    */
   public function indexAction()
   {
-    return array('portfolios' => $this->getPortfoliosForDisplay());
+    $portfolios = $this->getPortfoliosForDisplay();
+
+    return array('portfolios' => $portfolios);
   }
 
   /**
@@ -75,11 +77,27 @@ class DefaultController extends Controller
   {
     $em = $this->getDoctrine()->getManager();
 
-    return $em->getRepository('AppBundle:Portfolio')->findBy(
-            array(), array(
-          'position' => 'ASC',
-          'publishedAt' => 'DESC'
+    $portfolios = $em->getRepository('AppBundle:Portfolio')->findBy(
+        array(), array(
+      'position' => 'ASC',
+      'publishedAt' => 'DESC'
     ));
+    foreach ($portfolios as $portfolio) {
+      $portfolio->setTags($this->getTags($portfolio));
+    }
+    return $portfolios;
+  }
+
+  /**
+   * @param Portfolio $portfolio
+   * @return \Doctrine\Common\Collections\ArrayCollection
+   */
+  public function getTags(\AppBundle\Entity\Portfolio $portfolio)
+  {
+    $tagManager = $this->get('fpn_tag.tag_manager');
+    $tagManager->loadTagging($portfolio);
+
+    return $portfolio->getTags();
   }
 
 }
