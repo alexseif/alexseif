@@ -98,10 +98,13 @@ section {
   display: block;
 }
 
+section:nth-child(odd){
+  color: #000;
+  background: rgb(218, 221, 234);
+}
 section:nth-child(even){
   background-color: #000;
   color: #fff;
-  /*background-color: rgb(29,31,41);*/
 }
 
 section.full-page{
@@ -361,103 +364,6 @@ section.also{
   }
 }
 
-.end {
-  background-color: #1D1F29;
-  transition: padding 0.2s ease-in-out;
-  padding: 40px;
-}
-
-@media only screen and (min-width:768px) {
-  .end {
-    padding: 40px;
-  }
-}
-
-@media only screen and (min-width:1024px) {
-  .end {
-    padding: 80px;
-  }
-}
-
-.end .notes {
-  margin-bottom: 20px;
-}
-
-@media only screen and (min-width:768px) {
-  .end .notes {
-    width: 50%;
-    float: left;
-    padding-right: 40px;
-  }
-}
-
-@media only screen and (min-width:1024px) {
-  .end .notes {
-    width: 37.5%;
-  }
-}
-
-.end .notes h2 {
-  padding-top: 0;
-  margin-bottom: 40px;
-}
-
-.end .notes p {
-  position: relative;
-}
-
-.end .notes p:last-child {
-  padding-top: 8px;
-}
-
-.end .notes p span {
-  font-size: 26px;
-  -webkit-filter: grayscale(100%) brightness(1.2);
-  filter: grayscale(100%) brightness(1.2);
-  left: -36px;
-  position: absolute;
-  -webkit-animation: twirlbaby .3s linear infinite;
-  animation: twirlbaby .3s linear infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-}
-
-.end .links {
-  margin-top: 20px;
-  min-height: 320px;
-}
-
-.end .links a {
-  font-size: 30px;
-  line-height: 40px;
-  padding: 0;
-  padding-top: 0;
-  margin-right: 10px;
-}
-
-@media only screen and (min-width:1400px) {
-  .end .links a {
-    font-size: 36px;
-    line-height: 50px;
-    padding-top: 16px;
-  }
-}
-
-@media only screen and (min-width:768px) {
-  .end .links a {
-    margin-right: 0;
-    margin-left: 20px;
-  }
-}
-
-@media only screen and (min-width:768px) {
-  .end .links {
-    margin-top: 0;
-    width: 50%;
-    display: inline-block;
-    text-align: right;
-  }
-}
 
 @media only screen and (max-width:600px) {
   .hello h1 {
@@ -482,6 +388,8 @@ section.also{
   clear: left;
   font-size: 12px;
   line-height: 40px;
+  position: fixed;
+  bottom: 0;
 }
 
 .end .footnote a {
@@ -640,3 +548,142 @@ section.also{
 }
 
 .wise-owl-msg a{color: #000; text-decoration: none;}
+
+section.projects {
+  min-height: 100%;
+  min-height: 100vh;
+  padding-top: 65px;
+  position: relative;
+  z-index: 1;
+
+  -webkit-box-shadow: #000 0 7px 35px 0;
+  -moz-box-shadow: #000 0 7px 35px 0;
+  box-shadow: #000 0 7px 35px 0;
+
+}
+
+footer{
+  padding: 25px 0;
+  font-size: 85%;
+  background-color: #2A2A2A;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.end {
+  background-color: #1D1F29;
+  transition: padding 0.2s ease-in-out;
+  padding: 40px;
+  color: #fff;
+}
+.end a{color: rgb(218, 221, 234);}
+
+@media only screen and (min-width:768px) {
+  .end {
+    padding: 40px;
+  }
+}
+
+@media only screen and (min-width:1024px) {
+  .end {
+    padding: 80px;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .end .bottom-section {
+  }
+}
+
+@media only screen and (min-width:1024px) {
+  .end .bottom-section {
+  }
+}
+
+.end .bottom-section h2 {
+  padding-top: 0;
+  margin-bottom: 40px;
+}
+
+.end .bottom-section p {
+  position: relative;
+}
+
+.end .bottom-section p:last-child {
+  padding-left: 45px;
+}
+
+.end .bottom-section p span {
+  font-size: 34px;
+  -webkit-filter: grayscale(100%) brightness(1.2);
+  filter: grayscale(100%) brightness(1.2);
+  left: 10px;
+  top: -15px;
+  position: absolute;
+  -webkit-animation: twirlbaby .3s linear infinite;
+  animation: twirlbaby .3s linear infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.end .links a {
+  font-size: 30px;
+  line-height: 40px;
+  padding: 0;
+  padding-top: 0;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width:1400px) {
+  .end .links a {
+    font-size: 36px;
+    line-height: 50px;
+    padding-top: 16px;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .end .links a {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .end .links {
+    margin-top: 0;
+    width: 50%;
+    display: inline-block;
+    text-align: right;
+  }
+}
+
+
+html {
+  scroll-snap-points-y: mandatory;
+  scroll-snap-points-y: repeat(50vh);
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+section.intro, 
+section.full-page{
+  scroll-snap-align: start;
+}
+footer .bottom-section {
+  position: relative;
+  right: 10vw;
+  bottom: 20vh;
+  float: right;
+}
+.menu_white {
+  color: #fff;
+}
+
+.menu_black {
+  color: #000;
+}

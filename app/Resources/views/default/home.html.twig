@@ -4,7 +4,7 @@
   {#  <div class="background"></div>#}
   <div class="page-elements">
     <div class="branding">
-      <h1 class="h4"><a href="#" class="">Alex Seif</a></h1>
+      <h1 class="h4"><a href="#" class="" id="alx">Alex Seif</a></h1>
     </div>
     <div class="navigation">
 
@@ -72,7 +72,7 @@
       </ul>
     </div>
   </section>
-  <section class="projects full-page">
+  <section class="projects">
     <div class="wrapper">
       <h1 class="title">My work</h1>
       <ul class='list-group'>
@@ -90,26 +90,20 @@
       </ul>
     </div>
   </section>
-  <!-- <section class="hello full-page end" itemscope itemtype="http://data-vocabulary.org/Person">
+  <footer class="end" itemscope itemtype="http://data-vocabulary.org/Person">
     <div class="wrapper">
       <h1 itemprop="name">Alex Seif</h1>
-      <h2 class="thingos">
-        <span class="sr" itemprop="title">Software Engineer<br/></span>
-      </h2>
-      <h2 class="thingos">
-        <span class="sr" itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience<br/></span>
-      </h2>
-      <h2 class="thingos">
-        <span class="sr">Based in 
-          <span class="flg-hldr">Cairo<img src="/images/Flag_of_Cairo.svg" alt="Flag of Cairo"/></span>, 
-          <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
-        </span>
-      </h2>
-      <h3 class="thingos">
-        <span class="sr">From <span class="flg-hldr">Alexandria<img src="/images/218px-Flag_of_Alexandria.svg.png" alt="Flag of Alexandria"/></span>, 
-          <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
-        </span>
+      <h2 itemprop="title">Software Engineer</h2>
+      <h2 itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience</h2>
+      <h3>
+        Based in 
+        <span class="flg-hldr">Cairo<img src="/images/Flag_of_Cairo.svg" alt="Flag of Cairo"/></span>, 
+        <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
       </h3>
+      <h4>
+        From <span class="flg-hldr">Alexandria<img src="/images/218px-Flag_of_Alexandria.svg.png" alt="Flag of Alexandria"/></span>, 
+        <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
+      </h4>
       <div class="bottom-section">
         <h2>Email
           <span id="cycling-1">
@@ -128,36 +122,92 @@
             <a href="mailto:contact@alexseif.com">to <span>&#128397;</span> ideas</a>
           </span>
         </h2>
-        <h2 class="pull-right"><a href="{{ path('jobs_index') }}">Developers Wanted</a></h2>
-      </div>
-      <div class="notes sr">
-        <h2>Let&rsquo;s work together</h2>
-        <p>Because of confidentiality with my existing clients, please <a href='mailto:contact@alexseif.com'>email</a> me to schedule a personalized portfolio presentation.</p>
+        <h2 class="developer"><a href="{{ path('jobs_index') }}">Developers Wanted</a></h2>
         <p><span>&#9757;</span>No recruitment agencies.</p>
       </div>
-      <div class="links sr">
-        <a href="mailto:contact@alexseif.com">Email</a>
-        <a href="https://www.linkedin.com/in/alexseif/">LinkedIn</a>
-        <a href="{{ path('about')}}">About</a>
-        <a href="{{ path('jobs_index')}}">Jobs</a>
-
+      <!-- <div class="notes">
+         <h2>Let&rsquo;s work together</h2>
+         <p>Because of confidentiality with my existing clients, please <a href='mailto:contact@alexseif.com'>email</a> me to schedule a personalized portfolio presentation.</p>
+       </div>
+       <div class="links">
+         <a href="mailto:contact@alexseif.com">Email</a>
+         <a href="https://www.linkedin.com/in/alexseif/">LinkedIn</a>
+         <a href="{{ path('about')}}">About</a>
+         <a href="{{ path('jobs_index')}}">Jobs</a>
+ 
+       </div> -->
+      {#
+              <div class='footer-owl pull-right' style='position: absolute; bottom: -50px; right: 50px;'>
+                <img src='/images/owl.png' alt="Owl"/>
+              </div>
+      #}
+      <div class="footnote">
+        Built with care
       </div>
-  {#
-          <div class='footer-owl pull-right' style='position: absolute; bottom: -50px; right: 50px;'>
-            <img src='/images/owl.png' alt="Owl"/>
-          </div>
-  #}
-  <div class="footnote">
-    Built with care
-  </div>
-</div>
-</section> -->
+    </div>
+  </footer>
   <div class="baseline"></div>
 {% endblock %}
 {% block javascripts %}
   {{ parent() }}
   <script src="/js/scrollreveal.min.js"></script>
   <script src="/js/typed.min.js"></script>
+  <script>
+    // Logo color
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        var light_pos = $('section:odd').offset().top;
+        var light_height = $('section:even').height();
+        var menu_pos = $('.NavigationButton').offset().top;
+        var menu_height = $('.NavigationButton').height();
+        var scroll = $(window).scrollTop();
+        console.log('light', light_pos);
+        console.log('menu', menu_pos);
+        console.log('scroll', scroll);
+
+        if (menu_pos > light_pos && menu_pos < (light_pos + light_height)) {
+          $('#alx').addClass('menu_black');
+          $('#alx').removeClass('menu_white');
+        } else {
+          $('#alx').removeClass('menu_black');
+          $('#alx').addClass('menu_white');
+        }
+
+      })
+    })
+  </script>
+  <script>
+    // Footer size
+    $(document).ready(function () {
+
+      // INITIATE THE FOOTER
+      siteFooter();
+      // COULD BE SIMPLIFIED FOR THIS PEN BUT I WANT TO MAKE IT AS EASY TO PUT INTO YOUR SITE AS POSSIBLE
+      $(window).resize(function () {
+        siteFooter();
+      });
+
+      function siteFooter() {
+        var siteContent = $('.projects');
+        var siteContentHeight = siteContent.height();
+        var siteContentWidth = siteContent.width();
+
+        var siteFooter = $('footer');
+        var siteFooterHeight = siteFooter.height();
+        var siteFooterWidth = siteFooter.width();
+
+        //console.log('Content Height = ' + siteContentHeight + 'px');
+        //console.log('Content Width = ' + siteContentWidth + 'px');
+        //console.log('Footer Height = ' + siteFooterHeight + 'px');
+        //console.log('Footer Width = ' + siteFooterWidth + 'px');
+
+        siteContent.css({
+          "margin-bottom": siteFooterHeight + 100
+        });
+      }
+      ;
+    });
+  </script>
   <script>
     //jquery
     $(document).ready(function () {
