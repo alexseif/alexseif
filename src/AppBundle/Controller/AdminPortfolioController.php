@@ -51,8 +51,10 @@ class AdminPortfolioController extends Controller
 
     if ($form->isSubmitted() && $form->isValid()) {
 
+
       $tagManager = $this->get('fpn_tag.tag_manager');
-      $tagNames = $tagManager->splitTagNames('Clark Kent, Loïs Lane, Superman');
+      $tagData = $form->get('tags')->getData();
+      $tagNames = $tagManager->splitTagNames($tagData);
       $tags = $tagManager->loadOrCreateTags($tagNames);
       $tagManager->addTags($tags, $portfolio);
 

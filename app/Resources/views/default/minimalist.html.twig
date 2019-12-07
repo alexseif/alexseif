@@ -23,22 +23,25 @@
     <div class="wrapper">
       <h1 itemprop="name">Alex Seif</h1>
       <h2 class="thingos">
-        <span class="sr" itemprop="title">Software Engineer<br/></span>
+        <span class="sr" itemprop="title">Web Developer <br/></span>
       </h2>
+      <h3 class="thingos">
+        <span class="sr" itemprop="title">Specialized in [PHP, Symfony, Open Cart, Wordpress and Drupal]<br/></span>
+      </h3>
       <h2 class="thingos">
         <span class="sr" itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience<br/></span>
       </h2>
-      <h2 class="thingos">
+      <h3 class="thingos">
         <span class="sr">Based in 
           <span class="flg-hldr">Cairo<img src="/images/Flag_of_Cairo.svg" alt="Flag of Cairo"/></span>, 
           <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
         </span>
-      </h2>
-      <h3 class="thingos">
+      </h3>
+      <h4 class="thingos">
         <span class="sr">From <span class="flg-hldr">Alexandria<img src="/images/218px-Flag_of_Alexandria.svg.png" alt="Flag of Alexandria"/></span>, 
           <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
         </span>
-      </h3>
+      </h4>
       <div class="bottom-section">
         <h2>Email
           <span id="cycling-1">
@@ -90,6 +93,9 @@
               {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
             </h3>
             <p>{{ portfolio.subtitle }}</p>
+            {% for tag in portfolio.tags %}
+              <span>{{ tag.name }}</span> 
+            {% endfor %}
           </li>
         {% endfor %}
       </ul>

@@ -276,6 +276,17 @@ class Portfolio implements Taggable
     return $this->position;
   }
 
+  /**
+   * @param ArrayCollection $tags
+   * @return $this
+   */
+  public function setTags(ArrayCollection $tags)
+  {
+    $this->tags = $tags;
+
+    return $this;
+  }
+
   public function getTags()
   {
     $this->tags = $this->tags ?: new ArrayCollection();
