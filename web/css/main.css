@@ -107,11 +107,11 @@ section {
   display: block;
 }
 
-section:nth-child(odd){
+section:nth-child(even){
   color: #000;
   background: rgb(218, 221, 234);
 }
-section:nth-child(even){
+section:nth-child(odd){
   color: #fff;
   background-color: #000;
 }
