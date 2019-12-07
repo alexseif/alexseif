@@ -74,7 +74,9 @@
       <div id="announcements">
         <div class="wise-owl">
           <img src="/images/owl.png" alt="owl" width="100"/>
-          <div class="wise-owl-msg" style='display: none;'>Contact me for updates on my portfolio</div>
+          <div class="wise-owl-msg" style='display: none;'>
+            <a href="mailto:contact@alexseif.com" target="_blank">Contact me for updates on my portfolio</a>
+          </div>
         </div>
       </div>
     {% endblock %}
@@ -115,7 +117,6 @@
           $('.wise-owl').hover(function () {
             $('.wise-owl-msg').fadeToggle();
           });
-
         });
       </script>
     {% endblock %}

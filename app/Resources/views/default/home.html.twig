@@ -1,10 +1,10 @@
 {% extends '::base.html.twig' %}
 {% block title %}Alex Seif - Software Engineer{% endblock %}
 {% block body %}
-  <div class="background"></div>
+  {#  <div class="background"></div>#}
   <div class="page-elements">
     <div class="branding">
-      <h4><a href="#" class="">Alex Seif</a></h4>
+      <h1 class="h4"><a href="#" class="">Alex Seif</a></h1>
     </div>
     <div class="navigation">
 
@@ -13,17 +13,13 @@
   <section class="intro h1-page">
     <div class="wrapper">
       <header>
-        <h1 class="">
-          Software, app and
-          web development
-          freelancer
-        </h1>
+        <h1 class="">Software, app and web development</h1>
       </header>
       <div class="bottom-section">
         <p>
           Custom software, mobile applications and websites I build, help you increase profit, minimize risk and make your business more efficient.
         </p>
-        <button>Start a project</button>
+        <a class='button' href="mailto:contact@alexseif.com" target="_blank">Start a project</a>
       </div>
     </div>
   </section>
@@ -41,7 +37,7 @@
       <ul>
         <li class="sr row">
           <div class="col-4">
-            <h2>Make it</h2>
+            <h4>Make it</h4>
           </div>
           <div class="col">
             <p>Reflect your establishement online and claim your digital space. I&rsquo;d love to <a href="mailto:contact@alexseif.com">build it for you.</a></p>
@@ -49,7 +45,7 @@
         </li>
         <li class="sr row">
           <div class="col-4">
-            <h2>Deliver it</h2>
+            <h4>Deliver it</h4>
           </div>
           <div class="col">
             <p>Reach the people that matter to your business on your terms. Get <a href="mailto:contact@alexseif.com">professional support</a> promoting you.</p>
@@ -57,7 +53,7 @@
         </li>
         <li class="sr row">
           <div class="col-4">
-            <h2>Run it</h2>
+            <h4>Run it</h4>
           </div>
           <div class="col">
             <p>Enrich your relation with your <span id=interactive-text>customers.</span><br/>
@@ -66,11 +62,11 @@
         </li>
         <li class="sr row">
           <div class="col-4">
-            <h2>Run it</h2>
+            <h4>Grow it</h4>
           </div>
           <div class="col">
-            <p>Enrich your relation with your <span id=interactive-text>customers.</span><br/>
-              Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
+            <p>Business has only two functions – marketing and innovation.<br/>
+              It's time to <a href="mailto:contact@alexseif.com">get in touch.</a></p>
           </div>
         </li>
       </ul>
@@ -78,20 +74,23 @@
   </section>
   <section class="projects full-page">
     <div class="wrapper">
-      <h1 class="title">Work</h1>
-      <ul>
+      <h1 class="title">My work</h1>
+      <ul class='list-group'>
         {% for portfolio in portfolios %}
-          <li class="sr">
-            <h3>
+          <li class="sr list-group-item">
+            <h2>
               {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
-            </h3>
+            </h2>
             <p>{{ portfolio.subtitle }}</p>
+            {% for tag in portfolio.tags %}
+              <span>{{ tag.name }}</span>{{ (loop.last)? ';' : ','}}
+            {% endfor %}
           </li>
         {% endfor %}
       </ul>
     </div>
   </section>
-  <section class="hello full-page end" itemscope itemtype="http://data-vocabulary.org/Person">
+  <!-- <section class="hello full-page end" itemscope itemtype="http://data-vocabulary.org/Person">
     <div class="wrapper">
       <h1 itemprop="name">Alex Seif</h1>
       <h2 class="thingos">
@@ -143,16 +142,16 @@
         <a href="{{ path('jobs_index')}}">Jobs</a>
 
       </div>
-      {#
-              <div class='footer-owl pull-right' style='position: absolute; bottom: -50px; right: 50px;'>
-                <img src='/images/owl.png' alt="Owl"/>
-              </div>
-      #}
-      <div class="footnote">
-        Built with care
-      </div>
-    </div>
-  </section>
+  {#
+          <div class='footer-owl pull-right' style='position: absolute; bottom: -50px; right: 50px;'>
+            <img src='/images/owl.png' alt="Owl"/>
+          </div>
+  #}
+  <div class="footnote">
+    Built with care
+  </div>
+</div>
+</section> -->
   <div class="baseline"></div>
 {% endblock %}
 {% block javascripts %}
