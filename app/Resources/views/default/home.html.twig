@@ -154,68 +154,57 @@
   <script src="/js/typed.min.js"></script>
   <script>
     // Logo color
-    $(document).ready(function () {
-      $(window).scroll(function () {
-        var light_pos = $('section:odd').offset().top;
-        var light_height = $('section:even').height();
-        var menu_pos = $('.NavigationButton').offset().top;
-        var menu_height = $('.NavigationButton').height();
-        var scroll = $(window).scrollTop();
-        console.log('light', light_pos);
-        console.log('menu', menu_pos);
-        console.log('scroll', scroll);
+    function logoColor() {
+      var light_pos = $('section:nth-child(odd)').offset().top;
+      var light_height = $('section:nth-child(odd)').height();
+      var projects_pos = $('section.projects').offset().top;
+      var projects_height = $('section.projects').height();
+      var menu_pos = $('#alx').offset().top;
+      var menu_height = $('#alx').height();
+      var scroll = $(window).scrollTop();
 
-        if (menu_pos > light_pos && menu_pos < (light_pos + light_height)) {
-          $('#alx').addClass('menu_black');
-          $('#alx').removeClass('menu_white');
-        } else {
-          $('#alx').removeClass('menu_black');
-          $('#alx').addClass('menu_white');
-        }
+      //console.log('light', light_pos);
+      //console.log('projects', projects_pos);
+      //console.log('menu', menu_pos);
+      //console.log('scroll', scroll);
 
-      })
-    })
-  </script>
-  <script>
-    // Footer size
-    $(document).ready(function () {
-
-      // INITIATE THE FOOTER
-      siteFooter();
-      // COULD BE SIMPLIFIED FOR THIS PEN BUT I WANT TO MAKE IT AS EASY TO PUT INTO YOUR SITE AS POSSIBLE
-      $(window).resize(function () {
-        siteFooter();
-      });
-
-      function siteFooter() {
-        var siteContent = $('.projects');
-        var siteContentHeight = siteContent.height();
-        var siteContentWidth = siteContent.width();
-
-        var siteFooter = $('footer');
-        var siteFooterHeight = siteFooter.height();
-        var siteFooterWidth = siteFooter.width();
-
-        //console.log('Content Height = ' + siteContentHeight + 'px');
-        //console.log('Content Width = ' + siteContentWidth + 'px');
-        //console.log('Footer Height = ' + siteFooterHeight + 'px');
-        //console.log('Footer Width = ' + siteFooterWidth + 'px');
-
-        siteContent.css({
-          "margin-bottom": siteFooterHeight + 100
-        });
+      if (menu_pos > light_pos && menu_pos < (light_pos + light_height)) {
+        $('#alx').addClass('menu_black');
+        $('#alx').removeClass('menu_white');
+      } else {
+        $('#alx').removeClass('menu_black');
+        $('#alx').addClass('menu_white');
       }
-      ;
-    });
-  </script>
-  <script>
-    //jquery
-    $(document).ready(function () {
-      //hide baseline
-      $(".baseline").hide();
+      if (menu_pos > projects_pos && menu_pos < (projects_pos + projects_height)) {
+        $('.page-elements').css('max-width', 100);
+        $('#alx').addClass('menu_black');
+        $('#alx').removeClass('menu_white');
+      } else {
+        $('.page-elements').css('max-width', 'unset');
+      }
+    }
+    //Footer size
+    function siteFooter() {
+      var siteContent = $('.projects');
+      var siteContentHeight = siteContent.height();
+      var siteContentWidth = siteContent.width();
 
+      var siteFooter = $('footer');
+      var siteFooterHeight = siteFooter.height();
+      var siteFooterWidth = siteFooter.width();
 
-      //cycle through emoji greetings
+      //console.log('Content Height = ' + siteContentHeight + 'px');
+      //console.log('Content Width = ' + siteContentWidth + 'px');
+      //console.log('Footer Height = ' + siteFooterHeight + 'px');
+      //console.log('Footer Width = ' + siteFooterWidth + 'px');
+
+      siteContent.css({
+        "margin-bottom": siteFooterHeight + 100
+      });
+    }
+
+    //cycle through emoji greetings
+    function cycleEmoji() {
       var divs = $('span[id^="cycling-"]').hide(),
               i = 0;
       (function cycle() {
@@ -223,8 +212,10 @@
         i = ++i % divs.length;
       }
       )();
+    }
 
-      //cycle through people
+    //cycle through people
+    function cyclePeople() {
       $("#interactive-text").typed({
         strings: [
           "customers.",
@@ -270,7 +261,26 @@
           }
         },
       });
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      // COULD BE SIMPLIFIED FOR THIS PEN BUT I WANT TO MAKE IT AS EASY TO PUT INTO YOUR SITE AS POSSIBLE
+      $(window).resize(siteFooter);
+      $(window).scroll(logoColor);
+      // INITIATE THE Logo
+      logoColor();
+      // INITIATE THE FOOTER
+      siteFooter();
+
+      //hide baseline
+      $(".baseline").hide();
+
+      cycleEmoji();
+      cyclePeople();
     });
+  </script>
+  <script>
 
     window.sr = ScrollReveal({reset: true});
     {#    sr.reveal('.sr', {mobile: false, delay: 10, scale: .95});#}
@@ -279,6 +289,7 @@
       $(".baseline-toggle").click(function () {
         $(".baseline").css('opacity', 1);
         $(".baseline").toggle();
-      });
+      }
+      );
   </script>
 {% endblock %}

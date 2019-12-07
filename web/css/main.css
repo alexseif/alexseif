@@ -67,7 +67,16 @@ body {
 .page-elements .branding a{
   color: #fff;
 }
+.page-elements .branding a.menu_white {
+  color: #fff;
+}
 
+.page-elements .branding a.menu_black {
+  color: #000;
+}
+.page-elements .branding a.menu_projects {
+  max-width: 100px;
+}
 .background {
   position: fixed;
   width: 100vw;
@@ -103,8 +112,8 @@ section:nth-child(odd){
   background: rgb(218, 221, 234);
 }
 section:nth-child(even){
-  background-color: #000;
   color: #fff;
+  background-color: #000;
 }
 
 section.full-page{
@@ -679,11 +688,4 @@ footer .bottom-section {
   right: 10vw;
   bottom: 20vh;
   float: right;
-}
-.menu_white {
-  color: #fff;
-}
-
-.menu_black {
-  color: #000;
 }
