@@ -185,7 +185,7 @@ button:hover, .button:hover {
   padding: 40px;
 }
 
-.intro h1{
+.intro h2{
   font-size: 10vw;
   line-height: 0.95;
   font-weight: 900;
@@ -574,7 +574,7 @@ section.full-page{
 }
 
 @media only screen and (min-width:1400px) {
-  .intro h1{
+  .intro h2{
     font-size: 10em;
   }
   section .bottom-section {
