@@ -1,16 +1,7 @@
 {% extends '::base.html.twig' %}
 {% block title %}Alex Seif - Web developer{% endblock %}
-{% block body %}
-  {#  <div class="background"></div>#}
-  <div class="page-elements">
-    <div class="branding">
-      <h1 class="h4"><a href="#" class="" id="alx">Alex Seif</a></h1>
-    </div>
-    <div class="navigation">
-
-    </div>
-  </div>
-  <section class="intro h1-page">
+{% block content %}
+  <section class="full-page intro">
     <div class="wrapper">
       <header>
         <h2 class="">Software, app and web developer</h2>
@@ -23,7 +14,7 @@
       </div>
     </div>
   </section>
-  <section class="intro h1-page">
+  <section class="full-page slogan">
     <div class="wrapper">
       <header>
         <h3 class="fittext">
@@ -32,42 +23,26 @@
       </header>
     </div>
   </section>
-  <section class="also full-page">
+  <section class="full-page pitch">
     <div class="wrapper">
       <ul>
-        <li class="sr row">
-          <div class="col-lg-4">
-            <h4 class="fittext">Make it</h4>
-          </div>
-          <div class="col">
-            <p>Reflect your establishement online and claim your digital space. I&rsquo;d love to <a href="mailto:contact@alexseif.com">build it for you.</a></p>
-          </div>
+        <li class="sr">
+          <h4 class="fittext">Make it</h4>
+          <p>Reflect your establishement online and claim your digital space. I&rsquo;d love to <a href="mailto:contact@alexseif.com">build it for you.</a></p>
         </li>
-        <li class="sr row">
-          <div class="col-lg-4">
-            <h4 class="fittext">Deliver it</h4>
-          </div>
-          <div class="col">
-            <p>Reach the people that matter to your business on your terms. Get <a href="mailto:contact@alexseif.com">professional support</a> promoting you.</p>
-          </div>
+        <li class="sr">
+          <h4 class="fittext">Deliver it</h4>
+          <p>Reach the people that matter to your business on your terms. Get <a href="mailto:contact@alexseif.com">professional support</a> promoting you.</p>
         </li>
-        <li class="sr row">
-          <div class="col-lg-4">
-            <h4 class="fittext">Run it</h4>
-          </div>
-          <div class="col">
-            <p>Enrich your relation with your <span id=interactive-text>customers.</span><br/>
-              Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
-          </div>
+        <li class="sr">
+          <h4 class="fittext">Run it</h4>
+          <p>Enrich your relation with your <span id=interactive-text>customers.</span>
+            Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
         </li>
-        <li class="sr row">
-          <div class="col-lg-4">
-            <h4 class="fittext">Grow it</h4>
-          </div>
-          <div class="col">
-            <p>Business has only two functions – marketing and innovation.<br/>
-              It's time to <a href="mailto:contact@alexseif.com">get in touch.</a></p>
-          </div>
+        <li class="sr">
+          <h4 class="fittext">Grow it</h4>
+          <p>Business has only two functions – marketing and innovation.
+            It's time to <a href="mailto:contact@alexseif.com">get in touch.</a></p>
         </li>
       </ul>
     </div>
@@ -75,9 +50,9 @@
   <section class="projects">
     <div class="wrapper">
       <h3 class="title">My work</h3>
-      <ul class='list-group'>
+      <ul>
         {% for portfolio in portfolios %}
-          <li class="sr list-group-item">
+          <li class="sr">
             <h2>
               {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
             </h2>
@@ -93,57 +68,57 @@
   <footer class="end" itemscope itemtype="http://data-vocabulary.org/Person">
     <div class="wrapper">
       <h2 class="h1" itemprop="name">Alex Seif</h1>
-      <h2 itemprop="title">Software Engineer</h2>
-      <h2 itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience</h2>
-      <h3>
-        Based in 
-        <span class="flg-hldr">Cairo<img src="/images/Flag_of_Cairo.svg" alt="Flag of Cairo"/></span>, 
-        <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
-      </h3>
-      <h4>
-        From <span class="flg-hldr">Alexandria<img src="/images/218px-Flag_of_Alexandria.svg.png" alt="Flag of Alexandria"/></span>, 
-        <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
-      </h4>
-      <div class="bottom-section">
-        <h2>Email
-          <span id="cycling-1">
-            <a href="mailto:contact@alexseif.com">for a project</a>
-          </span>
-          <span id="cycling-2" style="display: none;">
-            <a href="mailto:contact@alexseif.com">for a <span>&#127829;</span><span>&#127881;</span></a>
-          </span>
-          <span id="cycling-3" style="display: none;">
-            <a href="mailto:contact@alexseif.com"><span>to make &#128241;</span></a>
-          </span>
-          <span id="cycling-4" style="display: none;">
-            <a href="mailto:contact@alexseif.com">for a <span>&#127940;</span></a>
-          </span>
-          <span id="cycling-5" style="display: none;">
-            <a href="mailto:contact@alexseif.com">to <span>&#128397;</span> ideas</a>
-          </span>
-        </h2>
-        <h2 class="developer"><a href="{{ path('jobs_index') }}">Developers Wanted</a></h2>
-        <p><span>&#9757;</span>No recruitment agencies.</p>
-      </div>
-      <!-- <div class="notes">
-         <h2>Let&rsquo;s work together</h2>
-         <p>Because of confidentiality with my existing clients, please <a href='mailto:contact@alexseif.com'>email</a> me to schedule a personalized portfolio presentation.</p>
-       </div>
-       <div class="links">
-         <a href="mailto:contact@alexseif.com">Email</a>
-         <a href="https://www.linkedin.com/in/alexseif/">LinkedIn</a>
-         <a href="{{ path('about')}}">About</a>
-         <a href="{{ path('jobs_index')}}">Jobs</a>
- 
-       </div> -->
-      {#
-              <div class='footer-owl pull-right' style='position: absolute; bottom: -50px; right: 50px;'>
-                <img src='/images/owl.png' alt="Owl"/>
-              </div>
-      #}
-      <div class="footnote">
-        Built with care
-      </div>
+        <h2 itemprop="title">Software Engineer</h2>
+        <h2 itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience</h2>
+        <h3>
+          Based in 
+          <span class="flg-hldr">Cairo<img src="/images/Flag_of_Cairo.svg" alt="Flag of Cairo"/></span>, 
+          <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
+        </h3>
+        <h4>
+          From <span class="flg-hldr">Alexandria<img src="/images/218px-Flag_of_Alexandria.svg.png" alt="Flag of Alexandria"/></span>, 
+          <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
+        </h4>
+        <div class="bottom-section">
+          <h2>Email
+            <span id="cycling-1">
+              <a href="mailto:contact@alexseif.com">for a project</a>
+            </span>
+            <span id="cycling-2" style="display: none;">
+              <a href="mailto:contact@alexseif.com">for a <span>&#127829;</span><span>&#127881;</span></a>
+            </span>
+            <span id="cycling-3" style="display: none;">
+              <a href="mailto:contact@alexseif.com"><span>to make &#128241;</span></a>
+            </span>
+            <span id="cycling-4" style="display: none;">
+              <a href="mailto:contact@alexseif.com">for a <span>&#127940;</span></a>
+            </span>
+            <span id="cycling-5" style="display: none;">
+              <a href="mailto:contact@alexseif.com">to <span>&#128397;</span> ideas</a>
+            </span>
+          </h2>
+          <h2 class="developer"><a href="{{ path('jobs_index') }}">Developers Wanted</a></h2>
+          <p><span>&#9757;</span>No recruitment agencies.</p>
+        </div>
+        <!-- <div class="notes">
+           <h2>Let&rsquo;s work together</h2>
+           <p>Because of confidentiality with my existing clients, please <a href='mailto:contact@alexseif.com'>email</a> me to schedule a personalized portfolio presentation.</p>
+         </div>
+         <div class="links">
+           <a href="mailto:contact@alexseif.com">Email</a>
+           <a href="https://www.linkedin.com/in/alexseif/">LinkedIn</a>
+           <a href="{{ path('about')}}">About</a>
+           <a href="{{ path('jobs_index')}}">Jobs</a>
+   
+         </div> -->
+        {#
+                <div class='footer-owl pull-right' style='position: absolute; bottom: -50px; right: 50px;'>
+                  <img src='/images/owl.png' alt="Owl"/>
+                </div>
+        #}
+        <div class="footnote">
+          Built with care
+        </div>
     </div>
   </footer>
   <div class="baseline"></div>

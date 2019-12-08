@@ -1,20 +1,14 @@
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+html {
+  /*  scroll-snap-points-y: mandatory;
+    scroll-snap-points-y: repeat(50vh);
+    scroll-snap-type: y proximity;*/
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   color: #000;
-  background: rgb(218, 221, 234);
+  background: #daddea;
 }
 
 
@@ -67,6 +61,7 @@ body {
 .page-elements .branding a{
   color: #fff;
 }
+
 .page-elements .branding a.menu_white {
   color: #fff;
 }
@@ -74,9 +69,11 @@ body {
 .page-elements .branding a.menu_black {
   color: #000;
 }
+
 .page-elements .branding a.menu_projects {
   max-width: 100px;
 }
+
 .background {
   position: fixed;
   width: 100vw;
@@ -109,11 +106,24 @@ section {
 
 section:nth-child(even){
   color: #000;
-  background: rgb(218, 221, 234);
+  background-color: #daddeb;
 }
+
 section:nth-child(odd){
   color: #fff;
   background-color: #000;
+}
+
+section.intro,
+section.pitch {
+  color: #fff;
+  background-color: #000;
+}
+
+section.slogan,
+section.projects {
+  color: #000;
+  background-color: #daddeb;
 }
 
 section.full-page{
@@ -121,21 +131,18 @@ section.full-page{
   max-width: 100vw;
   transition: padding 0.2s ease-in-out;
   padding: 40px;
+  scroll-snap-align: start;
 }
-
 
 section header{
-  width: 80vw;
-  position: absolute;
-  top: 20vh;
-  left: calc(20vw - 40px) ;
+  max-width: 80vw;
+  margin: 10vh auto;
+  font-size: 2.5em;
+  font-weight: 900;
 }
 
-section .bottom-section {
-  position: absolute;
-  width: 80vw;
-  top: 70vh;
-  /*left: 25vw;*/
+section .bottom-section p {
+  margin-bottom: 10px;
 }
 
 button, .button {
@@ -178,68 +185,29 @@ button:hover, .button:hover {
   text-decoration: none;
 }
 
-.intro{
-  height: 100vh;
-  max-width: 100vw;
-  transition: padding 0.2s ease-in-out;
-  padding: 40px;
-}
-
-.intro h2{
-  font-size: 10vw;
-  line-height: 0.95;
-  font-weight: 900;
-  margin: 0 auto;
-  line-height: 0.8em;
-}
-
-section.also{
-  background-color: #000;
-}
-
-.hello h1 {
-  margin-bottom: 20px;
-  font-size: 40px;
-}
-
-.hello .bottom-section {
-  transition: all 0.2s ease-in-out;
-  /*margin-top: 240px;*/
-  /*
-  TODO: better calc to margin across diferrent devices 
-  Note small devices in landscape fuck it up
-  And large HD screens 
-  ALSO maybe change font sizes to em */
-  margin-top: calc(60vh - 9.25em);
-}
-
-.hello .bottom-section h2 {
-  line-height: 40px;
-  display: inline-block;
-}
-
-.hello .bottom-section h2 span {
-  display: inline-block;
-}
-
-.hello .bottom-section h2 span span {
-  -webkit-filter: grayscale(100%) brightness(1.2);
-  filter: grayscale(100%) brightness(1.2);
-}
-
 .projects {
-  width: 100%;
-  transition: padding 0.2s ease-in-out;
-  padding: 40px;
+  padding: 20px;
 }
-
 
 .projects .title {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  font-weight: 900;
+  margin: 20px 0 20px 0;
 }
+
+.projects ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
 .projects ul li {
-  min-height: 200px;
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .projects ul li:hover span {
@@ -255,8 +223,6 @@ section.also{
 .projects ul li p {
   padding-top: 20px;
 }
-
-
 
 .end .footnote {
   color: #656581;
@@ -308,58 +274,36 @@ section.also{
 }
 .thingos{padding: 0px;}
 
-.also {
+.pitch {
   transition: padding 0.2s ease-in-out;
   padding: 40px;
 }
 
 
-.also h3 {
-  margin-bottom: 80px;
+.pitch ul {
+  display: flex;
+  align-items: left;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  width: calc(100vw - 80px);
 }
-
-.also ul li {
-  /*clear: left;*/
-  /*display: block;*/
-  margin-bottom: 80px;
+.pitch ul li{
+  flex: 1;
 }
-
-.also ul li:last-child {
-  margin-bottom: 20px;
-}
-
-
-.also ul li h4 {
+.pitch ul li h4 {
   text-transform: uppercase;
-  /*font-family: Roboto, Arial Narrow, _sans;*/
-  /*line-height: 40px;*/
-  /*padding-top: 0;*/
-  /*padding-bottom: 20px;*/
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
-.also ul li p {
+.pitch ul li p {
   font-family: Helvetica Neue, Helvetica, Arial, _sans;
-  /*font-size: 30px;*/
-  /*line-height: 40px;*/
-  /*padding: 0;*/
-  /*padding-top: 0;*/
 }
 
 
 .wise-owl-msg a{color: #000; text-decoration: none;}
-
-section.projects {
-  min-height: 100%;
-  min-height: 100vh;
-  padding-top: 65px;
-  position: relative;
-  z-index: 1;
-
-  -webkit-box-shadow: #000 0 7px 35px 0;
-  -moz-box-shadow: #000 0 7px 35px 0;
-  box-shadow: #000 0 7px 35px 0;
-
-}
 
 footer{
   padding: 25px 0;
@@ -373,7 +317,7 @@ footer{
 }
 
 .end {
-  background-color: #1D1F29;
+  /*background-color: #1D1F29;*/
   transition: padding 0.2s ease-in-out;
   padding: 40px;
   color: #fff;
@@ -415,21 +359,13 @@ footer{
   margin-right: 10px;
 }
 
-
-html {
-  scroll-snap-points-y: mandatory;
-  scroll-snap-points-y: repeat(50vh);
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-section.intro, 
-section.full-page{
-  scroll-snap-align: start;
-}
-
 @media only screen and (min-width:768px) {
+  .pitch ul li h4 {
+    width: 20vw;
+    height: 20vh;
+    float: left;
+    font-size: 3em;
+  }
   .hello h1 {
     font-size: 30px;
   }
@@ -480,18 +416,12 @@ section.full-page{
   .projects ul li p {
     padding-top: 20px;
   }
-  .also {
+  .pitch {
     padding: 40px;
   }
-  .also ul li {
-    /*min-height: 160px;*/
-  }
-  .also ul li:last-child {
+  .pitch ul li:last-child {
     margin-bottom: 40px;
     min-height: 120px;
-  }
-  .also ul li h4 {
-    /*padding-right: 40px;*/
   }
   .end {
     padding: 40px;
@@ -560,10 +490,10 @@ section.full-page{
   .end .links {
     width: 62.5%;
   }
-  .also {
+  .pitch {
     padding: 80px;
   }
-  .also ul li:last-child {
+  .pitch ul li:last-child {
     margin-bottom: 40px;
     min-height: 0;
   }
@@ -596,10 +526,10 @@ section.full-page{
   .projects ul li {
     min-height: 350px;
   }
-  .also ul li h4 {
+  .pitch ul li h4 {
     padding-top: 20px;
   }
-  .also ul li p {
+  .pitch ul li p {
     font-size: 36px;
     /*line-height: 50px;*/
     /*padding-top: 16px;*/
