@@ -11,6 +11,15 @@ body {
   background: #daddea;
 }
 
+.site-wrapper{
+  -webkit-box-shadow: #000 0 7px 35px 0;
+  -moz-box-shadow: #000 0 7px 35px 0;
+  box-shadow: #000 0 7px 35px 0;
+}
+
+.wise-owl-msg a{
+  color: #000; text-decoration: none;
+}
 
 @-webkit-keyframes twirlbaby {
   from {
@@ -134,6 +143,10 @@ section.full-page{
   scroll-snap-align: start;
 }
 
+section.full-page.pitch {
+  padding-top: 80px;
+}
+
 section header{
   margin: 10vh auto;
   font-size: 2.5em;
@@ -209,6 +222,11 @@ button:hover, .button:hover {
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+.projects ul li h2 {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
 .projects ul li:hover span {
   transition: opacity 0.2s ease-in-out;
   opacity: .5;
@@ -217,10 +235,6 @@ button:hover, .button:hover {
 .projects ul li span {
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
-}
-
-.projects ul li p {
-  padding-top: 20px;
 }
 
 .end .footnote {
@@ -273,24 +287,22 @@ button:hover, .button:hover {
 }
 .thingos{padding: 0px;}
 
-.pitch {
-  transition: padding 0.2s ease-in-out;
-  padding: 40px;
-}
-
-
 .pitch ul {
   display: flex;
-  align-items: left;
+  align-items: self-end;
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: column;
   height: calc(100vh - 80px);
   width: calc(100vw - 80px);
 }
+
 .pitch ul li{
   flex: 1;
+  margin: 0 auto;
+  width: 100%;
 }
+
 .pitch ul li h4 {
   text-transform: uppercase;
   font-size: 2em;
@@ -301,8 +313,11 @@ button:hover, .button:hover {
   font-family: Helvetica Neue, Helvetica, Arial, _sans;
 }
 
-
-.wise-owl-msg a{color: #000; text-decoration: none;}
+.projects h2 {
+  font-size: 1em;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
 
 footer{
   padding: 25px 0;
@@ -316,7 +331,6 @@ footer{
 }
 
 .end {
-  /*background-color: #1D1F29;*/
   transition: padding 0.2s ease-in-out;
   padding: 40px;
   color: #fff;
@@ -360,28 +374,23 @@ footer{
 
 @media only screen and (min-width:768px) {
   .pitch ul li h4 {
-    width: 20vw;
-    height: 20vh;
+    width: 40vw;
     float: left;
     font-size: 3em;
   }
-  
+
   section header{
     font-size: 6em;
   }
-  
+
   section.intro header{
     margin-left: 20vw;
   }
-  
+
   section .bottom-section {
     margin: 0 10vw;
   }
-  
-  section.full-page {
-    padding: 40px;
-  }
-  
+
   .projects .title {
     margin-top: 40px;
     margin-bottom: 80px;
@@ -414,20 +423,18 @@ footer{
   .projects ul li p {
     padding-top: 20px;
   }
-  .pitch {
-    padding: 40px;
+
+  .pitch ul li{
+    margin: 0;
   }
-  .pitch ul li:last-child {
-    margin-bottom: 40px;
-    min-height: 120px;
-  }
+
   .end {
     padding: 40px;
   }
-  
+
   .end .bottom-section {
   }
-  
+
   .end .links a {
     margin-right: 0;
     margin-left: 20px;
@@ -448,24 +455,32 @@ footer{
 
 
 @media only screen and (min-width:1024px) {
+  .pitch ul li h4 {
+    width: 30vw;
+  }
+
   .projects {
     padding: 80px;
   }
+
   .projects ul li {
     min-height: 320px;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
   }
+
   .projects ul li h3,
   .projects ul li p {
     padding-right: 60px;
   }
+
   .projects ul li:nth-child(1),
   .projects ul li:nth-child(10),
   .projects ul li:nth-child(11) {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
   }
+
   .projects ul li:nth-child(1) p,
   .projects ul li:nth-child(10) p,
   .projects ul li:nth-child(11) p {
@@ -476,27 +491,21 @@ footer{
     padding-top: 20px;
     padding-right: 80px;
   }
+
   .projects ul li:nth-child(10) p {
     padding-right: 40px
   }
+
   .projects ul li:nth-child(11),
   .projects ul li:nth-child(12),
   .projects ul li:nth-child(13) {
     min-height: 240px;
   }
-  section.full-page {
-    padding: 80px;
-  }
+
   .end .links {
     width: 62.5%;
   }
-  .pitch {
-    padding: 80px;
-  }
-  .pitch ul li:last-child {
-    margin-bottom: 40px;
-    min-height: 0;
-  }
+
   .end {
     padding: 80px;
   }
@@ -505,15 +514,21 @@ footer{
 }
 
 @media only screen and (min-width:1400px) {
-  section header{
-    font-size: 10em;
-    margin-left: 20vw;
+  .pitch ul li h4 {
+    width: 20vw;
   }
+
+  section header{
+    font-size: 9em;
+    margin-left: 15vw;
+  }
+
   section .bottom-section {
     width: 25vw;
     top: 70vh;
     left: 25vw;
   }
+
   .projects ul li:nth-child(1) p,
   .projects ul li:nth-child(10) p,
   .projects ul li:nth-child(11) p {
@@ -521,20 +536,19 @@ footer{
     line-height: 50px;
     padding-top: 16px;
   }
+
   .projects .title {
     margin-top: 0;
   }
+
   .projects ul li {
     min-height: 350px;
   }
-  .pitch ul li h4 {
-    padding-top: 20px;
-  }
+
   .pitch ul li p {
     font-size: 36px;
-    /*line-height: 50px;*/
-    /*padding-top: 16px;*/
   }
+
   .end .links a {
     font-size: 36px;
     line-height: 50px;

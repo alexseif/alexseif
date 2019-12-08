@@ -1,70 +1,72 @@
 {% extends '::base.html.twig' %}
 {% block title %}Alex Seif - Web developer{% endblock %}
 {% block content %}
-  <section class="full-page intro">
-    <div class="wrapper">
-      <header>
-        <h2 class="">Software, app and web developer</h2>
-      </header>
-      <div class="bottom-section">
-        <p>
-          Custom software, mobile applications and websites I build, help you increase profit, minimize risk and make your business more efficient.
-        </p>
-        <a class='button' href="mailto:contact@alexseif.com" target="_blank">Start a project</a>
+  <div class="site-wrapper">
+    <section class="full-page intro">
+      <div class="wrapper">
+        <header>
+          <h2 class="">Software, app and web developer</h2>
+        </header>
+        <div class="bottom-section">
+          <p>
+            Custom software, mobile applications and websites I build, help you increase profit, minimize risk and make your business more efficient.
+          </p>
+          <a class='button' href="mailto:contact@alexseif.com" target="_blank">Start a project</a>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="full-page slogan">
-    <div class="wrapper">
-      <header>
-        <h3>
-          I create progress by designing and developing digital experiences
-        </h3>
-      </header>
-    </div>
-  </section>
-  <section class="full-page pitch">
-    <div class="wrapper">
-      <ul>
-        <li class="sr">
-          <h4>Make it</h4>
-          <p>Reflect your establishement online and claim your digital space. I&rsquo;d love to <a href="mailto:contact@alexseif.com">build it for you.</a></p>
-        </li>
-        <li class="sr">
-          <h4>Deliver it</h4>
-          <p>Reach the people that matter to your business on your terms. Get <a href="mailto:contact@alexseif.com">professional support</a> promoting you.</p>
-        </li>
-        <li class="sr">
-          <h4>Run it</h4>
-          <p>Enrich your relation with your <span id=interactive-text>customers.</span>
-            Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
-        </li>
-        <li class="sr">
-          <h4>Grow it</h4>
-          <p>Business has only two functions – marketing and innovation.
-            It's time to <a href="mailto:contact@alexseif.com">get in touch.</a></p>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="projects">
-    <div class="wrapper">
-      <h3 class="title">My work</h3>
-      <ul>
-        {% for portfolio in portfolios %}
+    </section>
+    <section class="full-page slogan">
+      <div class="wrapper">
+        <header>
+          <h3>
+            I create progress by designing and developing digital experiences
+          </h3>
+        </header>
+      </div>
+    </section>
+    <section class="full-page pitch">
+      <div class="wrapper">
+        <ul>
           <li class="sr">
-            <h2>
-              {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
-            </h2>
-            <p>{{ portfolio.subtitle }}</p>
-            {% for tag in portfolio.tags %}
-              <span>{{ tag.name }}</span>{{ (loop.last)? ';' : ','}}
-            {% endfor %}
+            <h4>Make it</h4>
+            <p>Reflect your establishement online and claim your digital space. I&rsquo;d love to <a href="mailto:contact@alexseif.com">build it for you.</a></p>
           </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
+          <li class="sr">
+            <h4>Deliver it</h4>
+            <p>Reach the people that matter to your business on your terms. Get <a href="mailto:contact@alexseif.com">professional support</a> promoting you.</p>
+          </li>
+          <li class="sr">
+            <h4>Run it</h4>
+            <p>Enrich your relation with your <span id=interactive-text>customers.</span>
+              Live simply. Live clean. Live <a href="mailto:contact@alexseif.com">in control.</a></p>
+          </li>
+          <li class="sr">
+            <h4>Grow it</h4>
+            <p>Business has only two functions – marketing and innovation.
+              It's time to <a href="mailto:contact@alexseif.com">get in touch.</a></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="projects">
+      <div class="wrapper">
+        <h3 class="title">My work</h3>
+        <ul>
+          {% for portfolio in portfolios %}
+            <li class="sr">
+              <h2>
+                {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
+              </h2>
+              <p>{{ portfolio.subtitle }}</p>
+              {% for tag in portfolio.tags %}
+                <span>{{ tag.name }}</span>{{ (loop.last)? ';' : ','}}
+              {% endfor %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </div>
   <footer class="end" itemscope itemtype="http://data-vocabulary.org/Person">
     <div class="wrapper">
       <h2 class="h1" itemprop="name">Alex Seif</h1>
@@ -121,7 +123,6 @@
         </div>
     </div>
   </footer>
-  <div class="baseline"></div>
 {% endblock %}
 {% block javascripts %}
   {{ parent() }}
