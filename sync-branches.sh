@@ -7,3 +7,6 @@ git push origin careers
 git checkout symfony_upgrade
 git merge master
 git push origin symfony_upgrade
+git checkout redesign
+git merge master
+git push origin redesign
