@@ -135,7 +135,6 @@ section.full-page{
 }
 
 section header{
-  max-width: 80vw;
   margin: 10vh auto;
   font-size: 2.5em;
   font-weight: 900;
@@ -366,24 +365,23 @@ footer{
     float: left;
     font-size: 3em;
   }
-  .hello h1 {
-    font-size: 30px;
+  
+  section header{
+    font-size: 6em;
   }
-  h2 {
-    font-size: 20px;
-    line-height: 30px;
+  
+  section.intro header{
+    margin-left: 20vw;
   }
-  h3 {
-    font-size: 16px;
-  }
+  
   section .bottom-section {
-    width: 70vw;
-    top: 70vh;
-    left: 25vw;
+    margin: 0 10vw;
   }
+  
   section.full-page {
     padding: 40px;
   }
+  
   .projects .title {
     margin-top: 40px;
     margin-bottom: 80px;
@@ -426,8 +424,10 @@ footer{
   .end {
     padding: 40px;
   }
+  
   .end .bottom-section {
   }
+  
   .end .links a {
     margin-right: 0;
     margin-left: 20px;
@@ -505,8 +505,9 @@ footer{
 }
 
 @media only screen and (min-width:1400px) {
-  .intro h2{
+  section header{
     font-size: 10em;
+    margin-left: 20vw;
   }
   section .bottom-section {
     width: 25vw;
