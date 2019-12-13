@@ -54,15 +54,17 @@ class BackupsController extends Controller
     }
 
     $fs = new Filesystem();
-    $count = $finder->count();
-    foreach ($finder->files() as $file) {
-      if ($count >= 5) {
-        try {
-          $fs->remove($file);
-        } catch (IOExceptionInterface $e) {
-          echo "An error occurred while creating your directory at " . $e->getPath();
+    if (!is_null($finder)) {
+      $count = $finder->count();
+      foreach ($finder->files() as $file) {
+        if ($count >= 5) {
+          try {
+            $fs->remove($file);
+          } catch (IOExceptionInterface $e) {
+            echo "An error occurred while creating your directory at " . $e->getPath();
+          }
+          $count--;
         }
-        $count--;
       }
     }
 

@@ -7,7 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en_US
-    httpProtocol: http
+    httpprotocol: http
 framework:
     #esi: ~
     translator:      { fallbacks: ["%locale%"] }
@@ -34,8 +34,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    form:
-      resources: ['bootstrap_3_horizontal_layout.html.twig']
+    form_themes:
+        - 'bootstrap_3_layout.html.twig'
     date:
         format: d.m.Y, H:i:s
         interval_format: '%%d days'
@@ -75,6 +75,8 @@ stof_doctrine_extensions:
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
+    encryption: tls
+    auth_mode: login
     host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
@@ -124,7 +126,7 @@ zenstruck_backup:
                 user:       "%database_user%"
                 password:   "%database_password%"
     processors:
-        gzip: { gzip:~ }
+        gzip: { 'gzip':~ }
     destinations:
         dir: 
             stream: 
@@ -136,7 +138,7 @@ zenstruck_backup:
             namer: daily
             processor: gzip
             destinations: [dir]
-    
+            
 doctrine_migrations:
   dir_name: "%kernel.root_dir%/DoctrineMigrations"
   namespace: Application\Migrations
