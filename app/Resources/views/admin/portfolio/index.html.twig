@@ -6,30 +6,36 @@
   {% endblock %}
 
 {% block adminPageContent %}
-  <table class="table table-bordered table-stripped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody class="sortable" data-url="{{ path('admin_portfolio_position') }}">
-      {% for portfolio in portfolios %}
-        <tr data-id="portfolio_{{ portfolio.id }}" data-order="id_{{ portfolio.id }}">
-          <td>{{ portfolio.title }}
-            <div class="btn-group btn-group-sm pull-right">
-              <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}"
-                 class="btn btn-info">
-                <span class="glyphicon glyphicon-folder-open"></span></a>
-              <a href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}"
-                 class="btn btn-primary">
-                <span class="glyphicon glyphicon-pencil"></span></a>
-            </div>
-          </td>
-          <td>{{ portfolio.publishedAt ? portfolio.publishedAt|date }}</td>
+  <div class="table-responsive">
+    <table class="table table-bordered table-stripped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Tags</th>
+          <th>Date</th>
+          <th>Actions</th>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody class="sortable" data-url="{{ path('admin_portfolio_position') }}">
+        {% for portfolio in portfolios %}
+          <tr data-id="portfolio_{{ portfolio.id }}" data-order="id_{{ portfolio.id }}">
+            <td>{{ portfolio.title }}</td>
+            <td>{{ portfolio.tags|join(', ') }}</td>
+            <td>{{ portfolio.publishedAt ? portfolio.publishedAt|date('d-m-Y') }}</td>
+            <td>
+              <div class="btn-group btn-group-sm">
+                <a href="{{ path('admin_portfolio_show', { 'id': portfolio.id }) }}"
+                   class="btn btn-info">
+                  <span class="glyphicon glyphicon-folder-open"></span></a>
+                <a href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}"
+                   class="btn btn-primary">
+                  <span class="glyphicon glyphicon-pencil"></span></a>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
 

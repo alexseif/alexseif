@@ -32,6 +32,10 @@ class AdminPortfolioController extends Controller
       'publishedAt' => 'DESC'
     ));
 
+    foreach ($portfolios as $portfolio) {
+      $portfolio->setTags($this->getTags($portfolio));
+    }
+
     return $this->render('admin/portfolio/index.html.twig', array(
           'portfolios' => $portfolios,
     ));
@@ -215,6 +219,18 @@ class AdminPortfolioController extends Controller
             ->setMethod('DELETE')
             ->getForm()
     ;
+  }
+
+  /**
+   * @param Portfolio $portfolio
+   * @return \Doctrine\Common\Collections\ArrayCollection
+   */
+  public function getTags(\AppBundle\Entity\Portfolio $portfolio)
+  {
+    $tagManager = $this->get('fpn_tag.tag_manager');
+    $tagManager->loadTagging($portfolio);
+
+    return $portfolio->getTags();
   }
 
 }
