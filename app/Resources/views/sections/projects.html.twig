@@ -1,0 +1,18 @@
+<section class="projects">
+  <div class="wrapper">
+    <h3 class="title">My work</h3>
+    <ul>
+      {% for portfolio in portfolios %}
+        <li class="sr">
+          <h2>
+            {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
+          </h2>
+          <p>{{ portfolio.subtitle }}</p>
+          {% for tag in portfolio.tags %}
+            <span>{{ tag.name }}</span>{{ (loop.last)? ';' : ','}}
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
