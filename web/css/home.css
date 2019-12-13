@@ -1,3 +1,139 @@
+/*
+The following content was designed & implemented under AlexSeif.com
+*/
+/* 
+    Created on : Jan 14, 2017, 11:10:24 AM
+    Author     : Alex Seif <me@alexseif.com>
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  color: #000;
+  background: #daddea;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body{
+}
+/** overflow **/
+/*{# https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp #}*/
+body::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: rgb(29,31,41);
+}
+
+body::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+}
+
+/* Style the header: fixed position (always stay at the top) */
+/*{#      https://www.w3schools.com/howto/howto_js_scroll_indicator.asp #}*/
+.scroll-indicator{
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  background-color: #daddea;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #2A2A2A;
+  /*rgb(29,31,41);*/
+  width: 0%;
+}
+
+/** Owl announcements **/
+section:nth-child(odd) div{
+  z-index: 1;
+}
+section:nth-child(even) div{
+  z-index: 3;
+}
+#announcements{
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  z-index: 2;
+}
+.wise-owl{
+  width: 100px;
+  display: block;
+  cursor: pointer;
+}
+.wise-owl-msg {
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+  border-radius: 20px 20px 0 20px;
+  text-align: right;
+  right: 80px;
+  position: fixed;
+  bottom: 115px;
+}
+.wrapper{padding: 40px;}
+
 html {
   /*  scroll-snap-points-y: mandatory;
     scroll-snap-points-y: repeat(50vh);
@@ -7,8 +143,8 @@ html {
 }
 
 body {
-  color: #000;
-  background: #daddea;
+
+
 }
 
 .site-wrapper{
@@ -139,7 +275,6 @@ section.full-page{
   height: 100vh;
   max-width: 100vw;
   transition: padding 0.2s ease-in-out;
-  padding: 40px;
   scroll-snap-align: start;
 }
 
@@ -237,7 +372,7 @@ button:hover, .button:hover {
   opacity: 0;
 }
 
-.end .footnote {
+footer .footnote {
   color: #656581;
   clear: left;
   font-size: 12px;
@@ -246,7 +381,7 @@ button:hover, .button:hover {
   bottom: 0;
 }
 
-.end .footnote a {
+footer .footnote a {
   cursor: pointer;
 }
 
@@ -328,30 +463,27 @@ footer{
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-.end {
   transition: padding 0.2s ease-in-out;
   padding: 40px;
   color: #fff;
 }
-.end a{color: rgb(218, 221, 234);}
+footer a{color: rgb(218, 221, 234);}
 
 
-.end .bottom-section h2 {
+footer .bottom-section h2 {
   padding-top: 0;
   margin-bottom: 40px;
 }
 
-.end .bottom-section p {
+footer .bottom-section p {
   position: relative;
 }
 
-.end .bottom-section p:last-child {
+footer .bottom-section p:last-child {
   padding-left: 45px;
 }
 
-.end .bottom-section p span {
+footer .bottom-section p span {
   font-size: 34px;
   -webkit-filter: grayscale(100%) brightness(1.2);
   filter: grayscale(100%) brightness(1.2);
@@ -364,7 +496,7 @@ footer{
   animation-direction: alternate;
 }
 
-.end .links a {
+footer .links a {
   font-size: 30px;
   line-height: 40px;
   padding: 0;
@@ -428,18 +560,18 @@ footer{
     margin: 0;
   }
 
-  .end {
+  footer {
     padding: 40px;
   }
 
-  .end .bottom-section {
+  footer .bottom-section {
   }
 
-  .end .links a {
+  footer .links a {
     margin-right: 0;
     margin-left: 20px;
   }
-  .end .links {
+  footer .links {
     margin-top: 0;
     width: 50%;
     display: inline-block;
@@ -502,14 +634,14 @@ footer{
     min-height: 240px;
   }
 
-  .end .links {
+  footer .links {
     width: 62.5%;
   }
 
-  .end {
+  footer {
     padding: 80px;
   }
-  .end .bottom-section {
+  footer .bottom-section {
   }
 }
 
@@ -549,7 +681,7 @@ footer{
     font-size: 36px;
   }
 
-  .end .links a {
+  footer .links a {
     font-size: 36px;
     line-height: 50px;
     padding-top: 16px;
