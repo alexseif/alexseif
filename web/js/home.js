@@ -138,6 +138,8 @@ $(document).ready(function () {
   $('.wise-owl').hover(function () {
     $('.wise-owl-msg').fadeToggle();
   });
+  
+//  $('.fittext').fitText();
 });
 
 // https://www.w3schools.com/howto/howto_js_scroll_indicator.asp 

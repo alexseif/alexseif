@@ -36,11 +36,17 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+html {
+  /*  scroll-snap-points-y: mandatory;
+    scroll-snap-points-y: repeat(50vh);
+    scroll-snap-type: y proximity;*/
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 body {
   color: #000;
   background: #daddea;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  line-height: 1;
+  font-family: BlinkMacSystemFont,  Arial, sans-serif;
 }
 ol, ul {
   list-style: none;
@@ -57,9 +63,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-body{
+.wrapper{
+  padding: 40px;
 }
+.site-wrapper{
+  -webkit-box-shadow: #000 0 7px 35px 0;
+  -moz-box-shadow: #000 0 7px 35px 0;
+  box-shadow: #000 0 7px 35px 0;
+}
+
 /** overflow **/
 /*{# https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp #}*/
 body::-webkit-scrollbar-track
@@ -132,69 +144,8 @@ section:nth-child(even) div{
   position: fixed;
   bottom: 115px;
 }
-.wrapper{padding: 40px;}
-
-html {
-  /*  scroll-snap-points-y: mandatory;
-    scroll-snap-points-y: repeat(50vh);
-    scroll-snap-type: y proximity;*/
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-body {
-
-
-}
-
-.site-wrapper{
-  -webkit-box-shadow: #000 0 7px 35px 0;
-  -moz-box-shadow: #000 0 7px 35px 0;
-  box-shadow: #000 0 7px 35px 0;
-}
-
 .wise-owl-msg a{
   color: #000; text-decoration: none;
-}
-
-@-webkit-keyframes twirlbaby {
-  from {
-    -webkit-transform: rotate(-20deg);
-    transform: rotate(-20deg);
-  }
-  to {
-    -webkit-transform: rotate(20deg);
-    transform: rotate(20deg);
-  }
-}
-
-@keyframes twirlbaby {
-  from {
-    -webkit-transform: rotate(-20deg);
-    transform: rotate(-20deg);
-  }
-  to {
-    -webkit-transform: rotate(20deg);
-    transform: rotate(20deg);
-  }
-}
-
-@-webkit-keyframes background-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes background-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .page-elements{
@@ -283,9 +234,13 @@ section.full-page.pitch {
 }
 
 section header{
-  margin: 10vh auto;
-  font-size: 2.5em;
+  /*font-size: 2.5em;*/
+  font-size: 10vw;
   font-weight: 900;
+}
+
+section.intro header{
+  margin: 10vh auto 10vh 5vw;
 }
 
 section .bottom-section p {
@@ -336,6 +291,12 @@ button:hover, .button:hover {
   padding: 20px;
 }
 
+.projects h2 {
+  font-size: 1em;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
 .projects .title {
   font-weight: 900;
   margin: 20px 0 20px 0;
@@ -370,19 +331,6 @@ button:hover, .button:hover {
 .projects ul li span {
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
-}
-
-footer .footnote {
-  color: #656581;
-  clear: left;
-  font-size: 12px;
-  line-height: 40px;
-  position: fixed;
-  bottom: 0;
-}
-
-footer .footnote a {
-  cursor: pointer;
 }
 
 .baseline {
@@ -448,10 +396,44 @@ footer .footnote a {
   font-family: Helvetica Neue, Helvetica, Arial, _sans;
 }
 
-.projects h2 {
-  font-size: 1em;
-  font-weight: bold;
-  padding-bottom: 20px;
+@-webkit-keyframes twirlbaby {
+  from {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  to {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes twirlbaby {
+  from {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  to {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+
+@-webkit-keyframes background-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes background-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 footer{
@@ -467,8 +449,23 @@ footer{
   padding: 40px;
   color: #fff;
 }
-footer a{color: rgb(218, 221, 234);}
 
+footer .footnote {
+  color: #656581;
+  clear: left;
+  font-size: 12px;
+  line-height: 40px;
+  position: fixed;
+  bottom: 0;
+}
+
+footer .footnote a {
+  cursor: pointer;
+}
+
+footer a{
+  color: rgb(218, 221, 234);
+}
 
 footer .bottom-section h2 {
   padding-top: 0;
@@ -512,11 +509,7 @@ footer .links a {
   }
 
   section header{
-    font-size: 6em;
-  }
-
-  section.intro header{
-    margin-left: 20vw;
+    /*font-size: 6em;*/
   }
 
   section .bottom-section {
@@ -651,8 +644,7 @@ footer .links a {
   }
 
   section header{
-    font-size: 9em;
-    margin-left: 15vw;
+    /*font-size: 12em;*/
   }
 
   section .bottom-section {
