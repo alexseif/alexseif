@@ -1,16 +1,25 @@
 <section class="projects">
   <div class="wrapper">
-    <h3 class="title">My work</h3>
+    <header>
+      <h3 class="title">My work</h3>
+    </header>
     <ul>
       {% for portfolio in portfolios %}
         <li class="sr">
-          <h2>
+          <h3>
             {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
-          </h2>
-          <p>{{ portfolio.subtitle }}</p>
-          {% for tag in portfolio.tags %}
-            <span>{{ tag.name }}</span>{{ (loop.last)? ';' : ','}}
-          {% endfor %}
+          </h3>
+          {% if portfolio.subtitle is not empty %}
+            <p>{{ portfolio.subtitle }}</p>
+          {% endif %}
+          {#          {% if portfolio.description is not empty %}#}
+          {#            <p>{{ portfolio.description }}</p>#}
+          {#          {% endif %}#}
+          <div class="tags">
+            {% for tag in portfolio.tags %}
+              <span>{{ tag.name }}</span>{{ (loop.last)? ';' : ','}}
+            {% endfor %}
+          </div>
         </li>
       {% endfor %}
     </ul>

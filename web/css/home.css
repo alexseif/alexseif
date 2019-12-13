@@ -63,9 +63,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.wrapper{
-  padding: 40px;
-}
+
 .site-wrapper{
   -webkit-box-shadow: #000 0 7px 35px 0;
   -moz-box-shadow: #000 0 7px 35px 0;
@@ -233,7 +231,7 @@ section.full-page{
   min-height: 100vh;
 }
 
-.wrapper > * {
+section.full-page .wrapper > * {
   padding: 20px;
 }
 
@@ -304,12 +302,6 @@ button:hover, .button:hover {
   padding: 20px;
 }
 
-.projects h2 {
-  font-size: 1em;
-  font-weight: bold;
-  padding-bottom: 20px;
-}
-
 .projects .title {
   font-weight: 900;
   margin: 20px 0 20px 0;
@@ -331,19 +323,40 @@ button:hover, .button:hover {
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.projects ul li h2 {
+.projects ul li h3 {
   font-weight: bold;
-  padding-bottom: 20px;
+  font-size: 1.5em;
+  padding-bottom: 10px;
+}
+
+.projects ul li h3 {
+  padding-bottom: 10px;
+}
+
+.projects ul li p {
+  padding-bottom: 10px;
+}
+
+.projects ul li .tags{
+  color: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 10px;
 }
 
 .projects ul li:hover span {
   transition: opacity 0.2s ease-in-out;
-  opacity: .5;
+  opacity: 1;
 }
 
 .projects ul li span {
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
+}
+
+.projects ul li h3 span.year{
+  color: rgba(0,0,0,0.5);
+  font-weight: normal;
+  float: right;
 }
 
 .baseline {
@@ -364,6 +377,7 @@ button:hover, .button:hover {
 .flg-hldr{
   position: relative;
 }
+
 .flg-hldr img{
   /*-webkit-filter: grayscale(30%);  Safari 6.0 - 9.0 */
   /*filter: grayscale(30%);*/
@@ -376,12 +390,12 @@ button:hover, .button:hover {
   right: 5%;
   /*filter: saturate(50%);*/
 }
+
 .flg-hldr:hover img{
   -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
   transition: width 0.5s;
   width: 3em;
 }
-.thingos{padding: 0px;}
 
 .pitch ul {
   display: flex;
@@ -482,7 +496,7 @@ footer a{
 
 footer .bottom-section h2 {
   padding-top: 0;
-  margin-bottom: 40px;
+  /*margin-bottom: 40px;*/
 }
 
 footer .bottom-section p {
@@ -530,8 +544,8 @@ footer .links a {
   }
 
   .projects .title {
-    margin-top: 40px;
-    margin-bottom: 80px;
+    /*margin-top: 40px;*/
+    /*    margin-bottom: 80px;*/
   }
 
   .projects ul {
@@ -548,16 +562,14 @@ footer .links a {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+
   .projects ul li {
     margin-bottom: 0;
-    min-height: 240px;
+    min-height: 200px;
     -ms-flex-preferred-size: 33.33%;
-    flex-basis: 33.33%;
+    flex-basis: 30%;
   }
-  .projects ul li h3,
-  .projects ul li p {
-    padding-right: 40px;
-  }
+
   .projects ul li p {
     padding-top: 20px;
   }
@@ -602,14 +614,8 @@ footer .links a {
   }
 
   .projects ul li {
-    min-height: 320px;
     -ms-flex-preferred-size: 25%;
-    flex-basis: 25%;
-  }
-
-  .projects ul li h3,
-  .projects ul li p {
-    padding-right: 60px;
+    flex-basis: 20%;
   }
 
   .projects ul li:nth-child(1),
@@ -623,22 +629,8 @@ footer .links a {
   .projects ul li:nth-child(10) p,
   .projects ul li:nth-child(11) p {
     font-size: 30px;
-    line-height: 40px;
-    padding: 0;
-    padding-top: 0;
-    padding-top: 20px;
-    padding-right: 80px;
   }
 
-  .projects ul li:nth-child(10) p {
-    padding-right: 40px
-  }
-
-  .projects ul li:nth-child(11),
-  .projects ul li:nth-child(12),
-  .projects ul li:nth-child(13) {
-    min-height: 240px;
-  }
 
   footer .links {
     width: 62.5%;
@@ -669,17 +661,11 @@ footer .links a {
   .projects ul li:nth-child(1) p,
   .projects ul li:nth-child(10) p,
   .projects ul li:nth-child(11) p {
-    font-size: 36px;
-    line-height: 50px;
-    padding-top: 16px;
+    font-size: 2em;
   }
 
   .projects .title {
     margin-top: 0;
-  }
-
-  .projects ul li {
-    min-height: 350px;
   }
 
   .pitch ul li p {
