@@ -149,11 +149,24 @@ section:nth-child(even) div{
 .page-elements{
   position: fixed;
   z-index: 10;
-  padding: 10px;
+  padding-top: 50px;
+  padding-left: 25px;
 }
 
-.page-elements .branding a{
+.page-elements .branding{
+  max-width: 85px;
+}
+
+.page-elements .branding h1{
+  text-align: center;
+}
+
+.page-elements .branding h1 a{
   color: #fff;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: monospace;
 }
 
 .page-elements .branding a.menu_white {
@@ -168,28 +181,8 @@ section:nth-child(even) div{
   max-width: 100px;
 }
 
-.background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  -webkit-animation: background-in 2s 1;
-  animation: background-in 2s 1;
-  background-image: linear-gradient(to top, #3E4252 10%, #1D1F29 90%);
-  /*background-image: url('/images/Cairo-1.jpg');*/
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* Add the blur effect */
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-
-  filter: saturate(50%);
-
-  /*-webkit-filter: grayscale(30%);  Safari 6.0 - 9.0 */
-  /*filter: grayscale(30%);*/
+.site-wrapper section .wrapper{
+  padding-left: 150px;
 }
 
 section {
@@ -229,10 +222,6 @@ section.full-page{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-section.full-page .wrapper > * {
-  padding: 20px;
 }
 
 section.full-page .wrapper {
@@ -404,7 +393,7 @@ button:hover, .button:hover {
   justify-content: space-around;
   flex-direction: column;
   height: calc(100vh - 80px);
-  width: calc(100vw - 80px);
+  /*width: calc(100vw - 80px);*/
 }
 
 .pitch ul li{
@@ -653,7 +642,7 @@ footer .links a {
   }
 
   section .bottom-section {
-    width: 25vw;
+    width: 15vw;
     top: 70vh;
     left: 25vw;
   }
