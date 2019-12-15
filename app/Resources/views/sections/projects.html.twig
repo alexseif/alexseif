@@ -6,8 +6,9 @@
     <ul>
       {% for portfolio in portfolios %}
         <li class="sr">
+          <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
           <h3>
-            {{ portfolio.title }} <span class="year"> {{ portfolio.publishedAt  ? portfolio.publishedAt|date("Y")}}</span>
+            {{ portfolio.title }} 
           </h3>
           {% if portfolio.subtitle is not empty %}
             <p>{{ portfolio.subtitle }}</p>
