@@ -206,7 +206,8 @@ section:nth-child(even) div{
   max-width: 100px;
 }
 
-.site-wrapper section .wrapper{
+.site-wrapper section .wrapper,
+footer .wrapper{
   padding-left: 150px;
   padding-right: 30px;
 }
@@ -288,7 +289,6 @@ button.start-project, .button.start-project {
   background-color: #fff;
   border: 1px solid #ccc;
 }
-
 
 button:hover, .button:hover {
   will-change: transform,background-color,color;
@@ -476,7 +476,8 @@ button:hover, .button:hover {
 
 footer{
   padding: 25px 0;
-  font-size: 85%;
+  font-size: 2em;
+  font-weight: bold;
   background-color: #2A2A2A;
   position: fixed;
   z-index: -1;
@@ -485,16 +486,35 @@ footer{
   bottom: 0;
   transition: padding 0.2s ease-in-out;
   padding: 40px;
-  color: #fff;
+  /*color: #fff;*/
+  color: #0c0c0c;
+  text-shadow: 1px 0px 0px rgba(255,255,255,.2); /* 50% white from bottom */
 }
 
+footer .wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;  
+}
+
+footer .col{
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+
 footer .footnote {
-  color: #656581;
-  clear: left;
+  color: #0c0c0c;
+  /*color: #656581;*/
+  /*clear: left;*/
   font-size: 12px;
-  line-height: 40px;
-  position: fixed;
-  bottom: 0;
+  /*line-height: 40px;*/
+  /*position: fixed;*/
+  /*bottom: 0;*/
+  text-shadow: none;
 }
 
 footer .footnote a {
@@ -502,7 +522,8 @@ footer .footnote a {
 }
 
 footer a{
-  color: rgb(218, 221, 234);
+  color: #0c0c0c;
+  /*color: rgb(218, 221, 234);*/
 }
 
 footer .bottom-section h2 {
@@ -518,12 +539,15 @@ footer .bottom-section p:last-child {
   padding-left: 45px;
 }
 
-footer .bottom-section p span {
+.recruitment{
+  position: relative;
+}
+
+.recruitment span {
   font-size: 34px;
   -webkit-filter: grayscale(100%) brightness(1.2);
   filter: grayscale(100%) brightness(1.2);
-  left: 10px;
-  top: -15px;
+  left: -40px;
   position: absolute;
   -webkit-animation: twirlbaby .3s linear infinite;
   animation: twirlbaby .3s linear infinite;
@@ -538,6 +562,8 @@ footer .links a {
   padding-top: 0;
   margin-right: 10px;
 }
+
+
 
 @media only screen and (min-width:768px) {
   .pitch ul li h4 {
