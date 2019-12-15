@@ -174,12 +174,12 @@ section:nth-child(even) div{
 .page-elements{
   position: fixed;
   z-index: 10;
-  padding-top: 50px;
-  padding-left: 25px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .page-elements .branding{
-  max-width: 85px;
+  max-width: 50px;
 }
 
 .page-elements .branding h1{
@@ -189,7 +189,7 @@ section:nth-child(even) div{
 .page-elements .branding h1 a{
   color: #fff;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   font-family: monospace;
 }
@@ -208,8 +208,7 @@ section:nth-child(even) div{
 
 .site-wrapper section .wrapper,
 footer .wrapper{
-  padding-left: 150px;
-  padding-right: 30px;
+  padding: 40px;
 }
 
 section {
@@ -253,6 +252,9 @@ section.full-page{
 
 section.full-page .wrapper {
   flex-grow: 1;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 
@@ -261,7 +263,6 @@ section.full-page.pitch {
 }
 
 section header{
-  /*font-size: 2.5em;*/
   font-size: 10vw;
   font-weight: 900;
 }
@@ -311,10 +312,6 @@ button:hover, .button:hover {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   text-decoration: none;
-}
-
-.projects {
-  padding: 20px;
 }
 
 .projects .title {
@@ -566,6 +563,24 @@ footer .links a {
 
 
 @media only screen and (min-width:768px) {
+  .page-elements{
+    padding-top: 50px;
+    padding-left: 25px;
+  }
+
+  .page-elements .branding{
+    max-width: 85px;
+  }
+
+  .page-elements .branding h1 a{
+    font-size: 2em;  
+  }
+
+  .site-wrapper section .wrapper,
+  footer .wrapper{
+    padding-left: 150px;
+    padding-right: 30px;
+  }
   .pitch ul li h4 {
     width: 40vw;
     float: left;
@@ -644,10 +659,6 @@ footer .links a {
 @media only screen and (min-width:1024px) {
   .pitch ul li h4 {
     width: 30vw;
-  }
-
-  .projects {
-    padding: 80px;
   }
 
   .projects ul li {
