@@ -655,3 +655,12 @@ section.full-page#christmas {
   100% {top: 1500px; opacity: 0}
 }
 
+.credits {
+    position: absolute;
+    left: 200px;
+    bottom: 100px;
+    color: black;
+    opacity: 0.7;
+}
+.credits a {text-decoration: none;}
+.credits a:visited {color: black;}
