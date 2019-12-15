@@ -1,0 +1,656 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+:root {
+  --red: #DD001B;
+  --white: #FEFEFC;
+  --black: #010103;
+  --beige: #EF9967;
+  --green: #165B33;
+  --green-dark: #0B2C19;
+  --size: 40vmin;
+  --pad: 2vmin;
+  --bs-col: 0, 0, 0;
+  --box-shadow-outer: 0 2vmin 2vmin -1vmin rgba(var(--bs-col), 0.15);
+  --box-shadow-inner: inset 0 -2vmin 2vmin -1vmin rgba(var(--bs-col),
+    0.15);
+  --box-shadow-inner-dark: inset -2vmin -4vmin 3vmin -1vmin rgba(var(--bs-col),
+    0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section.full-page#christmas {
+  /*background-color: #F24236;*/
+  background: var(--green);
+}
+
+.christmas-container{
+  display: grid;
+  grid-gap: var(--pad);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto 1fr;
+  align-items: start;
+  justify-items: center;
+  padding: var(--pad);
+  margin: var(--pad) auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  height: 90vh;
+  width: 90vw;
+  /*max-width: 800px;*/
+}
+
+@media (min-width: 600px) {
+  #christmas .wrapper{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+}
+
+#christmas label {
+  justify-self: stretch;
+  cursor: pointer;
+  border: 3px solid var(--green-dark);
+  border-radius: 0.5rem;
+  padding: 0.75rem 0.5rem 0.85rem;
+  color: var(--green-dark);
+  text-align: center;
+  box-shadow: 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.15), inset 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.15);
+}
+
+#christmas input {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+#christmas input:active + label {
+  box-shadow: 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.1), inset 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+#christmas input:checked + label {
+  border-color: white;
+  color: white;
+  box-shadow: none;
+  transform: translateY(1px);
+}
+
+.santa {
+  width: calc(var(--size) / 1.25);
+  height: calc(var(--size) / 1);
+  border-radius: 10vmin 10vmin 100% 100%;
+  background-color: var(--beige);
+  grid-column: 1 / -1;
+  align-self: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner-dark);
+  transform: translateZ(0);
+}
+
+.hat {
+  position: absolute;
+  bottom: 66%;
+  display: flex;
+  justify-content: center;
+}
+
+.front {
+  width: calc(var(--size) / 1.25);
+  height: calc(var(--size) / 1.5);
+  border-radius: 20vmin 1vmin 0 0;
+  background-color: var(--red);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner);
+}
+.front:before {
+  width: calc(var(--size) / 1);
+  height: calc(var(--size) / 4);
+  border-radius: 2vmin 2vmin 2vmin 2vmin;
+  background-color: var(--white);
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner-dark);
+}
+
+.tail {
+  width: calc(var(--size) / 6);
+  height: calc(var(--size) / 3.5);
+  border-radius: 0 5vmin 0.5vmin 0;
+  background-color: var(--red);
+  position: absolute;
+  top: 0;
+  left: 95%;
+  display: flex;
+  justify-content: center;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner-dark);
+}
+.tail:before {
+  width: calc(var(--size) / 3);
+  height: calc(var(--size) / 3);
+  border-radius: 100%;
+  background-color: var(--white);
+  content: '';
+  display: block;
+  position: absolute;
+  top: 94%;
+  z-index: -1;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner-dark);
+}
+
+.eye {
+  width: calc(var(--size) / 20);
+  height: calc(var(--size) / 20);
+  border-radius: 100%;
+  background-color: var(--black);
+  position: absolute;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  animation: blink 4s ease-out infinite;
+}
+.eye.left {
+  left: 30%;
+}
+.eye.right {
+  right: 30%;
+}
+@keyframes blink {
+  2.5% {
+    transform: scaleY(0.1);
+  }
+  5%, 100% {
+    transform: scaleY(1);
+  }
+}
+.brow {
+  position: absolute;
+  top: 31%;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner);
+  z-index: 4;
+  animation: dip 4s ease-out infinite;
+}
+.brow.left {
+  width: calc(var(--size) / 5);
+  height: calc(var(--size) / 10);
+  border-radius: 20vmin 20vmin 20vmin 0;
+  background-color: var(--white);
+  left: 20%;
+}
+.brow.right {
+  width: calc(var(--size) / 5);
+  height: calc(var(--size) / 10);
+  border-radius: 20vmin 20vmin 0 20vmin;
+  background-color: var(--white);
+  right: 20%;
+}
+@keyframes dip {
+  2.5% {
+    transform: translateY(0.5vmin);
+  }
+  5%, 100% {
+    transform: translateY(0);
+  }
+}
+.nose {
+  width: calc(var(--size) / 5);
+  height: calc(var(--size) / 5);
+  border-radius: 100%;
+  background-color: var(--beige);
+  position: absolute;
+  top: 40%;
+  z-index: 4;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner);
+}
+
+.mustache {
+  position: absolute;
+  top: 50%;
+  flex: 1 0 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+.mustache:before, .mustache:after {
+  content: '';
+  display: block;
+  transform: rotate(0.001deg);
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner);
+}
+.mustache:before {
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 5);
+  border-radius: 20vmin 0 20vmin 0;
+  background-color: var(--white);
+  margin-right: -2vmin;
+}
+.mustache:after {
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 5);
+  border-radius: 0 20vmin 0 20vmin;
+  background-color: var(--white);
+}
+
+.mouth {
+  width: calc(var(--size) / 5);
+  height: calc(var(--size) / 5);
+  border-radius: 100%;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 25%;
+  z-index: 2;
+  transform-origin: 50% 0;
+  transform: scaleY(0.1);
+}
+
+.beard {
+  width: calc(var(--size) / 1.25);
+  height: calc(var(--size) / 1.5);
+  border-radius: 0 0 20vmin 20vmin;
+  background-color: var(--white);
+  position: absolute;
+  top: 55%;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner-dark);
+}
+
+.ear {
+  position: absolute;
+  top: 35%;
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+  box-shadow: var(--box-shadow-outer), var(--box-shadow-inner);
+}
+.ear.left {
+  width: calc(var(--size) / 20);
+  height: calc(var(--size) / 6);
+  border-radius: 10vmin 0 0 10vmin;
+  background-color: var(--beige);
+  right: 100%;
+  transform: translateX(0.001%);
+}
+.ear.right {
+  width: calc(var(--size) / 20);
+  height: calc(var(--size) / 6);
+  border-radius: 0 10vmin 10vmin 0;
+  background-color: var(--beige);
+  left: 100%;
+  transform: translateX(-0.001%);
+}
+
+[id="hella-naughty"]:checked ~ .santa {
+  animation: hella-head-raise 600ms ease-out forwards;
+}
+[id="hella-naughty"]:checked ~ .santa .eye {
+  background-color: transparent;
+  animation: none;
+  z-index: 5;
+}
+[id="hella-naughty"]:checked ~ .santa .eye:before {
+  content: '🔥';
+  font-size: 3.5vmin;
+  position: absolute;
+  top: -1vmin;
+  animation: hella-eyes 400ms ease-out forwards;
+}
+[id="hella-naughty"]:checked ~ .santa .hat {
+  animation: hella-hat 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+[id="hella-naughty"]:checked ~ .santa .nose {
+  animation: hella-nose 400ms linear forwards;
+}
+[id="hella-naughty"]:checked ~ .santa .brow.left {
+  animation: hella-brow-left 400ms ease-out forwards;
+}
+[id="hella-naughty"]:checked ~ .santa .brow.right {
+  animation: hella-brow-right 400ms ease-out forwards;
+}
+[id="hella-naughty"]:checked ~ .santa .mustache:before {
+  animation: hella-stache-left 400ms ease-out forwards;
+}
+[id="hella-naughty"]:checked ~ .santa .mustache:after {
+  animation: hella-stache-right 400ms ease-out forwards;
+}
+@keyframes hella-head-raise {
+  5% {
+    transform: translateY(10%);
+  }
+  15% {
+    transform: translateY(20%);
+  }
+  25% {
+    transform: translateY(5%);
+  }
+  35% {
+    transform: translateY(-5%);
+  }
+  45% {
+    transform: translateY(0);
+  }
+}
+@keyframes hella-eyes {
+  50%, 70% {
+    transform: scale(2) translateY(-25%);
+  }
+}
+@keyframes hella-hat {
+  20% {
+    transform: translateY(-25%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+@keyframes hella-nose {
+  25% {
+    transform: translateY(40%);
+  }
+  100% {
+    transform: translateY(30%);
+  }
+}
+@keyframes hella-stache-left {
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes hella-stache-right {
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+@keyframes hella-brow-left {
+  50% {
+    transform: translateY(-100%) rotate(5deg);
+  }
+  100% {
+    transform: translateY(-20%) rotate(15deg);
+  }
+}
+@keyframes hella-brow-right {
+  50% {
+    transform: translateY(-100%) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(-20%) rotate(-15deg);
+  }
+}
+[id="naughty"]:checked ~ .santa {
+  animation: naughty-head-raise 300ms ease-out forwards;
+}
+[id="naughty"]:checked ~ .santa .eye {
+  animation: naughty-eye-raise 400ms ease-out forwards;
+}
+[id="naughty"]:checked ~ .santa .brow.left {
+  animation: naughty-brow-left 400ms linear forwards;
+}
+[id="naughty"]:checked ~ .santa .brow.right {
+  animation: naughty-brow-right 400ms linear forwards;
+}
+[id="naughty"]:checked ~ .santa .mustache:before {
+  animation: naughty-stache-left 600ms ease-out forwards;
+}
+[id="naughty"]:checked ~ .santa .mustache:after {
+  animation: naughty-stache-right 600ms ease-out forwards;
+}
+@keyframes naughty-head-raise {
+  50%, 100% {
+    transform: translateY(2%);
+  }
+}
+@keyframes naughty-eye-raise {
+  50%, 100% {
+    transform: translateY(-25%);
+  }
+}
+@keyframes naughty-stache-left {
+  50%, 100% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes naughty-stache-right {
+  50%, 100% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes naughty-brow-left {
+  25% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(0) rotate(2deg);
+  }
+  70%, 100% {
+    transform: translateY(-5%) rotate(5deg);
+  }
+}
+@keyframes naughty-brow-right {
+  25% {
+    transform: translateY(5%);
+  }
+  50% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  70%, 100% {
+    transform: translateY(-25%) rotate(-5deg);
+  }
+}
+[id="nice"]:checked ~ .santa {
+  animation: head-raise 300ms ease-out forwards;
+}
+[id="nice"]:checked ~ .santa .mouth {
+  animation: mouth 400ms ease-out forwards;
+}
+[id="nice"]:checked ~ .santa .eye {
+  animation: eye-raise 400ms ease-out forwards;
+}
+[id="nice"]:checked ~ .santa .brow.left {
+  animation: brow-left 400ms ease-out forwards;
+}
+[id="nice"]:checked ~ .santa .brow.right {
+  animation: brow-right 400ms ease-out forwards;
+}
+[id="nice"]:checked ~ .santa .mustache:before {
+  animation: stache-left 400ms ease-out forwards;
+}
+[id="nice"]:checked ~ .santa .mustache:after {
+  animation: stache-right 400ms ease-out forwards;
+}
+@keyframes head-raise {
+  50%, 100% {
+    transform: translateY(-2%);
+  }
+}
+@keyframes eye-raise {
+  50%, 100% {
+    transform: translateY(-25%);
+  }
+}
+@keyframes mouth {
+  50%, 100% {
+    transform: scaleY(0.75);
+  }
+}
+@keyframes stache-left {
+  50%, 100% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes stache-right {
+  50%, 100% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes brow-left {
+  50%, 100% {
+    transform: translateY(-25%) rotate(-10deg);
+  }
+}
+@keyframes brow-right {
+  50%, 100% {
+    transform: translateY(-25%) rotate(10deg);
+  }
+}
+[id="super-nice"]:checked ~ .santa {
+  animation: super-head-raise 600ms ease-out forwards;
+}
+[id="super-nice"]:checked ~ .santa .mouth {
+  animation: super-mouth 400ms ease-out forwards;
+}
+[id="super-nice"]:checked ~ .santa .eye {
+  background-color: transparent;
+  animation: none;
+  z-index: 5;
+}
+[id="super-nice"]:checked ~ .santa .eye:before {
+  content: '❤️';
+  font-size: 3.5vmin;
+  position: absolute;
+  top: -1vmin;
+  animation: super-eyes 400ms ease-out forwards;
+}
+[id="super-nice"]:checked ~ .santa .hat {
+  animation: super-hat 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+[id="super-nice"]:checked ~ .santa .nose {
+  animation: super-nose 400ms linear forwards;
+}
+[id="super-nice"]:checked ~ .santa .brow.left {
+  animation: super-brow-left 400ms ease-out forwards;
+}
+[id="super-nice"]:checked ~ .santa .brow.right {
+  animation: super-brow-right 400ms ease-out forwards;
+}
+[id="super-nice"]:checked ~ .santa .mustache:before {
+  animation: super-stache-left 400ms ease-out forwards;
+}
+[id="super-nice"]:checked ~ .santa .mustache:after {
+  animation: super-stache-right 400ms ease-out forwards;
+}
+@keyframes super-head-raise {
+  15% {
+    transform: translateY(-10%);
+  }
+  75% {
+    transform: translateY(0);
+  }
+}
+@keyframes super-eyes {
+  50%, 70% {
+    transform: scale(2) translateY(-25%);
+  }
+}
+@keyframes super-hat {
+  20% {
+    transform: translateY(-15%);
+  }
+  60% {
+    transform: translateY(0);
+  }
+}
+@keyframes super-nose {
+  25% {
+    transform: translateY(-5%);
+  }
+  75% {
+    transform: translateY(0);
+  }
+}
+@keyframes super-mouth {
+  50%, 100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes super-stache-left {
+  50% {
+    transform: translateY(-2%) rotate(-15deg);
+  }
+  75%, 100% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes super-stache-right {
+  50% {
+    transform: translateY(-2%) rotate(15deg);
+  }
+  75%, 100% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes super-brow-left {
+  50% {
+    transform: translateY(-100%) rotate(-15deg);
+  }
+  100% {
+    transform: translateY(-20%) rotate(-5deg);
+  }
+}
+@keyframes super-brow-right {
+  50% {
+    transform: translateY(-100%) rotate(5deg);
+  }
+  100% {
+    transform: translateY(-20%) rotate(5deg);
+  }
+}
+
+
+.christmas-days {
+  position: absolute;
+  bottom: 90px; right: 180px;
+}
+
+.christmas-days a {
+  text-decoration: none;
+}
+#days {
+  font-family: 'Cookie', cursive;
+  font-size: 50px;
+  color: #FFF;
+  text-align: center;
+  letter-spacing: 3px;
+}
+.drop {
+  position: absolute;
+  top: 0;	
+  z-index: -1;
+  opacity: 0;
+}
+.snow {
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  background-color: #FFF;
+  box-shadow: 0 0 10px #FFF
+}
+
+
+.animate {
+  animation: falling 8.5s infinite ease-in;	
+}
+
+
+@keyframes falling {
+  0% {top: 0; opacity: 1;}
+  100% {top: 1500px; opacity: 0}
+}
+

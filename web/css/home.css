@@ -71,6 +71,7 @@ body {
   color: #000;
   background: #daddea;
   font-family: BlinkMacSystemFont,  Arial, sans-serif;
+  line-height: 1;
 }
 ol, ul {
   list-style: none;
@@ -141,10 +142,10 @@ body::-webkit-scrollbar-thumb
 
 /** Owl announcements **/
 section:nth-child(odd) div{
-  z-index: 1;
+  /*z-index: 1;*/
 }
 section:nth-child(even) div{
-  z-index: 3;
+  /*z-index: 3;*/
 }
 #announcements{
   position: fixed;
