@@ -249,6 +249,9 @@ section.full-page{
   flex-direction: column;
   min-height: 100vh;
 }
+section.full-page.slogan{
+  height: 100vh;
+}
 
 section.full-page .wrapper {
   flex-grow: 1;
@@ -542,8 +545,10 @@ footer .bottom-section p:last-child {
 
 .recruitment span {
   font-size: 34px;
-  -webkit-filter: grayscale(100%) brightness(1.2);
-  filter: grayscale(100%) brightness(1.2);
+/*  -webkit-filter: grayscale(100%) brightness(1.2);
+  filter: grayscale(100%) brightness(1.2);*/
+  -webkit-filter: grayscale(100%) brightness(0.2);
+  filter: grayscale(100%) brightness(0.2);
   left: -40px;
   position: absolute;
   -webkit-animation: twirlbaby .3s linear infinite;

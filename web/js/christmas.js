@@ -1,18 +1,18 @@
 myDate = new Date();
-xmas = Date.parse("Dec 25, " + myDate.getFullYear())
+xmas = Date.parse("Jan 01, " + (myDate.getFullYear()+1))
 today = Date.parse(myDate)
 
 daysToChristmas = Math.round((xmas - today) / (1000 * 60 * 60 * 24))
 
 
 if (daysToChristmas == 0)
- $('#days').text("It's Christmas!! Merry Christmas!");
+ $('#days').text("It's 2020!! Happy New Year!");
 
 if (daysToChristmas < 0)
- $('#days').text("Christmas was " + -1 * (daysToChristmas) + " days ago.");
+ $('#days').text("2020 was " + -1 * (daysToChristmas) + " days ago.");
 
 if (daysToChristmas > 0)
- $('#days').text(daysToChristmas + " days to Christmas!");
+ $('#days').text(daysToChristmas + " days to 2020!");
 
 //make snow
 snowDrop(150, randomInt(1035, 1280));

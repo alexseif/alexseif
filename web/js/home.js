@@ -6,10 +6,14 @@
 function logoColor() {
   var light_pos = $('section:nth-child(even)').offset().top;
   var light_height = $('section:nth-child(even)').height();
-  var projects_pos = $('section.projects').offset().top;
-  var projects_height = $('section.projects').height();
-  var christmas_pos = $('section.christmas').offset().top;
-  var christmas_height = $('section.christmas').height();
+//  var projects_pos = $('section.projects').offset().top;
+//  var projects_height = $('section.projects').height();
+//  var christmas_pos = $('section.christmas').offset().top;
+//  var christmas_height = $('section.christmas').height();
+  var projects_pos = 0;
+  var projects_height = 0;
+  var christmas_pos = 0;
+  var christmas_height = 0;
   var menu_pos = $('#alx').offset().top;
   var menu_height = $('#alx').height();
   var scroll = $(window).scrollTop();
@@ -37,7 +41,7 @@ function logoColor() {
 }
 //Footer size
 function siteFooter() {
-  var siteContent = $('.projects');
+  var siteContent = $('.slogan');
   var siteContentHeight = siteContent.height();
   var siteContentWidth = siteContent.width();
 

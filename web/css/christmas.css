@@ -642,7 +642,8 @@ section.full-page#christmas {
   width: 8px;
   border-radius: 100%;
   background-color: #FFF;
-  box-shadow: 0 0 10px #FFF
+  box-shadow: 0 0 10px #FFF;
+  z-index: 5;
 }
 
 
