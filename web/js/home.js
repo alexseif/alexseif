@@ -55,7 +55,7 @@ function siteFooter() {
   //console.log('Footer Width = ' + siteFooterWidth + 'px');
 
   siteContent.css({
-    "margin-bottom": siteFooterHeight + 160
+    "margin-bottom": siteFooterHeight + 120
   });
 }
 
