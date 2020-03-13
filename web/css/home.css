@@ -488,7 +488,6 @@ footer{
   padding: 40px;
   /*color: #fff;*/
   color: #0c0c0c;
-  text-shadow: 1px 0px 0px rgba(255,255,255,.2); /* 50% white from bottom */
 }
 
 footer .wrapper{
@@ -508,12 +507,10 @@ footer .col{
 
 footer .footnote {
   color: #0c0c0c;
-  /*color: #656581;*/
-  /*clear: left;*/
-  font-size: 12px;
-  /*line-height: 40px;*/
-  /*position: fixed;*/
-  /*bottom: 0;*/
+  font-size: 40%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   text-shadow: none;
 }
 
@@ -538,15 +535,21 @@ footer .bottom-section p {
 footer .bottom-section p:last-child {
   padding-left: 45px;
 }
-
+footer .wrapper{
+  padding: 20px;
+}
+footer div{
+  font-size: 60%;
+  text-shadow: none;
+}
 .recruitment{
   position: relative;
 }
 
 .recruitment span {
   font-size: 34px;
-/*  -webkit-filter: grayscale(100%) brightness(1.2);
-  filter: grayscale(100%) brightness(1.2);*/
+  /*  -webkit-filter: grayscale(100%) brightness(1.2);
+    filter: grayscale(100%) brightness(1.2);*/
   -webkit-filter: grayscale(100%) brightness(0.2);
   filter: grayscale(100%) brightness(0.2);
   left: -40px;
@@ -657,6 +660,10 @@ footer .links a {
     right: 10vw;
     bottom: 20vh;
     float: right;
+  }
+  footer div{
+    font-size: 100%;
+    text-shadow: 1px 0px 0px rgba(255,255,255,.2); /* 50% white from bottom */
   }
 }
 
