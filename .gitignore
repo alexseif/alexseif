@@ -1,17 +1,42 @@
-/web/bundles/
-/app/bootstrap.php.cache
-/app/cache/*
+/.web-server-pid
 /app/config/parameters.yml
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-/app/phpunit.xml
 /build/
+/phpunit.xml
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
 /vendor/
-/bin/
+
+# Assets and user uploads
+/web/bundles/
+/web/uploads/
+
+# Assets managed by Bower
+/web/assets/vendor/
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# Composer PHAR
 /composer.phar
-/nbproject
+
+/nbproject/private/
+/nbproject/configs/DEV.properties
 /backups/*
 !backups/.gitkeep
-.htaccess
-web/.htaccess
+
+.buildpath
+.project
+.settings/

@@ -4,8 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Portfolio;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -20,7 +19,6 @@ class AdminPortfolioController extends Controller
    * Lists all portfolio entities.
    *
    * @Route("/", name="admin_portfolio_index")
-   * @Method("GET")
    */
   public function indexAction()
   {
@@ -44,8 +42,7 @@ class AdminPortfolioController extends Controller
   /**
    * Creates a new portfolio entity.
    *
-   * @Route("/new", name="admin_portfolio_new")
-   * @Method({"GET", "POST"})
+   * @Route("/new", name="admin_portfolio_new", methods={"GET", "POST"})
    */
   public function newAction(Request $request)
   {
@@ -83,7 +80,6 @@ class AdminPortfolioController extends Controller
    * Finds and displays a portfolio entity.
    *
    * @Route("/tags", name="admin_portfolio_tags")
-   * @Method("GET")
    */
   public function tagsAction()
   {
@@ -100,8 +96,7 @@ class AdminPortfolioController extends Controller
   /**
    * Displays a form to edit an existing portfolio entity.
    *
-   * @Route("/position", name="admin_portfolio_position")
-   * @Method("POST")
+   * @Route("/position", name="admin_portfolio_position", methods={"POST"})
    */
   public function positionAction(Request $request)
   {
@@ -122,7 +117,6 @@ class AdminPortfolioController extends Controller
    * Finds and displays a portfolio entity.
    *
    * @Route("/{id}", name="admin_portfolio_show")
-   * @Method("GET")
    */
   public function showAction(Portfolio $portfolio)
   {
@@ -140,8 +134,7 @@ class AdminPortfolioController extends Controller
   /**
    * Displays a form to edit an existing portfolio entity.
    *
-   * @Route("/{id}/edit", name="admin_portfolio_edit")
-   * @Method({"GET", "POST"})
+   * @Route("/{id}/edit", name="admin_portfolio_edit", methods={"GET", "POST"})
    */
   public function editAction(Request $request, Portfolio $portfolio)
   {
@@ -187,8 +180,7 @@ class AdminPortfolioController extends Controller
   /**
    * Deletes a portfolio entity.
    *
-   * @Route("/{id}", name="admin_portfolio_delete")
-   * @Method("DELETE")
+   * @Route("/{id}", name="admin_portfolio_delete", methods={"DELETE"})
    */
   public function deleteAction(Request $request, Portfolio $portfolio)
   {

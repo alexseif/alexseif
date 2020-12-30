@@ -9,7 +9,7 @@ imports:
 
 
 parameters:
-  httpProtocol: https
+  httpProtocol: http
     
 monolog:
     handlers:
@@ -19,11 +19,22 @@ monolog:
             handler:      grouped
         grouped:
             type:    group
-            members: [nested]
+            members: [nested, deduplicated]
         nested:
             type:  rotating_file
             path: '%kernel.logs_dir%/%kernel.environment%.log'
             level: debug
             max_files: 10
         console:
-            type: console
+            type:  console
+        deduplicated:
+            type:    deduplication
+            handler: swift
+        swift:
+            type:       swift_mailer
+            from_email: 'me@alexseif.com'
+            to_email:   'alex.seif@gmail.com'
+            subject:    'An Error Occurred! %%message%%'
+            level:      debug
+            formatter:  monolog.formatter.html
+            content_type: text/html
