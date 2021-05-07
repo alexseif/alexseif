@@ -273,7 +273,7 @@ a {
       position: relative;
       height: 100%;
       width: 100%;
-      display: none;
+      //display: none;
 
       @media screen and (max-width: 992px) {
         height: auto;
@@ -281,11 +281,11 @@ a {
 
       &.swiper-slide-active {
         .product-slider__card {
-          display: block;
-          //opacity: 1;
-          //width: 100%;
-          //pointer-events: auto;
-          //transition-delay: .5s;
+          //display: block;
+          opacity: 1;
+          width: 100%;
+          pointer-events: auto;
+          transition-delay: .5s;
         }
 
         .product-slider__content {
