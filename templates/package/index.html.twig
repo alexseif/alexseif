@@ -1,6 +1,7 @@
 {% extends '::base.html.twig' %}
 {% block title %}Alex Seif - Packages{% endblock %}
 {% block stylesheets %}
+    {{ parent() }}
     <link type="text/css" rel="stylesheet" href="{{ asset('css/packages.css') }}"/>
 
 {% endblock %}
@@ -405,7 +406,7 @@
             <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
         </symbol>
     </svg>
-    {{ dump(packages) }}
+{#    {{ dump(packages) }}#}
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

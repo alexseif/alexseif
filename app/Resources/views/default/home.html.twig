@@ -1,7 +1,8 @@
 {% extends '::base.html.twig' %}
 {% block title %}Alex Seif - Web developer{% endblock %}
 {% block stylesheets %}
-  <link type="text/css" rel="stylesheet" href="/css/home.css?v=1" />
+  {{ parent() }}
+  <link type="text/css" rel="stylesheet" href="{{ asset('css/home.css') }}" />
 {% endblock %}
 {% block content %}
   <div class="site-wrapper">
@@ -10,14 +11,13 @@
 {#    {% include 'sections/pitch.html.twig' %}#}
 {#    {% include 'sections/projects.html.twig' %}#}
   </div>
-  {% include 'sections/footer.html.twig' %}
 {% endblock %}
 {% block javascripts %}
   {{ parent() }}
-  <script src="/js/jquery.fittext.js"></script>
-  <script src="/js/scrollreveal.min.js"></script>
-  <script src="/js/typed.min.js"></script>
-  <script src="/js/home.js"></script>
+  <script src="{{ asset('js/jquery.fittext.js') }}"></script>
+  <script src="{{ asset('js/scrollreveal.min.js') }}"></script>
+  <script src="{{ asset('js/typed.min.js') }}"></script>
+  <script src="{{ asset('js/home.js') }}"></script>
   <script>
     function menu_open() {
       $('#navigation').addClass('navigation--egg-expanded');

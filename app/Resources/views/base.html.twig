@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html class='full' lang="en" xml:lang="en">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="UTF-8" />
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>{% block title %}Alex Seif - Software Engineer{% endblock %}</title>
     {% block stylesheets %}
+        <link type="text/css" rel="stylesheet" href="{{ asset('css/base.css') }}"/>
     {% endblock %}
     {% if ("prod" == app.environment) %}
-      <!-- Google Tag Manager -->
-      <script>
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || [];
-          w[l].push({'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'});
-          var f = d.getElementsByTagName(s)[0],
-                  j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-          j.async = true;
-          j.src =
-                  'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-          f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K5BKGDM');
-      </script>
-      <!-- End Google Tag Manager -->
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-8657000585167176",
-          enable_page_level_ads: true
-        });
-      </script>
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-K5BKGDM');
+        </script>
+        <!-- End Google Tag Manager -->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-8657000585167176",
+                enable_page_level_ads: true
+            });
+        </script>
     {% endif %}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     {% block meta %}
-      <meta property="og:title" content="Alex Seif"/>
-      <meta property="og:url" content="https://alexseif.com"/>
-      <meta property="og:image" content="https://alexseif.com/images/alex-seif-business-card.png"/>
-      <meta property="og:site_name" content="Alex Seif"/>
-      <meta property="og:description" content="Custom software, mobile applications and websites I build, help you increase profit, minimize risk and make your business more efficient."/>	
-      <link rel="canonical" href="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}">
+        <meta property="og:title" content="Alex Seif"/>
+        <meta property="og:url" content="https://alexseif.com"/>
+        <meta property="og:image" content="https://alexseif.com/images/alex-seif-business-card.png"/>
+        <meta property="og:site_name" content="Alex Seif"/>
+        <meta property="og:description"
+              content="Custom software, mobile applications and websites I build, help you increase profit, minimize risk and make your business more efficient."/>
+        <link rel="canonical"
+              href="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}">
     {% endblock %}
-  </head>
-  <body>
-    {% if ("prod" == app.environment) %}
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5BKGDM"
-                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-    {% endif %}
-    {% block body %}
-      {% include ':default:nav.html.twig' %}
-      {% block content %}
-      {% endblock %}
+</head>
+<body>
+{% if ("prod" == app.environment) %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5BKGDM"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{% endif %}
+{% block body %}
+    {% include ':default:nav.html.twig' %}
+    {% block content %}
     {% endblock %}
-    <div class="scroll-indicator">
-      <div class="progress-container">
+    {% include 'sections/footer.html.twig' %}
+{% endblock %}
+<div class="scroll-indicator">
+    <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
-      </div> 
     </div>
-    {% block announcements %}
-      <div id="announcements">
+</div>
+{% block announcements %}
+    <div id="announcements">
         <div class="wise-owl">
-          <img src="/images/owl.png" alt="owl" width="100"/>
-          <div class="wise-owl-msg" style='display: none;'>
-            <a href="mailto:contact@alexseif.com" target="_blank">Contact me for updates on my portfolio</a>
-          </div>
+            <img src="/images/owl.png" alt="owl" width="100"/>
+            <div class="wise-owl-msg" style='display: none;'>
+                <a href="mailto:contact@alexseif.com" target="_blank">Contact me for updates on my portfolio</a>
+            </div>
         </div>
-      </div>
-    {% endblock %}
-    {% block javascripts %}
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
-    {% endblock %}
-  </body>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    {# <script #}
+    {# src="https://code.jquery.com/jquery-3.4.1.min.js" #}
+    {# integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" #}
+    {# crossorigin="anonymous"></script> #}
+{% endblock %}
+</body>
 </html>
