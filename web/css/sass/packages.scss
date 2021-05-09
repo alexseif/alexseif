@@ -71,7 +71,7 @@ a {
   position: relative;
 
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px){
     max-width: 920px;
   }
 
@@ -130,6 +130,7 @@ a {
 
     padding: 30px;
   }
+
 
 
   img {
@@ -273,7 +274,6 @@ a {
       position: relative;
       height: 100%;
       width: 100%;
-      //display: none;
 
       @media screen and (max-width: 992px) {
         height: auto;
@@ -281,11 +281,10 @@ a {
 
       &.swiper-slide-active {
         .product-slider__card {
-          //display: block;
-          opacity: 1;
-          width: 100%;
-          pointer-events: auto;
-          transition-delay: .5s;
+          //opacity: 1;
+          //width: 100%;
+          //pointer-events: auto;
+          //transition-delay: .5s;
         }
 
         .product-slider__content {
@@ -591,13 +590,11 @@ a {
     }
 
   }
-
   @keyframes progress {
     0% {
       stroke-dasharray: 0 100;
     }
   }
-
   &-inf {
     text-align: center;
 
@@ -711,7 +708,7 @@ a {
   justify-content: space-between;
 
 
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 576px){
     flex-direction: column;
     bottom: 0;
   }

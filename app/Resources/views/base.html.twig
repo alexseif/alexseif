@@ -57,21 +57,21 @@
     {% block content %}
     {% endblock %}
     {% include 'sections/footer.html.twig' %}
-{% endblock %}
-<div class="scroll-indicator">
-    <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div>
-</div>
-{% block announcements %}
-    <div id="announcements">
-        <div class="wise-owl">
-            <img src="/images/owl.png" alt="owl" width="100"/>
-            <div class="wise-owl-msg" style='display: none;'>
-                <a href="mailto:contact@alexseif.com" target="_blank">Contact me for updates on my portfolio</a>
+    {% block announcements %}
+        <div id="announcements">
+            <div class="wise-owl">
+                <img src="/images/owl.png" alt="owl" width="100"/>
+                <div class="wise-owl-msg" style='display: none;'>
+                    <a href="mailto:contact@alexseif.com" target="_blank">Contact me for updates on my portfolio</a>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="scroll-indicator">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    {% endblock %}
 {% endblock %}
 {% block javascripts %}
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
