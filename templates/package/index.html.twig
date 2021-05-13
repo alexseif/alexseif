@@ -8,10 +8,12 @@
 
 {% endblock %}
 {% block content %}
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="vHlAVkrw"></script>
     <div class="wrapper">
         <div class="content">
             <div class="bg-shape">
-                <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1536405214/starwars/logo.png"
+                <img src="{{ asset('images/packages/logo.png') }}"
                      alt="">
             </div>
             <div class="product-img">
@@ -28,7 +30,7 @@
                          alt="star wars" class="product-img__img">
                 </div><!-- .product-img__item -->
                 <div class="product-img__item" id="img4">
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1536405215/starwars/item-4.png"
+                    <img src="{{ asset('images/packages/g12.png') }}"
                          alt="star wars" class="product-img__img">
                 </div><!-- .product-img__item -->
             </div><!-- .product-img -->
@@ -78,6 +80,11 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script
+            type="text/javascript"
+            async defer
+            src="//assets.pinterest.com/js/pinit.js"
+    ></script>
     <script src="{{ asset('js/packages.js') }}"></script>
 
 {% endblock %}
