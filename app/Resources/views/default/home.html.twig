@@ -8,8 +8,8 @@
   <div class="site-wrapper">
     {% include 'sections/intro.html.twig' %}
     {% include 'sections/slogan.html.twig' %}
-{#    {% include 'sections/pitch.html.twig' %}#}
-{#    {% include 'sections/projects.html.twig' %}#}
+    {% include 'sections/pitch.html.twig' %}
+    {% include 'sections/projects.html.twig' %}
   </div>
 {% endblock %}
 {% block javascripts %}
@@ -18,25 +18,4 @@
   <script src="{{ asset('js/scrollreveal.min.js') }}"></script>
   <script src="{{ asset('js/typed.min.js') }}"></script>
   <script src="{{ asset('js/home.js') }}"></script>
-  <script>
-    function menu_open() {
-      $('#navigation').addClass('navigation--egg-expanded');
-      $('.burger').addClass('burger--is-expanded');
-      $('.navigation__menu-item').addClass('navigation__menu-item--show-text');
-      $('.navigation__menu-link').css('opacity', 1);
-    }
-    function menu_close() {
-      $('#navigation').removeClass('navigation--egg-expanded');
-      $('.burger').removeClass('burger--is-expanded');
-      $('.navigation__menu-item').removeClass('navigation__menu-item--show-text');
-      $('.navigation__menu-link').css('opacity', 0);
-    }
-    $('#navburger').click(function () {
-      if ($('#navigation').hasClass('navigation--egg-expanded')) {
-        menu_close();
-      } else {
-        menu_open();
-      }
-    });
-  </script>
 {% endblock %}
