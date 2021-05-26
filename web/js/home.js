@@ -42,9 +42,9 @@ function logoColor() {
 
 //Footer size
 function siteFooter() {
-    var siteContent = $('.slogan');
+    var siteContent = $('.projects');
 
-    var siteFooter = $('footer');
+    var siteFooter = $('footer');v
     var siteFooterHeight = siteFooter.height();
 
     siteContent.css({
