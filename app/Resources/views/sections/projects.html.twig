@@ -12,9 +12,9 @@
                         <p>{{ portfolio.subtitle }}</p>
                     {% endif %}
                     {% if portfolio.description is not empty %}
-                        <p>{{ portfolio.description|slice(0, 100) }}</p>
+                        <p>{{ portfolio.description|slice(0,75) }}</p>
                     {% endif %}
-                    <div class="tags">
+                    <div class="tags" style="display: none;">
                         {% for tag in portfolio.tags %}
                             <span>{{ tag.name }}</span>{{ (loop.last)? ';' : ',' }}
                         {% endfor %}
