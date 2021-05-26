@@ -64,7 +64,10 @@ section {
   &.projects {
     color: #000;
     background-color: #daddeb;
-    margin-bottom: 300px;
+  }
+
+  &.projects {
+    margin-bottom: 180px;
   }
 
 
@@ -314,6 +317,10 @@ button:hover, .button:hover {
 
   section header {
     /*font-size: 6em;*/
+  }
+
+  section.projects {
+    margin-bottom: 370px;
   }
 
   section .bottom-section {
