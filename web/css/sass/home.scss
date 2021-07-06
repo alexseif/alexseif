@@ -56,14 +56,14 @@ section {
   &.intro,
   &.pitch {
     color: #fff;
-    background-color: #000;
+    background-color: transparent;
   }
 
 
   &.slogan,
   &.projects {
     color: #000;
-    background-color: #daddeb;
+    background-color: transparent;
   }
 
   &.projects {
@@ -110,6 +110,7 @@ section {
   }
 }
 
+//noinspection CssOverwrittenProperties
 button.start-project, .button.start-project {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -263,7 +264,7 @@ button:hover, .button:hover {
 }
 
 .pitch ul li p {
-  font-family: Helvetica Neue, Helvetica, Arial, _sans;
+  font-family: Helvetica Neue, Helvetica, Arial, _sans, sans-serif;
 }
 
 @-webkit-keyframes twirlbaby {
@@ -436,7 +437,6 @@ button:hover, .button:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 68px;
-  position: absolute;
   transition: width 0.75s linear, height 0.75s linear;
 }
 
@@ -712,7 +712,6 @@ button:hover, .button:hover {
   display: inline-block;
   backface-visibility: hidden;
   position: relative;
-  display: block;
   width: 20px;
   height: 14px;
 }

@@ -7,8 +7,9 @@ function logoColor() {
     var light = $('section:nth-child(even)');
     var light_pos = light.offset().top;
     var light_height = light.height();
- var projects_pos = $('section.projects').offset().top;
- var projects_height = $('section.projects').height();
+    var section_projects = $('section.projects');
+    var projects_pos = section_projects.offset().top;
+    var projects_height = section_projects.height();
 //  var christmas_pos = $('section.christmas').offset().top;
 //  var christmas_height = $('section.christmas').height();
 //     var projects_pos = 0;
@@ -44,7 +45,7 @@ function logoColor() {
 function siteFooter() {
     var siteContent = $('.projects');
 
-    var siteFooter = $('footer');v
+    var siteFooter = $('footer');
     var siteFooterHeight = siteFooter.height();
 
     siteContent.css({
