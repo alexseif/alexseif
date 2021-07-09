@@ -148,7 +148,7 @@ body::-webkit-scrollbar-thumb {
 
 /** Page Elements */
 
-$link-color-1: #fff;
+$link-color-1: rgba(0,0,0,0.8);
 $link-color-2: #000;
 
 .page-elements {
@@ -173,16 +173,16 @@ $link-color-2: #000;
         font-family: 'IBM Plex Mono', monospace;
 
         text-decoration: none;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-image: linear-gradient(
-                        to bottom right,
-                        $link-color-2,
-                        $link-color-2 50%,
-                        $link-color-1 50%
-        );
-        background-size: 300% 300%;
-        background-position: 100%;
+        //-webkit-background-clip: text;
+        //-webkit-text-fill-color: transparent;
+        //background-image: linear-gradient(
+        //                to bottom right,
+        //                $link-color-2,
+        //                $link-color-2 50%,
+        //                $link-color-1 50%
+        //);
+        //background-size: 300% 300%;
+        //background-position: 100%;
 
         &.menu_white {
           color: $link-color-2;

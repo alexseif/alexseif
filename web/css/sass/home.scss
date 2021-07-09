@@ -55,14 +55,24 @@ section {
 
   &.intro,
   &.pitch {
-    color: #fff;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
     background-color: transparent;
   }
 
+  &.intro {
+    header {
+      font-size: 10vw;
+    }
+
+    h3 {
+      font-weight: 900;
+    }
+  }
 
   &.slogan,
   &.projects {
-    color: #000;
+    color: rgba(0, 0, 0, 0.8);
     background-color: transparent;
   }
 
@@ -97,7 +107,7 @@ section {
   }
 
   header {
-    font-size: 10vw;
+    font-size: 8vw;
     font-weight: 900;
   }
 
@@ -125,6 +135,8 @@ button.start-project, .button.start-project {
   padding: 10px;
   background-color: #fff;
   border: 1px solid #ccc;
+  margin: 20px;
+  display: inline-block;
 }
 
 button:hover, .button:hover {
@@ -399,11 +411,6 @@ button:hover, .button:hover {
     /*font-size: 12em;*/
   }
 
-  section .bottom-section {
-    width: 15vw;
-    top: 70vh;
-    left: 25vw;
-  }
 
   .projects ul li:nth-child(1) p,
   .projects ul li:nth-child(10) p,
