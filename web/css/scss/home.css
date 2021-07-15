@@ -73,8 +73,6 @@ section {
   section header {
     font-size: 8vw;
     font-weight: 900; }
-  section .wrapper {
-    margin: 10vh auto 10vh 5vw; }
   section .bottom-section p {
     margin-bottom: 10px; }
 

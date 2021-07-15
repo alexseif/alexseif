@@ -5,52 +5,6 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/scss/home.css') }}"/>
 {% endblock %}
 {% block content %}
-    <style>
-        {# @todo: noise library #}
-        .background-module--background--paUAO {
-            display: block;
-            width: 100vw;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-            pointer-events: none;
-            -webkit-transition: background-color .35s;
-            transition: background-color .35s;
-        {# @todo: get these variables #} -webkit-transition: background-color var(--animation-speed-fast);
-            transition: background-color var(--animation-speed-fast);
-        }
-
-        .background-module--noise--32_qg {
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            display: block;
-            background-repeat: repeat;
-            -ms-interpolation-mode: nearest-neighbor;
-        {# @todo: get these variables #}
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: -o-pixelated;
-            image-rendering: pixelated;
-            will-change: transform;
-        }
-
-        .background-module--noise--32_qg > * {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-    {# @todo: get these variables #}
-{#    <div class="background-module--background--paUAO"#}
-{#         style="background-color:var(--jade);background-image: linear-gradient(to right, #351552, #663399);">#}
-{#        <div class="background-module--noise--32_qg">#}
-{#            <div style="background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAADFBMVEVHcEwKCgqGhoZcXFyEIJZvAAAABHRSTlMAHxIcyByuSwAABO5JREFUeNq9WYt26yAMs6X//+d74khT2c5dlra0y1pCwMhvQ4pd599xVc+nmvX1QdUyBOjq1sNunD9Hy0Omi1WNDKwW+QIxxGaovkW9oXV9X0eHqHL682/y3XMZ6RdtNs7V2RrXalQtANk1gyu0YM4aDXjJE9zB5jz3HQ5xUfcDuoyiQLBpVNMS1JYse6CKZ0hQpq6maRq9GKAEc6yewYxIz3mNbvF68myRSs0dmtR0AZA5aDgECQV3soiRQRkZrAUTNQfqMTVBJDTYDLAoA3pkVrBaQ6x3CiyaFohNtiwCjoC1QPAYkDsxcgzyLB4uGkNO0yD9DxR21qUQH0vgpr1My9jQVvobtbXPatHGEX7tdwUFBtQb2ZRdWyHnzDd7j1lvS1XsWLwwWF/CMpwb/KUrqIPHxV6M1YQzCWC1qc9oyUEfyZIP9k3hMf8y2IwYUKzCErDx5UB+HpUaJMJgF6Rj9AMTiK0EHYRv2rCi22gqkSpYFnDdC9ixb/Rp2PPU/TFLRn/Hj9omIQCZsDknXuhrmhCcZkPrRR7DUowOtikRioL3R0fpSxA8Dqsr6i5cCAzVhS50J43AMqGIOZHD8INO5hLhIgrrX7wYP7243hnZ8Z+YWr/WGKNsu1CbxSD0V2IEFl+OIF6V2HXcGxY9lAwPQhvISAWlKUF8DbSHAvQVKSxknLCIPFSLBZNeZKjLc9UUtUgdwTtKLsZTiKQVfY9CsmIqh/sRtQU6viQObDC0Y8V4t2YS4VripEFlIAY1i+dQmt0g8JdXoprqX7U7vrTwb3odmparIz8LNl2LU9wYS2KXDc70REOt11POgSws88RpwzYIakTQTugveFp+V8unS6JPZK39VVfj5ibAs+GwmUyFrnyNgpGonaLSnurbjruxnXkW6/gmDIbOEkkjFHhqUql3uVaZ5vLB0sYAPFrDqBIGBvlkhhhSWKKw5eQEhSzsuk5/+yr8RGRofleAepbWVeRX/vnbaUOtO85dxpbcORHivQlGtNc4tak0vt7ivL7b/2Pxr5IpWkwujVUnh+FR//1sPtWmZqBQqoW5TqVjlsLrPjsLfrlQ6gnQ+nJuezbDabi53HJY+PP0ADNkYLpPYoChYi5JQk7yC9afdd++KDM3LZoOn7ZJL/RsJGWq4oTVue8GYre0FKTVe7XUlup6lbIBIPRhOVe/TZqmrSi4gILLWZfnawTqhxIR1IOfnuUNa9YVXkB137lInsfC+l5NaK9HnNfncPaAc8HEP34vrS+s5+Lohnjx6Ibn0wXSJoNOkh+Cb9w47rIiILlnVlN/lBE7ksSs+bMnAKOhoMi8lqQHOeSML+zSAlGVu1HogCPp848vJ6RCsSy5uh9UBRTdYcZaHxebJCZ0r6Eep/lLPiZJU2oo8SdeTcMG8Fj4UMVZ0rbQLvq8ytmbNid+GPwRGGtL2Vr3z+Lul5u1Fn0/j9Xx+mFIwhs3OuZnstZbHPsiY/z5ABJPHkAe18snjddHomFwV6XNso1za5S0dW5+E3gn9XRytwFAJokZ+N+3vG8I49+3Y9nbfdWUH3DIulswPnWImByZ0mwRhf87HqQIhv7jOdZbttB99Vrh1uHVk6Xgpt3VelJ9+9Dy/hbj+t2aA6JjD1F9/+161f5jyNdj+nWWiRFuerf1qb0vVjPd9kJlScqbjgo/seP6TGb8B7xAFglWseSpAAAAAElFTkSuQmCC)"></div>#}
-{#        </div>#}
-{#    </div>#}
     <div id="adiv"></div>
     <canvas id="acanvas"></canvas>
     <div class="site-wrapper">

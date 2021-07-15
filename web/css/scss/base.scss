@@ -73,10 +73,10 @@ html {
 
 body {
   color: #000;
-  background: #daddea;
+  //background: #daddea;
   //font-family: BlinkMacSystemFont, Arial, sans-serif;
   font-family: 'IBM Plex Sans', sans-serif;;
-  line-height: 1;
+  //line-height: 1;
 }
 
 ol, ul {
@@ -156,6 +156,7 @@ $link-color-2: #000;
   z-index: 10;
   padding-top: 10px;
   padding-left: 10px;
+  width: 15vw;
 
   .branding {
     max-width: 50px;
@@ -204,7 +205,7 @@ $link-color-2: #000;
 
 
 .site-wrapper section .wrapper {
-  padding: 0 5vw 0 10vw;
+  //padding: 0 5vw 0 10vw;
 }
 
 footer {
@@ -212,7 +213,7 @@ footer {
   font-size: 2em;
   font-weight: bold;
   background-color: #2A2A2A;
-  position: fixed;
+  //position: fixed;
   z-index: -1;
   left: 0;
   right: 0;
@@ -306,11 +307,11 @@ footer {
 
 @media only screen and (min-width: 768px) {
   .page-elements {
-    padding-top: 50px;
-    padding-left: 25px;
+    padding-top: 2.5vh;
+    padding-left: 2.5vw;
 
     .branding {
-      max-width: 85px;
+      max-width: 5vw;
 
       h1 a {
         font-size: 2em;

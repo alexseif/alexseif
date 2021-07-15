@@ -64,9 +64,7 @@ html {
 
 body {
   color: #000;
-  background: #daddea;
-  font-family: 'IBM Plex Sans', sans-serif;
-  line-height: 1; }
+  font-family: 'IBM Plex Sans', sans-serif; }
 
 ol, ul {
   list-style: none; }
@@ -129,7 +127,8 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   z-index: 10;
   padding-top: 10px;
-  padding-left: 10px; }
+  padding-left: 10px;
+  width: 15vw; }
   .page-elements .branding {
     max-width: 50px; }
     .page-elements .branding h1 {
@@ -150,15 +149,11 @@ body::-webkit-scrollbar-thumb {
         .page-elements .branding h1 a.menu_projects {
           max-width: 100px; }
 
-.site-wrapper section .wrapper {
-  padding: 0 5vw 0 10vw; }
-
 footer {
   padding: 25px 0;
   font-size: 2em;
   font-weight: bold;
   background-color: #2A2A2A;
-  position: fixed;
   z-index: -1;
   left: 0;
   right: 0;
@@ -222,10 +217,10 @@ footer {
 
 @media only screen and (min-width: 768px) {
   .page-elements {
-    padding-top: 50px;
-    padding-left: 25px; }
+    padding-top: 2.5vh;
+    padding-left: 2.5vw; }
     .page-elements .branding {
-      max-width: 85px; }
+      max-width: 5vw; }
       .page-elements .branding h1 a {
         font-size: 2em; }
 
