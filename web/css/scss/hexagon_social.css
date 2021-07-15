@@ -1,0 +1,79 @@
+/*
+The following content was designed & implemented under AlexSeif.com
+*/
+/* 
+    Created on : Sep 13, 2018, 3:44:51 PM
+    Author     : Alex Seif <me@alexseif.com>
+*/
+.reviews {
+  margin-top: 28px; }
+
+.reviews div {
+  display: inline-block;
+  position: absolute;
+  left: 260px; }
+
+.socials div {
+  display: inline-block; }
+
+.fa.fa-facebook, .fa.fa-linkedin, .fa.fa-google-plus, .fa.fa-youtube, .fa.fa-twitter, .fa.fa-rss, .fa.fa-yelp, .fa.fa-github, .fa.fa-linux, .fa.fa-music {
+  color: white;
+  font-size: 50px;
+  line-height: 60px;
+  text-shadow: 2px 2px 10px black; }
+
+#hexagon {
+  width: 100px;
+  height: 60px;
+  background: #5F6062;
+  position: relative;
+  top: 100px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+#hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid #5F6062;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+#hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid #5F6062;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+#hexagon:hover {
+  background: #EC008C; }
+
+#hexagon:hover:after {
+  border-top: 25px solid #EC008C; }
+
+#hexagon:hover:before {
+  border-bottom: 25px solid #EC008C; }
+
+/*# sourceMappingURL=hexagon_social.css.map */
