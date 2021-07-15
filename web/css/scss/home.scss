@@ -76,32 +76,25 @@ section {
     background-color: transparent;
   }
 
-  &.projects {
-    margin-bottom: 180px;
-  }
-
 
   &.full-page {
-    /*height: 100vh;*/
-    /*max-width: 100vw;*/
     transition: padding 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    text-align: right;
-    float: right;
-    width: 90vw;
   }
 
   &.full-page.slogan {
     height: 100vh;
   }
 
-  &.full-page .wrapper {
+  .wrapper {
     flex-grow: 1;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    padding-right: 5vw;
+    margin-left: 15vw;
   }
 
 
@@ -168,6 +161,7 @@ button:hover, .button:hover {
 .projects .title {
   font-weight: 900;
   margin: 20px 0 20px 0;
+  display: inline-block;
 }
 
 .projects ul {
@@ -331,22 +325,11 @@ button:hover, .button:hover {
     font-size: 3em;
   }
 
-  section header {
-    /*font-size: 6em;*/
-  }
-
-  section.projects {
-    margin-bottom: 370px;
-  }
 
   section .bottom-section {
     margin: 0 10vw;
   }
 
-  .projects .title {
-    /*margin-top: 40px;*/
-    /*    margin-bottom: 80px;*/
-  }
 
   .projects ul {
     display: -webkit-box;
@@ -801,9 +784,10 @@ button:hover, .button:hover {
 #navigation {
   display: none;
 }
-body{
 
-background-image: linear-gradient(to right, #351552, #663399);
+body {
+
+  background-image: linear-gradient(to right, #351552, #663399);
 }
 
 #adiv {

@@ -48,9 +48,9 @@ function siteFooter() {
     var siteFooter = $('footer');
     var siteFooterHeight = siteFooter.height();
 
-    siteContent.css({
-        "margin-bottom": siteFooterHeight + 80
-    });
+    // siteContent.css({
+    //     "margin-bottom": siteFooterHeight + 80
+    // });
 }
 
 //cycle through emoji greetings
