@@ -5,10 +5,18 @@
 @import 'var';
 
 $padding: 2vh 2vw;
-$color: rgba(0, 0, 0, 0.9);
+$black: rgba(0, 0, 0, 0.9);
+$white: rgba(255, 255, 255, 0.9);
+$color: $white;
 $purple-bg-img: linear-gradient(to right, #351552, #663399);
+$body-bg-img: $purple-bg-img;
+$body-bg: rgba(13, 13, 13, 1);
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: $color;
+}
 .fittext {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: bolder;
   font-size: 13vw;
   transition: all 0.6s ease-in-out;
@@ -18,28 +26,28 @@ $purple-bg-img: linear-gradient(to right, #351552, #663399);
 
 .button {
   transition: all 0.2s ease-in-out;
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   padding: 1vh 1vw;
-  color: $color;
+  color: $black;
   font-weight: bolder;
   text-decoration: none;
   text-transform: capitalize;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
   }
 }
-
-body {
-  font-family: "IBM Plex Sans", sans-serif;
-  color: $color;
-}
-
 .page-elements {
+  width: 6.25%;
+  height: 100vh;
   position: fixed;
-  width: 13vw;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 19;
   padding: $padding;
-  z-index: 3;
 
   a {
     color: $color;
@@ -51,7 +59,7 @@ body {
   animation: grain 14s steps(10) infinite;
   height: 300%;
   left: -50%;
-  opacity: 0.06;
+  opacity: 0.01;
   position: fixed;
   top: -100%;
   width: 300%;
@@ -107,7 +115,8 @@ body {
 }
 
 #site-wrapper {
-  background-image: $purple-bg-img;
+  //background-image: $body-bg-img;
+  background-color: $body-bg;
 }
 
 section.fullpage {
@@ -127,7 +136,6 @@ section.fullpage {
 
   h3 {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 2vw;
     font-weight: bolder;
     line-height: 1em;
   }
@@ -156,7 +164,6 @@ nav.footer-nav {
       flex: 1 1 0;
       display: flex;
       flex-direction: column;
-      //align-items: center;
       border-top: 4px solid rgba(0, 0, 0, 0.6);
       color: rgba(0, 0, 0, 0.6);
       margin: 0 5px;
@@ -165,10 +172,6 @@ nav.footer-nav {
       a {
         color: rgba(0, 0, 0, 0.8);
         text-decoration: none;
-
-        &:before {
-          //content: "Q";
-        }
       }
 
       &:hover {

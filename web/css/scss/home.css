@@ -4,8 +4,12 @@
 /**
   * The following content was designed & implemented under AlexSeif.com
 **/
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: rgba(255, 255, 255, 0.9); }
+
 .fittext {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: bolder;
   font-size: 13vw;
   transition: all 0.6s ease-in-out;
@@ -13,33 +17,35 @@
 
 .button {
   transition: all 0.2s ease-in-out;
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+  background-color: white;
   padding: 1vh 1vw;
   color: rgba(0, 0, 0, 0.9);
   font-weight: bolder;
   text-decoration: none;
   text-transform: capitalize; }
   .button:hover {
-    background-color: rgba(255, 255, 255, 0.8); }
-
-body {
-  font-family: "IBM Plex Sans", sans-serif;
-  color: rgba(0, 0, 0, 0.9); }
+    background-color: black;
+    color: white; }
 
 .page-elements {
+  width: 6.25%;
+  height: 100vh;
   position: fixed;
-  width: 13vw;
-  padding: 2vh 2vw;
-  z-index: 3; }
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 19;
+  padding: 2vh 2vw; }
   .page-elements a {
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none; }
 
 #noise-bg {
   animation: grain 14s steps(10) infinite;
   height: 300%;
   left: -50%;
-  opacity: 0.06;
+  opacity: 0.01;
   position: fixed;
   top: -100%;
   width: 300%; }
@@ -72,7 +78,7 @@ body {
   90% {
     transform: translate(-10%, 10%); } }
 #site-wrapper {
-  background-image: linear-gradient(to right, #351552, #663399); }
+  background-color: #0d0d0d; }
 
 section.fullpage {
   padding: 2vh 2vw;
@@ -88,7 +94,6 @@ section.fullpage {
     z-index: 2; }
   section.fullpage h3 {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 2vw;
     font-weight: bolder;
     line-height: 1em; }
   section.fullpage h4 {

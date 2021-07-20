@@ -26,4 +26,5 @@ function createNoise() {
 
 $(document).ready(function () {
     createNoise();
+    $(".fittext").fitText();
 });
