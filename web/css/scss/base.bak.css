@@ -1,0 +1,262 @@
+/*
+The following content was designed & implemented under AlexSeif.com
+*/
+/*
+    Created on : Jan 14, 2017, 11:10:24 AM
+    Author     : Alex Seif <me@alexseif.com>
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* Hidden
+       ========================================================================== */
+/**
+     * Add the correct display in IE 10-.
+     */
+[hidden] {
+  display: none; }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+/**
+     * 2. Prevent adjustments of font size after orientation changes in
+     *    IE on Windows Phone and in iOS.
+*/
+html {
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  scroll-snap-points-y: mandatory;
+  scroll-snap-points-y: repeat(50vh);
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  overflow-x: hidden; }
+
+body {
+  color: #000;
+  font-family: 'IBM Plex Sans', sans-serif; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.site-wrapper {
+  -webkit-box-shadow: #000 0 7px 35px 0;
+  -moz-box-shadow: #000 0 7px 35px 0;
+  box-shadow: #000 0 7px 35px 0; }
+
+/** overflow **/
+/*{# https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp #}*/
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #1d1f29; }
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3); }
+
+/* Style the header: fixed position (always stay at the top) */
+/*{#      https://www.w3schools.com/howto/howto_js_scroll_indicator.asp #}*/
+.scroll-indicator {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  background-color: #daddea; }
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc; }
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #2A2A2A;
+  /*rgb(29,31,41);*/
+  width: 0%; }
+
+/** Page Elements */
+.page-elements {
+  position: fixed;
+  z-index: 10;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 15vw; }
+  .page-elements .branding {
+    max-width: 50px; }
+    .page-elements .branding h1 {
+      text-align: center; }
+      .page-elements .branding h1 a {
+        color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: 'IBM Plex Mono', monospace;
+        text-decoration: none; }
+        .page-elements .branding h1 a.menu_white {
+          color: #000; }
+        .page-elements .branding h1 a.menu_black {
+          color: rgba(0, 0, 0, 0.8);
+          transition: all 0.3s cubic-bezier(0, 0, 0.23, 1);
+          background-position: 0%; }
+        .page-elements .branding h1 a.menu_projects {
+          max-width: 100px; }
+
+footer {
+  padding: 25px 0;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #2A2A2A;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: padding 0.2s ease-in-out;
+  padding: 40px;
+  /*color: #fff;*/
+  color: #0c0c0c; }
+  footer div {
+    font-size: 60%;
+    text-shadow: none; }
+  footer a {
+    color: #0c0c0c;
+    /*color: rgb(218, 221, 234);*/ }
+  footer .wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+  footer .col {
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+  footer .footnote {
+    color: #0c0c0c;
+    font-size: 40%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-shadow: none; }
+    footer .footnote a {
+      cursor: pointer; }
+  footer .bottom-section h2 {
+    padding-top: 0;
+    /*margin-bottom: 40px;*/ }
+  footer .bottom-section p {
+    position: relative; }
+    footer .bottom-section p:last-child {
+      padding-left: 45px; }
+  footer .links a {
+    font-size: 30px;
+    line-height: 40px;
+    padding: 0;
+    padding-top: 0;
+    margin-right: 10px; }
+  footer .recruitment {
+    position: relative; }
+    footer .recruitment span {
+      font-size: 34px;
+      /*  -webkit-filter: grayscale(100%) brightness(1.2);
+        filter: grayscale(100%) brightness(1.2);*/
+      -webkit-filter: grayscale(100%) brightness(0.2);
+      filter: grayscale(100%) brightness(0.2);
+      left: -40px;
+      position: absolute;
+      -webkit-animation: twirlbaby .3s linear infinite;
+      animation: twirlbaby .3s linear infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
+
+@media only screen and (min-width: 768px) {
+  .page-elements {
+    padding-top: 2.5vh;
+    padding-left: 2.5vw; }
+    .page-elements .branding {
+      max-width: 5vw; }
+      .page-elements .branding h1 a {
+        font-size: 2em; }
+
+  .site-wrapper section .wrapper,
+  footer .wrapper {
+    /*padding-left: 150px;*/
+    /*padding-right: 30px;*/ }
+
+  footer {
+    padding: 40px; }
+    footer .links {
+      margin-top: 0;
+      width: 50%;
+      display: inline-block;
+      text-align: right; }
+      footer .links a {
+        margin-right: 0;
+        margin-left: 20px; }
+    footer .bottom-section {
+      position: relative;
+      right: 10vw;
+      bottom: 20vh;
+      float: right; }
+    footer div {
+      font-size: 100%;
+      text-shadow: 1px 0px 0px rgba(255, 255, 255, 0.2);
+      /* 50% white from bottom */ } }
+@media only screen and (min-width: 1024px) {
+  footer {
+    padding: 80px; }
+    footer .links {
+      width: 62.5%; } }
+@media only screen and (min-width: 1400px) {
+  footer .links a {
+    font-size: 36px;
+    line-height: 50px;
+    padding-top: 16px; } }
+
+/*# sourceMappingURL=base.bak.css.map */

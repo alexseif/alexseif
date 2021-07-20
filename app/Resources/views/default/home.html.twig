@@ -5,40 +5,24 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/scss/home.css') }}"/>
 {% endblock %}
 {% block content %}
-    <div id="adiv"></div>
-    <canvas id="acanvas"></canvas>
-    <div class="site-wrapper">
-        {% include 'sections/intro.html.twig' %}
-        {% include 'sections/slogan.html.twig' %}
-{#        {% include 'sections/pitch.html.twig' %}#}
-        {% include 'sections/projects.html.twig' %}
-    </div>
+    <div id="site-wrapper">
+        <div id="noise-bg"></div>
+        <canvas id="noise-canvas"></canvas>
+        <section class="fullpage intro">
+            <div class="wrapper">
+                <header>
+                    <h2 class="fittext">Freelance web<br/> developer</h2>
+                </header>
+                <div class="bottom-section">
+                    <h3>17 yrs experience</h3>
+                    <a class='button start-project' href="https://wa.me/+201004006332" target="_blank">Start project</a>
+                </div><!-- .bottom-section -->
+            </div><!-- .wrapper -->
+        </section>
+    </div><!-- #site-wrapper -->
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/jquery.fittext.js') }}"></script>
-    <script src="{{ asset('js/scrollreveal.min.js') }}"></script>
-    <script src="{{ asset('js/typed.min.js') }}"></script>
     <script src="{{ asset('js/home.js') }}"></script>
-    <script>
-        var canvas = document.getElementById("acanvas");
-
-        var w = canvas.width = 64;
-        var h = canvas.height = 64;
-
-        var context = canvas.getContext("2d");
-
-        for(i=0;i<w;i++) {
-            for(j=0;j<h;j++) {
-
-                var num = Math.floor(Math.random()*255)
-                context.fillStyle = "rgb(" + num + "," + num + "," + num + ")";
-                context.fillRect(i, j, 1, 1);
-            }
-        }
-
-        $("#adiv").css ( {
-            "background-image": "url("+canvas.toDataURL()+")"
-        });
-    </script>
 {% endblock %}

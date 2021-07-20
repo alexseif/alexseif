@@ -25,28 +25,38 @@
             })(window, document, 'script', 'dataLayer', 'GTM-K5BKGDM');
         </script>
         <!-- End Google Tag Manager -->
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script async src="{{ asset('//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js') }}"></script>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({
                 google_ad_client: "ca-pub-8657000585167176",
                 enable_page_level_ads: true
             });
         </script>
-        <meta name="facebook-domain-verification" content="55y5g1lj54t6o335yyjeg91fnxnxgi" />
+        <meta name="facebook-domain-verification" content="55y5g1lj54t6o335yyjeg91fnxnxgi"/>
         <!-- Facebook Pixel Code -->
         <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
                 'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1432693350451142');
             fbq('track', 'PageView');
         </script>
-        <noscript><img height="1" width="1" style="display:none"
+        <noscript><img height="1" width="1" style="display:none" alt="facebook pageview"
                        src="https://www.facebook.com/tr?id=1432693350451142&ev=PageView&noscript=1"
             /></noscript>
         <!-- End Facebook Pixel Code -->
@@ -80,7 +90,7 @@
     {% endblock %}
     {% include 'sections/footer.html.twig' %}
     {% block announcements %}
-        <div id="announcements">
+        <div id="announcements" style="display: none;">
             <div class="wise-owl">
                 <a href="https://wa.me/+201004006332" target="_blank">
                     <img src="{{ asset('images/owl.png') }}" alt="owl" width="100"/>
@@ -98,12 +108,10 @@
     {% endblock %}
 {% endblock %}
 {% block javascripts %}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    {# <script #}
-    {# src="https://code.jquery.com/jquery-3.4.1.min.js" #}
-    {# integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" #}
-    {# crossorigin="anonymous"></script> #}
+    <script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js') }}"></script>
+    <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.fittext.js') }}"></script>
+    <script src="{{ asset('js/base.js') }}"></script>
 {% endblock %}
 <!-- Messenger Chat Plugin Code -->
 <div id="fb-root"></div>
@@ -113,25 +121,26 @@
 </div>
 
 {% if ("prod" == app.environment) %}
-<script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "268403033331219");
-    chatbox.setAttribute("attribution", "biz_inbox");
-    window.fbAsyncInit = function() {
-        FB.init({
-            xfbml            : true,
-            version          : 'v10.0'
-        });
-    };
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "268403033331219");
+        chatbox.setAttribute("attribution", "biz_inbox");
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v10.0'
+            });
+        };
 
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 {% endif %}
 </body>
 </html>

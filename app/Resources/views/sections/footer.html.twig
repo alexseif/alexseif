@@ -1,4 +1,4 @@
-<footer itemscope itemtype="http://data-vocabulary.org/Person">
+<footer itemscope itemtype="http://data-vocabulary.org/Person" style="display: none;">
     <div class="wrapper">
         <div class="col">
             <h1 class="h1" itemprop="name">Alex Seif</h1>
@@ -6,13 +6,13 @@
             <h2 itemprop="name">{{ ("now"|date("Y")) - 2004 }} yrs experience</h2>
             <h3>
                 Based in
-                <span class="flg-hldr">Cairo<img src="/images/Flag_of_Cairo.svg" alt="Flag of Cairo"/></span>,
-                <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
+                <span class="flg-hldr">Cairo<img src="{{ asset('/images/Flag_of_Cairo.svg') }}" alt="Flag of Cairo"/></span>,
+                <span class="flg-hldr">Egypt<img src="{{ asset('/images/218px-Flag_of_Egypt.svg.png') }}" alt="Flag of Egypt"/></span>
             </h3>
             <h4>
-                From <span class="flg-hldr">Alexandria<img src="/images/218px-Flag_of_Alexandria.svg.png"
+                From <span class="flg-hldr">Alexandria<img src="{{ asset('/images/218px-Flag_of_Alexandria.svg.png') }}"
                                                            alt="Flag of Alexandria"/></span>,
-                <span class="flg-hldr">Egypt<img src="/images/218px-Flag_of_Egypt.svg.png" alt="Flag of Egypt"/></span>
+                <span class="flg-hldr">Egypt<img src="{{ asset('/images/218px-Flag_of_Egypt.svg.png') }}" alt="Flag of Egypt"/></span>
             </h4>
         </div>
         <div class="col">
