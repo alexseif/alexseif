@@ -22,26 +22,11 @@ class FrontEndController extends Controller
   {
     return array(
       'links' => array(
-        'beta',
         'house',
         'ok',
-        'hexagon_social',
-        'hexagon_grid',
-        'hexagon_skill',
         'honeycomb',
         'portfolio'
       )
-    );
-  }
-
-  /**
-   * @Route("/beta", name="beta")
-   * @Template("frontend/beta.html.twig")
-   */
-  public function betaAction()
-  {
-    return array(
-      'portfolios' => $this->getPortfoliosForDisplay()
     );
   }
 
@@ -64,33 +49,6 @@ class FrontEndController extends Controller
   }
 
   /**
-   * @Route("/hexagon_social", name="hexagon_social")
-   * @Template("frontend/hexagon_social.html.twig")
-   */
-  public function hexagon_socialAction()
-  {
-    return array();
-  }
-
-  /**
-   * @Route("/hexagon_grid", name="hexagon_grid")
-   * @Template("frontend/hexagon_grid.html.twig")
-   */
-  public function hexagon_gridAction()
-  {
-    return array('portfolios' => $this->getPortfoliosForDisplay());
-  }
-
-  /**
-   * @Route("/hexagon_skill", name="hexagon_skill")
-   * @Template("frontend/hexagon_skill.html.twig")
-   */
-  public function hexagon_skillAction()
-  {
-    return array();
-  }
-
-  /**
    * @Route("/honeycomb", name="honeycomb")
    * @Template("frontend/honeycomb.html.twig")
    */
@@ -100,7 +58,7 @@ class FrontEndController extends Controller
   }
 
   /**
-   * @Route("/portfolio", name="portfolio")
+   * @Route("/portfolio", name="frontend_portfolio")
    * @Template("frontend/portfolio.html.twig")
    */
   public function portfolioAction()

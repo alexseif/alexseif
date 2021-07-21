@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block title %}Alex Seif - Honeycomb{% endblock %}
 {% block stylesheets %}
-  <style>
-    canvas {
-
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  </style>
+    <style>
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 {% endblock %}
 {% block content %}
-  <canvas id=c></canvas>
-  {% endblock %}
-  {% block javascripts %}
-    {{ parent() }}
-  <script type="text/javascript" src="/js/honeycomb.js"></script>
+    <canvas id=c>    Some awesome text</canvas>
+
 {% endblock %}
+  {% block javascripts %}
+      {{ parent() }}
+      <script type="text/javascript" src="{{ asset('/js/honeycomb.js') }}"></script>
+  {% endblock %}

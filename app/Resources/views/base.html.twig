@@ -69,7 +69,7 @@
         <meta property="og:image" content="https://alexseif.com/images/alex-seif-business-card.png"/>
         <meta property="og:site_name" content="Alex Seif"/>
         <meta property="og:description"
-              content="Custom software, mobile applications and websites I build, help you increase profit, minimize risk and make your business more efficient."/>
+              content="Freelance Web Design & Developer. I always deliver."/>
         <link rel="canonical"
               href="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}">
     {% endblock %}
@@ -85,16 +85,25 @@
 
 {% endif %}
 {% block body %}
-    {% include ':default:nav.html.twig' %}
-    {% block content %}
+    {% block nav %}
+        {% include ':default:nav.html.twig' %}
     {% endblock %}
-    {% include 'sections/footer.html.twig' %}
+    {% block sitewrapper %}
+        <div id="site-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+    {% block footer %}
+        {% include 'sections/footer.html.twig' %}
+    {% endblock %}
+
     {% block announcements %}
-        <div id="announcements" style="display: none;">
+        <div id="announcements">
             <div class="wise-owl">
                 <a href="https://wa.me/+201004006332" target="_blank">
                     <img src="{{ asset('images/owl.png') }}" alt="owl" width="100"/>
-                    <div class="wise-owl-msg" style='display: none;'>
+                    <div class="wise-owl-msg">
                         Contact me for updates on my portfolio
                     </div>
                 </a>
@@ -107,6 +116,7 @@
         </div>
     {% endblock %}
 {% endblock %}
+
 {% block javascripts %}
     <script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js') }}"></script>
     <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js') }}"></script>

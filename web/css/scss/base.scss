@@ -10,3 +10,247 @@ The following content was designed & implemented under AlexSeif.com
 @import "https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css";
 @import 'var';
 
+body {
+  font-family: $font-family;
+  color: $color;
+  background-color: $body-bg;
+}
+
+h3 {
+  font-family: $font-mono;
+  font-weight: bolder;
+  line-height: 1em;
+}
+
+h4 {
+  width: 21vw;
+  position: relative;
+  right: 0;
+  line-height: 1em;
+}
+
+.x-clearfix {
+  display: inline-block
+}
+
+* html .x-clearfix {
+  height: 1%
+}
+
+.x-clearfix {
+  display: block
+}
+
+.x-clearfix:after {
+  height: 0;
+  clear: both;
+  font-size: 0;
+  content: "\A";
+  display: block;
+  visibility: hidden
+}
+
+.fittext {
+  font-weight: bolder;
+  //font-size: 7.63889vw;
+  font-size: 2.5rem;
+  transition: all 0.6s ease-in-out;
+  line-height: 1em;
+  // margin: 0;
+}
+
+.button {
+  transition: all 0.2s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 1vh 1vw;
+  color: #000;
+  font-weight: bolder;
+  text-decoration: none;
+  text-transform: capitalize;
+  //margin: 18px 0;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+}
+
+.button_slide {
+  border: 2px solid #fff;
+  border-radius: 0px;
+  //padding: 18px 36px;
+  display: inline-block;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #FFF;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_down:hover {
+  box-shadow: inset 0 100px 0 0 #000000;
+}
+
+.slide_right:hover {
+  color: #fff;
+  box-shadow: inset 400px 0 0 0 #000000;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px #000000;
+}
+
+.slide_diagonal:hover {
+  box-shadow: inset 400px 50px 0 0 #000000;
+}
+
+.page-elements {
+  width: 6.25%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 19;
+  padding: $padding;
+
+  a {
+    color: $color;
+    text-decoration: none;
+  }
+}
+
+
+#noise-bg {
+  animation: grain 14s steps(10) infinite;
+  height: 300%;
+  left: -50%;
+  opacity: 0.01;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+}
+
+#noise-canvas {
+  display: none;
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, 5%);
+  }
+
+  30% {
+    transform: translate(7%, -25%);
+  }
+
+  40% {
+    transform: translate(-5%, 25%);
+  }
+
+  50% {
+    transform: translate(-15%, 10%);
+  }
+
+  60% {
+    transform: translate(15%, 0%);
+  }
+
+  70% {
+    transform: translate(0%, 15%);
+  }
+
+  80% {
+    transform: translate(3%, 35%);
+  }
+
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+#site-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  .top-right {
+    position: fixed;
+    padding: 2vh 2vw;
+    right: 0;
+    z-index: 2;
+  }
+
+  section {
+
+    transition: padding 0.2s ease-in-out;
+    scroll-snap-align: start;
+
+    //padding: 12.5vh 0 12.5vh 6.25%;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+
+    padding-left: 6.25%;
+    position: relative;
+
+    .x-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    header {
+      //max-width: 88.57143%;
+    }
+
+    &.fullpage {
+      min-height: 100vh;
+      text-align: right;
+
+      .bottom-section {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+.x-container {
+  float: right;
+  width: 100%;
+  max-width: 88.88889%;
+  padding-left: 6.66667%;
+  padding-right: 4.44444%;
+}
+
+// Desktop
+@media only screen and (min-width: 768px) {
+  .fittext {
+    //font-size: 5.25rem;
+    font-size: 7.63889vw;
+  }
+  .x-container {
+    max-width: 100%;
+  }
+  #site-wrapper {
+
+    section {
+      header {
+      }
+    }
+  }
+}
+
+#announcements{display: none;}
+footer{display: none;}

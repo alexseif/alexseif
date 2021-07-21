@@ -5,23 +5,24 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/scss/home.css') }}"/>
 {% endblock %}
 {% block content %}
-    <div id="site-wrapper">
-        <div id="noise-bg"></div>
-        <canvas id="noise-canvas"></canvas>
-        <section class="fullpage intro">
-            <div class="wrapper">
-                <header>
-                    <h2 class="fittext">Freelance web<br/> developer</h2>
-                </header>
-                <div class="bottom-section">
-                    <p>Web Presence, eCommerce, Travel Technology, NGO, eLearning, eGoverment</p>
-                    <a class='button start-project button_slide slide_right' href="https://wa.me/+201004006332" target="_blank">Start project</a>
-                </div><!-- .bottom-section -->
-            </div><!-- .wrapper -->
-        </section>
-    </div><!-- #site-wrapper -->
-
+    <div id="noise-bg"></div>
+    <canvas id="noise-canvas"></canvas>
+    <section class="fullpage intro">
+        <div class="x-container">
+            <header>
+                <h2 class="fittext">Freelance web developer</h2>
+            </header>
+            <div class="bottom-section">
+                <p>Web Presence, eCommerce, Travel Technology, NGO, eLearning, eGoverment</p>
+                <a class='button start-project button_slide slide_right' href="https://wa.me/+201004006332"
+                   target="_blank">Start project</a>
+            </div><!-- .bottom-section -->
+        </div><!-- .x-container -->
+    </section>
 {% endblock %}
+{% block announcements %}
+{% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/home.js') }}"></script>

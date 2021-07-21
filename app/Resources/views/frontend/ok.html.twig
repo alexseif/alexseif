@@ -1,11 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
   {{ parent() }}
-  {% stylesheets filter="scssphp" output="css/app.css"
-            "css/sass/ok.scss"
-  %}
-  <link rel="stylesheet" href="{{ asset_url }}" />
-  {% endstylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/scss/ok.scss') }}" />
 {% endblock %}
 {% block body %}
   <div class="base">

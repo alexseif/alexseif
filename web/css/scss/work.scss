@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/**
+  * The following content was designed & implemented under AlexSeif.com
+**/
+@import 'var';
+
+.x-work {
+  display: flex;
+
+  .work-list {
+    position: relative;
+    z-index: 2;
+
+    .work-item {
+      perspective: 400px;
+      opacity: 0.3;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      padding: 1rem 0;
+
+      &:hover {
+        opacity: 1;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+      }
+
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+
+      .work-number {
+        position: absolute;
+        right: 100%;
+        margin-right: 25px;
+      }
+
+      .work-title {
+        -webkit-transition: all .2s cubic-bezier(.25, .46, .45, .94);
+        transition: all .2s cubic-bezier(.25, .46, .45, .94);
+        will-change: transform;
+
+        h3 {
+          mix-blend-mode: difference;
+          line-height: 1.025;
+          font-size: 4rem;
+          letter-spacing: -3px;
+          font-family: $font-serif;
+          //color: rgba(255, 255, 255, 0.7);
+          font-weight: 300;
+          margin-top: 0;
+          margin-bottom: 0;
+
+        }
+      }
+
+      .work-tag {
+        display: inline-block;
+        -webkit-transition: all .2s cubic-bezier(.25, .46, .45, .94) .1s;
+        transition: all .2s cubic-bezier(.25, .46, .45, .94) .1s;
+        will-change: transform;
+        display: inline-block;
+        -webkit-transition: all .2s cubic-bezier(.25, .46, .45, .94) .1s;
+        transition: all .2s cubic-bezier(.25, .46, .45, .94) .1s;
+        will-change: transform;
+        line-height: 1.5;
+        font-size: .7rem;
+        letter-spacing: .2px;
+        //font-family: PlainLight;
+        font-weight: 300;
+        margin-bottom: .8em;
+      }
+    }
+  }
+
+  .work-preview {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    &__container {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 60px;
+      width: 50%;
+      height: 100%;
+    }
+
+    &__bg {
+      background-color: rgb(57, 55, 53);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      will-change: background-color;
+    }
+
+    &__canvas {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 100%;
+      left: 0;
+      height: 0;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .x-work {
+    .work-list {
+      .work-item {
+        .work-title {
+          h3 {
+            line-height: 1.025;
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -123,3 +123,8 @@ window.addEventListener('resize', function () {
   dieX = w / 2 / opts.len;
   dieY = h / 2 / opts.len;
 });
+
+
+ctx.font = "30px Arial";
+ctx.fillText("Hello World", 10, 50);
+ctx.fillText("How you doin?", 10, 150);

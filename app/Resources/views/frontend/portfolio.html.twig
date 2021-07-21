@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
   {{ parent() }}
-  <link rel="stylesheet" type="text/css" href="/css/portfolio.css" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('/css/frontend_portfolio.css') }}" />
 {% endblock %}
 
 {% block content %}
@@ -102,5 +102,5 @@
 
 {% block javascripts %}
   {{ parent() }}
-  <script type="text/javascript" src="/js/portfolio.js"></script>
+  <script type="text/javascript" src="{{ asset('/js/frontend_portfolio.js') }}"></script>
 {% endblock %}
