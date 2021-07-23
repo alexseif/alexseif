@@ -74,6 +74,7 @@
   }
 
   .work-preview {
+    display: none;
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -125,6 +126,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .work-page-title{
+    margin-top: 30vh;
+  }
   .x-work {
     .work-list {
       .work-item {
