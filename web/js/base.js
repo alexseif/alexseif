@@ -26,4 +26,11 @@ function createNoise() {
 $(document).ready(function () {
     createNoise();
     // $(".fittext").fitText();
+    $(".x-menu-btn").click(function () {
+        $(this).toggleClass("x-open")
+            .blur();
+        $("#nav-container").toggleClass("x-open");
+        // $('#nav-container nav').toggle("slide");
+    });
+
 });
