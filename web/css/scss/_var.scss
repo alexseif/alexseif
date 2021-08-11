@@ -4,12 +4,14 @@
 //$padding: 2vh 2vw;
 $padding: 21px 34px;
 $black: rgba(0, 0, 0, 0.9);
+$blue: #418CFF;
 $white: rgba(255, 255, 255, 0.9);
 $color: $white;
 $purple-bg-img: linear-gradient(to right, #351552, #663399);
 $body-bg-img: $purple-bg-img;
-$body-bg: rgba(13, 13, 13, 1);
+$body-bg: #171717;
 $font-sans: "IBM Plex Sans", sans-serif;
-$font-serif: "IBM Plex Serif", serif;
+//$font-serif: "IBM Plex Serif", serif;
+$font-serif: "Merriweather", serif;
 $font-mono:  "IBM Plex Mono", monospace;
 $font-family: $font-sans;

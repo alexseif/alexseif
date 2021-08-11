@@ -30,6 +30,9 @@ $(document).ready(function () {
         $(this).toggleClass("x-open")
             .blur();
         $("#nav-container").toggleClass("x-open");
+        $('body').toggleClass('menu-open')
+        // $('.fittext').css('font-size', '100%');
+        $('.fittext').fitText();
         // $('#nav-container nav').toggle("slide");
     });
 

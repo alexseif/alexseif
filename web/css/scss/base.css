@@ -5,15 +5,16 @@ The following content was designed & implemented under AlexSeif.com
     Created on : Jan 14, 2017, 11:10:24 AM
     Author     : Alex Seif <me@alexseif.com>
 */
-@import "https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 /**
   * The following content was designed & implemented under AlexSeif.com
 **/
 body {
   font-family: "IBM Plex Sans", sans-serif;
   color: rgba(255, 255, 255, 0.9);
-  background-color: #0d0d0d; }
+  background-color: #171717; }
 
 h3 {
   font-family: "IBM Plex Mono", monospace;
@@ -75,17 +76,17 @@ h4 {
   transition: ease-out 0.6s; }
 
 .slide_down:hover {
-  box-shadow: inset 0 100px 0 0 #000000; }
+  box-shadow: inset 0 100px 0 0 #171717; }
 
 .slide_right:hover {
   color: #fff;
-  box-shadow: inset 400px 0 0 0 #000000; }
+  box-shadow: inset 400px 0 0 0 #171717; }
 
 .slide_left:hover {
-  box-shadow: inset 0 0 0 50px #000000; }
+  box-shadow: inset 0 0 0 50px #171717; }
 
 .slide_diagonal:hover {
-  box-shadow: inset 400px 50px 0 0 #000000; }
+  box-shadow: inset 400px 50px 0 0 #171717; }
 
 .page-elements {
   width: 10%;
@@ -148,24 +149,15 @@ h4 {
       transform: rotate(180deg); }
 
 #nav-container {
-  position: fixed;
-  /* Sit on top of the page content */
-  width: 100%;
-  /* Full width (cover the whole page) */
+  position: absolute;
   height: 100%;
-  /* Full height (cover the whole page) */
-  top: 0;
-  left: -100%;
-  right: 0;
-  bottom: 0;
-  background-color: #0d0d0d;
-  /* Black background with opacity */
+  width: 100%;
+  background-color: #171717;
   z-index: 12;
-  /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer;
-  /* Add a pointer on hover */
-  transition: all 1s;
-  transition-delay: 0.1s; }
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transform-origin: 0 0;
+  transform: translate(-100%, 0); }
   #nav-container .menu-container {
     display: flex;
     flex-direction: column;
@@ -175,10 +167,12 @@ h4 {
       font-size: 55px;
       text-decoration: none;
       color: rgba(255, 255, 255, 0.9);
-      font-family: "IBM Plex Serif", serif;
+      font-family: "Merriweather", serif;
       padding: 21px 34px;
       padding-left: 34%;
       text-transform: lowercase; }
+      #nav-container .menu-container .x-link span {
+        color: #418CFF; }
       #nav-container .menu-container .x-link:hover {
         color: #fff;
         text-transform: none; }
@@ -196,7 +190,7 @@ h4 {
           filter: invert(1);
           opacity: 0.6; }
   #nav-container.x-open {
-    left: -10%; }
+    transform: none; }
 
 /*Keyframes*/
 @keyframes glitch1 {
