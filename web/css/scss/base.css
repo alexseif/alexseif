@@ -47,7 +47,7 @@ h4 {
 .fittext {
   font-weight: bolder;
   font-size: 2.5rem;
-  transition: all 0.6s ease-in-out;
+  transition: font-size 0.6s ease-in-out;
   line-height: 1em; }
 
 .button {
@@ -96,7 +96,7 @@ h4 {
   top: 0;
   bottom: 0;
   z-index: 21;
-  padding: 21px 34px;
+  padding: 21px 21px;
   caret-color: transparent; }
   .page-elements a {
     color: rgba(255, 255, 255, 0.9);
@@ -105,7 +105,7 @@ h4 {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 21px 34px; }
+    padding: 21px 21px; }
 
 .x-menu-btn {
   z-index: 987;
@@ -168,11 +168,9 @@ h4 {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.9);
       font-family: "Merriweather", serif;
-      padding: 21px 34px;
+      padding: 21px 21px;
       padding-left: 34%;
       text-transform: lowercase; }
-      #nav-container .menu-container .x-link span {
-        color: #418CFF; }
       #nav-container .menu-container .x-link:hover {
         color: #fff;
         text-transform: none; }
@@ -375,7 +373,6 @@ h4 {
         margin-top: 2rem; }
 
 .x-container {
-  float: right;
   width: 100%;
   max-width: 88.88889%;
   padding-left: 6.66667%;
@@ -396,5 +393,26 @@ footer {
 
   .x-container {
     max-width: 100%; } }
+.late-intro {
+  top: 34vh;
+  background-color: #171717; }
+  .late-intro header {
+    overflow: hidden;
+    height: 150px; }
+    .late-intro header .profile-image {
+      position: relative;
+      right: 90px;
+      top: -218px;
+      width: 236px;
+      float: right; }
+      .late-intro header .profile-image img {
+        width: 100%;
+        height: auto; }
+  .late-intro h2 {
+    font-size: 3.4em; }
+
+.txt-container {
+  line-height: 1.5em;
+  padding-right: 9%; }
 
 /*# sourceMappingURL=base.css.map */

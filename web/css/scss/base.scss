@@ -55,7 +55,7 @@ h4 {
   font-weight: bolder;
   //font-size: 7.63889vw;
   font-size: 2.5rem;
-  transition: all 0.6s ease-in-out;
+  transition: font-size 0.6s ease-in-out;
   line-height: 1em;
   // margin: 0;
 }
@@ -528,7 +528,7 @@ h4 {
 }
 
 .x-container {
-  float: right;
+  //float: right;
   width: 100%;
   max-width: 88.88889%;
   padding-left: 6.66667%;
@@ -562,4 +562,36 @@ footer {
       }
     }
   }
+}
+
+.late-intro {
+  top: 34vh;
+  background-color: #171717;
+
+  header {
+    overflow: hidden;
+    height: 150px;
+
+    .profile-image {
+      position: relative;
+      right: 90px;
+      top: -218px;
+      width: 236px;
+      float: right;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 3.4em;
+  }
+}
+
+.txt-container {
+  line-height: 1.5em;
+  padding-right: 9%;
 }

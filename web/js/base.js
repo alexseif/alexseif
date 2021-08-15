@@ -32,7 +32,7 @@ $(document).ready(function () {
         $("#nav-container").toggleClass("x-open");
         $('body').toggleClass('menu-open')
         // $('.fittext').css('font-size', '100%');
-        $('.fittext').fitText();
+        // $('.fittext').fitText();
         // $('#nav-container nav').toggle("slide");
     });
 

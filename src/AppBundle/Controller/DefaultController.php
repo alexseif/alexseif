@@ -30,6 +30,15 @@ class DefaultController extends Controller
 
 
     /**
+     * @Route("/about", name="about")
+     * @Template("default/about.html.twig")
+     */
+    public function aboutAction()
+    {
+        return [];
+    }
+
+    /**
      * @Route("/contact", name="contact")
      * @Template("default/contact.html.twig")
      */
