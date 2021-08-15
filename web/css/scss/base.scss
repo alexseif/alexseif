@@ -89,20 +89,20 @@ h4 {
 }
 
 .slide_down:hover {
-  box-shadow: inset 0 100px 0 0 #171717;
+  box-shadow: inset 0 100px 0 0 #000;
 }
 
 .slide_right:hover {
   color: #fff;
-  box-shadow: inset 400px 0 0 0 #171717;
+  box-shadow: inset 400px 0 0 0 #000;
 }
 
 .slide_left:hover {
-  box-shadow: inset 0 0 0 50px #171717;
+  box-shadow: inset 0 0 0 50px #000;
 }
 
 .slide_diagonal:hover {
-  box-shadow: inset 400px 50px 0 0 #171717;
+  box-shadow: inset 400px 50px 0 0 #000;
 }
 
 .page-elements {
@@ -115,6 +115,10 @@ h4 {
   z-index: 21;
   padding: $padding;
   caret-color: transparent;
+
+  h1 {
+    margin: 0;
+  }
 
   a {
     color: $color;
@@ -220,7 +224,7 @@ h4 {
       text-decoration: none;
       color: $white;
       font-family: $font-serif;
-      padding: $padding;
+      padding: 21px;
       padding-left: 34%;
       text-transform: lowercase;
 
@@ -519,20 +523,23 @@ h4 {
     &.fullpage {
       min-height: 100vh;
       text-align: right;
+      padding-bottom: 0;
 
       .bottom-section {
-        margin-top: 2rem;
+        p {
+          font-size: 150%;
+        }
       }
     }
   }
 }
 
 .x-container {
-  //float: right;
   width: 100%;
   max-width: 88.88889%;
   padding-left: 6.66667%;
-  padding-right: 4.44444%;
+  padding-right: 6.66667%;
+  margin: 0 auto;
 }
 
 #announcements {

@@ -76,17 +76,17 @@ h4 {
   transition: ease-out 0.6s; }
 
 .slide_down:hover {
-  box-shadow: inset 0 100px 0 0 #171717; }
+  box-shadow: inset 0 100px 0 0 #000; }
 
 .slide_right:hover {
   color: #fff;
-  box-shadow: inset 400px 0 0 0 #171717; }
+  box-shadow: inset 400px 0 0 0 #000; }
 
 .slide_left:hover {
-  box-shadow: inset 0 0 0 50px #171717; }
+  box-shadow: inset 0 0 0 50px #000; }
 
 .slide_diagonal:hover {
-  box-shadow: inset 400px 50px 0 0 #171717; }
+  box-shadow: inset 400px 50px 0 0 #000; }
 
 .page-elements {
   width: 10%;
@@ -96,8 +96,10 @@ h4 {
   top: 0;
   bottom: 0;
   z-index: 21;
-  padding: 21px 21px;
+  padding: 55px;
   caret-color: transparent; }
+  .page-elements h1 {
+    margin: 0; }
   .page-elements a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none; }
@@ -105,7 +107,7 @@ h4 {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 21px 21px; }
+    padding: 55px; }
 
 .x-menu-btn {
   z-index: 987;
@@ -168,7 +170,7 @@ h4 {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.9);
       font-family: "Merriweather", serif;
-      padding: 21px 21px;
+      padding: 21px;
       padding-left: 34%;
       text-transform: lowercase; }
       #nav-container .menu-container .x-link:hover {
@@ -368,15 +370,17 @@ h4 {
       z-index: 2; }
     #site-wrapper section.fullpage {
       min-height: 100vh;
-      text-align: right; }
-      #site-wrapper section.fullpage .bottom-section {
-        margin-top: 2rem; }
+      text-align: right;
+      padding-bottom: 0; }
+      #site-wrapper section.fullpage .bottom-section p {
+        font-size: 150%; }
 
 .x-container {
   width: 100%;
   max-width: 88.88889%;
   padding-left: 6.66667%;
-  padding-right: 4.44444%; }
+  padding-right: 6.66667%;
+  margin: 0 auto; }
 
 #announcements {
   display: none; }
