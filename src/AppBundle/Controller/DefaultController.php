@@ -12,39 +12,42 @@ class DefaultController extends Controller
 
     /**
      * @Route("/", name="homepage")
-     * @Template("default/home.html.twig")
      */
     public function indexAction()
     {
-        return [];
+        return $this->render("default/home.html.twig");
+
     }
 
     /**
      * @Route("/work", name="work")
-     * @Template("default/work.html.twig")
      */
     public function workAction()
     {
-        return ['work_list' => $this->getPortfoliosForDisplay()];
+        if ("prod" === $this->get('kernel')->getEnvironment()) {
+            return $this->render("default/coming-soon.html.twig");
+        }
+        return $this->render("default/work.html.twig", ['work_list' => $this->getPortfoliosForDisplay()]);
     }
 
 
     /**
      * @Route("/about", name="about")
-     * @Template("default/about.html.twig")
      */
     public function aboutAction()
     {
-        return [];
+        if ("prod" === $this->get('kernel')->getEnvironment()) {
+            return $this->render("default/coming-soon.html.twig");
+        }
+        return $this->render("default/about.html.twig");
     }
 
     /**
      * @Route("/contact", name="contact")
-     * @Template("default/contact.html.twig")
      */
     public function contactAction()
     {
-        return array();
+        return $this->render("default/contact.html.twig");
     }
 
     /**
