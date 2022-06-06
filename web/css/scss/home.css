@@ -28,4 +28,12 @@ nav.footer-nav {
       nav.footer-nav ul li:hover {
         border-color: orange; }
 
+#my-title span:last-child {
+  display: none; }
+#my-title:hover span:first-child {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.6); }
+#my-title:hover span:last-child {
+  display: initial; }
+
 /*# sourceMappingURL=home.css.map */

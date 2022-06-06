@@ -36,3 +36,20 @@ nav.footer-nav {
     }
   }
 }
+
+#my-title {
+  span:last-child {
+    display: none;
+  }
+
+  &:hover {
+    span:first-child {
+      text-decoration: line-through;
+      color: rgba(255,255,255, 0.6);
+    }
+
+    span:last-child {
+      display: initial;
+    }
+  }
+}
