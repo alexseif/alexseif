@@ -71,7 +71,7 @@ doctrine:
       auto_generate_proxy_classes: '%kernel.debug%'
       auto_mapping: true
       naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
-      
+
 stof_doctrine_extensions:
     orm:
         default:
@@ -89,7 +89,7 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
-        
+
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
@@ -101,13 +101,7 @@ fpn_tag:
     model:
         tag_class:     AppBundle\Entity\Tag
         tagging_class: AppBundle\Entity\Tagging
-#        
-#doctrine_migrations:
-#  dir_name: "%kernel.root_dir%/DoctrineMigrations"
-#  namespace: Application\Migrations
-#  table_name: migration_versions
-#  name: Application Migrations
-  
+
 zenstruck_backup:
     namers:
         daily:
@@ -118,8 +112,8 @@ zenstruck_backup:
             timestamp:
                 prefix: alexseif-
     sources:
-        database: 
-            mysqldump: 
+        database:
+            mysqldump:
                 host:       "%database_host%"
                 database:   "%database_name%"
                 user:       "%database_user%"
@@ -127,8 +121,8 @@ zenstruck_backup:
     processors:
         gzip: { 'gzip':~ }
     destinations:
-        dir: 
-            stream: 
+        dir:
+            stream:
                 directory: "%kernel.root_dir%/../backups"
     profiles:
         daily:
@@ -137,9 +131,9 @@ zenstruck_backup:
             namer: daily
             processor: gzip
             destinations: [dir]
-            
-doctrine_migrations:
-  dir_name: "%kernel.root_dir%/DoctrineMigrations"
-  namespace: Application\Migrations
-  table_name: migration_versions
-  name: Application Migrations
+
+#doctrine_migrations:
+#  dir_name: "%kernel.root_dir%/DoctrineMigrations"
+#  namespace: Application\Migrations
+#  table_name: migration_versions
+#  name: Application Migrations
