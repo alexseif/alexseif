@@ -36,4 +36,23 @@ nav.footer-nav {
 #my-title:hover span:last-child {
   display: initial; }
 
+#my-description div {
+  display: inline; }
+  #my-description div div {
+    position: absolute;
+    display: none; }
+    #my-description div div span {
+      position: relative;
+      left: -160px; }
+      #my-description div div span:nth-child(1) {
+        top: -80px; }
+      #my-description div div span:nth-child(2) {
+        top: -60px; }
+      #my-description div div span:nth-child(3) {
+        top: -40px; }
+      #my-description div div span:nth-child(4) {
+        top: -20px; }
+  #my-description div:hover div {
+    display: inline; }
+
 /*# sourceMappingURL=home.css.map */

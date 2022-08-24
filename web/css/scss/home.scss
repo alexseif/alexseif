@@ -45,11 +45,49 @@ nav.footer-nav {
   &:hover {
     span:first-child {
       text-decoration: line-through;
-      color: rgba(255,255,255, 0.6);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     span:last-child {
       display: initial;
+    }
+  }
+}
+
+#my-description {
+  div {
+    display: inline;
+
+    div {
+      position: absolute;
+      display: none;
+
+      span {
+        position: relative;
+        left: -160px;
+
+        &:nth-child(1) {
+          top: -80px;
+        }
+
+        &:nth-child(2) {
+          top: -60px;
+        }
+
+        &:nth-child(3) {
+          top: -40px;
+        }
+
+        &:nth-child(4) {
+          top: -20px;
+        }
+      }
+    }
+
+    &:hover {
+      div {
+        display: inline;
+      }
     }
   }
 }
