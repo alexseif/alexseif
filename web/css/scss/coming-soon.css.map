@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AACA;;GAEG;ACHH;;GAEG;ADIH,YAAa;EACX,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;EAClB,eAAe,EAAE,MAAM;EACvB,SAAS,EAAE,GAAG;EACd,4BAA4B;EAC5B,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,KAAK",
-"sources": ["coming-soon.scss","_var.scss"],
-"names": [],
-"file": "coming-soon.css"
-}
+{"version":3,"sourceRoot":"","sources":["coming-soon.scss","_var.scss"],"names":[],"mappings":"AACA;AAAA;AAAA;ACDA;AAAA;AAAA;ADMA;EACE;EACA;EACA;EACA;AACA;EACA;EACA","file":"coming-soon.css"}
