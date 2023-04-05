@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}{% endblock %}
+{% block content %}
+    <div id="noise-bg"></div>
+    <canvas id="noise-canvas"></canvas>
+    <section class="fullpage intro">
+        <div class="x-container">
+            <header>
+                <h2 class="fittext" id="my-title">{{ 'freelance'|trans }} <span>{{ 'web_developer'|trans }}</span> <span>{{ 'copy_paster'|trans }}</span></h2>
+            </header>
+            <div class="bottom-section" id="my-description">
+                <div>
+                    {{ 'web_presence'|trans }},
+                    <div>
+                        <span>{{ 'wordpress'|trans }}</span>
+                        <span>{{ 'drupal'|trans }}</span>
+                        <span>{{ 'onepage_website'|trans }}</span>
+                        <span>{{ 'social_media'|trans }}</span>
+                    </div>
+                </div>
+                <div>
+                    {{ 'ecommerce'|trans }},
+                    <div>
+                        <span>{{ 'woocommerce'|trans }}</span>
+                        <span>{{ 'drupal'|trans }}</span>
+                        <span>{{ 'magento'|trans }}</span>
+                        <span>{{ 'custom_tailored'|trans }}</span>
+                        <span>{{ 'etc'|trans }}</span>
+                    </div>
+                </div>
+                <div>
+                    {{ 'travel_technology'|trans }}
+                    <div>
+                        <span>{{ 'hotels'|trans }}</span>
+                        <span>{{ 'airline'|trans }}</span>
+                        <span>{{ 'flights'|trans }}</span>
+                        <span>{{ 'tours'|trans }}</span>
+                    </div>
+                </div>
+                <div>
+                    {{ 'ngo'|trans }}
+                    <div>
+                        <span>{{ 'gdpr'|trans }}</span>
+                        <span>{{ 'newsletter'|trans }}</span>
+                        <span>{{ 'verified_social_accounts'|trans }}</span>
+                    </div>
+                </div>
+                <div>eLearning,
+                    <div>
+                        <span>{{ 'moodle'|trans }}</span>
+                        <span>{{ 'tao'|trans }}</span>
+                    </div>
+                </div>
+                <div>
+                    eGovernment
+                    <div>
+                        <span>{{ 'system_critical'|trans }}</span>
+                        <span>{{ 'secure_code'|trans }}</span>
+                        <span>{{ 'quality_process'|trans }}</span>
+                        <span>{{ 'automated_life_cycles'|trans }}</span>
+                    </div>
+                </div>
+                <br/>
+                <a class='button start-project button_slide slide_right' href="https://wa.me/+201004006332"
+                   target="_blank">{{ 'start_project'|trans }}</a>
+            </div><!-- .bottom-section -->
+        </div><!-- .x-container -->
+    </section>
+{% endblock %}
+{% block announcements %}
+{% endblock %}
+

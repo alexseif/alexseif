@@ -1,7 +1,0 @@
-imports:
-  - { resource: doctrine_extensions.yml }
-services:
-    onconnect.listener:
-        class: AppBundle\EventListener\OnConnect
-        tags:
-            - { name: doctrine.event_listener, event: postConnect }
