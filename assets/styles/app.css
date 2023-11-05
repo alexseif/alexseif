@@ -30,6 +30,37 @@ h4 {
   line-height: 1em;
 }
 
+header #alx {
+  position: relative;
+  perspective: 1000px;
+}
+header #alx img {
+  transition: transform 0.5s, opacity 0.5s;
+  transform-style: preserve-3d; /* Preserve 3D transformations */
+}
+header #alx span {
+  opacity: 0; /* Initially hide the span */
+  position: absolute;
+  top: -55px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotateY(180deg); /* Initially flip the span to the back */
+  transition: transform 0.5s, opacity 0.5s;
+  transform-style: preserve-3d; /* Preserve 3D transformations */
+}
+header #alx:hover img {
+  transform: rotateY(180deg); /* Flip and scale down the image on hover */
+  opacity: 0;
+}
+header #alx:hover span {
+  display: block; /* Make the span appear on hover */
+  transform: rotateY(0deg); /* Flip the span to the front on hover */
+  transform-style: preserve-3d; /* Preserve 3D transformations */
+  opacity: 1;
+}
+
 .x-clearfix {
   display: inline-block;
 }
