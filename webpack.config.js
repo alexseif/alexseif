@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const FileLoader = require('file-loader');
+const FileLoader = require('file-loader');
 const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
@@ -88,7 +88,7 @@ Encore
     .copyFiles({
         from: './assets/images',
         //optional target path, relative to the output dir
-        to: 'images/[path][name].[ext]',
+        to: '/images/[path][name].[ext]',
 
         //if versioning is enabled, add the file hash too
         // to: 'images/[path][name].[hash:8].[ext]',
