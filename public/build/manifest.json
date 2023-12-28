@@ -2,7 +2,10 @@
   "build/app.css": "http://localhost:8080/build/app.css",
   "build/app.js": "http://localhost:8080/build/app.js",
   "build/runtime.js": "http://localhost:8080/build/runtime.js",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_html5shiv_dist_html5s-71b853.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_html5shiv_dist_html5s-71b853.js",
-  "build/index.html": "http://localhost:8080/build/index.html",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_html5shiv_dist_html5s-c180f9.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_html5shiv_dist_html5s-c180f9.js"
+  "build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-3885b1.js": "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-3885b1.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_html5shiv_dist_html5s-953b95.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_html5shiv_dist_html5s-953b95.js",
+  "build/images/IMG_20231121_070437_479.jpg": "http://localhost:8080/build/images/IMG_20231121_070437_479.jpg",
+  "build/images/ALX.png": "http://localhost:8080/build/images/ALX.png",
+  "build/images/2023-06-22.jpg": "http://localhost:8080/build/images/2023-06-22.jpg",
+  "build/index.html": "http://localhost:8080/build/index.html"
 }

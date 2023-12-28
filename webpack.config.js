@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const FileLoader = require('file-loader');
 const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
@@ -84,6 +85,16 @@ Encore
         headTags: '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">'
     }))
     .autoProvidejQuery()
+    .copyFiles({
+        from: './assets/images',
+        //optional target path, relative to the output dir
+        to: 'images/[path][name].[ext]',
+
+        //if versioning is enabled, add the file hash too
+        // to: 'images/[path][name].[hash:8].[ext]',
+        //only copy files matching this pattern
+        pattern: /\.(png|jpg|jpeg)$/
+    })
     .configureDevServerOptions(options => {
         options.allowedHosts = 'all';
         // in older Webpack Dev Server versions, use this option instead:
