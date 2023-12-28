@@ -7,6 +7,8 @@
         "@symfony/stimulus-bridge": "^3.2.0",
         "@symfony/webpack-encore": "^4.5.0",
         "core-js": "^3.33.2",
+        "css-loader": "^6.8.1",
+        "file-loader": "^6.0.0",
         "html-loader": "^4.2.0",
         "jquery": "^3.7.1",
         "regenerator-runtime": "^0.14.0",
@@ -26,6 +28,7 @@
     },
     "dependencies": {
         "fittext.js": "^1.2.0",
+        "html-minifier-terser": "^7.2.0",
         "html-webpack-plugin": "^5.5.3",
         "html5shiv": "^3.7.3"
     }
