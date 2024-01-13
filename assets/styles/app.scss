@@ -580,6 +580,17 @@ header {
       z-index: 2;
     }
 
+    #special-home-container {
+      display: flex;
+      height: calc(100vh - 20vh);
+      flex-direction: column;
+      justify-content: space-between;
+
+      .bottom-section{
+        margin-bottom: 10vh;
+      }
+    }
+
     header {
       //max-width: 88.57143%;
     }
@@ -588,12 +599,6 @@ header {
       min-height: 100vh;
       text-align: right;
       padding-bottom: 0;
-      background-image: url("../images/2023-06-22.jpg");
-      background-position: bottom left;
-      background-size: 33%;
-      background-repeat: no-repeat;
-
-      transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
 
       .bottom-section {
         p {
