@@ -1,4 +1,5 @@
 #!/bin/bash
+git reset HEAD --hard
 git pull origin master
 php8.2 /usr/local/bin/composer dump-env prod
 php8.2 /usr/local/bin/composer install --no-dev --optimize-autoloader
