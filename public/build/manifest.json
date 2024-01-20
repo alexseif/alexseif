@@ -21,6 +21,5 @@
   "build/index.html": "http://localhost:8080/build/index.html",
   "build/images/icons/027-whatsapp.svg": "http://localhost:8080/build/images/icons/027-whatsapp.svg",
   "build/images/icons/013-facebook.svg": "http://localhost:8080/build/images/icons/013-facebook.svg",
-  "build/images/icons/014-instagram.svg": "http://localhost:8080/build/images/icons/014-instagram.svg",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_bootstrap_dist_js_boo-24d5c3.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_bootstrap_dist_js_boo-24d5c3.js"
+  "build/images/icons/014-instagram.svg": "http://localhost:8080/build/images/icons/014-instagram.svg"
 }
