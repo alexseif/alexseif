@@ -6,6 +6,7 @@
         "@popperjs/core": "^2.11.8",
         "@symfony/stimulus-bridge": "^3.2.0",
         "@symfony/webpack-encore": "^4.5.0",
+        "bootstrap": "^5.3.2",
         "core-js": "^3.33.2",
         "css-loader": "^6.8.1",
         "file-loader": "^6.0.0",
@@ -27,6 +28,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.5.1",
         "fittext.js": "^1.2.0",
         "html-minifier-terser": "^7.2.0",
         "html-webpack-plugin": "^5.5.3",

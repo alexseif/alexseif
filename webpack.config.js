@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileLoader = require('file-loader');
 const Encore = require('@symfony/webpack-encore');
+const webpack = require('webpack');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -57,6 +58,13 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = '3.23';
     })
+    // Add this section to include Bootstrap
+    .addPlugin(new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default'],
+    }))
 
     // enables Sass/SCSS support
     .enableSassLoader()
@@ -71,8 +79,12 @@ Encore
     // requires WebpackEncoreBundle 1.4 or higher
     //.enableIntegrityHashes(Encore.isProduction())
 
+    .copyFiles({
+        from: './node_modules/@fortawesome/fontawesome-free/webfonts',
+        to: 'fonts/[path][name].[ext]',
+    })
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
     // Add the HtmlWebpackPlugin to the configuration
     .addPlugin(new HtmlWebpackPlugin({
         template: 'templates/base.html.twig',
@@ -84,7 +96,6 @@ Encore
         // the following line adds your Google Fonts link tag to the head section of the HTML file
         headTags: '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">'
     }))
-    .autoProvidejQuery()
     .copyFiles({
         from: './assets/images',
         //optional target path, relative to the output dir
@@ -101,4 +112,5 @@ Encore
         // options.firewall = false;
     })
 ;
+
 module.exports = Encore.getWebpackConfig();

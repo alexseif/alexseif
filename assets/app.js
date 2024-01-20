@@ -5,13 +5,15 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-// any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
 import 'html5shiv';
-import 'jquery';
+// any CSS you import will output into a single css file (app.css in this case)
+import './styles/app.scss';
+import $ from 'jquery';
+require('bootstrap');
+
 /**
  * The following content was designed & implemented under AlexSeif.com
  **/
@@ -23,11 +25,12 @@ $(document).ready(function () {
         $(this).toggleClass("x-open")
             .blur();
         $("#nav-container").toggleClass("x-open");
-        $('body').toggleClass('menu-open')
+        $('body').toggleClass('menu-open');
         // $('.fittext').css('font-size', '100%');
         // $('.fittext').fitText();
         // $('#nav-container nav').toggle("slide");
     });
+
 });
 
 /**

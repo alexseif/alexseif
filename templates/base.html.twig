@@ -4,9 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>{% block title %}{{ 'alex_seif_freelance_web_design_developer_i_always'|trans }} {% endblock %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     {% block meta %}
         <meta property="og:title" content="Alex Seif"/>
         <meta property="og:url" content="https://alexseif.com"/>
@@ -17,6 +14,11 @@
         <link rel="canonical"
               href="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}">
     {% endblock %}
+    <title>{% block title %}{{ 'alex_seif_freelance_web_design_developer_i_always'|trans }} {% endblock %}</title>
+    {% block structured_data %}
+    {% endblock %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     {% block stylesheets %}
         <link rel="preconnect" href="https://fonts.gstatic.com">
         {{ encore_entry_link_tags('app') }}
