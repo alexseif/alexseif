@@ -13,9 +13,27 @@
               content="Freelance Web Design & Developer. I always deliver."/>
         <link rel="canonical"
               href="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}">
+        <meta name="description"
+              content="Freelance Web Developer based in Cairo, Egypt. Over 20 years of experience, providing web solutions globally.">
+        <meta name="keywords"
+              content="Freelance Web Developer, Web Development, Cairo, Egypt, eCommerce, Web Apps, SEO">
+        <meta name="author" content="Alex Seif">
     {% endblock %}
     <title>{% block title %}{{ 'alex_seif_freelance_web_design_developer_i_always'|trans }} {% endblock %}</title>
     {% block structured_data %}
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Alex Seif",
+                "jobTitle": "Freelance Web Developer",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Cairo",
+                    "addressRegion": "EG"
+                }
+            }
+        </script>
     {% endblock %}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -42,6 +60,10 @@
     {% block nav %}
         {% include '_nav.html.twig' %}
     {% endblock %}
+    <div id="background-noise">
+        <div id="noise-bg"></div>
+        <canvas id="noise-canvas"></canvas>
+    </div>
     {% block sitewrapper %}
         <div id="site-wrapper">
             {% block content %}

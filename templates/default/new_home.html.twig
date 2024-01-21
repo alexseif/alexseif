@@ -1,31 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}{% endblock %}
-{% block meta %}
-    {{ parent() }}
-    <meta name="description"
-          content="Freelance Web Developer based in Cairo, Egypt. Over 20 years of experience, providing web solutions globally.">
-    <meta name="keywords" content="Freelance Web Developer, Web Development, Cairo, Egypt, eCommerce, Web Apps, SEO">
-    <meta name="author" content="Alex Seif">
-{% endblock %}
-{% block structured_data %}
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Alex Seif",
-            "jobTitle": "Freelance Web Developer",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Cairo",
-                "addressRegion": "EG"
-            }
-        }
-    </script>
-{% endblock %}
 {% block content %}
-
-    <div id="noise-bg"></div>
-    <canvas id="noise-canvas"></canvas>
     <div id="fullpages">
         {{ include('default/_page_1.html.twig') }}
         {{ include('default/_page_2.html.twig') }}
