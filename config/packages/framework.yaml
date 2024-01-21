@@ -14,7 +14,8 @@ framework:
     trusted_proxies: '127.0.0.1,192.168.0.1/16'
     trusted_headers: ['x-forwarded-for', 'x-forwarded-proto', 'x-forwarded-port']
     handle_all_throwables: true
-
+    annotations:
+        enabled: true
     #esi: true
     #fragments: true
     php_errors:
