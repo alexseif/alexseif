@@ -47,6 +47,7 @@ class DefaultController extends AbstractController
           'https://codepen.io/RobinTreur/pen/QKjgPX',
           'https://codepen.io/shvvffle/pen/bwprEm',
           'https://codepen.io/RominaMartin/details/KKgQmEW',
+            'slug'
         ];
 
         return $this->render('default/todo.html.twig', ['todo' => $todo]);
