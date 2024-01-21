@@ -3,38 +3,7 @@
 {% block content %}
     <div id="noise-bg"></div>
     <canvas id="noise-canvas"></canvas>
-    <section class="fullpage intro" id="page_1">
-{#        <div class="background-overlay"></div>#}
-        <div class="x-container" id="special-home-container">
-            <header>
-                <h2 class="fittext" id="my-title">{{ 'freelance'|trans }} <span>{{ 'web_developer'|trans }}</span>
-                    <span>{{ 'copy_paster'|trans }}</span></h2>
-            </header>
-            <div class="bottom-section" id="my-description">
-                <div>
-                    {{ 'web_presence'|trans }},
-                </div>
-                <div>
-                    {{ 'ecommerce'|trans }},
-                </div>
-                <div>
-                    {{ 'travel_technology'|trans }},
-                </div>
-                <div>
-                    {{ 'ngo'|trans }},
-                </div>
-                <div>
-                    eLearning,
-                </div>
-                <div>
-                    eGovernment
-                </div>
-                <br/>
-                <a class='button start-project button_slide slide_right' href="https://wa.me/+201004006332"
-                   target="_blank">{{ 'start_project'|trans }}</a>
-            </div><!-- .bottom-section -->
-        </div><!-- .x-container -->
-    </section>
+    {% include('default/_page_1.html.twig') %}
 {% endblock %}
 {% block announcements %}
 {% endblock %}

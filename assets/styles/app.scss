@@ -10,15 +10,15 @@ The following content was designed & implemented under AlexSeif.com
 @import url("https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @import 'var';
-@import "bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/functions";
 @import "variables";
 // Required
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
-@import '~bootstrap/scss/bootstrap';
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
 // Import Font Awesome CSS
 @import '~@fortawesome/fontawesome-free/css/all.css';
@@ -43,12 +43,37 @@ h4 {
   line-height: 1em;
 }
 
-header {
-  #alx {
+.side-nav {
+  width: 10vw;
+  padding: 2vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 21;
+  caret-color: transparent;
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  header, footer {
+    width: 100%;
+  }
+
+  a {
+    color: $color;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+  }
+
+  #logo-div, #trophy-div {
     position: relative;
     perspective: 1000px;
 
-    img {
+    img, svg {
       transition: transform 0.5s, opacity 0.5s;
       transform-style: preserve-3d; /* Preserve 3D transformations */
     }
@@ -56,7 +81,7 @@ header {
     span {
       opacity: 0; /* Initially hide the span */
       position: absolute;
-      top: -55px;
+      top: 0;
       left: 0;
       width: 100%;
       height: 100%;
@@ -67,7 +92,7 @@ header {
     }
 
     &:hover {
-      img {
+      img, svg {
         transform: rotateY(180deg); /* Flip and scale down the image on hover */
         opacity: 0;
       }
@@ -81,8 +106,8 @@ header {
     }
 
   }
-
 }
+
 
 .background-overlay {
   height: 100%;
@@ -179,34 +204,6 @@ header {
 
 .slide_diagonal:hover {
   box-shadow: inset 400px 50px 0 0 #000;
-}
-
-.page-elements {
-  width: 10%;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 21;
-  padding: $padding;
-  caret-color: transparent;
-
-  h1 {
-    margin: 0;
-  }
-
-  a {
-    color: $color;
-    text-decoration: none;
-  }
-
-  .pe-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: $padding;
-  }
 }
 
 .x-menu-btn {
@@ -634,9 +631,6 @@ header {
   display: none;
 }
 
-footer {
-  display: none;
-}
 
 // Desktop
 @media only screen and (min-width: 768px) {
@@ -796,11 +790,6 @@ h1, h2, p, ul, li {
   margin-bottom: 15px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
 
 .number-block {
   display: block;
@@ -880,6 +869,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes shadow {
   0% {
     transform: matrix(1, 0, 0, 1, 250, 742.25);
@@ -912,6 +902,7 @@ img {
     animation-timing-function: linear;
   }
 }
+
 @keyframes confetti11 {
   0% {
     transform: matrix(
@@ -972,6 +963,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes confetti7 {
   0% {
     transform: matrix(
@@ -1032,6 +1024,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes confetti2 {
   0% {
     transform: matrix(1, 0, 0, 1, 210.4, 392.1);
@@ -1078,6 +1071,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes medal {
   0% {
     transform: matrix(1, 0, 0, 1, 280.15, 446.9);
@@ -1120,6 +1114,7 @@ img {
     animation-timing-function: linear;
   }
 }
+
 @keyframes confetti10 {
   0% {
     transform: matrix(0, 1, -1, 0, 248.45, 409.15);
@@ -1145,6 +1140,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes confetti6 {
   0% {
     transform: matrix(
@@ -1205,6 +1201,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes medalBack {
   0% {
     transform: matrix(1, 0, 0, 1, 307.85, 317.15);
@@ -1247,6 +1244,7 @@ img {
     animation-timing-function: linear;
   }
 }
+
 @keyframes confetti1 {
   0% {
     transform: matrix(
@@ -1307,6 +1305,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes star2 {
   0% {
     transform: matrix(
@@ -1367,6 +1366,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes handleL {
   0% {
     transform: matrix(1, 0, 0, 1, 147.35, 429.3);
@@ -1409,6 +1409,7 @@ img {
     animation-timing-function: linear;
   }
 }
+
 @keyframes handleR {
   0% {
     transform: matrix(1, 0, 0, 1, 348.4, 430.85);
@@ -1451,6 +1452,7 @@ img {
     animation-timing-function: linear;
   }
 }
+
 @keyframes base {
   0% {
     transform: matrix(1, 0, 0, 1, 250, 747.2);
@@ -1493,6 +1495,7 @@ img {
     animation-timing-function: linear;
   }
 }
+
 @keyframes cup {
   0% {
     transform: matrix(1, 0, 0, 1, 250, 578.35);
@@ -1535,6 +1538,7 @@ img {
     animation-timing-function: linear;
   }
 }
+
 @keyframes confetti5 {
   0% {
     transform: matrix(
@@ -1595,6 +1599,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes confetti3 {
   0% {
     transform: matrix(
@@ -1655,6 +1660,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes confetti9 {
   0% {
     transform: matrix(
@@ -1715,6 +1721,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes confetti4 {
   0% {
     transform: matrix(
@@ -1775,6 +1782,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes star3 {
   0% {
     transform: matrix(
@@ -1835,6 +1843,7 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 @keyframes star1 {
   0% {
     transform: matrix(
@@ -1895,95 +1904,112 @@ img {
     animation-timing-function: ease-out;
   }
 }
+
 #confetti8 {
   animation: confetti8 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti11 {
   animation: confetti11 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti7 {
   animation: confetti7 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti2 {
   animation: confetti2 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti10 {
   animation: confetti10 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti6 {
   animation: confetti6 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti1 {
   animation: confetti1 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #star2 {
   animation: star2 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti5 {
   animation: confetti5 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti3 {
   animation: confetti3 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti9 {
   animation: confetti9 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #confetti4 {
   animation: confetti4 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #star3 {
   animation: star3 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #star1 {
   animation: star1 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #shadow {
   animation: shadow 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #medal {
   animation: medal 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #medalBack {
   animation: medalBack 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #handleL {
   animation: handleL 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #handleR {
   animation: handleR 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #base {
   animation: base 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
+
 #cup {
   animation: cup 1.9833333333333334s infinite;
   animation-delay: 0s;
 }
 
-svg {
-  width: 54px;
-  height: auto;
-}
 
 /** Cup of Coffee **/
 body {
@@ -1994,11 +2020,22 @@ body {
   //height: 100vh;
   //background: #BF7C2C;
 }
+
 @keyframes wave {
-  0% {opacity: 0; transform: translateY(15px)}
-  50% {opacity: 1; transform: translateY(0)}
-  100% {opacity: 0; transform: translateY(-15px)}
+  0% {
+    opacity: 0;
+    transform: translateY(15px)
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15px)
+  }
 }
+
 .loader ul {
   margin: 0 0 10px 0;
   padding: 0;
@@ -2008,6 +2045,7 @@ body {
   animation: wave 2.5s infinite linear;
   animation-fill-mode: forwards;
 }
+
 .loader li {
   display: inline-block;
   background: #FAF1D9;
@@ -2016,6 +2054,7 @@ body {
   border-radius: 0 100%;
   transform: rotate(12deg);
 }
+
 .cup {
   background: #F2E3B4;
   width: 60px;
@@ -2023,6 +2062,7 @@ body {
   border-radius: 0 0 50% 50%;
   position: relative;
 }
+
 .cup:before {
   content: "";
   position: absolute;
@@ -2033,6 +2073,7 @@ body {
   left: -3px;
   top: -10px;
 }
+
 .cup:after {
   content: "";
   position: absolute;
@@ -2043,6 +2084,7 @@ body {
   left: 2px;
   top: -6px;
 }
+
 .loader span {
   background: #F2E3B4;
   width: 13px;
@@ -2052,6 +2094,7 @@ body {
   top: 10px;
   border-radius: 0 50% 50% 0;
 }
+
 .loader span:before {
   content: "";
   position: absolute;
@@ -2062,6 +2105,7 @@ body {
   height: 12px;
   border-radius: 0 50% 50% 0;
 }
+
 .loader span:after {
   content: "";
   position: absolute;
