@@ -14,10 +14,10 @@ class DefaultController extends AbstractController
         return $this->render('default/home.html.twig', []);
     }
 
-    #[Route('/new_home', name: 'app_new_home')]
+    #[Route('/about', name: 'app_about')]
     public function newHome(): Response
     {
-        return $this->render('default/new_home.html.twig', []);
+        return $this->render('default/about.html.twig', []);
     }
 
     #[Route('/todo', name: 'app_todo')]
