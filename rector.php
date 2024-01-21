@@ -12,7 +12,11 @@ return function (RectorConfig $rectorConfig): void {
       __DIR__ . '/src',
     ]);
     $rectorConfig->sets([
+      \Rector\Set\ValueObject\LevelSetList::UP_TO_PHP_82,
       DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES,
       SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES,
+      SymfonySetList::SYMFONY_64,
+      SymfonySetList::SYMFONY_CODE_QUALITY,
+      SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION,
     ]);
 };
