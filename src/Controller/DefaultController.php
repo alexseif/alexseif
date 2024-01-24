@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+
     #[Route('/', name: 'app_home')]
     public function index(): Response
     {
@@ -47,9 +48,12 @@ class DefaultController extends AbstractController
           'https://codepen.io/RobinTreur/pen/QKjgPX',
           'https://codepen.io/shvvffle/pen/bwprEm',
           'https://codepen.io/RominaMartin/details/KKgQmEW',
-            'slug'
+          'slug',
+          'responsive about',
+          'rename about assets',
         ];
 
         return $this->render('default/todo.html.twig', ['todo' => $todo]);
     }
+
 }
