@@ -1,14 +1,14 @@
-<section class="fullpage slide" id="page_2">
+<section class="fullpage slide" id="about">
     {#        <div class="background-overlay"></div> #}
     <div class="container">
-        <div class="d-flex flex-column flex-md-row mb-5 fs-4 align-items-end">
-            <div class="" style="min-width: 40%;">
+        <div class="d-flex flex-column flex-md-row mb-5 fs-4 align-items-end" id="intro">
+            <div class="image-wrapper">
                 <img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, freelance web developer"
-                     width="600" class="">
+                     width="600" >
             </div>
             <div class="ps-5 bg-opacity-75 bg-black p-5">
-                <h1>Freelance Web Developer</h1>
-                <p class=" text-md-start">
+                <h1 class="fw-bold">Freelance Web Developer</h1>
+                <p class="text-md-start">
                     Hi, I'm <span class="fw-bold">Alex Seif</span>, a passionate freelance web developer based
                     in Cairo, Egypt. With over
                     <span class="h3">20 years</span> of experience, I've been dedicated to crafting exceptional
@@ -17,19 +17,19 @@
                 </p>
             </div>
         </div>
-        <div class="d-flex flex-column flex-md-row gap-5 justify-content-star p-5" style="text-align: justify;">
-            <div class="" style="flex: 1 1 0;">
+        <div class="d-flex flex-column flex-md-row gap-5 justify-content-star p-5" id="number-boxes">
+            <div>
                 <span class="fs-1 fw-bold">20 Years</span>
                 <p>WOW, 20 years! I'm grateful for all the creativity and impact I've witnessed. Working with amazing
                     clients. Ready for more adventure.
                 </p>
             </div>
-            <div class="" style="flex: 1 1 0;">
+            <div class="" >
                 <span class="fs-1 fw-bold">+42,000 Hrs</span>
                 <p>With a dedication to every project, I've logged over <span class="bold">42,000</span> hours,
                     ensuring each line of code contributes to the success of the final product.</p>
             </div>
-            <div class="" style="flex: 1 1 0;">
+            <div class="" >
                 <span class="fs-1">+400 Projects</span>
                 <p>Worked on over <span class="bold">400</span> projects with 100s of clients, my work has reached
                     over 250M+ Users & devices from business sizes, markets and industries.</p>
@@ -45,7 +45,7 @@
                 <div class="col bg-black bg-opacity-25 p-5 {{ cycle(['', 'order-last order-md-first'], loop.index0) }}">
                     <div class="{{ cycle(['fs-1','fs-1','fs-5', 'fs-4'], loop.index0) }}">
                         {% for region in section.tags %}
-                            <span class="badge">{{ region }}</span>
+                            <span class="badge text-wrap">{{ region }}</span>
                         {% endfor %}
                     </div>
                 </div>

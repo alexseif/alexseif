@@ -500,9 +500,11 @@ h4 {
     opacity: 0.25;
   }
 }
-#background-noise{
+
+#background-noise {
   z-index: 1;
 }
+
 #noise-bg {
   animation: grain 14s steps(10) infinite;
   height: 300%;
@@ -575,7 +577,7 @@ h4 {
     z-index: 2;
   }
 
-  section#page_1 {
+  section#home {
 
     transition: padding 0.2s ease-in-out;
     scroll-snap-align: start;
@@ -619,11 +621,53 @@ h4 {
       }
     }
   }
-  section#page_2{
-    hr{
+
+  section#about {
+    p {
+      text-align: justify;
+    }
+
+    @include media-breakpoint-up(md) {
+      p {
+        text-align: start;
+      }
+    }
+
+    hr {
       margin-top: 5rem;
       margin-bottom: 5rem;
     }
+
+    #number-boxes div {
+      flex: 11 0;
+    }
+
+    #intro {
+      // Define a mixin for the image wrapper styles
+      @mixin image-wrapper($width) {
+        width: $width;
+      }
+
+      // Use the mixin for the .image-wrapper element
+      .image-wrapper {
+        // Default width for small screens
+        @include image-wrapper(100%);
+        // Add the .img-fluid class to the image element by default
+        img {
+          @extend .img-fluid;
+        }
+
+        // Override width and remove the .img-fluid class on large screens
+        @include media-breakpoint-up(md) {
+          @include image-wrapper(40%);
+          img {
+            max-width: none;
+            height: auto;
+          }
+        }
+      }
+    }
+
   }
 }
 

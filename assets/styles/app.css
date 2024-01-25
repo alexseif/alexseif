@@ -890,7 +890,7 @@ progress {
   content: "— ";
 }
 
-.img-fluid {
+.img-fluid, #site-wrapper section#about #intro .image-wrapper img {
   max-width: 100%;
   height: auto;
 }
@@ -12584,7 +12584,7 @@ h4, .h4 {
   right: 0;
   z-index: 2;
 }
-#site-wrapper section#page_1 {
+#site-wrapper section#home {
   transition: padding 0.2s ease-in-out;
   scroll-snap-align: start;
   padding-top: 20vh;
@@ -12592,30 +12592,53 @@ h4, .h4 {
   padding-left: 6.25%;
   position: relative;
 }
-#site-wrapper section#page_1 .x-container {
+#site-wrapper section#home .x-container {
   position: relative;
   z-index: 2;
 }
-#site-wrapper section#page_1 #special-home-container {
+#site-wrapper section#home #special-home-container {
   display: flex;
   height: 80vh;
   flex-direction: column;
   justify-content: space-between;
 }
-#site-wrapper section#page_1 #special-home-container .bottom-section {
+#site-wrapper section#home #special-home-container .bottom-section {
   margin-bottom: 10vh;
 }
-#site-wrapper section#page_1.fullpage {
+#site-wrapper section#home.fullpage {
   min-height: 100vh;
   text-align: right;
   padding-bottom: 0;
 }
-#site-wrapper section#page_1.fullpage .bottom-section p {
+#site-wrapper section#home.fullpage .bottom-section p {
   font-size: 150%;
 }
-#site-wrapper section#page_2 hr {
+#site-wrapper section#about p {
+  text-align: justify;
+}
+@media (min-width: 768px) {
+  #site-wrapper section#about p {
+    text-align: start;
+  }
+}
+#site-wrapper section#about hr {
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+#site-wrapper section#about #number-boxes div {
+  flex: 11 0;
+}
+#site-wrapper section#about #intro .image-wrapper {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #site-wrapper section#about #intro .image-wrapper {
+    width: 40%;
+  }
+  #site-wrapper section#about #intro .image-wrapper img {
+    max-width: none;
+    height: auto;
+  }
 }
 
 .x-container {
