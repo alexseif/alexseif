@@ -18,7 +18,77 @@ class DefaultController extends AbstractController
     #[Route('/about', name: 'app_about')]
     public function newHome(): Response
     {
-        return $this->render('default/about.html.twig', []);
+        $aboutSections = [
+          [
+            'title' => 'Market Expertise',
+            'description' => 'From the vibrant markets of Egypt to the dynamic landscapes of the UAE, KSA, Russia, and
+                    beyond, I specialize in providing tailored web solutions that resonate with diverse audiences.',
+            'tags' => ['Egypt', 'UAE', 'KSA', 'Russia', 'MENA', 'ENA'],
+          ],
+          [
+            'title' => 'Business Sizes',
+            'description' => 'Whether you\'re a micro-business just starting or a multinational corporation seeking
+                    digital excellence, I\'ve successfully collaborated with various business sizes.',
+            'tags' => [
+              'Micro',
+              'Small',
+              'Startups',
+              'Medium',
+              'Large & Corporate',
+              'Multinational & Governmental',
+            ],
+          ],
+          [
+            'title' => 'Industries',
+            'description' => 'My expertise spans across a wide range of industries, ensuring that your web presence
+                    aligns perfectly with the unique demands of your business sector.',
+            'tags' => [
+              'Web Presence',
+              'eCommerce',
+              'News',
+              'Social Networks',
+              'eTourism',
+              'Web Apps',
+              'eLearning',
+              'Fintech',
+              'Mission Critical Systems',
+              'Landing/Squeeze pages',
+              'Musician EPK',
+              'Artist Presence',
+              'School & College Presence',
+              'NGO & Research Centers',
+            ],
+          ],
+          [
+            'title' => 'Technical Expertise',
+            'description' => 'As a fullstack web developer, I specialize in utilizing a diverse set of technologies
+                    and frameworks to bring your projects to life.',
+            'tags' => [
+              'HTML',
+              'CSS',
+              'Javascript',
+              'PHP',
+              'MySQL',
+              'CentOS',
+              'Ubuntu',
+              'Apache',
+              'Nginx',
+              'Symfony',
+              'Drupal',
+              'WordPress',
+              'Moodle',
+              'React.js',
+              'Machine Learning',
+              'AI',
+              'git',
+            ],
+          ],
+
+        ];
+        return $this->render(
+          'default/about.html.twig',
+          ['aboutSections' => $aboutSections]
+        );
     }
 
     #[Route('/todo', name: 'app_todo')]
