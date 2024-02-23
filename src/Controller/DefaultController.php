@@ -9,14 +9,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
 
-    #[Route('/', name: 'app_home')]
-    public function index(): Response
+    #[Route('/', name: 'alx_home')]
+    public function home(): Response
     {
         return $this->render('default/home.html.twig', []);
     }
 
-    #[Route('/about', name: 'app_about')]
-    public function newHome(): Response
+    #[Route('/about', name: 'alx_about')]
+    public function about(): Response
     {
         $aboutSections = [
           [
@@ -91,7 +91,7 @@ class DefaultController extends AbstractController
         );
     }
 
-    #[Route('/todo', name: 'app_todo')]
+    #[Route('/todo', name: 'alx_todo')]
     public function todo(): Response
     {
         $todo = [

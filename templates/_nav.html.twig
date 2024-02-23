@@ -1,16 +1,16 @@
 <div class="side-nav d-flex flex-column justify-content-between text-center align-content-center align-items-center">
     <header>
         <h1>
-            <a href="{{ path('app_home') }}" class="" id="logo-div">
+            <a href="{{ path('alx_home') }}" class="" id="logo-div">
                 <img src="{{ asset('build/images/ALX.png') }}" width="100" height="100" alt="Alex Seif logo"
                      class="img-fluid"/>
-                <span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center" >{{ 'alex_seif2'|trans }}</span>
+                <span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">{{ 'alex_seif2'|trans }}</span>
             </a>
         </h1>
     </header><!-- .pe-top -->
     <footer>
         <h2>
-            <a href="{{ path('app_about') }}" id="trophy-div">
+            <a href="{{ path('alx_about') }}" id="trophy-div">
                 {{ include('default/_trophy.html.twig') }}
                 <span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">20 Years</span>
             </a>
