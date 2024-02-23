@@ -1,9 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}{% endblock %}
 {% block content %}
-    <div id="fullpages">
+    <div id="fullpages" class="scrollsign">
         {{ include('default/_home.html.twig') }}
-        <span class="scrollsign">>></span>
         {{ include('default/_about.html.twig') }}
     </div><!-- #fullpages -->
 {% endblock %}

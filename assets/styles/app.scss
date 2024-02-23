@@ -27,6 +27,7 @@ The following content was designed & implemented under AlexSeif.com
 @import "coffee";
 @import "home";
 @import "about";
+@import "trophy";
 
 body {
   font-family: $font-family;
@@ -459,7 +460,6 @@ h4 {
 
 
 /** Page 2 **/
-
 h1, h2, p, ul, li {
   margin-bottom: 15px;
 }
@@ -489,3 +489,29 @@ h1, h2, p, ul, li {
   //min-width: 48%;
 }
 
+
+.scrollsign {
+
+  .fullpage:not(:last-child)::before {
+    animation: bounce 1s ease infinite;
+    bottom: 2rem;
+    color: #fff;
+    content: '╲╱';
+    font-size: 2rem;
+    height: 4rem;
+    left: 50%;
+    letter-spacing: -1px;
+    line-height: 4rem;
+    margin-left: -3rem;
+    opacity: 0.8;
+    position: absolute;
+    text-align: center;
+    width: 6rem;
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-50%);
+  }
+}
