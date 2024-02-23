@@ -1,0 +1,47 @@
+section#about {
+  p {
+    text-align: justify;
+  }
+
+  @include media-breakpoint-up(md) {
+    p {
+      text-align: start;
+    }
+  }
+
+  hr {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  #number-boxes div {
+    flex: 11 0;
+  }
+
+  #intro {
+    // Define a mixin for the image wrapper styles
+    @mixin image-wrapper($width) {
+      width: $width;
+    }
+
+    // Use the mixin for the .image-wrapper element
+    .image-wrapper {
+      // Default width for small screens
+      @include image-wrapper(100%);
+      // Add the .img-fluid class to the image element by default
+      img {
+        @extend .img-fluid;
+      }
+
+      // Override width and remove the .img-fluid class on large screens
+      @include media-breakpoint-up(md) {
+        @include image-wrapper(40%);
+        img {
+          max-width: none;
+          height: auto;
+        }
+      }
+    }
+  }
+
+}
