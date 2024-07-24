@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}{% endblock %}
+{% block content %}
+    <div id="fullpages" class="scrollsign">
+        <section class="fullpage slide" id="portfolio">
+            <div class="x-container">
+                <header class="mb-5">
+                    <h2 class="fittext text-end">{{ 'portfolio'|trans }}</h2>
+                </header>
+                <div class="container portfolio">
+                    {% for item in portfolio %}
+                        <div class="d-flex mb-5 bg-black portfolio-item">
+                            <img src="https://place-hold.it/750x500" class="img-fluid"/>
+                            <div class="m-5 bg-dark flex-fill">
+                                <h3>{{ item.title }}</h3>
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div><!-- #fullpages -->
+{% endblock %}
+{% block announcements %}
+{% endblock %}
+

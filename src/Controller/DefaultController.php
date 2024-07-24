@@ -91,6 +91,24 @@ class DefaultController extends AbstractController
         );
     }
 
+    #[Route('/portfolio', name: 'alx_portfolio')]
+    public function portfolio(): Response
+    {
+        $item = new \stdClass();
+        $item->title = 'Test title';
+        $item->description = 'Test description';
+
+        $portfolio = [];
+        $portfolio[] = $item;
+        $portfolio[] = $item;
+        $portfolio[] = $item;
+        $portfolio[] = $item;
+        return $this->render(
+          'default/portfolio.html.twig',
+          ['portfolio' => $portfolio]
+        );
+    }
+
     #[Route('/todo', name: 'alx_todo')]
     public function todo(): Response
     {

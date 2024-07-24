@@ -1,0 +1,18 @@
+.portfolio {
+
+  .portfolio-item:nth-child(odd) img {
+    order: 1;
+  }
+
+  .portfolio-item:nth-child(odd) div {
+    order: 2;
+  }
+
+  .portfolio-item:nth-child(even) img {
+    order: 2;
+  }
+
+  .portfolio-item:nth-child(even) div {
+    order: 1;
+  }
+}

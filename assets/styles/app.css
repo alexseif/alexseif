@@ -13213,6 +13213,19 @@ section#about #intro .image-wrapper {
   animation-delay: 0s;
 }
 
+.portfolio .portfolio-item:nth-child(odd) img {
+  order: 1;
+}
+.portfolio .portfolio-item:nth-child(odd) div {
+  order: 2;
+}
+.portfolio .portfolio-item:nth-child(even) img {
+  order: 2;
+}
+.portfolio .portfolio-item:nth-child(even) div {
+  order: 1;
+}
+
 body {
   font-family: "IBM Plex Sans", sans-serif;
   color: rgba(255, 255, 255, 0.9);

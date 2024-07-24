@@ -1,0 +1,17 @@
+.portfolio > div:nth-child(odd) {
+  order: 1;
+}
+
+.portfolio > div:nth-child(even) {
+  order: 2;
+}
+
+.portfolio > div:nth-child(even) > img {
+  order: 2;
+}
+
+.portfolio > div:nth-child(odd) > img {
+  order: 1;
+}
+
+/*# sourceMappingURL=portfolio.css.map */
