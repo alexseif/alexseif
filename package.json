@@ -12,6 +12,10 @@
     "core-js": "^3.33.2",
     "css-loader": "^6.8.1",
     "file-loader": "^6.0.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
     "html-loader": "^4.2.0",
     "jquery": "^3.7.1",
     "regenerator-runtime": "^0.14.0",
@@ -27,10 +31,12 @@
     "dev-server": "encore dev-server",
     "dev": "encore dev",
     "watch": "encore dev --watch",
-    "build": "encore production --progress"
+    "build": "encore production --progress",
+    "gulp:build": "gulp build",
+    "gulp:dev": "gulp dev"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "fittext.js": "^1.2.0",
     "html-minifier-terser": "^7.2.0",
     "html-webpack-plugin": "^5.5.3",

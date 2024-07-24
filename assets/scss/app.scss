@@ -9,24 +9,20 @@ The following content was designed & implemented under AlexSeif.com
 @import url("https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+// Import variables first
 @import 'var';
-@import "../../node_modules/bootstrap/scss/functions";
 @import "variables";
-// Required
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/variables-dark";
-@import "../../node_modules/bootstrap/scss/maps";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
-@import '../../node_modules/bootstrap/scss/bootstrap';
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Import Font Awesome CSS
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
+// Import custom styles
 @import "nav";
 @import "coffee";
 @import "home";
-@import "about";
 @import "trophy";
 @import "portfolio";
 
@@ -35,7 +31,6 @@ body {
   color: $color;
   background-color: $body-bg;
   line-height: 1.6;
-
 }
 
 h3 {
@@ -58,31 +53,23 @@ h4 {
   left: 0;
   position: absolute;
   background-color: transparent;
-
-  //background-image: linear-gradient(210deg, #f54fa0 0%, #5b7fe9 100%);
-  // Moonlit Asteroid
-  //background-image: radial-gradient(circle, #0f2027, #12252c, #152931, #192e37, #1c333c, #1e3741, #213c46, #23404b, #254551, #274957, #2a4e5e, #2c5364);
-  // Royal
   background: #141E30; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #243B55, #141E30); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   opacity: 0.79;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-  //z-index: 100;
 }
 
-
 .x-clearfix {
-  display: inline-block
+  display: inline-block;
 }
 
 * html .x-clearfix {
-  height: 1%
+  height: 1%;
 }
 
 .x-clearfix {
-  display: block
+  display: block;
 }
 
 .x-clearfix:after {
@@ -91,16 +78,14 @@ h4 {
   font-size: 0;
   content: "\A";
   display: block;
-  visibility: hidden
+  visibility: hidden;
 }
 
 .fittext {
   font-weight: bolder;
-  //font-size: 7.63889vw;
   font-size: 2.5rem;
   transition: font-size 0.6s ease-in-out;
   line-height: 1em;
-  // margin: 0;
 }
 
 .button {
@@ -116,7 +101,6 @@ h4 {
   margin-block-end: 0.67em;
   margin-inline-start: 0;
   margin-inline-end: 0;
-
 }
 
 .button_slide {
@@ -327,7 +311,6 @@ h4 {
   position: fixed;
   top: -100%;
   width: 300%;
-  //transition: opacity 0.6s;
 }
 
 #noise-canvas {
@@ -390,7 +373,6 @@ h4 {
     right: 0;
     z-index: 2;
   }
-
 }
 
 .x-container {
@@ -405,21 +387,18 @@ h4 {
   display: none;
 }
 
-
 // Desktop
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 2.5em;
   }
   .fittext {
-    //font-size: 5.25rem;
     font-size: 7.63889vw;
   }
   .x-container {
     max-width: 100%;
   }
   #site-wrapper {
-
     section {
       header {
       }
@@ -459,12 +438,10 @@ h4 {
   padding-right: 9%;
 }
 
-
 /** Page 2 **/
 h1, h2, p, ul, li {
   margin-bottom: 15px;
 }
-
 
 .number-block {
   display: block;
@@ -472,7 +449,6 @@ h1, h2, p, ul, li {
   color: #fff;
   font-size: 24px;
   font-weight: bold;
-  //border-radius: 10px;
   margin-right: 10px;
   border: 2px solid white;
   margin: 0 auto;
@@ -487,12 +463,9 @@ h1, h2, p, ul, li {
 
 .column {
   flex: 1;
-  //min-width: 48%;
 }
 
-
 .scrollsign {
-
   .fullpage:not(:last-child)::before {
     animation: bounce 1s ease infinite;
     bottom: 2rem;
@@ -516,15 +489,57 @@ h1, h2, p, ul, li {
     transform: translateY(-50%);
   }
 }
-section.low-hanging{
+
+section.low-hanging {
   transition: padding 0.2s ease-in-out;
   scroll-snap-align: start;
-
-  //padding: 12.5vh 0 12.5vh 6.25%;
   padding-top: 20vh;
   padding-bottom: 20vh;
-
   padding-left: 6.25%;
   position: relative;
+}
 
+// About
+
+section#about {
+  p {
+    text-align: justify;
+  }
+
+  @include media-breakpoint-up(md) {
+    p {
+      text-align: start;
+    }
+  }
+
+  hr {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  #number-boxes div {
+    flex: 11 0;
+  }
+
+  #intro {
+    @mixin image-wrapper($width) {
+      width: $width;
+    }
+
+    .image-wrapper {
+      @include image-wrapper(100%);
+
+      img {
+        @extend .img-fluid !optional;
+      }
+
+      @include media-breakpoint-up(md) {
+        @include image-wrapper(40%);
+        img {
+          max-width: none;
+          height: auto;
+        }
+      }
+    }
+  }
 }
