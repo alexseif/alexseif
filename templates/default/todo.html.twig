@@ -5,11 +5,22 @@
         <ul class="list-group mt-5">
             {% for item in todo %}
                 <li class="list-group-item">
-                    <a href="{{ item }}" target="_blank">{{ item }}</a>
+{#  Check if it's a link print a link #}
+                    {#  If not print the text#}
+                    {% if item|length > 4 and item|slice(0, 4) == 'http' %}
+                        <a href="{{ item }}" target="_blank">{{ item }}</a>
+                    {% else %}
+                        {{ item }}
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
     </div>
+{#                    <a href="{{ item }}" target="_blank">{{ item }}</a>#}
+{#                </li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    </div>#}
 {% endblock %}
 {% block announcements %}
 {% endblock %}

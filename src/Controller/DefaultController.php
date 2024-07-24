@@ -141,9 +141,11 @@ class DefaultController extends AbstractController
           'slug',
           'responsive about',
           'rename about assets',
+          'translations',
         ];
 
-        return $this->render('default/todo.html.twig', ['todo' => $todo]);
+        return $this->render('default/todo.html.twig', ['todo' => array_reverse($todo)]
+        );
     }
 
 }
