@@ -142,9 +142,13 @@ class DefaultController extends AbstractController
           'responsive about',
           'rename about assets',
           'translations',
+          'admin panel',
+          'photo upload',
         ];
 
-        return $this->render('default/todo.html.twig', ['todo' => array_reverse($todo)]
+        return $this->render(
+          'default/todo.html.twig',
+          ['todo' => array_reverse($todo)]
         );
     }
 
