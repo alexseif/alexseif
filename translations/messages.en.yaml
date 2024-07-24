@@ -1,7 +1,7 @@
-alex_seif: Alex Seif
-web_developer: Web Developer
+alex_seif: 'Alex Seif'
+web_developer: 'Web Developer'
 freelance: Freelance
-copy_paster: Copy Paster
+copy_paster: 'Copy Paster'
 web_presence: 'Web Presence'
 wordpress: WordPress
 drupal: Drupal
@@ -32,3 +32,7 @@ alex_seif2: 'ALEX SEIF'
 alex_seif_instragram: 'Alex Seif Instragram'
 the_future: 'The future'
 alex_seif_freelance_web_design_developer_i_always: 'Alex Seif | Freelance Web Design & Developer. I always deliver.'
+portfolio: portfolio
+Portfolio: Portfolio
+'Edit Portfolio': 'Edit Portfolio'
+'Create new Portfolio': 'Create new Portfolio'
