@@ -92,12 +92,13 @@ class DefaultController extends AbstractController
         );
     }
 
-    #[Route('/portfolio', name: 'alx_portfolio')]
+    #[Route('/portfolio_2', name: 'alx_portfolio')]
     public function portfolio(): Response
     {
         $item = new stdClass();
         $item->title = 'Test title';
         $item->description = 'Test description';
+        $item->image = 'https://place-hold.it/750x500';
 
         $portfolio = [];
         $portfolio[] = $item;

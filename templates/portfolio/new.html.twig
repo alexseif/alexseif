@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Portfolio{% endblock %}
+
+{% block content %}
+    <section class="fullpage low-hanging">
+        <div class="x-container text-end text-light">
+                <a class="" href="{{ path('app_portfolio_index') }}">back to list</a>
+            <header class="mb-5">
+                <h2>{{ 'Create new Portfolio'|trans }}</h2>
+            </header>
+
+            {{ include('portfolio/_form.html.twig') }}
+
+        </div>
+    </section>
+{% endblock %}

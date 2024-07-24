@@ -516,3 +516,15 @@ h1, h2, p, ul, li {
     transform: translateY(-50%);
   }
 }
+section.low-hanging{
+  transition: padding 0.2s ease-in-out;
+  scroll-snap-align: start;
+
+  //padding: 12.5vh 0 12.5vh 6.25%;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+
+  padding-left: 6.25%;
+  position: relative;
+
+}

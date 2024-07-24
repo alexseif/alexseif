@@ -8,13 +8,13 @@
                     <h2 class="fittext text-end">{{ 'portfolio'|trans }}</h2>
                 </header>
                 <div class="container portfolio">
-                    {% for item in portfolio %}
+                    {% for portfolio in portfolios %}
                         <div class="d-flex mb-5 bg-black portfolio-item">
-                            <img src="{{ item.image }}" class="img-fluid" alt="{{ item.title }}"/>
+                            <img src="{{ portfolio.image }}" class="img-fluid" alt="{{ portfolio.title }}"/>
                             <div class="m-4 bg-dark flex-fill">
-                                <h3 class="bg-black pb-2">{{ item.title }}</h3>
+                                <h3 class="bg-black pb-2">{{ portfolio.title }}</h3>
                                 <div class="p-1">
-                                    <p>{{ item.description }}</p>
+                                    <p>{{ portfolio.description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -24,6 +24,5 @@
         </section>
     </div><!-- #fullpages -->
 {% endblock %}
-{% block announcements %}
-{% endblock %}
+{% block announcements %}{% endblock %}
 
