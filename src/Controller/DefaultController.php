@@ -144,6 +144,7 @@ class DefaultController extends AbstractController
           'translations',
           'admin panel',
           'photo upload',
+          'https://learntocodewith.me/posts/portfolio-tips/',
         ];
 
         return $this->render(
