@@ -2,33 +2,39 @@
 
 {% block title %}Portfolio{% endblock %}
 
-{% block body %}
-    <h1>Portfolio</h1>
+{% block content %}
+    <section class="fullpage low-hanging">
+        <div class="x-container text-end">
+            <a href="{{ path('app_portfolio_index') }}">back to list</a>
+            <header class="mb-5">
+                <h2 class="fittext text-end">{{ 'Portfolio'|trans }}</h2>
+            </header>
 
-    <table class="table">
-        <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ portfolio.id }}</td>
-        </tr>
-        <tr>
-            <th>Title</th>
-            <td>{{ portfolio.title }}</td>
-        </tr>
-        <tr>
-            <th>Description</th>
-            <td>{{ portfolio.description }}</td>
-        </tr>
-        <tr>
-            <th>Image</th>
-            <td>{{ portfolio.image }}</td>
-        </tr>
-        </tbody>
-    </table>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ portfolio.id }}</td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ portfolio.title }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ portfolio.description }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td>{{ portfolio.image }}</td>
+                </tr>
+                </tbody>
+            </table>
 
-    <a href="{{ path('app_portfolio_index') }}">back to list</a>
 
-    <a href="{{ path('app_portfolio_edit', {'id': portfolio.id}) }}">edit</a>
+            <a href="{{ path('app_portfolio_edit', {'id': portfolio.id}) }}">edit</a>
 
-    {{ include('portfolio/_delete_form.html.twig') }}
+            {{ include('portfolio/_delete_form.html.twig') }}
+        </div>
+    </section>
 {% endblock %}
