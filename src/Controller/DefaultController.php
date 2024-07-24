@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 class DefaultController extends AbstractController
 {
@@ -12,7 +13,7 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'alx_home')]
     public function home(): Response
     {
-        return $this->render('default/home.html.twig', []);
+        return $this->render('default/home.html.twig');
     }
 
     #[Route('/about', name: 'alx_about')]
@@ -94,7 +95,7 @@ class DefaultController extends AbstractController
     #[Route('/portfolio', name: 'alx_portfolio')]
     public function portfolio(): Response
     {
-        $item = new \stdClass();
+        $item = new stdClass();
         $item->title = 'Test title';
         $item->description = 'Test description';
 
