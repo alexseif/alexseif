@@ -13,22 +13,41 @@ import 'html5shiv';
 import './scss/app.scss';
 import $ from 'jquery';
 require('bootstrap');
-
+import 'fittext.js';
+import fullpage from 'free-fullpage';
 /**
  * The following content was designed & implemented under AlexSeif.com
  **/
+/**
+ * Function to resize text to fill its container
+ * @param {HTMLElement} element - The element containing the text
+ */
+function resizeTextToFill(element) {
+    const container = element.parentElement;
+    let fontSize = parseInt(window.getComputedStyle(element).fontSize, 10);
+
+    // Increase font size until it fills the container
+    while (element.scrollWidth < container.clientWidth && element.scrollHeight < container.clientHeight && element.scrollHeight < (window.innerHeight - 400)) {
+        fontSize++;
+        element.style.fontSize = fontSize + 'px';
+    }
+
+    // Optionally, decrease font size if it exceeds the container
+    while (element.scrollWidth > container.clientWidth || element.scrollHeight > container.clientHeight) {
+        fontSize--;
+        element.style.fontSize = fontSize + 'px';
+    }
+}
 
 
-$(document).ready(function () {
-    // $(".fittext").fitText();
-    $(".x-menu-btn").click(function () {
-        $(this).toggleClass("x-open")
-            .blur();
+$(function () {
+    const textElement = $(".bigtext"); // Adjust selector as needed
+    resizeTextToFill(textElement[0]); // Call the function with the first matched element
+
+    $(".x-menu-btn").on("click", function () {
+        $(this).toggleClass("x-open");
         $("#nav-container").toggleClass("x-open");
         $('body').toggleClass('menu-open');
-        // $('.fittext').css('font-size', '100%');
-        // $('.fittext').fitText();
-        // $('#nav-container nav').toggle("slide");
     });
 
 });
@@ -63,6 +82,6 @@ function createNoise() {
     });
 }
 
-$(document).ready(function () {
+$(function () {
     createNoise();
 });

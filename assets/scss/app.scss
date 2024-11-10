@@ -398,12 +398,6 @@ h4 {
   .x-container {
     max-width: 100%;
   }
-  #site-wrapper {
-    section {
-      header {
-      }
-    }
-  }
 }
 
 .late-intro {
@@ -498,9 +492,10 @@ section.low-hanging {
   padding-left: 6.25%;
   position: relative;
 }
-
+section{
+  position: relative;
+}
 // About
-
 section#about {
   p {
     text-align: justify;

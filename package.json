@@ -37,7 +37,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "fittext": "^1.0.1",
     "fittext.js": "^1.2.0",
+    "free-fullpage": "^4.0.2-2.3",
     "html-minifier-terser": "^7.2.0",
     "html-webpack-plugin": "^5.5.3",
     "html5shiv": "^3.7.3"
