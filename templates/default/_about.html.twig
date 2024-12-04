@@ -4,24 +4,21 @@
 			<div class="image-wrapper">
 				<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, freelance web developer" width="600">
 			</div>
-			<div class="ps-5 bg-opacity-75 bg-black p-5">
+			<div class="ps-5 bg-opacity-75 bg-black p-2 p-md-5">
 				<h1 class="fw-bold">Freelance Web Developer</h1>
-				<p class="text-md-start">
+				<p class="text-start">
 					Hi, I'm
-					<span class="fw-bold">Alex Seif</span>, a passionate freelance web developer based
-																																																																								                    in Cairo, Egypt. With over
+					<span class="fw-bold">Alex Seif</span>, a passionate freelance web developer based in Cairo, Egypt. With over
 					<span class="h3">20 years</span>
-					of experience, I've been dedicated to crafting exceptional
-																																																												                    online experiences for governments, businesses & individuals around
-																																																												                    the world.
+					of experience, I've been dedicated to crafting exceptional online experiences for governments, businesses & individuals around the world.
 				</p>
 			</div>
 		</div>
-		<div class="d-flex flex-column flex-md-row gap-5 justify-content-star p-5" id="number-boxes">
+		<div class="d-flex flex-column flex-md-row gap-5 justify-content-star p-2 p-md-5" id="number-boxes">
 			<div>
 				<span class="fs-1 fw-bold">20 Years</span>
-				<p>WOW, 20 years! I'm grateful for all the creativity & impact I've witnessed. Working with amazing
-																																																												                    clients. Ready for more adventure.
+				<p>
+				WOW, 20 years! I'm grateful for all the creativity & impact I've witnessed. Working with amazing clients. Ready for more adventure.
 				</p>
 			</div>
 			<div class="">
@@ -29,14 +26,14 @@
 				<p>With a dedication to every project, I've logged over
 					<span class="bold">42,000</span>
 					hours,
-																																																												                    ensuring each line of code contributes to the success of the final product.</p>
+																																																																																															                    ensuring each line of code contributes to the success of the final product.</p>
 			</div>
 			<div class="">
 				<span class="fs-1">+400 Projects</span>
 				<p>Worked on over
 					<span class="bold">400</span>
 					projects with 100s of clients, my work has reached
-																																																												                    over 250M+ Users & devices from business sizes, markets & industries.</p>
+																																																																																															                    over 250M+ Users & devices from business sizes, markets & industries.</p>
 			</div>
 		</div>
 		<hr/>
@@ -46,18 +43,22 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2 class="bigtext fw-bold">Providing Value Through Digital Experiences</h2>
+				<h2 class="bigtext fw-bold mb-5">Providing Value Through Digital Experiences</h2>
 			</div>
-			<div class="col-4">
+			<div class="col-md-4 col">
 				<h3>My values</h3>
-				<p class="fs-5 text-justify lh-lg">
-					I pride myself on building long-term relationships with my clients, effectively communicating their value through their websites, and enhancing their connection with their audience.
+				<p class="fs-5 text-md-justify lh-md-lg">
+					I pride myself on
+					<strong>building long-term relationships</strong>
+					with my clients, effectively communicating their value through their websites, and enhancing their connection with their audience.
 				</p>
-				<p class="fs-5 text-justify lh-lg">
-					As a PHP freelance developer, I specialize in delivering tailored web solutions that drive success. 🚀 My expertise in fullstack development ensures robust, scalable, and user-friendly applications.
+				<p class="fs-5 text-md-justify lh-md-lg">
+					As a PHP freelance developer, I specialize in delivering tailored web
+					<strong>solutions that drive success</strong>. 🚀 My expertise in fullstack development ensures robust, scalable, and user-friendly applications.
 				</p>
-				<p class="fs-5 text-justify lh-lg">
-					Attention to detail ensures that each project not only meets but exceeds client expectations. Whether you need custom web development, consultation, seamless integration, or ongoing support, I'm here to turn your vision into reality. 💡
+				<p class="fs-5 text-md-justify lh-md-lg">
+					<strong>Attention to detail</strong>
+					ensures that each project not only meets but exceeds client expectations. Whether you need custom web development, consultation, seamless integration, or ongoing support, I'm here to turn your vision into reality. 💡
 				</p>
 			</div>
 		</div>
@@ -69,12 +70,12 @@
 <section>
 	<div class="container">
 		{% for section in aboutSections %}
-			<div class="row">
-				<div class="col p-5">
-					<h2>{{ section.title }}</h2>
+			<div class="row row-cols-md-2 row-cols-1">
+				<div class="col p-2 p-md-5">
+					<h2 class="fw-bold">{{ section.title }}</h2>
 					<p class="fs-5">{{ section.description }}</p>
 				</div>
-				<div class="col bg-black bg-opacity-25 p-5 {{ cycle(['', 'order-last order-md-first'], loop.index0) }}">
+				<div class="col bg-black bg-opacity-25 p-2 p-md-5 {{ cycle(['', 'order-last order-md-first'], loop.index0) }}">
 					<div class="{{ cycle(['fs-1','fs-1','fs-5', 'fs-4'], loop.index0) }}">
 						{% for region in section.tags %}
 							<span class="badge text-wrap">{{ region }}</span>
