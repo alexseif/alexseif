@@ -1,4 +1,4 @@
-// @import "compass/css3";
+//Christmas in nav
 
 @mixin animation($animation) {
     -webkit-animation: $animation;
@@ -380,56 +380,56 @@ body {
         }
 
         &.f-24 {
-            
+
             animation-duration: 28s;
             left: 100px;
             margin-top: 119px;
         }
 
         &.f-25 {
-            
+
             animation-duration: 29s;
             left: 114px;
             margin-top: 14px;
         }
 
         &.f-26 {
-            
+
             animation-duration: 25s;
             left: 127px;
             margin-top: 84px;
         }
 
         &.f-27 {
-            
+
             animation-duration: 26s;
             left: 134px;
             margin-top: 114px;
         }
 
         &.f-28 {
-            
+
             animation-duration: 34s;
             left: 145px;
             margin-top: 49px;
         }
 
         &.f-29 {
-            
+
             animation-duration: 29s;
             left: 148px;
             margin-top: 42px;
         }
 
         &.f-30 {
-            
+
             animation-duration: 23s;
             left: 157px;
             margin-top: 70px;
         }
 
         &.f-31 {
-            
+
             animation-duration: 18s;
             left: 165px;
             margin-top: 78px;
@@ -439,10 +439,67 @@ body {
 
 @keyframes snow {
     0% {
-      transform: translateY(-110px); // Converts @include translateY(-110px);
+        transform: translateY(-110px); // Converts @include translateY(-110px);
     }
+
     100% {
-      transform: translateY(160px); // Converts @include translateY(160px);
+        transform: translateY(160px); // Converts @include translateY(160px);
     }
-  }
-  
+}
+
+//////////////////////////
+/// Days to christmas
+//////////////////////////
+
+.christmas-container {
+    position: absolute;
+    width: 100%;
+    font-family: 'Cookie', cursive;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+
+
+    #days {
+        font-size: 50px;
+        color: #FFF;
+        text-align: center;
+        letter-spacing: 3px;
+    }
+}
+
+.drop {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.snow {
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: #FFF;
+    box-shadow: 0 0 10px #FFF
+}
+
+
+.animate {
+    animation: falling 8.5s infinite ease-in;
+}
+
+
+@keyframes falling {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 4000px;
+        opacity: 0
+    }
+}
