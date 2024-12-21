@@ -1,46 +1,80 @@
 <div class="side-nav d-flex flex-column justify-content-between text-center align-content-center align-items-center" id="nav">
-    <header>
-        <h1>
-            <a href="{{ path('alx_home') }}" class="" id="logo-div">
-                <img src="{{ asset('build/images/ALX.png') }}" width="100" height="100" alt="Alex Seif logo"
-                     class="img-fluid"/>
-                <span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">{{ 'alex_seif2'|trans }}</span>
-            </a>
-        </h1>
-    </header><!-- .pe-top -->
-    <footer>
-        <h2>
-            <a href="{{ path('alx_home') }}" id="trophy-div">
-                {{ include('default/_trophy.html.twig') }}
-                <span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">20 Years</span>
-            </a>
-        </h2>
-        <div class="x-menu-btn">
-            <div class="x-menu-line"></div>
-            <div class="x-menu-line"></div>
-            <div class="x-menu-line"></div>
-        </div>
-    </footer>
+	<header>
+		<h1>
+			<a href="{{ path('alx_home') }}" class="" id="logo-div">
+				<img src="{{ asset('build/images/ALX.png') }}" width="100" height="100" alt="Alex Seif logo" class="img-fluid"/>
+				<span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">{{ 'alex_seif2'|trans }}</span>
+			</a>
+		</h1>
+	</header>
+	<!-- .pe-top -->
+	<a href="https://codepen.io/kevinjannis" target="_blank" title="work By kevinjannis - Thank you" >
+		<div id="christmas">
+			<div class="flake large f-1"></div>
+			<div class="flake large f-2"></div>
+			<div class="flake large f-3"></div>
+			<div class="flake large f-4"></div>
+			<div class="flake large f-5"></div>
+			<div class="flake large f-6"></div>
+			<div class="flake large f-7"></div>
+			<div class="flake large f-8"></div>
+			<div class="flake large f-9"></div>
+			<div class="flake large f-10"></div>
+			<div class="flake large f-11"></div>
+			<div class="flake large f-12"></div>
+			<div class="flake large f-13"></div>
+			<div class="flake large f-14"></div>
+			<div class="flake large f-15"></div>
+			<div class="flake large f-16"></div>
+			<div class="flake large f-17"></div>
+			<div class="flake f-18"></div>
+			<div class="flake f-19"></div>
+			<div class="flake f-20"></div>
+			<div class="flake f-21"></div>
+			<div class="flake f-22"></div>
+			<div class="flake f-23"></div>
+			<div class="flake f-24"></div>
+			<div class="flake f-25"></div>
+			<div class="flake f-26"></div>
+			<div class="flake f-27"></div>
+			<div class="flake f-28"></div>
+			<div class="flake f-29"></div>
+			<div class="flake f-30"></div>
+			<div class="flake f-31"></div>
+			<div class="tree left">
+				<div class="snow"></div>
+			</div>
+			<div class="tree right">
+				<div class="snow"></div>
+			</div>
+			<div class="ground"></div>
+		</div>
+	</a>
+	<footer>
+		<h2>
+			<a href="{{ path('alx_home') }}" id="trophy-div">
+				{{ include('default/_trophy.html.twig') }}
+				<span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">20 Years</span>
+			</a>
+		</h2>
+		<div class="x-menu-btn">
+			<div class="x-menu-line"></div>
+			<div class="x-menu-line"></div>
+			<div class="x-menu-line"></div>
+		</div>
+	</footer>
 </div>
 <div id="nav-container">
-    <nav role="navigation">
-        <div class="menu-container">
-            {#            <a href="{{ path('about') }}" class="x-link">About me</a> #}
-            {#            <a href="{{ path('work') }}" class="x-link">My work</a> #}
-            <a href="#" class="x-link">{{ 'the_future'|trans }}</a>
-            <div class="x-social">
-                <a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img
-                            src="{{ asset('build/images/icons/014-instagram.svg') }}"
-                            alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
-                <a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img
-                            src="{{ asset('build/images/icons/027-whatsapp.svg') }}"
-                            alt="{{ 'alex_seif_instragram'|trans }}"
-                            class="social-icon"></a>
-                <a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img
-                            src="{{ asset('build/images/icons/013-facebook.svg') }}"
-                            alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
-            </div>
-        </div>
+	<nav role="navigation">
+		<div class="menu-container">
+			{#            <a href="{{ path('about') }}" class="x-link">About me</a> #}
+			{#            <a href="{{ path('work') }}" class="x-link">My work</a> #}<a href="#" class="x-link"> {{ 'the_future'|trans }}</a>
+			<div class="x-social">
+				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/014-instagram.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
+				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
+				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/013-facebook.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
+			</div>
+		</div>
 
-    </nav>
+	</nav>
 </div>

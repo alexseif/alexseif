@@ -5,7 +5,7 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-
+import './scss/christmass.scss';
 // start the Stimulus application
 import './bootstrap';
 import 'html5shiv';

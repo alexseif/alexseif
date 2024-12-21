@@ -1,0 +1,448 @@
+// @import "compass/css3";
+
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -ms-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+
+@mixin animation-duration($duration) {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -ms-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    text-align: center;
+}
+
+#christmas {
+    background: #162a4e;
+
+    border-radius: 50%; // Converts border-radius: 50%;
+    background-image: linear-gradient(#0c1d38, #1a3158); // Converts @incl
+
+    position: relative;
+    width: 182px;
+    height: 182px;
+
+    margin: 50px auto;
+    overflow: hidden;
+
+    /* iOS hack for border radius bleed with transforms */
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+
+    .ground {
+        border-top-right-radius: 130px 40px;
+
+        position: absolute;
+        width: 133px;
+        height: 61px;
+
+        left: 0;
+        bottom: 0;
+
+        background: white;
+
+        &:before {
+            border-radius: 50%;
+
+            content: " ";
+            position: absolute;
+
+            width: 130px;
+            height: 100px;
+
+            top: 10px;
+            right: -60px;
+
+            background: white;
+        }
+
+        &:after {
+            border-radius: 50%;
+
+            content: " ";
+            position: absolute;
+
+            width: 70px;
+            height: 70px;
+
+            top: 5px;
+            right: -75px;
+
+            background: white;
+        }
+    }
+
+    .tree {
+        position: absolute;
+
+        width: 0;
+        height: 0;
+
+        border-style: solid;
+        border-color: transparent transparent #23915b transparent;
+
+        &:before {
+            content: " ";
+            position: absolute;
+
+            width: 0;
+            height: 0;
+
+            border-style: solid;
+            border-color: transparent transparent #23915b transparent;
+        }
+
+        &:after {
+            content: " ";
+            position: absolute;
+
+            width: 0;
+            height: 0;
+
+            border-style: solid;
+            border-color: transparent transparent #23915b transparent;
+        }
+
+        &.left {
+            left: 28px;
+            bottom: 78px;
+
+            border-width: 0 18px 24px 18px;
+
+            &:before {
+                top: 10px;
+                left: -21px;
+
+                border-width: 0 21px 28px 21px;
+            }
+
+            &:after {
+                top: 22px;
+                left: -24px;
+
+                border-width: 0 24px 32px 24px;
+            }
+
+            .snow {
+                border-radius: 50%;
+                box-shadow: -2px 2px 0 0 white, 2px 2px 0 0 white, -3px 3px 0 0 white, 3px 3px 0 0 white, -12px 14px 0 0 white, -13px 17px 0 1px white, -16px 19px 0 0 white, -9px 16px 0 0 white, -5px 15px 0 2px white, -9px 13px 0 0 white, 6px 15px 0 2px white, 0 13px 0 1px white, 11px 14px 0 1px white, 13px 17px 0 1px white, 15px 19px 0 0 white;
+
+                position: absolute;
+
+                top: 1px;
+                left: -3px;
+
+                width: 6px;
+                height: 6px;
+                background: white;
+                z-index: 1;
+
+                &:after {
+                    border-radius: 50%;
+                    box-shadow: -2px 2px 0 0 white, 2px 2px 0 0 white, -3px 3px 0 0 white, 3px 3px 0 0 white, -12px 14px 0 0 white, -13px 17px 0 1px white, -16px 19px 0 0 white, -9px 16px 0 0 white, -5px 15px 0 2px white, -9px 13px 0 0 white, 6px 15px 0 2px white, 0 13px 0 1px white, 11px 14px 0 1px white, 13px 17px 0 1px white, 15px 19px 0 0 white;
+
+                    content: " ";
+                    position: absolute;
+
+                    top: 14px;
+                    left: 0px;
+
+                    width: 6px;
+                    height: 6px;
+                    background: white;
+                    z-index: 1;
+                }
+            }
+        }
+
+        &.right {
+            left: 60px;
+            bottom: 45px;
+
+            border-width: 0 18px 24px 18px;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+
+            .snow {
+                border-radius: 50%;
+                box-shadow: -2px 2px 0 0 white, 2px 2px 0 0 white, -3px 3px 0 0 white, 3px 3px 0 0 white, -12px 14px 0 0 white, -13px 17px 0 1px white, -16px 19px 0 0 white, -9px 16px 0 0 white, -5px 15px 0 2px white, -9px 13px 0 0 white, 6px 15px 0 2px white, 0 13px 0 1px white, 11px 14px 0 1px white, 13px 17px 0 1px white, 15px 19px 0 0 white;
+                position: absolute;
+
+                top: 0;
+                left: -3px;
+
+                width: 6px;
+                height: 6px;
+                background: white;
+            }
+        }
+    }
+
+    .flake {
+        animation: snow infinite linear 30s;
+
+        position: absolute;
+
+        width: 1px;
+        height: 1px;
+
+        background: white;
+
+        &.large {
+            border-radius: 50%;
+
+            width: 4px;
+            height: 4px;
+        }
+
+        &.f-1 {
+            animation-duration: 20s;
+
+            left: 15px;
+            margin-top: 86px;
+        }
+
+        &.f-2 {
+            animation-duration: 23s;
+            left: 32px;
+            margin-top: 52px;
+        }
+
+        &.f-3 {
+            animation-duration: 32s;
+            left: 64px;
+            margin-top: 15px;
+        }
+
+        &.f-4 {
+            animation-duration: 21s;
+            left: 69px;
+            margin-top: 34px;
+        }
+
+        &.f-5 {
+            animation-duration: 24s;
+            left: 70px;
+            margin-top: 72px;
+        }
+
+        &.f-6 {
+            animation-duration: 16s;
+            left: 90px;
+            margin-top: 97px;
+        }
+
+        &.f-7 {
+            animation-duration: 34s;
+            left: 102px;
+            margin-top: 81px;
+        }
+
+        &.f-8 {
+            animation-duration: 37s;
+            left: 102px;
+            margin-top: 40px;
+        }
+
+        &.f-9 {
+            animation-duration: 35s;
+            left: 108px;
+            margin-top: 67px;
+        }
+
+        &.f-10 {
+            animation-duration: 23s;
+            left: 90px;
+            margin-top: 11px;
+        }
+
+        &.f-11 {
+            animation-duration: 27s;
+            left: 126px;
+            margin-top: 55px;
+        }
+
+        &.f-12 {
+            animation-duration: 29s;
+            left: 131px;
+            margin-top: 27px;
+        }
+
+        &.f-13 {
+            animation-duration: 24s;
+            left: 128px;
+            margin-top: 112px;
+        }
+
+        &.f-14 {
+            animation-duration: 23s;
+            left: 146px;
+            margin-top: 72px;
+        }
+
+        &.f-15 {
+
+            animation-duration: 19s;
+            left: 147px;
+            margin-top: 102px;
+        }
+
+        &.f-16 {
+
+            animation-duration: 22s;
+            left: 166px;
+            margin-top: 100px;
+        }
+
+        &.f-17 {
+
+            animation-duration: 18s;
+            left: 177px;
+            margin-top: 73px;
+        }
+
+        &.f-18 {
+
+            animation-duration: 26s;
+            left: 22px;
+            margin-top: 79px;
+        }
+
+        &.f-19 {
+            animation-duration: 20s;
+
+            left: 31px;
+            margin-top: 41px;
+        }
+
+        &.f-20 {
+
+            animation-duration: 19s;
+            left: 38px;
+            margin-top: 56px;
+        }
+
+        &.f-21 {
+
+            animation-duration: 31s;
+            left: 56px;
+            margin-top: 43px;
+        }
+
+        &.f-22 {
+            animation-duration: 20s;
+
+            left: 89px;
+            margin-top: 57px;
+        }
+
+        &.f-23 {
+
+            animation-duration: 18s;
+            left: 90px;
+            margin-top: 30px;
+        }
+
+        &.f-24 {
+            
+            animation-duration: 28s;
+            left: 100px;
+            margin-top: 119px;
+        }
+
+        &.f-25 {
+            
+            animation-duration: 29s;
+            left: 114px;
+            margin-top: 14px;
+        }
+
+        &.f-26 {
+            
+            animation-duration: 25s;
+            left: 127px;
+            margin-top: 84px;
+        }
+
+        &.f-27 {
+            
+            animation-duration: 26s;
+            left: 134px;
+            margin-top: 114px;
+        }
+
+        &.f-28 {
+            
+            animation-duration: 34s;
+            left: 145px;
+            margin-top: 49px;
+        }
+
+        &.f-29 {
+            
+            animation-duration: 29s;
+            left: 148px;
+            margin-top: 42px;
+        }
+
+        &.f-30 {
+            
+            animation-duration: 23s;
+            left: 157px;
+            margin-top: 70px;
+        }
+
+        &.f-31 {
+            
+            animation-duration: 18s;
+            left: 165px;
+            margin-top: 78px;
+        }
+    }
+}
+
+@keyframes snow {
+    0% {
+      transform: translateY(-110px); // Converts @include translateY(-110px);
+    }
+    100% {
+      transform: translateY(160px); // Converts @include translateY(160px);
+    }
+  }
+  
