@@ -8,7 +8,7 @@
 		</h1>
 	</header>
 	<!-- .pe-top -->
-	<a href="https://codepen.io/kevinjannis" target="_blank" title="work By kevinjannis - Thank you" >
+	<a href="{{ path('alx_christmas_card') }}" target="_blank" title="work By kevinjannis - Thank you">
 		<div id="christmas">
 			<div class="flake large f-1"></div>
 			<div class="flake large f-2"></div>
@@ -68,7 +68,8 @@
 	<nav role="navigation">
 		<div class="menu-container">
 			{#            <a href="{{ path('about') }}" class="x-link">About me</a> #}
-			{#            <a href="{{ path('work') }}" class="x-link">My work</a> #}<a href="#" class="x-link"> {{ 'the_future'|trans }}</a>
+			{#            <a href="{{ path('work') }}" class="x-link">My work</a> #}
+				<a href="#" class="x-link"> {{ 'the_future'|trans }}</a>
 			<div class="x-social">
 				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/014-instagram.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
 				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
