@@ -5,7 +5,7 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-import './christmas.js';
+// import './christmas.js';
 // start the Stimulus application
 import './bootstrap';
 import 'html5shiv';
@@ -97,6 +97,6 @@ function createNoise() {
     });
 }
 
-$(function () {
+(function () {
     createNoise();
 });
