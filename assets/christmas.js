@@ -7,7 +7,7 @@ Made by Kevin Jannis (@kevinjannis)
 Inspired by: http://dribbble.com/shots/1356999-Christmas
 View more at www.janniskev.in
 */
-
+var viewportWidth = $(window).width() - 50;
 
 //////////////////////////
 /// Days to christmas
@@ -29,7 +29,8 @@ if (daysToChristmas > 0)
     $('#days').text(daysToChristmas + " days to Christmas!");
 
 //make snow
-snowDrop(150, randomInt(1035, 1280));
+
+snowDrop(150, randomInt(0, viewportWidth));
 snow(150, 150);
 
 function snow(num, speed) {
@@ -43,6 +44,7 @@ function snow(num, speed) {
 };
 
 function snowDrop(num, position) {
+
     if (num > 0) {
         var drop = '<div class="drop snow" id="drop_' + num + '"></div>';
 

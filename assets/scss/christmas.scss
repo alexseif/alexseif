@@ -437,6 +437,7 @@ body {
     }
 }
 
+
 @keyframes snow {
     0% {
         transform: translateY(-110px); // Converts @include translateY(-110px);
@@ -501,5 +502,22 @@ body {
     100% {
         top: 4000px;
         opacity: 0
+    }
+}
+
+@media (max-width: 768px) {
+    #christmas {
+        position: absolute;
+
+    }
+
+    .christmas-container {
+        display: none;
+    }
+
+    .scrolled {
+        #christmas {
+            opacity: 0;
+        }
     }
 }
