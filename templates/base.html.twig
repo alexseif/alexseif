@@ -1,108 +1,102 @@
 <!DOCTYPE html>
 <html class='full' lang="en" xml:lang="en" data-bs-theme="dark">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    {% block meta %}
-        <meta property="og:title" content="Alex Seif"/>
-        <meta property="og:url" content="https://alexseif.com"/>
-        <meta property="og:image" content="https://alexseif.com/images/alex-seif-business-card.png"/>
-        <meta property="og:site_name" content="Alex Seif"/>
-        <meta property="og:description"
-              content="Freelance Web Design & Developer. I always deliver."/>
-        <link rel="canonical"
-              href="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}">
-        <meta name="description"
-              content="Freelance Web Developer based in Cairo, Egypt. Over 20 years of experience, providing web solutions globally.">
-        <meta name="keywords"
-              content="Freelance Web Developer, Web Development, Cairo, Egypt, eCommerce, Web Apps, SEO">
-        <meta name="author" content="Alex Seif">
-    {% endblock %}
-    <title>{% block title %}{{ 'alex_seif_freelance_web_design_developer_i_always'|trans }} {% endblock %}</title>
-    {% block structured_data %}
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Alex Seif",
-                "jobTitle": "Freelance Web Developer",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Cairo",
-                    "addressRegion": "EG"
-                }
-            }
-        </script>
-    {% endblock %}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    {% block stylesheets %}
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        {{ encore_entry_link_tags('app') }}
-    {% endblock %}
+	<head prefix="og: https://ogp.me/ns#">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		{% block meta %}
+			<meta property="og:title" content="Alex Seif">
+			<meta property="og:url" content="https://alexseif.com">
+			<meta property="og:image" content="https://alexseif.com/images/alex-seif-business-card.png">
+			<meta property="og:site_name" content="Alex Seif">
+			<meta property="og:description" content="Freelance Web Developer | 20 Years of Delivering Excellence.">
+			<meta property="og:type" content="website">
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:title" content="Alex Seif">
+			<meta name="twitter:description" content="Freelance Web Developer | 20 Years of Delivering Excellence.">
+			<meta name="twitter:image" content="https://alexseif.com/images/alex-seif-business-card.png">
+			<link rel="canonical" href="https://alexseif.com/">
+			<meta name="description" content="Freelance Web Developer | 20 Years of Delivering Excellence.">
+			<meta name="keywords" content="Freelance Web Developer, Cairo, Egypt, Web Apps, Web Presence, eCommerce, Travel Technology, NGO, eLearning, eGovernment">
+			<meta name="author" content="Alex Seif">
+		{% endblock %}
+		<title>
+			{% block title %}
+				{{ 'alex_seif_freelance_web_design_developer_i_always'|trans }}
+			{% endblock %}
+		</title>
+		{% block structured_data %}
+			<script type="application/ld+json">
+				{ "@context": "https://schema.org", "@type": "Person", "name": "Alex Seif", "jobTitle": "Freelance Web Developer", "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressRegion": "EG" } }
+			</script>
+		{% endblock %}
+		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+		{% block stylesheets %}
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
-</head>
-<body>
-{% if ("prod" == app.environment) %}
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5BKGDM"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		{% if ("prod" == app.environment) %}
+			<!-- Google Tag Manager (noscript) -->
+			<noscript>
+				<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5BKGDM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+			</noscript>
+			<!-- End Google Tag Manager (noscript) -->
 
-{% endif %}
-{% block body %}
-    {% block nav %}
-        {% include '_nav.html.twig' %}
-    {% endblock %}
-    <div id="background-noise">
-        <div id="noise-bg"></div>
-        <canvas id="noise-canvas"></canvas>
-    </div>
-    {% block sitewrapper %}
-        <main id="site-wrapper">
-            {% block content %}
-            {% endblock %}
-        </main>
-    {% endblock %}
-    {% block footer %}
-        {% include 'footer.html.twig' %}
-    {% endblock %}
-{% endblock %}
+		{% endif %}
+		{% block body %}
+			{% block nav %}
+				{% include '_nav.html.twig' %}
+			{% endblock %}
+			<div id="background-noise">
+				<div id="noise-bg"></div>
+				<canvas id="noise-canvas"></canvas>
+			</div>
+			{% block sitewrapper %}
+				<main id="site-wrapper">
+					{% block content %}{% endblock %}
+				</main>
+			{% endblock %}
+			{% block footer %}
+				{% include 'footer.html.twig' %}
+			{% endblock %}
+		{% endblock %}
 
-<!-- Messenger Chat Plugin Code -->
-<div id="fb-root"></div>
+		<!-- Messenger Chat Plugin Code -->
+		<div id="fb-root"></div>
 
-<!-- Your Chat Plugin code -->
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
+		<!-- Your Chat Plugin code -->
+		<div id="fb-customer-chat" class="fb-customerchat"></div>
 
-{% if ("prod" == app.environment) %}
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "268403033331219");
-        chatbox.setAttribute("attribution", "biz_inbox");
-        window.fbAsyncInit = function () {
-            FB.init({
-                xfbml: true,
-                version: 'v10.0'
-            });
-        };
+		{% if ("prod" == app.environment) %}
+			<script>
+				var chatbox = document.getElementById('fb-customer-chat');
+chatbox.setAttribute("page_id", "268403033331219");
+chatbox.setAttribute("attribution", "biz_inbox");
+window.fbAsyncInit = function () {
+FB.init({xfbml: true, version: 'v10.0'});
+};
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-{% endif %}
-</body>
+(function (d, s, id) {
+var js,
+fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) 
+return;
+
+
+
+js = d.createElement(s);
+js.id = id;
+js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+			</script>
+		{% endif %}
+	</body>
 </html>
