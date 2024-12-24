@@ -26,13 +26,20 @@
 {% endblock %}
 
 {% block body %}
+	<div id="logo">
+		<a href="{{ path('alx_home') }}" class="" id="logo-div">
+			<img src="{{ asset('build/images/ALX.png') }}" width="100" height="100" alt="Alex Seif logo" class="img-fluid"/>
+		</a>
+	</div>
 	<canvas></canvas>
 	<!-- <h1>hover over the purple stars..</h1> -->
 	<div class="christmas-card">
 		<div>
 			<h1 class="title">Merry Christmas</h1>
 			<h2 class="subtitle">And a happy new year</h2>
-			<h3 class="name">ALex Seif</h3>
+			<h3 class="name">
+				<a href="{{ path('alx_home') }}" class="h3">ALex Seif</a>
+			</h3>
 		</div>
 	</div>
 {% endblock %}
