@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html class='full' lang="en" xml:lang="en" data-bs-theme="dark">
-	<head prefix="og: https://ogp.me/ns#">
+	<head
+		prefix="og: https://ogp.me/ns#">
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QV4S3QWW7F"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'G-QV4S3QWW7F');
+		</script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
@@ -42,19 +54,6 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% if ("prod" == app.environment) %}
-			<!-- Google tag (gtag.js) -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-QV4S3QWW7F"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
-function gtag() {
-dataLayer.push(arguments);
-}
-gtag('js', new Date());
-
-gtag('config', 'G-QV4S3QWW7F');
-			</script>
-		{% endif %}
 		{% block body %}
 			{% block nav %}
 				{% include '_nav.html.twig' %}
