@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ 'merry_christmas_from'|trans }}
+	{{ 'alex_seif'|trans }}
+	-
+	{{ 'web_developer'|trans|capitalize }}
+{% endblock %}
+{% block meta %}
+<meta property="og:title" content="Merry Christmas from Alex Seif!"> 
+<meta property="og:description" content="Celebrate the holiday season with us!"> 
+<meta property="og:image" content="https://alexseif.com/images/merry-christmas.png"> 
+<meta name="twitter:card" content="summary_large_image"> 
+<meta name="twitter:title" content="Merry Christmas from Alex Seif!"> 
+<meta name="twitter:description" content="Celebrate the holiday season with us!"> 
+<meta name="twitter:image" content="https://alexseif.com/images/merry-christmas.png">
+{% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('merrychristmas') }}
+
+{% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('merrychristmas') }}
+
+{% endblock %}
+
+{% block body %}
+	<canvas></canvas>
+<!-- <h1>hover over the purple stars..</h1> -->
+<div class="christmas-card">
+  <div>
+    <h1 class="title">Merry Christmas</h1>
+    <h2 class="subtitle">And a happy new year</h2>
+    <h3 class="name">ALex Seif</h3>
+  </div>
+</div>
+{% endblock %}
+{% block announcements %}{% endblock %}

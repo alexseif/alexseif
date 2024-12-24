@@ -86,6 +86,15 @@ class DefaultController extends AbstractController
     );
   }
 
+  #[Route('/merry-christmas', name: 'alx_christmas_card')]
+  public function merryChristmas(): Response
+  {
+
+    return $this->render(
+      'default/merry-christmas.html.twig'
+    );
+  }
+
   #[Route('/about', name: 'alx_about')]
   public function about(): Response
   {

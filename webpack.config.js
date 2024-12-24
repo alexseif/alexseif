@@ -24,6 +24,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
+    .addEntry('merrychristmas', './assets/merry-christmas.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
@@ -111,6 +112,6 @@ Encore
         // in older Webpack Dev Server versions, use this option instead:
         // options.firewall = false;
     })
-;
+    ;
 
 module.exports = Encore.getWebpackConfig();
