@@ -43,12 +43,17 @@
 	</head>
 	<body>
 		{% if ("prod" == app.environment) %}
-			<!-- Google Tag Manager (noscript) -->
-			<noscript>
-				<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5BKGDM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-			</noscript>
-			<!-- End Google Tag Manager (noscript) -->
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-QV4S3QWW7F"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
 
+gtag('config', 'G-QV4S3QWW7F');
+			</script>
 		{% endif %}
 		{% block body %}
 			{% block nav %}
