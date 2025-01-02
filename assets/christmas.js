@@ -13,7 +13,7 @@ var viewportWidth = $(window).width() - 50;
 /// Days to christmas
 //////////////////////////
 const myDate = new Date();
-const xmas = Date.parse("Dec 25, 2024")
+const xmas = Date.parse("Jan 07, 2025")
 const today = Date.parse(myDate)
 
 const daysToChristmas = Math.round((xmas - today) / (1000 * 60 * 60 * 24))
