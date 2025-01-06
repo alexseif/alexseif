@@ -22,7 +22,7 @@
 {% endblock %}
 {% block javascripts %}
 	{{ encore_entry_script_tags('merrychristmas') }}
-
+	<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=677bc0165e09d6001a1a134d&product=inline-share-buttons&source=platform" async="async"></script>
 {% endblock %}
 
 {% block body %}
@@ -36,13 +36,16 @@
 	<div class="christmas-card">
 		<div>
 			<h1 class="title">Merry Christmas<br/>
-			عيد ميلاد مجيد<br/>
-			Շնորհավոր Սուրբ Ծնունդ</h1>
+				عيد ميلاد مجيد<br/>
+				Շնորհավոր Սուրբ Ծնունդ</h1>
 			{# <h2 class="subtitle">And a happy new year</h2> #}
 			<h3 class="name">
 				<a href="{{ path('alx_home') }}" class="h3">ALex Seif</a>
 			</h3>
 		</div>
 	</div>
+	<!-- ShareThis BEGIN -->
+	<div class="sharethis-inline-share-buttons"></div>
+	<!-- ShareThis END -->
 {% endblock %}
 {% block announcements %}{% endblock %}
