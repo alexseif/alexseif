@@ -52,12 +52,14 @@ gtag('config', 'G-QV4S3QWW7F');
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 	</head>
 	<body>
 		{% block body %}
 			{% block nav %}
 				{% include '_nav.html.twig' %}
 			{% endblock %}
+			<canvas class="background-grid" id="dotCanvas"></canvas>
 			<div id="background-noise">
 				<div id="noise-bg"></div>
 				<canvas id="noise-canvas"></canvas>

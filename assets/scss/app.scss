@@ -20,11 +20,12 @@ The following content was designed & implemented under AlexSeif.com
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 // Import custom styles
-@import "nav";
-@import "coffee";
-@import "home";
-@import "trophy";
-@import "portfolio";
+@import "./nav";
+@import "./coffee";
+@import "./home";
+@import "./trophy";
+@import "./portfolio";
+@import "./web-evolution";
 
 body {
   font-family: $font-family;
