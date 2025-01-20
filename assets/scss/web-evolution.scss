@@ -13,8 +13,10 @@
 
     #web-evolution-milestones {
         h2 {
-            position: absolute;
-            right: 0;
+            @media (min-width: 768px) {
+                position: absolute;
+                right: 0;
+            }
         }
 
         h3 {

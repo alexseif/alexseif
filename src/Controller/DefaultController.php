@@ -16,70 +16,31 @@ class DefaultController extends AbstractController
     $aboutSections = [
       [
         'title' => 'Market Expertise',
-        'description' => 'From the vibrant markets of Egypt to the dynamic landscapes of the UAE, KSA, Russia, and
-                    beyond, I specialize in providing tailored web solutions that resonate with diverse audiences.',
+        'description' => 'From the vibrant markets of Egypt to the dynamic landscapes of the UAE, KSA, Russia, and beyond, I specialize in providing tailored web solutions that resonate with diverse audiences. My expertise ensures that your business can effectively reach and engage with your target market.',
         'tags' => ['Egypt', 'UAE', 'KSA', 'Russia', 'MENA', 'ENA'],
       ],
       [
         'title' => 'Business Sizes',
-        'description' => 'Whether you\'re a micro-business just starting or a multinational corporation seeking
-                    digital excellence, I\'ve successfully collaborated with various business sizes.',
-        'tags' => [
-          'Micro',
-          'Small',
-          'Startups',
-          'Medium',
-          'Large & Corporate',
-          'Multinational & Governmental',
-        ],
+        'description' => 'Whether you\'re a micro-business just starting or a multinational corporation seeking digital excellence, I\'ve successfully collaborated with various business sizes. My experience allows me to deliver scalable solutions that meet the unique needs of businesses of all sizes.',
+        'tags' => ['Micro', 'Small', 'Startups', 'Medium', 'Large', 'Multinational'],
       ],
       [
-        'title' => 'Industries',
-        'description' => 'My expertise spans across a wide range of industries, ensuring that your web presence
-                    aligns perfectly with the unique demands of your business sector.',
-        'tags' => [
-          'Web Presence',
-          'eCommerce',
-          'News',
-          'Social Networks',
-          'eTourism',
-          'Web Apps',
-          'eLearning',
-          'Fintech',
-          'Mission Critical Systems',
-          'Landing/Squeeze pages',
-          'Musician EPK',
-          'Artist Presence',
-          'School & College Presence',
-          'NGO & Research Centers',
-        ],
+        'title' => 'Technological Innovations',
+        'description' => 'Staying ahead of the curve is crucial in the fast-paced world of web development. I leverage the latest technologies and frameworks to create innovative solutions that drive business growth and efficiency. From eCommerce platforms to custom web applications, I ensure your business stays competitive.',
+        'tags' => ['eCommerce', 'Web Applications', 'Custom Solutions', 'Latest Technologies'],
       ],
       [
-        'title' => 'Technical Expertise',
-        'description' => 'As a fullstack web developer, I specialize in utilizing a diverse set of technologies
-                    and frameworks to bring your projects to life.',
-        'tags' => [
-          'HTML',
-          'CSS',
-          'Javascript',
-          'PHP',
-          'MySQL',
-          'CentOS',
-          'Ubuntu',
-          'Apache',
-          'Nginx',
-          'Symfony',
-          'Drupal',
-          'WordPress',
-          'Moodle',
-          'React.js',
-          'Machine Learning',
-          'AI',
-          'git',
-        ],
+        'title' => 'Client-Centric Approach',
+        'description' => 'Building long-term relationships with my clients is at the heart of what I do. I take the time to understand your business goals and work closely with you to deliver solutions that not only meet but exceed your expectations. Your success is my priority.',
+        'tags' => ['Client Relationships', 'Business Goals', 'Exceed Expectations', 'Success'],
       ],
-
+      [
+        'title' => 'Global Reach',
+        'description' => 'With a portfolio of clients from around the world, I bring a global perspective to every project. My ability to understand and cater to different cultural and business contexts ensures that your web solutions are effective and relevant, no matter where your audience is located.',
+        'tags' => ['Global Clients', 'Cultural Understanding', 'Business Contexts', 'Effective Solutions'],
+      ],
     ];
+
     return $this->render(
       'default/home.html.twig',
       ['aboutSections' => $aboutSections]
