@@ -45,20 +45,28 @@
                     transition: color 0.3s ease;
                 }
 
+                span {
+                    font-weight: bold;
+                    color: #555;
+                    transition: margin 0.3s ease, font-size 0.3s ease;
+                }
+
                 &:hover {
                     // padding-right: 30px;
-                    // font-size: 2em;
-                    // font-weight: bolder;
+                    font-size: 2em;
+                    font-weight: bold;
 
                     &::after {
                         color: #fff;
                     }
+
+                    span {
+                        font-size: 2rem;
+                        margin-right: 30px;
+                    }
                 }
 
-                span {
-                    font-weight: bold;
-                    color: #555;
-                }
+
             }
         }
     }
