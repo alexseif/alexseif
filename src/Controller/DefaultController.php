@@ -281,4 +281,10 @@ class DefaultController extends AbstractController
       ['todo' => array_reverse($todo)]
     );
   }
+
+  #[Route('web-evolution', name: 'app_web_evolution')]
+  public function webEvolution(): Response
+  {
+    return $this->render('default/web-evolution.html.twig');
+  }
 }
