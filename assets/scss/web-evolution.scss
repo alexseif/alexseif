@@ -14,7 +14,15 @@
     #web-evolution-milestones {
         h2 {
             position: absolute;
-            left: 0;
+            right: 0;
+        }
+
+        h3 {
+            &::before {
+                content: '*';
+                position: absolute;
+                left: -30px;
+            }
         }
 
         ul {
