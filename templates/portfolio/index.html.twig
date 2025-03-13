@@ -1,28 +1,38 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}{% endblock %}
+{% block title %}
+	{{ 'alex_seif'|trans }}
+	-
+	{{ 'web_developer'|trans|capitalize }}
+{% endblock %}
 {% block content %}
-    <div id="fullpages" class="scrollsign">
-        <section class="fullpage slide" id="portfolio">
-            <div class="x-container">
-                <header class="mb-5">
-                    <h2 class="fittext text-end">{{ 'portfolio'|trans }}</h2>
-                </header>
-                <div class="container portfolio">
-                    {% for portfolio in portfolios %}
-                        <div class="d-flex mb-5 bg-black portfolio-item">
-                            <img src="{{ portfolio.image }}" class="img-fluid" alt="{{ portfolio.title }}"/>
-                            <div class="m-4 bg-dark flex-fill">
-                                <h3 class="bg-black pb-2">{{ portfolio.title }}</h3>
-                                <div class="p-1">
-                                    <p>{{ portfolio.description }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-    </div><!-- #fullpages -->
+	<div id="fullpages" class="scrollsign">
+		<section class="fullpage slide" id="portfolio">
+			<div class="x-container">
+				<header class="mb-5">
+					<h2 class="fittext text-end">{{ 'portfolio'|trans }}</h2>
+				</header>
+				<div class="container portfolio">
+					{% for portfolio in portfolios %}
+						<div class="d-flex flex-wrap flex-md-row flex-column mb-5 bg-black portfolio-item">
+							<div class="w-75 image-wrapper">
+								{% if portfolio.image %}
+									<img src="{{ asset('images/portfolio/' ~ portfolio.image) }}" class="img-fluid" alt="{{ portfolio.title }}"/>
+								{% else %}
+									<img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="No image available"/>
+								{% endif %}
+							</div>
+							<div class="m-4 bg-dark flex-fill text-wrapper">
+								<h3 class="bg-black pb-2">{{ portfolio.title }}</h3>
+								<div class="p-2">
+									<p>{{ portfolio.description }}</p>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- #fullpages -->
 {% endblock %}
 {% block announcements %}{% endblock %}
-

@@ -1,18 +1,18 @@
 .portfolio {
 
-  .portfolio-item:nth-child(odd) img {
+  .portfolio-item:nth-child(odd) div.image-wrapper {
     order: 1;
   }
 
-  .portfolio-item:nth-child(odd) div {
+  .portfolio-item:nth-child(odd) div.text-wrapper {
     order: 2;
   }
 
-  .portfolio-item:nth-child(even) img {
+  .portfolio-item:nth-child(even) div.image-wrapper {
     order: 2;
   }
 
-  .portfolio-item:nth-child(even) div {
+  .portfolio-item:nth-child(even) div.text-wrapper {
     order: 1;
   }
 }

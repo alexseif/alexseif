@@ -6,10 +6,11 @@ use App\Entity\Portfolio;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PortfolioType extends AbstractType
 {
-
     public function buildForm(
       FormBuilderInterface $builder,
       array $options
@@ -17,7 +18,11 @@ class PortfolioType extends AbstractType
         $builder
           ->add('title')
           ->add('description')
-          ->add('image');
+          ->add('imageFile', VichImageType::class, [
+              'required' => false,
+              'allow_delete' => true,
+              'download_uri' => true,
+          ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
@@ -26,5 +31,4 @@ class PortfolioType extends AbstractType
           'data_class' => Portfolio::class,
         ]);
     }
-
 }
