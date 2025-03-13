@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class='full' lang="en" xml:lang="en" data-bs-theme="dark">
+<html lang="{{ app.request.locale }}" xml:lang="{{ app.request.locale }}" data-bs-theme="dark">
 	<head
 		prefix="og: https://ogp.me/ns#">
 		<!-- Google tag (gtag.js) -->
@@ -16,25 +16,27 @@ gtag('config', 'G-QV4S3QWW7F');
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<meta name="description" content="Alex Seif - Freelance Web Developer with 20 years of experience in Symfony, WordPress, DevOps, and more.">
+		<meta name="keywords" content="Alex Seif, Web Developer, Symfony, WordPress, DevOps, Portfolio">
+		<meta name="author" content="Alex Seif">
 		{% block meta %}
-			<meta property="og:title" content="Alex Seif">
-			<meta property="og:url" content="https://alexseif.com">
-			<meta property="og:image" content="https://alexseif.com/images/alex-seif-business-card.png">
+			<meta property="og:title" content="Alex Seif - Web Developer">
+			<meta property="og:url" content="{{ app.request.uri }}">
+			<meta property="og:image" content="{{ asset('images/profile.jpg') }}">
 			<meta property="og:site_name" content="Alex Seif">
-			<meta property="og:description" content="Freelance Web Developer | 20 Years of Delivering Excellence.">
+			<meta property="og:description" content="Freelance Web Developer with 20 years of experience in Symfony, WordPress, DevOps, and more.">
 			<meta property="og:type" content="website">
 			<meta name="twitter:card" content="summary_large_image">
 			<meta name="twitter:title" content="Alex Seif">
 			<meta name="twitter:description" content="Freelance Web Developer | 20 Years of Delivering Excellence.">
 			<meta name="twitter:image" content="https://alexseif.com/images/alex-seif-business-card.png">
 			<link rel="canonical" href="https://alexseif.com/">
-			<meta name="description" content="Freelance Web Developer | 20 Years of Delivering Excellence.">
-			<meta name="keywords" content="Freelance Web Developer, Cairo, Egypt, Web Apps, Web Presence, eCommerce, Travel Technology, NGO, eLearning, eGovernment">
-			<meta name="author" content="Alex Seif">
 		{% endblock %}
 		<title>
 			{% block title %}
-				{{ 'alex_seif_freelance_web_design_developer_i_always'|trans }}
+				{{ 'alex_seif'|trans }}
+				-
+				{{ 'web_developer'|trans|capitalize }}
 			{% endblock %}
 		</title>
 		{% block structured_data %}
@@ -48,11 +50,6 @@ gtag('config', 'G-QV4S3QWW7F');
 			<link rel="preconnect" href="https://fonts.gstatic.com">
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
-
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 	</head>
 	<body>
 		{% block body %}
@@ -73,6 +70,10 @@ gtag('config', 'G-QV4S3QWW7F');
 				{% include 'footer.html.twig' %}
 			{% endblock %}
 		{% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
 		<!-- Messenger Chat Plugin Code -->
 		<div id="fb-root"></div>

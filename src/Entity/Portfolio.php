@@ -33,6 +33,12 @@ class Portfolio
     #[ORM\Column(type: 'datetime', nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
 
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTimeInterface $projectDate = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
+    private ?float $estimatedCost = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -96,6 +102,30 @@ class Portfolio
     public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updatedAt;
+    }
+
+    public function getProjectDate(): ?\DateTimeInterface
+    {
+        return $this->projectDate;
+    }
+
+    public function setProjectDate(?\DateTimeInterface $projectDate): static
+    {
+        $this->projectDate = $projectDate;
+
+        return $this;
+    }
+
+    public function getEstimatedCost(): ?float
+    {
+        return $this->estimatedCost;
+    }
+
+    public function setEstimatedCost(float $estimatedCost): static
+    {
+        $this->estimatedCost = $estimatedCost;
+
+        return $this;
     }
 
 }
