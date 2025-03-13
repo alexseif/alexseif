@@ -24,9 +24,13 @@ class PortfolioType extends AbstractType
             ])
             ->add('projectDate', DateType::class, [
                 'widget' => 'single_text',
+                'required' => false,
             ])
             ->add('estimatedCost', MoneyType::class, [
                 'currency' => 'USD',
+            ])
+            ->add('tags', TagAutocompleteType::class, [
+                'label' => 'Tags',
             ]);
     }
 

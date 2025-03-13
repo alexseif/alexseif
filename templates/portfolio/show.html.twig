@@ -1,59 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio
-{% endblock %}
+{% block title %}Portfolio{% endblock %}
 
 {% block content %}
-	<section class="fullpage low-hanging">
-		<div class="x-container text-end">
-			<a href="{{ path('app_portfolio_index') }}">back to list</a>
-			<header class="mb-5">
-				<h2 class="fittext text-end">{{ 'Portfolio'|trans }}</h2>
-			</header>
+    <section class="fullpage low-hanging">
+        <div class="x-container text-end">
+            <a href="{{ path('app_portfolio_index') }}">back to list</a>
+            <header class="mb-5">
+                <h2 class="fittext text-end">{{ 'Portfolio'|trans }}</h2>
+            </header>
 
-			<article itemscope itemtype="http://schema.org/CreativeWork">
-				<table class="table">
-					<tbody>
-						<tr>
-							<th>Id</th>
-							<td itemprop="identifier">{{ portfolio.id }}</td>
-						</tr>
-						<tr>
-							<th>Title</th>
-							<td itemprop="name">{{ portfolio.title }}</td>
-						</tr>
-						<tr>
-							<th>Description</th>
-							<td itemprop="description">{{ portfolio.description }}</td>
-						</tr>
-						<tr>
-							<th>Image</th>
-							<td>
-								{% if portfolio.image %}
-									<img src="{{ asset('images/portfolio/' ~ portfolio.image) }}" alt="Image of {{ portfolio.title }}" class="img-fluid" itemprop="image"/>
-								{% else %}
-									<img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="No image available for {{ portfolio.title }}" itemprop="image"/>
-								{% endif %}
-							</td>
-						</tr>
-						<tr>
-							<th>Project Date</th>
-							<td itemprop="dateCreated">{{ portfolio.projectDate|date('Y-m-d') }}</td>
-						</tr>
-						<tr>
-							<th>Estimated Cost</th>
-							<td itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-								<span itemprop="price">${{ portfolio.estimatedCost }}</span>
-								<meta itemprop="priceCurrency" content="USD"/>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</article>
+            <article itemscope itemtype="http://schema.org/CreativeWork">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td itemprop="identifier">{{ portfolio.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td itemprop="name">{{ portfolio.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td itemprop="description">{{ portfolio.description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td>
+                                {% if portfolio.image %}
+                                    <img src="{{ asset('images/portfolio/' ~ portfolio.image) }}" alt="Image of {{ portfolio.title }}" class="img-fluid" itemprop="image"/>
+                                {% else %}
+                                    <img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="No image available for {{ portfolio.title }}" itemprop="image"/>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Project Date</th>
+                            <td itemprop="dateCreated">{{ portfolio.projectDate|date('Y-m-d') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Estimated Cost</th>
+                            <td itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                <span itemprop="price">${{ portfolio.estimatedCost }}</span>
+                                <meta itemprop="priceCurrency" content="USD"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Tags</th>
+                            <td>
+                                {% for tag in portfolio.tags %}
+                                    <span class="badge bg-secondary">{{ tag.name }}</span>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
 
-			<a href="{{ path('app_portfolio_edit', {'id': portfolio.id}) }}">edit</a>
+            <a href="{{ path('app_portfolio_edit', {'id': portfolio.id}) }}">edit</a>
 
-			{{ include('portfolio/_delete_form.html.twig') }}
-		</div>
-	</section>
+            {{ include('portfolio/_delete_form.html.twig') }}
+        </div>
+    </section>
 {% endblock %}

@@ -232,3 +232,46 @@ class Dot {
         this.context.fill();
     }
 }
+
+$(document).ready(function () {
+    // Autocomplete functionality for tags
+    const tagInput = $('.new-tag-input');
+    const tagSelect = $('select.tag-autocomplete');
+
+    tagInput.on('keypress', function (e) {
+        if (e.which === 13 || e.which === 44) { // Enter key or comma pressed
+            e.preventDefault();
+            const newTag = tagInput.val().trim();
+            if (newTag) {
+                // Send the new tag via AJAX
+                $.ajax({
+                    url: '/tag/ajax/new',
+                    method: 'POST',
+                    data: { name: newTag },
+                    success: function (response) {
+                        // Check if the tag already exists
+                        let exists = false;
+                        tagSelect.find('option').each(function () {
+                            if ($(this).text().toLowerCase() === newTag.toLowerCase()) {
+                                exists = true;
+                                $(this).prop('selected', true);
+                            }
+                        });
+
+                        // If the tag doesn't exist, add it
+                        if (!exists) {
+                            const newOption = new Option(response.name, response.id, true, true);
+                            tagSelect.append(newOption);
+                        }
+
+                        // Clear the input
+                        tagInput.val('');
+                    },
+                    error: function (xhr) {
+                        alert(xhr.responseJSON.error);
+                    }
+                });
+            }
+        }
+    });
+});

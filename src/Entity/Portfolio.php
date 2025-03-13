@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Trait\Taggable;
 use App\Repository\PortfolioRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -12,6 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 #[Vich\Uploadable]
 class Portfolio
 {
+    use Taggable;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -127,5 +129,4 @@ class Portfolio
 
         return $this;
     }
-
 }

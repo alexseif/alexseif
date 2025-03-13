@@ -13,7 +13,7 @@
 				</header>
 				<div class="container portfolio">
 					{% for portfolio in portfolios %}
-						<article class="d-flex flex-wrap flex-md-row flex-column mb-5 bg-black portfolio-item rounded rounded-3" itemscope itemtype="http://schema.org/CreativeWork" style="--bs-bg-opacity: .8;">
+						<article class="d-flex flex-wrap flex-md-row flex-column mb-5 bg-black portfolio-item" itemscope itemtype="http://schema.org/CreativeWork">
 							<div class="w-75 image-wrapper">
 								{% if portfolio.image %}
 									<img src="{{ asset('images/portfolio/' ~ portfolio.image) }}" class="img-fluid" alt="Image of {{ portfolio.title }}" itemprop="image"/>
@@ -21,23 +21,27 @@
 									<img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="No image available" itemprop="image"/>
 								{% endif %}
 							</div>
-							<div class="m-3 bg-dark flex-fill text-wrapper" style="--bs-bg-opacity: .4;">
-								<h3 class="bg-black pt-2 pb-4 text-decoration-underline" itemprop="name">{{ portfolio.title }}</h3>
-								<div class="ps-2 pe-2">
-									<p class="" itemprop="description">{{ portfolio.description }}</p>
-									<div>
-										<p>
-											<strong>Project Date:</strong>
-											<span itemprop="dateCreated">{{ portfolio.projectDate|date('Y-m-d') }}</span>
-										</p>
-										<p>
-											<strong>Estimated Cost:</strong>
-											<span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-												<span itemprop="price">${{ portfolio.estimatedCost }}</span>
-												<meta itemprop="priceCurrency" content="USD"/>
-											</span>
-										</p>
-									</div>
+							<div class="m-4 bg-dark flex-fill text-wrapper">
+								<h3 class="bg-black pb-2" itemprop="name">{{ portfolio.title }}</h3>
+								<div class="p-2">
+									<p itemprop="description">{{ portfolio.description }}</p>
+									<p>
+										<strong>Project Date:</strong>
+										<span itemprop="dateCreated">{{ portfolio.projectDate|date('Y-m-d') }}</span>
+									</p>
+									<p>
+										<strong>Estimated Cost:</strong>
+										<span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+											<span itemprop="price">${{ portfolio.estimatedCost }}</span>
+											<meta itemprop="priceCurrency" content="USD"/>
+										</span>
+									</p>
+									<p>
+										<strong>Tags:</strong>
+										{% for tag in portfolio.tags %}
+											<span class="badge bg-secondary">{{ tag.name }}</span>
+										{% endfor %}
+									</p>
 								</div>
 							</div>
 						</article>
