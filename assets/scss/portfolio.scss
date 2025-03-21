@@ -3,10 +3,11 @@
   .portfolio-item:nth-child(odd) div.image-wrapper {
     order: 1;
   }
-  
+
   .portfolio-item:nth-child(odd) div.text-wrapper {
     order: 2;
     margin-left: 0 !important;
+    border-top-right-radius: 0.375rem;
   }
 
   .portfolio-item:nth-child(even) div.image-wrapper {
@@ -16,6 +17,8 @@
   .portfolio-item:nth-child(even) div.text-wrapper {
     order: 1;
     margin-right: 0 !important;
+    border-top-left-radius: 0.375rem;
+    text-align: end;
   }
 
   .new-tag-input {

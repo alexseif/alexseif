@@ -13,7 +13,7 @@
 				</header>
 				<div class="container portfolio">
 					{% for portfolio in portfolios %}
-						<article class="d-flex flex-wrap flex-md-row flex-column mb-5 bg-black portfolio-item" itemscope itemtype="http://schema.org/CreativeWork">
+						<article class="d-flex flex-wrap flex-md-row flex-column mb-5 portfolio-item" itemscope itemtype="http://schema.org/CreativeWork">
 							<div class="w-75 image-wrapper">
 								{% if portfolio.image %}
 									<img src="{{ asset('images/portfolio/' ~ portfolio.image) }}" class="img-fluid" alt="Image of {{ portfolio.title }}" itemprop="image"/>
@@ -21,27 +21,28 @@
 									<img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="No image available" itemprop="image"/>
 								{% endif %}
 							</div>
-							<div class="m-4 bg-dark flex-fill text-wrapper">
-								<h3 class="bg-black pb-2" itemprop="name">{{ portfolio.title }}</h3>
-								<div class="p-2">
+							<div class="flex-fill d-flex flex-column text-wrapper bg-black pt-2 {{ (loop.index is even) ? 'ps-3' : 'pe-3' }}" style="--bs-bg-opacity: .5;">
+								<h2 class="pb-2 mb-0 {{ (loop.index is even) ? 'pe-2' : 'ps-2' }}" itemprop="name">{{ portfolio.title }}</h2>
+								<div class="bg-dark flex-fill text-wrapper d-flex flex-column p-2" style="--bs-bg-opacity: .5;">
 									<p itemprop="description">{{ portfolio.description }}</p>
-									<p>
-										<strong>Project Date:</strong>
-										<span itemprop="dateCreated">{{ portfolio.projectDate|date('Y-m-d') }}</span>
-									</p>
-									<p>
-										<strong>Estimated Cost:</strong>
-										<span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-											<span itemprop="price">${{ portfolio.estimatedCost }}</span>
-											<meta itemprop="priceCurrency" content="USD"/>
-										</span>
-									</p>
-									<p>
-										<strong>Tags:</strong>
-										{% for tag in portfolio.tags %}
-											<span class="badge bg-secondary">{{ tag.name }}</span>
-										{% endfor %}
-									</p>
+									<div class="spacer mt-auto">
+										<div>
+											{% for tag in portfolio.tags %}
+												<span class="badge">#{{ tag.name }}</span>
+											{% endfor %}
+										</div>
+										<div class="d-flex justify-content-between">
+											<span itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="badge" title="price">
+												<i class="bi bi-currency-dollar"></i>
+												<span itemprop="price">${{ portfolio.estimatedCost }}</span>
+												<meta itemprop="priceCurrency" content="USD"/>
+											</span>
+											<span itemprop="dateCreated" class="badge" title="date">
+												<i class="bi bi-calendar-check"></i>
+												{{ portfolio.projectDate|date('Y') }}
+											</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</article>
