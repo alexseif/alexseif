@@ -1,0 +1,16 @@
+.impressive {
+    font-size: 2.5rem;
+    list-style: lower-roman;
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    li {
+        // margin-top: 1rem;
+        // margin-bottom: 1rem;
+        margin-bottom: 2rem;
+        border-left: 1px solid #ccc;
+        background-color: rgba(#171717, 0.7);
+    }
+}
