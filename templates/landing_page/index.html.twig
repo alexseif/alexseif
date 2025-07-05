@@ -1,0 +1,173 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	WP Optimize – WordPress Fixes & Maintenance
+{% endblock %}
+
+{% block body %}
+	<style>
+		header {
+			/* background: #1e1e1e; */
+			/* color: #fff; */
+			padding: 40px 20px;
+			text-align: center;
+		}
+
+		header img {
+			max-width: 100px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			margin: 10px 0;
+			font-size: 2em;
+		}
+
+		.cta-button {
+			background: #00b894;
+			color: #fff;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 6px;
+			font-size: 1em;
+			text-decoration: none;
+			display: inline-block;
+			margin-top: 20px;
+		}
+
+		.section {
+			padding: 40px 20px;
+			max-width: 900px;
+			margin: auto;
+		}
+
+		.services {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+			gap: 20px;
+		}
+
+		.card {
+			/* background: #fff; */
+			border-radius: 8px;
+			padding: 20px;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		}
+
+		.card h3 {
+			margin-top: 0;
+		}
+
+		.card ul {
+			padding-left: 20px;
+		}
+
+		.card a {
+			display: inline-block;
+			margin-top: 10px;
+			color: #00b894;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		footer {
+			background: #1e1e1e;
+			color: #ccc;
+			text-align: center;
+			padding: 20px;
+			font-size: 0.9em;
+		}
+	</style>
+	<canvas class="background-grid" id="dotCanvas"></canvas>
+	<div id="background-noise">
+		<div id="noise-bg"></div>
+		<canvas id="noise-canvas"></canvas>
+	</div>
+	<main id="site-wrapper">
+		<header>
+			<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WP Optimize Logo"/>
+			<h1>WordPress Fixes. Fast. Reliable. Human.</h1>
+			<p>I fix, maintain, and build WordPress sites—same day support, clear pricing, no stress.</p>
+			<a href="https://wa.me/00201004006332" target="_blank" target="_blank" class="cta-button">💬 Chat on WhatsApp</a>
+		</header>
+
+		<section class="section">
+			<h2>💼 Services</h2>
+			<div class="services">
+				<div class="card">
+					<h3>🛠️ Fix My Site</h3>
+					<p>
+						<strong>EGP 950 / $30</strong>
+					</p>
+					<ul>
+						<li>Bug & plugin fixes</li>
+						<li>Speed or layout issues</li>
+						<li>Same-day delivery</li>
+					</ul>
+					<a href="https://wa.me/00201004006332" target="_blank">Fix it now →</a>
+				</div>
+				<div class="card">
+					<h3>🛡️ Monthly Maintenance</h3>
+					<p>
+						<strong>EGP 1,500 / $45</strong>
+					</p>
+					<ul>
+						<li>Updates & backups</li>
+						<li>Security & uptime checks</li>
+						<li>Priority support</li>
+					</ul>
+					<a href="https://wa.me/00201004006332" target="_blank">Subscribe →</a>
+				</div>
+
+				<div class="card">
+					<h3>♻️ Redesign My Site</h3>
+					<p>
+						<strong>EGP 3,500 / $115</strong>
+					</p>
+					<ul>
+						<li>Modern layout & structure</li>
+						<li>Speed & mobile optimization</li>
+						<li>Delivered in 3–5 days</li>
+					</ul>
+					<a href="https://wa.me/00201004006332" target="_blank">Refresh now →</a>
+				</div>
+				<div class="card">
+					<h3>🧱 Build My Site</h3>
+					<p>
+						<strong>EGP 7,500 / $245</strong>
+					</p>
+					<ul>
+						<li>Up to 5 pages</li>
+						<li>Mobile + SEO optimized</li>
+						<li>Delivered in 5–7 days</li>
+					</ul>
+					<a href="https://wa.me/00201004006332" target="_blank">Start project →</a>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="section">
+			<h2>💬 Why Choose WP Optimize?</h2>
+			<ul class="check-list">
+				<li>20+ years of WordPress experience</li>
+				<li>Same-day support available</li>
+				<li>Transparent pricing, no surprises</li>
+				<li>Trusted by 400+ clients worldwide</li>
+			</ul>
+		</section>
+
+		<section class="section">
+			<h2>📞 Let’s Talk</h2>
+			<p>Not sure what you need? I’ll help you figure it out.</p>
+			<a href="https://wa.me/00201004006332" target="_blank" class="cta-button">💬 Chat with Alex</a>
+		</section>
+	</main>
+
+{% endblock %}
+
+{% block footer %}
+	<footer>
+		© 2025 WP Optimize by Alex Seif. All rights reserved.
+	</footer>
+{% endblock %}
