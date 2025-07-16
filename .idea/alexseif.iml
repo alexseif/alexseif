@@ -186,6 +186,8 @@
       <excludeFolder url="file://$MODULE_DIR$/tools/php-cs-fixer/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/tools/php-cs-fixer/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/tools/php-cs-fixer/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/jms/metadata" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vich/uploader-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
