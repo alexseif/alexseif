@@ -25,6 +25,7 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('merrychristmas', './assets/merry-christmas.js')
+    .addEntry('wp-optimize', './assets/wp-optimize.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
@@ -105,7 +106,7 @@ Encore
         //if versioning is enabled, add the file hash too
         // to: 'images/[path][name].[hash:8].[ext]',
         //only copy files matching this pattern
-        pattern: /\.(png|jpg|jpeg|svg)$/
+        pattern: /\.(png|jpg|jpeg|svg|webp|gif)$/
     })
     .configureDevServerOptions(options => {
         options.allowedHosts = 'all';

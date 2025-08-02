@@ -1,89 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	WP Optimize – WordPress Fixes & Maintenance
+	WordPress Optimize – WordPress Fixes & Maintenance
+{% endblock %}
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('wp-optimize') }}
 {% endblock %}
 
 {% block body %}
-	<style>
-		header {
-			/* background: #1e1e1e; */
-			/* color: #fff; */
-			padding: 40px 20px;
-			text-align: center;
-		}
-
-		header img {
-			max-width: 100px;
-			margin-bottom: 10px;
-		}
-
-		h1 {
-			margin: 10px 0;
-			font-size: 2em;
-		}
-
-		.cta-button {
-			background: #00b894;
-			color: #fff;
-			padding: 12px 24px;
-			border: none;
-			border-radius: 6px;
-			font-size: 1em;
-			text-decoration: none;
-			display: inline-block;
-			margin-top: 20px;
-		}
-
-		.section {
-			padding: 40px 20px;
-			max-width: 900px;
-			margin: auto;
-		}
-
-		.services {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-			gap: 20px;
-		}
-
-		.card {
-			/* background: #fff; */
-			border-radius: 8px;
-			padding: 20px;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-			max-width: 100%;
-		}
-
-		.card h3 {
-			margin-top: 0;
-		}
-
-		.card ul {
-			padding-left: 20px;
-		}
-
-		.card a {
-			display: inline-block;
-			margin-top: 10px;
-			color: #00b894;
-			text-decoration: none;
-			font-weight: bold;
-		}
-
-		footer {
-			background: #1e1e1e;
-			color: #ccc;
-			text-align: center;
-			padding: 20px;
-			font-size: 0.9em;
-		}
-	</style>
+	<style></style>
 	<canvas class="background-grid" id="dotCanvas"></canvas>
 	<div id="background-noise">
 		<div id="noise-bg"></div>
 		<canvas id="noise-canvas"></canvas>
 	</div>
+
+	<!-- Navigation Menu -->
+	<nav class="nav-menu">
+		<ul>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#clients">Clients</a></li>
+			<li><a href="#why">Why Me</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+
 	<main id="site-wrapper">
 		<header>
 			<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WP Optimize Logo"/>
@@ -92,8 +34,8 @@
 			<a href="https://wa.me/201004006332" target="_blank" target="_blank" class="cta-button">💬 Chat on WhatsApp</a>
 		</header>
 
-		<section class="section">
-			<h2>💼 Services</h2>
+		<section class="section" id="services">
+			<h2>💼 WordPress Services</h2>
 			<div class="services">
 				<div class="card">
 					<h3>🛠️ Fix My Site</h3>
@@ -101,13 +43,11 @@
 					<p>
 						<strong>
 							<del>EGP 2,500</del>
-							<span style="color:#d63031;">EGP 1,500</span>
+							<span style="color:#0182BE;">EGP 1,500</span>
 						</strong>
 						<span style="float:right;">$50</span>
 					</p>
-					<p style="color:#0984e3; font-weight: bold;">🎉 Limited-time offer!</p>
-
-
+					<p style="color:#0182BE; font-weight: bold;">🎉 Limited-time offer!</p>
 					<ul>
 						<li>Bug & plugin fixes</li>
 						<li>Speed or layout issues</li>
@@ -139,11 +79,11 @@
 					<p>
 						<strong>
 							<del>EGP 7,500</del>
-							<span style="color:#d63031;">EGP 5,000</span>
+							<span style="color:#0182BE;">EGP 5,000</span>
 						</strong>
 						<span style="float:right;">$150</span>
 					</p>
-					<p style="color:#0984e3; font-weight: bold;">🎉 Limited-time offer!</p>
+					<p style="color:#0182BE; font-weight: bold;">🎉 Limited-time offer!</p>
 
 					<ul>
 						<li>Modern layout & structure</li>
@@ -158,11 +98,11 @@
 					<p>
 						<strong>
 							<del>EGP 10,000</del>
-							<span style="color:#d63031;">EGP 7,500</span>
+							<span style="color:#0182BE;">EGP 7,500</span>
 						</strong>
 						<span style="float:right;">$200</span>
 					</p>
-					<p style="color:#0984e3; font-weight: bold;">🎉 Limited-time offer!</p>
+					<p style="color:#0182BE; font-weight: bold;">🎉 Limited-time offer!</p>
 
 					<ul>
 						<li>Up to 5 pages</li>
@@ -174,9 +114,44 @@
 
 			</div>
 		</section>
-
-		<section class="section">
-			<h2>💬 Why Choose WP Optimize?</h2>
+		<section class="portfolio " id="clients">
+			<div class="section">
+				<h2>👥 Trusted by 400+ Clients</h2>
+				<p>Over 400 clients worldwide trust me with their WordPress sites, including:</p>
+			</div>
+			<div id="clients">
+				<div class="masonry-carousel">
+					<div class="masonry-track">
+						{% for image in portfolio_images %}
+							<div class="masonry-item">
+								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
+							</div>
+						{% endfor %}
+						<!-- Duplicate for infinite scroll -->
+						{% for image in portfolio_images %}
+							<div class="masonry-item">
+								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<ul class="fancy-list">
+					<li>Clinics</li>
+					<li>Small businesses</li>
+					<li>Freelancers</li>
+					<li>Agencies</li>
+					<li>Bloggers</li>
+					<li>Non-profits</li>
+					<li>Startups</li>
+					<li>And more!</li>
+				</ul>
+				<p>Whether you need a quick fix or ongoing support, I’m here to help.</p>
+			</div>
+		</section>
+		<section class="section" id="why">
+			<h2>💬 Why Clients Choose Me</h2>
 			<ul class="check-list">
 				<li>20+ years of WordPress experience</li>
 				<li>Same-day support available</li>
@@ -185,10 +160,10 @@
 			</ul>
 		</section>
 
-		<section class="section d-flex flex-column flex-md-row mb-5 fs-4 align-items-end">
+		<section class="section d-flex flex-column flex-md-row mb-5 fs-4 align-items-end" id="contact">
 
 			<div class="col">
-				<h2>📞 Let’s Talk</h2>
+				<h2>📱 Let's Talk About Your Project</h2>
 				<p>Not sure what you need? I’ll help you figure it out.</p>
 				<a href="https://wa.me/201004006332" target="_blank" class="cta-button">💬 Chat with Alex</a>
 			</div>

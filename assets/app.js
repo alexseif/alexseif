@@ -231,8 +231,8 @@ class Dot {
         this.context.globalAlpha = this.isHover ? 1 : 0.25;
         this.context.fill();
     }
-}
 
+}
 $(document).ready(function () {
     // Autocomplete functionality for tags
     const tagInput = $('.new-tag-input');
