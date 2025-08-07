@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'landing_page.meta.title'|trans }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('wp-optimize') }}
+{% endblock %}
+
+{% block body %}
+	<style>
+		body {
+			direction: rtl;
+			text-align: right;
+		}
+		.services,
+		.check-list,
+		.fancy-list {
+			text-align: right;
+		}
+		.masonry-carousel {
+			direction: ltr;
+		}
+		.cta-button {
+			float: left;
+		}
+	</style>
+	<canvas class="background-grid" id="dotCanvas"></canvas>
+	<div id="background-noise">
+		<div id="noise-bg"></div>
+		<canvas id="noise-canvas"></canvas>
+	</div>
+
+	<!-- Navigation Menu -->
+	<nav class="nav-menu">
+		<ul>
+			<li><a href="#services"title="{{ 'landing_page.navigation.what'|trans }}">{{ 'landing_page.navigation.what'|trans }}</a></li>
+			<li><a href="#clients"title="{{ 'landing_page.navigation.who'|trans }}">{{ 'landing_page.navigation.who'|trans }}</a></li>
+			<li><a href="#why"title="{{ 'landing_page.navigation.why'|trans }}">{{ 'landing_page.navigation.why'|trans }}</a></li>
+			<li><a href="#contact"title="{{ 'landing_page.navigation.where'|trans }}">{{ 'landing_page.navigation.where'|trans }}</a></li>
+		</ul>
+	</nav>
+
+	<main id="site-wrapper">
+		<header>
+			<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="شعار ووردبريس أوبتمايز"/>
+			<h1>{{ 'landing_page.header.title'|trans }}</h1>
+			<p>{{ 'landing_page.header.subtitle'|trans }}</p>
+			<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'landing_page.header.cta_button'|trans }}</a>
+		</header>
+
+		<section class="section" id="services">
+			<h2>{{ 'landing_page.services.title'|trans }}</h2>
+			<div class="services">
+				<div class="card">
+					<h3>{{ 'landing_page.services.fix_site.title'|trans }}</h3>
+					<p></p>
+					<p>
+						<strong>
+							<del>{{ 'landing_page.services.fix_site.original_price'|trans }}</del>
+							<span style="color:#0182BE;">{{ 'landing_page.services.fix_site.price_egp'|trans }}</span>
+						</strong>
+						<span style="float:left;">{{ 'landing_page.services.fix_site.price_usd'|trans }}</span>
+					</p>
+					<p style="color:#0182BE; font-weight: bold;">{{ 'landing_page.services.fix_site.offer'|trans }}</p>
+					<ul>
+						{% for feature in 'landing_page.services.fix_site.features'|trans %}
+							<li>{{ feature }}</li>
+						{% endfor %}
+					</ul>
+					<a href="http://bit.ly/44z0weK" target="_blank">{{ 'landing_page.services.fix_site.cta'|trans }}</a>
+				</div>
+
+				<div class="card">
+					<h3>{{ 'landing_page.services.maintenance.title'|trans }}</h3>
+					<p></p>
+					<p>
+						<strong>
+							{{ 'landing_page.services.maintenance.price_egp'|trans }}
+						</strong>
+						<span style="float:left;">{{ 'landing_page.services.maintenance.price_usd'|trans }}</span>
+					</p>
+					<ul>
+						{% for feature in 'landing_page.services.maintenance.features'|trans %}
+							<li>{{ feature }}</li>
+						{% endfor %}
+					</ul>
+					<a href="https://bit.ly/4ktpnXl" target="_blank">{{ 'landing_page.services.maintenance.cta'|trans }}</a>
+				</div>
+
+				<div class="card">
+					<h3>{{ 'landing_page.services.redesign.title'|trans }}</h3>
+					<p>
+						<strong>
+							<del>{{ 'landing_page.services.redesign.original_price'|trans }}</del>
+							<span style="color:#0182BE;">{{ 'landing_page.services.redesign.price_egp'|trans }}</span>
+						</strong>
+						<span style="float:left;">{{ 'landing_page.services.redesign.price_usd'|trans }}</span>
+					</p>
+					<p style="color:#0182BE; font-weight: bold;">{{ 'landing_page.services.redesign.offer'|trans }}</p>
+					<ul>
+						{% for feature in 'landing_page.services.redesign.features'|trans %}
+							<li>{{ feature }}</li>
+						{% endfor %}
+					</ul>
+					<a href="https://bit.ly/4ktZBSJ" target="_blank">{{ 'landing_page.services.redesign.cta'|trans }}</a>
+				</div>
+
+				<div class="card">
+					<h3>{{ 'landing_page.services.build_site.title'|trans }}</h3>
+					<p>
+						<strong>
+							<del>{{ 'landing_page.services.build_site.original_price'|trans }}</del>
+							<span style="color:#0182BE;">{{ 'landing_page.services.build_site.price_egp'|trans }}</span>
+						</strong>
+						<span style="float:left;">{{ 'landing_page.services.build_site.price_usd'|trans }}</span>
+					</p>
+					<p style="color:#0182BE; font-weight: bold;">{{ 'landing_page.services.build_site.offer'|trans }}</p>
+					<ul>
+						{% for feature in 'landing_page.services.build_site.features'|trans %}
+							<li>{{ feature }}</li>
+						{% endfor %}
+					</ul>
+					<a href="https://bit.ly/4klnE6c" target="_blank">{{ 'landing_page.services.build_site.cta'|trans }}</a>
+				</div>
+			</div>
+			I have reviewed the original English landing page template. Now I will create a new Arabic version of this template as `templates/landing_page/index_ar.html.twig` with the following considerations:
+					
+					- Use the Arabic translations from `messages.ar.yaml` with the `trans` filter
+					- Add RTL support with appropriate CSS styles
+					- Adjust text alignment and layout for Arabic reading direction
+					
+					I will proceed to create the Arabic landing page template now.
+
+		{% endblock %}

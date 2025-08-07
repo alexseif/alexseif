@@ -1,39 +1,97 @@
-alex_seif: "Alex Seif"
-web_developer: "Web Developer"
-freelance: Freelance
-copy_paster: "Copy Paster"
-web_presence: "Web Presence"
-wordpress: WordPress
-drupal: Drupal
-onepage_website: "One-page website"
-social_media: "Social Media"
-ecommerce: eCommerce
-woocommerce: WooCommerce
-magento: Magento
-custom_tailored: "Custom Tailored"
-start_project: "Start project"
-automated_life_cycles: "Automated life cycles"
-quality_process: "Quality process"
-secure_code: "Secure code"
-system_critical: "System critical"
-tao: Tao
-moodle: Moodle
-verified_social_accounts: "Verified social accounts"
-newsletter: Newsletter
-gdpr: GDPR
-ngo: NGO
-tours: tours
-flights: flights
-airline: airline
-hotels: hotels
-travel_technology: "Travel Technology"
-etc: etc..
-alex_seif2: "ALEX SEIF"
-alex_seif_instragram: "Alex Seif Instragram"
-the_future: "The future"
-alex_seif_freelance_web_design_developer_i_always: "Alex Seif | Freelance Web Design & Developer. I always deliver."
-portfolio: portfolio
-Portfolio: Portfolio
-"Edit Portfolio": "Edit Portfolio"
-"Create new Portfolio": "Create new Portfolio"
-merry_christmas_from: "Merry Christmas from"
+# Landing Page Translations
+landing_page:
+    meta:
+        title: "WordPress Optimize – WordPress Fixes & Maintenance"
+    
+    navigation:
+        what: "What"
+        who: "Who"
+        why: "Why"
+        where: "Where"
+    
+    header:
+        title: "WordPress Fixes. Fast. Reliable. Human."
+        subtitle: "I fix, maintain, and build WordPress sites—same day support, clear pricing, no stress."
+        cta_button: "💬 Chat on WhatsApp"
+    
+    services:
+        title: "What you get 💼"
+        
+        fix_site:
+            title: "🛠️ Fix My Site"
+            price_egp: "EGP 1,500"
+            price_usd: "$50"
+            original_price: "EGP 2,500"
+            offer: "🎉 Limited-time offer!"
+            features:
+                - "Bug & plugin fixes"
+                - "Speed or layout issues"
+                - "Same-day delivery"
+            cta: "Fix it now"
+        
+        maintenance:
+            title: "🛡️ Monthly Maintenance"
+            price_egp: "EGP 2,500"
+            price_usd: "$50"
+            features:
+                - "Updates & backups"
+                - "Security & uptime checks"
+                - "Priority support"
+            cta: "Subscribe"
+        
+        redesign:
+            title: "♻️ Redesign My Site"
+            price_egp: "EGP 5,000"
+            price_usd: "$150"
+            original_price: "EGP 7,500"
+            offer: "🎉 Limited-time offer!"
+            features:
+                - "Modern layout & structure"
+                - "Speed & mobile optimization"
+                - "Delivered in 3–5 days"
+            cta: "Refresh now"
+        
+        build_site:
+            title: "🧱 Build My Site"
+            price_egp: "EGP 7,500"
+            price_usd: "$200"
+            original_price: "EGP 10,000"
+            offer: "🎉 Limited-time offer!"
+            features:
+                - "Good for landing/squeeze pages"
+                - "Mobile + SEO optimized"
+                - "Delivered in 5–7 days"
+            cta: "Start project"
+    
+    clients:
+        title: "Trusted by 400+ Clients 👥"
+        subtitle: "Over 400 clients worldwide trust me with their WordPress sites, including:"
+        who_is_it_for: "Who is it for 👥"
+        target_audience:
+            - "Clinics"
+            - "Small businesses"
+            - "Freelancers"
+            - "Agencies"
+            - "Bloggers"
+            - "Non-profits"
+            - "Startups"
+            - "And more!"
+        conclusion: "Whether you need a quick fix or ongoing support, I’m here to help."
+    
+    why_choose:
+        title: "Why Clients Choose Me ✨"
+        reasons:
+            - "Positive mindset for growth"
+            - "Friendly attitude (your tech partner)"
+            - "20+ years of WordPress experience"
+            - "Same-day support available"
+            - "Transparent pricing, no surprises"
+            - "Trusted by 400+ clients worldwide"
+    
+    contact:
+        title: "📱 Let's Talk About Your Project"
+        subtitle: "Not sure what you need? I’ll help you figure it out."
+        cta_button: "💬 Chat with Alex"
+    
+    footer:
+        copyright: "© 2025 WP Optimize by Alex Seif. All rights reserved."
