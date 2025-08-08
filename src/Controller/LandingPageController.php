@@ -20,7 +20,7 @@ class LandingPageController extends AbstractController
     public function index(Request $request): Response
     {
         $locale = $request->get('_locale', 'en');
-        
+
         // Scan portfolio directory for images
         $portfolioImages = [];
         $portfolioDir = $this->getParameter('kernel.project_dir') . '/assets/images/portfolio';
@@ -41,8 +41,8 @@ class LandingPageController extends AbstractController
         ]);
     }
 
-    #[Route('/wordpress_optimize/{_locale}', name: 'app_landing_page_locale')]
-    public function indexLocale(Request $request, string $_locale): Response
+    #[Route('/{_locale}/wordpress_optimize', name: 'app_landing_page_locale')]
+    public function indexLocale(Request $request, string $_locale = 'en'): Response
     {
         // Validate locale
         if (!in_array($_locale, ['en', 'ar', 'eg'])) {
@@ -62,10 +62,10 @@ class LandingPageController extends AbstractController
             }
         }
         $page = 'landing_page/index';
-if($_locale != 'en'){
-$page .= '_'.$_locale;
-}
-$page .= '.html.twig';
+        if ($_locale != 'en') {
+            // $page .= '_'.$_locale;
+        }
+        $page .= '.html.twig';
         return $this->render($page, [
             'controller_name' => 'LandingPageController',
             'portfolio_images' => $portfolioImages,

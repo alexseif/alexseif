@@ -26,6 +26,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('merrychristmas', './assets/merry-christmas.js')
     .addEntry('wp-optimize', './assets/wp-optimize.js')
+    .addEntry('rtl', './assets/rtl.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

@@ -40,7 +40,7 @@ $white: #fff;
 
 .masonry-track {
     display: flex;
-    animation: scroll 20s linear infinite;
+    animation: scroll 40s linear infinite;
     width: max-content;
 }
 
@@ -309,27 +309,27 @@ h1 {
     max-width: 1200px;
     margin: auto;
     position: relative;
-}
 
-.section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-}
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+        // display: inline-block;
+        // left: 50%;
+        // transform: translateX(-50%);
 
-.section h2::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(45deg, $primary-color, $primary-color);
-    border-radius: 2px;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, $primary-color, $primary-color);
+            border-radius: 2px;
+        }
+    }
 }
 
 /* Services grid */
@@ -411,6 +411,7 @@ h1 {
 
 /* Navigation menu */
 .nav-menu {
+    text-align: center;
     position: fixed;
     top: 20px;
     right: 20px;

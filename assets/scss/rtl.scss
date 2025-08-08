@@ -1,0 +1,147 @@
+/**
+ * RTL Styles for Arabic and Egyptian locales
+ * This file contains RTL-specific styles and overrides
+ */
+
+// Import Bootstrap RTL
+@import "~bootstrap-rtl/dist/css/bootstrap-rtl.css";
+
+// RTL-specific variables
+$direction: rtl;
+
+// Override Bootstrap variables for RTL
+$enable-rtl: true;
+
+// Custom RTL styles
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+// RTL-specific component overrides
+body[dir="rtl"] {
+
+    // Navigation
+    .navbar-nav {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    // Forms
+    .form-check {
+        padding-right: 1.5em;
+        padding-left: 0;
+    }
+
+    .form-check-input {
+        margin-right: -1.5em;
+        margin-left: 0;
+        float: right;
+    }
+
+    // Dropdowns
+    .dropdown-menu {
+        text-align: right;
+    }
+
+    // Cards
+    .card {
+        text-align: right;
+    }
+
+    // Buttons
+    .btn {
+        text-align: right;
+    }
+
+    // Lists
+    ul,
+    ol {
+        padding-right: 1.5rem;
+        padding-left: 0;
+    }
+
+    // Grid system adjustments
+    .row {
+        direction: rtl;
+    }
+
+    // Text alignment
+    .text-start {
+        text-align: right !important;
+    }
+
+    .text-end {
+        text-align: left !important;
+    }
+
+    // Margins and paddings
+    .ms-auto {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+    }
+
+    .me-auto {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+
+    .ps-0 {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .pe-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+// Responsive RTL adjustments
+@media (max-width: 768px) {
+    body[dir="rtl"] {
+        .navbar-nav {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+}
+
+html[dir="rtl"] .masonry-track {
+    animation: scroll-rtl 54s linear infinite !important;
+}
+
+@keyframes scroll-rtl {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+html[dir="rtl"] .card a::after {
+    content: "←";
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .card ul li {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+html[dir="rtl"] .card ul li::before {
+    right: 0;
+    left: auto;
+}
+
+html[dir="rtl"] ul.fancy-list li::before {
+    left: auto;
+    right: 15px;
+}
+
+html[dir="rtl"] ul.fancy-list li {
+    padding: 15px 50px 15px 20px;
+}

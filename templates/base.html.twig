@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.locale }}" xml:lang="{{ app.request.locale }}" data-bs-theme="dark">
+<html lang="{{ app.request.locale }}" xml:lang="{{ app.request.locale }}" data-bs-theme="dark" dir="{{ is_rtl_locale(app.request.locale) ? 'rtl' : 'ltr' }}">
 	<head
 		prefix="og: https://ogp.me/ns#">
 		<!-- Google tag (gtag.js) -->
@@ -49,6 +49,9 @@ gtag('config', 'G-QV4S3QWW7F');
 		{% block stylesheets %}
 			<link rel="preconnect" href="https://fonts.gstatic.com">
 			{{ encore_entry_link_tags('app') }}
+			{% if app.request.locale != 'en' %}
+				{{ encore_entry_link_tags('rtl') }}
+			{% endif %}
 		{% endblock %}
 	</head>
 	<body>
