@@ -10,6 +10,75 @@ use Symfony\Component\Finder\Finder;
 
 class LandingPageController extends AbstractController
 {
+    public $packages = [
+        'Starter' => [
+            'title' => '🟢 Starter',
+            'subtitle' => 'WP Care & Speed Boost',
+            'ideal' => 'Ideal for: Site owners who need performance, security, and peace of mind',
+            'price_usd' => 49,
+            'price_egp' => 2500,
+            'features' => [
+                'Speed optimization',
+                'Security hardening',
+                'Monthly updates',
+                'Backup setup',
+                'Uptime monitoring',
+                'WhatsApp support'
+            ],
+            'cta_text' =>    '“Keep your site fast, safe, and stress-free”',
+            'cta_link' => 'http://bit.ly/44z0weK'
+        ],
+        'builder' => [
+            'title' => '🔵 Builder',
+            'subtitle' => 'Complete Site Build',
+            'ideal' => 'Clinics, coaches, and small businesses starting fresh',
+            'price_usd' => 399,
+            'price_egp' => 19000,
+            'price_sales' => 17000,
+            'features' => [
+                'Custom WordPress site',
+                'Mobile responsive design',
+                'SEO-ready structure',
+                'Contact forms + WhatsApp integration',
+                '1 language (Arabic or English)',
+                'Delivery in 7–10 days',
+            ],
+            'cta_text' =>    '“Get a complete site built for you”',
+            'cta_link' => '#'
+        ],
+        'seller' => [
+            'title' => '🟣 Seller',
+            'subtitle' => 'eCommerce Power Pack',
+            'ideal' => '',
+            'price_usd' => 799,
+            'price_egp' => 38500,
+            'price_sales' => 35000,
+            'features' => [
+                'WooCommerce setup',
+                'Payment gateway integration',
+                'Inventory system',
+                'Shipping options',
+                'Product upload (up to 5 items)',
+                'WhatsApp + email support',
+            ],
+            'cta_text' =>    '“Get a complete site built for you”',
+            'cta_link' => '#'
+        ],
+
+        // 'fix_site' => [
+        //     'title' => 'wordpress_optimize.services.fix_site.title',
+        //     'price_usd' => 50,
+        //     'price_egp' => 2500,
+        //     'price_sales' => 1500,
+        //     'offer' => 'wordpress_optimize.services.fix_site.offer',
+        //     'features' => 'wordpress_optimize.services.fix_site.features',
+        //     'features_count' => 3,
+        //     'cta_text' => 'wordpress_optimize.services.fix_site.cta_text',
+        //     'cta_link' => 'http://bit.ly/44z0weK'
+
+        // ]
+    ];
+
     #[Route('/landing_page', name: 'old_landing_page')]
     public function oldLandingPage(): Response
     {
@@ -17,7 +86,7 @@ class LandingPageController extends AbstractController
     }
 
     #[Route('/wordpress_optimize', name: 'app_landing_page')]
-    public function index(Request $request): Response
+    public function wordpressOptimize(Request $request): Response
     {
         $locale = $request->get('_locale', 'en');
 
@@ -38,6 +107,7 @@ class LandingPageController extends AbstractController
         return $this->render('landing_page/index.html.twig', [
             'controller_name' => 'LandingPageController',
             'portfolio_images' => $portfolioImages,
+            'packages' => $this->packages
         ]);
     }
 
@@ -48,6 +118,8 @@ class LandingPageController extends AbstractController
         if (!in_array($_locale, ['en', 'ar', 'eg'])) {
             return $this->redirectToRoute('app_landing_page', ['_locale' => 'en']);
         }
+
+
 
         // Scan portfolio directory for images
         $portfolioImages = [];
@@ -69,6 +141,7 @@ class LandingPageController extends AbstractController
         return $this->render($page, [
             'controller_name' => 'LandingPageController',
             'portfolio_images' => $portfolioImages,
+            'packages' => $this->packages
         ]);
     }
 }

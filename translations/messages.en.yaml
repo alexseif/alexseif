@@ -1,22 +1,22 @@
 # Landing Page Translations
-landing_page:
+wordpress_optimize:
     meta:
         title: "WordPress Optimize – WordPress Fixes & Maintenance"
-    
+
     navigation:
-        what: "What"
-        who: "Who"
-        why: "Why"
-        where: "Where"
-    
+        what: "What you get"
+        who: "Who is it for"
+        why: "Why choose me"
+        where: "Where to reach me"
+
     header:
         title: "WordPress Fixes. Fast. Reliable. Human."
         subtitle: "I fix, maintain, and build WordPress sites—same day support, clear pricing, no stress."
         cta_button: "💬 Chat on WhatsApp"
-    
+
     services:
         title: "What you get 💼"
-        
+
         fix_site:
             title: "🛠️ Fix My Site"
             price_egp: "EGP 1,500"
@@ -27,8 +27,8 @@ landing_page:
                 - "Bug & plugin fixes"
                 - "Speed or layout issues"
                 - "Same-day delivery"
-            cta: "Fix it now"
-        
+            cta_text: "Fix it now"
+
         maintenance:
             title: "🛡️ Monthly Maintenance"
             price_egp: "EGP 2,500"
@@ -37,8 +37,8 @@ landing_page:
                 - "Updates & backups"
                 - "Security & uptime checks"
                 - "Priority support"
-            cta: "Subscribe"
-        
+            cta_text: "Subscribe"
+
         redesign:
             title: "♻️ Redesign My Site"
             price_egp: "EGP 5,000"
@@ -49,8 +49,8 @@ landing_page:
                 - "Modern layout & structure"
                 - "Speed & mobile optimization"
                 - "Delivered in 3–5 days"
-            cta: "Refresh now"
-        
+            cta_text: "Refresh now"
+
         build_site:
             title: "🧱 Build My Site"
             price_egp: "EGP 7,500"
@@ -61,8 +61,8 @@ landing_page:
                 - "Good for landing/squeeze pages"
                 - "Mobile + SEO optimized"
                 - "Delivered in 5–7 days"
-            cta: "Start project"
-    
+            cta_text: "Start project"
+
     clients:
         title: "Trusted by 400+ Clients 👥"
         subtitle: "Over 400 clients worldwide trust me with their WordPress sites, including:"
@@ -77,7 +77,7 @@ landing_page:
             - "Startups"
             - "And more!"
         conclusion: "Whether you need a quick fix or ongoing support, I’m here to help."
-    
+
     why_choose:
         title: "Why Clients Choose Me ✨"
         reasons:
@@ -87,11 +87,11 @@ landing_page:
             - "Same-day support available"
             - "Transparent pricing, no surprises"
             - "Trusted by 400+ clients worldwide"
-    
+
     contact:
         title: "📱 Let's Talk About Your Project"
         subtitle: "Not sure what you need? I’ll help you figure it out."
         cta_button: "💬 Chat with Alex"
-    
+
     footer:
         copyright: "© 2025 WP Optimize by Alex Seif. All rights reserved."

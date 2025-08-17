@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ 'landing_page.meta.title'|trans }}
+	{{ 'wordpress_optimize.meta.title'|trans }}
 {% endblock %}
 {% block stylesheets %}
 	{{ parent()}}
@@ -19,16 +19,16 @@
 	<nav class="nav-menu">
 		<ul>
 			<li>
-				<a href="#services" title="{{ 'landing_page.navigation.what'|trans }}">{{ 'landing_page.navigation.what'|trans }}</a>
+				<a href="#services" title="{{ 'wordpress_optimize.navigation.what'|trans }}">{{ 'wordpress_optimize.navigation.what'|trans }}</a>
 			</li>
 			<li>
-				<a href="#clients" title="{{ 'landing_page.navigation.who'|trans }}">{{ 'landing_page.navigation.who'|trans }}</a>
+				<a href="#clients" title="{{ 'wordpress_optimize.navigation.who'|trans }}">{{ 'wordpress_optimize.navigation.who'|trans }}</a>
 			</li>
 			<li>
-				<a href="#why" title="{{ 'landing_page.navigation.why'|trans }}">{{ 'landing_page.navigation.why'|trans }}</a>
+				<a href="#why" title="{{ 'wordpress_optimize.navigation.why'|trans }}">{{ 'wordpress_optimize.navigation.why'|trans }}</a>
 			</li>
 			<li>
-				<a href="#contact" title="{{ 'landing_page.navigation.where'|trans }}">{{ 'landing_page.navigation.where'|trans }}</a>
+				<a href="#contact" title="{{ 'wordpress_optimize.navigation.where'|trans }}">{{ 'wordpress_optimize.navigation.where'|trans }}</a>
 			</li>
 			<li>
 				{% if app.request.locale != 'en' %}
@@ -43,96 +43,60 @@
 	</nav>
 	<main id="site-wrapper">
 		<header>
-			<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WP Optimize Logo"/>
-			<h1>{{ 'landing_page.header.title'|trans }}</h1>
-			<p>{{ 'landing_page.header.subtitle'|trans }}</p>
-			<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'landing_page.header.cta_button'|trans }}</a>
+			<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimize Logo"/>
+			<h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
+			<p>{{ 'wordpress_optimize.header.subtitle'|trans }}</p>
+			<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
 		</header>
 
 		<section class="section" id="services">
-			<h2>{{ 'landing_page.services.title'|trans }}</h2>
+			<h2>{{ 'wordpress_optimize.services.title'|trans }}</h2>
 			<div class="services">
-				<div class="card">
-					<h3>{{ 'landing_page.services.fix_site.title'|trans }}</h3>
-					<p></p>
-					<p>
-						<strong>
-							<del>{{ 'landing_page.services.fix_site.original_price'|trans }}</del>
-							<span style="color:#0182BE;">{{ 'landing_page.services.fix_site.price_egp'|trans }}</span>
-						</strong>
-						<span style="float:{{ (app.request.locale != 'en') ? 'left' : 'right'}};">{{ 'landing_page.services.fix_site.price_usd'|trans }}</span>
+				{% for package in packages %}
+					<div class="card">
+						<div class="card-header">
+							<h3>{{ package.title|trans }}</h3>
+						</div>
+						<div class="card-body">
+							<h4>{{ package.subtitle}}</h4>
+							<p></p>
+							<p>
+								<span>{{ package.price_usd|format_currency('USD') }}</span>
+								<strong style="float:{{ (app.request.locale != 'en') ? 'left' : 'right'}};">
+
+									{% if package.price_sales is defined  %}
+
+										<del>{{ package.price_egp|format_currency('EGP') }}</del>
+
+										<span style="color:#0182BE;">{{ package.price_sales|format_currency('EGP') }}</span>
+									{% else %}
+										<span style="color:#0182BE;">{{ package.price_egp|format_currency('EGP') }}</span>
+									{% endif %}
+								</strong>
 
 
-					</p>
-					<p style="color:#0182BE; font-weight: bold;">{{ 'landing_page.services.fix_site.offer'|trans }}</p>
-					<ul>
-						<li>{{ 'landing_page.services.fix_site.features.0'|trans }}</li>
-						<li>{{ 'landing_page.services.fix_site.features.1'|trans }}</li>
-						<li>{{ 'landing_page.services.fix_site.features.2'|trans }}</li>
-					</ul>
-					<a href="http://bit.ly/44z0weK" target="_blank">{{ 'landing_page.services.fix_site.cta'|trans }}</a>
-				</div>
+							</p>
+							<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
+							<ul>
+								{% for feature in package.features %}
+									<li>{{ feature|trans }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+						<div class="card-footer">
+							<a href="{{ package.cta_link}}" target="_blank" class="cta_link">{{ package.cta_text|trans }}</a>
+						</div>
+					</div>
+					<!-- .card -->
+				{% endfor %}
 
-				<div class="card">
-					<h3>{{ 'landing_page.services.maintenance.title'|trans }}</h3>
-					<p></p>
-					<p>
-						<strong>{{ 'landing_page.services.maintenance.price_egp'|trans }}</strong>
-						<span style="float:{{ (app.request.locale != 'en') ? 'left' : 'right'}};">{{ 'landing_page.services.maintenance.price_usd'|trans }}</span>
-
-					</p>
-					<ul>
-						<li>{{ 'landing_page.services.maintenance.features.0'|trans }}</li>
-						<li>{{ 'landing_page.services.maintenance.features.1'|trans }}</li>
-						<li>{{ 'landing_page.services.maintenance.features.2'|trans }}</li>
-					</ul>
-					<a href="https://bit.ly/4ktpnXl" target="_blank">{{ 'landing_page.services.maintenance.cta'|trans }}</a>
-				</div>
-
-				<div class="card">
-					<h3>{{ 'landing_page.services.redesign.title'|trans }}</h3>
-					<p>
-						<strong>
-							<del>{{ 'landing_page.services.redesign.original_price'|trans }}</del>
-							<span style="color:#0182BE;">{{ 'landing_page.services.redesign.price_egp'|trans }}</span>
-						</strong>
-						<span style="float:{{ (app.request.locale != 'en') ? 'left' : 'right'}};">{{ 'landing_page.services.redesign.price_usd'|trans }}</span>
-
-					</p>
-					<p style="color:#0182BE; font-weight: bold;">{{ 'landing_page.services.redesign.offer'|trans }}</p>
-					<ul>
-						<li>{{ 'landing_page.services.redesign.features.0'|trans }}</li>
-						<li>{{ 'landing_page.services.redesign.features.1'|trans }}</li>
-						<li>{{ 'landing_page.services.redesign.features.2'|trans }}</li>
-					</ul>
-					<a href="https://bit.ly/4ktZBSJ" target="_blank">{{ 'landing_page.services.redesign.cta'|trans }}</a>
-				</div>
-
-				<div class="card">
-					<h3>{{ 'landing_page.services.build_site.title'|trans }}</h3>
-					<p>
-						<strong>
-							<del>{{ 'landing_page.services.build_site.original_price'|trans }}</del>
-							<span style="color:#0182BE;">{{ 'landing_page.services.build_site.price_egp'|trans }}</span>
-						</strong>
-						<span style="float:{{ (app.request.locale != 'en') ? 'left' : 'right'}};">{{ 'landing_page.services.build_site.price_usd'|trans }}</span>
-
-					</p>
-					<p style="color:#0182BE; font-weight: bold;">{{ 'landing_page.services.build_site.offer'|trans }}</p>
-					<ul>
-						<li>{{ 'landing_page.services.build_site.features.0'|trans }}</li>
-						<li>{{ 'landing_page.services.build_site.features.1'|trans }}</li>
-						<li>{{ 'landing_page.services.build_site.features.2'|trans }}</li>
-					</ul>
-					<a href="https://bit.ly/4klnE6c" target="_blank">{{ 'landing_page.services.build_site.cta'|trans }}</a>
-				</div>
 			</div>
 		</section>
 
 		<section class="portfolio " id="clients">
 			<div class="section">
-				<h2>{{ 'landing_page.clients.title'|trans }}</h2>
-				<p>{{ 'landing_page.clients.subtitle'|trans }}</p>
+				<h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
+				<p>{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
 			</div>
 			<div id="clients">
 				<div class="masonry-carousel">
@@ -152,52 +116,51 @@
 				</div>
 			</div>
 			<div class="section">
-				<h3>{{ 'landing_page.clients.who_is_it_for'|trans }}</h3>
+				<h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
 				<ul class="fancy-list">
-					<li>{{ 'landing_page.clients.target_audience.0'|trans }}</li>
-					<li>{{ 'landing_page.clients.target_audience.1'|trans }}</li>
-					<li>{{ 'landing_page.clients.target_audience.2'|trans }}</li>
-					<li>{{ 'landing_page.clients.target_audience.3'|trans }}</li>
-					<li>{{ 'landing_page.clients.target_audience.4'|trans }}</li>
-					<li>{{ 'landing_page.clients.target_audience.5'|trans }}</li>
-					<li>{{ 'landing_page.clients.target_audience.6'|trans }}</li>
-					<li>{{ 'landing_page.clients.target_audience.7'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.2'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.3'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.4'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.5'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
+					<li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
 				</ul>
-				<p>{{ 'landing_page.clients.conclusion'|trans }}</p>
+				<p>{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
 			</div>
 		</section>
 
 		<section class="section" id="why">
-			<h2>{{ 'landing_page.why_choose.title'|trans }}</h2>
+			<h2>{{ 'wordpress_optimize.why_choose.title'|trans }}</h2>
 
 			<ul class="check-list">
-				<li>{{ 'landing_page.why_choose.reasons.0'|trans }}</li>
-				<li>{{ 'landing_page.why_choose.reasons.1'|trans }}</li>
-				<li>{{ 'landing_page.why_choose.reasons.2'|trans }}</li>
-				<li>{{ 'landing_page.why_choose.reasons.3'|trans }}</li>
-				<li>{{ 'landing_page.why_choose.reasons.4'|trans }}</li>
-				<li>{{ 'landing_page.why_choose.reasons.5'|trans }}</li>
+				<li>{{ 'wordpress_optimize.why_choose.reasons.0'|trans }}</li>
+				<li>{{ 'wordpress_optimize.why_choose.reasons.1'|trans }}</li>
+				<li>{{ 'wordpress_optimize.why_choose.reasons.2'|trans }}</li>
+				<li>{{ 'wordpress_optimize.why_choose.reasons.3'|trans }}</li>
+				<li>{{ 'wordpress_optimize.why_choose.reasons.4'|trans }}</li>
+				<li>{{ 'wordpress_optimize.why_choose.reasons.5'|trans }}</li>
 			</ul>
 		</section>
 
 		<section class="section d-flex flex-column flex-md-row mb-5 fs-4 align-items-end" id="contact">
 			<div class="col">
-				<h2>{{ 'landing_page.contact.title'|trans }}</h2>
-				<p>{{ 'landing_page.contact.subtitle'|trans }}</p>
-				<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'landing_page.contact.cta_button'|trans }}</a>
+				<h2>{{ 'wordpress_optimize.contact.title'|trans }}</h2>
+				<p>{{ 'wordpress_optimize.contact.subtitle'|trans }}</p>
+				<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'wordpress_optimize.contact.cta_button'|trans }}</a>
 			</div>
 			<div class="col">
 				<div class="image-wrapper" style="text-align:end;">
-					<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, freelance web developer" width="200">
+					<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, freelance web developer" width="200" class="circle">
 				</div>
 			</div>
 		</section>
 	</main>
 {% endblock %}
-
 {% block footer %}
 	<footer>
-		{{ 'landing_page.footer.copyright'|trans }}
+		{{ 'wordpress_optimize.footer.copyright'|trans }}
 		<a href="https://bit.ly/m/wpoptimize">
 			<img src="{{ asset('build/images/WhatsApp-Icon.png') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
 		</a>
