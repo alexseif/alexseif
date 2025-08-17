@@ -64,7 +64,18 @@ class LandingPageController extends AbstractController
             'cta_text' =>    '“Get a complete site built for you”',
             'cta_link' => '#'
         ],
+        /**
+ 🧲 Optional Add-Ons
+Multilingual setup: +$99
 
+Extra product uploads: +$49 per 50 items
+
+Monthly maintenance: +$49/month
+
+Hosting & domain setup: +$79
+
+Speed audit: Free with any package
+     */
         // 'fix_site' => [
         //     'title' => 'wordpress_optimize.services.fix_site.title',
         //     'price_usd' => 50,
