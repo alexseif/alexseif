@@ -10,42 +10,39 @@
 {% block structured_data %}
 	<script type="application/ld+json">
 		{
-																		"@context": "https://schema.org",
-																		"@type": "ProfessionalService",
-																		"name": "Alex Seif – WordPress Optimization",
-																		"image": "https://alexseif.com/images/WordPress-Optimize-card.png",
-												
-																		"url": "https://alexseif.com/wordpress_optimize",
-																		"description": "Conversion-first WordPress optimization packages for clinics, businesses, and eCommerce. Speed, security, and clarity—dialed in.",
-																		"address": {
-																		"@type": "PostalAddress",
-																		"addressLocality": "Cairo",
-																		"addressRegion": "EG",
-																		"addressCountry": "Egypt"
-																		},
-																		"telephone": "+20-100-400-6332",
-																		"areaServed": "EG",
-																		"priceRange": "$$",
-																		"founder": {
-																		"@type": "Person",
-																		"name": "Alex Seif",
-																		"jobTitle": "Freelance Web Developer & Strategist",
-																		"sameAs": [
-																			"https://twitter.com/alexseif",
-																			"https://linkedin.com/in/alexseif",
-																			"https://github.com/alexseif"
-																		]
-																		}
-																	}
+																														"@context": "https://schema.org",
+																														"@type": "ProfessionalService",
+																														"name": "Alex Seif – WordPress Optimization",
+																														"image": "https://alexseif.com/images/WordPress-Optimize-card.png",
+																														
+																														"url": "https://alexseif.com/wordpress_optimize",
+																														"description": "Conversion-first WordPress optimization packages for clinics, businesses, and eCommerce. Speed, security, and clarity—dialed in.",
+																														"address": {
+																														"@type": "PostalAddress",
+																														"addressLocality": "Cairo",
+																														"addressRegion": "EG",
+																														"addressCountry": "Egypt"
+																														},
+																														"telephone": "+20-100-400-6332",
+																														"areaServed": "EG",
+																														"priceRange": "$$",
+																														"founder": {
+																														"@type": "Person",
+																														"name": "Alex Seif",
+																														"jobTitle": "Freelance Web Developer & Strategist",
+																														"sameAs": [
+																														"https://twitter.com/alexseif",
+																														"https://linkedin.com/in/alexseif",
+																														"https://github.com/alexseif"
+																														]
+																														}
+																														}
 	</script>
 {% endblock %}
 
 {% block meta %}
-
-
 	<meta
 	name="description" content="Speed, security, and conversion—dialed in. Choose your WordPress optimization package and get results fast.">
-
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://alexseif.com/wordpress_optimize">
@@ -53,8 +50,6 @@
 	<meta property="og:description" content="Speed, security, and conversion—dialed in. Choose your WordPress optimization package and get results fast.">
 	<meta
 	property="og:image" content="https://alexseif.com/images/WordPress-Optimize-card.png">
-
-
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@alexseif">
@@ -62,13 +57,9 @@
 	<meta name="twitter:title" content="WordPress Optimization Packages – Alex Seif">
 	<meta name="twitter:description" content="Speed, security, and conversion—dialed in. Choose your WordPress optimization package and get results fast.">
 	<meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png">
-
-
 {% endblock %}
 
-
 {% block body %}
-
 	<canvas class="background-grid" id="dotCanvas"></canvas>
 	<div id="background-noise">
 		<div id="noise-bg"></div>
@@ -281,12 +272,18 @@
 			</div>
 		</section>
 	</main>
+	<footer>
+		{{ 'wordpress_optimize.footer.copyright'|trans }}
+		<a href="https://bit.ly/m/wpoptimize" target="_blank">
+			<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
+		</a>
+	</footer>
 {% endblock %}
 {% block footer %}
 	<footer>
 		{{ 'wordpress_optimize.footer.copyright'|trans }}
-		<a href="https://bit.ly/m/wpoptimize">
-			<img src="{{ asset('build/images/WhatsApp-Icon.png') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
+		<a href="https://bit.ly/m/wpoptimize" target="_blank">
+			<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
 		</a>
 	</footer>
 {% endblock %}
