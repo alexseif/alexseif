@@ -27,7 +27,7 @@ class LandingPageController extends AbstractController
                 'WhatsApp support'
             ],
             'cta_text' =>    'cta_text',
-            'cta_link' => 'http://bit.ly/44z0weK'
+            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
         ],
         'builder' => [
             'title' => 'title',
@@ -46,7 +46,7 @@ class LandingPageController extends AbstractController
                 'Delivery in 7–10 days',
             ],
             'cta_text' =>    'cta_text',
-            'cta_link' => '#'
+            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
         ],
         'seller' => [
             'title' => 'title',
@@ -65,7 +65,7 @@ class LandingPageController extends AbstractController
                 'WhatsApp + email support',
             ],
             'cta_text' =>    'cta_text',
-            'cta_link' => '#'
+            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
         ],
     ];
 
