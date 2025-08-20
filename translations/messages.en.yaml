@@ -10,15 +10,17 @@ wordpress_optimize:
         where: "Where to reach me"
 
     header:
-        title: "WordPress Fixes. Fast. Reliable. Human."
+        title: "WordPress Optimize: Fixes. Fast. Reliable. Human."
         subtitle: "I fix, maintain, and build WordPress sites—same day support, clear pricing, no stress."
         cta_button: "💬 Chat on WhatsApp"
 
     services:
         title: "What you get 💼"
 
-        fix_site:
-            title: "🛠️ Fix My Site"
+        starter:
+            title: "🟢 Starter"
+            subtitle: "WP Care & Speed Boost"
+            ideal: "Ideal for: Site owners who need performance, security, and peace of mind"
             price_egp: "EGP 1,500"
             price_usd: "$50"
             original_price: "EGP 2,500"
@@ -29,18 +31,22 @@ wordpress_optimize:
                 - "Same-day delivery"
             cta_text: "Fix it now"
 
-        maintenance:
-            title: "🛡️ Monthly Maintenance"
+        builder:
+            title: "🔵 Builder"
+            subtitle: "Complete Site Build"
+            ideal: "Ideal for: Clinics, coaches, and small businesses starting fresh"
             price_egp: "EGP 2,500"
             price_usd: "$50"
             features:
                 - "Updates & backups"
                 - "Security & uptime checks"
                 - "Priority support"
-            cta_text: "Subscribe"
+            cta_text: "Build it now"
 
-        redesign:
-            title: "♻️ Redesign My Site"
+        seller:
+            title: "🟣 Seller"
+            subtitle: "eCommerce Power Pack"
+            ideal: "Ideal for: Product-based businesses ready to sell online"
             price_egp: "EGP 5,000"
             price_usd: "$150"
             original_price: "EGP 7,500"
@@ -49,19 +55,19 @@ wordpress_optimize:
                 - "Modern layout & structure"
                 - "Speed & mobile optimization"
                 - "Delivered in 3–5 days"
-            cta_text: "Refresh now"
+            cta_text: "Start Selling"
 
-        build_site:
-            title: "🧱 Build My Site"
-            price_egp: "EGP 7,500"
-            price_usd: "$200"
-            original_price: "EGP 10,000"
-            offer: "🎉 Limited-time offer!"
+        add-on:
+            title: "🧲 Optional Add-Ons"
+            subtitle: "More Goodies"
             features:
-                - "Good for landing/squeeze pages"
-                - "Mobile + SEO optimized"
-                - "Delivered in 5–7 days"
-            cta_text: "Start project"
+                - "Multilingual setup: +$99"
+                - "Extra product uploads: +$49 per 50 items"
+                - "Monthly maintenance: +$49/month"
+                - "Hosting: +$100"
+                - "Hosting & domain setup: +$79"
+                - "Speed audit: Free with any package"
+            cta_text: "Start Selling"
 
     clients:
         title: "Trusted by 400+ Clients 👥"

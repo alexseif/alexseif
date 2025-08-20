@@ -1,4 +1,6 @@
 /* Import Google Fonts for icons */
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 // Color Variables
@@ -8,6 +10,24 @@ $accent-color: #0182BE;
 $background-dark: #1e1e1e;
 $text-light: #ccc;
 $white: #fff;
+
+.btn-indigo {
+    background-color: indigo;
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: darken(indigo, 10%);
+    }
+
+    &:focus,
+    &:active {
+        box-shadow: 0 0 0 0.25rem rgba($success, 0.5); // Using Bootstrap's success color for focus ring
+    }
+}
+
+$theme-colors: map-merge($theme-colors,
+        ("indigo": indigo));
 
 /* Clients carousel styles - Updated to masonry layout */
 #clients {
@@ -35,12 +55,19 @@ $white: #fff;
         max-height: 300px;
         overflow: hidden;
         position: relative;
+
+        &:last-child {
+            .masonry-track {
+                animation: scroll 30s linear infinite;
+            }
+        }
     }
 
     .masonry-track {
         display: flex;
         animation: scroll 40s linear infinite;
         width: max-content;
+
     }
 
     .masonry-track:hover {
@@ -360,6 +387,30 @@ h1 {
             background: linear-gradient(45deg, $primary-color, $primary-color);
         }
 
+        &.card-top-success {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(45deg, $success, $success);
+            }
+        }
+
+        &.card-top-indigo {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(45deg, $indigo, $indigo);
+            }
+        }
+
         &:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
@@ -384,20 +435,20 @@ h1 {
 
         a.cta_link {
             display: block;
-            margin-top: 15px;
-            color: $primary-color;
-            text-decoration: none;
-            font-weight: bold;
+            // margin-top: 15px;
+            // color: $primary-color;
+            // text-decoration: none;
+            // font-weight: bold;
             position: relative;
-            padding-right: 20px;
 
             &::after {
                 content: "→";
                 position: absolute;
-                right: 0;
-                top: 50%;
+                right: 1rem;
+                top: 54%;
                 transform: translateY(-50%);
                 transition: right 0.3s ease;
+                font-size: large;
             }
 
             &:hover::after {
@@ -422,14 +473,14 @@ h1 {
 
 /* Navigation menu */
 .nav-menu {
-    text-align: center;
+    // text-align: center;
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
     background: rgba(30, 30, 30, 0.9);
-    border-radius: 8px;
-    padding: 10px;
+    // border-radius: 8px;
+    // padding: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -443,6 +494,7 @@ h1 {
 
 .nav-menu li {
     list-style: none;
+    margin-bottom: 0;
 }
 
 .nav-menu a {

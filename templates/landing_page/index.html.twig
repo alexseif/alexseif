@@ -16,7 +16,7 @@
 		<canvas id="noise-canvas"></canvas>
 	</div>
 	<!-- Navigation Menu -->
-	<nav class="nav-menu">
+	<nav class="nav-menu rounded p-2">
 		<ul>
 			<li>
 				<a href="#services" title="{{ 'wordpress_optimize.navigation.what'|trans }}">{{ 'wordpress_optimize.navigation.what'|trans }}</a>
@@ -30,11 +30,15 @@
 			<li>
 				<a href="#contact" title="{{ 'wordpress_optimize.navigation.where'|trans }}">{{ 'wordpress_optimize.navigation.where'|trans }}</a>
 			</li>
-			<li>
+			<li class="d-flex justify-content-between">
 				{% if app.request.locale != 'en' %}
 					<a title="English" href="{{ path("app_landing_page_locale", {"_locale":"en"}) }}">EN</a>
-				{% else %}
-					<a title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"eg"}) }}">🇪🇬</a>
+				{% endif %}
+				{% if app.request.locale != 'ar' %}
+					<a title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"ar"}) }}">ع</a>
+				{% endif %}
+				{% if app.request.locale != 'eg' %}
+					<a title="مصري" href="{{ path("app_landing_page_locale", {"_locale":"eg"}) }}">🇪🇬</a>
 				{% endif %}
 			</li>
 
@@ -43,29 +47,27 @@
 	</nav>
 	<main id="site-wrapper">
 		<header>
-			<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimize Logo"/>
-			<h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
-			<p>{{ 'wordpress_optimize.header.subtitle'|trans }}</p>
+			<div class="d-flex justify-content-center align-items-center">
+				<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimize Logo" class="me-2"/>
+				<h1 class="w-25">{{ 'wordpress_optimize.header.title'|trans }}</h1>
+			</div>
+			<p class="fs-3 m-2">{{ 'wordpress_optimize.header.subtitle'|trans }}</p>
 			<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
 		</header>
 
 		<section class="section" id="services">
 			<h2>{{ 'wordpress_optimize.services.title'|trans }}</h2>
 			<div class="services">
-				{% for package in packages %}
-					<div class="card">
-						<div class="card-header">
-							<h3>{{ package.title|trans }}</h3>
-						</div>
-						<div class="card-body">
-							<h4>{{ package.subtitle}}</h4>
-							<p></p>
-							<p>
-								<span>{{ package.price_usd|format_currency('USD') }}</span>
-								<strong style="float:{{ (app.request.locale != 'en') ? 'left' : 'right'}};">
+				{% for key,package in packages %}
+					{% set translation_prefix = 'wordpress_optimize.services.' ~ key ~ '.' %}
 
+					<div class="card card-top-{{ package.color }}">
+						<div class="card-header d-flex justify-content-between">
+							<h3>{{ (translation_prefix ~ package.title)|trans }}</h3>
+							<div class="text-end">
+								<strong>{{ package.price_usd|format_currency('USD') }}</strong>
+								<strong class="d-flex flex-column">
 									{% if package.price_sales is defined  %}
-
 										<del>{{ package.price_egp|format_currency('EGP') }}</del>
 
 										<span style="color:#0182BE;">{{ package.price_sales|format_currency('EGP') }}</span>
@@ -73,30 +75,59 @@
 										<span style="color:#0182BE;">{{ package.price_egp|format_currency('EGP') }}</span>
 									{% endif %}
 								</strong>
-
-
-							</p>
+							</div>
+						</div>
+						<div class="card-body">
+							<h4 class="mb-4">{{ (translation_prefix ~ package.subtitle)|trans }}</h4>
+							<hr/>
 							<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
 							<ul>
 								{% for feature in package.features %}
 									<li>{{ feature|trans }}</li>
 								{% endfor %}
 							</ul>
+							<hr/>
+							<p class="fs-5">{{ (translation_prefix ~ package.ideal)|trans }}</p>
 						</div>
 						<div class="card-footer">
-							<a href="{{ package.cta_link}}" target="_blank" class="cta_link">{{ package.cta_text|trans }}</a>
+							<a href="{{ package.cta_link }}" target="_blank" class="cta_link btn btn-{{package.color}} fw-bold">{{ (translation_prefix ~ package.cta_text)|trans }}</a>
+
 						</div>
 					</div>
 					<!-- .card -->
 				{% endfor %}
+				{% set translation_prefix = 'wordpress_optimize.services.add-on.'  %}
 
 			</div>
+
+			<div class="card w-50 mx-auto mt-5">
+				<div class="card-header d-flex justify-content-between">
+					<h3 class="m-3">{{ (translation_prefix ~ 'title')|trans }}</h3>
+				</div>
+				<div class="card-body">
+					<h4 class="mb-4">{{ (translation_prefix ~ 'subtitle')|trans }}</h4>
+					<hr/>
+					<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
+					<ul>
+						<li>{{ (translation_prefix ~ 'features.0')|trans }}</li>
+						<li>{{ (translation_prefix ~ 'features.1')|trans }}</li>
+						<li>{{ (translation_prefix ~ 'features.2')|trans }}</li>
+						<li>{{ (translation_prefix ~ 'features.3')|trans }}</li>
+						<li>{{ (translation_prefix ~ 'features.4')|trans }}</li>
+						<li>{{ (translation_prefix ~ 'features.5')|trans }}</li>
+					</ul>
+				</div>
+				<div class="card-footer text-end">
+					<a href="https://wa.me/201004006332" target="_blank" class="cta_link btn btn-primary fw-bold">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+				</div>
+			</div>
+			<!-- .card -->
 		</section>
 
 		<section class="portfolio " id="clients">
 			<div class="section">
 				<h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
-				<p>{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
+				<p class="fs-3">{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
 			</div>
 			<div id="clients">
 				<div class="masonry-carousel">
@@ -114,6 +145,30 @@
 						{% endfor %}
 					</div>
 				</div>
+				<!-- .masonry-carousel -->
+				<div class="masonry-carousel">
+					<div class="masonry-track">
+						{% set shuffled = portfolio_images|sort((a, b) => random() < 0.5 ? -1 : 1) %}
+
+
+						{% for image in shuffled %}
+							<div class="masonry-item">
+								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
+							</div>
+						{% endfor %}
+						<!-- Duplicate for infinite scroll -->
+						{% for image in portfolio_images %}
+							<div class="masonry-item">
+								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+
+
+			</div>
+			<div class="text-center">
+				<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
 			</div>
 			<div class="section">
 				<h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
@@ -127,9 +182,12 @@
 					<li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
 					<li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
 				</ul>
-				<p>{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
+				<p class="fs-3">{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
 			</div>
 		</section>
+		<div class="text-center">
+			<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+		</div>
 
 		<section class="section" id="why">
 			<h2>{{ 'wordpress_optimize.why_choose.title'|trans }}</h2>
