@@ -16,40 +16,47 @@
 		<canvas id="noise-canvas"></canvas>
 	</div>
 	<!-- Navigation Menu -->
-	<nav class="nav-menu rounded p-2">
-		<ul>
-			<li>
-				<a href="#services" title="{{ 'wordpress_optimize.navigation.what'|trans }}">{{ 'wordpress_optimize.navigation.what'|trans }}</a>
-			</li>
-			<li>
-				<a href="#clients" title="{{ 'wordpress_optimize.navigation.who'|trans }}">{{ 'wordpress_optimize.navigation.who'|trans }}</a>
-			</li>
-			<li>
-				<a href="#why" title="{{ 'wordpress_optimize.navigation.why'|trans }}">{{ 'wordpress_optimize.navigation.why'|trans }}</a>
-			</li>
-			<li>
-				<a href="#contact" title="{{ 'wordpress_optimize.navigation.where'|trans }}">{{ 'wordpress_optimize.navigation.where'|trans }}</a>
-			</li>
-			<li class="d-flex justify-content-between d-none">
-				{% if app.request.locale != 'en' %}
-					<a title="English" href="{{ path("app_landing_page_locale", {"_locale":"en"}) }}">EN</a>
-				{% endif %}
-				{% if app.request.locale != 'ar' %}
-					<a title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"ar"}) }}">ع</a>
-				{% endif %}
-				{% if app.request.locale != 'eg' %}
-					<a title="مصري" href="{{ path("app_landing_page_locale", {"_locale":"eg"}) }}">🇪🇬</a>
-				{% endif %}
-			</li>
-
-
-		</ul>
+	<nav class="navbar navbar-expand-lg navbar-dark rounded p-2 fixed-top nav-menu">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link" href="#services" title="{{ 'wordpress_optimize.navigation.what'|trans }}">{{ 'wordpress_optimize.navigation.what'|trans }}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#clients" title="{{ 'wordpress_optimize.navigation.who'|trans }}">{{ 'wordpress_optimize.navigation.who'|trans }}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#why" title="{{ 'wordpress_optimize.navigation.why'|trans }}">{{ 'wordpress_optimize.navigation.why'|trans }}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact" title="{{ 'wordpress_optimize.navigation.where'|trans }}">{{ 'wordpress_optimize.navigation.where'|trans }}</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav flex-column d-none">
+					<li class="nav-item">
+						{% if app.request.locale != 'en' %}
+							<a class="nav-link" title="English" href="{{ path("app_landing_page_locale", {"_locale":"en"}) }}">EN</a>
+						{% endif %}
+						{% if app.request.locale != 'ar' %}
+							<a class="nav-link" title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"ar"}) }}">ع</a>
+						{% endif %}
+						{% if app.request.locale != 'eg' %}
+							<a class="nav-link" title="مصري" href="{{ path("app_landing_page_locale", {"_locale":"eg"}) }}">🇪🇬</a>
+						{% endif %}
+					</li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 	<main id="site-wrapper">
 		<header>
 			<div class="d-flex justify-content-center align-items-center">
 				<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimize Logo" class="me-2"/>
-				<h1 class="w-25">{{ 'wordpress_optimize.header.title'|trans }}</h1>
+				<h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
 			</div>
 			<p class="fs-3 m-2">{{ 'wordpress_optimize.header.subtitle'|trans }}</p>
 			<a href="https://wa.me/201004006332" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
@@ -203,7 +210,7 @@
 		</section>
 
 		<section class="section d-flex flex-column flex-md-row mb-5 fs-4 " id="contact">
-			<div class="col-3">
+			<div class="col col-lg-3 text-center mb-2">
 				<div class="image-wrapper" style="">
 					<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, freelance web developer" width="200" class="rounded-circle">
 				</div>
