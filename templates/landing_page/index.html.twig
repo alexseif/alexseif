@@ -30,7 +30,7 @@
 			<li>
 				<a href="#contact" title="{{ 'wordpress_optimize.navigation.where'|trans }}">{{ 'wordpress_optimize.navigation.where'|trans }}</a>
 			</li>
-			<li class="d-flex justify-content-between">
+			<li class="d-flex justify-content-between d-none">
 				{% if app.request.locale != 'en' %}
 					<a title="English" href="{{ path("app_landing_page_locale", {"_locale":"en"}) }}">EN</a>
 				{% endif %}
