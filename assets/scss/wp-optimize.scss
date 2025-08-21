@@ -4,13 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 // Color Variables
-$primary-color: #0182BE;
-$secondary-color: #0182BE;
-$accent-color: #0182BE;
+$primary-color: #0079B6;
+$secondary-color: #0079B6;
+$accent-color: #0079B6;
 $background-dark: #1e1e1e;
 $text-light: #ccc;
 $white: #fff;
 
+$black: #0c0c0c;
 
 .btn-indigo {
     background-color: indigo;
@@ -29,6 +30,95 @@ $white: #fff;
 
 $theme-colors: map-merge($theme-colors,
         ("indigo": indigo));
+
+/* Header styles */
+header {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle, rgba(1, 130, 190, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+        z-index: -1;
+    }
+
+    img {
+        max-width: 100px;
+        margin-bottom: 10px;
+        filter: drop-shadow(0 0 10px rgba(1, 130, 190, 0.5));
+    }
+
+    border-radius: $border-radius;
+
+}
+
+#personal-intro,
+#personal-outro {
+    position: relative;
+    background: linear-gradient(to right, transparent 0%, transparent 100px, $black 150px, $black 100%);
+
+    .image-wrapper {
+        flex: 0 0 200px;
+        height: 200px;
+        // border-radius: 50%;
+        overflow: hidden;
+        margin-right: 1rem;
+    }
+
+    .title-wrapper {
+        flex: 1 1 auto;
+        border-radius: 1rem;
+        color: white;
+    }
+
+    .cta-wrapper {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+.cta-wrapper {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    // margin: 10px 0;
+    // font-size: clamp(1.5rem, 5vw, 3rem);
+    // font-size: 2em;
+    // background: linear-gradient(45deg, $primary-color, $primary-color);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // background-clip: text;
+    // max-width: 40vw;
+
+}
+
+h3 {
+    margin: 0;
+    color: $primary-color;
+    // font-size: 1.5em;
+}
+
+h4,
+.h4 {
+    // margin-top: 1rem;
+    // color: $primary-color;
+    // font-size: 1.25em;
+    font-style: italic;
+    width: auto;
+    line-height: 1.5;
+}
 
 /* Clients carousel styles - Updated to masonry layout */
 #clients {
@@ -262,101 +352,50 @@ ul.check-list li:hover {
     border-left: 4px solid $primary-color;
 }
 
-/* Header styles */
-header {
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle, rgba(1, 130, 190, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-    z-index: -1;
-}
-
-header img {
-    max-width: 100px;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 10px rgba(1, 130, 190, 0.5));
-}
-
-h1 {
-    margin: 10px 0;
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    // font-size: 2em;
-    background: linear-gradient(45deg, $primary-color, $primary-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    max-width: 40vw;
-
-}
-
-h3 {
-    margin: 0;
-    color: $primary-color;
-    // font-size: 1.5em;
-}
-
-h4 {
-    // margin-top: 1rem;
-    // color: $primary-color;
-    // font-size: 1.25em;
-    font-style: italic;
-    width: auto;
-}
 
 /* CTA Button with hover effect */
-.cta-button {
+.btn-cta {
     background: linear-gradient(45deg, $primary-color, $primary-color);
-    color: $white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
+    // color: $white;
+    padding: 10px 30px;
+    // border: none;
+    // border-radius: $border-radius;
     font-size: 1.1em;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
+    // text-decoration: none;
+    // display: inline-block;
+    // margin-top: 20px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(1, 130, 190, 0.3);
     position: relative;
     overflow: hidden;
-}
 
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(1, 130, 190, 0.5);
-}
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 20px rgba(1, 130, 190, 0.5);
+    }
 
-.cta-button::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 20px;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: rotate(30deg);
-    transition: all 0.6s;
-}
+    &::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 20px;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(30deg);
+        transition: all 0.6s;
+    }
 
-.cta-button:hover::after {
-    left: 120%;
+    &:hover::after {
+        left: 120%;
+    }
 }
 
 /* Section styles */
 .section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     h2 {
         text-align: center;
@@ -452,7 +491,7 @@ h4 {
             &::after {
                 content: "→";
                 position: absolute;
-                right: 1rem;
+                right: 2rem;
                 top: 54%;
                 transform: translateY(-50%);
                 transition: right 0.3s ease;
@@ -460,7 +499,7 @@ h4 {
             }
 
             &:hover::after {
-                right: -5px;
+                right: 1rem;
             }
         }
     }
@@ -561,5 +600,22 @@ footer::before {
         right: auto;
         left: 20px;
 
+    }
+
+    #personal-outro,
+    #personal-intro {
+        background: linear-gradient(to bottom, transparent 0%, transparent 100px, $black 150px, $black 100%);
+
+        .image-wrapper {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+
+        .cta-wrapper {
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
     }
 }

@@ -9,53 +9,33 @@
 {% endblock %}
 {% block structured_data %}
 	<script type="application/ld+json">
-		{
-																																														"@context": "https://schema.org",
-																																														"@type": "ProfessionalService",
-																																														"name": "Alex Seif – WordPress Optimization",
-																																														"image": "https://alexseif.com/images/WordPress-Optimize-card.png",
-																																														
-																																														"url": "https://alexseif.com/wordpress_optimize",
-																																														"description": "Conversion-first WordPress optimization packages for clinics, businesses, and eCommerce. Speed, security, and clarity—dialed in.",
-																																														"address": {
-																																														"@type": "PostalAddress",
-																																														"addressLocality": "Cairo",
-																																														"addressRegion": "EG",
-																																														"addressCountry": "Egypt"
-																																														},
-																																														"telephone": "+20-100-400-6332",
-																																														"areaServed": "EG",
-																																														"priceRange": "$$",
-																																														"founder": {
-																																														"@type": "Person",
-																																														"name": "Alex Seif",
-																																														"jobTitle": "Freelance Web Developer & Strategist",
-																																														"sameAs": [
-																																														"https://twitter.com/alexseif",
-																																														"https://linkedin.com/in/alexseif",
-																																														"https://github.com/alexseif"
-																																														]
-																																														}
-																																														}
+		{"@context": "https://schema.org","@type": "ProfessionalService", "name": "Alex Seif – WordPress Optimization", "image": "https://alexseif.com/images/WordPress-Optimize-card.png", "url": "https://alexseif.com/wordpress-optimiziation", "description":
+		{{ 'wordpress_optimize.meta.description'|trans }}, "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressRegion": "EG", "addressCountry": "Egypt" }, "telephone": "+20-100-400-6332", "areaServed": "EG", "priceRange": "$$", "founder": { "@type": "Person", "name": "Alex Seif", "jobTitle":
+		{{ 'wordpress_optimize.meta.job_title'|trans }}, "sameAs": [ "https://twitter.com/alexseif", "https://linkedin.com/in/alexseif", "https://github.com/alexseif", "https://www.instagram.com/alex_makes_websites" ] } }
+
+
 	</script>
 {% endblock %}
 
 {% block meta %}
 	<meta
-	name="description" content="Speed, security, and conversion—dialed in. Choose your WordPress optimization package and get results fast.">
+	name="description" content="{{ 'wordpress_optimize.meta.description'|trans }}">
+
+
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://alexseif.com/wordpress_optimize">
-	<meta property="og:title" content="WordPress Optimization Packages – Alex Seif">
-	<meta property="og:description" content="Speed, security, and conversion—dialed in. Choose your WordPress optimization package and get results fast.">
+	<meta property="og:url" content="https://alexseif.com/wordpress-optimization">
+	<meta property="og:title" content="{{ 'wordpress_optimize.meta.title'|trans }}">
+	<meta property="og:description" content="{{ 'wordpress_optimize.meta.description'|trans }}">
+
 	<meta
 	property="og:image" content="https://alexseif.com/images/WordPress-Optimize-card.png">
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@alexseif">
 	<meta name="twitter:creator" content="@alexseif">
-	<meta name="twitter:title" content="WordPress Optimization Packages – Alex Seif">
-	<meta name="twitter:description" content="Speed, security, and conversion—dialed in. Choose your WordPress optimization package and get results fast.">
+	<meta name="twitter:title" content="{{ 'wordpress_optimize.meta.title'|trans }}">
+	<meta name="twitter:description" content="{{ 'wordpress_optimize.meta.description'|trans }}">
 	<meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png">
 {% endblock %}
 
@@ -103,20 +83,30 @@
 		</div>
 	</nav>
 	<main id="site-wrapper">
-		<header>
-			<div class="d-flex justify-content-center align-items-center">
-				<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimize Logo" class="me-2"/>
-				<h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
-				<div class="image-wrapper" style="">
-					<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, freelance web developer" width="200" class="rounded-circle"><br/>
-					👋🏾 I'm Alex
+		<header class="container">
+			<div class="row">
+				<div class="col-12 col-md-2">
+					<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimization, speed up Wordpress" class="rounded-circle img-fluid"/>
+				</div>
+				<div class="col align-content-center">
+					<h1 class="text-start">{{ 'wordpress_optimize.header.title'|trans }}</h1>
 				</div>
 			</div>
-			<p class="fs-3 m-2">{{ 'wordpress_optimize.header.subtitle'|trans }}</p>
-			<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
 		</header>
 
-		<section class="section" id="services">
+		<div id="personal-intro" class="container rounded mb-5 d-flex flex-column flex-md-row ">
+			<div class="image-wrapper">
+				<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, {{ 'wordpress_optimize.meta.job_title'|trans }}" class="rounded-circle img-fluid">
+			</div>
+			<div class="title-wrapper align-content-center">
+				<h1 class="h4 text-start">{{ 'wordpress_optimize.header.subtitle'|trans|nl2br }}</h1>
+			</div>
+			<div class="cta-wrapper align-content-end m-0">
+				<a href=" https://wa.me/201004006332?text=" Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target=" " _blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+			</div>
+		</div>
+
+		<section class="section container" id="services">
 			<h2>{{ 'wordpress_optimize.services.title'|trans }}</h2>
 			<div class="services">
 				{% for key,package in packages %}
@@ -179,7 +169,9 @@
 					</ul>
 				</div>
 				<div class="card-footer text-end">
-					<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta_link btn btn-primary fw-bold">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+					<div class="cta-wrapper">
+						<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+					</div>
 				</div>
 			</div>
 			<!-- .card -->
@@ -228,66 +220,64 @@
 
 
 			</div>
-			<div class="text-center">
-				<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+			<div class="cta-wrapper">
+				<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
 			</div>
-			<div class="section">
-				<h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
-				<ul class="fancy-list">
-					<li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
-					<li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
-					<li>{{ 'wordpress_optimize.clients.target_audience.2'|trans }}</li>
-					<li>{{ 'wordpress_optimize.clients.target_audience.3'|trans }}</li>
-					<li>{{ 'wordpress_optimize.clients.target_audience.4'|trans }}</li>
-					<li>{{ 'wordpress_optimize.clients.target_audience.5'|trans }}</li>
-					<li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
-					<li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
-				</ul>
-				<p class="fs-3">{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
-			</div>
-		</section>
-		<div class="text-center">
-			<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta-button">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
 		</div>
-
-		<section class="section" id="why">
-			<h2>{{ 'wordpress_optimize.why_choose.title'|trans }}</h2>
-
-			<ul class="check-list">
-				<li>{{ 'wordpress_optimize.why_choose.reasons.0'|trans }}</li>
-				<li>{{ 'wordpress_optimize.why_choose.reasons.1'|trans }}</li>
-				<li>{{ 'wordpress_optimize.why_choose.reasons.2'|trans }}</li>
-				<li>{{ 'wordpress_optimize.why_choose.reasons.3'|trans }}</li>
-				<li>{{ 'wordpress_optimize.why_choose.reasons.4'|trans }}</li>
-				<li>{{ 'wordpress_optimize.why_choose.reasons.5'|trans }}</li>
-			</ul>
-		</section>
-
-		<section class="section d-flex flex-column flex-md-row mb-5 fs-4 " id="contact">
-			<div class="col col-lg-3 text-center mb-2">
-				<div class="image-wrapper" style="">
-					<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, freelance web developer" width="200" class="rounded-circle">
-				</div>
+	</section>
+	<section class="container section">
+		<h3 class="text-center">{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
+		<ul class="fancy-list">
+			<li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
+			<li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
+			<li>{{ 'wordpress_optimize.clients.target_audience.2'|trans }}</li>
+			<li>{{ 'wordpress_optimize.clients.target_audience.3'|trans }}</li>
+			<li>{{ 'wordpress_optimize.clients.target_audience.4'|trans }}</li>
+			<li>{{ 'wordpress_optimize.clients.target_audience.5'|trans }}</li>
+			<li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
+			<li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
+		</ul>
+		<p class="fs-3 text-center">{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
+		<div class="cta-wrapper">
+			<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+		</div>
+	</section>
+	<section class="section container" id="why">
+		<h2>{{ 'wordpress_optimize.why_choose.title'|trans }}</h2>
+		<ul class="check-list">
+			<li>{{ 'wordpress_optimize.why_choose.reasons.0'|trans }}</li>
+			<li>{{ 'wordpress_optimize.why_choose.reasons.1'|trans }}</li>
+			<li>{{ 'wordpress_optimize.why_choose.reasons.2'|trans }}</li>
+			<li>{{ 'wordpress_optimize.why_choose.reasons.3'|trans }}</li>
+			<li>{{ 'wordpress_optimize.why_choose.reasons.4'|trans }}</li>
+			<li>{{ 'wordpress_optimize.why_choose.reasons.5'|trans }}</li>
+		</ul>
+	</section>
+	<section class="section" id="contact">
+		<div id="personal-outro" class="container rounded mb-5 d-flex flex-column flex-md-row ">
+			<div class="image-wrapper">
+				<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, {{ 'wordpress_optimize.meta.job_title'|trans }}" class="rounded-circle img-fluid">
 			</div>
-			<div class="col">
-				<h2 class="text-start">{{ 'wordpress_optimize.contact.title'|trans }}</h2>
-				<p>{{ 'wordpress_optimize.contact.subtitle'|trans }}</p>
-				<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta-button">{{ 'wordpress_optimize.contact.cta_button'|trans }}</a>
+			<div class="title-wrapper align-content-center">
+				<h4 class="text-start">{{ 'wordpress_optimize.contact.title'|trans }}</h4>
+				<h5>{{ 'wordpress_optimize.contact.subtitle'|trans }}</h5>
 			</div>
-		</section>
-	</main>
-	<footer>
-		{{ 'wordpress_optimize.footer.copyright'|trans }}
-		<a href="https://bit.ly/m/wpoptimize" target="_blank">
-			<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
-		</a>
-	</footer>
-{% endblock %}
-{% block footer %}
-	<footer>
-		{{ 'wordpress_optimize.footer.copyright'|trans }}
-		<a href="https://bit.ly/m/wpoptimize" target="_blank">
-			<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
-		</a>
-	</footer>
-{% endblock %}
+			<div class="cta-wrapper text-end m-0">
+				<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.contact.cta_button'|trans }}</a>
+			</div>
+
+		</div>
+	</section>
+</main>
+<footer>
+	{{ 'wordpress_optimize.footer.copyright'|trans }}
+	<a href="https://bit.ly/m/wpoptimize" target="_blank">
+		<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
+	</a>
+</footer>{% endblock %}{% block footer %}
+<footer>
+	{{ 'wordpress_optimize.footer.copyright'|trans }}
+	<a href="https://bit.ly/m/wpoptimize" target="_blank">
+		<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
+	</a>
+</footer>{% endblock %}

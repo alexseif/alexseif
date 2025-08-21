@@ -1,7 +1,10 @@
 # Landing Page Translations
 wordpress_optimize:
     meta:
-        title: "WordPress Optimize – WordPress Fixes & Maintenance"
+        title: "WordPress Optimization that actually converts: 400+ sites and counting"
+        description: "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites. This page is my offer to help you do it faster, cleaner, and smarter."
+        job_title: "Freelance Web Developer & Strategist"
+        alt_text: "Wordpress Optimization: Speed up Wordpress"
 
     navigation:
         what: "What you get"
@@ -10,8 +13,9 @@ wordpress_optimize:
         where: "Where to reach me"
 
     header:
-        title: "WordPress Optimize: Fixes. Fast. Reliable. Human."
-        subtitle: "I fix, maintain, and build WordPress sites—Clear pricing, quick reply, no stress."
+        title: "WordPress Optimization: Fixes. Fast. Reliable. Human."
+        subtitle: "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites. \n
+            This page is my offer to help you do it faster, cleaner, and smarter."
         cta_button: "💬 Chat on WhatsApp"
 
     services:
@@ -20,7 +24,7 @@ wordpress_optimize:
         starter:
             title: "🟢 Starter"
             subtitle: "WP Care & Speed Boost"
-            ideal: "Ideal for: Site owners who need performance, security, and peace of mind"
+            ideal: "Increase WordPress speed and performance, security, and peace of mind"
             price_egp: "EGP 1,500"
             price_usd: "$50"
             original_price: "EGP 2,500"
@@ -82,7 +86,7 @@ wordpress_optimize:
             - "Non-profits"
             - "Startups"
             - "And more!"
-        conclusion: "Whether you need a quick fix or ongoing support, I’m here to help."
+        conclusion: "Whether you need a quick fix or ongoing support, I'm here to help."
 
     why_choose:
         title: "Why Clients Choose Me ✨"
@@ -96,7 +100,7 @@ wordpress_optimize:
 
     contact:
         title: "📱 Let's Talk About Your Project"
-        subtitle: "Not sure what you need? I’ll help you figure it out."
+        subtitle: "Not sure what you need? I'll help you figure it out."
         cta_button: "💬 Chat with Alex"
 
     footer:
