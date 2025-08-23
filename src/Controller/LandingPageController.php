@@ -20,12 +20,12 @@ class LandingPageController extends AbstractController
             'price_usd' => 49,
             'price_egp' => 2500,
             'features' => [
-                'Wordpress optimization',
-                'Security hardening',
-                'Monthly updates',
-                'Backup setup',
-                'Uptime monitoring',
-                'WhatsApp support'
+                'Speed optimization & cleanup',
+                'Security hardening & firewall setup',
+                'Monthly plugin & theme updates',
+                'Automatic backup system',
+                '24/7 uptime monitoring',
+                'Direct WhatsApp support',
             ],
             'cta_text' =>    'cta_text',
             'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
@@ -39,12 +39,12 @@ class LandingPageController extends AbstractController
             'price_egp' => 17000,
             'price_sales' => 15000,
             'features' => [
-                'Complete WordPress site',
-                'Mobile responsive design',
-                'SEO-ready structure',
-                'Contact forms + WhatsApp integration',
-                '1 language (Arabic or English)',
-                'Delivery in 7–10 days',
+                'The look and feel of your brand on all devices',
+                'Meta Ads Pixel setup & Google Analytics',
+                'Build your audience with a Newsletter',
+                'AI ready structure: your business shows up in smart answers',
+                'Arabic or English setup',
+                'Delivered in 7 –10 days'
             ],
             'cta_text' =>    'cta_text',
             'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
@@ -58,16 +58,35 @@ class LandingPageController extends AbstractController
             'price_egp' => 29000,
             'price_sales' => 26500,
             'features' => [
-                'eCommerce setup',
-                'Payment integration',
-                'Inventory system',
-                'Shipping options',
-                'Product upload (up to 5 items)',
-                'WhatsApp & email support',
+                '✅ Everything in the Builder Package',
+                'WooCommerce store setup',
+                'Product pages + payment gateway integration',
+                'Cart, checkout, and order flow optimization',
+                'Customer retention tools (email, coupons, upsells)',
+                'Optional: multi-language store, subscriptions, shipping rules',
             ],
             'cta_text' =>    'cta_text',
             'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
         ],
+        'all_packages' => [
+            'title' => 'title',
+            'subtitle' => 'subtitle',
+            'color' => 'success',
+            'ideal' => 'ideal',
+            'price_usd' => 0,
+            'price_egp' => 0,
+            'features' => [
+                'AI-Ready Structure',
+                'Mobile-friendly, SEO-ready, and built for speed',
+                'Meta Ads Pixel & Analytics Setup',
+                'Newsletter Integration',
+                'Direct, email & Whatsapp Support',
+                'Optional: multi-language store, subscriptions, shipping rules',
+            ],
+            'cta_text' =>    'cta_text',
+            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
+        ],
+
     ];
 
     #[Route('/landing_page', name: 'old_landing_page')]

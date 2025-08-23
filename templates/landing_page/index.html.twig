@@ -108,6 +108,7 @@
 
 		<section class="section container" id="services">
 			<h2>{{ 'wordpress_optimize.services.title'|trans }}</h2>
+			<h4 class="text-center">{{ 'wordpress_optimize.services.subtitle'|trans }}</h4>
 			<div class="services">
 				{% for key,package in packages %}
 					{% set translation_prefix = 'wordpress_optimize.services.' ~ key ~ '.' %}

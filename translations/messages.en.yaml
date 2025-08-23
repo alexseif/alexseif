@@ -20,24 +20,25 @@ wordpress_optimize:
 
     services:
         title: "What you get 💼"
+        subtitle: Build once. Grow forever. Show up in AI answers.
 
         starter:
-            title: "🟢 Starter"
+            title: "🟢 WordPress Optimization"
             subtitle: "WP Care & Speed Boost"
             ideal: "Increase WordPress speed and performance, security, and peace of mind"
             price_egp: "EGP 1,500"
             price_usd: "$50"
             original_price: "EGP 2,500"
-            offer: "🎉 Limited-time offer!"
+            offer: "🎉 Limited-time slots!"
             features:
                 - "Bug & plugin fixes"
                 - "Speed or layout issues"
                 - "Same-day delivery"
-            cta_text: "Fix it now"
+            cta_text: "Speed Up Your Site"
 
         builder:
-            title: "🔵 Builder"
-            subtitle: "Complete Site Build"
+            title: "🔵 Build Your Website"
+            subtitle: "From Zero to Awesome"
             ideal: "Ideal for: Clinics, coaches, and small businesses starting fresh"
             price_egp: "EGP 2,500"
             price_usd: "$50"
@@ -45,10 +46,10 @@ wordpress_optimize:
                 - "Updates & backups"
                 - "Security & uptime checks"
                 - "Priority support"
-            cta_text: "Build it now"
+            cta_text: "Launch Your Online Presence"
 
         seller:
-            title: "🟣 Seller"
+            title: "🟣 Build Your Store"
             subtitle: "eCommerce Power Pack"
             ideal: "Ideal for: Product-based businesses ready to sell online"
             price_egp: "EGP 5,000"
@@ -59,7 +60,18 @@ wordpress_optimize:
                 - "Modern layout & structure"
                 - "Speed & mobile optimization"
                 - "Delivered in 3–5 days"
-            cta_text: "Start Selling"
+            cta_text: "Sell Online with Confidence"
+
+        all_packages:
+            title: "All Packages Include"
+            subtitle: "AI Power Pack"
+            offer: "🎉 Limited-time slots!"
+            ideal: Every package includes the tools to convert, track, and be found—by humans and machines.
+            features:
+                - "Modern layout & structure"
+                - "Speed & mobile optimization"
+                - "Delivered in 3–5 days"
+            cta_text: "Get it Now"
 
         add-on:
             title: "🧲 Optional Add-Ons"
