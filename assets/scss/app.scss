@@ -44,12 +44,6 @@ h3 {
   line-height: 1em;
 }
 
-h4 {
-  width: 21vw;
-  position: relative;
-  right: 0;
-  line-height: 1em;
-}
 
 .background-overlay {
   height: 100%;
@@ -440,6 +434,7 @@ h4 {
 .text-md-start {
   text-align: start;
 }
+
 
 // Desktop
 @media only screen and (min-width: 768px) {

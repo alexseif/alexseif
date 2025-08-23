@@ -67,14 +67,12 @@ header {
     .image-wrapper {
         flex: 0 0 200px;
         height: 200px;
-        // border-radius: 50%;
         overflow: hidden;
         margin-right: 1rem;
     }
 
     .title-wrapper {
         flex: 1 1 auto;
-        border-radius: 1rem;
         color: white;
     }
 
@@ -589,6 +587,7 @@ footer::before {
     background: linear-gradient(45deg, transparent, $primary-color, transparent);
 }
 
+//Mobile
 @media (max-width: 576px) {
 
     .w-25,
