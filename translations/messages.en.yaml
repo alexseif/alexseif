@@ -13,14 +13,15 @@ wordpress_optimize:
         where: "Where to reach me"
 
     header:
-        title: "WordPress Optimization: Fixes. Fast. Reliable. Human."
+        title: "WordPress Optimization"
+        tagline: Fixes. Fast. Reliable. Human.
         subtitle: "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites. \n
             This page is my offer to help you do it faster, cleaner, and smarter."
         cta_button: "💬 Chat on WhatsApp"
 
     services:
         title: "What you get 💼"
-        subtitle: Build once. Grow forever. Show up in AI answers.
+        subtitle: "Get discovered by AI.\n Speed up your site.\n Structure your content.\n Let’s talk."
 
         starter:
             title: "🟢 WordPress Optimization"

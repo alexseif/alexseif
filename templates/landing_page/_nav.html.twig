@@ -1,0 +1,37 @@
+<!-- Navigation Menu -->
+<nav class="navbar navbar-expand-lg navbar-dark rounded p-0 fixed-top nav-menu">
+	<div class="container-fluid p-0">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav flex-column">
+				<li class="nav-item">
+					<a class="nav-link" href="#services" title="{{ 'wordpress_optimize.navigation.what'|trans }}">{{ 'wordpress_optimize.navigation.what'|trans }}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#clients" title="{{ 'wordpress_optimize.navigation.who'|trans }}">{{ 'wordpress_optimize.navigation.who'|trans }}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#why" title="{{ 'wordpress_optimize.navigation.why'|trans }}">{{ 'wordpress_optimize.navigation.why'|trans }}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#contact" title="{{ 'wordpress_optimize.navigation.where'|trans }}">{{ 'wordpress_optimize.navigation.where'|trans }}</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav flex-column d-none">
+				<li class="nav-item">
+					{% if app.request.locale != 'en' %}
+						<a class="nav-link" title="English" href="{{ path("app_landing_page_locale", {"_locale":"en"}) }}">EN</a>
+					{% endif %}
+					{% if app.request.locale != 'ar' %}
+						<a class="nav-link" title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"ar"}) }}">ع</a>
+					{% endif %}
+					{% if app.request.locale != 'eg' %}
+						<a class="nav-link" title="مصري" href="{{ path("app_landing_page_locale", {"_locale":"eg"}) }}">🇪🇬</a>
+					{% endif %}
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
