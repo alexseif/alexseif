@@ -21,7 +21,11 @@ wordpress_optimize:
 
     services:
         title: "What you get 💼"
-        subtitle: "Get discovered by AI.\n Speed up your site.\n Structure your content.\n Let’s talk."
+        subtitle: "Get discovered by AI.\n Speed up your site.\n Structure your content."
+        value:
+            - Get discovered by AI.
+            - Speed up your site.
+            - Structure your content.
 
         starter:
             title: "🟢 WordPress Optimization"
