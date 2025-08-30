@@ -19,16 +19,15 @@
 					<a class="nav-link" href="#contact" title="{{ 'wordpress_optimize.navigation.where'|trans }}">{{ 'wordpress_optimize.navigation.where'|trans }}</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav flex-column d-none">
+			<ul class="navbar-nav flex-column">
 				<li class="nav-item">
 					{% if app.request.locale != 'en' %}
 						<a class="nav-link" title="English" href="{{ path("app_landing_page_locale", {"_locale":"en"}) }}">EN</a>
 					{% endif %}
-					{% if app.request.locale != 'ar' %}
-						<a class="nav-link" title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"ar"}) }}">ع</a>
-					{% endif %}
-					{% if app.request.locale != 'eg' %}
-						<a class="nav-link" title="مصري" href="{{ path("app_landing_page_locale", {"_locale":"eg"}) }}">🇪🇬</a>
+					{# {% if app.request.locale != 'ar' %} #}
+					{# <a class="nav-link" title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"ar"}) }}">ع</a> #}
+					{# {% endif %} #}
+						{% if app.request.locale != 'eg' %}<a class="nav-link" title="مصري" href="{{ path("app_landing_page_locale", {"_locale":"eg"}) }}"> 🇪🇬</a>
 					{% endif %}
 				</li>
 			</ul>

@@ -516,6 +516,13 @@ ul.check-list li:hover {
     max-width: 300px;
 }
 
+html[dir=rtl] {
+    .nav-menu {
+        left: 20px;
+        right: auto;
+    }
+}
+
 .navbar {
     // position: fixed;
     // top: 20px;
