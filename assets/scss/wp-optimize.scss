@@ -31,6 +31,10 @@ $black: #0c0c0c;
 $theme-colors: map-merge($theme-colors,
         ("indigo": indigo));
 
+h1 {
+    text-align: start;
+}
+
 /* Header styles */
 header {
     padding: 40px 20px;
@@ -57,31 +61,35 @@ header {
 
     border-radius: $border-radius;
 
+    .image-wrapper {
+        max-width: 160px;
+        margin-right: 1rem;
+    }
+
 }
 
 #personal-intro,
 #personal-outro {
     position: relative;
-    background: linear-gradient(to right, transparent 0%, transparent 100px, $black 150px, $black 100%);
+    background: linear-gradient(to right, transparent 0%, transparent 40px, $black 60px, $black 100%);
+    display: flex;
+    align-items: center;
 
     .image-wrapper {
-        flex: 0 0 200px;
-        height: 200px;
+        flex: 0 0 160px;
+        height: 160px;
         overflow: hidden;
-        margin-right: 1rem;
+        // margin-right: 1rem;
     }
 
     .title-wrapper {
         flex: 1 1 auto;
         color: white;
+        text-align: start;
     }
 
-    .cta-wrapper {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-    }
 }
+
 
 .cta-wrapper {
     position: relative;
@@ -90,33 +98,7 @@ header {
     margin-bottom: 20px;
 }
 
-h1 {
-    // margin: 10px 0;
-    // font-size: clamp(1.5rem, 5vw, 3rem);
-    // font-size: 2em;
-    // background: linear-gradient(45deg, $primary-color, $primary-color);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    // background-clip: text;
-    // max-width: 40vw;
 
-}
-
-h3 {
-    margin: 0;
-    color: $primary-color;
-    line-height: 2rem;
-}
-
-h4,
-.h4 {
-    // margin-top: 1rem;
-    // color: $primary-color;
-    // font-size: 1.25em;
-    font-style: italic;
-    width: auto;
-    line-height: 1.5;
-}
 
 li {
     margin: 0;
@@ -155,14 +137,14 @@ li {
 
         &:last-child {
             .masonry-track {
-                animation: scroll 30s linear infinite;
+                animation: scroll 60s linear infinite;
             }
         }
     }
 
     .masonry-track {
         display: flex;
-        animation: scroll 40s linear infinite;
+        animation: scroll 80s linear infinite;
         width: max-content;
         flex-wrap: wrap;
 
@@ -404,18 +386,13 @@ ul.check-list li:hover {
     margin-bottom: 20px;
 
     h2 {
-        text-align: center;
-        margin-bottom: 30px;
         position: relative;
-        // display: inline-block;
-        // left: 50%;
-        // transform: translateX(-50%);
 
         &::after {
             content: "";
             position: absolute;
             bottom: -10px;
-            left: 50%;
+            left: 40px;
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
@@ -425,13 +402,7 @@ ul.check-list li:hover {
     }
 }
 
-/* Services grid */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-
+#services {
     .card {
         // border-radius: 15px;
         // padding: 1rem;
@@ -488,10 +459,6 @@ ul.check-list li:hover {
 
         a.cta_link {
             display: block;
-            // margin-top: 15px;
-            // color: $primary-color;
-            // text-decoration: none;
-            // font-weight: bold;
             position: relative;
 
             &::after {
@@ -511,9 +478,19 @@ ul.check-list li:hover {
     }
 }
 
+/* Services grid */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+
+
+}
+
 /* Portfolio section */
 .portfolio .section {
-    text-align: center;
+    // text-align: center;
 }
 
 /* Remove double centering */
@@ -595,6 +572,7 @@ footer::before {
     background: linear-gradient(45deg, transparent, $primary-color, transparent);
 }
 
+
 //Mobile
 @media (max-width: 576px) {
 
@@ -603,22 +581,31 @@ footer::before {
         width: auto !important;
     }
 
+    header {
 
+        .image-wrapper {
+            max-width: 80px;
+            margin-right: 1rem;
+        }
+    }
 
     #personal-outro,
     #personal-intro {
-        background: linear-gradient(to bottom, transparent 0%, transparent 100px, $black 150px, $black 100%);
+        // background: linear-gradient(to bottom, transparent 0%, transparent 100px, $black 150px, $black 100%);
 
         .image-wrapper {
-            margin-right: 0;
-            margin-bottom: 1rem;
+            flex: 0 0 80px;
+            height: 80px;
+            // margin-right: 0;
+            // margin-bottom: 1rem;
         }
 
-        .cta-wrapper {
-            position: relative;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+    }
+
+    .cta-wrapper {
+        position: relative;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }

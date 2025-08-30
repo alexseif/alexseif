@@ -12,16 +12,11 @@
 		{"@context": "https://schema.org","@type": "ProfessionalService", "name": "Alex Seif – WordPress Optimization", "image": "https://alexseif.com/images/WordPress-Optimize-card.png", "url": "https://alexseif.com/wordpress-optimiziation", "description":
 		{{ 'wordpress_optimize.meta.description'|trans }}, "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressRegion": "EG", "addressCountry": "Egypt" }, "telephone": "+20-100-400-6332", "areaServed": "EG", "priceRange": "$$", "founder": { "@type": "Person", "name": "Alex Seif", "jobTitle":
 		{{ 'wordpress_optimize.meta.job_title'|trans }}, "sameAs": [ "https://twitter.com/alexseif", "https://linkedin.com/in/alexseif", "https://github.com/alexseif", "https://www.instagram.com/alex_makes_websites" ] } }
-
-
 	</script>
 {% endblock %}
-
 {% block meta %}
 	<meta
 	name="description" content="{{ 'wordpress_optimize.meta.description'|trans }}">
-
-
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://alexseif.com/wordpress-optimization">
@@ -47,110 +42,124 @@
 	</div>
 	{{ include('landing_page/_nav.html.twig') }}
 	<main id="site-wrapper">
-		<header class="container">
-			<div class="row">
-				<div class="col col-md-2 text-end text-md-center">
-					<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimization, speed up Wordpress" class="rounded-circle img-fluid"/>
-				</div>
-				<div class="col align-content-center">
-					<h1 class="text-start">{{ 'wordpress_optimize.header.title'|trans }}</h1>
-				</div>
-			</div>
-		</header>
-
-		<div id="personal-intro" class="container rounded mb-5 d-flex flex-column flex-md-row ">
-			<div class="image-wrapper">
-				<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, {{ 'wordpress_optimize.meta.job_title'|trans }}" class="rounded-circle img-fluid">
-			</div>
-			<div class="title-wrapper align-content-center mb-3">
-				<h1 class="h4 text-start">{{ 'wordpress_optimize.header.subtitle'|trans|nl2br }}</h1>
-			</div>
-			<div class="cta-wrapper align-content-end m-0">
-				<a href=" https://wa.me/201004006332?text=" Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target=" " _blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
-			</div>
-		</div>
-
+		{% include 'landing_page/_header.html.twig' %}
 		<section class="section container" id="services">
 			<h2>{{ 'wordpress_optimize.services.title'|trans }}</h2>
-			<h4 class="" style="text-decoration: underline;">{{ 'wordpress_optimize.services.subtitle'|trans|nl2br }}</h4>
-			<ul class=" list-group d-none">
-				<li class="list-group-item h4">{{ 'wordpress_optimize.services.value.0'|trans }}</li>
-
-				<li class="list-group-item h4">{{ 'wordpress_optimize.services.value.1'|trans }}</li>
-
-				<li class="list-group-item h4">{{ 'wordpress_optimize.services.value.2'|trans }}</li>
-
+			<ul class="fancy-list">
+				<li>{{ 'wordpress_optimize.services.value.0'|trans }}</li>
+				<li>{{ 'wordpress_optimize.services.value.1'|trans }}</li>
+				<li>{{ 'wordpress_optimize.services.value.2'|trans }}</li>
 			</ul>
 			<div class="services">
 				{% for key,package in packages %}
-					{% set translation_prefix = 'wordpress_optimize.services.' ~ key ~ '.' %}
+					{% if key != 'all_packages' %}
 
-					<div class="card card-top-{{ package.color }}">
-						<div class="card-header d-flex justify-content-between">
-							<h3>{{ (translation_prefix ~ package.title)|trans }}</h3>
-							<div class="text-end">
-								<strong>{{ package.price_usd|format_currency('USD') }}</strong>
-								<strong class="d-flex flex-column">
-									{% if package.price_sales is defined  %}
-										<del>{{ package.price_egp|format_currency('EGP') }}</del>
+						{% set translation_prefix = 'wordpress_optimize.services.' ~ key ~ '.' %}
+						<div class="card card-top-{{ package.color }}">
+							<div class="card-header d-flex justify-content-between">
+								<h3>{{ (translation_prefix ~ package.title)|trans }}</h3>
+								<div class="text-end">
+									<strong>{{ package.price_usd|format_currency('USD') }}</strong>
+									<strong class="d-flex flex-column">
+										{% if package.price_sales is defined  %}
+											<del>{{ package.price_egp|format_currency('EGP') }}</del>
+											<span style="color:#0182BE;">{{ package.price_sales|format_currency('EGP') }}</span>
+										{% else %}
+											<span style="color:#0182BE;">{{ package.price_egp|format_currency('EGP') }}</span>
+										{% endif %}
+									</strong>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="mb-4">{{ (translation_prefix ~ package.subtitle)|trans }}</h4>
+								<hr/>
+								<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
+								<ul>
+									{% for feature in package.features %}
+										<li>{{ feature|trans }}</li>
+									{% endfor %}
+								</ul>
+								<hr/>
+								<p class="fs-5">{{ (translation_prefix ~ package.ideal)|trans }}</p>
+							</div>
+							<div class="card-footer">
+								<a href="{{ package.cta_link }}" target="_blank" class="cta_link btn btn-{{package.color}} fw-bold">{{ (translation_prefix ~ package.cta_text)|trans }}</a>
 
-										<span style="color:#0182BE;">{{ package.price_sales|format_currency('EGP') }}</span>
-									{% else %}
-										<span style="color:#0182BE;">{{ package.price_egp|format_currency('EGP') }}</span>
-									{% endif %}
-								</strong>
 							</div>
 						</div>
-						<div class="card-body">
-							<h4 class="mb-4">{{ (translation_prefix ~ package.subtitle)|trans }}</h4>
-							<hr/>
-							<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
-							<ul>
-								{% for feature in package.features %}
-									<li>{{ feature|trans }}</li>
-								{% endfor %}
-							</ul>
-							<hr/>
-							<p class="fs-5">{{ (translation_prefix ~ package.ideal)|trans }}</p>
-						</div>
-						<div class="card-footer">
-							<a href="{{ package.cta_link }}" target="_blank" class="cta_link btn btn-{{package.color}} fw-bold">{{ (translation_prefix ~ package.cta_text)|trans }}</a>
-
-						</div>
-					</div>
-					<!-- .card -->
+						<!-- .card -->
+					{% endif %}
 				{% endfor %}
 				{% set translation_prefix = 'wordpress_optimize.services.add-on.'  %}
-
 			</div>
+			<div class="services">
 
-			<div class="card w-50 mx-auto mt-5">
-				<div class="card-header d-flex justify-content-between">
-					<h3 class="m-3">{{ (translation_prefix ~ 'title')|trans }}</h3>
-				</div>
-				<div class="card-body">
-					<h4 class="mb-4">{{ (translation_prefix ~ 'subtitle')|trans }}</h4>
-					<hr/>
-					<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
-					<ul>
-						<li>{{ (translation_prefix ~ 'features.0')|trans }}</li>
-						<li>{{ (translation_prefix ~ 'features.1')|trans }}</li>
-						<li>{{ (translation_prefix ~ 'features.2')|trans }}</li>
-						<li>{{ (translation_prefix ~ 'features.3')|trans }}</li>
-						<li>{{ (translation_prefix ~ 'features.4')|trans }}</li>
-						<li>{{ (translation_prefix ~ 'features.5')|trans }}</li>
-					</ul>
-				</div>
-				<div class="card-footer text-end">
-					<div class="cta-wrapper">
-						<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+				<div class="card">
+					<div class="card-header d-flex justify-content-between">
+						<h3 class="m-3">{{ (translation_prefix ~ 'title')|trans }}</h3>
+					</div>
+					<div class="card-body">
+						<h4 class="mb-4">{{ (translation_prefix ~ 'subtitle')|trans }}</h4>
+						<hr/>
+						<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
+						<ul>
+							<li>{{ (translation_prefix ~ 'features.0')|trans }}</li>
+							<li>{{ (translation_prefix ~ 'features.1')|trans }}</li>
+							<li>{{ (translation_prefix ~ 'features.2')|trans }}</li>
+							<li>{{ (translation_prefix ~ 'features.3')|trans }}</li>
+							<li>{{ (translation_prefix ~ 'features.4')|trans }}</li>
+							<li>{{ (translation_prefix ~ 'features.5')|trans }}</li>
+							<li>{{ (translation_prefix ~ 'features.6')|trans }}</li>
+						</ul>
+					</div>
+					<div class="card-footer text-end">
+						<div class="cta-wrapper">
+							<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+						</div>
 					</div>
 				</div>
+
+				<!-- .card -->
+
+				{% set package = packages['all_packages'] %}
+				{% set translation_prefix = 'wordpress_optimize.services.all_packages.' %}
+				<div class="card card-top-{{ package.color }}">
+					<div class="card-header d-flex justify-content-between">
+						<h3>{{ (translation_prefix ~ package.title)|trans }}</h3>
+						<div class="text-end">
+							<strong>{{ package.price_usd|format_currency('USD') }}</strong>
+							<strong class="d-flex flex-column">
+								{% if package.price_sales is defined  %}
+									<del>{{ package.price_egp|format_currency('EGP') }}</del>
+									<span style="color:#0182BE;">{{ package.price_sales|format_currency('EGP') }}</span>
+								{% else %}
+									<span style="color:#0182BE;">{{ package.price_egp|format_currency('EGP') }}</span>
+								{% endif %}
+							</strong>
+						</div>
+					</div>
+					<div class="card-body">
+						<h4 class="mb-4">{{ (translation_prefix ~ package.subtitle)|trans }}</h4>
+						<hr/>
+						<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
+						<ul>
+							{% for feature in package.features %}
+								<li>{{ feature|trans }}</li>
+							{% endfor %}
+						</ul>
+						<hr/>
+						<p class="fs-5">{{ (translation_prefix ~ package.ideal)|trans }}</p>
+					</div>
+					<div class="card-footer">
+						<a href="{{ package.cta_link }}" target="_blank" class="cta_link btn btn-{{package.color}} fw-bold">{{ (translation_prefix ~ package.cta_text)|trans }}</a>
+
+					</div>
+				</div>
+				<!-- .card -->
 			</div>
 			<!-- .card -->
 		</section>
-
-		<section class="portfolio " id="clients">
+		<section class="portfolio container" id="clients">
 			<div class="section">
 				<h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
 				<p class="fs-3">{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
@@ -199,7 +208,7 @@
 		</div>
 	</section>
 	<section class="container section">
-		<h3 class="text-center">{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
+		<h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
 		<ul class="fancy-list">
 			<li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
 			<li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
@@ -226,19 +235,20 @@
 			<li>{{ 'wordpress_optimize.why_choose.reasons.5'|trans }}</li>
 		</ul>
 	</section>
-	<section class="section" id="contact">
-		<div id="personal-outro" class="container rounded mb-5 d-flex flex-column flex-md-row ">
+	<section class="section container" id="contact">
+		<div id="personal-outro" class="rounded mb-4">
 			<div class="image-wrapper">
 				<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, {{ 'wordpress_optimize.meta.job_title'|trans }}" class="rounded-circle img-fluid">
 			</div>
-			<div class="title-wrapper align-content-center">
-				<h4 class="text-start">{{ 'wordpress_optimize.contact.title'|trans }}</h4>
-				<h5>{{ 'wordpress_optimize.contact.subtitle'|trans }}</h5>
+			<div class="title-wrapper p-1">
+				<p class="text-start">
+					{{ 'wordpress_optimize.contact.title'|trans }}.
+					{{ 'wordpress_optimize.contact.subtitle'|trans }}
+				</p>
 			</div>
-			<div class="cta-wrapper text-end m-0">
-				<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.contact.cta_button'|trans }}</a>
-			</div>
-
+		</div>
+		<div class="cta-wrapper ">
+			<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.contact.cta_button'|trans }}</a>
 		</div>
 	</section>
 </main>

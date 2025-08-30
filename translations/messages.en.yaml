@@ -71,7 +71,7 @@ wordpress_optimize:
             title: "All Packages Include"
             subtitle: "AI Power Pack"
             offer: "🎉 Limited-time slots!"
-            ideal: Every package includes the tools to convert, track, and be found—by humans and machines.
+            ideal: Every package includes the tools to convert, track, and be found by humans and machines.
             features:
                 - "Modern layout & structure"
                 - "Speed & mobile optimization"
@@ -88,6 +88,9 @@ wordpress_optimize:
                 - "Hosting: +$100"
                 - "Hosting & domain setup: +$79"
                 - "Speed audit: Free with any package"
+                - "Optional: multi-language store, subscriptions, shipping rules"
+                - "Meta Ads Pixel & Analytics Setup"
+                - "Newsletter Integration"
             cta_text: "Start Selling"
 
     clients:

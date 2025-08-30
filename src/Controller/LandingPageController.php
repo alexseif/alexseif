@@ -78,10 +78,8 @@ class LandingPageController extends AbstractController
             'features' => [
                 'AI-Ready Structure',
                 'Mobile-friendly, SEO-ready, and built for speed',
-                'Meta Ads Pixel & Analytics Setup',
-                'Newsletter Integration',
                 'Direct, email & Whatsapp Support',
-                'Optional: multi-language store, subscriptions, shipping rules',
+
             ],
             'cta_text' =>    'cta_text',
             'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
