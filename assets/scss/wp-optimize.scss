@@ -68,6 +68,7 @@ header {
 
 }
 
+.banner,
 #personal-intro,
 #personal-outro {
     position: relative;
@@ -108,11 +109,12 @@ li {
     }
 }
 
+
 /* Clients carousel styles - Updated to masonry layout */
 #clients {
-    margin: 2rem 0;
-    overflow: hidden;
-    position: relative;
+    // margin: 2rem 0;
+    // overflow: hidden;
+    // position: relative;
 
     .carousel-container {
         width: 100%;
@@ -224,7 +226,7 @@ ul {
 }
 
 /* Fancy list for "Who uses WP Optimize" section */
-.section ul.fancy-list {
+section ul.fancy-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
@@ -380,10 +382,12 @@ ul.check-list li:hover {
 }
 
 /* Section styles */
-.section {
+section {
     position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    // margin-top: 20px;
+    // margin-bottom: 20px;
 
     h2 {
         position: relative;
@@ -488,13 +492,9 @@ ul.check-list li:hover {
 
 }
 
-/* Portfolio section */
-.portfolio .section {
-    // text-align: center;
-}
 
 /* Remove double centering */
-.portfolio .section h2 {
+.portfolio section h2 {
     position: relative;
     left: 0;
     transform: none;
@@ -596,6 +596,7 @@ footer::before {
         }
     }
 
+    .banner,
     #personal-outro,
     #personal-intro {
         // background: linear-gradient(to bottom, transparent 0%, transparent 100px, $black 150px, $black 100%);

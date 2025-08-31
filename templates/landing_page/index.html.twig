@@ -43,7 +43,7 @@
 	{{ include('landing_page/_nav.html.twig') }}
 	<main id="site-wrapper">
 		{% include 'landing_page/_header.html.twig' %}
-		<section class="section container" id="services">
+		<section class="container" id="services">
 			<h2>{{ 'wordpress_optimize.services.title'|trans }}</h2>
 			<ul class="fancy-list">
 				<li>{{ 'wordpress_optimize.services.value.0'|trans }}</li>
@@ -160,11 +160,11 @@
 			<!-- .card -->
 		</section>
 		<section class="portfolio container" id="clients">
-			<div class="section">
+			<div>
 				<h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
 				<p class="fs-3">{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
 			</div>
-			<div id="clients">
+			<div>
 				<div class="masonry-carousel">
 					<div class="masonry-track">
 						{% for image in portfolio_images %}
@@ -207,7 +207,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="container section">
+	<section class="container">
 		<h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
 		<ul class="fancy-list">
 			<li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
@@ -224,7 +224,7 @@
 			<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="btn btn-cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
 		</div>
 	</section>
-	<section class="section container" id="why">
+	<section class="container" id="why">
 		<h2>{{ 'wordpress_optimize.why_choose.title'|trans }}</h2>
 		<ul class="check-list">
 			<li>{{ 'wordpress_optimize.why_choose.reasons.0'|trans }}</li>
@@ -235,8 +235,8 @@
 			<li>{{ 'wordpress_optimize.why_choose.reasons.5'|trans }}</li>
 		</ul>
 	</section>
-	<section class="section container" id="contact">
-		<div id="personal-outro" class="rounded mb-4">
+	<section class="container" id="contact">
+		<div id="personal-outro" class="banner rounded mb-4">
 			<div class="image-wrapper">
 				<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, {{ 'wordpress_optimize.meta.job_title'|trans }}" class="rounded-circle img-fluid">
 			</div>
