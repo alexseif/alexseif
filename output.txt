@@ -1,0 +1,148 @@
+
+> build
+> encore production --progress
+
+Running webpack ...
+
+ WARN  Compiled with 2 warnings5:00:01 PM
+
+ warn  in ./assets/scss/app.scss5:00:01 PM
+
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+ warn  in ./assets/scss/app.scss5:00:01 PM
+
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 192, column 22 of file:///var/www/alexseif/assets/scss/app.scss:192:22:
+Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.adjust instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+192 |     background-color: lighten($surface, 5%);
+
+
+assets/scss/app.scss 193:23  root stylesheet
+
+
+ ERROR  Failed to compile with 2 errors5:00:01 PM
+
+ error  in ./assets/scss/app.scss5:00:01 PM
+
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+$color: var(--color-surface) is not a color.
+    ╷
+193 │     background-color: lighten($surface, 5%);
+    │                       ^^^^^^^^^^^^^^^^^^^^^
+    ╵
+  assets/scss/app.scss 193:23  root stylesheet
+
+ error  in ./assets/scss/app.scss5:00:01 PM
+
+Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
+HookWebpackError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+$color: var(--color-surface) is not a color.
+    ╷
+193 │     background-color: lighten($surface, 5%);
+    │                       ^^^^^^^^^^^^^^^^^^^^^
+    ╵
+  assets/scss/app.scss 193:23  root stylesheet
+    at tryRunOrWebpackError (/var/www/alexseif/node_modules/webpack/lib/HookWebpackError.js:86:9)
+    at __webpack_require_module__ (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:5299:12)
+    at __webpack_require__ (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:5256:18)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5328:20
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3485:9)
+    at done (/var/www/alexseif/node_modules/neo-async/async.js:3527:9)
+    at Hook.eval [as callAsync] (eval at create (/var/www/alexseif/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/var/www/alexseif/node_modules/tapable/lib/Hook.js:18:14)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5234:43
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3482:9)
+    at timesSync (/var/www/alexseif/node_modules/neo-async/async.js:2297:7)
+    at Object.eachLimit (/var/www/alexseif/node_modules/neo-async/async.js:3463:5)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5196:16
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3485:9)
+    at timesSync (/var/www/alexseif/node_modules/neo-async/async.js:2297:7)
+    at Object.eachLimit (/var/www/alexseif/node_modules/neo-async/async.js:3463:5)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5164:15
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3485:9)
+    at done (/var/www/alexseif/node_modules/neo-async/async.js:3527:9)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5110:8
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:3531:6
+    at /var/www/alexseif/node_modules/webpack/lib/HookWebpackError.js:67:2
+    at Hook.eval [as callAsync] (eval at create (/var/www/alexseif/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+    at Cache.store (/var/www/alexseif/node_modules/webpack/lib/Cache.js:111:20)
+    at ItemCacheFacade.store (/var/www/alexseif/node_modules/webpack/lib/CacheFacade.js:141:15)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:3530:11
+    at /var/www/alexseif/node_modules/webpack/lib/Cache.js:97:5
+    at Hook.eval [as callAsync] (eval at create (/var/www/alexseif/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+    at Cache.get (/var/www/alexseif/node_modules/webpack/lib/Cache.js:79:18)
+    at ItemCacheFacade.get (/var/www/alexseif/node_modules/webpack/lib/CacheFacade.js:115:15)
+    at Compilation._codeGenerationModule (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:3498:9)
+    at codeGen (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:5098:11)
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3482:9)
+    at timesSync (/var/www/alexseif/node_modules/neo-async/async.js:2297:7)
+    at Object.eachLimit (/var/www/alexseif/node_modules/neo-async/async.js:3463:5)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5128:14
+    at processQueue (/var/www/alexseif/node_modules/webpack/lib/util/processAsyncTree.js:61:4)
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+-- inner error --
+Error: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+$color: var(--color-surface) is not a color.
+    ╷
+193 │     background-color: lighten($surface, 5%);
+    │                       ^^^^^^^^^^^^^^^^^^^^^
+    ╵
+  assets/scss/app.scss 193:23  root stylesheet
+    at Object.<anonymous> (/var/www/alexseif/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!/var/www/alexseif/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[2]!/var/www/alexseif/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[3]!/var/www/alexseif/assets/scss/app.scss:1:7)
+    at /var/www/alexseif/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js:494:10
+    at Hook.eval [as call] (eval at create (/var/www/alexseif/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (/var/www/alexseif/node_modules/tapable/lib/Hook.js:14:14)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5301:39
+    at tryRunOrWebpackError (/var/www/alexseif/node_modules/webpack/lib/HookWebpackError.js:81:7)
+    at __webpack_require_module__ (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:5299:12)
+    at __webpack_require__ (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:5256:18)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5328:20
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3485:9)
+    at done (/var/www/alexseif/node_modules/neo-async/async.js:3527:9)
+    at Hook.eval [as callAsync] (eval at create (/var/www/alexseif/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/var/www/alexseif/node_modules/tapable/lib/Hook.js:18:14)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5234:43
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3482:9)
+    at timesSync (/var/www/alexseif/node_modules/neo-async/async.js:2297:7)
+    at Object.eachLimit (/var/www/alexseif/node_modules/neo-async/async.js:3463:5)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5196:16
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3485:9)
+    at timesSync (/var/www/alexseif/node_modules/neo-async/async.js:2297:7)
+    at Object.eachLimit (/var/www/alexseif/node_modules/neo-async/async.js:3463:5)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5164:15
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3485:9)
+    at done (/var/www/alexseif/node_modules/neo-async/async.js:3527:9)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5110:8
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:3531:6
+    at /var/www/alexseif/node_modules/webpack/lib/HookWebpackError.js:67:2
+    at Hook.eval [as callAsync] (eval at create (/var/www/alexseif/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+    at Cache.store (/var/www/alexseif/node_modules/webpack/lib/Cache.js:111:20)
+    at ItemCacheFacade.store (/var/www/alexseif/node_modules/webpack/lib/CacheFacade.js:141:15)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:3530:11
+    at /var/www/alexseif/node_modules/webpack/lib/Cache.js:97:5
+    at Hook.eval [as callAsync] (eval at create (/var/www/alexseif/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+    at Cache.get (/var/www/alexseif/node_modules/webpack/lib/Cache.js:79:18)
+    at ItemCacheFacade.get (/var/www/alexseif/node_modules/webpack/lib/CacheFacade.js:115:15)
+    at Compilation._codeGenerationModule (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:3498:9)
+    at codeGen (/var/www/alexseif/node_modules/webpack/lib/Compilation.js:5098:11)
+    at symbolIterator (/var/www/alexseif/node_modules/neo-async/async.js:3482:9)
+    at timesSync (/var/www/alexseif/node_modules/neo-async/async.js:2297:7)
+    at Object.eachLimit (/var/www/alexseif/node_modules/neo-async/async.js:3463:5)
+    at /var/www/alexseif/node_modules/webpack/lib/Compilation.js:5128:14
+    at processQueue (/var/www/alexseif/node_modules/webpack/lib/util/processAsyncTree.js:61:4)
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+
+Generated code for /var/www/alexseif/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!/var/www/alexseif/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[2]!/var/www/alexseif/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[3]!/var/www/alexseif/assets/scss/app.scss
+1 | throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n$color: var(--color-surface) is not a color.\n    ╷\n193 │     background-color: lighten($surface, 5%);\n    │                       ^^^^^^^^^^^^^^^^^^^^^\n    ╵\n  assets/scss/app.scss 193:23  root stylesheet");
+
+Entrypoint app = runtime.ced75ccf.js 505.bf92873f.js app.3f962a1d.js
+Entrypoint _tmp_copy = runtime.ced75ccf.js 68 auxiliary assets
+webpack compiled with 2 errors and 2 warnings

@@ -7,14 +7,14 @@
 
 
 // start the Stimulus application
-import './bootstrap';
-import 'html5shiv';
+// import './bootstrap';
+// import 'html5shiv';
 // any CSS you import will output into a single css file (app.css in this case)
 import './scss/app.scss';
-import $ from 'jquery';
-require('bootstrap');
+// import $ from 'jquery';
+// require('bootstrap');
 import 'fittext.js';
-import fullpage from 'free-fullpage';
+// import fullpage from 'free-fullpage';
 
 /**
  * The following content was designed & implemented under AlexSeif.com
@@ -77,32 +77,7 @@ $(function () {
  * The following content was designed & implemented under AlexSeif.com
  **/
 
-function createNoise() {
-    var canvas = document.getElementById("noise-canvas");
 
-    var w = (canvas.width = 64);
-    var h = (canvas.height = 64);
-
-    var context = canvas.getContext("2d");
-
-    let i;
-    for (i = 0; i < w; i++) {
-        let j;
-        for (j = 0; j < h; j++) {
-            var num = Math.floor(Math.random() * 255);
-            context.fillStyle = "rgb(" + num + "," + num + "," + num + ")";
-            context.fillRect(i, j, 1, 1);
-        }
-    }
-
-    $("#noise-bg").css({
-        "background-image": "url(" + canvas.toDataURL() + ")"
-    });
-}
-
-(function () {
-    createNoise();
-});
 
 document.addEventListener('DOMContentLoaded', init, false);
 

@@ -1,0 +1,101 @@
+// @import "var";
+$body-bg: var(--color-bg);
+$white: var(--color-text);
+$accent: var(--color-accent);
+
+.nav {
+  position: fixed;
+  z-index: 21;
+  width: 100%;
+}
+
+#nav {
+  caret-color: transparent;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+
+  &.scrolled {
+    opacity: 0.4; // adjust the opacity value as needed
+  }
+
+  a {
+    color: $white;
+    font-weight: bold;
+    text-decoration: none;
+    // width: 100%;
+    display: block;
+  }
+
+  .accent {
+    color: $accent;
+    transition: text-decoration 300ms ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding-inline-start: 0;
+      gap: var(--gap-md);
+    }
+  }
+
+
+}
+
+#logo-div,
+#trophy-div {
+  position: relative;
+  perspective: 1000px;
+
+  img,
+  svg {
+    transition: transform 0.5s, opacity 0.5s;
+    transform-style: preserve-3d;
+    /* Preserve 3D transformations */
+  }
+
+  span {
+    opacity: 0;
+    /* Initially hide the span */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotateY(180deg);
+    /* Initially flip the span to the back */
+    transition: transform 0.5s, opacity 0.5s;
+    transform-style: preserve-3d;
+    /* Preserve 3D transformations */
+  }
+
+  &:hover {
+
+    img,
+    svg {
+      transform: rotateY(180deg);
+      /* Flip and scale down the image on hover */
+      opacity: 0;
+    }
+
+    span {
+      display: block;
+      /* Make the span appear on hover */
+      transform: rotateY(0deg);
+      /* Flip the span to the front on hover */
+      transform-style: preserve-3d;
+      /* Preserve 3D transformations */
+      opacity: 1;
+    }
+  }
+
+}

@@ -1,0 +1,36 @@
+@mixin dark-mode {
+    body {
+        background-color: $black;
+        color: $white-secondary;
+    }
+
+    a {
+        color: $white-accent;
+
+        &:hover {
+            color: $accent;
+        }
+    }
+
+    button,
+    .btn {
+        background-color: $white-accent;
+        color: $black;
+
+        &:hover {
+            background-color: $hover-light;
+        }
+    }
+
+    input,
+    textarea,
+    select {
+        background-color: $black-secondary;
+        color: $white-secondary;
+        border-color: $hover-dark;
+
+        &:focus {
+            border-color: $accent;
+        }
+    }
+}

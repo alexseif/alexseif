@@ -1,0 +1,23 @@
+<section id="usp">
+  <div class="container">
+    {% for section in aboutSections %}
+      <div class="flow">
+        <h3>{{ section.title }}</h3>
+        <div>
+          <p>{{ section.description }}</p>
+
+          <div class="card">
+            <div class="badge-row">
+              {% for region in section.tags %}
+                <span class="badge">{{ region }}</span>
+              {% endfor %}
+            </div>
+            <!-- .badge-row -->
+          </div>
+          <!-- .card -->
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- .container -->
+</section>

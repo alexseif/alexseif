@@ -12,6 +12,24 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class LandingPageController extends AbstractController
 {
     public $packages = [
+        'social' => [
+            'title' => 'title',
+            'subtitle' => 'subtitle',
+            'color' => 'success',
+            'ideal' => 'ideal',
+            'price_usd' => 49,
+            'price_egp' => 2500,
+            'features' => [
+                'Speed optimization & cleanup',
+                'Security hardening & firewall setup',
+                'Monthly plugin & theme updates',
+                'Automatic backup system',
+                '24/7 uptime monitoring',
+                'Direct WhatsApp support',
+            ],
+            'cta_text' =>    'cta_text',
+            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
+        ],
         'starter' => [
             'title' => 'title',
             'subtitle' => 'subtitle',
@@ -35,8 +53,8 @@ class LandingPageController extends AbstractController
             'subtitle' => 'subtitle',
             'color' => 'primary',
             'ideal' => 'ideal',
-            'price_usd' => 350,
-            'price_egp' => 17000,
+            'price_usd' => 500,
+            'price_egp' => 24000,
             'price_sales' => 15000,
             'features' => [
                 'The look and feel of your brand on all devices',
@@ -54,8 +72,8 @@ class LandingPageController extends AbstractController
             'subtitle' => 'subtitle',
             'color' => 'indigo',
             'ideal' => 'ideal',
-            'price_usd' => 600,
-            'price_egp' => 29000,
+            'price_usd' => 1000,
+            'price_egp' => 48500,
             'price_sales' => 26500,
             'features' => [
                 '✅ Everything in the Builder Package',

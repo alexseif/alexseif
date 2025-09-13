@@ -1,45 +1,30 @@
-<div class="side-nav d-flex flex-column justify-content-between text-center align-content-center align-items-center" id="nav">
-	<header>
-		<h1>
-			<a href="{{ path('alx_home') }}" class="" id="logo-div">
-				<img src="{{ asset('build/images/ALX.png') }}" width="100" height="100" alt="Alex Seif logo" class="img-fluid"/>
-				<span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">{{ 'alex_seif2'|trans }}</span>
-			</a>
-		</h1>
-	</header>
-	<div class="img-wrapper">
-		<a href="{{ path('app_landing_page') }}" title="Wordpress Oprimization packages">
-			<img src=" {{ asset('build/images/Wordpress-Optimize-logo.png') }} " alt=" wordpress optimization packages" class=" rounded-circle img-fluid"/>
-		</a>
-	</div>
+<header class='nav'>
+  <div class="container">
+    <div id="nav">
+      <h1>
+        <a href="{{ path('alx_home') }}" id="logo-div">
+          <img src="{{ asset('build/images/ALX.png') }}" width="80" alt="Alex Seif logo" class="img-fluid" />
+          <span>{{ 'alex_seif2'|trans }}</span>
+        </a>
+      </h1>
 
-	<!-- .pe-top -->
-	<footer>
-		<h2>
-			<a href="{{ path('alx_home') }}" id="trophy-div">
-				{{ include('default/_trophy.html.twig') }}
-				<span class="lh-1 fs-1 fw-bold text-center d-flex justify-content-center flex-column align-items-center align-content-center">20 Years</span>
-			</a>
-		</h2>
-		<div class="x-menu-btn">
-			<div class="x-menu-line"></div>
-			<div class="x-menu-line"></div>
-			<div class="x-menu-line"></div>
-		</div>
-	</footer>
-</div>
-<div id="nav-container">
-	<nav role="navigation">
-		<div class="menu-container">
-			{#            <a href="{{ path('about') }}" class="x-link">About me</a> #}
-			{#            <a href="{{ path('work') }}" class="x-link">My work</a> #}
-				<a href="#" class="x-link"> {{ 'the_future'|trans }}</a>
-			<div class="x-social">
-				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/014-instagram.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
-				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
-				<a href="https://www.instagram.com/freelancer_alex/" target="_blank" class="social-icon-link"><img src="{{ asset('build/images/icons/013-facebook.svg') }}" alt="{{ 'alex_seif_instragram'|trans }}" class="social-icon"></a>
-			</div>
-		</div>
-
-	</nav>
-</div>
+      <nav role="navigation">
+        <ul>
+          <li>
+            <a href="#about">Hi</a>
+          </li>
+          <li>
+            <a href="#value">Value</a>
+          </li>
+          <li>
+            <a href="#usp">Expertise</a>
+          </li>
+		  <li>
+            <a href="#usp" class="accent">Yalla</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- #nav -->
+  </div>
+</header>
