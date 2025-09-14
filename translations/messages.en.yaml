@@ -68,7 +68,7 @@ wordpress_optimize:
             - Structure your content.
 
         starter:
-            title: "🟢 WordPress Optimization"
+            title: "WordPress Optimization"
             subtitle: "WP Care & Speed Boost"
             ideal: "Increase WordPress speed and performance, security, and peace of mind"
             price_egp: "EGP 1,500"
@@ -82,7 +82,7 @@ wordpress_optimize:
             cta_text: "Speed Up Your Site"
 
         builder:
-            title: "🔵 Build Your Website"
+            title: "Build Your Website"
             subtitle: "From Zero to Awesome"
             ideal: "Ideal for: Clinics, coaches, and small businesses starting fresh"
             price_egp: "EGP 2,500"
@@ -94,7 +94,7 @@ wordpress_optimize:
             cta_text: "Launch Your Online Presence"
 
         seller:
-            title: "🟣 Build Your Store"
+            title: "Build Your Store"
             subtitle: "eCommerce Power Pack"
             ideal: "Ideal for: Product-based businesses ready to sell online"
             price_egp: "EGP 5,000"

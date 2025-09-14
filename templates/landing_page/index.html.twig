@@ -1,264 +1,81 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ 'wordpress_optimize.meta.title'|trans }}
+  {{ 'wordpress_optimize.meta.title'|trans }}
 {% endblock %}
 {% block stylesheets %}
-	{{ parent()}}
-	{{ encore_entry_link_tags('wp-optimize') }}
+  {{ parent() }}
+  {{ encore_entry_link_tags('wp-optimize') }}
 {% endblock %}
 {% block structured_data %}
-	<script type="application/ld+json">
+  <script type="application/ld+json">
 		{"@context": "https://schema.org","@type": "ProfessionalService", "name": "Alex Seif – WordPress Optimization", "image": "https://alexseif.com/images/WordPress-Optimize-card.png", "url": "https://alexseif.com/wordpress-optimiziation", "description":
 		{{ 'wordpress_optimize.meta.description'|trans }}, "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressRegion": "EG", "addressCountry": "Egypt" }, "telephone": "+20-100-400-6332", "areaServed": "EG", "priceRange": "$$", "founder": { "@type": "Person", "name": "Alex Seif", "jobTitle":
 		{{ 'wordpress_optimize.meta.job_title'|trans }}, "sameAs": [ "https://twitter.com/alexseif", "https://linkedin.com/in/alexseif", "https://github.com/alexseif", "https://www.instagram.com/alex_makes_websites" ] } }
 	</script>
 {% endblock %}
 {% block meta %}
-	<meta
-	name="description" content="{{ 'wordpress_optimize.meta.description'|trans }}">
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://alexseif.com/wordpress-optimization">
-	<meta property="og:title" content="{{ 'wordpress_optimize.meta.title'|trans }}">
-	<meta property="og:description" content="{{ 'wordpress_optimize.meta.description'|trans }}">
+  <meta name="description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexseif.com/wordpress-optimization" />
+  <meta property="og:title" content="{{ 'wordpress_optimize.meta.title'|trans }}" />
+  <meta property="og:description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
 
-	<meta
-	property="og:image" content="https://alexseif.com/images/WordPress-Optimize-card.png">
-	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@alexseif">
-	<meta name="twitter:creator" content="@alexseif">
-	<meta name="twitter:title" content="{{ 'wordpress_optimize.meta.title'|trans }}">
-	<meta name="twitter:description" content="{{ 'wordpress_optimize.meta.description'|trans }}">
-	<meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png">
+  <meta property="og:image" content="https://alexseif.com/images/WordPress-Optimize-card.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@alexseif" />
+  <meta name="twitter:creator" content="@alexseif" />
+  <meta name="twitter:title" content="{{ 'wordpress_optimize.meta.title'|trans }}" />
+  <meta name="twitter:description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
+  <meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png" />
 {% endblock %}
 {% block nav %}
-	{{ include('landing_page/_nav.html.twig') }}
+  {{ include('landing_page/_nav.html.twig') }}
 {% endblock %}
 {% block content %}
-	<main id="site-wrapper">
-		{% include 'landing_page/_header.html.twig' %}
-		{# TODO: 3 slots open this month. Dm to book #}
-		{# TODO: Built for impact, Designed to convert, Cairo tested. #}
-		<section class="container" id="services">
-			<h2>{{ 'wordpress_optimize.services.title'|trans }}</h2>
-			<ul class="fancy-list">
-				<li>{{ 'wordpress_optimize.services.value.0'|trans }}</li>
-				<li>{{ 'wordpress_optimize.services.value.1'|trans }}</li>
-				<li>{{ 'wordpress_optimize.services.value.2'|trans }}</li>
-			</ul>
-			<div class="services">
-				{% for key,package in packages %}
-					{% if key != 'all_packages' %}
+  <main id="site-wrapper">
+    {% include 'landing_page/_header.html.twig' %}
+    {# TODO: 3 slots open this month. Dm to book #}
+    {# TODO: Built for impact, Designed to convert, Cairo tested. #}
 
-						{% set translation_prefix = 'wordpress_optimize.services.' ~ key ~ '.' %}
-						<div class="card card-top-{{ package.color }}">
-							<div>
-								<h3>{{ (translation_prefix ~ package.title)|trans }}</h3>
-								<div class="text-end">
-									<strong>{{ package.price_usd|format_currency('USD') }}</strong>
-									<strong class="d-flex flex-column">
-										{% if package.price_sales is defined  %}
-											<del>{{ package.price_egp|format_currency('EGP') }}</del>
-											<span style="color:#0182BE;">{{ package.price_sales|format_currency('EGP') }}</span>
-										{% else %}
-											<span style="color:#0182BE;">{{ package.price_egp|format_currency('EGP') }}</span>
-										{% endif %}
-									</strong>
-								</div>
-							</div>
-							<div>
-								<h4>{{ (translation_prefix ~ package.subtitle)|trans }}</h4>
-								<hr/>
-								<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
-								<ul>
-									{% for feature in package.features %}
-										<li>{{ feature|trans }}</li>
-									{% endfor %}
-								</ul>
-								<hr/>
-								<p class="fs-5">{{ (translation_prefix ~ package.ideal)|trans }}</p>
-							</div>
-							<div class="card-footer">
-								<a href="{{ package.cta_link }}" target="_blank" class="cta btn btn-{{package.color}} fw-bold">{{ (translation_prefix ~ package.cta_text)|trans }}</a>
+    {% include 'landing_page/_services.html.twig' %}
+    {% include 'landing_page/_clients.html.twig' %}
 
-							</div>
-						</div>
-						<!-- .card -->
-					{% endif %}
-				{% endfor %}
-				{% set translation_prefix = 'wordpress_optimize.services.add-on.'  %}
-			</div>
-			<div class="services">
+    <section class="container">
+      <h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
+      <ul class="fancy-list">
+        <li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
+        <li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
+        <li>{{ 'wordpress_optimize.clients.target_audience.2'|trans }}</li>
+        <li>{{ 'wordpress_optimize.clients.target_audience.3'|trans }}</li>
+        <li>{{ 'wordpress_optimize.clients.target_audience.4'|trans }}</li>
+        <li>{{ 'wordpress_optimize.clients.target_audience.5'|trans }}</li>
+        <li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
+        <li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
+      </ul>
+      <p class="fs-3 text-center">{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
+      <div class="cta-wrapper">
+        <a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+      </div>
+    </section>
 
-				<div class="card">
-					<di>
-						<h3>{{ (translation_prefix ~ 'title')|trans }}</h3>
-					</div>
-					<div>
-						<h4>{{ (translation_prefix ~ 'subtitle')|trans }}</h4>
-						<hr/>
-						<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
-						<ul>
-							<li>{{ (translation_prefix ~ 'features.0')|trans }}</li>
-							<li>{{ (translation_prefix ~ 'features.1')|trans }}</li>
-							<li>{{ (translation_prefix ~ 'features.2')|trans }}</li>
-							<li>{{ (translation_prefix ~ 'features.3')|trans }}</li>
-							<li>{{ (translation_prefix ~ 'features.4')|trans }}</li>
-							<li>{{ (translation_prefix ~ 'features.5')|trans }}</li>
-							<li>{{ (translation_prefix ~ 'features.6')|trans }}</li>
-						</ul>
-					</div>
-					<div class="card-footer text-end">
-						<div class="cta-wrapper">
-							<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- .card -->
-
-				{% set package = packages['all_packages'] %}
-				{% set translation_prefix = 'wordpress_optimize.services.all_packages.' %}
-				<div class="card card-top-{{ package.color }}">
-					<div >
-						<h3>{{ (translation_prefix ~ package.title)|trans }}</h3>
-						<div class="text-end">
-							<strong>{{ package.price_usd|format_currency('USD') }}</strong>
-							<strong class="d-flex flex-column">
-								{% if package.price_sales is defined  %}
-									<del>{{ package.price_egp|format_currency('EGP') }}</del>
-									<span style="color:#0182BE;">{{ package.price_sales|format_currency('EGP') }}</span>
-								{% else %}
-									<span style="color:#0182BE;">{{ package.price_egp|format_currency('EGP') }}</span>
-								{% endif %}
-							</strong>
-						</div>
-					</div>
-					<div>
-						<h4>{{ (translation_prefix ~ package.subtitle)|trans }}</h4>
-						<hr/>
-						<p style="color:#0182BE; font-weight: bold;">{{ (package.offer is defined)?package.offer|trans }}</p>
-						<ul>
-							{% for feature in package.features %}
-								<li>{{ feature|trans }}</li>
-							{% endfor %}
-						</ul>
-						<hr/>
-						<p class="fs-5">{{ (translation_prefix ~ package.ideal)|trans }}</p>
-					</div>
-					<div class="card-footer">
-						<a href="{{ package.cta_link }}" target="_blank" class="cta btn btn-{{package.color}} fw-bold">{{ (translation_prefix ~ package.cta_text)|trans }}</a>
-
-					</div>
-				</div>
-				<!-- .card -->
-			</div>
-			<!-- .card -->
-		</section>
-		<section class="portfolio container" id="clients">
-			<div>
-				<h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
-				<p class="fs-3">{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
-			</div>
-			<div>
-				<div class="masonry-carousel">
-					<div class="masonry-track">
-						{% for image in portfolio_images %}
-							<div class="masonry-item">
-								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
-							</div>
-						{% endfor %}
-						<!-- Duplicate for infinite scroll -->
-						{% for image in portfolio_images %}
-							<div class="masonry-item">
-								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
-							</div>
-						{% endfor %}
-					</div>
-				</div>
-				<!-- .masonry-carousel -->
-				<div class="masonry-carousel">
-					<div class="masonry-track">
-						{% set shuffled = portfolio_images|sort((a, b) => random() < 0.5 ? -1 : 1) %}
-
-
-						{% for image in shuffled %}
-							<div class="masonry-item">
-								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
-							</div>
-						{% endfor %}
-						<!-- Duplicate for infinite scroll -->
-						{% for image in portfolio_images %}
-							<div class="masonry-item">
-								<img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo">
-							</div>
-						{% endfor %}
-					</div>
-				</div>
-
-
-			</div>
-			<div class="cta-wrapper">
-				<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
-			</div>
-		</div>
-	</section>
-	<section class="container">
-		<h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
-		<ul class="fancy-list">
-			<li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
-			<li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
-			<li>{{ 'wordpress_optimize.clients.target_audience.2'|trans }}</li>
-			<li>{{ 'wordpress_optimize.clients.target_audience.3'|trans }}</li>
-			<li>{{ 'wordpress_optimize.clients.target_audience.4'|trans }}</li>
-			<li>{{ 'wordpress_optimize.clients.target_audience.5'|trans }}</li>
-			<li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
-			<li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
-		</ul>
-		<p class="fs-3 text-center">{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
-		<div class="cta-wrapper">
-			<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
-		</div>
-	</section>
-	<section class="container" id="why">
-		<h2>{{ 'wordpress_optimize.why_choose.title'|trans }}</h2>
-		<ul class="check-list">
-			<li>{{ 'wordpress_optimize.why_choose.reasons.0'|trans }}</li>
-			<li>{{ 'wordpress_optimize.why_choose.reasons.1'|trans }}</li>
-			<li>{{ 'wordpress_optimize.why_choose.reasons.2'|trans }}</li>
-			<li>{{ 'wordpress_optimize.why_choose.reasons.3'|trans }}</li>
-			<li>{{ 'wordpress_optimize.why_choose.reasons.4'|trans }}</li>
-			<li>{{ 'wordpress_optimize.why_choose.reasons.5'|trans }}</li>
-		</ul>
-	</section>
-	<section class="container" id="contact">
-		<div id="personal-outro" class="banner rounded mb-4">
-			<div class="image-wrapper">
-				<img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, {{ 'wordpress_optimize.meta.job_title'|trans }}" class="rounded-circle img-fluid">
-			</div>
-			<div class="title-wrapper p-1">
-				<p class="text-start">
-					{{ 'wordpress_optimize.contact.title'|trans }}.
-					{{ 'wordpress_optimize.contact.subtitle'|trans }}
-				</p>
-			</div>
-		</div>
-		<div class="cta-wrapper ">
-			<a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.contact.cta_button'|trans }}</a>
-		</div>
-	</section>
-</main>
-<footer>
-	{{ 'wordpress_optimize.footer.copyright'|trans }}
-	<a href="https://bit.ly/m/wpoptimize" target="_blank">
-		<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
-	</a>
-</footer>{% endblock %}{% block footer %}
-<footer>
-	{{ 'wordpress_optimize.footer.copyright'|trans }}
-	<a href="https://bit.ly/m/wpoptimize" target="_blank">
-		<img src="{{ asset('build/images/icons/027-whatsapp.svg') }}" alt="WhatsApp Icon" width="24" style="vertical-align: middle; margin-left: 5px;">
-	</a>
-</footer>{% endblock %}
+    {% include 'landing_page/_usp.html.twig' %}
+    {% include 'landing_page/_contact.html.twig' %}
+  </main>
+{% endblock %}
+{% block footer %}
+  <footer>
+    <div class="container">
+      <nav>
+        {{ 'wordpress_optimize.footer.copyright'|trans }}
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/alex_makes_websites/" target="_blank" class="social-icon-link">{% include 'icons/014-instagram.svg' %}</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+{% endblock %}

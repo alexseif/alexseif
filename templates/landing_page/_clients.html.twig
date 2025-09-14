@@ -1,0 +1,48 @@
+<section class="portfolio" id="clients">
+  <div class="container">
+    <div>
+      <h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
+      <p class="fs-3">{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
+    </div>
+    <div>
+      <div class="masonry-carousel">
+        <div class="masonry-track">
+          {% for image in portfolio_images %}
+            <div class="masonry-item">
+              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
+            </div>
+          {% endfor %}
+          <!-- Duplicate for infinite scroll -->
+          {% for image in portfolio_images %}
+            <div class="masonry-item">
+              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
+            </div>
+          {% endfor %}
+        </div>
+        <!-- .masonry-track -->
+      </div>
+      <!-- .masonry-carousel -->
+      <div class="masonry-carousel">
+        <div class="masonry-track">
+          {% set shuffled = portfolio_images|sort((a, b) => random() < 0.5 ? -1 : 1) %}
+          {% for image in shuffled %}
+            <div class="masonry-item">
+              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
+            </div>
+          {% endfor %}
+          <!-- Duplicate for infinite scroll -->
+          {% for image in portfolio_images %}
+            <div class="masonry-item">
+              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
+            </div>
+          {% endfor %}
+        </div>
+        <!-- .masonry-track -->
+      </div>
+      <!-- .masonry-carousel -->
+    </div>
+    <div class="cta-wrapper">
+      <a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+    </div>
+  </div>
+</section>
