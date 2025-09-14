@@ -40,6 +40,7 @@ Portfolio: Portfolio
 merry_christmas_from: "Merry Christmas from"
 
 wordpress_optimize:
+    cta: "💬 Chat on WhatsApp"
     meta:
         title: "WordPress Optimization that actually converts: 400+ sites and counting"
         description: "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites. This page is my offer to help you do it faster, cleaner, and smarter."
@@ -159,9 +160,9 @@ wordpress_optimize:
             - "Trusted by 400+ clients worldwide"
 
     contact:
-        title: "📱 Let's Talk About Your Project"
-        subtitle: "Not sure what you need? I'll help you figure it out."
+        title: "Let’s talk"
+        subtitle: "If you’re ready to improve your site or just want to ask a few questions, I’m here."
         cta_button: "💬 Chat with Alex"
 
     footer:
-        copyright: "© 2025 WP Optimize by Alex Seif. All rights reserved."
+        copyright: "© 2025 WP Optimize by Alex Seif"

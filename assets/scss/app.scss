@@ -20,12 +20,14 @@ The following content was designed & implemented under AlexSeif.com
 // }
 // 🌐 :root for runtime theming
 :root {
+  /* Typography */
   --font-sans: 'Inter', 'Segoe UI', sans-serif;
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 2rem;
   --font-size-xxl: 2.5rem;
 
+  /* Spacing & Radius */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
@@ -46,17 +48,44 @@ The following content was designed & implemented under AlexSeif.com
 
   --maxw: 1200px;
 
-  --color-bg: #101010;
-  --color-surface: #1e1e1e;
-  --color-text: #f8f9fa;
+  /* Core Colors */
+  --color-bg: #0a0a0a;
+  /* deeper black */
+  --color-surface: #161616;
+  /* richer surface */
+  --color-surface-muted: #222;
+  /* for cards or callouts */
+  --color-text: #fefefe;
+  /* brighter text */
+  --color-muted: rgba(255, 255, 255, 0.5);
+  /* softer contrast */
   --color-text-accent: #89A5E1;
-  --color-muted: rgba(255, 255, 255, 0.6);
+  /* cool blue accent */
   --color-accent: #4f6fad;
   --color-accent-hover: #6a8bd8;
+  --color-yellow: #fbbc04;
+
+  /* Borders & Shadows */
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
   --color-border-default: var(--color-border-subtle);
   --color-border-accent: var(--color-accent);
   --color-border-hover: var(--color-accent-hover);
-  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+
+  /* Callouts & Highlights */
+  --color-callout-bg: rgba(255, 255, 255, 0.03);
+  --color-callout-border: rgba(255, 255, 255, 0.1);
+  --color-highlight: #89A5E1;
+  --color-highlight-soft: #c3d3f5;
+
+  /* Semantic Roles */
+  --color-success: #4caf50;
+  --color-warning: #fbbc04;
+  --color-error: #e53935;
+  --color-info: #2196f3;
+
+  /* Icon & List Accents */
+  --color-list-icon: #89A5E1;
 }
 
 // 🎨 SCSS Tokens
@@ -131,6 +160,13 @@ em {
 
 .text-end {
   text-align: end;
+}
+
+.image-wrapper {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 #background-noise {
@@ -283,7 +319,6 @@ main {
 
 .shadow {
   box-shadow: 5px 5px 2px 0px rgba(240, 240, 240, 0.2);
-
 }
 
 // 🏷️ Badge Row
@@ -430,6 +465,15 @@ main {
 
   }
 
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
   @media (min-width: 768px) {
     background: linear-gradient(to right, transparent 0%, transparent 40px, $surface 60px, $surface 100%);
     flex-direction: row;
@@ -437,6 +481,16 @@ main {
     .image-wrapper {
       flex: 0 0 160px;
       height: 160px;
+    }
+
+    .text-section {
+      flex-direction: row;
+      align-items: end;
+
+      .cta-wrapper {
+        text-align: end;
+
+      }
     }
   }
 

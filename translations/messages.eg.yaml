@@ -27,5 +27,6 @@ wordpress_optimize:
             cta_text: "ابدأ البيع"
 
     contact:
-        title: "📱 تعال نبدأ مشروعك"
-        cta_button: "💬 كلم اسكندر"
+        title: "Let’s talk"
+        subtitle: "If you’re ready to improve your site or just want to ask a few questions, I’m here."
+        cta_button: "💬 Chat with Alex"

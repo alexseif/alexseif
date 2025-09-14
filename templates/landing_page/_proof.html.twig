@@ -1,0 +1,37 @@
+{# TODO: 4. Proof Section #}
+{# Purpose: Build trust Elements:
+
+Delivered projects (Eka, Seen Media)
+
+Testimonials or client quotes
+
+Screenshots or metrics
+
+
+ #}
+<section id="proof">
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="#portfolio">Selected Work</a>
+        </li>
+        <li>
+          <a href="#clients">Clients</a>
+        </li>
+        <li>
+          <a href="#testimonials">Testimonials</a>
+        </li>
+        <li>
+          <a href="#stats">Results</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+<section id="clients">
+  {% include 'landing_page/_portfolio.html.twig' %}
+  {% include 'landing_page/_clients.html.twig' %}
+</section>
+{% include 'landing_page/_testimonials.html.twig' %}
+{% include 'landing_page/_stats.html.twig' %}
