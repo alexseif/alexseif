@@ -5,12 +5,9 @@
   {{ 'web_developer'|trans|capitalize }}
 {% endblock %}
 {% block content %}
-  <div id="fullpages" class="scrollsign">
-    {# {{ include('default/_home.html.twig') }} #}
-    {{ include('default/_about.html.twig') }}
+  <div id="fullpages" class="scrollsign">{{ include('default/_about.html.twig') }}
     {{ include('default/_value.html.twig') }}
-    {{ include('default/_sections.html.twig') }}
-  </div>
+    {{ include('default/_usp.html.twig') }}</div>
   <!-- #fullpages -->
 {% endblock %}
 {% block announcements %}

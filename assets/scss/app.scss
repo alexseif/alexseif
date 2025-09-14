@@ -177,7 +177,7 @@ main {
 
 // 🧭 Scrollsign Cue
 .scrollsign {
-  .fullpage::after {
+  .fullpage:not(:last-child)::after {
     content: "╲╱";
     top: calc(100vh - var(--margin-xl));
     font-size: clamp(1.5rem, 3vw, 2.5rem);

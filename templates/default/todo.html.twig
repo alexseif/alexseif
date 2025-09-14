@@ -1,27 +1,29 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}{% endblock %}
+{% block title %}
+  {{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}
+{% endblock %}
+{% block nav %}
+
+{% endblock %}
 {% block content %}
+  <section>
     <div class="container">
-        <ul class="list-group mt-5">
-            {% for item in todo %}
-                <li class="list-group-item">
-{#  Check if it's a link print a link #}
-                    {#  If not print the text#}
-                    {% if item|length > 4 and item|slice(0, 4) == 'http' %}
-                        <a href="{{ item }}" target="_blank">{{ item }}</a>
-                    {% else %}
-                        {{ item }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+      <ul class="list-group">
+        {% for item in todo %}
+          <li class="list-group-item">
+            {# Check if it's a link print a link #}
+            {# If not print the text #}
+            {% if (item|length) > 4 and (item|slice(0, 4)) == 'http' %}
+              <a href="{{ item }}" target="_blank">{{ item }}</a>
+            {% else %}
+              {{ item }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
     </div>
-{#                    <a href="{{ item }}" target="_blank">{{ item }}</a>#}
-{#                </li>#}
-{#            {% endfor %}#}
-{#        </ul>#}
-{#    </div>#}
+  </section>
 {% endblock %}
 {% block announcements %}
-{% endblock %}
 
+{% endblock %}
