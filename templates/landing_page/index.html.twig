@@ -35,35 +35,123 @@
   {{ include('landing_page/_nav.html.twig') }}
 {% endblock %}
 {% block content %}
+  {% include 'landing_page/_header.html.twig' %}
+  {# TODO: 3 slots open this month. Dm to book #}
+  {# TODO: Built for impact, Designed to convert, Cairo tested. #}
 
-    {% include 'landing_page/_header.html.twig' %}
-    {# TODO: 3 slots open this month. Dm to book #}
-    {# TODO: Built for impact, Designed to convert, Cairo tested. #}
+  {# TODO: Hero Secton #}
+  {# Purpose: Hook attention in 5 seconds Elements
+Bold headline with emotional clarity
+Subheadline with strategic value
+CTA button (anchor or scroll trigger)
+<section class="hero">
+  <h1>Visibility isn’t optional. It’s survival.</h1>
+  <p>Alex Seif builds digital systems that convert trust into traction—Cairo-rooted, AI-ready.</p>
+  <a href="#services" class="cta-btn">See How</a>
+</section>
+ #}
 
-    {% include 'landing_page/_services.html.twig' %}
-    {% include 'landing_page/_clients.html.twig' %}
+  {# TODO: 2. Pain Point Section #}
+  {# Purpose: Show you understand their struggle Elements:
 
-    <section class="container">
-      <h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
-      <ul class="fancy-list">
-        <li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
-        <li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
-        <li>{{ 'wordpress_optimize.clients.target_audience.2'|trans }}</li>
-        <li>{{ 'wordpress_optimize.clients.target_audience.3'|trans }}</li>
-        <li>{{ 'wordpress_optimize.clients.target_audience.4'|trans }}</li>
-        <li>{{ 'wordpress_optimize.clients.target_audience.5'|trans }}</li>
-        <li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
-        <li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
-      </ul>
-      <p class="fs-3 text-center">{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
-      <div class="cta-wrapper">
-        <a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
-      </div>
-    </section>
+2–3 common frustrations
 
-    {% include 'landing_page/_usp.html.twig' %}
-    {% include 'landing_page/_contact.html.twig' %}
-  </main>
+Cultural phrasing or local metaphors
+<section class="pain-points">
+  <h2>Why your clinic isn’t getting booked</h2>
+  <ul>
+    <li>Google doesn’t know you exist</li>
+    <li>Your website loads slower than a Cairo traffic jam</li>
+    <li>Your copy feels like a brochure, not a promise</li>
+  </ul>
+</section> #}
+  {# TODO: 3. Solution Section #}
+  {# Purpose: Introduce your offer as the answer Elements:
+
+Clear name of the service
+
+Emotional and strategic benefits
+
+Optional visual or icon grid
+
+html
+<section class="solution">
+  <h2>The Clinic Visibility Stack</h2>
+  <p>Built for Cairo clinics who want more bookings, better reviews, and real traction—not vanity metrics.</p>
+</section> #}
+  {# TODO: 4. Proof Section #}
+  {# Purpose: Build trust Elements:
+
+Delivered projects (Eka, Seen Media)
+
+Testimonials or client quotes
+
+Screenshots or metrics
+
+html
+<section class="proof">
+  <h2>Delivered Projects</h2>
+  <ul>
+    <li><strong>Eka:</strong> 10K EGP project with full optimization</li>
+    <li><strong>Seen Media:</strong> Visual rhythm and journal logic</li>
+  </ul>
+</section> #}
+
+  {# TODO: Pricing Section #}
+  {# Purpose: Anchor value, not cost Elements:
+
+One confident offer
+
+Breakdown of what’s included
+
+Emotional CTA
+
+You already started this—let’s elevate it later with new pricing logic. #}
+
+  {# TODO: 6. FAQ Section #}
+  {# Purpose: Remove hesitation Elements:
+
+3–5 questions with emotionally clear answers
+
+Use schema markup (FAQPage) for AI visibility #}
+  {# TODO: 7. Final CTA Section #}
+  {# Purpose: Close the loop Elements:
+
+Reaffirm value
+
+CTA button
+
+Optional WhatsApp link or voice-note invite
+
+html
+<section class="final-cta">
+  <h2>Ready to stop being invisible?</h2>
+  <a href="/get-visible/" class="cta-btn">Get My Cairo Strategy</a>
+</section> #}
+
+  {% include 'landing_page/_services.html.twig' %}
+  {% include 'landing_page/_clients.html.twig' %}
+
+  <section class="container">
+    <h3>{{ 'wordpress_optimize.clients.who_is_it_for'|trans }}</h3>
+    <ul class="fancy-list">
+      <li>{{ 'wordpress_optimize.clients.target_audience.0'|trans }}</li>
+      <li>{{ 'wordpress_optimize.clients.target_audience.1'|trans }}</li>
+      <li>{{ 'wordpress_optimize.clients.target_audience.2'|trans }}</li>
+      <li>{{ 'wordpress_optimize.clients.target_audience.3'|trans }}</li>
+      <li>{{ 'wordpress_optimize.clients.target_audience.4'|trans }}</li>
+      <li>{{ 'wordpress_optimize.clients.target_audience.5'|trans }}</li>
+      <li>{{ 'wordpress_optimize.clients.target_audience.6'|trans }}</li>
+      <li>{{ 'wordpress_optimize.clients.target_audience.7'|trans }}</li>
+    </ul>
+    <p class="fs-3 text-center">{{ 'wordpress_optimize.clients.conclusion'|trans }}</p>
+    <div class="cta-wrapper">
+      <a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site" target="_blank" class="cta">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+    </div>
+  </section>
+
+  {% include 'landing_page/_usp.html.twig' %}
+  {% include 'landing_page/_contact.html.twig' %}
 {% endblock %}
 {% block footer %}
   <footer>
