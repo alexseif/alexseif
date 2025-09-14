@@ -1,14 +1,14 @@
 <header class="container">
-	<div class="mb-5 mt-5 banner">
-		<div class="image-wrapper">
-			<img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimization, speed up Wordpress" class="rounded-circle img-fluid"/>
-		</div>
-		<div class="p-2">
-			<h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
-		</div>
-	</div>
-	{% include 'landing_page/_personal_intro.html.twig' %}
-	<div class="cta-wrapper">
-		<a target="_blank" class="btn btn-cta" href="https://wa.me/201004006332?text='hi%20alex%2c%20i%20need%20help%20with%20my%20wordpress%20site'">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
-	</div>
+  <div class="banner">
+    <div class="image-wrapper">
+      <img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimization, speed up Wordpress" />
+    </div>
+    <div>
+      <h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
+    </div>
+  </div>
+  {% include 'landing_page/_personal_intro.html.twig' %}
+  <div class="cta-wrapper">
+    <a target="_blank" class="cta" href="https://wa.me/201004006332?text='hi%20alex%2c%20i%20need%20help%20with%20my%20wordpress%20site'">{{ 'wordpress_optimize.header.cta_button'|trans }}</a>
+  </div>
 </header>
