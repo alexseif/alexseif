@@ -12,97 +12,62 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class LandingPageController extends AbstractController
 {
     public $packages = [
-        // 'social' => [
-        //     'title' => 'title',
-        //     'subtitle' => 'subtitle',
-        //     'color' => 'success',
-        //     'ideal' => 'ideal',
-        //     'price_usd' => 49,
-        //     'price_egp' => 2500,
-        //     'features' => [
-        //         'Speed optimization & cleanup',
-        //         'Security hardening & firewall setup',
-        //         'Monthly plugin & theme updates',
-        //         'Automatic backup system',
-        //         '24/7 uptime monitoring',
-        //         'Direct WhatsApp support',
-        //     ],
-        //     'cta_text' =>    'cta_text',
-        //     'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
-        // ],
-        'starter' => [
-            'title' => 'title',
-            'subtitle' => 'subtitle',
-            'color' => 'success',
-            'ideal' => 'ideal',
-            'price_usd' => 49,
-            'price_egp' => 2500,
+        'optimize' => [
+            'icon' => '📈',
+            'title' => 'Optimization Only',
+            'tagline' => 'Fix what’s slow or unclear',
+            'price' => 'Starting from <span>9,000 EGP</span>',
             'features' => [
-                'Speed optimization & cleanup',
-                'Security hardening & firewall setup',
-                'Monthly plugin & theme updates',
-                'Automatic backup system',
-                '24/7 uptime monitoring',
-                'Direct WhatsApp support',
+                'Speed boost & caching setup',
+                'SEO tuning',
+                'Performance report',
+                'WhatsApp support for 7 days',
+                'Delivered in 3–5 days'
             ],
-            'cta_text' =>    'cta_text',
-            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
+            'note' => 'Already have a site? Let’s make it faster, clearer, and easier to trust.'
         ],
-        'builder' => [
-            'title' => 'title',
-            'subtitle' => 'subtitle',
-            'color' => 'primary',
-            'ideal' => 'ideal',
-            'price_usd' => 500,
-            'price_egp' => 24000,
-            'price_sales' => 15000,
+        'basic' => [
+            'icon' => '🛠️',
+            'title' => 'Basic Site',
+            'tagline' => 'Simple, clean, and fast',
+            'price' => 'Starting from <span>15,500 EGP</span>',
             'features' => [
-                'The look and feel of your brand on all devices',
-                'Meta Ads Pixel setup & Google Analytics',
-                'Build your audience with a Newsletter',
-                'AI ready structure: your business shows up in smart answers',
-                'Arabic or English setup',
-                'Delivered in 7 –10 days'
+                'One-pager or brochure layout',
+                'Contact form integration',
+                'Basic SEO setup',
+                'Mobile-friendly design',
+                'Delivered in 5–7 days'
             ],
-            'cta_text' =>    'cta_text',
-            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
+            'note' => 'Perfect for clinics, freelancers, and small teams who need to show up online—fast.'
         ],
-        'seller' => [
-            'title' => 'title',
-            'subtitle' => 'subtitle',
-            'color' => 'indigo',
-            'ideal' => 'ideal',
-            'price_usd' => 1000,
-            'price_egp' => 48500,
-            'price_sales' => 26500,
+        'store' => [
+            'icon' => '🛒',
+            'title' => 'WooCommerce Store',
+            'tagline' => 'Sell with clarity and speed',
+            'price' => 'Starting from <span>36,500 EGP</span>',
             'features' => [
-                '✅ Everything in the Builder Package',
-                'WooCommerce store setup',
-                'Product pages + payment gateway integration',
-                'Cart, checkout, and order flow optimization',
-                'Customer retention tools (email, coupons, upsells)',
-                'Optional: multi-language store, subscriptions, shipping rules',
+                'Product pages & cart flow',
+                'Payment gateway setup',
+                'Retention tools',
+                'Speed & SEO optimization',
+                'Delivered in 10–14 days'
             ],
-            'cta_text' =>    'cta_text',
-            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
+            'note' => 'Built for shops ready to grow. Clean, fast, and conversion-ready.'
         ],
-        'all_packages' => [
-            'title' => 'title',
-            'subtitle' => 'subtitle',
-            'color' => 'success',
-            'ideal' => 'ideal',
-            'price_usd' => 0,
-            'price_egp' => 0,
+        'custom' => [
+            'icon' => '🤖',
+            'title' => 'Get Recommended by AI',
+            'tagline' => 'Let the system guide your build',
+            'price' => 'Starting from <span>80,000 EGP</span>',
             'features' => [
-                'AI-Ready Structure',
-                'Mobile-friendly, SEO-ready, and built for speed',
-                'Direct, email & Whatsapp Support',
-
+                'AI-curated layout & logic',
+                'Modular SCSS architecture',
+                'Custom animations or media blocks',
+                'Conversion-ready proof stacking',
+                'Flexible timeline & scope'
             ],
-            'cta_text' =>    'cta_text',
-            'cta_link' => 'https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20need%20help%20with%20my%20WordPress%20site'
-        ],
-
+            'note' => 'We scope it together, then let the system recommend what fits best. Built around your goals.'
+        ]
     ];
 
     #[Route('/landing_page', name: 'old_landing_page')]

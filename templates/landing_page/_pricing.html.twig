@@ -1,103 +1,49 @@
-{# TODO: Pricing Section #}
-{# Purpose: Anchor value, not cost Elements:
-
-One confident offer
-
-Breakdown of what’s included
-
-Emotional CTA
-
-You already started this—let’s elevate it later with new pricing logic. #}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Build Your Store",
-  "description": "WooCommerce setup with product pages, cart flow, and retention tools.",
-  "brand": {
-    "@type": "Brand",
-    "name": "WP Optimize by Alex Seif"
-  },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "EGP",
-    "price": "26500",
-    "url": "https://alexseif.com/wordpress-optimization#pricing",
-    "availability": "https://schema.org/InStock"
+{% for key, pkg in packages %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ pkg.title|e('js') }}",
+    "description": "{{ pkg.note|e('js') }}",
+    "brand": {
+      "@type": "Brand",
+      "name": "WP Optimize by Alex Seif"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EGP",
+      "price": "{{ pkg.price|replace({' EGP': ''}) }}",
+      "url": "https://alexseif.com/wordpress-optimization#{{ key }}",
+      "availability": "https://schema.org/InStock"
+    }
   }
-}
+  </script>
+{% endfor %}
+<script>
+  const packages = {{ packages|json_encode|raw }};
 </script>
-{# 
-<section id="pricing">
-  <div class="container">
-    <div class="flow">
-      <h2>WordPress Websites & Optimization</h2>
-      <p>Built for clarity, speed, and long-term trust. Choose what fits—no fluff, no jargon.</p>
-    </div>
-    <div class="pricing-card">
-      <!-- Right: Package Variations -->
-      <div class="pricing-variations">
-        <div class="package-pane">
-          <h4>🛠️ Basic Site</h4>
-          <p>One-pager or brochure site. Clean layout, contact form, and basic SEO.</p>
-        </div>
-        <div class="package-pane">
-          <h4>🛒 WooCommerce Store</h4>
-          <p>Product pages, cart flow, payment setup, and retention tools.</p>
-        </div>
-        <div class="package-pane">
-          <h4>📈 Optimization Only</h4>
-          <p>Speed boost, SEO tuning, and performance reports for existing sites.</p>
-        </div>
-        <div class="package-pane">
-          <h4>🎨 Custom Theme</h4>
-          <p>Fully branded layout, modular SCSS, and expressive visual rhythm.</p>
-        </div>
-      </div>
-      <!-- Left: Anchor Price & Core Features -->
-      <div class="pricing-core">
-        <h3 class="price">Starting at <span>4,500 EGP</span></h3>
-        <ul class="feature-list">
-          <li>Fast, mobile-friendly layout</li>
-          <li>SEO-ready structure</li>
-          <li>Speed optimization</li>
-          <li>WhatsApp support</li>
-          <li>Delivered in 7–10 days</li>
-        </ul>
-        <div>
-          <a href="https://wa.me/201004006332?text=Hi%20Alex%2C%20I%20want%20to%20start%20a%20WordPress%20project" class="cta">💬 Start Your Project</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> #}
 
 <section id="pricing">
   <div class="container">
     <div class="pricing-card">
       <!-- Left: Package Tabs -->
       <div class="pricing-variations">
-        <button class="package-pane" data-package="optimize">
-          <h4>📈 Optimization Only</h4>
-          <p>Fix what’s slow or unclear</p>
-        </button>
-        <button class="package-pane active" data-package="basic">
-          <h4>🛠️ Basic Site</h4>
-          <p>Simple, clean, and fast</p>
-        </button>
-        <button class="package-pane" data-package="store">
-          <h4>🛒 WooCommerce Store</h4>
-          <p>Sell with clarity and speed</p>
-        </button>
-        <button class="package-pane" data-package="custom">
-          <h4>🎨 Custom Tailored</h4>
-          <p>Built around your brand</p>
-        </button>
+        {% for key, pkg in packages %}
+          <button class="package-pane {% if loop.first %}{% endif %}" data-package="{{ key }}">
+            <h4>{{ pkg.icon }} {{ pkg.title }}</h4>
+            <p>{{ pkg.tagline }}</p>
+          </button>
+        {% endfor %}
       </div>
 
-      <!-- Right: Dynamic Package Details -->
       <div class="pricing-core" id="package-details">
-        <!-- Populated by JS -->
+        <h3 class="price">Starting from <span>{{ packages['basic'].price }}</span></h3>
+        <ul class="feature-list">
+          {% for feature in packages['basic'].features %}
+            <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+        <p class="note">{{ packages['basic'].note }}</p>
       </div>
     </div>
   </div>
