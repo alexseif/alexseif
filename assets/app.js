@@ -60,12 +60,15 @@ $(function () {
     // assets/js/Nav.js
 
     const navDiv = document.getElementById('nav');
+    const footerDiv = document.getElementsByTagName('footer');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) { // adjust the scroll threshold as needed
             navDiv.classList.add('scrolled');
+            footerDiv[0].classList.add('scrolled');
         } else {
             navDiv.classList.remove('scrolled');
+            footerDiv[0].classList.remove('scrolled');
         }
     });
 });

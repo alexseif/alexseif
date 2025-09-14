@@ -14,7 +14,10 @@
     <!-- .banner -->
     <div class="number-boxes grid-3">
       <div class="card">
-        <h4>20 Years</h4>
+        <div id="trophy-div">
+          <h4>20 Years</h4>
+          <div>{{ include('default/_trophy.html.twig') }}</div>
+        </div>
         <p>WOW, 20 years! I'm grateful for all the creativity & impact I've witnessed. Working with amazing clients. Ready for more adventure.</p>
       </div>
       <div class="card">
@@ -32,6 +35,28 @@
       <!-- .card -->
     </div>
     <!-- .number-boxes -->
+    <div class="">
+      {# <div> #}
+      {# <h3>Built for impact,<br /> <em>Designed to convert,</em><br /> Cairo tested.</h3> #}
+      {# </div> #}
+      <div class="flow space-between column">
+        {# <div class="card">
+          <div class="badge-row">
+            <div class="badge">{{ 'web_presence'|trans }}</div>
+            <div class="badge">{{ 'ecommerce'|trans }}
+              Solutions</div>
+            <div class="badge">{{ 'travel_technology'|trans }}
+              Innovations</div>
+            <div class="badge">{{ 'ngo'|trans }}
+              Projects</div>
+            <div class="badge">eLearning Platforms</div>
+            <div class="badge">eGovernment Services</div>
+          </div>
+        </div> #}
+      </div>
+      <!-- .card -->
+    </div>
+    <!-- .flow -->
   </div>
   <!-- .container -->
 </section>

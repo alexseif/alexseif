@@ -3,10 +3,9 @@
     {% for section in aboutSections %}
       <div class="flow">
         <h3>{{ section.title }}</h3>
-        <div>
-          <p>{{ section.description }}</p>
-
+        <div class="">
           <div class="card">
+            <p>{{ section.description }}</p>
             <div class="badge-row">
               {% for region in section.tags %}
                 <span class="badge">{{ region }}</span>
