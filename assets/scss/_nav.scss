@@ -5,8 +5,10 @@ $accent: var(--color-accent);
 
 .nav {
   position: fixed;
+  top: 0;
   z-index: 21;
   width: 100%;
+  margin-top: var(--margin-md);
 }
 
 #nav {
@@ -15,7 +17,7 @@ $accent: var(--color-accent);
   display: flex;
   justify-content: space-between;
 
-  // align-items: center;
+  align-items: center;
 
   &.scrolled {
     opacity: 0.4; // adjust the opacity value as needed

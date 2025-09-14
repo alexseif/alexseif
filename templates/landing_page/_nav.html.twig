@@ -1,17 +1,17 @@
 <header class="nav">
   <div class="container">
     <div id="nav">
-      <h1>
-        <a href="{{ path('alx_home') }}" id="logo-div">
-          <img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimization, speed up Wordpress" width="80" />
-          <span>{{ 'wordpress_optimize.header.title'|trans }}</span>
-        </a>
-      </h1>
-
+      <div class="brand flow align-items-center">
+        <a href="{{ path('alx_home') }}"><img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimization, speed up Wordpress" width="60" /></a>
+        <h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
+      </div>
+      <!-- .brand -->
       <nav role="navigation">
         <ul>
           <li>
-            {# <a href="#about">👋🏾 Hi</a> #}
+            <a href="#personal-intro">👋🏾 Hi</a>
+          </li>
+          <li>
             <a href="#services" title="{{ 'wordpress_optimize.navigation.what'|trans }}">{{ 'wordpress_optimize.navigation.what'|trans }}</a>
           </li>
           <li>

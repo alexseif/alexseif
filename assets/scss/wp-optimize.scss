@@ -11,27 +11,6 @@ $white: var(--color-text);
 
 $black: var(--color-black);
 
-/* Header styles */
-header {
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-
-    img {
-        max-width: 100px;
-        margin-bottom: 10px;
-        filter: drop-shadow(0 0 10px rgba(1, 130, 190, 0.5));
-    }
-
-    border-radius: var(--radius-md);
-
-    .image-wrapper {
-        max-width: 160px;
-        margin-right: 1rem;
-    }
-
-}
 
 .cta-wrapper {
     position: relative;
@@ -348,4 +327,25 @@ html[dir=rtl] {
 .nav-menu a:hover {
     background: rgba(1, 130, 190, 0.3);
     color: $primary-color;
+}
+
+#personal-intro {
+    margin-top: var(--margin-xl);
+    margin-bottom: var(--margin-xl);
+    // padding-top: var(--margin-xl);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: initial;
+}
+
+
+section {
+    padding-top: var(--margin-xl);
+    padding-bottom: var(--margin-xl);
 }
