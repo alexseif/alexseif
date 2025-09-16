@@ -49,17 +49,24 @@ $accent: var(--color-accent);
     }
   }
 
-  nav {
-    ul {
-      display: flex;
-      align-items: center;
-      list-style: none;
-      padding-inline-start: 0;
-      gap: var(--gap-lg);
-    }
+
+
+}
+
+nav {
+  display: none;
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-inline-start: 0;
+    gap: var(--gap-lg);
   }
 
-
+  @media (min-width: 768px) {
+    display: block;
+  }
 }
 
 #logo-div {
@@ -122,7 +129,7 @@ footer {
   padding-top: var(--margin-md);
   padding-bottom: var(--margin-md);
 
-  nav {
+  .footer-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;

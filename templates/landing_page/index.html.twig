@@ -36,19 +36,7 @@
   <meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png" />
 {% endblock %}
 {% block nav %}
-  <header class="nav">
-    <div class="container">
-      <div id="nav">
-        <div class="brand flow align-items-center">
-          <a href="{{ path('alx_home') }}"><img src="{{ asset('build/images/Wordpress-Optimize-logo.png') }}" alt="WordPress Optimization, speed up Wordpress" width="60" /></a>
-          <h1>{{ 'wordpress_optimize.header.title'|trans }}</h1>
-        </div>
-        <!-- .brand -->
-        {{ include('landing_page/_nav.html.twig') }}
-      </div>
-      <!-- #nav -->
-    </div>
-  </header>
+  {{ include('landing_page/_nav.html.twig') }}
 
   <!-- Navigation Menu -->
   <nav class="nav-menu" id="nav">
@@ -106,14 +94,32 @@
   <footer>
     <div class="container">
       <div class="footer-wrapper">
+        <a href="{{ path('alx_home') }}"><img src="{{ asset('build/images/ALX.png') }}" width="60" alt="Alex Seif logo" /></a>
         <ul>
           <li>
             <a href="https://www.instagram.com/alex_makes_websites/" target="_blank" class="social-icon-link">{% include 'icons/014-instagram.svg' %}</a>
           </li>
         </ul>
-        <nav>{{ include('landing_page/_nav.html.twig') }}</nav>
+        <nav role="navigation">
+          <ul>
+            <li>
+              <a href="#why">Why It Works</a>
+            </li>
+            <li>
+              <a href="#clients">Work</a>
+            </li>
+            <li>
+              <a href="#pricing">Pricing</a>
+            </li>
+            <li>
+              <a href="#faq">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+
         <div class="text-end">
-          <a href="https://wa.me/201004006332" class="cta">{{ 'wordpress_optimize.cta'|trans }}</a>
+          {# <a href="https://wa.me/201004006332" class="cta">{{ 'wordpress_optimize.cta'|trans }}</a> #}
+          <a class="cta" href="https://wa.me/+201004006332" target="_blank">Start Your Project</a>
         </div>
       </div>
       {{ 'wordpress_optimize.footer.copyright'|trans }}
