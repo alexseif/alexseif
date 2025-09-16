@@ -45,8 +45,9 @@
     {% endblock %}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
     {% block stylesheets %}
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
       {{ encore_entry_link_tags('app') }}
       {% if app.request.locale != 'en' %}
         {{ encore_entry_link_tags('rtl') }}
