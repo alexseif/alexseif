@@ -62,12 +62,7 @@ Encore
         config.corejs = '3.23';
     })
     // Add this section to include Bootstrap
-    .addPlugin(new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default'],
-    }))
+
 
     // enables Sass/SCSS support
     .enableSassLoader()
@@ -87,7 +82,7 @@ Encore
         to: 'fonts/[path][name].[ext]',
     })
     // uncomment if you're having problems with a jQuery plugin
-    .autoProvidejQuery()
+    // .autoProvidejQuery()
     // Add the HtmlWebpackPlugin to the configuration
     .addPlugin(new HtmlWebpackPlugin({
         template: 'templates/base.html.twig',
@@ -115,5 +110,92 @@ Encore
         // options.firewall = false;
     })
     ;
+
+if (!Encore.isProduction()) {
+    try {
+        const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+        Encore.addPlugin(new BundleAnalyzerPlugin());
+    } catch (e) {
+        console.warn('BundleAnalyzerPlugin not installed. Skipping...');
+    }
+}
+
+if (Encore.isProduction()) {
+    try {
+        const PurgeCSSPlugin = require('purgecss-webpack-plugin');
+        const glob = require('glob');
+        const path = require('path');
+
+        Encore.addPlugin(new PurgeCSSPlugin({
+            paths: glob.sync(`${path.resolve(__dirname, 'templates')}/**/*.twig`, { nodir: true }),
+        }));
+    } catch (e) {
+        console.warn('PurgeCSSPlugin not installed or misconfigured. Skipping...');
+    }
+}
+if (Encore.isProduction()) {
+    try {
+        const CompressionPlugin = require('compression-webpack-plugin');
+
+        Encore.addPlugin(new CompressionPlugin({
+            algorithm: 'brotliCompress',
+            filename: '[path][base].br',
+            test: /\.(js|css|html|svg)$/,
+            compressionOptions: { level: 11 },
+            threshold: 10240,
+            minRatio: 0.8
+        }));
+    } catch (e) {
+        console.warn('CompressionPlugin not installed or misconfigured. Skipping...');
+    }
+}
+
+if (!Encore.isProduction()) {
+    try {
+        const ESLintPlugin = require('eslint-webpack-plugin');
+
+        Encore.addPlugin(new ESLintPlugin({
+            extensions: ['js'],
+            emitWarning: true,
+        }));
+    } catch (e) {
+        console.warn('ESLintPlugin not installed or misconfigured. Skipping...');
+    }
+}
+
+if (Encore.isProduction()) {
+    try {
+        Encore.configureLoaderRule('images', loaderRule => {
+            loaderRule.use.push({
+                loader: 'image-webpack-loader',
+                options: {
+                    mozjpeg: { progressive: true },
+                    optipng: { enabled: true },
+                    webp: { quality: 75 }
+                }
+            });
+        });
+    } catch (e) {
+        console.warn('Image optimization plugin failed to load. Skipping...');
+    }
+}
+if (Encore.isProduction()) {
+    try {
+        Encore.configureLoaderRule('images', loaderRule => {
+            loaderRule.use = [
+                {
+                    loader: 'responsive-loader',
+                    options: {
+                        adapter: require('sharp'),
+                        sizes: [480, 768, 1200],
+                        name: 'images/[name]-[width].[ext]'
+                    }
+                }
+            ];
+        });
+    } catch (e) {
+        console.warn('Responsive image loader failed to configure. Skipping...');
+    }
+}
 
 module.exports = Encore.getWebpackConfig();

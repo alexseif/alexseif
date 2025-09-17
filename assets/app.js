@@ -21,8 +21,7 @@ import './scss/app.scss';
 
 
 
-$(function () {
-
+document.addEventListener('DOMContentLoaded', () => {
 
 
     // assets/js/Nav.js
@@ -133,7 +132,6 @@ class App {
     }
 }
 
-
 class Dot {
     constructor(id, x, y, context, scl) {
         this.id = id;
@@ -145,31 +143,28 @@ class Dot {
         this.context = context;
         this.scl = scl;
         this.isHover = false;
-        this.isANimated = false;
+    }
+
+    ease(current, target, factor = 0.1) {
+        return current + (target - current) * factor;
     }
 
     mousemove(event) {
         const x = event.clientX;
         const y = event.clientY;
 
-        this.isHover = Math.abs(this.x - x) < this.scl / 4 * 3 && Math.abs(this.y - y) < this.scl / 4 * 3 ? true : false;
+        this.isHover = Math.abs(this.x - x) < this.scl * 0.75 &&
+            Math.abs(this.y - y) < this.scl * 0.75;
 
-        if (this.isHover) {
-            TweenMax.to(
-                this.new,
-                0.4,
-                { x: x, y: y });
-
-        } else {
-            TweenMax.to(
-                this.new,
-                0.4,
-                { x: this.x, y: this.y });
-
-        }
+        this.targetX = this.isHover ? x : this.x;
+        this.targetY = this.isHover ? y : this.y;
     }
 
     render() {
+        // Smoothly interpolate toward target
+        this.new.x = this.ease(this.new.x, this.targetX ?? this.x);
+        this.new.y = this.ease(this.new.y, this.targetY ?? this.y);
+
         this.context.beginPath();
         this.context.arc(this.new.x, this.new.y, this.radius, 0, Math.PI, false);
 
@@ -177,46 +172,44 @@ class Dot {
         this.context.globalAlpha = this.isHover ? 1 : 0.25;
         this.context.fill();
     }
-
 }
-$(document).ready(function () {
-    // Autocomplete functionality for tags
-    const tagInput = $('.new-tag-input');
-    const tagSelect = $('select.tag-autocomplete');
 
-    tagInput.on('keypress', function (e) {
-        if (e.which === 13 || e.which === 44) { // Enter key or comma pressed
+document.addEventListener('DOMContentLoaded', () => {
+    const tagInput = document.querySelector('.new-tag-input');
+    const tagSelect = document.querySelector('select.tag-autocomplete');
+
+    if (!tagInput || !tagSelect) return; // Exit early if elements are missing
+
+    tagInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter' || e.key === ',') {
             e.preventDefault();
-            const newTag = tagInput.val().trim();
+            const newTag = tagInput.value.trim();
             if (newTag) {
-                // Send the new tag via AJAX
-                $.ajax({
-                    url: '/tag/ajax/new',
+                fetch('/tag/ajax/new', {
                     method: 'POST',
-                    data: { name: newTag },
-                    success: function (response) {
-                        // Check if the tag already exists
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: newTag })
+                })
+                    .then(res => res.json())
+                    .then(response => {
                         let exists = false;
-                        tagSelect.find('option').each(function () {
-                            if ($(this).text().toLowerCase() === newTag.toLowerCase()) {
+                        tagSelect.querySelectorAll('option').forEach(option => {
+                            if (option.textContent.toLowerCase() === newTag.toLowerCase()) {
                                 exists = true;
-                                $(this).prop('selected', true);
+                                option.selected = true;
                             }
                         });
 
-                        // If the tag doesn't exist, add it
                         if (!exists) {
                             const newOption = new Option(response.name, response.id, true, true);
-                            tagSelect.append(newOption);
+                            tagSelect.appendChild(newOption);
                         }
 
-                        // Clear the input
-                        tagInput.val('');
-                    },
-                    error: function (xhr) {
-                        alert(xhr.responseJSON.error);
-                    }
-                });
+                        tagInput.value = '';
+                    })
+                    .catch(err => {
+                        alert(err.message || 'Error adding tag');
+                    });
             }
         }
     });
