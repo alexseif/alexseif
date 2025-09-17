@@ -197,5 +197,8 @@ if (Encore.isProduction()) {
         console.warn('Responsive image loader failed to configure. Skipping...');
     }
 }
+Encore.configureScriptAttributes({
+    defer: true
+});
 
 module.exports = Encore.getWebpackConfig();
