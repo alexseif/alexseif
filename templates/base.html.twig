@@ -74,7 +74,7 @@
       {% endblock %}
     {% endblock %}
     {% block javascripts %}
-      {{ encore_entry_script_tags('app') }}
+      {{ encore_entry_script_tags('app', { defer: true }) }}
     {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
