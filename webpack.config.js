@@ -179,23 +179,23 @@ if (Encore.isProduction()) {
         console.warn('Image optimization plugin failed to load. Skipping...');
     }
 }
-if (Encore.isProduction()) {
-    try {
-        Encore.configureLoaderRule('images', loaderRule => {
-            loaderRule.use = [
-                {
-                    loader: 'responsive-loader',
-                    options: {
-                        adapter: require('sharp'),
-                        sizes: [480, 768, 1200],
-                        name: 'images/[name]-[width].[ext]'
-                    }
-                }
-            ];
-        });
-    } catch (e) {
-        console.warn('Responsive image loader failed to configure. Skipping...');
-    }
-}
+// if (Encore.isProduction()) {
+//     try {
+//         Encore.configureLoaderRule('images', loaderRule => {
+//             loaderRule.use = [
+//                 {
+//                     loader: 'responsive-loader',
+//                     options: {
+//                         adapter: require('sharp'),
+//                         sizes: [480, 768, 1200],
+//                         name: 'images/[name]-[width].[ext]'
+//                     }
+//                 }
+//             ];
+//         });
+//     } catch (e) {
+//         console.warn('Responsive image loader failed to configure. Skipping...');
+//     }
+// }
 
 module.exports = Encore.getWebpackConfig();
