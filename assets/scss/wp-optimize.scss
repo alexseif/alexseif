@@ -237,6 +237,10 @@ html[dir=rtl] {
 section {
     padding-top: var(--margin-xl);
     padding-bottom: var(--margin-xl);
+
+    header {
+        align-items: center;
+    }
 }
 
 .testimonial-grid {
@@ -470,5 +474,71 @@ section {
     h1 {
 
         display: inline;
+    }
+}
+
+@keyframes scrollImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-80%);
+    }
+}
+
+.portfolio-grid {
+    position: relative;
+    margin-bottom: var(--margin-xl);
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%; // or a fixed height if needed
+        padding: 0;
+
+        .card-body,
+        .card-footer {
+            padding: var(--pad-md);
+        }
+
+        .image-wrapper {
+            max-height: 250px;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                transition: transform 0.3s ease;
+                transform-origin: center top;
+            }
+
+            &:hover {
+                overflow-y: scroll;
+
+                img {
+                    transform: scale(1.2);
+                    // animation: scrollImage 4s ease-in-out forwards;
+                }
+            }
+        }
+
+        .badge-row {
+            gap: var(--margin-sm);
+        }
+
+        a {
+            color: var(--color-text);
+            font-weight: bold;
+            font-size: large;
+
+            &:hover {
+                color: var(--color-text-accent);
+            }
+        }
+
+        .card-footer {
+            margin-top: auto;
+            text-align: end;
+        }
     }
 }

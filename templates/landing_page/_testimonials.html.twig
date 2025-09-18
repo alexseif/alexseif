@@ -1,89 +1,63 @@
-<script type="application/ld+json">
+<section id="testimonials">
+  <div class="container">
+    <header class="flow">
+      <h2>What Clients Say</h2>
+      <p>Real feedback from real people. These aren’t just reviews—they’re proof of trust, clarity, and results.</p>
+    </header>
+    <div class="testimonial-grid grid-3">
+      {% for review in reviews %}
+      <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Review",
   "reviewRating": {
     "@type": "Rating",
-    "ratingValue": "5",
+          {% if review.stars is defined %}
+    "ratingValue": "{{ review.stars }}",
+          {% endif %}
     "bestRating": "5"
   },
   "author": {
     "@type": "Person",
-    "name": "Seen Media"
+          {% if review.name is defined %}
+    "name": "{{ review.name|e }}"
+          {% endif %}
   },
-  "reviewBody": "He understood our brand voice better than we did. Layout is pure poetry."
+          {% if review.review_text is defined %}
+  "reviewBody": "{{ review.review_text|e }}"
+          {% endif %}
 }
 </script>
 
-<section id="testimonials">
-  <div class="container">
-    <div class="flow">
-      <h2>What Clients Say</h2>
-      <p>Real feedback from real people. These aren’t just reviews—they’re proof of trust, clarity, and results.</p>
+        <div class="testimonial-card card">
+          <div class="review-header">
+          {% if review.avatar is defined %}
+            <img src="{{ asset('build/' ~ review.avatar) }}" alt="{{ review.name }} avatar" class="avatar" />
+          {% endif %}
+            <div>
+          {% if review.name is defined %}
+              <strong>{{ review.name }}</strong>
+          {% endif %}
+          {% if review.stars is defined %}
+              <div class="stars">{{ range(1, review.stars)|map(i => '★')|join('') }}</div>
+          {% endif %}
+            </div>
+          </div>
+          <!-- .review-header -->
+          {% if review.review_image is defined %}
+          <figure>
+        <img src="{{ review.review_image }}" alt="{{ review.review_text }}" class="testimonial-img" />
+        <figcaption>
+        <q>{{ review.review_text }}</q>
+        </figcaption>
+          </figure>
+          {% elseif review.review_text is defined %}
+          <p class="review-text">{{ review.review_text }}</p>
+          {% endif %}
+        </div>
+        <!-- .testimonial-card -->
+      {% endfor %}
     </div>
-    <div class="testimonial-grid grid-3">
-      <!-- Text-based cards -->
-      <div class="testimonial-card card">
-        <div class="review-header">
-          <img src="https://via.placeholder.com/48x48?text=A" alt="Ahmed's avatar" class="avatar" />
-          <div>
-            <strong>Ahmed Farrag</strong>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-        <p class="review-text">“Site is flying now. Bookings started within days. Alex knows his rhythm.”</p>
+    <!-- .testimonial-grid -->
       </div>
-
-      <div class="testimonial-card card">
-        <div class="review-header">
-          <img src="https://via.placeholder.com/48x48?text=S" alt="Seen Media avatar" class="avatar" />
-          <div>
-            <strong>Seen Media</strong>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-        <p class="review-text">“He understood our brand voice better than we did. Layout is pure poetry.”</p>
-      </div>
-
-      <!-- Screenshot-style cards -->
-      <div class="testimonial-card card">
-        <img src="https://www.reviewbit.app/wp-content/uploads/2022/05/whatsapp-review-1.png" alt="WhatsApp review: 'Thanks Alex! The site looks amazing and loads super fast.'" class="testimonial-img" />
-      </div>
-
-      <div class="testimonial-card card">
-        <img src="https://www.reviewbit.app/wp-content/uploads/2022/05/whatsapp-review-2.png" alt="WhatsApp review: 'You saved us. The new layout is converting like crazy.'" class="testimonial-img" />
-      </div>
-
-      <div class="testimonial-card card">
-        <img src="https://embedsocial.com/wp-content/uploads/2022/11/google-review-example-1.png" alt="Google review: 'Alex helped us show up in search and get real bookings.'" class="testimonial-img" />
-      </div>
-
-      <div class="testimonial-card card">
-        <img src="https://embedsocial.com/wp-content/uploads/2022/11/google-review-example-2.png" alt="Google review: 'The rhythm, the clarity, the Cairo touch—perfect.'" class="testimonial-img" />
-      </div>
-
-      <!-- More text-based cards -->
-      <div class="testimonial-card card">
-        <div class="review-header">
-          <img src="https://via.placeholder.com/48x48?text=F" alt="Farah avatar" class="avatar" />
-          <div>
-            <strong>Farah Designs</strong>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-        <p class="review-text">“WooCommerce setup was smooth. Our store finally feels clean and easy.”</p>
-      </div>
-
-      <div class="testimonial-card card">
-        <div class="review-header">
-          <img src="https://via.placeholder.com/48x48?text=M" alt="Mystic avatar" class="avatar" />
-          <div>
-            <strong>Mystic New</strong>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-        <p class="review-text">“Alex rebuilt our site with emotional clarity and technical precision.”</p>
-      </div>
-    </div>
-  </div>
 </section>

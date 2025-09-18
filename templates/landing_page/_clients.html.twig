@@ -1,46 +1,43 @@
-
-  <div class="container">
-    <div>
-      <h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
-      <p class="fs-3">{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
-    </div>
-    <div>
-      <div class="masonry-carousel">
-        <div class="masonry-track">
-          {% for image in portfolio_images %}
-            <div class="masonry-item">
-              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
-            </div>
-          {% endfor %}
-          <!-- Duplicate for infinite scroll -->
-          {% for image in portfolio_images %}
-            <div class="masonry-item">
-              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
-            </div>
-          {% endfor %}
-        </div>
-        <!-- .masonry-track -->
+<div class="container">
+  <header class="flow">
+    <h2>{{ 'wordpress_optimize.clients.title'|trans }}</h2>
+    <p class="fs-3">{{ 'wordpress_optimize.clients.subtitle'|trans }}</p>
+  </header>
+  <div>
+    <div class="masonry-carousel">
+      <div class="masonry-track">
+        {% for image in portfolio_images %}
+          <div class="masonry-item">
+            <img src="{{ asset('build/images/logos/' ~ image) }}" alt="Client Logo" />
+          </div>
+        {% endfor %}
+        <!-- Duplicate for infinite scroll -->
+        {% for image in portfolio_images %}
+          <div class="masonry-item">
+            <img src="{{ asset('build/images/logos/' ~ image) }}" alt="Client Logo" />
+          </div>
+        {% endfor %}
       </div>
-      <!-- .masonry-carousel -->
-      <div class="masonry-carousel">
-        <div class="masonry-track">
-          {% set shuffled = portfolio_images|sort((a, b) => random() < 0.5 ? -1 : 1) %}
-          {% for image in shuffled %}
-            <div class="masonry-item">
-              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
-            </div>
-          {% endfor %}
-          <!-- Duplicate for infinite scroll -->
-          {% for image in portfolio_images %}
-            <div class="masonry-item">
-              <img src="{{ asset('build/images/portfolio/' ~ image) }}" alt="Client Logo" />
-            </div>
-          {% endfor %}
-        </div>
-        <!-- .masonry-track -->
-      </div>
-      <!-- .masonry-carousel -->
+      <!-- .masonry-track -->
     </div>
-    
+    <!-- .masonry-carousel -->
+    <div class="masonry-carousel">
+      <div class="masonry-track">
+        {% set shuffled = portfolio_images|sort((a, b) => random() < 0.5 ? -1 : 1) %}
+        {% for image in shuffled %}
+          <div class="masonry-item">
+            <img src="{{ asset('build/images/logos/' ~ image) }}" alt="Client Logo" />
+          </div>
+        {% endfor %}
+        <!-- Duplicate for infinite scroll -->
+        {% for image in portfolio_images %}
+          <div class="masonry-item">
+            <img src="{{ asset('build/images/logos/' ~ image) }}" alt="Client Logo" />
+          </div>
+        {% endfor %}
+      </div>
+      <!-- .masonry-track -->
+    </div>
+    <!-- .masonry-carousel -->
   </div>
-
+</div>

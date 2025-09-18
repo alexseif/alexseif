@@ -16,7 +16,8 @@ class LandingPageController extends AbstractController
             'icon' => '📈',
             'title' => 'Optimization Only',
             'tagline' => 'Fix what’s slow or unclear',
-            'price' => 'Starting from <span>9,000 EGP</span>',
+            // 'price' => 'Starting from <span>9,000 EGP</span>',
+            'price' => 9000,
             'features' => [
                 'Speed boost & caching setup',
                 'SEO tuning',
@@ -30,7 +31,8 @@ class LandingPageController extends AbstractController
             'icon' => '🛠️',
             'title' => 'Basic Site',
             'tagline' => 'Simple, clean, and fast',
-            'price' => 'Starting from <span>15,500 EGP</span>',
+            // 'price' => 'Starting from <span>15,500 EGP</span>',
+            'price' => 15500,
             'features' => [
                 'One-pager or brochure layout',
                 'Contact form integration',
@@ -44,7 +46,8 @@ class LandingPageController extends AbstractController
             'icon' => '🛒',
             'title' => 'WooCommerce Store',
             'tagline' => 'Sell with clarity and speed',
-            'price' => 'Starting from <span>36,500 EGP</span>',
+            // 'price' => 'Starting from <span>36,500 EGP</span>',
+            'price' => 36500,
             'features' => [
                 'Product pages & cart flow',
                 'Payment gateway setup',
@@ -58,7 +61,8 @@ class LandingPageController extends AbstractController
             'icon' => '🤖',
             'title' => 'Get Recommended by AI',
             'tagline' => 'Let the system guide your build',
-            'price' => 'Starting from <span>80,000 EGP</span>',
+            // 'price' => 'Starting from <span>80,000 EGP</span>',
+            'price' => 80000,
             'features' => [
                 'AI-curated layout & logic',
                 'Modular SCSS architecture',
@@ -68,6 +72,86 @@ class LandingPageController extends AbstractController
             ],
             'note' => 'We scope it together, then let the system recommend what fits best. Built around your goals.'
         ]
+    ];
+    public $portfolio = [
+        [
+            "image" => "SVELTO-–-basic-Custom-T-Shirts-09-18-2025_03_34_PM.webp",
+            "title" => "Svelto",
+            "short" => "Custom T-Shirt Print Engine Built on WooCommerce.",
+            "long" => "A modular WooCommerce site designed for Svelto, enabling customers to personalize and order custom-printed T-shirts with ease. The system includes dynamic product customization, artwork upload, and real-time pricing logic. Built on WordPress with a lightweight SCSS architecture and optimized JS, the layout delivers a smooth, mobile-first experience. Achieved a SpeedText score of 100, with multilingual support and a branded slider to showcase product categories. Designed for clarity, conversion, and operational scale.",
+            "badges" => [
+                "WooCommerce",
+                "Custom T-Shirt Designer",
+                "Portfolio Grid",
+                "Artwork Upload",
+                "Dynamic Pricing"
+            ],
+            "link" => "https://svelto.net/"
+        ],
+        [
+            "image" => "North-South-Consultants-Exchange-09-18-2025_03_19_PM.webp",
+            "title" => "NSCE",
+            "short" => "Designed for clarity, scalability, and multilingual access.",
+            "long" => "Designed for clarity, scalability, and multilingual access.",
+            "badges" => [
+                "WordPress",
+                "Interactive Map",
+                "Portfolio Grid",
+                "Service Showcase",
+                "Multilingual Navigation"
+            ],
+            "link" => "https://nsce-inter.com/"
+        ],
+        [
+            "image" => "BNDKO-–-Start-Scaling-your-eCommerce-with-the-best-emails--09-18-2025_03_43_PM.webp",
+            "title" => "BNDKO",
+            "short" => "Email Marketing Landing Page for Retention-Focused Growth.",
+            "long" => "A high-conversion landing page designed for BndKo, a Cairo-rooted email marketing agency specializing in retention strategy. The page anchors their Klaviyo-based ecosystem with clear messaging, trust signals, and a frictionless CTA. Built on WordPress with modular SCSS and optimized JS, the layout integrates client testimonials, service breakdowns, and a branded visual rhythm. The page supports segmentation logic and behavioral targeting, guiding visitors from email to action with clarity and speed. Designed for mobile-first performance and emotional clarity.",
+            "badges" => [
+                "Landing Page",
+                "Email Marketing",
+                "Client Testimonials",
+                "Scheduling panel",
+                "Dark Mode"
+            ],
+            "link" => "https://bndko.com/"
+        ],
+    ];
+    public $reviews = [
+        [
+            "avatar" => "images/avatar.webp",
+            "name" => "Ahmed Farrag",
+            "stars" => 5,
+            "review_text" => "Site is flying now. Bookings started within days. Alex knows his rhythm."
+        ],
+        [
+            "avatar" => "images/avatar.webp",
+            "name" => "Seen Media",
+            "stars" => 5,
+            "review_text" => "He understood our brand voice better than we did. Layout is pure poetry."
+        ],
+        [
+            "avatar" => "images/avatar.webp",
+            "name" => "Seen Media",
+            "stars" => 5,
+            "review_text" => "He understood our brand voice better than we did. Layout is pure poetry."
+        ],
+        [
+            "review_text" => "He understood our brand voice better than we did. Layout is pure poetry.",
+            "review_image" => "https://www.reviewbit.app/wp-content/uploads/2022/05/whatsapp-review-1.png"
+        ],
+        [
+            "avatar" => "images/avatar.webp",
+            "name" => "Farah Designs",
+            "stars" => 5,
+            "review_text" => "WooCommerce setup was smooth. Our store finally feels clean and easy."
+        ],
+        [
+            "avatar" => "images/avatar.webp",
+            "name" => "Mystic New",
+            "stars" => 5,
+            "review_text" => "Alex rebuilt our site with emotional clarity and technical precision."
+        ],
     ];
 
     #[Route('/landing_page', name: 'old_landing_page')]
@@ -87,7 +171,7 @@ class LandingPageController extends AbstractController
 
         // Scan portfolio directory for images
         $portfolioImages = [];
-        $portfolioDir = $this->getParameter('kernel.project_dir') . '/assets/images/portfolio';
+        $portfolioDir = $this->getParameter('kernel.project_dir') . '/assets/images/logos';
 
         if (is_dir($portfolioDir)) {
             $finder = new Finder();
@@ -102,6 +186,8 @@ class LandingPageController extends AbstractController
         return $this->render('landing_page/index.html.twig', [
             'controller_name' => 'LandingPageController',
             'portfolio_images' => $portfolioImages,
+            'works' => $this->portfolio,
+            'reviews' => $this->reviews,
             'packages' => $this->packages
         ]);
     }

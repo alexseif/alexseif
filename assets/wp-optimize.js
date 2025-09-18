@@ -19,37 +19,44 @@ function initSmoothScrolling() {
 }
 
 
-
-const tabs = document.querySelectorAll(".package-pane");
-const details = document.getElementById("package-details");
-
-function renderPackage(key) {
-
-    const pkg = packages[key];
-    details.innerHTML = `
-    <h3 class="price">${pkg.price}</h3>
-    <ul class="feature-list">
-      ${pkg.features.map(f => `<li>${f}</li>`).join("")}
-    </ul>
-    <p class="note">${pkg.note}</p>
-  `;
-}
-
-tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-        renderPackage(tab.dataset.package);
-    });
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+    initSmoothScrolling();
 });
 
 
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function () {
+function formatEGP(price) {
+    return new Intl.NumberFormat('en-EG', {
+        style: 'currency',
+        currency: 'EGP',
+        minimumFractionDigits: 0
+    }).format(price);
+}
 
-    initSmoothScrolling();
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".package-pane");
+    const details = document.querySelectorAll(".package-details");
 
-    // Initial load
-    renderPackage("basic");
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const key = tab.dataset.package;
+
+            // Toggle active tab
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            // Toggle visible package
+            details.forEach(d => d.style.display = "none");
+            const activeDetail = document.getElementById(`package-${key}`);
+            if (activeDetail) activeDetail.style.display = "block";
+
+            // Format price
+            const priceSpan = activeDetail.querySelector(".price span");
+            if (priceSpan) {
+                const rawPrice = packages[key].price.replace(/[^\d.]/g, '');
+                priceSpan.textContent = formatEGP(parseFloat(rawPrice));
+            }
+        });
+    });
 });

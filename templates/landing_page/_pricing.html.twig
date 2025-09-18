@@ -1,49 +1,52 @@
-{% for key, pkg in packages %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "{{ pkg.title|e('js') }}",
-    "description": "{{ pkg.note|e('js') }}",
-    "brand": {
-      "@type": "Brand",
-      "name": "WP Optimize by Alex Seif"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "EGP",
-      "price": "{{ pkg.price|replace({' EGP': ''}) }}",
-      "url": "https://alexseif.com/wordpress-optimization#{{ key }}",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>
-{% endfor %}
-<script>
-  const packages = {{ packages|json_encode|raw }};
-</script>
-
 <section id="pricing">
   <div class="container">
     <div class="pricing-card">
-      <!-- Left: Package Tabs -->
+      <!-- Package Tabs -->
       <div class="pricing-variations">
         {% for key, pkg in packages %}
-          <button class="package-pane {% if loop.first %}{% endif %}" data-package="{{ key }}">
+          <button class="package-pane {% if loop.first %}active{% endif %}" data-package="{{ key }}">
             <h4>{{ pkg.icon }} {{ pkg.title }}</h4>
             <p>{{ pkg.tagline }}</p>
           </button>
         {% endfor %}
       </div>
 
-      <div class="pricing-core" id="package-details">
-        <h3 class="price">Starting from <span>{{ packages['basic'].price }}</span></h3>
-        <ul class="feature-list">
-          {% for feature in packages['basic'].features %}
-            <li>{{ feature }}</li>
-          {% endfor %}
-        </ul>
-        <p class="note">{{ packages['basic'].note }}</p>
+      <!-- Package Details (Pre-rendered for SEO) -->
+      <div class="pricing-core">
+        {% for key, pkg in packages %}
+          <div class="package-details" id="package-{{ key }}" {% if not loop.first %}style="display:none"{% endif %}>
+            <h3 class="price">Starting from <span>{{ pkg.price|format_currency('EGP') }}</span></h3>
+            <ul class="feature-list">
+              {% for feature in pkg.features %}
+                <li>{{ feature }}</li>
+              {% endfor %}
+            </ul>
+            <p class="note">{{ pkg.note }}</p>
+          </div>
+
+          <!-- Structured Data -->
+          <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ pkg.title|json_encode|raw }},
+  "description": {{ pkg.note|json_encode|raw }},
+  "sku": "{{ key }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "WP Optimize by Alex Seif"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EGP",
+    "price": "{{ pkg.price|replace({' EGP': '', ',': ''})|trim }}",
+    "url": "https://alexseif.com/wordpress-optimization#{{ key }}",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition"
+  }
+}
+</script>
+        {% endfor %}
       </div>
     </div>
   </div>

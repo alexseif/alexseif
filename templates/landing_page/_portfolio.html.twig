@@ -1,26 +1,32 @@
 <div class="container">
-  <div class="flow">
+  <header class="flow">
     <h2>Selected Work</h2>
     <p>Here’s a glimpse of recent work, real results, real traction.</p>
-  </div>
+  </header>
   <!-- .flow -->
   <div class="grid-3 portfolio-grid">
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250?text=Eka+Project" alt="Eka Project Screenshot" />
-      <h3>Eka</h3>
-      <p>10K EGP project with full optimization, GTMetrix A, and structured data for AI visibility.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250?text=Seen+Media" alt="Seen Media Screenshot" />
-      <h3>Seen Media</h3>
-      <p>Visual rhythm, journal logic, and emotional UX for a Cairo-based creative agency.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250?text=Chicoril+Store" alt="Chicoril Store Screenshot" />
-      <h3>Chicoril Store</h3>
-      <p>WooCommerce setup with product pages, cart flow optimization, and retention tools.</p>
-    </div>
+    {% for work in works %}
+      <div class="card">
+        <div class="image-wrapper">
+          <img src="{{ asset('build/images/websites/' ~ work.image) }}" alt="{{ work.title }} Project Screenshot" />
+        </div>
+        <div class="card-body">
+          <h3>{{ work.title }}</h3>
+          <p>{{ work.short }}</p>
+          <div class="badge-row">
+            {% for badge in work.badges %}
+              <div class="badge">{{ badge }}</div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- .card-body -->
+        <div class="card-footer">
+          <a href="{{ work.link }}" target="_blank">{{ work.title }}</a>
+        </div>
+        <!-- .card-footer -->
+      </div>
+      <!-- .card -->
+    {% endfor %}
   </div>
+  <!-- .portfolio-grid -->
 </div>
