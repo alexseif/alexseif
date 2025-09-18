@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}" xml:lang="{{ app.request.locale }}" data-theme="dark-mode" dir="{{ is_rtl_locale(app.request.locale) ? 'rtl' : 'ltr' }}" class="dark-mode">
   <head prefix="og: https://ogp.me/ns#">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV4S3QWW7F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      
-      gtag('config', 'G-QV4S3QWW7F')
-    </script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Alex Seif - Freelance Web Developer with 20 years of experience in Symfony, WordPress, DevOps, and more." />
     <meta name="keywords" content="Alex Seif, Web Developer, Symfony, WordPress, DevOps, Portfolio" />
     <meta name="author" content="Alex Seif" />
+    <link rel="canonical" href="https://alexseif.com/" />
+
+    <!-- Preconnects for performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+
+    <!-- Preload favicon and hero image -->
+    <link rel="preload" href="{{ asset('favicon.ico') }}" as="image" type="image/x-icon" />
+    <link rel="preload" href="{{ asset('images/profile.jpg') }}" as="image" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+
+    <!-- Stylesheets -->
+    {% block stylesheets %}
+      {{ encore_entry_link_tags('app') }}
+      {% if app.request.locale != 'en' %}
+        {{ encore_entry_link_tags('rtl') }}
+      {% endif %}
+    {% endblock %}
+
+    <!-- Social Meta -->
     {% block meta %}
       <meta property="og:title" content="Alex Seif - Web Developer" />
       <meta property="og:url" content="{{ app.request.uri }}" />
@@ -29,57 +41,67 @@
       <meta name="twitter:title" content="Alex Seif" />
       <meta name="twitter:description" content="Freelance Web Developer | 20 Years of Delivering Excellence." />
       <meta name="twitter:image" content="https://alexseif.com/images/alex-seif-business-card.png" />
-      <link rel="canonical" href="https://alexseif.com/" />
     {% endblock %}
-    <title>
-      {% block title %}
-        {{ 'alex_seif'|trans }}
-        -
-        {{ 'web_developer'|trans|capitalize }}
-      {% endblock %}
-    </title>
+
+    <!-- Structured Data -->
     {% block structured_data %}
       <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Alex Seif – WordPress Optimization",
-  "image": "https://alexseif.com/images/WordPress-Optimize-card.png",
-  "url": "https://alexseif.com/wordpress-optimization",
-  "description": {{ 'wordpress_optimize.meta.description'|trans|json_encode|raw }},
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Cairo",
-    "addressRegion": "EG",
-    "addressCountry": "Egypt"
-  },
-  "telephone": "+20-100-400-6332",
-  "areaServed": "EG",
-  "priceRange": "$$",
-  "founder": {
-    "@type": "Person",
-    "name": "Alex Seif",
-    "jobTitle": {{ 'wordpress_optimize.meta.job_title'|trans|json_encode|raw }}
-  },
-  "sameAs": [
-    "https://twitter.com/alexseif",
-    "https://linkedin.com/in/alexseif",
-    "https://github.com/alexseif",
-    "https://www.instagram.com/alex_makes_websites"
-  ]
-}
-</script>
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Alex Seif – WordPress Optimization",
+          "image": "https://alexseif.com/images/WordPress-Optimize-card.png",
+          "url": "https://alexseif.com/wordpress-optimization",
+          "description": {{ 'wordpress_optimize.meta.description'|trans|json_encode|raw }},
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cairo",
+            "addressRegion": "EG",
+            "addressCountry": "Egypt"
+          },
+          "telephone": "+20-100-400-6332",
+          "areaServed": "EG",
+          "priceRange": "$$",
+          "founder": {
+            "@type": "Person",
+            "name": "Alex Seif",
+            "jobTitle": {{ 'wordpress_optimize.meta.job_title'|trans|json_encode|raw }}
+          },
+          "sameAs": [
+            "https://twitter.com/alexseif",
+            "https://linkedin.com/in/alexseif",
+            "https://github.com/alexseif",
+            "https://www.instagram.com/alex_makes_websites"
+          ]
+        }
+      </script>
     {% endblock %}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
-    {% block stylesheets %}
-      {{ encore_entry_link_tags('app') }}
-      {% if app.request.locale != 'en' %}
-        {{ encore_entry_link_tags('rtl') }}
-      {% endif %}
-    {% endblock %}
+
+    <!-- Title -->
+    <title>
+      {% block title %}
+        {{ 'alex_seif'|trans }} – {{ 'web_developer'|trans|capitalize }}
+      {% endblock %}
+    </title>
+
+    <!-- Google Tag (deferred for performance) -->
+    {% if 'prod' == app.environment %}
+      <script>
+      window.addEventListener('load', function () {
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-QV4S3QWW7F';
+        document.head.appendChild(gtagScript);
+
+        gtagScript.onload = function () {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-QV4S3QWW7F');
+        };
+      });
+    </script>
+    {% endif %}
   </head>
   <body class="dark-mode">
     {% block body %}
@@ -106,33 +128,31 @@
 
     <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
-
-    <!-- Your Chat Plugin code -->
     <div id="fb-customer-chat" class="fb-customerchat"></div>
 
     {% if 'prod' == app.environment %}
       <script>
-				var chatbox = document.getElementById('fb-customer-chat');
-chatbox.setAttribute("page_id", "268403033331219");
-chatbox.setAttribute("attribution", "biz_inbox");
-window.fbAsyncInit = function () {
-FB.init({xfbml: true, version: 'v10.0'});
-};
+  window.addEventListener('load', function () {
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "268403033331219");
+    chatbox.setAttribute("attribution", "biz_inbox");
 
-(function (d, s, id) {
-var js,
-fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) 
-return;
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v10.0'
+      });
+    };
 
+    var js, fjs = document.getElementsByTagName('script')[0];
+    if (document.getElementById('facebook-jssdk')) return;
 
-
-js = d.createElement(s);
-js.id = id;
-js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-			</script>
+    js = document.createElement('script');
+    js.id = 'facebook-jssdk';
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  });
+</script>
     {% endif %}
   </body>
 </html>
