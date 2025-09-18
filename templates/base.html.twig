@@ -40,8 +40,35 @@
     </title>
     {% block structured_data %}
       <script type="application/ld+json">
-				{ "@context": "https://schema.org", "@type": "Person", "name": "Alex Seif", "jobTitle": "Freelance Web Developer", "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressRegion": "EG" } }
-			</script>
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alex Seif – WordPress Optimization",
+  "image": "https://alexseif.com/images/WordPress-Optimize-card.png",
+  "url": "https://alexseif.com/wordpress-optimization",
+  "description": {{ 'wordpress_optimize.meta.description'|trans|json_encode|raw }},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cairo",
+    "addressRegion": "EG",
+    "addressCountry": "Egypt"
+  },
+  "telephone": "+20-100-400-6332",
+  "areaServed": "EG",
+  "priceRange": "$$",
+  "founder": {
+    "@type": "Person",
+    "name": "Alex Seif",
+    "jobTitle": {{ 'wordpress_optimize.meta.job_title'|trans|json_encode|raw }}
+  },
+  "sameAs": [
+    "https://twitter.com/alexseif",
+    "https://linkedin.com/in/alexseif",
+    "https://github.com/alexseif",
+    "https://www.instagram.com/alex_makes_websites"
+  ]
+}
+</script>
     {% endblock %}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />

@@ -32,7 +32,10 @@
   "name": {{ pkg.title|json_encode|raw }},
   "description": {{ pkg.note|json_encode|raw }},
   "sku": "{{ key }}",
-  "image": "https://alexseif.com/images/WordPress-Optimize-card.png",
+  "image": [
+    "https://alexseif.com/images/WordPress-Optimize-card.png",
+    "Wordpress-Optimize-logo.web"
+    ],
   "brand": {
     "@type": "Brand",
     "name": "WP Optimize by Alex Seif"
@@ -45,31 +48,6 @@
     "url": "https://alexseif.com/wordpress-optimization#{{ key }}",
     "availability": "http://schema.org/InStock",
     "itemCondition": "http://schema.org/NewCondition",
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "EGP"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "name": "Egypt"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "value": "1",
-          "unitCode": "DAY"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "value": "1",
-          "unitCode": "DAY"
-        }
-      }
-    },
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
       "returnPolicyCategory": "https://schema.org/NoReturns"

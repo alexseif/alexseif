@@ -11,13 +11,6 @@
   {{ parent() }}
   {{ encore_entry_script_tags('wp-optimize') }}
 {% endblock %}
-{% block structured_data %}
-  <script type="application/ld+json">
-		{"@context": "https://schema.org","@type": "ProfessionalService", "name": "Alex Seif – WordPress Optimization", "image": "https://alexseif.com/images/WordPress-Optimize-card.png", "url": "https://alexseif.com/wordpress-optimiziation", "description":
-		{{ 'wordpress_optimize.meta.description'|trans }}, "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressRegion": "EG", "addressCountry": "Egypt" }, "telephone": "+20-100-400-6332", "areaServed": "EG", "priceRange": "$$", "founder": { "@type": "Person", "name": "Alex Seif", "jobTitle":
-		{{ 'wordpress_optimize.meta.job_title'|trans }}, "sameAs": [ "https://twitter.com/alexseif", "https://linkedin.com/in/alexseif", "https://github.com/alexseif", "https://www.instagram.com/alex_makes_websites" ] } }
-	</script>
-{% endblock %}
 {% block meta %}
   <meta name="description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
   <!-- Open Graph / Facebook -->
