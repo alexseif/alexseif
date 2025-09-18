@@ -435,6 +435,8 @@ main {
   border-radius: var(--radius-md);
   font-size: var(--font-size-lg);
 
+  margin-bottom: var(--margin-md);
+
   .image-wrapper {
     flex: 0 0 100%;
     overflow: hidden;
@@ -497,6 +499,7 @@ main {
 }
 
 
+#about,
 #value {
   margin-top: var(--margin-xl);
   margin-bottom: var(--margin-xl);

@@ -1,4 +1,4 @@
-<section>
+<section id="intro">
   <header>
     <div class="container">
       <div id="personal-intro" class="banner">
@@ -6,7 +6,7 @@
           <img src="{{ asset('build/images/2023-06-22.jpg') }}" alt="Alex Seif, {{ 'wordpress_optimize.meta.job_title'|trans }}" class="" />
         </div>
         <div>
-          <p>{{ 'wordpress_optimize.header.subtitle'|trans|nl2br }}</p>
+          <p>{{ 'wordpress_optimize.header.subtitle'|trans|raw|nl2br }}</p>
         </div>
       </div>
     </div>

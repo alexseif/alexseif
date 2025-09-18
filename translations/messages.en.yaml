@@ -43,7 +43,7 @@ wordpress_optimize:
     cta: "💬 Chat on WhatsApp"
     meta:
         title: "WordPress Optimization that actually converts: 400+ sites and counting"
-        description: "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites. This page is my offer to help you do it faster, cleaner, and smarter."
+        description: "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites, over the past <em>20 years</em>. This page is my offer to help you do it faster, cleaner, and smarter."
         job_title: "Freelance Web Developer & Strategist"
         alt_text: "Wordpress Optimization: Speed up Wordpress"
 
@@ -56,7 +56,8 @@ wordpress_optimize:
     header:
         title: "WordPress Optimization"
         tagline: Fixes. Fast. Reliable. Human.
-        subtitle: "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites. \n
+        subtitle:
+            "👋🏾 I'm Alex, I’ve built & optimized 400+ WordPress sites, over the past <em>20 years</em>.\n This page is my offer to help you do it faster, cleaner, and smarter.
             This page is my offer to help you do it faster, cleaner, and smarter."
         cta_button: "💬 Chat on WhatsApp"
 
