@@ -13,6 +13,7 @@ woocommerce: WooCommerce
 magento: Magento
 custom_tailored: "Custom Tailored"
 start_project: "Start project"
+cta_default: "📝 Client Intake"
 automated_life_cycles: "Automated life cycles"
 quality_process: "Quality process"
 secure_code: "Secure code"
