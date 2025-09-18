@@ -12,22 +12,27 @@
   "@type": "Review",
   "reviewRating": {
     "@type": "Rating",
-          {% if review.stars is defined %}
+    {% if review.stars is defined %}
     "ratingValue": "{{ review.stars }}",
-          {% endif %}
+    {% endif %}
     "bestRating": "5"
   },
   "author": {
     "@type": "Person",
-          {% if review.name is defined %}
+    {% if review.name is defined %}
     "name": "{{ review.name|e }}"
-          {% endif %}
+    {% endif %}
   },
-          {% if review.review_text is defined %}
-  "reviewBody": "{{ review.review_text|e }}"
-          {% endif %}
+  {% if review.review_text is defined %}
+  "reviewBody": "{{ review.review_text|e }}",
+  {% endif %}
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "{{ review.product|default('WordPress Optimization')|e }}"
+  }
 }
 </script>
+
 
         <div class="testimonial-card card">
           <div class="review-header">
