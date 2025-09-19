@@ -15,7 +15,7 @@
 
     <!-- Preload favicon and hero image -->
     <link rel="preload" href="{{ asset('favicon.ico') }}" as="image" type="image/x-icon" />
-    <link rel="preload" href="{{ asset('images/profile.jpg') }}" as="image" />
+    <link rel="preload" href="{{ asset('https://alexseif.com/images/alex-seif-business-card.png') }}" as="image" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
@@ -33,7 +33,7 @@
     {% block meta %}
       <meta property="og:title" content="Alex Seif - Web Developer" />
       <meta property="og:url" content="{{ app.request.uri }}" />
-      <meta property="og:image" content="{{ asset('images/profile.jpg') }}" />
+      <meta property="og:image" content="{{ asset('https://alexseif.com/images/alex-seif-business-card.png') }}" />
       <meta property="og:site_name" content="Alex Seif" />
       <meta property="og:description" content="Freelance Web Developer with 20 years of experience in Symfony, WordPress, DevOps, and more." />
       <meta property="og:type" content="website" />
