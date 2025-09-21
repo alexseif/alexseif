@@ -10,6 +10,7 @@ Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
     .addEntry('app', './assets/app.js')
+    .addEntry('about', './assets/about.js')
     .addEntry('wp-optimize', './assets/wp-optimize.js')
     .enableStimulusBridge('./assets/controllers.json')
     .splitEntryChunks()

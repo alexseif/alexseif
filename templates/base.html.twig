@@ -105,8 +105,10 @@
   </head>
   <body class="dark-mode">
     {% block body %}
-      {% block nav %}
-        {% include '_nav.html.twig' %}
+      {% block header %}
+        {% block nav %}
+          {% include '_nav.html.twig' %}
+        {% endblock %}
       {% endblock %}
       <div id="background-noise">
         <canvas class="background-grid" id="dotCanvas"></canvas>

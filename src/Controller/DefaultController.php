@@ -126,9 +126,130 @@ class DefaultController extends AbstractController
       ],
 
     ];
+    $expertise = [
+      [
+        'icon' => 'server',
+        'title' => 'Symfony Framework',
+        'description' => 'Advanced Symfony applications with clean architecture, custom bundles, and enterprise-grade security implementations.',
+        'technologies' => ['Symfony 6', 'Doctrine ORM', 'API Platform', 'Twig Templates'],
+      ],
+      [
+        'icon' => 'wrench',
+        'title' => 'WordPress Optimization',
+        'description' => 'Custom themes, plugin development, performance optimization, and WooCommerce solutions that scale.',
+        'technologies' => ['Custom Themes', 'Plugin Development', 'WooCommerce', 'Performance Tuning'],
+      ],
+      [
+        'icon' => 'database',
+        'title' => 'Backend Architecture',
+        'description' => 'Robust database design, API development, and server optimization for high-traffic applications.',
+        'technologies' => ['MySQL', 'PostgreSQL', 'REST APIs', 'GraphQL'],
+      ],
+      [
+        'icon' => 'shield',
+        'title' => 'DevOps & Security',
+        'description' => 'Complete deployment pipelines, server management, and security implementations that protect your business.',
+        'technologies' => ['Docker', 'CI/CD', 'SSL/TLS', 'Security Audits'],
+      ],
+      [
+        'icon' => 'zap',
+        'title' => 'Performance Optimization',
+        'description' => 'Speed optimization, caching strategies, and technical SEO to maximize your digital presence.',
+        'technologies' => ['Redis', 'Varnish', 'CDN Setup', 'Core Web Vitals'],
+      ],
+      [
+        'icon' => 'globe',
+        'title' => 'Full-Stack Solutions',
+        'description' => 'Complete web applications from frontend frameworks to server infrastructure and everything in between.',
+        'technologies' => ['React', 'Vue.js', 'Nginx', 'Load Balancing'],
+      ],
+    ];
+    $clientTypes = [
+      [
+        'icon' => 'users',
+        'title' => 'Solopreneurs & Startups',
+        'description' => 'Rapid MVP development and scalable architectures that grow with your business vision.',
+        'projects' => '50+ Projects',
+        'highlight' => 'From concept to launch in weeks',
+      ],
+      [
+        'icon' => 'briefcase',
+        'title' => 'SMEs & Corporations',
+        'description' => 'Enterprise-grade solutions with complex integrations and high-performance requirements.',
+        'projects' => '200+ Projects',
+        'highlight' => 'Multi-million dollar platforms',
+      ],
+      [
+        'icon' => 'building',
+        'title' => 'Government Agencies',
+        'description' => 'Secure, compliant systems handling sensitive data with strict accessibility standards.',
+        'projects' => '25+ Projects',
+        'highlight' => 'Security clearance experience',
+      ],
+      [
+        'icon' => 'globe',
+        'title' => 'News & Tourism',
+        'description' => 'High-traffic content platforms and booking systems optimized for global audiences.',
+        'projects' => '100+ Projects',
+        'highlight' => 'Millions of monthly visitors',
+      ],
+    ];
+
+    $industries = [
+      'Financial Services',
+      'Healthcare & Medical',
+      'E-commerce & Retail',
+      'Media & Publishing',
+      'Travel & Hospitality',
+      'Education & Training',
+      'Government & Public Sector',
+      'Technology & SaaS',
+    ];
+
+    $testimonials = [
+      [
+        'content' => 'Working with this developer transformed our digital presence completely. The Symfony application they built handles our complex business logic flawlessly, and the performance improvements were immediately noticeable.',
+        'author' => 'Sarah Mitchell',
+        'role' => 'CTO, TechCorp Solutions',
+        'company' => 'Enterprise Software Company',
+        'rating' => 5,
+        'image' => 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      ],
+      [
+        'content' => 'The WordPress optimization work exceeded all expectations. Our site speed improved by 300%, and our search rankings skyrocketed. The ROI was immediate and substantial.',
+        'author' => 'Marcus Rodriguez',
+        'role' => 'Marketing Director',
+        'company' => 'Global Tourism Agency',
+        'rating' => 5,
+        'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      ],
+      [
+        'content' => 'Twenty years of experience really shows. The security implementation and DevOps setup they provided has kept our government platform running smoothly for three years without a single incident.',
+        'author' => 'Dr. Amanda Chen',
+        'role' => 'IT Director',
+        'company' => 'Department of Digital Services',
+        'rating' => 5,
+        'image' => 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      ],
+    ];
+
+    $budgetRanges = [
+      '$10k - $25k',
+      '$25k - $50k',
+      '$50k - $100k',
+      '$100k+',
+    ];
+
     return $this->render(
       'default/about.html.twig',
-      ['aboutSections' => $aboutSections]
+      [
+
+        'expertise' => $expertise,
+        'clientTypes' => $clientTypes,
+        'industries' => $industries,
+        'testimonials' => $testimonials,
+        'budgetRanges' => $budgetRanges,
+      ]
     );
   }
 
@@ -247,5 +368,11 @@ class DefaultController extends AbstractController
   public function webEvolution(): Response
   {
     return $this->render('default/web-evolution.html.twig');
+  }
+
+  #[Route('index', name: 'app_index')]
+  public function index(): Response
+  {
+    return $this->render('default/index.html.twig');
   }
 }

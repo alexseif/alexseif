@@ -2,13 +2,446 @@
 {% block title %}
   {{ 'alex_seif'|trans }} - {{ 'web_developer'|trans|capitalize }}
 {% endblock %}
+{# {% block stylesheets %}
+  {{ encore_entry_link_tags('about') }}
+{% endblock %} #}
 {% block nav %}
 
 {% endblock %}
-{% block content %}
-  <div id="fullpages" class="scrollsign">{{ include('default/_about.html.twig') }}</div>
-  <!-- #fullpages -->
+{% block body %}
+  <div>
+    <section>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <span><Award />20 Years of Elite Web Development</span>
+              </div>
+              <h1>
+                Premium Web Solutions
+                <span>That Convert</span>
+              </h1>
+              <p>I craft high-performance digital experiences that resonate with users and algorithms alike. From Symfony backends to WordPress optimizations, I deliver solutions that drive business growth.</p>
+              <div>
+                <button>Start Your Project<ArrowRight /></button>
+                <button>View Portfolio</button>
+              </div>
+            </div>
+            <div>
+              <div>
+                <img src="{{ asset('build/images/2023-06-22.webp') }}" alt="Professional Developer" />
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div>
+                    <p>500+ Projects</p>
+                    <p>Delivered Successfully</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <Users />
+              </div>
+              <h3>Enterprise-Ready</h3>
+              <p>Scalable solutions for companies of all sizes</p>
+            </div>
+            <div>
+              <div>
+                <Code />
+              </div>
+              <h3>Full-Stack Mastery</h3>
+              <p>PHP, Symfony, WordPress, and DevOps expertise</p>
+            </div>
+            <div>
+              <div>
+                <Award />
+              </div>
+              <h3>SEO Optimized</h3>
+              <p>Built to rank and convert from day one</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div>
+          <h2>Technical Expertise</h2>
+          <p>Two decades of mastering cutting-edge technologies to deliver solutions that exceed expectations.</p>
+        </div>
+
+        <div>
+          {% for item in expertise %}
+            <div>
+              <div>
+                <div>
+                  <i data-lucide="{{ item.icon }}"></i>
+                </div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <div>
+                  {% for tech in item.technologies %}
+                    <span>{{ tech }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div>
+          <h2>Proven Track Record</h2>
+          <p>Twenty years of delivering exceptional results across industries and company sizes.</p>
+        </div>
+
+        <div>
+          {% for client in clientTypes %}
+            <div>
+              <div>
+                <div>
+                  <i data-lucide="{{ client.icon }}"></i>
+                </div>
+                <div>
+                  <h3>{{ client.title }}</h3>
+                  <p>{{ client.description }}</p>
+                  <div>
+                    <span>{{ client.projects }}</span>
+                    <p>{{ client.highlight }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div>
+          <h3>Industries Served</h3>
+          <div>
+            {% for industry in industries %}
+              <div>
+                <p>{{ industry }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div>
+          <h2>Proven Track Record</h2>
+          <p>Twenty years of delivering exceptional results across industries and company sizes.</p>
+        </div>
+
+        <div>
+          {% for client in clientTypes %}
+            <div>
+              <div>
+                <div>
+                  <i data-lucide="{{ client.icon }}"></i>
+                </div>
+                <div>
+                  <h3>{{ client.title }}</h3>
+                  <p>{{ client.description }}</p>
+                  <div>
+                    <span>{{ client.projects }}</span>
+                    <p>{{ client.highlight }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div>
+          <h3>Industries Served</h3>
+          <div>
+            {% for industry in industries %}
+              <div>
+                <p>{{ industry }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div>
+          <h2>Client Success Stories</h2>
+          <p>Trusted by organizations worldwide to deliver mission-critical web solutions.</p>
+        </div>
+
+        <div>
+          {% for testimonial in testimonials %}
+            <div>
+              <div>
+                <div>
+                  <i data-lucide="quote"></i>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  {% for i in 1..testimonial.rating %}
+                    <i data-lucide="star"></i>
+                  {% endfor %}
+                </div>
+
+                <p>"{{ testimonial.content }}"</p>
+
+                <div>
+                  <img src="{{ testimonial.image }}" alt="{{ testimonial.author }}" />
+                  <div>
+                    <p>{{ testimonial.author }}</p>
+                    <p>{{ testimonial.role }}</p>
+                    <p>{{ testimonial.company }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div>
+          <div>
+            <div>
+              <p>500+</p>
+              <p>Projects Delivered</p>
+            </div>
+            <div></div>
+            <div>
+              <p>98%</p>
+              <p>Client Satisfaction</p>
+            </div>
+            <div></div>
+            <div>
+              <p>20</p>
+              <p>Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div>
+          <h2>Ready to Elevate Your Digital Presence?</h2>
+          <p>Let's discuss how I can help you build a solution that drives real business results.</p>
+        </div>
+
+        <div>
+          <div>
+            <h3>Let's Start the Conversation</h3>
+
+            <div>
+              <div>
+                <div>
+                  <i data-lucide="mail"></i>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <p>hello@yourexpertdeveloper.com</p>
+                  <p>Response within 4 hours</p>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <i data-lucide="phone"></i>
+                </div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+1 (555) 123-4567</p>
+                  <p>Available 9 AM - 6 PM EST</p>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <i data-lucide="calendar"></i>
+                </div>
+                <div>
+                  <h4>Free Consultation</h4>
+                  <p>30-minute strategy session</p>
+                  <p>Discuss your project goals</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4>Typical Project Timeline</h4>
+              <div>
+                <div>
+                  <span>Discovery & Planning</span>
+                  <span>1-2 weeks</span>
+                </div>
+                <div>
+                  <span>Development & Testing</span>
+                  <span>4-12 weeks</span>
+                </div>
+                <div>
+                  <span>Launch & Optimization</span>
+                  <span>1-2 weeks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <form method="POST">
+              <div>
+                <div>
+                  <label for="name">Full Name *</label>
+                  <input type="text" name="name" id="name" required placeholder="Your full name" />
+                </div>
+                <div>
+                  <label for="email">Email Address *</label>
+                  <input type="email" name="email" id="email" required placeholder="your.email@company.com" />
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <label for="company">Company</label>
+                  <input type="text" name="company" id="company" placeholder="Your company name" />
+                </div>
+                <div>
+                  <label for="budget">Project Budget</label>
+                  <select name="budget" id="budget">
+                    <option value="">Select budget range</option>
+                    {% for range in budgetRanges %}
+                      <option value="{{ range }}">{{ range }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Project Details *</label>
+                <textarea name="message" id="message" rows="6" required placeholder="Tell me about your project goals, technical requirements, timeline, and any specific challenges you're facing..."></textarea>
+              </div>
+
+              <button type="submit">
+                Start Your Project
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <div>
+          <div>
+            <div>
+              <i data-lucide="code"></i>
+            </div>
+            <span>Expert Developer</span>
+          </div>
+          <p>Twenty years of crafting premium web solutions that drive business growth. From Symfony backends to WordPress optimization, I deliver excellence.</p>
+          <div>
+            <div>
+              <i data-lucide="mail"></i>
+              <span>hello@yourexpertdeveloper.com</span>
+            </div>
+            <div>
+              <i data-lucide="phone"></i>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div>
+              <i data-lucide="map-pin"></i>
+              <span>Available Worldwide</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+          <ul>
+            <li>
+              <a href="#">Symfony Development</a>
+            </li>
+            <li>
+              <a href="#">WordPress Optimization</a>
+            </li>
+            <li>
+              <a href="#">DevOps & Security</a>
+            </li>
+            <li>
+              <a href="#">Performance Tuning</a>
+            </li>
+            <li>
+              <a href="#">Technical SEO</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Industries</h3>
+          <ul>
+            <li>
+              <a href="#">Enterprise Software</a>
+            </li>
+            <li>
+              <a href="#">E-commerce</a>
+            </li>
+            <li>
+              <a href="#">Government</a>
+            </li>
+            <li>
+              <a href="#">Healthcare</a>
+            </li>
+            <li>
+              <a href="#">Financial Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div>
+            <div>© 2024 Expert Developer. All rights reserved.</div>
+            <div>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div>
+            AI vibe coded development by
+            <a href="https://biela.dev/" target="_blank" rel="noopener noreferrer">Biela.dev</a>, powered by
+            <a href="https://teachmecode.ae/" target="_blank" rel="noopener noreferrer">TeachMeCode® Institute</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 {% endblock %}
 {% block announcements %}
 
 {% endblock %}
+{# {% block javascripts %}
+  {{ encore_entry_script_tags('about') }}
+{% endblock %} #}

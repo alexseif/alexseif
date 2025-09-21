@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+// Typography
+$font-sans: 'Manrope', sans-serif;
+
+// Colors
+$color-primary-50: #f0f9ff;
+$color-primary-100: #e0f2fe;
+$color-primary-500: #0ea5e9;
+$color-primary-600: #0284c7;
+$color-primary-700: #0369a1;
+$color-primary-900: #0c4a6e;
+
+$color-secondary-50: #fafafa;
+$color-secondary-100: #f4f4f5;
+$color-secondary-600: #52525b;
+$color-secondary-800: #27272a;
+$color-secondary-900: #18181b;
+
+$color-accent-500: #f59e0b;
+$color-accent-600: #d97706;
+
+// Max widths
+$max-width-xs: 20rem;
+$max-width-sm: 24rem;
+$max-width-md: 28rem;
+$max-width-lg: 32rem;
+$max-width-xl: 36rem;
+$max-width-2xl: 42rem;
+$max-width-3xl: 48rem;
+$max-width-4xl: 56rem;
+$max-width-5xl: 64rem;
+$max-width-6xl: 72rem;
+$max-width-7xl: 80rem;
+
+
+
+body {
+    font-family: $font-sans;
+    background-color: $color-secondary-50;
+    color: $color-secondary-900;
+}
+
+.container {
+    max-width: $max-width-7xl;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.btn-primary {
+    background-color: $color-primary-600;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+        background-color: $color-primary-700;
+    }
+}
+
+// 1. Import Google Font
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+// 2. Base Reset
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    color: #27272a; // Matches $color-secondary-800
+    background-color: #fafafa; // Optional: $color-secondary-50
+}
+
+// 3. Utility Class: Gradient Text
+.text-gradient {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
