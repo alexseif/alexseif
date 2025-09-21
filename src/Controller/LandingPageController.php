@@ -16,9 +16,9 @@ class LandingPageController extends AbstractController
             'icon' => '📈',
             'title' => 'Optimization Only',
             'tagline' => 'Fix what’s slow or unclear',
-            // 'price' => 'Starting from <span>9,000 EGP</span>',
             'price' => 9000,
             'features' => [
+                'Structured Data Audit ',
                 'Speed boost & caching setup',
                 'SEO tuning',
                 'Performance report',
@@ -31,10 +31,10 @@ class LandingPageController extends AbstractController
             'icon' => '🛠️',
             'title' => 'Basic Site',
             'tagline' => 'Simple, clean, and fast',
-            // 'price' => 'Starting from <span>15,500 EGP</span>',
             'price' => 15500,
             'features' => [
                 'One-pager or brochure layout',
+                'Structured Data',
                 'Contact form integration',
                 'Basic SEO setup',
                 'Mobile-friendly design',
@@ -46,9 +46,9 @@ class LandingPageController extends AbstractController
             'icon' => '🛒',
             'title' => 'WooCommerce Store',
             'tagline' => 'Sell with clarity and speed',
-            // 'price' => 'Starting from <span>36,500 EGP</span>',
             'price' => 36500,
             'features' => [
+                'Structured Data',
                 'Product pages & cart flow',
                 'Payment gateway setup',
                 'Retention tools',
@@ -64,11 +64,11 @@ class LandingPageController extends AbstractController
             // 'price' => 'Starting from <span>80,000 EGP</span>',
             'price' => 80000,
             'features' => [
-                'AI-curated layout & logic',
-                'Modular SCSS architecture',
-                'Custom animations or media blocks',
-                'Conversion-ready proof stacking',
-                'Flexible timeline & scope'
+                'Structured Data',
+                'Semantic Clarity',
+                'Backlinks from Trusted Sources',
+                'Semantic SEO',
+                'Your values are core'
             ],
             'note' => 'We scope it together, then let the system recommend what fits best. Built around your goals.'
         ]
