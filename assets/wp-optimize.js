@@ -33,10 +33,10 @@ function formatEGP(price) {
         minimumFractionDigits: 0
     }).format(price);
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll(".package-pane");
     const details = document.querySelectorAll(".package-details");
+    const pricingCard = document.getElementById("pricing-card");
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
@@ -52,10 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
             if (activeDetail) activeDetail.style.display = "block";
 
             // Format price
-            const priceSpan = activeDetail.querySelector(".price span");
-            if (priceSpan) {
-                const rawPrice = packages[key].price.replace(/[^\d.]/g, '');
-                priceSpan.textContent = formatEGP(parseFloat(rawPrice));
+            // const priceSpan = activeDetail.querySelector(".price span");
+            // if (priceSpan) {
+            // const rawPrice = packages[key].price.replace(/[^\d.]/g, '');
+            // priceSpan.textContent = formatEGP(parseFloat(rawPrice));
+            // }
+
+            // Scroll to pricing card
+            if (pricingCard) {
+                pricingCard.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         });
     });

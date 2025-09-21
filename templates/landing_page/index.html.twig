@@ -28,30 +28,6 @@
   <meta name="twitter:description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
   <meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png" />
 {% endblock %}
-{% block nav %}
-  {{ include('landing_page/_nav.html.twig') }}
-
-  <!-- Navigation Menu -->
-  <nav class="nav-menu" id="nav">
-    <div class="container">
-      <nav id="navbarNav">
-        <ul class="navbar-nav flex-column">
-          <li>
-            {% if app.request.locale != 'en' %}
-              <a title="English" href="{{ path('app_landing_page_locale', { '_locale': 'en' }) }}">EN</a>
-            {% endif %}
-            {# {% if app.request.locale != 'ar' %} #}
-            {# <a title="عربي" href="{{ path("app_landing_page_locale", {"_locale":"ar"}) }}">ع</a> #}
-            {# {% endif %} #}
-            {% if app.request.locale != 'eg' %}
-              <a title="مصري" href="{{ path('app_landing_page_locale', { '_locale': 'eg' }) }}">🇪🇬</a>
-            {% endif %}
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </nav>
-{% endblock %}
 {% block content %}
   {# <section id="section-id">
   <div class="container">
