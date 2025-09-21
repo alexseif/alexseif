@@ -5,35 +5,28 @@
       <p>Real feedback from real people. These aren’t just reviews—they’re proof of trust, clarity, and results.</p>
     </header>
     <div class="testimonial-grid grid-3">
-      {% for review in reviews %}
-      <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "reviewRating": {
-    "@type": "Rating",
-    {% if review.stars is defined %}
-    "ratingValue": "{{ review.stars }}",
-    {% endif %}
-    "bestRating": "5"
-  },
-  "author": {
-    "@type": "Person",
-    {% if review.name is defined %}
-    "name": "{{ review.name|e }}"
-    {% endif %}
-  },
-  {% if review.review_text is defined %}
-  "reviewBody": "{{ review.review_text|e }}",
-  {% endif %}
-  "itemReviewed": {
-    "@type": "Product",
-    "name": "{{ review.product|default('WordPress Optimization')|e }}"
-  }
-}
-</script>
-
-
+     {% for review in reviews %}
+  <script type="application/ld+json">
+  {{ {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": review.stars|default(5),
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": review.name|default("Anonymous")|e
+    },
+    "reviewBody": review.review_text|default("No review text provided")|e,
+    "itemReviewed": {
+      "@type": "Product",
+      "name": review.product|default("Optimize")|e
+    }
+  }|json_encode|raw }}
+  </script>
+{% endfor %}
         <div class="testimonial-card card">
           <div class="review-header">
           {% if review.avatar is defined %}

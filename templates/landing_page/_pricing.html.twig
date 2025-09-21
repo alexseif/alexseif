@@ -35,16 +35,15 @@
 
           <!-- Structured Data -->
  <script type="application/ld+json">
-{
+{{ {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": {{ pkg.title|json_encode|raw }},
-  "description": {{ pkg.note|json_encode|raw }},
-  "sku": "{{ key }}",
+  "name": pkg.title,
+  "description": pkg.note,
+  "sku": key,
   "image": [
-    "https://alexseif.com/images/WordPress-Optimize-card.png",
-    "Wordpress-Optimize-logo.web"
-    ],
+    "https://alexseif.com/images/WordPress-Optimize-card.png"
+  ],
   "brand": {
     "@type": "Brand",
     "name": "WP Optimize by Alex Seif"
@@ -52,9 +51,9 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "EGP",
-    "price": "{{ pkg.price|replace({' EGP': '', ',': ''})|trim }}",
+    "price": pkg.price|replace({' EGP': '', ',': ''})|trim,
     "priceValidUntil": "2025-12-31",
-    "url": "https://alexseif.com/wordpress-optimization#{{ key }}",
+    "url": "https://alexseif.com/wordpress-optimization#" ~ key,
     "availability": "http://schema.org/InStock",
     "itemCondition": "http://schema.org/NewCondition",
     "hasMerchantReturnPolicy": {
@@ -62,8 +61,9 @@
       "returnPolicyCategory": "https://schema.org/NoReturns"
     }
   }
-}
+}|json_encode|raw }}
 </script>
+
         {% endfor %}
       </div>
     </div>
