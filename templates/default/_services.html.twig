@@ -1,0 +1,23 @@
+<section id="services">
+  <div class="container">
+    <header class="flow">
+      <h2>Services</h2>
+    </header>
+    <div class="grid-3">
+      {% for service in services %}
+        <div class="card">
+          <h4>{{ service.title }}</h4>
+          <p>{{ service.description|raw }}</p>
+          <div class="badge-row">
+            {% for tag in service.tags %}
+              <span class="badge">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <!-- .badge-row -->
+        </div>
+        <!-- .card -->
+      {% endfor %}
+    </div>
+  </div>
+  <!-- .container -->
+</section>

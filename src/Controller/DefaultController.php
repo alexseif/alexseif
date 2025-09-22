@@ -10,6 +10,62 @@ use Symfony\Component\Routing\Attribute\Route;
 class DefaultController extends AbstractController
 {
 
+  public $services = [
+    [
+      'title' => 'Web Presence',
+      'description' => "I deliver your message to the web, <em>smartly</em>",
+      'tags' => [
+        'WordPress',
+        'Custom Tailored',
+        'Structured Data'
+      ],
+    ],
+    [
+      'title' => 'eCommerce',
+      'description' => "Start selling your stuff, wake up to <em>fullfil orders</em>",
+      'tags' => [
+        'WooCommerce',
+        'Custom Tailored',
+        'Structured Data'
+      ]
+    ],
+    [
+      'title' => 'eTourism',
+      'description' => "Start booking, increase your <em>occupancy rate</em>",
+      'tags' => [
+        'Travel Technology',
+        'Custom Tailored',
+        'Structured Data'
+      ],
+    ],
+    [
+      'title' => 'LMS',
+      'description' => "Start Selling your courses online, <em>professionally</em>",
+      'tags' => [
+        'Moodle',
+        'Custom Tailored',
+        'Structured Data'
+      ],
+    ],
+    [
+      'title' => 'Outsourcing',
+      'description' => "Get your projects delivered: on time; with quality; on budget ",
+      'tags' => [
+        'Full Stack',
+        'Requirement Elicitation',
+        'Software Architect'
+      ],
+    ],
+    [
+      'title' => 'Maintenance',
+      'description' => "Get your stack smoothly running and efficient",
+      'tags' => [
+        'Optimization',
+        'Bug fixes',
+        'Updates'
+      ],
+    ]
+  ];
   #[Route('/', name: 'alx_home')]
   public function home(): Response
   {
@@ -22,12 +78,12 @@ class DefaultController extends AbstractController
       [
         'title' => 'Business Sizes',
         'description' => 'Whether you\'re a micro-business just starting or a multinational corporation seeking digital excellence, I\'ve successfully collaborated with various business sizes. My experience allows me to deliver scalable solutions that meet the unique needs of businesses of all sizes.',
-        'tags' => ['Micro', 'Small', 'Startups', 'Medium', 'Large', 'Multinational'],
+        'tags' => ['Micro', 'Small', 'Startups', 'Medium', 'Large', 'Multinational', 'Govermental'],
       ],
       [
         'title' => 'Technological Innovations',
         'description' => 'Staying ahead of the curve is crucial in the fast-paced world of web development. I leverage the latest technologies and frameworks to create innovative solutions that drive business growth and efficiency. From eCommerce platforms to custom web applications, I ensure your business stays competitive.',
-        'tags' => ['eCommerce', 'Web Applications', 'Custom Solutions', 'Latest Technologies'],
+        'tags' => ['eCommerce', 'Web Applications', 'Custom Solutions', 'Latest Technologies', 'eTourism', 'LMS'],
       ],
       [
         'title' => 'Client-Centric Approach',
@@ -43,7 +99,10 @@ class DefaultController extends AbstractController
 
     return $this->render(
       'default/home.html.twig',
-      ['aboutSections' => $aboutSections]
+      [
+        'aboutSections' => $aboutSections,
+        'services' => $this->services
+      ]
     );
   }
 
