@@ -14,15 +14,16 @@ class LandingPageController extends AbstractController
     public $packages = [
         'optimize' => [
             'icon' => '📈',
-            'title' => 'Optimization Only',
-            'tagline' => 'Fix what’s slow or unclear',
+            'title' => 'Semantic Audit',
+            'tagline' => 'Search visibility & AI recommendation analysis',
             'price' => 9000,
             'features' => [
-                'Structured Data Audit ',
+                'Structured Data Audit',
+                'Semantic structure review (headings, schema, copy clarity)',
+                'Emotional calibration & trust signals',
                 'Speed boost & caching setup',
                 'SEO tuning',
-                'Performance report',
-                'WhatsApp support for 7 days',
+                'Actionable report with prioritized fixes',
                 'Delivered in 3–5 days'
             ],
             'note' => 'Already have a site? Let’s make it faster, clearer, and easier to trust.'
