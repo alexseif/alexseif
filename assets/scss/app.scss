@@ -549,3 +549,170 @@ main {
 .align-items-center {
   align-items: center;
 }
+
+// 🧱 Form Inputs — Modular, Tokenized, No Color Suggestions
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: var(--pad-sm) var(--pad-md);
+  font-family: $font-sans;
+  font-size: $font-base;
+  border: 1px solid var(--color-border-default);
+  border-radius: $radius;
+  background: none;
+  color: $text;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  margin-top: var(--margin-sm);
+  margin-bottom: var(--margin-sm);
+
+  &:focus {
+    border-color: var(--color-border-hover);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: var(--gap-sm);
+  font-size: $font-base;
+  font-weight: 500;
+  color: $text;
+}
+
+.form-group {
+  margin-bottom: var(--margin-md);
+}
+
+// Optional helper text
+.helper-text {
+  font-size: 0.85rem;
+  margin-top: var(--gap-sm);
+  color: $muted;
+}
+
+// Error state
+input.error,
+textarea.error,
+select.error {
+  border-color: var(--color-error);
+}
+
+.error-message {
+  font-size: 0.85rem;
+  margin-top: var(--gap-sm);
+  color: var(--color-error);
+}
+
+// 🧾 Fieldset — Image Upload
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: var(--margin-md);
+
+  legend {
+    font-size: $font-base;
+    font-weight: 600;
+    margin-bottom: var(--gap-sm);
+    color: $text;
+  }
+
+  .vich-image {
+    input[type="file"] {
+      display: block;
+      width: 100%;
+      padding: var(--pad-sm) var(--pad-md);
+      font-family: $font-sans;
+      font-size: $font-base;
+      border: 1px solid var(--color-border-default);
+      border-radius: $radius;
+      background: none;
+      color: $text;
+      cursor: pointer;
+      transition: border 0.2s ease, box-shadow 0.2s ease;
+
+      &:focus {
+        border-color: var(--color-border-hover);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+      }
+
+      &::file-selector-button {
+        padding: var(--pad-sm) var(--pad-md);
+        border: none;
+        border-radius: $radius;
+        background: var(--color-surface-muted);
+        color: $text;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        &:hover {
+          background: var(--color-surface);
+        }
+      }
+    }
+  }
+}
+
+// 💰 Input Group — Estimated Cost
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .input-group-text {
+    padding: var(--pad-sm) var(--pad-md);
+    font-size: $font-base;
+    font-family: $font-sans;
+    border: 1px solid var(--color-border-default);
+    border-right: none;
+    border-radius: $radius 0 0 $radius;
+    background: var(--color-surface-muted);
+    color: $text;
+    white-space: nowrap;
+  }
+
+  input.form-control {
+    flex: 1;
+    padding: var(--pad-sm) var(--pad-md);
+    font-size: $font-base;
+    font-family: $font-sans;
+    border: 1px solid var(--color-border-default);
+    border-left: none;
+    border-radius: 0 $radius $radius 0;
+    background: none;
+    color: $text;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: var(--color-border-hover);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+
+// Label styling
+label.form-label {
+  display: block;
+  margin-bottom: var(--gap-sm);
+  font-size: $font-base;
+  font-weight: 500;
+  color: $text;
+
+  &.required::after {
+    content: '*';
+    margin-left: var(--gap-sm);
+    color: var(--color-error);
+  }
+}
