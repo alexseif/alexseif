@@ -1,22 +1,18 @@
 <section id="usp">
-  <div class="container">
-    {% for section in aboutSections %}
-      <div class="flow">
-        <h3>{{ section.title }}</h3>
-        <div class="">
-          <div class="card">
-            <p>{{ section.description }}</p>
-            <div class="badge-row">
-              {% for region in section.tags %}
-                <span class="badge">{{ region }}</span>
-              {% endfor %}
-            </div>
-            <!-- .badge-row -->
-          </div>
-          <!-- .card -->
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-  <!-- .container -->
+	<div class="container">
+		{% for section in aboutSections %}
+			<div class="card flow column">
+				<h3>{{ section.title }}</h3>
+				<p>{{ section.description }}</p>
+				<div class="badge-row align-right">
+					{% for region in section.tags %}
+						<span class="badge">{{ region }}</span>
+					{% endfor %}
+				</div>
+				<!-- .badge-row -->
+			</div>
+			<!-- .card -->
+		{% endfor %}
+	</div>
+	<!-- .container -->
 </section>

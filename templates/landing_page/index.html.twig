@@ -1,96 +1,69 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  {{ 'wordpress_optimize.meta.title'|trans }}
+	{{ 'wordpress_optimize.meta.title'|trans }}
 {% endblock %}
 {% block stylesheets %}
-  {{ parent() }}
-  {{ encore_entry_link_tags('wp-optimize') }}
+	{{ parent() }}
+	{{ encore_entry_link_tags('wp-optimize') }}
 {% endblock %}
 {% block javascripts %}
-  {{ parent() }}
-  {{ encore_entry_script_tags('wp-optimize') }}
+	{{ parent() }}
+	{{ encore_entry_script_tags('wp-optimize') }}
 {% endblock %}
 {% block meta %}
-  <meta name="description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alexseif.com/wordpress-optimization" />
-  <meta property="og:title" content="{{ 'wordpress_optimize.meta.title'|trans }}" />
-  <meta property="og:description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
-  <meta property="og:image" content="https://alexseif.com/images/WordPress-Optimize-card.png" />
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@alexseif" />
-  <meta name="twitter:creator" content="@alexseif" />
-  <meta name="twitter:title" content="{{ 'wordpress_optimize.meta.title'|trans }}" />
-  <meta name="twitter:description" content="{{ 'wordpress_optimize.meta.description'|trans }}" />
-  <meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png" />
-  <meta name="robots" content="index, follow" />
+	<meta
+	name="description" content="{{ 'wordpress_optimize.meta.description'|trans }}"/>
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://alexseif.com/wordpress-optimization"/>
+	<meta property="og:title" content="{{ 'wordpress_optimize.meta.title'|trans }}"/>
+	<meta property="og:description" content="{{ 'wordpress_optimize.meta.description'|trans }}"/>
+	<meta
+	property="og:image" content="https://alexseif.com/images/WordPress-Optimize-card.png"/>
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:site" content="@alexseif"/>
+	<meta name="twitter:creator" content="@alexseif"/>
+	<meta name="twitter:title" content="{{ 'wordpress_optimize.meta.title'|trans }}"/>
+	<meta name="twitter:description" content="{{ 'wordpress_optimize.meta.description'|trans }}"/>
+	<meta name="twitter:image" content="https://alexseif.com/images/WordPress-Optimize-card.png"/>
+	<meta name="robots" content="index, follow"/>
 {% endblock %}
 {% block content %}
-  {# <section id="section-id">
-  <div class="container">
-    <h2>Section Title</h2>
-    <p>This is your intro paragraph—warm, clear, and inviting. No jargon, just value.</p>
-
-    <div class="media-wrapper">
-      <!-- Image, video, or embed goes here -->
-      <img src="/path/to/image.jpg" alt="Descriptive alt text" class="responsive-media">
-      <!-- or -->
-      <video src="/path/to/video.mp4" controls class="responsive-media"></video>
-      <!-- or -->
-      <iframe src="https://example.com/embed" class="responsive-media"></iframe>
-    </div>
-
-    <div class="content-grid">
-      <!-- Cards, lists, or detailed content blocks -->
-    </div>
-  </div>
-</section>
-#}
-
-  {% include 'landing_page/_header.html.twig' %}
-  {% include 'landing_page/_pricing.html.twig' %}
-  {% include 'landing_page/_proof.html.twig' %}
-  {% include 'landing_page/_audience.html.twig' %}
-  {% include 'landing_page/_pain.html.twig' %}
-  {% include 'landing_page/_solution.html.twig' %}
-  {% include 'landing_page/_faq.html.twig' %}
-  {% include 'landing_page/_contact.html.twig' %}
+	{% include 'landing_page/_header.html.twig' %}
+	{% include 'landing_page/_pricing.html.twig' %}
+	{% include 'landing_page/_proof.html.twig' %}
+	{% include 'landing_page/_audience.html.twig' %}
+	{% include 'landing_page/_pain.html.twig' %}
+	{% include 'landing_page/_solution.html.twig' %}
+	{% include 'landing_page/_faq.html.twig' %}
+	{% include 'landing_page/_contact.html.twig' %}
 {% endblock %}
 {% block footer %}
-  <footer>
-    <div class="container">
-      <div class="footer-wrapper">
-        <a href="{{ path('alx_home') }}"><img src="{{ asset('build/images/ALX.webp') }}" width="60" alt="Alex Seif logo" /></a>
-        <ul>
-          <li>
-            <a href="https://www.instagram.com/alex_makes_websites/" target="_blank" class="social-icon-link" aria-label="Instagram – Alex Makes Websites">{% include 'icons/014-instagram.svg' %}</a>
-          </li>
-        </ul>
-        <nav role="navigation">
-          <ul>
-            <li>
-              <a href="#why">Why It Works</a>
-            </li>
-            <li>
-              <a href="#clients">Work</a>
-            </li>
-            <li>
-              <a href="#pricing">Pricing</a>
-            </li>
-            <li>
-              <a href="#faq">FAQ</a>
-            </li>
-          </ul>
-        </nav>
+	<footer>
+		<div class="container">
+			<div class="footer-wrapper">
+				<a href="{{ path('alx_home') }}"><img src="{{ asset('build/images/ALX.webp') }}" width="60" alt="Alex Seif logo"/></a>
+				<ul>
+					<li>
+						<a href="https://www.instagram.com/alex_makes_websites/" target="_blank" class="social-icon-link" aria-label="Instagram – Alex Makes Websites">{% include 'icons/014-instagram.svg' %}</a>
+					</li>
+				</ul>
+				<nav role="navigation">
+					<ul>
+						<li><a href="#why">Why It Works</a></li>
+						<li><a href="#clients">Work</a></li>
+						<li><a href="#pricing">Pricing</a></li>
+						<li><a href="#faq">FAQ</a></li>
+					</ul>
+				</nav>
 
-        <div class="text-end">
-          <a class="cta" href="https://wa.me/+201004006332" target="_blank">{{ 'cta_default'|trans }}</a>
-        </div>
-      </div>
-      {{ 'wordpress_optimize.footer.copyright'|trans }}
-    </div>
-  </footer>
+				<div class="text-end">
+					<a class="cta" href="https://wa.me/+201004006332" target="_blank">{{ 'cta_default'|trans }}</a>
+				</div>
+			</div>
+			{{ 'wordpress_optimize.footer.copyright'|trans }}
+		</div>
+	</footer>
 {% endblock %}
