@@ -119,10 +119,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showCompletion() {
-        // Redirect to thank you page instead of showing inline completion
-        // Form data is collected but not submitted (add AJAX submission here if needed)
-        console.log('Form Data Collected:', formData); // For debugging
-        window.location.href = '/intake/thank-you';
+        // Send form data to backend before redirect
+        const submitBtn = document.querySelector('.btn-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        fetch('/intake/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Form submitted successfully');
+                } else {
+                    console.log('Submission failed: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                console.log('Submission failed due to network error');
+            })
+            .finally(() => {
+                // Always redirect to thank you page
+                window.location.href = '/intake/thank-you';
+            });
     }
 
     // Reset field borders and outlines on input/change
