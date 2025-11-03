@@ -1,41 +1,45 @@
 <section id="pricing">
-  <div class="container">
-  <div class="flow">
-  <h2>Pricing</h2>
-  <p>I believe in fair pricing that respects the Egyptian market and empowers creators. This isn’t just about websites - it’s about helping each other build our own corner of the web, with speed, clarity, and trust.</p>
-</div>
+	<div class="container">
+		<div class="flow card shadow ">
+			<h2>Pricing</h2>
+			<p>I believe in fair pricing that respects the Egyptian market and empowers creators. This isn’t just about websites - it’s about helping each other build our own corner of the web, with speed, clarity, and trust.</p>
+		</div>
 
-  <!-- .flow -->
-    <div class="pricing-card" id="pricing-card">
-      <!-- Package Tabs -->
-      <div class="pricing-variations">
-        {% for key, pkg in packages %}
-          <button class="package-pane {% if loop.first %}active{% endif %}" data-package="{{ key }}">
-            <h4>{{ pkg.icon }} {{ pkg.title }}</h4>
-            <p>{{ pkg.tagline }}</p>
-          </button>
-        {% endfor %}
-      </div>
+		<!-- .flow -->
+		<div
+			class="pricing-card" id="pricing-card">
+			<!-- Package Tabs -->
+			<div class="pricing-variations">
+				{% for key, pkg in packages %}
+					<button class="package-pane {% if loop.first %}active{% endif %}" data-package="{{ key }}">
+						<h4>{{ pkg.icon }}
+							{{ pkg.title }}</h4>
+						<p>{{ pkg.tagline }}</p>
+					</button>
+				{% endfor %}
+			</div>
 
-      <!-- Package Details (Pre-rendered for SEO) -->
-      <div class="pricing-core">
-        {% for key, pkg in packages %}
-          <div class="package-details" id="package-{{ key }}" {% if not loop.first %}style="display:none"{% endif %}>
-            <h3 class="price">Starting from <span>{{ pkg.price|format_currency('EGP') }}</span></h3>
-            <ul class="feature-list">
-              {% for feature in pkg.features %}
-                <li>{{ feature }}</li>
-              {% endfor %}
-            </ul>
-            <p class="note">{{ pkg.note }}</p>
-        <div class="text-end">
-          <a class="cta" href="https://wa.me/+201004006332" target="_blank">{{ 'cta_default'|trans }}</a>
-        </div>
-          </div>
+			<!-- Package Details (Pre-rendered for SEO) -->
+			<div class="pricing-core">
+				{% for key, pkg in packages %}
+					<div class="package-details" id="package-{{ key }}" {% if not loop.first %} style="display:none" {% endif %}>
+						<h3 class="price">Starting from
+							<span>{{ pkg.price|format_currency('EGP') }}</span>
+						</h3>
+						<ul class="feature-list">
+							{% for feature in pkg.features %}
+								<li>{{ feature }}</li>
+							{% endfor %}
+						</ul>
+						<p class="note">{{ pkg.note }}</p>
+						<div class="text-end">
+							<a class="cta" href="https://wa.me/+201004006332" target="_blank">{{ 'cta_default'|trans }}</a>
+						</div>
+					</div>
 
-          <!-- Structured Data -->
- <script type="application/ld+json">
-{{ {
+					<!-- Structured Data -->
+					<script type="application/ld+json">
+						{{ {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": pkg.title,
@@ -62,10 +66,10 @@
     }
   }
 }|json_encode|raw }}
-</script>
+					</script>
 
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 </section>

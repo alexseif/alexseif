@@ -470,10 +470,15 @@ section {
 }
 
 #intro {
+    padding-bottom: 0;
 
     h1 {
-
         display: inline;
+    }
+
+    @media (min-width: 768px) {
+        position: relative;
+        top: 5rem;
     }
 }
 
@@ -540,5 +545,11 @@ section {
             margin-top: auto;
             text-align: end;
         }
+    }
+}
+
+#pricing {
+    .card p {
+        font-size: 130%;
     }
 }
