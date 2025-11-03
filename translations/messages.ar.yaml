@@ -95,3 +95,51 @@ wordpress_optimize:
 
     footer:
         copyright: "© ٢٠٢٥ ووردبريس أوبتمايز من أليكس سيف. جميع الحقوق محفوظة."
+
+# Intake Form Translations - Arabic
+intake_form:
+    title: "مراجعة مجانية لموقع الويب وظهور الذكاء الاصطناعي للعيادات"
+    step1:
+        title: "مراجعة مجانية لموقع الويب وظهور الذكاء الاصطناعي للعيادات"
+        subtitle: "دعنا نبدأ ببعض المعلومات الأساسية."
+        clinic_name: "اسم العيادة / المركز"
+        your_name: "اسمك"
+    step2:
+        title: "دورك واتصالك"
+        subtitle: "أخبرنا عن منصبك وكيفية الوصول إليك."
+        role: "الدور / المسمى الوظيفي"
+        role_doctor: "طبيب"
+        role_manager: "مدير"
+        role_marketing: "تسويق"
+        role_other: "أخرى"
+        whatsapp: "رقم واتساب"
+    step3:
+        title: "البريد الإلكتروني والموقع"
+        subtitle: "قدم بريدك الإلكتروني وتفاصيل موقعك."
+        email: "البريد الإلكتروني"
+        website: "الموقع (إن وجد)"
+        no_website: "ليس لدينا موقع ويب بعد"
+    step4:
+        title: "التواصل الاجتماعي والاهتمامات"
+        subtitle: "شارك إنستغرامك وما تهتم به."
+        instagram: "رابط إنستغرام"
+        interests_label: "ما الذي تهتم به أكثر؟"
+        interest_website: "بناء / إعادة تصميم موقع ويب"
+        interest_ai: "تحسين الظهور على ChatGPT / Gemini"
+        interest_both: "كلاهما"
+    step5:
+        title: "وضعك الحالي"
+        subtitle: "صف وضعك الحالي وأي تفاصيل إضافية."
+        situation_label: "أي من هذه يصف وضعك بشكل أفضل؟"
+        situation_advertise: "نحن نعلن بالفعل لكننا نحتاج إلى نتائج أفضل"
+        situation_new: "نحن جدد ونريد الإطلاق بقوة عبر الإنترنت"
+        situation_modernize: "نريد تحديث وجودنا الرقمي"
+        message: "أي شيء آخر تريد مشاركته؟ (اختياري)"
+    completion:
+        title: "شكراً لك!"
+        subtitle: "تم إرسال طلب مراجعتك المجانية. سنتصل بك قريباً عبر واتساب أو البريد الإلكتروني."
+        back_home: "العودة إلى الصفحة الرئيسية"
+    buttons:
+        next: "التالي"
+        previous: "السابق"
+        submit: "اطلب مراجعتي المجانية"

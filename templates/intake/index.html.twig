@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'intake_form.title'|trans }}
+	-
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('intake') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('intake') }}
+{% endblock %}
+{% block header %}{% endblock %}
+{% block sitewrapper %}
+	<div
+		id="intake-form" class="fullpage intake-container" {% if app.request.locale == 'ar' %} dir="rtl" {% endif %}>
+		<!-- Progress Bar -->
+		<div class="progress-bar">
+			<div class="progress-fill" id="progress-fill"></div>
+		</div>
+
+		<!-- Form Steps -->
+		<div
+			class="form-wrapper">
+			<!-- Step 1: Clinic Name and Your Name -->
+			<div class="step active" id="step-1">
+				<h2>{{ 'intake_form.step1.title'|trans }}</h2>
+				<p>{{ 'intake_form.step1.subtitle'|trans }}</p>
+				<div class="form-group">
+					<label for="clinic-name">{{ 'intake_form.step1.clinic_name'|trans }}</label>
+					<input type="text" id="clinic-name" name="clinicName" required>
+				</div>
+				<div class="form-group">
+					<label for="your-name">{{ 'intake_form.step1.your_name'|trans }}</label>
+					<input type="text" id="your-name" name="yourName" required>
+				</div>
+				<button class="btn-next" data-next="2">{{ 'intake_form.buttons.next'|trans }}</button>
+			</div>
+
+			<!-- Step 2: Role and WhatsApp -->
+			<div class="step" id="step-2">
+				<h2>{{ 'intake_form.step2.title'|trans }}</h2>
+				<p>{{ 'intake_form.step2.subtitle'|trans }}</p>
+				<div class="form-group">
+					<label for="role">{{ 'intake_form.step2.role'|trans }}</label>
+					<select id="role" name="role" required>
+						<option value="">{{ 'intake_form.step2.role'|trans }}...</option>
+						<option value="doctor">{{ 'intake_form.step2.role_doctor'|trans }}</option>
+						<option value="manager">{{ 'intake_form.step2.role_manager'|trans }}</option>
+						<option value="marketing">{{ 'intake_form.step2.role_marketing'|trans }}</option>
+						<option value="other">{{ 'intake_form.step2.role_other'|trans }}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="whatsapp">{{ 'intake_form.step2.whatsapp'|trans }}</label>
+					<input type="tel" id="whatsapp" name="whatsapp" required>
+				</div>
+				<button class="btn-prev" data-prev="1">{{ 'intake_form.buttons.previous'|trans }}</button>
+				<button class="btn-next" data-next="3">{{ 'intake_form.buttons.next'|trans }}</button>
+			</div>
+
+			<!-- Step 3: Email and Website -->
+			<div class="step" id="step-3">
+				<h2>{{ 'intake_form.step3.title'|trans }}</h2>
+				<p>{{ 'intake_form.step3.subtitle'|trans }}</p>
+				<div class="form-group">
+					<label for="email">{{ 'intake_form.step3.email'|trans }}</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="website">{{ 'intake_form.step3.website'|trans }}</label>
+					<input type="url" id="website" name="website" placeholder="https://example.com">
+					<div class="checkbox-group">
+						<label for="no-website">{{ 'intake_form.step3.no_website'|trans }}</label>
+						<input type="checkbox" id="no-website" name="noWebsite">
+					</div>
+				</div>
+				<button class="btn-prev" data-prev="2">{{ 'intake_form.buttons.previous'|trans }}</button>
+				<button class="btn-next" data-next="4">{{ 'intake_form.buttons.next'|trans }}</button>
+			</div>
+
+			<!-- Step 4: Instagram and Interests -->
+			<div class="step" id="step-4">
+				<h2>{{ 'intake_form.step4.title'|trans }}</h2>
+				<p>{{ 'intake_form.step4.subtitle'|trans }}</p>
+				<div class="form-group">
+					<label for="instagram">{{ 'intake_form.step4.instagram'|trans }}</label>
+					<input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/...">
+				</div>
+				<div class="form-group">
+					<label>{{ 'intake_form.step4.interests_label'|trans }}</label>
+					<div class="checkbox-group">
+						<input type="checkbox" id="interest-website" name="interestWebsite" value="website">
+						<label for="interest-website">{{ 'intake_form.step4.interest_website'|trans }}</label>
+					</div>
+					<div class="checkbox-group">
+						<input type="checkbox" id="interest-ai" name="interestAI" value="ai">
+						<label for="interest-ai">{{ 'intake_form.step4.interest_ai'|trans }}</label>
+					</div>
+					<div class="checkbox-group">
+						<input type="checkbox" id="interest-both" name="interestBoth" value="both">
+						<label for="interest-both">{{ 'intake_form.step4.interest_both'|trans }}</label>
+					</div>
+				</div>
+				<button class="btn-prev" data-prev="3">{{ 'intake_form.buttons.previous'|trans }}</button>
+				<button class="btn-next" data-next="5">{{ 'intake_form.buttons.next'|trans }}</button>
+			</div>
+
+			<!-- Step 5: Situation and Message -->
+			<div class="step" id="step-5">
+				<h2>{{ 'intake_form.step5.title'|trans }}</h2>
+				<p>{{ 'intake_form.step5.subtitle'|trans }}</p>
+				<div class="form-group">
+					<label>{{ 'intake_form.step5.situation_label'|trans }}</label>
+					<div class="radio-group">
+						<input type="radio" id="situation-advertise" name="situation" value="advertise" required>
+						<label for="situation-advertise">{{ 'intake_form.step5.situation_advertise'|trans }}</label>
+					</div>
+					<div class="radio-group">
+						<input type="radio" id="situation-new" name="situation" value="new" required>
+						<label for="situation-new">{{ 'intake_form.step5.situation_new'|trans }}</label>
+					</div>
+					<div class="radio-group">
+						<input type="radio" id="situation-modernize" name="situation" value="modernize" required>
+						<label for="situation-modernize">{{ 'intake_form.step5.situation_modernize'|trans }}</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="message">{{ 'intake_form.step5.message'|trans }}</label>
+					<textarea id="message" name="message" rows="4"></textarea>
+				</div>
+				<button class="btn-prev" data-prev="4">{{ 'intake_form.buttons.previous'|trans }}</button>
+				<button class="btn-submit">{{ 'intake_form.buttons.submit'|trans }}</button>
+			</div>
+
+			<!-- Completion Screen -->
+			<div class="step completion" id="step-complete">
+				<div class="completion-icon">
+					<svg width="64" height="64" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h2>{{ 'intake_form.completion.title'|trans }}</h2>
+				<p>{{ 'intake_form.completion.subtitle'|trans }}</p>
+				<a href="{{ path('alx_home') }}" class="btn-home">{{ 'intake_form.completion.back_home'|trans }}</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block footer %}
+	{% include 'intake/_footer.html.twig' %}
+{% endblock %}

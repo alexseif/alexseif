@@ -166,3 +166,51 @@ wordpress_optimize:
 
     footer:
         copyright: "© 2025 WP Optimize by Alex Seif"
+
+# Intake Form Translations
+intake_form:
+    title: "Free Website & AI Visibility Review for Clinics"
+    step1:
+        title: "Free Website & AI Visibility Review for Clinics"
+        subtitle: "Let's get started with some basic information."
+        clinic_name: "Clinic / Center Name"
+        your_name: "Your Name"
+    step2:
+        title: "Your Role & Contact"
+        subtitle: "Tell us about your position and how to reach you."
+        role: "Role / Title"
+        role_doctor: "Doctor"
+        role_manager: "Manager"
+        role_marketing: "Marketing"
+        role_other: "Other"
+        whatsapp: "WhatsApp Number"
+    step3:
+        title: "Email & Website"
+        subtitle: "Provide your email and website details."
+        email: "Email"
+        website: "Website (if exists)"
+        no_website: "We don't have a website yet"
+    step4:
+        title: "Social & Interests"
+        subtitle: "Share your Instagram and what you're interested in."
+        instagram: "Instagram Link"
+        interests_label: "What are you most interested in?"
+        interest_website: "Build / redesign a website"
+        interest_ai: "Improve visibility on ChatGPT / Gemini"
+        interest_both: "Both"
+    step5:
+        title: "Your Situation"
+        subtitle: "Describe your current situation and any additional details."
+        situation_label: "Which of these describes your situation best?"
+        situation_advertise: "We already advertise but need better results"
+        situation_new: "We're new and want to launch strong online"
+        situation_modernize: "We want to modernize our digital presence"
+        message: "Anything else you'd like to share? (optional)"
+    completion:
+        title: "Thank You!"
+        subtitle: "Your free review request has been submitted. We'll contact you soon via WhatsApp or email."
+        back_home: "Back to Home"
+    buttons:
+        next: "Next"
+        previous: "Previous"
+        submit: "Request My Free Review"
