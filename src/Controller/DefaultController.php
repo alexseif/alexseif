@@ -4,8 +4,12 @@ namespace App\Controller;
 
 use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use GuzzleHttp\Client;
+use Psr\Log\LoggerInterface;
 
 class DefaultController extends AbstractController
 {
@@ -201,7 +205,7 @@ class DefaultController extends AbstractController
       [
         'icon' => 'database',
         'title' => 'Backend Architecture',
-        'description' => 'Robust database design, API development, and server optimization for high-traffic applications.',
+        'description' => 'Robust database design, API development, and server optimization for high-performance applications.',
         'technologies' => ['MySQL', 'PostgreSQL', 'REST APIs', 'GraphQL'],
       ],
       [
@@ -323,6 +327,7 @@ class DefaultController extends AbstractController
     $portfolio = [];
     $portfolio[] = $item;
     $portfolio[] = $item;
+    $item = $item;
     $portfolio[] = $item;
     $portfolio[] = $item;
     return $this->render(
@@ -359,7 +364,7 @@ class DefaultController extends AbstractController
         "Social Proof: Positive feedback from previous clients to build trust and credibility.",
       ],
       "Featured Services" => [
-        "Highlight Key Services: A section that briefly describes the main services you offer, with links to detailed pages.",
+        "Highlight Key Services: A brief description of the main services you offer, with links to detailed pages.",
       ],
       "Contact Information" => [
         "Easy Access: Make it simple for visitors to get in touch with you by prominently displaying contact information.",
@@ -445,5 +450,138 @@ class DefaultController extends AbstractController
   public function intakeThankYou(): Response
   {
     return $this->render("intake/thank-you.html.twig");
+  }
+
+  #[Route('/intake/submit', name: 'app_intake_submit', methods: ['POST'])]
+  public function submitIntake(Request $request, LoggerInterface $logger): JsonResponse
+  {
+    $data = json_decode($request->getContent(), true);
+
+    if (!$data) {
+      return new JsonResponse(['error' => 'Invalid JSON'], 400);
+    }
+
+    // Validate required fields
+    $required = ['clinicName', 'yourName', 'role', 'whatsapp', 'email', 'situation'];
+    foreach ($required as $field) {
+      if (empty($data[$field])) {
+        return new JsonResponse(['error' => "Missing required field: $field"], 400);
+      }
+    }
+
+    // Prepare interests
+    $interests = [];
+    if (!empty($data['interestWebsite'])) $interests[] = 'website';
+    if (!empty($data['interestAI'])) $interests[] = 'ai';
+    if (!empty($data['interestBoth'])) $interests[] = 'both';
+    $interestStr = implode(', ', $interests);
+
+    // Handle noWebsite
+    $website = $data['website'] ?? null;
+    if (!empty($data['noWebsite'])) {
+      $website = 'No website';
+    }
+
+    // Lead Source = 'website'
+    $leadSource = 'website';
+
+    // Prepare Notion data
+    $notionData = [
+      'parent' => ['database_id' => $this->getParameter('notion_database_id')],
+      'properties' => [
+        'Name' => [
+          'title' => [
+            ['text' => ['content' => $data['clinicName']]]
+          ]
+        ],
+        'Account owner' => [
+          'rich_text' => [
+            ['text' => ['content' => $data['yourName']]]
+          ]
+        ],
+        'Role' => [
+          'select' => [
+            'name' => $data['role']
+          ]
+        ],
+        'Deal stage' => [
+          'select' => [
+            'name' => 'New Lead'
+          ]
+        ],
+        'Phone number' => [
+          'phone_number' => $data['whatsapp']
+        ],
+        'Email' => [
+          'email' => $data['email']
+        ],
+        'Website' => [
+          'url' => !empty($website) ? $website : null
+        ],
+        'Instagram' => [
+          'url' => !empty($data['instagram']) ? $data['instagram'] : null
+        ],
+        'Interest' => [
+          'multi_select' => array_map(function ($interest) {
+            return ['name' => $interest];
+          }, $interests)
+        ],
+        'Lead source' => [
+          'multi_select' => [
+            ['name' => 'Website']
+          ]
+        ],
+        'Notes' => [
+          'rich_text' => [
+            ['text' => ['content' => $data['message'] ?? '']]
+          ]
+        ],
+      ]
+    ];
+
+    // Log the data being sent
+    $logger->info('Submitting intake form to Notion', [
+      'data' => $data,
+      'notionData' => $notionData
+    ]);
+
+    // Send to Notion
+    $client = new Client();
+    try {
+      $response = $client->post('https://api.notion.com/v1/pages', [
+        'headers' => [
+          'Authorization' => 'Bearer ' . $this->getParameter('notion_token'),
+          'Content-Type' => 'application/json',
+          'Notion-Version' => '2022-06-28',
+        ],
+        'json' => $notionData
+      ]);
+
+      $responseBody = $response->getBody()->getContents();
+      $logger->info('Notion API response', [
+        'status' => $response->getStatusCode(),
+        'body' => $responseBody
+      ]);
+
+      if ($response->getStatusCode() === 200) {
+        return new JsonResponse(['success' => true]);
+      } else {
+        $logger->error('Notion API error', [
+          'status' => $response->getStatusCode(),
+          'body' => $responseBody
+        ]);
+        return new JsonResponse(['error' => 'Notion API error: ' . $responseBody], 500);
+      }
+    } catch (\GuzzleHttp\Exception\ClientException $e) {
+      $body = $e->getResponse()->getBody()->getContents();
+      $logger->error('Notion validation error', ['body' => $body]);
+      return new JsonResponse(['error' => json_decode($body, true)['message']], 400);
+    } catch (\Exception $e) {
+      $logger->error('Exception during Notion API call', [
+        'message' => $e->getMessage(),
+        'trace' => $e->getTraceAsString()
+      ]);
+      return new JsonResponse(['error' => $e->getMessage()], 500);
+    }
   }
 }
