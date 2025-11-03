@@ -1,15 +1,69 @@
-// Body
-//$body-bg: #1c1c1c;
-//$body-color: #fff;
-$spacer: 1rem;
-$navbar-padding-y: $spacer * 1;
+:root {
+    /* Typography */
+    --pad: clamp(1rem, 5vw, 2rem);
+    --font-sans: 'Inter', 'Segoe UI', sans-serif;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.5rem;
 
-// Typography
-//$font-size-base: 12; // this changes the font-size throughout bootstrap
-$font-family-sans-serif: "IBM Plex Sans", sans-serif;
+    /* Spacing & Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
 
-//$font-size-base: 1.2rem;
-//$line-height-base: 1.6;
+    --gap-sm: 0.25rem;
+    --gap-md: 0.5rem;
+    --gap-lg: 1rem;
 
-// $border-radius: 0;
-$min-contrast-ratio: 2;
+    --pad-sm: 0.5rem;
+    --pad-md: 1rem;
+    --pad-lg: 2rem;
+
+    --margin-xs: 0.25rem;
+    --margin-sm: 0.5rem;
+    --margin-md: 1rem;
+    --margin-lg: 2rem;
+    --margin-xl: 4rem;
+
+    --maxw: 1200px;
+
+    /* Core Colors */
+    --color-bg: #0a0a0a;
+    /* deeper black */
+    --color-surface: #161616;
+    /* richer surface */
+    --color-surface-muted: #222;
+    /* for cards or callouts */
+    --color-text: #fefefe;
+    /* brighter text */
+    --color-muted: rgba(255, 255, 255, 0.5);
+    /* softer contrast */
+    --color-text-accent: #89A5E1;
+    /* cool blue accent */
+    --color-accent: #4f6fad;
+    --color-accent-hover: #6a8bd8;
+    --color-yellow: #fbbc04;
+
+    /* Borders & Shadows */
+    --color-border-subtle: rgba(255, 255, 255, 0.08);
+    --color-border-default: var(--color-border-subtle);
+    --color-border-accent: var(--color-accent);
+    --color-border-hover: var(--color-accent-hover);
+    --box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+
+    /* Callouts & Highlights */
+    --color-callout-bg: rgba(255, 255, 255, 0.03);
+    --color-callout-border: rgba(255, 255, 255, 0.1);
+    --color-highlight: #89A5E1;
+    --color-highlight-soft: #c3d3f5;
+
+    /* Semantic Roles */
+    --color-success: #4caf50;
+    --color-warning: #fbbc04;
+    --color-error: #e53935;
+    --color-info: #2196f3;
+
+    /* Icon & List Accents */
+    --color-list-icon: #89A5E1;
+}

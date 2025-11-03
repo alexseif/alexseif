@@ -434,4 +434,16 @@ class DefaultController extends AbstractController
   {
     return $this->render('default/index.html.twig');
   }
+
+  #[Route('/intake', name: 'app_intake')]
+  public function intake(): Response
+  {
+    return $this->render('intake/index.html.twig');
+  }
+
+  #[Route("/intake/thank-you", name: "app_intake_thank_you")]
+  public function intakeThankYou(): Response
+  {
+    return $this->render("intake/thank-you.html.twig");
+  }
 }

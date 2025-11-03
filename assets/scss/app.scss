@@ -1,4 +1,3 @@
-// Refactor for clarity,but preserve all visual logic and expressive markup.
 // @charset "UTF-8";
 /*
 The following content was designed & implemented under AlexSeif.com
@@ -7,86 +6,17 @@ The following content was designed & implemented under AlexSeif.com
 Created on : Sep 10, 2025, 11:10:24 AM
 Author     : Alex Seif <me@alexseif.com>
 */
+@use 'variables';
 @use 'nav';
 @import url("https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css");
+// Body
+$spacer: 1rem;
+$navbar-padding-y: $spacer * 1;
 
-:root {
-  --pad: clamp(1rem, 5vw, 2rem);
-}
+// Typography
+$font-family-sans-serif: "IBM Plex Sans", sans-serif;
 
-// Debugging
-// * {
-// outline: 1px solid red;
-// }
-// 🌐 :root for runtime theming
-:root {
-  /* Typography */
-  --font-sans: 'Inter', 'Segoe UI', sans-serif;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 2rem;
-  --font-size-xxl: 2.5rem;
-
-  /* Spacing & Radius */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-
-  --gap-sm: 0.25rem;
-  --gap-md: 0.5rem;
-  --gap-lg: 1rem;
-
-  --pad-sm: 0.5rem;
-  --pad-md: 1rem;
-  --pad-lg: 2rem;
-
-  --margin-xs: 0.25rem;
-  --margin-sm: 0.5rem;
-  --margin-md: 1rem;
-  --margin-lg: 2rem;
-  --margin-xl: 4rem;
-
-  --maxw: 1200px;
-
-  /* Core Colors */
-  --color-bg: #0a0a0a;
-  /* deeper black */
-  --color-surface: #161616;
-  /* richer surface */
-  --color-surface-muted: #222;
-  /* for cards or callouts */
-  --color-text: #fefefe;
-  /* brighter text */
-  --color-muted: rgba(255, 255, 255, 0.5);
-  /* softer contrast */
-  --color-text-accent: #89A5E1;
-  /* cool blue accent */
-  --color-accent: #4f6fad;
-  --color-accent-hover: #6a8bd8;
-  --color-yellow: #fbbc04;
-
-  /* Borders & Shadows */
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
-  --color-border-default: var(--color-border-subtle);
-  --color-border-accent: var(--color-accent);
-  --color-border-hover: var(--color-accent-hover);
-  --box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-
-  /* Callouts & Highlights */
-  --color-callout-bg: rgba(255, 255, 255, 0.03);
-  --color-callout-border: rgba(255, 255, 255, 0.1);
-  --color-highlight: #89A5E1;
-  --color-highlight-soft: #c3d3f5;
-
-  /* Semantic Roles */
-  --color-success: #4caf50;
-  --color-warning: #fbbc04;
-  --color-error: #e53935;
-  --color-info: #2196f3;
-
-  /* Icon & List Accents */
-  --color-list-icon: #89A5E1;
-}
+$min-contrast-ratio: 2;
 
 // 🎨 SCSS Tokens
 $font-sans: var(--font-sans);
@@ -570,7 +500,7 @@ main {
 
 // 🧱 Form Inputs — Modular, Tokenized, No Color Suggestions
 
-input,
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
   display: block;

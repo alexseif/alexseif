@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'intake_form.completion.title'|trans }}
+	-
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('intake') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('intake') }}
+{% endblock %}
+{% block header %}{% endblock %}
+{% block sitewrapper %}
+	<div
+		id="intake-form" class="fullpage intake-container" {% if app.request.locale == 'ar' %} dir="rtl" {% endif %}>
+		<!-- Progress Bar (Full for completion) -->
+		<div class="progress-bar">
+			<div class="progress-fill" id="progress-fill" style="width: 100%;"></div>
+		</div>
+
+		<!-- Completion Screen -->
+		<div class="form-wrapper">
+			<div class="step completion active" id="step-complete">
+				<div class="completion-icon">
+					<svg width="64" height="64" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h2>{{ 'intake_form.completion.title'|trans }}</h2>
+				<p>{{ 'intake_form.completion.subtitle'|trans }}</p>
+				<a href="{{ path('alx_home') }}" class="btn-home">{{ 'intake_form.completion.back_home'|trans }}</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block footer %}
+	{% include 'intake/_footer.html.twig' %}
+{% endblock %}
