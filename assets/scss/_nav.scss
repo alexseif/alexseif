@@ -149,18 +149,14 @@ footer {
   }
 
   ul {
-    // padding-top: 30px;
     padding-inline-start: 0;
     list-style: none;
     display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // flex: 1 0 5%;
-    gap: 8px;
+    align-items: center;
+    gap: 2rem;
 
     @media (min-width: 768px) {
       flex-direction: row;
-      gap: 20px;
 
     }
   }
@@ -169,8 +165,8 @@ footer {
 
     svg {
       fill: var(--color-muted);
-      width: 30px;
-      height: 30px;
+      width: 3rem;
+      height: 3rem;
 
       &:hover {
         filter: brightness(1.2) saturate(1.2) opacity(0.8);

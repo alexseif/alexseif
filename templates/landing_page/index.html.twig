@@ -40,30 +40,3 @@
 	{% include 'landing_page/_faq.html.twig' %}
 	{% include 'landing_page/_contact.html.twig' %}
 {% endblock %}
-{% block footer %}
-	<footer>
-		<div class="container">
-			<div class="footer-wrapper">
-				<a href="{{ path('alx_home') }}"><img src="{{ asset('build/images/ALX.webp') }}" width="60" alt="Alex Seif logo"/></a>
-				<ul>
-					<li>
-						<a href="https://www.instagram.com/alex_makes_websites/" target="_blank" class="social-icon-link" aria-label="Instagram – Alex Makes Websites">{% include 'icons/014-instagram.svg' %}</a>
-					</li>
-				</ul>
-				<nav role="navigation">
-					<ul>
-						<li><a href="#why">Why It Works</a></li>
-						<li><a href="#clients">Work</a></li>
-						<li><a href="#pricing">Pricing</a></li>
-						<li><a href="#faq">FAQ</a></li>
-					</ul>
-				</nav>
-
-				<div class="text-end">
-					<a class="cta" href="https://wa.me/+201004006332" target="_blank">{{ 'cta_default'|trans }}</a>
-				</div>
-			</div>
-			{{ 'wordpress_optimize.footer.copyright'|trans }}
-		</div>
-	</footer>
-{% endblock %}
