@@ -171,7 +171,7 @@ wordpress_optimize:
 intake_form:
     title: "Free Website & AI Visibility Review for Clinics"
     step1:
-        title: "Free Website & AI Visibility Review for Clinics"
+        title: "<em>AI Visibility</em> Review for your Clinics"
         subtitle: "Let's get started with some basic information."
         clinic_name: "Clinic / Center Name"
         your_name: "Your Name"
@@ -193,7 +193,7 @@ intake_form:
     step4:
         title: "Social & Interests"
         subtitle: "Share your Instagram and what you're interested in."
-        instagram: "Instagram Link"
+        instagram: "Instagram"
         interests_label: "What are you most interested in?"
         interest_website: "Build / redesign a website"
         interest_ai: "Improve visibility on ChatGPT / Gemini"

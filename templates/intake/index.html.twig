@@ -29,7 +29,7 @@
 			class="form-wrapper">
 			<!-- Step 1: Clinic Name and Your Name -->
 			<div class="step active" id="step-1">
-				<h2>{{ 'intake_form.step1.title'|trans }}</h2>
+				<h2>{{ 'intake_form.step1.title'|trans|raw }}</h2>
 				<p>{{ 'intake_form.step1.subtitle'|trans }}</p>
 				<div class="form-group">
 					<label for="clinic-name">{{ 'intake_form.step1.clinic_name'|trans }}</label>
@@ -90,20 +90,20 @@
 				<p>{{ 'intake_form.step4.subtitle'|trans }}</p>
 				<div class="form-group">
 					<label for="instagram">{{ 'intake_form.step4.instagram'|trans }}</label>
-					<input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/...">
+					<input type="url" id="instagram" name="instagram" placeholder="@alex_seif">
 				</div>
 				<div class="form-group">
 					<label>{{ 'intake_form.step4.interests_label'|trans }}</label>
-					<div class="checkbox-group">
-						<input type="checkbox" id="interest-website" name="interestWebsite" value="website">
+					<div class="radio-group">
+						<input type="radio" id="interest-website" name="interest" value="website" required>
 						<label for="interest-website">{{ 'intake_form.step4.interest_website'|trans }}</label>
 					</div>
-					<div class="checkbox-group">
-						<input type="checkbox" id="interest-ai" name="interestAI" value="ai">
+					<div class="radio-group">
+						<input type="radio" id="interest-ai" name="interest" value="ai" required>
 						<label for="interest-ai">{{ 'intake_form.step4.interest_ai'|trans }}</label>
 					</div>
-					<div class="checkbox-group">
-						<input type="checkbox" id="interest-both" name="interestBoth" value="both">
+					<div class="radio-group">
+						<input type="radio" id="interest-both" name="interest" value="both" required>
 						<label for="interest-both">{{ 'intake_form.step4.interest_both'|trans }}</label>
 					</div>
 				</div>
