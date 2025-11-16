@@ -13,6 +13,7 @@ Encore
     .addEntry('about', './assets/about.js')
     .addEntry('wp-optimize', './assets/wp-optimize.js')
     .addEntry('intake', './assets/intake.js')
+    .addEntry('experiments', './assets/experiments.js')
     .enableStimulusBridge('./assets/controllers.json')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
