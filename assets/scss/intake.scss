@@ -1,22 +1,15 @@
 @import 'variables';
 
+p {
+    text-align: start;
+}
+
 .intake-container {
-    // min-height: 100vh;
-    // background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 50%, #c7d2fe 100%);
-    // background: var(--color-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    // font-family: 'IBM Plex Sans', sans-serif;
-    // color: var(--color-text);
-
-    // Dark mode support
-    // @media (prefers-color-scheme: dark) {
-    // background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
-    // color: #f1f5f9;
-    // }
 
     .progress-bar {
         width: 100%;
@@ -68,12 +61,12 @@
 
                 .completion-icon {
                     margin-bottom: 1.5rem;
-                    color: #10b981;
+                    color: var(--color-accent);
                 }
 
                 h2 {
                     margin-bottom: 1rem;
-                    color: #10b981;
+                    color: var(--color-accent); // color: #10b981;
                 }
 
                 p {
@@ -130,9 +123,6 @@
                     padding: 0;
                     border-bottom: 1px solid #d1d5db;
                     border-radius: 0;
-                    // font-size: 1rem;
-                    // background: #ffffff;
-                    // color: #1e293b;
                     transition: all 0.3s ease;
 
                     &:focus {
@@ -239,13 +229,13 @@
                 }
 
                 &.btn-home {
-                    background: #10b981;
+                    background: var(--color-accent);
                     color: #ffffff;
                     text-decoration: none;
                     display: inline-block;
 
                     &:hover {
-                        background: #059669;
+                        background: var(--color-accent);
                         transform: translateY(-2px);
                         box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
                     }

@@ -12,6 +12,9 @@
 {% endblock %}
 
 {% block javascripts %}
+	<script>
+		let currentStep = 5;
+	</script>
 	{{ parent() }}
 	{{ encore_entry_script_tags('intake') }}
 {% endblock %}
@@ -21,7 +24,7 @@
 		id="intake-form" class="fullpage intake-container" {% if app.request.locale == 'ar' %} dir="rtl" {% endif %}>
 		<!-- Progress Bar (Full for completion) -->
 		<div class="progress-bar">
-			<div class="progress-fill" id="progress-fill" style="width: 100%;"></div>
+			<div class="progress-fill" style="width: 100%;"></div>
 		</div>
 
 		<!-- Completion Screen -->

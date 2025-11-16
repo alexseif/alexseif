@@ -1,19 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-  {{ 'alex_seif'|trans }}
-  -
-  {{ 'web_developer'|trans|capitalize }}
+	{{ 'alex_seif'|trans }}
+	-
+	{{ 'web_developer'|trans|capitalize }}
 {% endblock %}
 {% block content %}
-  <div class="scrollsign">
-    {{ include('default/_about.html.twig') }}
-    {{ include('default/_value.html.twig') }}
-    {{ include('default/_services.html.twig') }}
-    {{ include('default/_usp.html.twig') }}
-    {# {% include 'landing_page/_proof.html.twig' %} #}
-  </div>
-  <!-- #fullpages -->
+	<div class="scrollsign">
+		{{ include('default/_about.html.twig') }}
+		{{ include('default/_value.html.twig') }}
+		{{ include('default/_services.html.twig') }}
+		{{ include('default/_usp.html.twig') }}
+		{% include 'landing_page/_proof.html.twig' %}
+	</div>
+	<!-- #fullpages -->
 {% endblock %}
-{% block announcements %}
-
-{% endblock %}
+{% block announcements %}{% endblock %}
