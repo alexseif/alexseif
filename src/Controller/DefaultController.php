@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\IntakeFormSubmission;
+use Doctrine\ORM\EntityManagerInterface;
 use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -545,8 +547,11 @@ class DefaultController extends AbstractController
   }
 
   #[Route('/intake/submit', name: 'app_intake_submit', methods: ['POST'])]
-  public function submitIntake(Request $request, LoggerInterface $logger): JsonResponse
-  {
+  public function submitIntake(
+    Request $request,
+    EntityManagerInterface $em,
+    LoggerInterface $logger
+  ): JsonResponse {
     $data = json_decode($request->getContent(), true);
 
     if (!$data) {
@@ -561,118 +566,30 @@ class DefaultController extends AbstractController
       }
     }
 
-    // Prepare interests
-    $interests = [];
-    if (!empty($data['interestWebsite'])) $interests[] = 'website';
-    if (!empty($data['interestAI'])) $interests[] = 'ai';
-    if (!empty($data['interestBoth'])) $interests[] = 'both';
-    $interestStr = implode(', ', $interests);
-
-    // Handle noWebsite
-    $website = $data['website'] ?? null;
-    if (!empty($data['noWebsite'])) {
-      $website = 'No website';
-    }
-
-    // Lead Source = 'website'
-    $leadSource = 'website';
-
-    // Prepare Notion data
-    $notionData = [
-      'parent' => ['database_id' => $this->getParameter('notion_database_id')],
-      'properties' => [
-        'Name' => [
-          'title' => [
-            ['text' => ['content' => $data['clinicName']]]
-          ]
-        ],
-        'Account owner' => [
-          'rich_text' => [
-            ['text' => ['content' => $data['yourName']]]
-          ]
-        ],
-        'Role' => [
-          'select' => [
-            'name' => $data['role']
-          ]
-        ],
-        'Deal stage' => [
-          'select' => [
-            'name' => 'New Lead'
-          ]
-        ],
-        'Phone number' => [
-          'phone_number' => $data['whatsapp']
-        ],
-        'Email' => [
-          'email' => $data['email']
-        ],
-        'Website' => [
-          'url' => !empty($website) ? $website : null
-        ],
-        'Instagram' => [
-          'url' => !empty($data['instagram']) ? $data['instagram'] : null
-        ],
-        'Interest' => [
-          'multi_select' => array_map(function ($interest) {
-            return ['name' => $interest];
-          }, $interests)
-        ],
-        'Lead source' => [
-          'multi_select' => [
-            ['name' => 'Website']
-          ]
-        ],
-        'Notes' => [
-          'rich_text' => [
-            ['text' => ['content' => $data['message'] ?? '']]
-          ]
-        ],
-      ]
-    ];
-
-    // Log the data being sent
-    $logger->info('Submitting intake form to Notion', [
-      'data' => $data,
-      'notionData' => $notionData
-    ]);
-
-    // Send to Notion
-    $client = new Client();
     try {
-      $response = $client->post('https://api.notion.com/v1/pages', [
-        'headers' => [
-          'Authorization' => 'Bearer ' . $this->getParameter('notion_token'),
-          'Content-Type' => 'application/json',
-          'Notion-Version' => '2022-06-28',
-        ],
-        'json' => $notionData
+      $submission = new IntakeFormSubmission();
+
+      // Store clinic name in `name`
+      $submission->setName($data['clinicName']);
+
+      // Store full JSON payload in `formData`
+      $submission->setFormData($data);
+
+      // Timestamp
+      $submission->setSubmittedAt(new \DateTimeImmutable());
+
+      $em->persist($submission);
+      $em->flush();
+
+      $logger->info('Intake form saved to DB', [
+        'id' => $submission->getId(),
+        'name' => $submission->getName(),
+        'formData' => $submission->getFormData()
       ]);
 
-      $responseBody = $response->getBody()->getContents();
-      $logger->info('Notion API response', [
-        'status' => $response->getStatusCode(),
-        'body' => $responseBody
-      ]);
-
-      if ($response->getStatusCode() === 200) {
-        return new JsonResponse(['success' => true]);
-      } else {
-        $logger->error('Notion API error', [
-          'status' => $response->getStatusCode(),
-          'body' => $responseBody
-        ]);
-        return new JsonResponse(['error' => 'Notion API error: ' . $responseBody], 500);
-      }
-    } catch (\GuzzleHttp\Exception\ClientException $e) {
-      $body = $e->getResponse()->getBody()->getContents();
-      $logger->error('Notion validation error', ['body' => $body]);
-      return new JsonResponse(['error' => json_decode($body, true)['message']], 400);
+      return new JsonResponse(['success' => true]);
     } catch (\Exception $e) {
-      $logger->error('Exception during Notion API call', [
-        'message' => $e->getMessage(),
-        'trace' => $e->getTraceAsString()
-      ]);
+      $logger->error('DB save error', ['message' => $e->getMessage()]);
       return new JsonResponse(['error' => $e->getMessage()], 500);
     }
   }
