@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>The State of AI in Alex Seif’s Creative Work — 2026</title>
+		<meta
+		name="description" content="A Cairo-rooted, modular, animated trend report reframed around Alex Seif’s creative-tech practice."/>
+
+		<!-- Fonts (system stack for speed) and base colors -->
+		<style>:root
+		{
+			/* Cairo dusk palette */
+			--bg: #0e0f14;
+			--ink: #e9edf3;
+			--muted: #a8b0c0;
+			--accent: #6ec1e4; /* cool blue */
+			--accent-2: #f6a623; /* warm amber */
+			--card: #151822;
+			--line: #232835;
+
+			/* spacing & rhythm */
+			--space-1: 6px;
+			--space-2: 12px;
+			--space-3: 20px;
+			--space-4: 32px;
+			--space-5: 48px;
+
+			/* type scale */
+			--fs-0: 13px;
+			--fs-1: 15px;
+			--fs-2: 18px;
+			--fs-3: 22px;
+			--fs-4: 28px;
+			--fs-5: 36px;
+			--fs-6: 48px;
+
+			/* card radius */
+			--radius: 14px;
+		}
+
+		/* Reset & base */
+		* {
+			box-sizing: border-box;
+		}
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background: var(--bg);
+			color: var(--ink);
+			font: 400 var(--fs-2) / 1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+		}
+		img {
+			max-width: 100%;
+			display: block;
+		}
+		a {
+			color: var(--accent);
+			text-decoration: none;
+		}
+		.wrap {
+			width: min(1100px, 92vw);
+			margin: 0 auto;
+		}
+
+		/* Subtle gradient beams */
+		.beams {
+			position: fixed;
+			inset: 0;
+			pointer-events: none;
+			z-index: 0;
+			background: radial-gradient(1200px 600px at 15% 10%, rgba(110,193,228,0.12), transparent 60%), radial-gradient(900px 450px at 85% 20%, rgba(246, 166, 35, 0.10), transparent 55%), radial-gradient(800px 400px at 50% 100%, rgba(110, 193, 228, 0.06), transparent 60%);
+			filter: saturate(1.2);
+		}
+
+		/* Header hero */
+		header.hero {
+			position: relative;
+			z-index: 1;
+			padding: var(--space-5) 0;
+		}
+		.hero h1 {
+			font-size: clamp(var(--fs-5), 4vw, var(--fs-6));
+			letter-spacing: -0.02em;
+			margin: 0 0 var(--space-2);
+		}
+		.hero p.kicker {
+			color: var(--muted);
+			font-size: var(--fs-3);
+			margin: 0 0 var(--space-3);
+		}
+		.hero .tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--space-2);
+		}
+		.tag {
+			background: linear-gradient(180deg, rgba(110,193,228,0.18), rgba(110,193,228,0.10));
+			color: var(--ink);
+			border: 1px solid rgba(110, 193, 228, 0.35);
+			padding: 8px 12px;
+			border-radius: 999px;
+			font-size: var(--fs-1);
+			backdrop-filter: blur(4px);
+		}
+
+		/* Sections */
+		section {
+			position: relative;
+			z-index: 1;
+			padding: var(--space-5) 0;
+			border-top: 1px solid var(--line);
+		}
+		section h2 {
+			font-size: var(--fs-4);
+			letter-spacing: -0.01em;
+			margin: 0 0 var(--space-3);
+		}
+		section .lead {
+			color: var(--muted);
+			font-size: var(--fs-2);
+			margin-bottom: var(--space-4);
+		}
+
+		/* Cards & grids */
+		.grid {
+			display: grid;
+			gap: var(--space-3);
+		}
+		@media(min-width: 760px) {
+			.grid.cols-2 {
+				grid-template-columns: 1fr 1fr;
+			}
+			.grid.cols-3 {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+		.card {
+			background: linear-gradient(180deg, rgba(21,24,34,0.95), rgba(21,24,34,0.85));
+			border: 1px solid var(--line);
+			border-radius: var(--radius);
+			padding: var(--space-3);
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+			transform: translateY(8px);
+			opacity: 0;
+			will-change: transform, opacity;
+		}
+		.card h3 {
+			font-size: var(--fs-3);
+			margin: 0 0 var(--space-2);
+		}
+		.card p {
+			color: var(--muted);
+			margin: 0;
+		}
+		.card .meta {
+			display: flex;
+			gap: var(--space-2);
+			margin-top: var(--space-2);
+			flex-wrap: wrap;
+		}
+		.meta .chip {
+			background: #10131b;
+			border: 1px solid var(--line);
+			color: var(--ink);
+			font-size: var(--fs-1);
+			padding: 6px 10px;
+			border-radius: 999px;
+		}
+
+		/* CTA */
+		.cta {
+			margin-top: var(--space-4);
+			display: flex;
+			gap: var(--space-2);
+			flex-wrap: wrap;
+		}
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			background: linear-gradient(180deg, rgba(110,193,228,0.18), rgba(110,193,228,0.10));
+			border: 1px solid rgba(110, 193, 228, 0.35);
+			color: var(--ink);
+			padding: 12px 16px;
+			border-radius: 12px;
+			font-weight: 600;
+			transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+		}
+		.btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 10px 30px rgba(110, 193, 228, 0.25);
+			background: linear-gradient(180deg, rgba(110,193,228,0.24), rgba(110,193,228,0.14));
+		}
+		.btn.alt {
+			background: linear-gradient(180deg, rgba(246,166,35,0.18), rgba(246,166,35,0.10));
+			border-color: rgba(246, 166, 35, 0.35);
+		}
+		.btn.alt:hover {
+			box-shadow: 0 10px 30px rgba(246, 166, 35, 0.25);
+			background: linear-gradient(180deg, rgba(246,166,35,0.24), rgba(246,166,35,0.14));
+		}
+
+		/* Quote */
+		.quote {
+			background: linear-gradient(180deg, rgba(110,193,228,0.08), rgba(110,193,228,0.04));
+			border: 1px dashed rgba(110, 193, 228, 0.30);
+			color: var(--ink);
+			padding: var(--space-3);
+			border-radius: var(--radius);
+			font-size: var(--fs-3);
+		}
+		.quote small {
+			color: var(--muted);
+			display: block;
+			margin-top: var(--space-2);
+		}
+
+		/* Footer */
+		footer {
+			position: relative;
+			z-index: 1;
+			padding: var(--space-5) 0;
+			color: var(--muted);
+			border-top: 1px solid var(--line);
+		}
+
+		/* Reveal states */
+		.reveal {
+			opacity: 0;
+			transform: translateY(12px);
+		}
+		.reveal.in {
+			opacity: 1;
+			transform: translateY(0);
+			transition: opacity 600ms cubic-bezier(0.2,.85,0.25,1), transform 600ms cubic-bezier(0.2,.85,0.25,1);
+		}
+
+		/* Keyframes for subtle shimmer on headers */
+		@keyframes shimmer {
+			0% {
+				text-shadow: 0 0 0 rgba(110, 193, 228, 0);
+			}
+			50% {
+				text-shadow: 0 0 18px rgba(110, 193, 228, 0.25);
+			}
+			100% {
+				text-shadow: 0 0 0 rgba(110, 193, 228, 0);
+			}
+		}
+		.hero h1 span.spark {
+			color: var(--accent);
+			animation: shimmer 5s ease-in-out infinite;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="beams" aria-hidden="true"></div>
+
+	<header class="hero wrap">
+		<h1 class="reveal">The State of AI in
+			<span class="spark">Alex Seif’s</span>
+			Creative Work — 2026</h1>
+		<p class="kicker reveal">Cairo-rooted, modular, and ruthlessly responsive. Turning constraints into reusable clarity and animated proof.</p>
+		<div class="tags reveal">
+			<span class="tag">Mobile-first SCSS</span>
+			<span class="tag">WordPress & WooCommerce</span>
+			<span class="tag">Symfony + EasyAdmin</span>
+			<span class="tag">Twig / JS / Doctrine</span>
+			<span class="tag">Cairo storytelling</span>
+		</div>
+		<div class="cta reveal" style="margin-top: var(--space-4);">
+			<a href="#skills" class="btn">Explore skills</a>
+			<a href="#trends" class="btn alt">See 2026 trends</a>
+		</div>
+	</header>
+
+	<main>
+		<section id="skills">
+			<div class="wrap">
+				<h2 class="reveal">Capabilities anchored in Cairo constraints</h2>
+				<p class="lead reveal">Alex builds elastic interfaces and admin flows that survive heat, flaky AC, and client timelines—clean, scalable, and human.</p>
+
+				<div class="grid cols-3">
+					<article class="card" data-delay="0">
+						<h3>Modular, mobile-first SCSS</h3>
+						<p>Never fixed widths. Layouts grow naturally, with tokens and utility classes that make reuse a given, not an afterthought.</p>
+						<div class="meta">
+							<span class="chip">Fluid grids</span>
+							<span class="chip">Tokenized spacing</span>
+							<span class="chip">QA overlays</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="80">
+						<h3>WordPress/WooCommerce troubleshooting</h3>
+						<p>Elementor and block editor friction reframed into lean templates, CSP sanity, and performance-first decisions under real-world pressure.</p>
+						<div class="meta">
+							<span class="chip">CSP fixes</span>
+							<span class="chip">Lean markup</span>
+							<span class="chip">Cart UX</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="160">
+						<h3>Symfony admin flows</h3>
+						<p>Secure intake, readable dashboards, and Twig-first clarity. Doctrine mapping for analytics-ready payloads and future hooks.</p>
+						<div class="meta">
+							<span class="chip">EasyAdmin</span>
+							<span class="chip">Auth & roles</span>
+							<span class="chip">Email-ready events</span>
+						</div>
+					</article>
+				</div>
+
+				<div class="cta" style="margin-top: var(--space-4);">
+					<a href="#projects" class="btn">See projects</a>
+					<a href="#principles" class="btn alt">Design principles</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="trends">
+			<div class="wrap">
+				<h2 class="reveal">2026 AI trends, reframed for Alex’s workflow</h2>
+				<p class="lead reveal">From “assistive” to “adaptive”—AI moves from novelty to the backbone of clean handoffs, smarter QA, and Cairo-friendly content ops.</p>
+
+				<div class="grid cols-2">
+					<article class="card" data-delay="0">
+						<h3>Assistive coding to adaptive scaffolding</h3>
+						<p>Generate the boring bits: CRUD, form bindings, token maps. Keep the human taste for micro-interactions, Cairo color, and storytelling.</p>
+						<div class="meta">
+							<span class="chip">Scaffolds</span>
+							<span class="chip">Lint-ready</span>
+							<span class="chip">Testable</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="80">
+						<h3>QA as a social game</h3>
+						<p>Overlay diffs, timed sprints, playful dares. Turn pixel-perfect checks into momentum, not drudgery.</p>
+						<div class="meta">
+							<span class="chip">Diff overlays</span>
+							<span class="chip">Sprint timers</span>
+							<span class="chip">Shareable proofs</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="160">
+						<h3>Local-first intake analytics</h3>
+						<p>Map full JSON payloads, store locally, sync later. Own the data shape without vendor drama.</p>
+						<div class="meta">
+							<span class="chip">Doctrine entities</span>
+							<span class="chip">Event hooks</span>
+							<span class="chip">Export-ready</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="240">
+						<h3>Content ops with Cairo warmth</h3>
+						<p>AI drafts; Alex adds the blue flower—little, real moments. The final copy feels lived-in, not generic.</p>
+						<div class="meta">
+							<span class="chip">Local metaphors</span>
+							<span class="chip">Short loops</span>
+							<span class="chip">Reusable blocks</span>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects">
+			<div class="wrap">
+				<h2 class="reveal">Selected projects and micro-proofs</h2>
+				<p class="lead reveal">Small wins stacked: admin clarity, lean storefronts, and playful QA sprints that convert feedback into upgrades.</p>
+
+				<div class="grid cols-2">
+					<article class="card" data-delay="0">
+						<h3>Clinic intake admin (Symfony)</h3>
+						<p>Secure auth, human-readable dashboards, custom Twig labels, and export-ready filters. Email hooks queued for future rollout.</p>
+						<div class="meta">
+							<span class="chip">Auth flows</span>
+							<span class="chip">Twig renderers</span>
+							<span class="chip">Analytics-ready</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="80">
+						<h3>WooCommerce cart polish</h3>
+						<p>Markup diet, CSP fixes, and micro-interactions that respect mobile thumbs and Cairo commute attention spans.</p>
+						<div class="meta">
+							<span class="chip">Performance</span>
+							<span class="chip">CSP headers</span>
+							<span class="chip">Thumb-friendly</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="160">
+						<h3>Infinite menu loop</h3>
+						<p>True seamless scrolling with lean DOM, smart clones, and velocity clamps—no jitter, just vibe.</p>
+						<div class="meta">
+							<span class="chip">Lean DOM</span>
+							<span class="chip">Velocity clamps</span>
+							<span class="chip">Seamless UX</span>
+						</div>
+					</article>
+
+					<article class="card" data-delay="240">
+						<h3>QA overlay rituals</h3>
+						<p>Figma-to-front overlay checks turned into friendly challenges. Proof-first culture with shareable wins.</p>
+						<div class="meta">
+							<span class="chip">Overlay diff</span>
+							<span class="chip">Sprint cadence</span>
+							<span class="chip">Proof culture</span>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="principles">
+			<div class="wrap">
+				<h2 class="reveal">Operating principles</h2>
+				<div class="grid">
+					<article class="card" data-delay="0">
+						<h3>Modular or bust</h3>
+						<p>Everything reusable. Tokens for spacing, color, and type; components that read like a story, not a riddle.</p>
+					</article>
+					<article class="card" data-delay="80">
+						<h3>Performance is kindness</h3>
+						<p>Fast pages respect human bandwidth. Cairo heat included.</p>
+					</article>
+					<article class="card" data-delay="160">
+						<h3>Proof beats promise</h3>
+						<p>Deliver visible upgrades—diffs, timings, and before/afters that make trust a default.</p>
+					</article>
+				</div>
+
+				<div style="margin-top: var(--space-4);" class="quote reveal">
+					“Blue flowers in Cairo: fragile, rare, and real. That’s the bar for copy, code, and care.”
+					<small>— Alex Seif</small>
+				</div>
+
+				<div class="cta" style="margin-top: var(--space-4);">
+					<a href="#contact" class="btn">Collaborate</a>
+					<a href="#download" class="btn alt">Download HTML</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact">
+			<div class="wrap">
+				<h2 class="reveal">Contact & handoff</h2>
+				<p class="lead reveal">Ready for clean handoffs, tight scopes, and momentum. Send a brief; Alex returns a modular plan.</p>
+				<div class="grid cols-2">
+					<article class="card" data-delay="0">
+						<h3>Handoff bundle</h3>
+						<p>Readable SCSS, component docs, and QA overlay exports. Zero guesswork.</p>
+						<div class="meta">
+							<span class="chip">Docs</span>
+							<span class="chip">Tokens</span>
+							<span class="chip">Exports</span>
+						</div>
+					</article>
+					<article class="card" data-delay="80">
+						<h3>Timeline discipline</h3>
+						<p>Short sprints and proof checkpoints. Constraints are fuel, not friction.</p>
+						<div class="meta">
+							<span class="chip">Sprints</span>
+							<span class="chip">Checkpoints</span>
+							<span class="chip">Slack time</span>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="wrap">
+			<p>© 2026 — Crafted for Alex Seif. Built as a living report: elastic, animated, and warm.</p>
+		</div>
+	</footer>
+
+	<!-- JS: Intersection-based reveal + staggered card lifts -->
+	<script>
+		// Smooth hash scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+a.addEventListener('click', e => {
+const id = a.getAttribute('href').slice(1);
+const el = document.getElementById(id);
+if (! el) 
+return;
+
+e.preventDefault();
+el.scrollIntoView({behavior: 'smooth', block: 'start'});
+});
+});
+
+// Reveal observer for headers and paragraphs
+const revealObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('in');
+revealObserver.unobserve(entry.target);
+}
+});
+}, {threshold: 0.2});
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Card lift with stagger
+const cardObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+const el = entry.target;
+if (entry.isIntersecting) {
+const delay = Number(el.dataset.delay || 0);
+setTimeout(() => {
+el.style.opacity = 1;
+el.style.transform = 'translateY(0)';
+el.style.transition = 'opacity 600ms cubic-bezier(.2,.85,.25,1), transform 600ms cubic-bezier(.2,.85,.25,1)';
+}, delay);
+cardObserver.unobserve(el);
+}
+});
+}, {threshold: 0.15});
+
+document.querySelectorAll('.card').forEach(el => cardObserver.observe(el));
+
+// Optional: soft parallax on beams based on mouse
+const beams = document.querySelector('.beams');
+let tx = 0,
+ty = 0,
+vx = 0,
+vy = 0;
+window.addEventListener('mousemove', (e) => {
+const x = (e.clientX / window.innerWidth) - 0.5;
+const y = (e.clientY / window.innerHeight) - 0.5;
+tx = x * 4;
+ty = y * 3;
+});
+function loop() {
+vx += (tx - vx) * 0.06;
+vy += (ty - vy) * 0.06;
+beams.style.transform = `translate(${vx}px, ${vy}px)`;
+requestAnimationFrame(loop);
+}
+loop();
+
+// Accessibility: reduce motion if user prefers
+const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (mediaQuery.matches) { // Disable heavy animations for comfort
+document.querySelectorAll('.card').forEach(el => {
+el.style.transition = 'none';
+el.style.opacity = 1;
+el.style.transform = 'none';
+});
+document.querySelectorAll('.reveal').forEach(el => {
+el.style.transition = 'none';
+el.classList.add('in');
+});
+beams.style.transform = 'none';
+}
+	</script>
+</body></html>

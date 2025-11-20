@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('home') }}
+	{% if app.request.locale != 'en' %}
+		{{ encore_entry_link_tags('rtl') }}
+	{% endif %}
+{% endblock %}
+
+
+{% block body %}
+	{% block header %}
+		<header>
+			<h2>Header</h2>
+			<div class="">
+				<div>
+					Logo
+					<h1>Site Title</h1>
+				</div>
+				{% block nav %}
+					<div>
+						Nav
+					</div>
+				{% endblock %}
+			</div>
+		</header>
+	{% endblock %}
+	{% block hero %}
+		<section id="hero">
+			<h2>Hero</h2>
+			<p>1 line pitch</p>
+		</section>
+	{% endblock %}
+	{% block about %}
+		<section id="about">
+			<h2>About</h2>
+			<p>Who we are</p>
+			<p>Soft introduction</p>
+		</section>
+	{% endblock %}
+	{% block mission %}
+		<section id="mission">
+			<h2>Mission</h2>
+			<p>By 2028 we will impact 1B lives</p>
+		</section>
+	{% endblock %}
+	{% block packages %}
+		<section id="pacakges">
+			<h2>Pakages</h2>
+			<div>
+				3 - 4 packages
+			</div>
+		</section>
+	{% endblock %}
+	{% block usp %}
+		<section id="usp">
+			<h2>USP</h2>
+			<p>What are you selling</p>
+		</section>
+	{% endblock %}
+	{% block trust %}
+		<section id="trust">
+			<h2>Trust Signals</h2>
+			<h3>Where have we been</h3>
+			<h3>Our impact</h3>
+			<p>Animated numbers</p>
+			<h3>Real results</h3>
+			<p>Case studies</p>
+			<h3>Last Year on this project</h3>
+			<figure><embed src="https://wakatime.com/share/@alexseif/0f09393c-aea5-41cb-8d2f-9a1699a24fc1.svg"></embed>
+		</figure>
+		<h3>Some of the Technologies I use</h3>
+		<figure><embed src="https://wakatime.com/share/@alexseif/789f2868-e8f8-4e05-8549-233e1502b682.svg"></embed>
+	</figure>
+
+</section>{% endblock %}{% block faq %}
+<h2>FAQ</h2>
+<p>How can you work with us</p>{% endblock %}{% block upsell %}
+<h2>Upsell</h2>
+<p>Products / Packages / Services</p>{% endblock %}{% block clients %}
+<h2>Clients</h2>
+<p>Who've we've worked with</p>{% endblock %}{% block footer %}
+<footer>
+	<h2>Footer</h2>
+	<div>
+		Logo
+		<p>Site Title</p>
+		<p>Tag Line</p>
+	</div>
+	<div>
+		Menu
+	</div>
+	<div>
+		Contact form
+	</div>
+	<a href="https://wakatime.com/badge/github/alexseif/alexseif"><img src="https://wakatime.com/badge/github/alexseif/alexseif.svg" alt="wakatime"></a>
+	<div>Newsletter</div>
+	<div>Social Media</div>
+	<small>Copywrite</small>
+</footer>{% endblock %}{% endblock %}
