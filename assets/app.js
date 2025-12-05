@@ -214,3 +214,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+//Services
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('#services .card');
+    console.log(cards.length);
+    if (cards.length === 0) return;
+
+    // Configuration
+    const MIN_INTERVAL = 3000; // 3 seconds
+    const MAX_INTERVAL = 6000; // 6 seconds
+    const FLIP_DURATION_MS = 1500; // How long the card stays flipped
+
+    function getRandomCardIndex() {
+        return Math.floor(Math.random() * cards.length);
+    }
+
+    function toggleRandomFlip() {
+        const randomIndex = getRandomCardIndex();
+        const randomCard = cards[randomIndex];
+
+        // 1. Flip the card
+        randomCard.classList.add('is-flipped');
+
+        // 2. Schedule the card to flip back after a duration
+        setTimeout(() => {
+            randomCard.classList.remove('is-flipped');
+        }, FLIP_DURATION_MS);
+
+        // 3. Schedule the next random flip with a new random interval
+        const nextInterval = Math.random() * (MAX_INTERVAL - MIN_INTERVAL) + MIN_INTERVAL;
+        setTimeout(toggleRandomFlip, nextInterval);
+    }
+
+    // Start the random flip cycle after a short delay
+    setTimeout(toggleRandomFlip, MIN_INTERVAL);
+});

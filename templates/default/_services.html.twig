@@ -6,21 +6,33 @@
 		<div class="grid-3">
 			{% for service in services %}
 				<div class="card shadow">
-					<div class="card-container">
-						<h4>{{ service.title }}</h4>
-						<p>{{ service.description|raw }}</p>
-						<div class="badge-row">
-							{% for tag in service.tags %}
-								<span class="badge">{{ tag }}</span>
-							{% endfor %}
+					<div class="card-inner">
+
+						<div class="card-face card-face-front">
+							<div class="card-container">
+								<h4>{{ service.title }}</h4>
+								<p>{{ service.description|raw }}</p>
+								<div class="badge-row">
+									{% for tag in service.tags %}
+										<span class="badge">{{ tag }}</span>
+									{% endfor %}
+								</div>
+							</div>
 						</div>
-						<!-- .badge-row -->
+						<div class="card-face card-face-back">
+							{% if service.img is defined %}
+								<div class="image-wrapper">
+									<figure>
+										<img src="{{ asset('build/' ~ service.img) }}" alt="{{ service.title }}"/>
+									</figure>
+								</div>
+							{% endif %}
+						</div>
 					</div>
-					<!-- .card-container -->
 				</div>
-				<!-- .card -->
 			{% endfor %}
 		</div>
+		<!-- .grid-3 -->
 	</div>
 	<!-- .container -->
 </section>

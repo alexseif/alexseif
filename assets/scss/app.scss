@@ -669,6 +669,109 @@ label.form-label {
   .card p {
     font-size: 130%;
   }
+
+  $card-height: 600px; // Define a consistent height for the cards
+  $flip-duration: 0.6s;
+  $grid-gap: 1.5rem;
+
+
+
+  .grid-3 {
+    display: grid;
+    // Mobile first: Default to a single column
+    grid-template-columns: 1fr;
+    gap: $grid-gap;
+
+    // Tablet/Desktop: 3 columns
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card {
+    height: $card-height;
+    // Essential for the 3D effect: Establishes a perspective for children
+    perspective: 1000px;
+    cursor: pointer;
+    background-color: transparent; // Ensure the card itself is transparent
+
+    // Any shadow should be on the .card-inner or you can keep it here.
+    // .shadow class styling goes here if you keep it on .card
+    @media (min-width: 768px) {
+      height: 400px;
+    }
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform $flip-duration; // Apply transition for the flip
+    transform-style: preserve-3d; // Crucial for 3D depth and rotation
+  }
+
+  /* ---------------------------------------------------- */
+  /* Card Faces */
+  /* ---------------------------------------------------- */
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // Essential: Hides the back side of the rotating element
+    backface-visibility: hidden;
+    border-radius: inherit; // Match the parent card's radius
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $grid-gap;
+    box-sizing: border-box; // Ensures padding doesn't affect the 100% height
+  }
+
+  .card-face-front {
+    // The default state (un-rotated)
+    // background-color: #fff; // Your card background color
+    transform: rotateY(0deg);
+  }
+
+  .card-face-back {
+    // Hidden by default: Rotated 180 degrees
+    // background-color: #eee; // Background color for the image side
+    transform: rotateY(180deg);
+    padding: 0;
+
+    .image-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      figure,
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Ensures the image covers the area nicely
+        margin: 0;
+        border-radius: var(--radius-md);
+      }
+    }
+  }
+
+  /* ---------------------------------------------------- */
+  /* FLIP STATE (HOVER and JAVASCRIPT TRIGGER) */
+  /* ---------------------------------------------------- */
+
+  // 1. Hover Flip
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  // 2. JavaScript Flip (using the 'is-flipped' class)
+  .card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .align-right {

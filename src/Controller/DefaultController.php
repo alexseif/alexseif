@@ -69,6 +69,7 @@ class DefaultController extends AbstractController
         'Custom Tailored',
         'Structured Data'
       ],
+      'img' => 'images/services/web-presence.png'
     ],
     [
       'title' => 'eCommerce',
@@ -77,7 +78,8 @@ class DefaultController extends AbstractController
         'WooCommerce',
         'Custom Tailored',
         'Structured Data'
-      ]
+      ],
+      'img' => 'images/services/eCommerce.png'
     ],
     [
       'title' => 'eTourism',
@@ -87,6 +89,7 @@ class DefaultController extends AbstractController
         'Custom Tailored',
         'Structured Data'
       ],
+      'img' => 'images/services/eTourism.png'
     ],
     [
       'title' => 'LMS',
@@ -96,6 +99,7 @@ class DefaultController extends AbstractController
         'Custom Tailored',
         'Structured Data'
       ],
+      'img' => 'images/services/LMS.png'
     ],
     [
       'title' => 'Outsourcing',
@@ -105,6 +109,7 @@ class DefaultController extends AbstractController
         'Requirement Elicitation',
         'Software Architect'
       ],
+      'img' => 'images/services/outsourcing.png'
     ],
     [
       'title' => 'Maintenance',
@@ -114,6 +119,7 @@ class DefaultController extends AbstractController
         'Bug fixes',
         'Updates'
       ],
+      'img' => 'images/services/maintenance.png'
     ]
   ];
   public $reviews = [

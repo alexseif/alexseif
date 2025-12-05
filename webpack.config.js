@@ -26,7 +26,9 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = '3.23';
     })
-    .enableSassLoader()
+    // .enableSassLoader()
+    .enableSassLoader(options => { }, { resolveUrlLoader: false })
+
     .copyFiles({
         from: './node_modules/@fortawesome/fontawesome-free/webfonts',
         to: 'fonts/[path][name].[ext]',
@@ -36,14 +38,6 @@ Encore
         to: 'images/[path][name].[ext]',
         pattern: /\.(png|jpg|jpeg|svg|webp|gif)$/
     })
-    .addPlugin(new HtmlWebpackPlugin({
-        template: 'templates/base.html.twig',
-        preconnect: ['https://fonts.gstatic.com']
-    }))
-    .addPlugin(new HtmlWebpackPlugin({
-        template: './templates/base.html.twig',
-        headTags: '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">'
-    }))
     .configureDevServerOptions(options => {
         options.allowedHosts = 'all';
     });
