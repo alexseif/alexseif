@@ -8,11 +8,17 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ExperimentsController extends AbstractController
 {
-    #[Route('/experiments', name: 'app_experiments')]
+    #[Route('/experiments/index', name: 'app_experiments')]
     public function index(): Response
     {
         return $this->render('experiments/index.html.twig', [
             'controller_name' => 'ExperimentsController',
         ]);
+    }
+
+    #[Route('/experiments/graph', name: 'app_experiments')]
+    public function graph(): Response
+    {
+        return $this->render('experiments/graph.html.twig', []);
     }
 }

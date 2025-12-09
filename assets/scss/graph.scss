@@ -1,0 +1,74 @@
+@use 'variables';
+@use 'nav';
+@import url("https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css");
+// Body
+$spacer: 1rem;
+$navbar-padding-y: $spacer * 1;
+
+// Typography
+$font-family-sans-serif: "IBM Plex Sans", sans-serif;
+
+$min-contrast-ratio: 2;
+
+// 🎨 SCSS Tokens
+$font-sans: var(--font-sans);
+$font-base: var(--font-size-base);
+$font-lg: var(--font-size-lg);
+$font-xl: var(--font-size-xl);
+$font-xxl: var(--font-size-xxl);
+
+$radius: var(--radius-md);
+$gap: var(--margin-md);
+$pad: var(--pad-md);
+$maxw: var(--maxw);
+
+$bg: var(--color-bg);
+$surface: var(--color-surface);
+$text: var(--color-text);
+$muted: var(--color-muted);
+$accent: var(--color-accent);
+$accent-hover: var(--color-accent-hover);
+
+html {
+    font-size: 14px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--margin-xl); // or the height of your header
+}
+
+// 🧱 Base
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: $font-sans;
+    font-size: $font-base;
+    line-height: 1.6;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.2;
+    margin-top: var(--margin-sm);
+    margin-bottom: var(--margin-md);
+}
+
+.chart-container {
+    max-width: 1440px;
+    margin: 2rem auto;
+    text-align: center;
+
+    .chart-legend {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--color-text);
+    }
+
+    canvas {
+        border: 1px solid var(--color-accent);
+        background: var(--color-surface);
+    }
+}

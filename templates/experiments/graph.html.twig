@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Performance vs Trust
+{% endblock %}
+
+{# {% block meta_description %}{% endblock %} #}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('graph') }}
+{% endblock %}
+{% block javascripts %}
+	{{ encore_entry_script_tags('graph') }}
+{% endblock %}
+
+
+{% block body %}
+	<div class="chart-container">
+		<div class="chart-legend">
+			<p>
+				<strong>Performance</strong>
+				= On the battlefield</p>
+			<p>
+				<strong>Trust</strong>
+				= Off the battlefield</p>
+		</div>
+		<canvas id="performanceTrustChart"></canvas>
+	</div>
+{% endblock %}
