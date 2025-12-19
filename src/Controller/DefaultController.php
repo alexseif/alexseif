@@ -432,7 +432,6 @@ class DefaultController extends AbstractController
     $portfolio = [];
     $portfolio[] = $item;
     $portfolio[] = $item;
-    $item = $item;
     $portfolio[] = $item;
     $portfolio[] = $item;
     return $this->render(
@@ -565,7 +564,7 @@ class DefaultController extends AbstractController
     }
 
     // Validate required fields
-    $required = ['clinicName', 'yourName', 'role', 'whatsapp', 'email', 'situation'];
+    $required = ['clinicName', 'yourName', 'whatsapp', 'email'];
     foreach ($required as $field) {
       if (empty($data[$field])) {
         return new JsonResponse(['error' => "Missing required field: $field"], 400);
@@ -577,6 +576,17 @@ class DefaultController extends AbstractController
 
       // Store clinic name in `name`
       $submission->setName($data['clinicName']);
+
+      // Map structured fields
+      $submission->setYourName($data['yourName'] ?? null);
+      $submission->setEmail($data['email'] ?? null);
+      $submission->setWhatsapp($data['whatsapp'] ?? null);
+      $submission->setRole($data['role'] ?? null);
+      $submission->setWebsite($data['website'] ?? null);
+      $submission->setInstagram($data['instagram'] ?? null);
+      $submission->setInterest($data['interest'] ?? null);
+      $submission->setSituation($data['situation'] ?? null);
+      $submission->setMessage($data['message'] ?? null);
 
       // Store full JSON payload in `formData`
       $submission->setFormData($data);
@@ -590,7 +600,8 @@ class DefaultController extends AbstractController
       $logger->info('Intake form saved to DB', [
         'id' => $submission->getId(),
         'name' => $submission->getName(),
-        'formData' => $submission->getFormData()
+        'role' => $submission->getRole(),
+        'email' => $submission->getEmail()
       ]);
 
       return new JsonResponse(['success' => true]);

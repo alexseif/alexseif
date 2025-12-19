@@ -37,12 +37,41 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = 'Sending...';
             btn.disabled = true;
 
-            setTimeout(() => {
-                form.style.display = 'none';
-                if (successMsg) successMsg.classList.remove('hidden');
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 1000); // Simulate network delay
+            const formData = {
+                yourName: form.name.value,
+                clinicName: form.clinic.value,
+                email: form.email.value,
+                whatsapp: form.phone.value,
+                website: form.website.value,
+                message: form.message.value
+            };
+
+            fetch('/intake/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const fieldsWrapper = form.querySelector('.space-y-4');
+                        if (fieldsWrapper) fieldsWrapper.style.display = 'none';
+                        if (successMsg) successMsg.classList.remove('hidden');
+                        form.reset();
+                    } else {
+                        alert('Submission failed: ' + (data.error || 'Unknown error'));
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Submission failed due to a network error.');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                });
         });
     }
 });

@@ -32,10 +32,18 @@ class IntakeFormSubmissionCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('name'),
+            TextField::new('name', 'Clinic Name'),
+            TextField::new('yourName'),
+            TextField::new('role'),
+            TextField::new('email'),
+            TextField::new('whatsapp'),
+            TextField::new('website')->onlyOnDetail(),
+            TextField::new('instagram')->onlyOnDetail(),
+            TextField::new('interest'),
+            TextEditorField::new('situation'),
+            TextEditorField::new('message')->onlyOnDetail(),
             DateTimeField::new('submittedAt'),
-            ArrayField::new('formData', 'Form Data')
-                ->setTemplatePath('admin/fields/form_data.html.twig') // optional custom rendering
+            ArrayField::new('formData', 'Raw Data')->onlyOnDetail(),
         ];
     }
 }
