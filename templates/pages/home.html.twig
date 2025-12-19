@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alex Seif | Reliable Websites & Systems for Clinics in Egypt{% endblock %}
+
+{% block stylesheets %}
+    {# {{ parent() }} #}
+			{{ encore_entry_link_tags('home') }}
+
+    {% if app.environment == 'dev' %}
+       {# Debugging advice if styles look wrong during dev #}
+    {% endif %}
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+{% endblock %}
+{% block javascripts %}
+			{{ encore_entry_script_tags('home') }}
+   
+{% endblock %}
+
+{% block body %}
+    <div class="min-h-screen bg-[#FAFBFC]">
+        <nav class="bg-white/80 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-gray-100">
+            <div class="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img alt="Alex Seif Logo" class="h-10 w-auto" src="{{ asset('build/images/logo-clinic.png') }}">
+                </div>
+                <a href="#intake" class="bg-[#0D9488] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#0f766e] transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap cursor-pointer text-sm">Start Clinic Intake</a>
+            </div>
+        </nav>
+
+        {% include 'components/_hero.twig' %}
+        {% include 'components/_problems.twig' %}
+        {% include 'components/_services.twig' %}
+        {% include 'components/_website_build.twig' %}
+        {% include 'components/_founder.twig' %}
+        {% include 'components/_cta.twig' %}
+        
+        <footer class="bg-[#0D9488] text-white py-12 px-6">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-4">Alex Seif</h3>
+                        <p class="text-white/80 text-sm leading-relaxed">Reliable web development and maintenance for clinics in Egypt.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-4">Services</h3>
+                        <ul class="space-y-2 text-sm text-white/80">
+                            <li>Website Care (Monthly)</li>
+                            <li>Website Builds</li>
+                            <li>Website Assessment</li>
+                            <li>Technical Support</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                        <ul class="space-y-2 text-sm text-white/80">
+                            <li>Based in Egypt</li>
+                            <li>Serving Clinics Nationwide</li>
+                            <li><a href="#intake" class="hover:text-white transition-colors cursor-pointer">Start Intake Form</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-white/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/70">
+                    <p>© 2025 Alex Seif. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+{% endblock %}

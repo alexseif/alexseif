@@ -203,7 +203,7 @@ class DefaultController extends AbstractController
       }
     }
     return $this->render(
-      'default/home.html.twig',
+      'pages/home.html.twig',
       [
         'aboutSections' => $aboutSections,
         'services' => $this->services,
