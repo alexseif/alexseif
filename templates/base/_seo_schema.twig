@@ -1,0 +1,142 @@
+<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@graph": [
+	    {
+	      "@id": "#person",
+	      "@type": "Person",
+	      "name": "Alex Seif",
+	      "jobTitle": "Website Consultant for Clinics",
+	      "sameAs": []
+	    },
+	    {
+	      "@id": "#organization",
+	      "@type": "Organization",
+	      "name": "Alex Seif",
+	      "founder": {
+	        "@id": "#person"
+	      },
+	      "areaServed": {
+	        "@type": "Country",
+	        "name": "Egypt"
+	      },
+	      "hasOfferCatalog": {
+	        "@type": "OfferCatalog",
+	        "name": "Website Care for Clinics",
+	        "itemListElement": [
+	          {
+	            "@type": "Offer",
+	            "itemOffered": {
+	              "@id": "#service-website-care"
+	            }
+	          },
+	          {
+	            "@type": "Offer",
+	            "itemOffered": {
+	              "@id": "#service-website-builds"
+	            }
+	          }
+	        ]
+	      }
+	    },
+	    {
+	      "@id": "#service-website-care",
+	      "@type": "Service",
+	      "name": "Website Care for Clinics",
+	      "provider": {
+	        "@id": "#organization"
+	      },
+	      "serviceType": "Website Care for Clinics",
+	      "areaServed": {
+	        "@type": "Country",
+	        "name": "Egypt"
+	      },
+	      "offers": {
+	        "@type": "Offer",
+	        "price": "2500",
+	        "priceCurrency": "EGP",
+	        "billingIncrement": "Monthly"
+	      }
+	    },
+	    {
+	      "@id": "#service-website-builds",
+	      "@type": "Service",
+	      "name": "Clinic Website Builds",
+	      "provider": {
+	        "@id": "#organization"
+	      },
+	      "serviceType": "Clinic Website Builds",
+	      "areaServed": {
+	        "@type": "Country",
+	        "name": "Egypt"
+	      },
+	      "offers": [
+	        {
+	          "@type": "Offer",
+	          "name": "Web Vitals Diagnostic",
+	          "price": "9000",
+	          "priceCurrency": "EGP"
+	        },
+	        {
+	          "@type": "Offer",
+	          "name": "Clinic Website Build",
+	          "price": "18000",
+	          "priceCurrency": "EGP",
+	          "priceSpecification": {
+	            "@type": "UnitPriceSpecification",
+	            "price": "18000",
+	            "priceCurrency": "EGP",
+	            "valueAddedTaxIncluded": true
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "@id": "#faqpage",
+	      "@type": "FAQPage",
+	      "mainEntity": [
+	        {
+	          "@type": "Question",
+	          "name": "What is included in Website Care for Clinics?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "Website monitoring, fixing broken forms and links, security updates, backups and recovery, minor content edits, and support during campaigns and ads."
+	          }
+	        },
+	        {
+	          "@type": "Question",
+	          "name": "How much is Website Care?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "Website Care starts from EGP 2,500 per month. Hosting is billed separately if needed."
+	          }
+	        },
+	        {
+	          "@type": "Question",
+	          "name": "Do you build new clinic websites?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "Yes. If your current website can't be fixed, I can build a clean, fast clinic website designed to turn visitors into real inquiries. Assessments start at EGP 9,000 and builds from EGP 18,000."
+	          }
+	        },
+	        {
+	          "@type": "Question",
+	          "name": "Who will I be dealing with?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "You deal directly with me, Alex. I've been building and maintaining websites for over 20 years and stay responsible for keeping things working."
+	          }
+	        },
+	        {
+	          "@type": "Question",
+	          "name": "Is there any commitment to start?",
+	          "acceptedAnswer": {
+	            "@type": "Answer",
+	            "text": "No. Start with a short clinic intake. I'll review your situation and tell you honestly what makes sense—no obligation or hard selling."
+	          }
+	        }
+	      ]
+	    }
+	  ]
+	}
+</script>
