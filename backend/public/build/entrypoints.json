@@ -1,0 +1,81 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_modules_esnext_iterator_constructor_js-node_modules_core-js_modu-374f7e.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/app.css"
+      ]
+    },
+    "home": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_modules_esnext_iterator_constructor_js-node_modules_core-js_modu-374f7e.js",
+        "/build/home.js"
+      ],
+      "css": [
+        "/build/home.css"
+      ]
+    },
+    "about": {
+      "js": [
+        "/build/runtime.js",
+        "/build/about.js"
+      ],
+      "css": [
+        "/build/about.css"
+      ]
+    },
+    "wp-optimize": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_modules_esnext_iterator_constructor_js-node_modules_core-js_modu-374f7e.js",
+        "/build/wp-optimize.js"
+      ],
+      "css": [
+        "/build/wp-optimize.css"
+      ]
+    },
+    "intake": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_modules_esnext_iterator_constructor_js-node_modules_core-js_modu-374f7e.js",
+        "/build/intake.js"
+      ],
+      "css": [
+        "/build/intake.css"
+      ]
+    },
+    "experiments": {
+      "js": [
+        "/build/runtime.js",
+        "/build/experiments.js"
+      ],
+      "css": [
+        "/build/experiments.css"
+      ]
+    },
+    "cta": {
+      "js": [
+        "/build/runtime.js",
+        "/build/cta.js"
+      ],
+      "css": [
+        "/build/cta.css"
+      ]
+    },
+    "graph": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_chart_js_dist_chart_esm_js.js",
+        "/build/graph.js"
+      ],
+      "css": [
+        "/build/graph.css"
+      ]
+    }
+  }
+}

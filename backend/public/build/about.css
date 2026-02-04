@@ -1,0 +1,54 @@
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./assets/scss/about.scss ***!
+  \*******************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap);
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./assets/scss/about.scss (1) ***!
+  \***********************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap);
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./assets/scss/about.scss (2) ***!
+  \***********************************************************************************************************************************************************************************************/
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #fafafa;
+  color: #18181b;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.btn-primary {
+  background-color: #0284c7;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+.btn-primary:hover {
+  background-color: #0369a1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  line-height: 1.6;
+  color: #27272a;
+  background-color: #fafafa;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWJvdXQuY3NzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBb0NBO0VBQ0ksa0NBbkNRO0VBb0NSLHlCQTFCaUI7RUEyQmpCLGNBdkJrQjtBQVZ0Qjs7QUFvQ0E7RUFDSSxnQkFYWTtFQVlaO0VBQ0E7QUFqQ0o7O0FBb0NBO0VBQ0kseUJBekNnQjtFQTBDaEI7RUFDQTtFQUNBO0FBakNKO0FBbUNJO0VBQ0kseUJBOUNZO0FBYXBCOztBQXlDQTtFQUNJO0FBdENKOztBQXlDQTtFQUNJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtBQXRDSjs7QUEwQ0E7RUFDSTtFQUNBO0VBQ0E7RUFDQTtBQXZDSixDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vYXNzZXRzL3Njc3MvYWJvdXQuc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1NYW5yb3BlOndnaHRANDAwOzUwMDs2MDA7NzAwOzgwMCZkaXNwbGF5PXN3YXAnKTtcbi8vIFR5cG9ncmFwaHlcbiRmb250LXNhbnM6ICdNYW5yb3BlJywgc2Fucy1zZXJpZjtcblxuLy8gQ29sb3JzXG4kY29sb3ItcHJpbWFyeS01MDogI2YwZjlmZjtcbiRjb2xvci1wcmltYXJ5LTEwMDogI2UwZjJmZTtcbiRjb2xvci1wcmltYXJ5LTUwMDogIzBlYTVlOTtcbiRjb2xvci1wcmltYXJ5LTYwMDogIzAyODRjNztcbiRjb2xvci1wcmltYXJ5LTcwMDogIzAzNjlhMTtcbiRjb2xvci1wcmltYXJ5LTkwMDogIzBjNGE2ZTtcblxuJGNvbG9yLXNlY29uZGFyeS01MDogI2ZhZmFmYTtcbiRjb2xvci1zZWNvbmRhcnktMTAwOiAjZjRmNGY1O1xuJGNvbG9yLXNlY29uZGFyeS02MDA6ICM1MjUyNWI7XG4kY29sb3Itc2Vjb25kYXJ5LTgwMDogIzI3MjcyYTtcbiRjb2xvci1zZWNvbmRhcnktOTAwOiAjMTgxODFiO1xuXG4kY29sb3ItYWNjZW50LTUwMDogI2Y1OWUwYjtcbiRjb2xvci1hY2NlbnQtNjAwOiAjZDk3NzA2O1xuXG4vLyBNYXggd2lkdGhzXG4kbWF4LXdpZHRoLXhzOiAyMHJlbTtcbiRtYXgtd2lkdGgtc206IDI0cmVtO1xuJG1heC13aWR0aC1tZDogMjhyZW07XG4kbWF4LXdpZHRoLWxnOiAzMnJlbTtcbiRtYXgtd2lkdGgteGw6IDM2cmVtO1xuJG1heC13aWR0aC0yeGw6IDQycmVtO1xuJG1heC13aWR0aC0zeGw6IDQ4cmVtO1xuJG1heC13aWR0aC00eGw6IDU2cmVtO1xuJG1heC13aWR0aC01eGw6IDY0cmVtO1xuJG1heC13aWR0aC02eGw6IDcycmVtO1xuJG1heC13aWR0aC03eGw6IDgwcmVtO1xuXG5cblxuYm9keSB7XG4gICAgZm9udC1mYW1pbHk6ICRmb250LXNhbnM7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLXNlY29uZGFyeS01MDtcbiAgICBjb2xvcjogJGNvbG9yLXNlY29uZGFyeS05MDA7XG59XG5cbi5jb250YWluZXIge1xuICAgIG1heC13aWR0aDogJG1heC13aWR0aC03eGw7XG4gICAgbWFyZ2luOiAwIGF1dG87XG4gICAgcGFkZGluZzogMCAxLjVyZW07XG59XG5cbi5idG4tcHJpbWFyeSB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLXByaW1hcnktNjAwO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBwYWRkaW5nOiAxcmVtIDJyZW07XG4gICAgYm9yZGVyLXJhZGl1czogMC41cmVtO1xuXG4gICAgJjpob3ZlciB7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1wcmltYXJ5LTcwMDtcbiAgICB9XG59XG5cbi8vIDEuIEltcG9ydCBHb29nbGUgRm9udFxuQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9TWFucm9wZTp3Z2h0QDQwMDs1MDA7NjAwOzcwMDs4MDAmZGlzcGxheT1zd2FwJyk7XG5cbi8vIDIuIEJhc2UgUmVzZXRcbioge1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmJvZHkge1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xuICAgIGZvbnQtZmFtaWx5OiAnTWFucm9wZScsIHNhbnMtc2VyaWY7XG4gICAgbGluZS1oZWlnaHQ6IDEuNjtcbiAgICBjb2xvcjogIzI3MjcyYTsgLy8gTWF0Y2hlcyAkY29sb3Itc2Vjb25kYXJ5LTgwMFxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7IC8vIE9wdGlvbmFsOiAkY29sb3Itc2Vjb25kYXJ5LTUwXG59XG5cbi8vIDMuIFV0aWxpdHkgQ2xhc3M6IEdyYWRpZW50IFRleHRcbi50ZXh0LWdyYWRpZW50IHtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMGVhNWU5IDAlLCAjMDM2OWExIDEwMCUpO1xuICAgIC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0O1xuICAgIC13ZWJraXQtdGV4dC1maWxsLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7XG59Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9*/
