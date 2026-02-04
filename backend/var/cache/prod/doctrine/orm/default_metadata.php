@@ -4,7 +4,9 @@
 
 return [[
 
-'App__Entity__Portfolio__CLASSMETADATA__' => 0,
+'App__Entity__IntakeFormSubmission__CLASSMETADATA__' => 0,
+'App__Entity__User__CLASSMETADATA__' => 1,
+'Vich__UploaderBundle__Entity__File__CLASSMETADATA__' => 2,
 
 ], [
 
@@ -12,22 +14,22 @@ return [[
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
-            clone ($p['Doctrine\\ORM\\Id\\SequenceGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\SequenceGenerator')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
         ],
         null,
         [
             'stdClass' => [
                 'name' => [
-                    'App\\Entity\\Portfolio',
+                    'App\\Entity\\IntakeFormSubmission',
                 ],
                 'namespace' => [
                     'App\\Entity',
                 ],
                 'rootEntityName' => [
-                    'App\\Entity\\Portfolio',
+                    'App\\Entity\\IntakeFormSubmission',
                 ],
                 'customRepositoryClassName' => [
-                    'App\\Repository\\PortfolioRepository',
+                    'App\\Repository\\IntakeFormSubmissionRepository',
                 ],
                 'identifier' => [
                     [
@@ -35,7 +37,7 @@ return [[
                     ],
                 ],
                 'generatorType' => [
-                    2,
+                    4,
                 ],
                 'fieldMappings' => [
                     [
@@ -50,78 +52,372 @@ return [[
                             'id' => true,
                             'columnName' => 'id',
                         ],
-                        'title' => [
-                            'fieldName' => 'title',
+                        'name' => [
+                            'fieldName' => 'name',
                             'type' => 'string',
                             'scale' => null,
                             'length' => 255,
                             'unique' => false,
                             'nullable' => false,
                             'precision' => null,
-                            'columnName' => 'title',
+                            'columnName' => 'name',
                         ],
-                        'description' => [
-                            'fieldName' => 'description',
-                            'type' => 'text',
+                        'submittedAt' => [
+                            'fieldName' => 'submittedAt',
+                            'type' => 'datetime_immutable',
                             'scale' => null,
                             'length' => null,
                             'unique' => false,
-                            'nullable' => true,
+                            'nullable' => false,
                             'precision' => null,
-                            'columnName' => 'description',
+                            'columnName' => 'submitted_at',
                         ],
-                        'image' => [
-                            'fieldName' => 'image',
+                        'formData' => [
+                            'fieldName' => 'formData',
+                            'type' => 'json',
+                            'scale' => null,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => null,
+                            'columnName' => 'form_data',
+                        ],
+                        'yourName' => [
+                            'fieldName' => 'yourName',
                             'type' => 'string',
                             'scale' => null,
                             'length' => 255,
                             'unique' => false,
                             'nullable' => true,
                             'precision' => null,
-                            'columnName' => 'image',
+                            'columnName' => 'your_name',
+                        ],
+                        'website' => [
+                            'fieldName' => 'website',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'website',
+                        ],
+                        'instagram' => [
+                            'fieldName' => 'instagram',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'instagram',
+                        ],
+                        'interest' => [
+                            'fieldName' => 'interest',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => 100,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'interest',
+                        ],
+                        'message' => [
+                            'fieldName' => 'message',
+                            'type' => 'text',
+                            'scale' => null,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'message',
+                        ],
+                        'email' => [
+                            'fieldName' => 'email',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'email',
+                        ],
+                        'whatsapp' => [
+                            'fieldName' => 'whatsapp',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => 50,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'whatsapp',
+                        ],
+                        'role' => [
+                            'fieldName' => 'role',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => 50,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'role',
+                        ],
+                        'situation' => [
+                            'fieldName' => 'situation',
+                            'type' => 'text',
+                            'scale' => null,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => null,
+                            'columnName' => 'situation',
                         ],
                     ],
                 ],
                 'fieldNames' => [
                     [
                         'id' => 'id',
-                        'title' => 'title',
-                        'description' => 'description',
-                        'image' => 'image',
+                        'name' => 'name',
+                        'submitted_at' => 'submittedAt',
+                        'form_data' => 'formData',
+                        'your_name' => 'yourName',
+                        'website' => 'website',
+                        'instagram' => 'instagram',
+                        'interest' => 'interest',
+                        'message' => 'message',
+                        'email' => 'email',
+                        'whatsapp' => 'whatsapp',
+                        'role' => 'role',
+                        'situation' => 'situation',
                     ],
                 ],
                 'columnNames' => [
                     [
                         'id' => 'id',
-                        'title' => 'title',
-                        'description' => 'description',
-                        'image' => 'image',
+                        'name' => 'name',
+                        'submittedAt' => 'submitted_at',
+                        'formData' => 'form_data',
+                        'yourName' => 'your_name',
+                        'website' => 'website',
+                        'instagram' => 'instagram',
+                        'interest' => 'interest',
+                        'message' => 'message',
+                        'email' => 'email',
+                        'whatsapp' => 'whatsapp',
+                        'role' => 'role',
+                        'situation' => 'situation',
                     ],
                 ],
                 'table' => [
                     [
-                        'name' => 'portfolio',
+                        'name' => 'intake_form_submission',
                     ],
                 ],
                 'idGenerator' => [
                     $o[1],
                 ],
-                'sequenceGeneratorDefinition' => [
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+1 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\User',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\User',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\UserRepository',
+                ],
+                'identifier' => [
                     [
-                        'sequenceName' => 'portfolio_id_seq',
-                        'allocationSize' => '1',
-                        'initialValue' => '1',
+                        'id',
                     ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => null,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => null,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'email' => [
+                            'fieldName' => 'email',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => 180,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => null,
+                            'columnName' => 'email',
+                        ],
+                        'roles' => [
+                            'fieldName' => 'roles',
+                            'type' => 'json',
+                            'scale' => null,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => null,
+                            'columnName' => 'roles',
+                        ],
+                        'password' => [
+                            'fieldName' => 'password',
+                            'type' => 'string',
+                            'scale' => null,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => null,
+                            'columnName' => 'password',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'email' => 'email',
+                        'roles' => 'roles',
+                        'password' => 'password',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'email' => 'email',
+                        'roles' => 'roles',
+                        'password' => 'password',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'user',
+                        'uniqueConstraints' => [
+                            'UNIQ_IDENTIFIER_EMAIL' => [
+                                'fields' => [
+                                    'email',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
                 ],
             ],
         ],
         $o[0],
+        []
+    );
+},
+2 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\AssignedGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\AssignedGenerator')),
+        ],
+        null,
         [
-            -1 => [
-                'allocationSize' => 1,
-                'sequenceName' => 'portfolio_id_seq',
+            'stdClass' => [
+                'name' => [
+                    'Vich\\UploaderBundle\\Entity\\File',
+                ],
+                'namespace' => [
+                    'Vich\\UploaderBundle\\Entity',
+                ],
+                'rootEntityName' => [
+                    'Vich\\UploaderBundle\\Entity\\File',
+                ],
+                'isEmbeddedClass' => [
+                    true,
+                ],
+                'fieldMappings' => [
+                    [
+                        'name' => [
+                            'fieldName' => 'name',
+                            'nullable' => true,
+                            'type' => 'string',
+                            'columnName' => 'name',
+                        ],
+                        'originalName' => [
+                            'fieldName' => 'originalName',
+                            'columnName' => 'original_name',
+                            'nullable' => true,
+                            'type' => 'string',
+                        ],
+                        'mimeType' => [
+                            'fieldName' => 'mimeType',
+                            'columnName' => 'mime_type',
+                            'nullable' => true,
+                            'type' => 'string',
+                        ],
+                        'size' => [
+                            'fieldName' => 'size',
+                            'type' => 'integer',
+                            'nullable' => true,
+                            'columnName' => 'size',
+                        ],
+                        'dimensions' => [
+                            'fieldName' => 'dimensions',
+                            'type' => 'simple_array',
+                            'nullable' => true,
+                            'columnName' => 'dimensions',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'name' => 'name',
+                        'original_name' => 'originalName',
+                        'mime_type' => 'mimeType',
+                        'size' => 'size',
+                        'dimensions' => 'dimensions',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'name' => 'name',
+                        'originalName' => 'original_name',
+                        'mimeType' => 'mime_type',
+                        'size' => 'size',
+                        'dimensions' => 'dimensions',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'file',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
             ],
-        ]
+        ],
+        $o[0],
+        []
     );
 },
 

@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use GuzzleHttp\Client;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends AbstractController
 {
@@ -161,6 +162,7 @@ class DefaultController extends AbstractController
   #[Route('/', name: 'alx_home')]
   public function home(Request $request): Response
   {
+    return new RedirectResponse('https://alexseif.com');
     $aboutSections = [
       [
         'title' => 'Market Expertise',

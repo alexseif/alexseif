@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\DiagnosticSubmission;
 use App\Entity\IntakeFormSubmission;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
@@ -41,7 +42,7 @@ class DashboardController extends AbstractDashboardController
         // return $this->render('some/path/my-dashboard.html.twig');
         $routeBuilder = $this->container->get(AdminUrlGenerator::class);
 
-        return $this->redirect($routeBuilder->setController(IntakeFormSubmissionCrudController::class)->generateUrl());
+        return $this->redirect($routeBuilder->setController(DiagnosticSubmissionCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -53,6 +54,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToCrud('Diagnostic Submissions', 'fa fa-stethoscope', DiagnosticSubmission::class);
         yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
         yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToCrud('Submissions', 'fa fa-file', IntakeFormSubmission::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);

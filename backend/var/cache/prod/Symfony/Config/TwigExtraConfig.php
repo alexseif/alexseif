@@ -53,22 +53,11 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     * @param TValue $value
-     * @default {"enabled":false}
-     * @return \Symfony\Config\TwigExtra\HtmlConfig|$this
-     * @psalm-return (TValue is array ? \Symfony\Config\TwigExtra\HtmlConfig : static)
-     */
-    public function html(array $value = []): \Symfony\Config\TwigExtra\HtmlConfig|static
+     * @default {"enabled":true}
+    */
+    public function html(array $value = []): \Symfony\Config\TwigExtra\HtmlConfig
     {
-        if (!\is_array($value)) {
-            $this->_usedProperties['html'] = true;
-            $this->html = $value;
-
-            return $this;
-        }
-
-        if (!$this->html instanceof \Symfony\Config\TwigExtra\HtmlConfig) {
+        if (null === $this->html) {
             $this->_usedProperties['html'] = true;
             $this->html = new \Symfony\Config\TwigExtra\HtmlConfig($value);
         } elseif (0 < \func_num_args()) {
@@ -105,22 +94,11 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @template TValue
-     * @param TValue $value
-     * @default {"enabled":false}
-     * @return \Symfony\Config\TwigExtra\IntlConfig|$this
-     * @psalm-return (TValue is array ? \Symfony\Config\TwigExtra\IntlConfig : static)
-     */
-    public function intl(array $value = []): \Symfony\Config\TwigExtra\IntlConfig|static
+     * @default {"enabled":true}
+    */
+    public function intl(array $value = []): \Symfony\Config\TwigExtra\IntlConfig
     {
-        if (!\is_array($value)) {
-            $this->_usedProperties['intl'] = true;
-            $this->intl = $value;
-
-            return $this;
-        }
-
-        if (!$this->intl instanceof \Symfony\Config\TwigExtra\IntlConfig) {
+        if (null === $this->intl) {
             $this->_usedProperties['intl'] = true;
             $this->intl = new \Symfony\Config\TwigExtra\IntlConfig($value);
         } elseif (0 < \func_num_args()) {
@@ -223,7 +201,7 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
         if (array_key_exists('html', $value)) {
             $this->_usedProperties['html'] = true;
-            $this->html = \is_array($value['html']) ? new \Symfony\Config\TwigExtra\HtmlConfig($value['html']) : $value['html'];
+            $this->html = new \Symfony\Config\TwigExtra\HtmlConfig($value['html']);
             unset($value['html']);
         }
 
@@ -235,7 +213,7 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
         if (array_key_exists('intl', $value)) {
             $this->_usedProperties['intl'] = true;
-            $this->intl = \is_array($value['intl']) ? new \Symfony\Config\TwigExtra\IntlConfig($value['intl']) : $value['intl'];
+            $this->intl = new \Symfony\Config\TwigExtra\IntlConfig($value['intl']);
             unset($value['intl']);
         }
 
@@ -269,13 +247,13 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             $output['cache'] = $this->cache instanceof \Symfony\Config\TwigExtra\CacheConfig ? $this->cache->toArray() : $this->cache;
         }
         if (isset($this->_usedProperties['html'])) {
-            $output['html'] = $this->html instanceof \Symfony\Config\TwigExtra\HtmlConfig ? $this->html->toArray() : $this->html;
+            $output['html'] = $this->html->toArray();
         }
         if (isset($this->_usedProperties['markdown'])) {
             $output['markdown'] = $this->markdown instanceof \Symfony\Config\TwigExtra\MarkdownConfig ? $this->markdown->toArray() : $this->markdown;
         }
         if (isset($this->_usedProperties['intl'])) {
-            $output['intl'] = $this->intl instanceof \Symfony\Config\TwigExtra\IntlConfig ? $this->intl->toArray() : $this->intl;
+            $output['intl'] = $this->intl->toArray();
         }
         if (isset($this->_usedProperties['cssinliner'])) {
             $output['cssinliner'] = $this->cssinliner instanceof \Symfony\Config\TwigExtra\CssinlinerConfig ? $this->cssinliner->toArray() : $this->cssinliner;

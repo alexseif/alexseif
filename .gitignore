@@ -34,8 +34,10 @@
 
 ### Symfony ###
 # Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
+/app/cache/
+/app/cache/**
+/app/logs/
+/app/logs/**
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
@@ -43,16 +45,32 @@
 /app/spool/*
 
 # Cache, session files and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-/var/sessions/*
+/var/cache/
+/var/cache/**
+/var/logs/
+/var/logs/**
+/var/sessions/
+/var/sessions/**
 !var/cache/.gitkeep
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
 
 # Logs (Symfony4)
-/var/log/*
+/var/log/
+/var/log/**
 !var/log/.gitkeep
+
+# Backend cache (when repo root is project root)
+backend/var/cache/
+backend/var/cache/**
+backend/var/logs/
+backend/var/logs/**
+**/var/cache/dev/
+**/var/cache/prod/
+**/var/cache/test/
+**/Container*
+**/*Compiler.log
+**/*Deprecations.log
 
 # Parameters
 /app/config/parameters.yml
