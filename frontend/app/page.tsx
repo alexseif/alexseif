@@ -386,7 +386,7 @@ export default function HomePage() {
 
                 <div className="pt-4">
                   <p className="text-primary text-3xl md:text-4xl font-mono tracking-wider">
-                    9,000 <span className="text-lg">EGP</span>
+                     200 <span className="text-lg">€</span>
                   </p>
                 </div>
 
