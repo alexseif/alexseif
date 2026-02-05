@@ -1,28 +1,10 @@
 #!/bin/bash
 set -e
 
-echo "🎨 Building Next.js locally..."
-cd frontend
-npm run build
-
-echo "📦 Compressing artifacts..."
-# Archive .next and public together
-tar -czf next_build.tar.gz .next public
-cd ..
-
-echo "📝 Pushing logic to Git..."
+echo "📝 Pushing code to Git..."
 git add .
-git commit -m "Deployment Sync: $(date)"
+git commit -m "Deployment: $(date)"
 git push origin master
 
-echo "🚢 Shipping archive to server..."
-# scp -v frontend/next_build.tar.gz devops@alexseif.com:/var/www/alexseif.com/frontend/
-# -a: archive mode, -v: verbose, -z: compress during transfer, -P: show progress and allow partial resume
-rsync -avzP -e "ssh" ./frontend/next_build.tar.gz devops@alexseif.com:/var/www/alexseif.com/frontend/
-
-echo "🛰️  Triggering Server Deployer..."
+echo "🛰️ Triggering Server-Side Build..."
 ssh devops@alexseif.com "cd /var/www/alexseif.com && ./deployer.sh"
-
-# Clean up local archive
-rm frontend/next_build.tar.gz
-echo "✨ Ship complete."
