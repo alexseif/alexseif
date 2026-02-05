@@ -11,8 +11,11 @@ git pull origin master
 # --- BACKEND ---
 echo "⚙️  Symfony Ops..."
 cd backend
+php8.2 /usr/local/bin/composer dump-env prod
 php8.2 /usr/local/bin/composer install --no-dev --optimize-autoloader
-php8.2 bin/console cache:clear --env=prod
+APP_ENV=prod php8.2 bin/console cache:clear
+APP_ENV=prod php8.2 bin/console cache:warmup
+APP_ENV=prod php8.2 bin/console doctrine:migrations:migrate --no-interaction
 cd ..
 
 # --- FRONTEND ---
