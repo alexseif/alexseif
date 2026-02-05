@@ -10,8 +10,17 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Software Architect',
-  description: 'Software architect with 20 years designing mission-critical systems across Egypt, UAE, KSA, Russia, Spain, Greece, and Kuwait.',
+  title: 'Alex Seif | Systems Architect & Technical Partner',
+  description:
+    'Bridging the gap between complex machines and human stories. 20+ years of architecting flow, resilience, and digital mastery.',
+  keywords: [
+    'Realising your system digitally',
+    'Infrastructure Design',
+    'Business Process Upscaling',
+    'Mission-Critical Partnership',
+    'Digital Transformation Strategy',
+    'Architecture for Human Expression',
+  ],
   generator: 'v0.app',
   icons: {
     icon: [

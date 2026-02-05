@@ -29,6 +29,12 @@ class DiagnosticSubmission
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $bottleneck = null;
 
+    #[ORM\Column(options: ['default' => false])]
+    private ?bool $hasCto = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $story = null;
+
     #[ORM\Column]
     private ?\DateTimeImmutable $submittedAt = null;
 
@@ -89,6 +95,28 @@ class DiagnosticSubmission
     public function setBottleneck(?string $bottleneck): static
     {
         $this->bottleneck = $bottleneck;
+        return $this;
+    }
+
+    public function hasCto(): ?bool
+    {
+        return $this->hasCto;
+    }
+
+    public function setHasCto(?bool $hasCto): static
+    {
+        $this->hasCto = $hasCto;
+        return $this;
+    }
+
+    public function getStory(): ?string
+    {
+        return $this->story;
+    }
+
+    public function setStory(?string $story): static
+    {
+        $this->story = $story;
         return $this;
     }
 

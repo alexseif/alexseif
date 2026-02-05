@@ -40,7 +40,12 @@ class DiagnosticController extends AbstractController
         $email = trim((string) ($data['email'] ?? ''));
         $mobile = trim((string) ($data['mobile'] ?? ''));
         $vision = trim((string) ($data['vision'] ?? ''));
-        $bottleneck = trim((string) ($data['bottleneck'] ?? ''));
+        $story = trim((string) ($data['story'] ?? ($data['bottleneck'] ?? '')));
+        $hasCtoRaw = $data['hasCto'] ?? null;
+        $hasCto = null;
+        if ($hasCtoRaw !== null) {
+            $hasCto = \filter_var($hasCtoRaw, \FILTER_VALIDATE_BOOL, \FILTER_NULL_ON_FAILURE);
+        }
 
         if ($name === '' || $email === '' || $mobile === '') {
             return new JsonResponse([
@@ -57,7 +62,9 @@ class DiagnosticController extends AbstractController
             $submission->setEmail($email);
             $submission->setMobile($mobile);
             $submission->setVision($vision ?: null);
-            $submission->setBottleneck($bottleneck ?: null);
+            $submission->setStory($story ?: null);
+            $submission->setBottleneck($story ?: null);
+            $submission->setHasCto($hasCto ?? false);
             $submission->setSubmittedAt(new \DateTimeImmutable());
 
             $em->persist($submission);
@@ -74,12 +81,13 @@ class DiagnosticController extends AbstractController
                 ->replyTo($email)
                 ->subject(sprintf('[Diagnostic] %s', $name))
                 ->text(sprintf(
-                    "Diagnostic intake from %s\n\nEmail: %s\nMobile: %s\n\nProject Vision:\n%s\n\nPrimary Bottleneck:\n%s",
+                    "Diagnostic intake from %s\n\nEmail: %s\nMobile: %s\nHas CTO/CIO: %s\n\nYour Vision:\n%s\n\nThe Story:\n%s",
                     $name,
                     $email,
                     $mobile,
+                    $hasCto === null ? 'N/A' : ($hasCto ? 'Yes' : 'No'),
                     $vision,
-                    $bottleneck
+                    $story
                 ));
             $mailer->send($mail);
         } catch (\Throwable $e) {

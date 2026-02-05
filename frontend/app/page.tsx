@@ -1,11 +1,13 @@
 "use client";
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { ArrowRight, Server, Shield, Brain, Terminal, Loader2 } from "lucide-react";
+import { ArrowRight, Server, Shield, Brain, Terminal, Loader2, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { useRef, useState } from "react";
 
 const fadeInUp = {
@@ -40,7 +42,14 @@ export default function HomePage() {
   const [formOpen, setFormOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedSuccess, setSubmittedSuccess] = useState(false);
-  const [formData, setFormData] = useState({ name: "", vision: "", bottleneck: "", email: "", mobile: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    hasCto: "",
+    vision: "",
+    story: "",
+  });
   const [formError, setFormError] = useState<string | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -78,10 +87,11 @@ export default function HomePage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
-          vision: formData.vision,
-          bottleneck: formData.bottleneck,
           email: formData.email,
           mobile: formData.mobile,
+          hasCto: formData.hasCto === "yes",
+          vision: formData.vision,
+          story: formData.story,
         }),
       });
       const json = await res.json().catch(() => ({}));
@@ -102,7 +112,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden blueprint-grid">
       {/* Section 1: The Creed (Hero) */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 relative pt-28 md:pt-0 pb-16">
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 relative pt-28 pb-16">
         {/* Decorative grid lines */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
@@ -375,18 +385,55 @@ export default function HomePage() {
                   <span className="text-primary text-xs tracking-[0.4em] uppercase font-mono">Entry Point</span>
                 </div>
 
-                <h3 className="text-foreground text-2xl md:text-4xl font-sans font-light tracking-wide">
-                  Digital Audit &<br />Performance Diagnostic
+                <h3 className="text-foreground text-2xl md:text-4xl font-sans font-light tracking-wide flex flex-col items-center gap-2">
+                  <span>Path Discovery</span>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="text-primary text-2xl md:text-4xl"
+                      style={{ fontFamily: "var(--font-arabic)", letterSpacing: "0.08em" }}
+                    >
+                      تَعَارُف المَسَار
+                    </span>
+                  </div>
                 </h3>
 
-                <p className="text-muted-foreground text-sm md:text-base max-w-lg mx-auto leading-relaxed text-start">
-                  Structured analysis of your current digital infrastructure: architecture, deployment, observability, and failure modes. 
-                  The output is a written technical report with concrete remediation steps and trade-offs.
-                </p>
-
-                <div className="pt-4">
-                  <p className="text-primary text-3xl md:text-4xl font-mono tracking-wider">
-                     200 <span className="text-lg">€</span>
+                <div className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed text-start space-y-4">
+                  <p>
+                    True digital transformation isn&apos;t a solo sprint; it requires a{" "}
+                    <span
+                      className="text-primary text-2xl md:text-3xl"
+                      style={{ fontFamily: "var(--font-arabic)" }}
+                    >
+                      رَفِيق
+                    </span>
+                    .<Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          type="button"
+                          className="inline-flex size-4 items-center justify-center rounded-full border border-primary/70 bg-card/70 text-primary hover:bg-primary hover:text-primary-foreground transition-colors ms-1"
+                          aria-label="What is a Rafiq?"
+                        >
+                          <Info className="h-3.5 w-3.5" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent
+                        side="top"
+                        className="bg-card text-foreground border border-primary/40 shadow-lg space-y-1"
+                      >
+                        <p className="text-3x1 font-mono text-primary">Rafiq</p>
+                        <p className="text-2x1 text-muted-foreground max-w-xs">
+                          Someone who walks the path with you.
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </p>
+                  <p>
+                    This discovery phase is our handshake—a deliberate intake to identify your ultimate goals and your current
+                    state. Together, we map where the friction lies and where the potential is hidden.
+                  </p>
+                  <p>
+                    My mission is to ensure your machine serves your story, not the other way around. After all, the shortest
+                    path between two points is a rewarding experience.
                   </p>
                 </div>
 
@@ -404,7 +451,7 @@ export default function HomePage() {
                       </>
                     ) : (
                       <>
-                        Request Diagnostic
+                        Client Intake
                         <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </>
                     )}
@@ -429,10 +476,11 @@ export default function HomePage() {
                         className="mt-6 pt-6 border-t border-border/60 rounded-lg bg-background/40 backdrop-blur-sm border border-primary/10 shadow-[0_0_24px_rgba(184,134,11,0.06)] space-y-4 p-4 md:p-6 text-left"
                       >
                         <p className="text-primary text-xs tracking-[0.3em] uppercase font-mono mb-1">
-                          Diagnostic Intake
+                          Partner Discovery Intake
                         </p>
                         <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                          Welcome, esteemed guest. Share a few details so we can begin your diagnostic.
+                          Welcome, esteemed guest. Share a few details so we can understand your current state and where you
+                          want to go.
                         </p>
                         <div className="space-y-2">
                           <Label htmlFor="diagnostic-name" className="text-foreground/90 text-sm font-mono tracking-wider">
@@ -476,28 +524,55 @@ export default function HomePage() {
                             required
                           />
                         </div>
+                        <div className="space-y-3 rounded-md border border-border/70 bg-background/60 px-4 py-3">
+                          <Label
+                            htmlFor="diagnostic-has-cto"
+                            className="text-foreground/90 text-sm font-mono tracking-wider"
+                          >
+                            Does your firm currently have a CTO or CIO?
+                          </Label>
+                          <p className="text-xs text-muted-foreground/80 font-mono tracking-wider">
+                            This calibrates whether we approach your diagnostic as an operational refinement or a first
+                            principles redesign.
+                          </p>
+                          <RadioGroup
+                            id="diagnostic-has-cto"
+                            value={formData.hasCto}
+                            onValueChange={(value) => setFormData((d) => ({ ...d, hasCto: value }))}
+                            className="mt-2 grid grid-cols-2 gap-3 md:max-w-xs"
+                          >
+                            <label className="flex items-center gap-2 rounded-md border border-border/70 bg-background/80 px-3 py-2 text-sm cursor-pointer hover:border-primary/70 hover:bg-card/40 transition-colors">
+                              <RadioGroupItem value="yes" aria-label="Yes" />
+                              <span className="font-mono tracking-wider">Yes</span>
+                            </label>
+                            <label className="flex items-center gap-2 rounded-md border border-border/70 bg-background/80 px-3 py-2 text-sm cursor-pointer hover:border-primary/70 hover:bg-card/40 transition-colors">
+                              <RadioGroupItem value="no" aria-label="No" />
+                              <span className="font-mono tracking-wider">No</span>
+                            </label>
+                          </RadioGroup>
+                        </div>
                         <div className="space-y-2">
                           <Label htmlFor="diagnostic-vision" className="text-foreground/90 text-sm font-mono tracking-wider">
-                            Project Vision
+                            Your Vision
                           </Label>
                           <Input
                             id="diagnostic-vision"
                             value={formData.vision}
                             onChange={(e) => setFormData((d) => ({ ...d, vision: e.target.value }))}
-                            placeholder="What are you building?"
+                            placeholder='Focuses on the "Upscale" — where we are going. What is the goal for your business or life?'
                             className="bg-transparent border-border/70 focus-visible:border-primary/60 focus-visible:ring-primary/20 rounded-sm transition-colors"
                             required
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="diagnostic-bottleneck" className="text-foreground/90 text-sm font-mono tracking-wider">
-                            The Primary Bottleneck
+                          <Label htmlFor="diagnostic-story" className="text-foreground/90 text-sm font-mono tracking-wider">
+                            The Story
                           </Label>
                           <Textarea
-                            id="diagnostic-bottleneck"
-                            value={formData.bottleneck}
-                            onChange={(e) => setFormData((d) => ({ ...d, bottleneck: e.target.value }))}
-                            placeholder="Where does it hurt? Architecture, deployment, observability, team…"
+                            id="diagnostic-story"
+                            value={formData.story}
+                            onChange={(e) => setFormData((d) => ({ ...d, story: e.target.value }))}
+                            placeholder='Focuses on the "Rescue" — the friction we are removing so your story can be told clearly.'
                             rows={4}
                             className="bg-transparent border-border/70 focus-visible:border-primary/60 focus-visible:ring-primary/20 rounded-sm transition-colors min-h-[100px] resize-y"
                             required

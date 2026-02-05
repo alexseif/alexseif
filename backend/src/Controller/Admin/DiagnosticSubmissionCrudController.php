@@ -6,6 +6,7 @@ use App\Entity\DiagnosticSubmission;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -32,6 +33,7 @@ class DiagnosticSubmissionCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('email'),
             TextField::new('mobile'),
+            BooleanField::new('hasCto'),
             TextareaField::new('vision')->setMaxLength(80),
             TextareaField::new('bottleneck')->setMaxLength(80),
             DateTimeField::new('submittedAt'),
