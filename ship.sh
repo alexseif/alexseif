@@ -16,7 +16,7 @@ git commit -m "Deployment Sync: $(date)"
 git push origin master
 
 echo "🚢 Shipping archive to server..."
-scp frontend/next_build.tar.gz devops@alexseif.com:/var/www/alexseif.com/frontend/
+scp -v frontend/next_build.tar.gz devops@alexseif.com:/var/www/alexseif.com/frontend/
 
 echo "🛰️  Triggering Server Deployer..."
 ssh devops@alexseif.com "cd /var/www/alexseif.com && ./deployer.sh"
