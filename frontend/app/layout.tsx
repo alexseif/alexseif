@@ -1,8 +1,7 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { Amiri, Inter, Playfair_Display } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import Script from 'next/script' // Import Script component
+import Script from 'next/script'
 import './globals.css'
 
 const _amiri = Amiri({ subsets: ["arabic", "latin"], weight: ["400", "700"], variable: "--font-arabic" });
@@ -43,9 +42,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${_amiri.variable} ${_inter.variable} ${_playfair.variable} font-sans antialiased`}>
         {children}
-        <Analytics />
 
-        {/* Google Analytics 4 - Only renders if GA_ID is provided */}
+        {/* Google Analytics 4 */}
         {GA_ID && (
           <>
             <Script
