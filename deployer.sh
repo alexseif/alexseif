@@ -1,39 +1,41 @@
 #!/bin/bash
-set -e # Stop on any error
+set -e
 
-cd /var/www/alexseif.com
+PROJECT_ROOT="/var/www/alexseif.com"
+cd $PROJECT_ROOT
 
-# 1. Pull latest
+echo "⚔️ Resetting Git..."
 git reset HEAD --hard
 git pull origin master
 
-# --- BACKEND (Symfony) ---
-echo "⚙️  Deploying Symfony Backend..."
+# --- BACKEND ---
+echo "⚙️  Symfony Ops..."
 cd backend
-php8.2 /usr/local/bin/composer dump-env prod
 php8.2 /usr/local/bin/composer install --no-dev --optimize-autoloader
-APP_ENV=prod php8.2 bin/console cache:clear
-APP_ENV=prod php8.2 bin/console cache:warmup
-APP_ENV=prod php8.2 bin/console doctrine:migrations:migrate --no-interaction
+php8.2 bin/console cache:clear --env=prod
 cd ..
 
-# --- FRONTEND (PM2 Management) ---
-echo "🚀 Refreshing Frontend..."
+# --- FRONTEND ---
+echo "🚀 Extracting Frontend..."
 cd frontend
+
+# Load NVM/Node 20
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm use 20
 
-# Install production dependencies
+# Clean old build files to prevent 404/Bad Gateway mismatches
+rm -rf .next public_old
+mv public public_old || true
+
+# Extract the new build
+tar -xzf next_build.tar.gz
+rm next_build.tar.gz
+rm -rf public_old
+
 npm install --production
 
-# Restart or Start the process
-pm2 describe alexseif-frontend > /dev/null
-if [ $? -eq 0 ]; then
-  pm2 restart alexseif-frontend
-else
-  pm2 start npm --name "alexseif-frontend" -- run start
-fi
-cd ..
+echo "♻️ Restarting PM2..."
+pm2 restart alexseif-frontend || pm2 start npm --name "alexseif-frontend" -- start
 
-echo "✅ Deployment Complete."
+echo "✅ Deployment Successful."
