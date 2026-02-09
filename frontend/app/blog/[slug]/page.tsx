@@ -5,7 +5,8 @@ import { fetchPost, fetchPosts } from "@/lib/blog";
 import { renderMarkdown } from "@/lib/markdown";
 import { Metadata } from 'next';
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
+export const revalidate = 60; // Refresh the data every 60 seconds without a rebuild
 
 // Next.js 15+ Params are handled as Promises
 type BlogPostPageProps = {
