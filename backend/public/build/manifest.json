@@ -1,6 +1,8 @@
 {
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
+  "build/admin.css": "/build/admin.css",
+  "build/admin.js": "/build/admin.js",
   "build/home.css": "/build/home.css",
   "build/home.js": "/build/home.js",
   "build/about.css": "/build/about.css",
@@ -18,6 +20,8 @@
   "build/runtime.js": "/build/runtime.js",
   "build/vendors-node_modules_core-js_modules_esnext_iterator_constructor_js-node_modules_core-js_modu-374f7e.js": "/build/vendors-node_modules_core-js_modules_esnext_iterator_constructor_js-node_modules_core-js_modu-374f7e.js",
   "build/vendors-node_modules_chart_js_dist_chart_esm_js.js": "/build/vendors-node_modules_chart_js_dist_chart_esm_js.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_easymde_src_js_easymd-26d1b6.css": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_easymde_src_js_easymd-26d1b6.css",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_easymde_src_js_easymd-26d1b6.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_easymde_src_js_easymd-26d1b6.js",
   "build/images/hero-alex.png": "/build/images/hero-alex.png",
   "build/images/IMG_20231121_070437_479.jpg": "/build/images/IMG_20231121_070437_479.jpg",
   "build/images/Gemini_Generated_Image_h84k5lh84k5lh84k.png": "/build/images/Gemini_Generated_Image_h84k5lh84k5lh84k.png",

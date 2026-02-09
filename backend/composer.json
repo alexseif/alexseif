@@ -44,7 +44,7 @@
     "symfony/ux-chartjs": "^2.13",
     "symfony/validator": "6.*",
     "symfony/web-link": "6.*",
-    "symfony/webpack-encore-bundle": "^1.16",
+    "symfony/webpack-encore-bundle": "^2.4",
     "symfony/yaml": "6.*",
     "twig/extra-bundle": "^2.12|^3.0",
     "twig/intl-extra": "^3.21",

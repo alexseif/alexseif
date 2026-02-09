@@ -10,6 +10,18 @@
         "/build/app.css"
       ]
     },
+    "admin": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_chart_js_dist_chart_esm_js.js",
+        "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_easymde_src_js_easymd-26d1b6.js",
+        "/build/admin.js"
+      ],
+      "css": [
+        "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_easymde_src_js_easymd-26d1b6.css",
+        "/build/admin.css"
+      ]
+    },
     "home": {
       "js": [
         "/build/runtime.js",

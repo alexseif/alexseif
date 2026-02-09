@@ -1,0 +1,34 @@
+.EasyMDEContainer .CodeMirror,
+.EasyMDEContainer .editor-preview,
+.EasyMDEContainer .editor-preview-side {
+  background: #0d0d0d;
+  color: #e8e8e8;
+}
+
+.EasyMDEContainer .CodeMirror {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+.EasyMDEContainer .editor-toolbar {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px 4px 0 0;
+  background: rgba(8, 8, 8, 0.9);
+}
+
+.EasyMDEContainer .editor-toolbar a {
+  color: #b8860b;
+}
+
+.EasyMDEContainer .editor-toolbar a.active,
+.EasyMDEContainer .editor-toolbar a:hover {
+  background: rgba(184, 134, 11, 0.2);
+  color: #e8e8e8;
+}
+
+.EasyMDEContainer .editor-preview pre,
+.EasyMDEContainer .editor-preview-side pre {
+  background: #141414;
+}

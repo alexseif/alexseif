@@ -10,6 +10,7 @@ Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
     .addEntry('app', './assets/app.js')
+    .addEntry('admin', './assets/admin.js')
     .addEntry('home', './assets/home.js')
     .addEntry('about', './assets/about.js')
     .addEntry('wp-optimize', './assets/wp-optimize.js')

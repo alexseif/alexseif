@@ -4,8 +4,10 @@ namespace App\Controller\Admin;
 
 use App\Entity\DiagnosticSubmission;
 use App\Entity\IntakeFormSubmission;
+use App\Entity\Post;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -51,9 +53,16 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('Alex Seif Dashboard');
     }
 
+    public function configureAssets(): Assets
+    {
+        return Assets::new()
+            ->addWebpackEncoreEntry('admin');
+    }
+
     public function configureMenuItems(): iterable
     {
         yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToCrud('Reflections', 'fa fa-book', Post::class);
         yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToCrud('Diagnostic Submissions', 'fa fa-stethoscope', DiagnosticSubmission::class);
         yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
         yield \EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem::linkToCrud('Submissions', 'fa fa-file', IntakeFormSubmission::class);
