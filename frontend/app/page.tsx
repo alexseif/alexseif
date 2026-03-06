@@ -12,10 +12,10 @@ import { useRef, useState } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: [0.22, 1, 0.36, 1] }
   },
 };
 
@@ -56,7 +56,7 @@ export default function HomePage() {
     target: scrollRef,
     offset: ["start end", "end start"]
   });
-  
+
   const mapOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
   const mapScale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
 
@@ -129,9 +129,9 @@ export default function HomePage() {
         >
           {/* Arabic Creed */}
           <motion.div variants={fadeInUp} className="space-y-6">
-            <p 
+            <p
               className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary leading-tight"
-              style={{ 
+              style={{
                 fontFamily: "var(--font-arabic)",
                 fontWeight: 700,
                 textShadow: "0 0 8px rgba(184, 134, 11, 0.35)"
@@ -160,8 +160,8 @@ export default function HomePage() {
           </motion.div>
 
           {/* Tagline */}
-          <motion.p 
-            variants={fadeInUp} 
+          <motion.p
+            variants={fadeInUp}
             className="text-muted-foreground text-base md:text-lg font-sans max-w-xl mx-auto"
           >
             Designing and operating mission-critical systems for over 20 years.
@@ -181,33 +181,33 @@ export default function HomePage() {
       {/* Section 2: The Pedigree (World Map Scroll) */}
       <section ref={scrollRef} className="min-h-[150vh] relative py-20 md:py-28">
         <div className="sticky top-0 h-screen flex items-center justify-center px-6">
-          <motion.div 
+          <motion.div
             style={{ opacity: mapOpacity, scale: mapScale }}
             className="max-w-6xl w-full relative"
           >
             {/* World Map SVG */}
             <div className="relative w-full aspect-[2/1] bg-card/30 border border-border/50 rounded overflow-hidden">
               {/* Simplified world map outline */}
-              <svg 
-                viewBox="0 0 100 50" 
+              <svg
+                viewBox="0 0 100 50"
                 className="w-full h-full"
                 preserveAspectRatio="xMidYMid meet"
               >
                 {/* Continents simplified paths */}
-                <path 
+                <path
                   d="M15,20 Q20,15 30,18 T45,15 Q50,12 55,15 T70,18 Q75,20 80,18 M10,25 Q15,22 25,25 T40,22 M50,25 Q55,22 65,25 T80,22 M20,30 Q30,28 40,32 M55,30 Q65,28 75,32 M25,35 Q35,33 45,38 M60,35 Q70,33 78,38"
                   fill="none"
                   stroke="rgba(184, 134, 11, 0.15)"
                   strokeWidth="0.3"
                 />
-                
+
                 {/* Country pulse points */}
                 {countries.map((country, index) => (
                   <g key={country.code}>
                     {/* Outer pulse ring */}
-                    <circle 
-                      cx={country.x} 
-                      cy={country.y} 
+                    <circle
+                      cx={country.x}
+                      cy={country.y}
                       r="1"
                       fill="none"
                       stroke="rgba(184, 134, 11, 0.4)"
@@ -216,9 +216,9 @@ export default function HomePage() {
                       style={{ animationDelay: `${index * 0.3}s` }}
                     />
                     {/* Core point */}
-                    <circle 
-                      cx={country.x} 
-                      cy={country.y} 
+                    <circle
+                      cx={country.x}
+                      cy={country.y}
                       r="0.5"
                       fill="#B8860B"
                     />
@@ -226,7 +226,7 @@ export default function HomePage() {
                 ))}
 
                 {/* Connection lines */}
-                <path 
+                <path
                   d="M53,38 L58,42 M53,38 L55,42 M53,38 L65,25 M53,38 L45,35 M53,38 L50,35 M53,38 L56,40"
                   fill="none"
                   stroke="rgba(184, 134, 11, 0.2)"
@@ -241,8 +241,8 @@ export default function HomePage() {
                   <div
                     key={country.code}
                     className="absolute text-xs text-primary/70 font-mono tracking-wider"
-                    style={{ 
-                      left: `${country.x}%`, 
+                    style={{
+                      left: `${country.x}%`,
                       top: `${country.y}%`,
                       transform: 'translate(-50%, 150%)'
                     }}
@@ -254,7 +254,7 @@ export default function HomePage() {
             </div>
 
             {/* Text overlay */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
@@ -322,7 +322,7 @@ export default function HomePage() {
                   Mission Critical Stack
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Hardened DevOps workflows and private infrastructure on Digital Ocean, 
+                  Hardened DevOps workflows and private infrastructure on Digital Ocean,
                   designed for 99.9% uptime under realistic production workloads.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
@@ -344,7 +344,7 @@ export default function HomePage() {
                   The Intelligence Layer
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  AI integration with explicit data residency and governance controls—your models, your data, 
+                  AI integration with explicit data residency and governance controls—your models, your data,
                   deployed on infrastructure you control.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
@@ -369,7 +369,7 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
           >
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               className="relative border border-border bg-card/30 p-6 md:p-10 overflow-hidden"
             >
@@ -436,13 +436,22 @@ export default function HomePage() {
                     path between two points is a rewarding experience.
                   </p>
                 </div>
-
-                <div className="pt-6">
-                  <Button 
-                    size="lg" 
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80 w-full sm:w-auto"
+                  >
+                    <a href="https://shop.alexseif.com" target="_blank">
+                      Shop
+                      <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                  <Button
+                    size="lg"
                     onClick={handleRequestDiagnosticClick}
                     disabled={isSubmitting}
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80 w-full sm:w-auto"
                   >
                     {isSubmitting ? (
                       <>
@@ -457,7 +466,6 @@ export default function HomePage() {
                     )}
                   </Button>
                 </div>
-
                 {/* Animated Diagnostic Intake Form */}
                 <AnimatePresence initial={false}>
                   {formOpen && !submittedSuccess && (
@@ -648,7 +656,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
-              <p 
+              <p
                 className="font-serif text-2xl text-primary"
                 style={{ fontFamily: "var(--font-arabic)" }}
               >
@@ -658,7 +666,7 @@ export default function HomePage() {
                 Alex Seif
               </p>
             </div>
-            
+
             <div className="flex items-center gap-8 text-xs text-muted-foreground/60 font-mono">
               <span>EG</span>
               <span>AE</span>
@@ -668,7 +676,7 @@ export default function HomePage() {
               <span>GR</span>
               <span>KW</span>
             </div>
-            
+
             <p className="text-muted-foreground/40 text-xs font-mono">
               © MMXXVI
             </p>
