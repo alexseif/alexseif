@@ -1,21 +1,17 @@
 "use client";
 
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { ArrowRight, Server, Shield, Brain, Terminal, Loader2, Info } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Server, Shield, Brain, Terminal, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 1, ease: [0.22, 1, 0.36, 1] as any }
   },
 };
 
@@ -33,24 +29,9 @@ const countries = [
   { name: "Kuwait", code: "KW", x: 56, y: 40 },
 ];
 
-const API_DIAGNOSTIC = "https://api.alexseif.com/api/diagnostic";
 
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const thankYouRef = useRef<HTMLElement>(null);
-  const formSectionRef = useRef<HTMLDivElement>(null);
-  const [formOpen, setFormOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submittedSuccess, setSubmittedSuccess] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-    hasCto: "",
-    vision: "",
-    story: "",
-  });
-  const [formError, setFormError] = useState<string | null>(null);
 
   const { scrollYProgress } = useScroll({
     target: scrollRef,
@@ -59,55 +40,6 @@ export default function HomePage() {
 
   const mapOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
   const mapScale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
-
-  const scrollToThankYou = () => {
-    thankYouRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
-
-  const scrollToForm = () => {
-    formSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
-
-  const handleRequestDiagnosticClick = () => {
-    if (formOpen) {
-      scrollToForm();
-    } else {
-      setFormOpen(true);
-      setTimeout(scrollToForm, 350);
-    }
-  };
-
-  const handleDiagnosticSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormError(null);
-    setIsSubmitting(true);
-    try {
-      const res = await fetch(API_DIAGNOSTIC, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          mobile: formData.mobile,
-          hasCto: formData.hasCto === "yes",
-          vision: formData.vision,
-          story: formData.story,
-        }),
-      });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setFormError(json?.message || "Request failed. Please try again.");
-        return;
-      }
-      setSubmittedSuccess(true);
-      setFormOpen(false);
-      setTimeout(scrollToThankYou, 400);
-    } catch (err) {
-      setFormError("Network or CORS error. Please check your connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <main className="min-h-screen bg-background overflow-x-hidden blueprint-grid">
@@ -360,8 +292,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 4: The Diagnostic (Entry Point) */}
-      <section ref={formSectionRef} className="py-14 md:py-20 px-6 relative">
+      <section className="py-14 md:py-20 px-6 relative">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial="hidden"
@@ -433,7 +364,7 @@ export default function HomePage() {
                   </p>
                   <p>
                     My mission is to ensure your machine serves your story, not the other way around. After all, the shortest
-                    path between two points is a rewarding experience.
+                    path between two points is a <strike>straight line</strike> rewarding experience.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -442,214 +373,18 @@ export default function HomePage() {
                     size="lg"
                     className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80 w-full sm:w-auto"
                   >
-                    <a href="https://shop.alexseif.com" target="_blank">
-                      Shop
+                    <a href="https://shop.alexseif.com/products/48-hour-semantic-audit" target="_blank">
+                      Book Audit
                       <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
-                  <Button
-                    size="lg"
-                    onClick={handleRequestDiagnosticClick}
-                    disabled={isSubmitting}
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80 w-full sm:w-auto"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-3 h-4 w-4 animate-spin" />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        Client Intake
-                        <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </Button>
                 </div>
-                {/* Animated Diagnostic Intake Form */}
-                <AnimatePresence initial={false}>
-                  {formOpen && !submittedSuccess && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <motion.form
-                        initial={{ y: 20 }}
-                        animate={{ y: 0 }}
-                        transition={{ delay: 0.15, duration: 0.4 }}
-                        onSubmit={handleDiagnosticSubmit}
-                        className="mt-6 pt-6 border-t border-border/60 rounded-lg bg-background/40 backdrop-blur-sm border border-primary/10 shadow-[0_0_24px_rgba(184,134,11,0.06)] space-y-4 p-4 md:p-6 text-left"
-                      >
-                        <p className="text-primary text-xs tracking-[0.3em] uppercase font-mono mb-1">
-                          Partner Discovery Intake
-                        </p>
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                          Welcome, esteemed guest. Share a few details so we can understand your current state and where you
-                          want to go.
-                        </p>
-                        <div className="space-y-2">
-                          <Label htmlFor="diagnostic-name" className="text-foreground/90 text-sm font-mono tracking-wider">
-                            Name
-                          </Label>
-                          <Input
-                            id="diagnostic-name"
-                            type="text"
-                            value={formData.name}
-                            onChange={(e) => setFormData((d) => ({ ...d, name: e.target.value }))}
-                            placeholder="Your name"
-                            className="bg-transparent border-border/70 focus-visible:border-primary/60 focus-visible:ring-primary/20 rounded-sm transition-colors"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="diagnostic-email" className="text-foreground/90 text-sm font-mono tracking-wider">
-                            Email
-                          </Label>
-                          <Input
-                            id="diagnostic-email"
-                            type="email"
-                            value={formData.email}
-                            onChange={(e) => setFormData((d) => ({ ...d, email: e.target.value }))}
-                            placeholder="you@example.com"
-                            className="bg-transparent border-border/70 focus-visible:border-primary/60 focus-visible:ring-primary/20 rounded-sm transition-colors"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="diagnostic-mobile" className="text-foreground/90 text-sm font-mono tracking-wider">
-                            Mobile
-                          </Label>
-                          <Input
-                            id="diagnostic-mobile"
-                            type="tel"
-                            value={formData.mobile}
-                            onChange={(e) => setFormData((d) => ({ ...d, mobile: e.target.value }))}
-                            placeholder="+20 123 456 7890"
-                            className="bg-transparent border-border/70 focus-visible:border-primary/60 focus-visible:ring-primary/20 rounded-sm transition-colors"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-3 rounded-md border border-border/70 bg-background/60 px-4 py-3">
-                          <Label
-                            htmlFor="diagnostic-has-cto"
-                            className="text-foreground/90 text-sm font-mono tracking-wider"
-                          >
-                            Does your firm currently have a CTO or CIO?
-                          </Label>
-                          <p className="text-xs text-muted-foreground/80 font-mono tracking-wider">
-                            This calibrates whether we approach your diagnostic as an operational refinement or a first
-                            principles redesign.
-                          </p>
-                          <RadioGroup
-                            id="diagnostic-has-cto"
-                            value={formData.hasCto}
-                            onValueChange={(value) => setFormData((d) => ({ ...d, hasCto: value }))}
-                            className="mt-2 grid grid-cols-2 gap-3 md:max-w-xs"
-                          >
-                            <label className="flex items-center gap-2 rounded-md border border-border/70 bg-background/80 px-3 py-2 text-sm cursor-pointer hover:border-primary/70 hover:bg-card/40 transition-colors">
-                              <RadioGroupItem value="yes" aria-label="Yes" />
-                              <span className="font-mono tracking-wider">Yes</span>
-                            </label>
-                            <label className="flex items-center gap-2 rounded-md border border-border/70 bg-background/80 px-3 py-2 text-sm cursor-pointer hover:border-primary/70 hover:bg-card/40 transition-colors">
-                              <RadioGroupItem value="no" aria-label="No" />
-                              <span className="font-mono tracking-wider">No</span>
-                            </label>
-                          </RadioGroup>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="diagnostic-vision" className="text-foreground/90 text-sm font-mono tracking-wider">
-                            Your Vision
-                          </Label>
-                          <Input
-                            id="diagnostic-vision"
-                            value={formData.vision}
-                            onChange={(e) => setFormData((d) => ({ ...d, vision: e.target.value }))}
-                            placeholder='Focuses on the "Upscale" — where we are going. What is the goal for your business or life?'
-                            className="bg-transparent border-border/70 focus-visible:border-primary/60 focus-visible:ring-primary/20 rounded-sm transition-colors"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="diagnostic-story" className="text-foreground/90 text-sm font-mono tracking-wider">
-                            The Story
-                          </Label>
-                          <Textarea
-                            id="diagnostic-story"
-                            value={formData.story}
-                            onChange={(e) => setFormData((d) => ({ ...d, story: e.target.value }))}
-                            placeholder='Focuses on the "Rescue" — the friction we are removing so your story can be told clearly.'
-                            rows={4}
-                            className="bg-transparent border-border/70 focus-visible:border-primary/60 focus-visible:ring-primary/20 rounded-sm transition-colors min-h-[100px] resize-y"
-                            required
-                          />
-                        </div>
-                        {formError && (
-                          <p className="text-destructive text-sm font-mono">{formError}</p>
-                        )}
-                        <div className="flex gap-4 pt-2">
-                          <Button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-8"
-                          >
-                            {isSubmitting ? (
-                              <Loader2 className="h-4 w-4 animate-spin" />
-                            ) : (
-                              "Send"
-                            )}
-                          </Button>
-                          <Button
-                            type="button"
-                            variant="outline"
-                            onClick={() => setFormOpen(false)}
-                            disabled={isSubmitting}
-                            className="font-mono text-sm tracking-wider border-border/70"
-                          >
-                            Cancel
-                          </Button>
-                        </div>
-                      </motion.form>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Thank You (only after diagnostic submit) */}
-      {submittedSuccess && (
-        <section
-          ref={thankYouRef}
-          id="thank-you"
-          className="min-h-[60vh] py-14 md:py-20 px-6 flex flex-col items-center justify-center relative"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center max-w-2xl space-y-8"
-          >
-            <div className="flex justify-center">
-              <div className="w-12 h-px bg-primary/50" />
-              <span className="text-primary text-xs tracking-[0.4em] uppercase font-mono mx-4">
-                Diagnostic Submitted
-              </span>
-              <div className="w-12 h-px bg-primary/50" />
-            </div>
-            <h2 className="text-foreground text-3xl md:text-5xl font-sans font-light tracking-wide">
-              Thank you.
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              Your diagnostic request has been received. The story continues—we&apos;ll be in touch with next steps.
-            </p>
-          </motion.div>
-        </section>
-      )}
 
       {/* Footer */}
       <footer className="py-16 px-6 border-t border-border/30">
