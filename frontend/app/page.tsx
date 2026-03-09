@@ -376,7 +376,7 @@ export default function HomePage() {
                     size="lg"
                     className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80 w-full sm:w-auto"
                   >
-                    <a href="https://shop.alexseif.com/products/48-hour-semantic-audit" target="_blank">
+                    <a href="https://shop.alexseif.com/products/intake-technical-blueprint" target="_blank">
                       Book Audit
                       <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </a>
