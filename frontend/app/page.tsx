@@ -92,7 +92,7 @@ export default function HomePage() {
               <div className="h-px w-12 bg-primary/50" />
             </div>
             <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase">
-              Software Architect
+              Software Architect | Technical Partner
             </p>
           </motion.div>
 
@@ -199,10 +199,10 @@ export default function HomePage() {
               className="text-center mt-12 space-y-6"
             >
               <h2 className="text-foreground text-2xl md:text-4xl font-sans font-light tracking-wide">
-                Applied across eight countries, always to specification.
+                Applied across the globe, always to specification.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-                Experience spans Egypt, UAE, KSA, Russia, Spain, Greece, and Kuwait—systems where failure has material cost.
+                Experience spanning Egypt, Kuwait, UAE, KSA, EU, UK, Australia, Canada, USA - Systems where failure has material cost. I maintain long-standing relations with founders who seek to continuously grow.
               </p>
             </motion.div>
           </motion.div>
@@ -228,20 +228,20 @@ export default function HomePage() {
 
             {/* Technical Grid */}
             <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-px bg-border">
-              {/* Architectural Build */}
+              {/* The Core Architecture */}
               <div className="bg-background p-10 space-y-6 group hover:bg-card/50 transition-colors duration-500">
                 <div className="flex items-center gap-4">
                   <Server className="h-5 w-5 text-primary" />
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">01</span>
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                  Architectural Build
+                  The Core Architecture
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Custom web platforms using Next.js, Symfony, and PHP, with architecture engineered for scale, security, and operational clarity.
+                  The foundation of your digital authority. Proven web structures built on 20 years of architectural mastery, delivering absolute operational resilience.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
-                  {["Next.js", "Symfony", "PHP"].map((tech) => (
+                  {["Trust", "Foundation", "Mastery"].map((tech) => (
                     <span key={tech} className="text-xs text-muted-foreground/60 font-mono border border-border/50 px-2 py-1">
                       {tech}
                     </span>
@@ -249,21 +249,20 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Mission Critical Stack */}
+              {/* The Organic Architecture */}
               <div className="bg-background p-10 space-y-6 group hover:bg-card/50 transition-colors duration-500">
                 <div className="flex items-center gap-4">
                   <Shield className="h-5 w-5 text-primary" />
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">02</span>
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                  Mission Critical Stack
+                  The Organic Architecture
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Hardened DevOps workflows and private infrastructure on Digital Ocean,
-                  designed for 99.9% uptime under realistic production workloads.
+                  Semantic and GEO-spatial intelligence. Engineered for ecosystem dominance, ensuring your narrative is surfaced and sustained across global networks.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
-                  {["DevOps", "DO", "99.9%"].map((tech) => (
+                  {["SEO", "Semantic", "Dominance"].map((tech) => (
                     <span key={tech} className="text-xs text-muted-foreground/60 font-mono border border-border/50 px-2 py-1">
                       {tech}
                     </span>
@@ -281,11 +280,10 @@ export default function HomePage() {
                   The Intelligence Layer
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  AI integration with explicit data residency and governance controls—your models, your data,
-                  deployed on infrastructure you control.
+                  Requirement elicitation and high-stakes problem solving. We deploy AI only where it creates material leverage and strategic advantage.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
-                  {["AI/ML", "Data", "Sovereignty"].map((tech) => (
+                  {["AI/ML", "Strategy", "Leverage"].map((tech) => (
                     <span key={tech} className="text-xs text-muted-foreground/60 font-mono border border-border/50 px-2 py-1">
                       {tech}
                     </span>
@@ -322,7 +320,7 @@ export default function HomePage() {
                 </div>
 
                 <h3 className="text-foreground text-2xl md:text-4xl font-sans font-light tracking-wide flex flex-col items-center gap-2">
-                  <span>Path Discovery</span>
+                  <span>Technical Blueprint</span>
                   <div className="flex items-center gap-2">
                     <span
                       className="text-primary text-2xl md:text-4xl"
@@ -369,7 +367,7 @@ export default function HomePage() {
                   </p>
                   <p>
                     My mission is to ensure your machine serves your story, not the other way around. After all, the shortest
-                    path between two points is a <strike>straight line</strike> rewarding experience.
+                    path between two points is a <s>straight line</s> rewarding experience.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -435,7 +433,7 @@ export default function HomePage() {
         <div className="max-w-xl w-full bg-background/60 backdrop-blur-xl border border-primary/20 rounded-full px-6 py-4 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center justify-between gap-4 pointer-events-auto relative overflow-hidden group">
           {/* Subtle blueprint grid effect for the footer */}
           <div className="absolute inset-0 opacity-10 pointer-events-none blueprint-grid" />
-          
+
           <div className="flex flex-col min-w-0 relative z-10">
             <span className="text-[10px] text-primary/60 font-mono tracking-[0.2em] uppercase mb-0.5">Navigation // Intake</span>
             <h4 className="text-foreground text-xs md:text-sm font-sans font-light tracking-wide truncate">
