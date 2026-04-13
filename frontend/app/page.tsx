@@ -75,10 +75,10 @@ export default function HomePage() {
               }}
               dir="rtl"
             >
-              مَنْ ارْتَضَى الأَجْرَ أَحْسَنَ العَمَلَ
+              أهلاً و سهلاً
             </p>
             <p className="text-muted-foreground text-sm md:text-base tracking-[0.4em] uppercase font-sans">
-              He who accepts the fee, must perfect the work.
+              Welcome
             </p>
           </motion.div>
 
@@ -92,7 +92,9 @@ export default function HomePage() {
               <div className="h-px w-12 bg-primary/50" />
             </div>
             <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase">
-              Software Architect | Technical Partner
+              Software Architect <br />
+              Technical Partner <br />
+              Storyteller
             </p>
           </motion.div>
 
