@@ -11,3 +11,4 @@ frontend/.env.local
 
 # OS
 .DS_Store
+backend/var/log/dev.log

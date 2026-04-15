@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Server, Shield, Brain, Terminal, Info } from "lucide-react";
+import { ArrowRight, Server, Shield, Brain, Terminal, Info, Mail, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { useRef } from "react";
@@ -41,10 +41,33 @@ export default function HomePage() {
 
   const mapOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
   const mapScale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
-
   const footerOpacity = useTransform(scrollY, [400, 600], [0, 1]);
   const footerY = useTransform(scrollY, [400, 600], [50, 0]);
   const footerScale = useTransform(scrollY, [400, 600], [0.95, 1]);
+
+  const openCalendly = (e?: React.MouseEvent) => {
+    e?.preventDefault();
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: "https://calendly.com/alex-seif/60-hour-session",
+      });
+    }
+    return false;
+  };
+
+  const handleContact = (e: React.MouseEvent, type: 'email' | 'whatsapp') => {
+    e.preventDefault();
+    // Simple bot protection: string reconstruction
+    if (type === 'email') {
+      const user = "alex.seif";
+      const domain = "gmail.com";
+      window.location.href = `mailto:${user}@${domain}`;
+    } else {
+      const country = "20";
+      const rest = "1004006332";
+      window.open(`https://wa.me/${country}${rest}`, '_blank');
+    }
+  };
 
   return (
     <main className="min-h-screen bg-background overflow-x-hidden blueprint-grid">
@@ -94,8 +117,39 @@ export default function HomePage() {
             <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase">
               Software Architect <br />
               Technical Partner <br />
-              Storyteller
+              Author
             </p>
+          </motion.div>
+
+          {/* Contact Links */}
+          <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-2">
+            <button
+              onClick={(e) => handleContact(e, 'email')}
+              className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
+              <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
+                <Mail className="h-3.5 w-3.5" />
+              </div>
+              <span className="text-[10px] font-mono tracking-[0.2em] uppercase">Email</span>
+            </button>
+            <button
+              onClick={(e) => handleContact(e, 'whatsapp')}
+              className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
+              <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
+                <MessageSquare className="h-3.5 w-3.5" />
+              </div>
+              <span className="text-[10px] font-mono tracking-[0.2em] uppercase">WhatsApp</span>
+            </button>
+            <button
+              onClick={() => document.getElementById('path-discovery')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
+              <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
+                <ArrowRight className="h-3.5 w-3.5 rotate-90 sm:rotate-0" />
+              </div>
+              <span className="text-[10px] font-mono tracking-[0.2em] uppercase">Path Discovery</span>
+            </button>
           </motion.div>
 
           {/* Tagline */}
@@ -103,7 +157,9 @@ export default function HomePage() {
             variants={fadeInUp}
             className="text-muted-foreground text-base md:text-lg font-sans max-w-xl mx-auto"
           >
-            Designing and operating mission-critical systems for over 20 years.
+            From conception to mission-critical.
+            Two decades of architecting web systems that persevere,
+            no matter the scale.
           </motion.p>
 
           {/* Scroll indicator */}
@@ -374,14 +430,12 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
                   <Button
-                    asChild
+                    onClick={openCalendly}
                     size="lg"
                     className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80 w-full sm:w-auto"
                   >
-                    <a href="https://shop.alexseif.com/products/intake-technical-blueprint" target="_blank">
-                      Book Audit
-                      <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    Path Discovery
+                    <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </div>
@@ -444,17 +498,12 @@ export default function HomePage() {
           </div>
 
           <Button
-            asChild
+            onClick={openCalendly}
             size="sm"
             className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-[10px] tracking-widest uppercase h-9 px-5 shrink-0 relative z-10"
           >
-            <a href="#path-discovery" onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('path-discovery')?.scrollIntoView({ behavior: 'smooth' });
-            }}>
-              Discover
-              <ArrowRight className="ml-2 h-3.5 w-3.5" />
-            </a>
+            Path Discovery
+            <ArrowRight className="ml-2 h-3.5 w-3.5" />
           </Button>
         </div>
       </motion.div>
