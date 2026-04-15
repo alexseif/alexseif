@@ -378,7 +378,7 @@ export default function HomePage() {
                 </div>
 
                 <h3 className="text-foreground text-2xl md:text-4xl font-sans font-light tracking-wide flex flex-col items-center gap-2">
-                  <span>Technical Blueprint</span>
+                  <span>Path Discovery</span>
                   <div className="flex items-center gap-2">
                     <span
                       className="text-primary text-2xl md:text-4xl"
