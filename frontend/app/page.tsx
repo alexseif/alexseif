@@ -49,7 +49,7 @@ export default function HomePage() {
     e?.preventDefault();
     if ((window as any).Calendly) {
       (window as any).Calendly.initPopupWidget({
-        url: "https://calendly.com/alex-seif/60-hour-session",
+        url: "https://calendly.com/alex-seif/path-discovery",
       });
     }
     return false;
