@@ -8,16 +8,6 @@ echo "⚔️ Resetting Git..."
 git reset HEAD --hard
 git pull origin master
 
-# --- BACKEND ---
-echo "⚙️  Symfony Ops..."
-cd backend
-# Run install first so Flex/plugins are available for dump-env
-php8.2 /usr/local/bin/composer install --no-dev --optimize-autoloader
-php8.2 /usr/local/bin/composer dump-env prod
-APP_ENV=prod php8.2 bin/console cache:clear
-APP_ENV=prod php8.2 bin/console cache:warmup
-APP_ENV=prod php8.2 bin/console doctrine:migrations:migrate --no-interaction
-cd ..
 
 # --- FRONTEND ---
 echo "🏗️ Building Frontend on Server..."
