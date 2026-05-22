@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Server, Shield, Brain, Terminal, Info, Mail, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { StatCounter } from "@/components/stat-counter";
 import { useRef } from "react";
 
 const fadeInUp = {
@@ -266,6 +267,9 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Stat Counter Component */}
+      <StatCounter />
 
       {/* Section 3: The Offering (Technical Stack Grid) */}
       <section className="py-14 md:py-20 px-6 relative">
