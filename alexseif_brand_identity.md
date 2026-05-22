@@ -16,8 +16,8 @@ The typographic system relies on a high-contrast combination of modern sans-seri
 ## 3. Color Palette
 The color system is built around a high-contrast, dark-mode-first aesthetic (Tech-Noir), punctuated by a signature metallic accent.
 
-*   **Background (Dark):** Deep blacks and very dark greys (`oklch` very low lightness). Represents the terminal, the blueprint, and the foundation.
-*   **Foreground (Light):** Crisp whites and light greys for text readability.
+*   **Background (Dark):** Deep blacks #050505 and very dark greys (`oklch` very low lightness). Represents the terminal, the blueprint, and the foundation.
+*   **Foreground (Light):** Crisp whites #e8e8e8 and light greys for text readability.
 *   **Signature Accent (Dark Goldenrod - #B8860B):** Used strategically for map points, text shadows (glowing effects), and key interactive elements. This color adds a premium, established, and "pedigree" feel to the otherwise stark technical palette.
 *   **Muted Elements:** Translucent greys (`text-muted-foreground`) used for secondary text, borders, and grid lines to establish depth without clutter.
 
