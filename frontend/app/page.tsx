@@ -119,6 +119,17 @@ export default function HomePage() {
               Software Architect <br />
               Technical Partner
             </p>
+          </motion.div>  <
+            motion.div variants={fadeInUp} className="space-y-3 pt-8">
+            <div className="flex items-center justify-center gap-4 mb-12">
+              <p className="text-foreground/70 text-md tracking-[0.15em] ">
+                Because of <strong className="text-primary">20+ yrs</strong> building the web;<br />
+                Realize that most problems are very simple;<br />
+                Imagine solutions that are also very simple;<br />
+                And so Remember the most valuable things in life<br />
+                Become the most simple things.
+              </p>
+            </div>
           </motion.div>
 
           {/* Contact Links */}
@@ -513,14 +524,14 @@ export default function HomePage() {
           <div className="flex flex-col min-w-0 relative z-10">
             <span className="text-[10px] text-primary/60 font-mono tracking-[0.2em] uppercase mb-0.5">Navigation // Intake</span>
             <h4 className="text-foreground text-xs md:text-sm font-sans font-light tracking-wide truncate">
-              The Path Discovery: Intake & Technical Blueprint
+              The Path Discovery: Client intake
             </h4>
           </div>
 
           <Button
             onClick={openCalendly}
             size="sm"
-            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-[10px] tracking-widest uppercase h-9 px-5 shrink-0 relative z-10"
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-[10px] tracking-widest uppercase h-9 has-[>svg]:px-5 px-5 shrink-0 relative z-10"
           >
             Path Discovery
             <ArrowRight className="ml-2 h-3.5 w-3.5" />
