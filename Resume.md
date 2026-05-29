@@ -1,4 +1,4 @@
-
+﻿
 # Alex Seif | Systems Architect & Technical Partner | alexseif.com | alex.seif@gmail.com | +201004006332 | linkedin.com/in/alexseif/
 
 ## EXECUTIVE SUMMARY
@@ -74,8 +74,12 @@ _(Additional Project Role Integrated for Metrics Mapping)_ **Wallety**
 
 ## TECHNICAL STACK INVENTORY
 
--   **Languages & Frameworks:** PHP, Symfony Framework, Drupal Enterprise, WordPress Core, WooCommerce.
--   **Architecture & DevOps:** Headless Architecture, Decoupled Systems, Asynchronous Webhooks, Fail-Safe Queue Management, Asset Compression Pipelines, Mobile-First Design, Web Performance Tuning (SpeedIndex/Core Web Vitals).
--   **Database & Integrations:** Database Normalization, Relational Schema Modeling, Custom API Microservices, B2B E-Commerce Systems, Geo-Spatial Mapping/Routing APIs, Multi-faceted Filtering Engines, Secure Local Payment Integrations.
 
-----------
+### TECHNICAL STACK INVENTORY
+
+* **Languages & Frameworks:** PHP, Symfony Framework, Drupal Enterprise, WordPress Core, WooCommerce, PSR Standards (PSR-1, PSR-2, PSR-4, PSR-12).
+* **Cloud & Infrastructure Engineering:** Amazon Web Services (AWS Ecosystem - EC2, S3, RDS, IAM), DigitalOcean (Droplets, Spaces), High-Availability Load Balancers, Advanced GitHub Workflow & Version Control Strategy, CI/CD Pipeline Deployment, Linux Server Administration, Digital Infrastructure Hardening.
+* **Architecture & DevOps:** Headless Architecture, Decoupled Systems, Asynchronous Webhooks, Fail-Safe Queue Management, Asset Compression Pipelines, Mobile-First Design, Web Performance Tuning (SpeedIndex/Core Web Vitals).
+* **Methodologies & Quality Assurance:** Test-Driven Development (TDD), Behavior-Driven Development (BDD), Functional & Unit Testing, Requirement Elicitation, Agile Scrum Methodologies.
+* **Security, Database & Compliance:** PCI-DSS Compliance Frameworks, Financial Transaction Hardening, CyberSecurity Protocols, Database Normalization, Relational Schema Modeling, Custom API Microservices, B2B E-Commerce Systems, Geo-Spatial Mapping/Routing APIs, Multi-faceted Filtering Engines, Secure Local Payment Integrations.
+---

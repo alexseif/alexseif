@@ -91,7 +91,7 @@ export default function HomePage() {
           {/* Arabic Creed */}
           <motion.div variants={fadeInUp} className="space-y-6">
             <p
-              className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary leading-tight"
+              className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary/90 leading-tight"
               style={{
                 fontFamily: "var(--font-arabic)",
                 fontWeight: 700,
@@ -101,24 +101,23 @@ export default function HomePage() {
             >
               أهلاً و سهلاً
             </p>
-            <p className="text-muted-foreground text-sm md:text-base tracking-[0.4em] uppercase font-sans">
+            <p className="text-foreground/70 tracking-[0.4em] uppercase font-sans">
               Welcome
             </p>
           </motion.div>
 
           {/* Name & Title */}
           <motion.div variants={fadeInUp} className="space-y-3 pt-8">
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4 mb-12">
               <div className="h-px w-12 bg-primary/50" />
-              <h1 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light">
+              <h1 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
                 ALEX SEIF
               </h1>
               <div className="h-px w-12 bg-primary/50" />
             </div>
-            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase">
+            <p className="text-foreground/70 text-md tracking-[0.3em] uppercase">
               Software Architect <br />
-              Technical Partner <br />
-              Author
+              Technical Partner
             </p>
           </motion.div>
 
@@ -126,60 +125,68 @@ export default function HomePage() {
           <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-2">
             <button
               onClick={(e) => handleContact(e, 'email')}
-              className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
             >
               <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
                 <Mail className="h-3.5 w-3.5" />
               </div>
-              <span className="text-[10px] font-mono tracking-[0.2em] uppercase">Email</span>
+              <span className="text-md font-mono tracking-[0.2em] uppercase">Email</span>
             </button>
             <button
               onClick={(e) => handleContact(e, 'whatsapp')}
-              className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
             >
               <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
                 <MessageSquare className="h-3.5 w-3.5" />
               </div>
-              <span className="text-[10px] font-mono tracking-[0.2em] uppercase">WhatsApp</span>
+              <span className="text-md font-mono tracking-[0.2em] uppercase">WhatsApp</span>
             </button>
             <button
               onClick={() => document.getElementById('path-discovery')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
             >
               <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
                 <ArrowRight className="h-3.5 w-3.5 rotate-90 sm:rotate-0" />
               </div>
-              <span className="text-[10px] font-mono tracking-[0.2em] uppercase">Path Discovery</span>
+              <span className="text-md font-mono tracking-[0.2em] uppercase">Path Discovery</span>
             </button>
           </motion.div>
-
-          {/* Tagline */}
-          <motion.p
-            variants={fadeInUp}
-            className="text-muted-foreground text-base md:text-lg font-sans max-w-xl mx-auto"
-          >
-            From conception to mission-critical.
-            Two decades of architecting web systems that persevere,
-            no matter the scale.
-          </motion.p>
 
           {/* Scroll indicator */}
           <motion.div
             variants={fadeInUp}
             className="pt-16 flex flex-col items-center gap-3"
           >
-            <span className="text-xs text-muted-foreground/60 tracking-[0.3em] uppercase">Scroll</span>
+            <span className="text-xs text-foreground/70 tracking-[0.3em] uppercase">Scroll</span>
             <div className="w-px h-16 bg-gradient-to-b from-primary/60 to-transparent" />
           </motion.div>
         </motion.div>
       </section>
 
+
       {/* Section 2: The Pedigree (World Map Scroll) */}
-      <section ref={scrollRef} className="min-h-[150vh] relative py-20 md:py-28">
-        <div className="sticky top-0 h-screen flex items-center justify-center px-6">
+      <section ref={scrollRef} className="min-h-[70vh] md:min-h-[100vh] relative py-20pb-28">
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Tagline */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
+            className="space-y-16 md:space-y-24"
+          >
+            <motion.div variants={fadeInUp} className="text-center space-y-4">
+              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// Foundation</p>
+              <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
+                Software Architect
+              </h2>
+            </motion.div>
+          </motion.div>
+        </div>
+        <div className="sticky top-0 h-[40vh] md:h-[70vh] flex items-center justify-center px-6">
           <motion.div
             style={{ opacity: mapOpacity, scale: mapScale }}
-            className="max-w-6xl w-full relative"
+            className="max-w-8xl w-full relative"
           >
             {/* World Map SVG */}
             <div className="relative w-full aspect-[2/1] bg-card/30 border border-border/50 rounded overflow-hidden">
@@ -225,7 +232,7 @@ export default function HomePage() {
                 <path
                   d="M53,38 L58,42 M53,38 L55,42 M53,38 L65,25 M53,38 L45,35 M53,38 L50,35 M53,38 L56,40"
                   fill="none"
-                  stroke="rgba(184, 134, 11, 0.2)"
+                  stroke="rgba(184, 134, 11, 2)"
                   strokeWidth="0.15"
                   strokeDasharray="1,1"
                 />
@@ -236,12 +243,13 @@ export default function HomePage() {
                 {countries.map((country) => (
                   <div
                     key={country.code}
-                    className="absolute text-xs text-primary/70 font-mono tracking-wider"
+                    className="absolute text-xs text-primary/70 font-mono tracking-wider opacity-0 md:opacity-100"
                     style={{
                       left: `${country.x}%`,
                       top: `${country.y}%`,
-                      transform: 'translate(-50%, 150%)'
+                      transform: 'translate(50%, 150%)'
                     }}
+                    title={country.name}
                   >
                     {country.code}
                   </div>
@@ -257,12 +265,12 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mt-12 space-y-6"
             >
-              <h2 className="text-foreground text-2xl md:text-4xl font-sans font-light tracking-wide">
-                Applied across the globe, always to specification.
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-                Experience spanning Egypt, Kuwait, UAE, KSA, EU, UK, Australia, Canada, USA - Systems where failure has material cost. I maintain long-standing relations with founders who seek to continuously grow.
-              </p>
+              <h3 className="text-foreground text-1xl md:text-2xl tracking-[0.2em] font-sans font-light uppercase">
+                Executed <strong className="text-primary">globally</strong>; <br /> Realised by <strong className="text-primary">precision</strong>;
+              </h3>
+              {/* <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto"> */}
+              {/* <strong>Realise</strong> what happens when you possess a definitive edge. From the GCC to North America, I forge alliances with elite founders. We engineer systems where failure carries material cost, securing dominance across every jurisdiction. */}
+              {/* </p> */}
             </motion.div>
           </motion.div>
         </div>
@@ -272,7 +280,7 @@ export default function HomePage() {
       <StatCounter />
 
       {/* Section 3: The Offering (Technical Stack Grid) */}
-      <section className="py-14 md:py-20 px-6 relative">
+      <section className="py-20 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -282,9 +290,9 @@ export default function HomePage() {
             className="space-y-20"
           >
             <motion.div variants={fadeInUp} className="text-center space-y-4">
-              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// The Stack</p>
-              <h2 className="text-foreground text-3xl md:text-5xl font-sans font-light tracking-wide">
-                Technical Specifications
+              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// Intelligence</p>
+              <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
+                Technical Stack
               </h2>
             </motion.div>
 
@@ -297,14 +305,14 @@ export default function HomePage() {
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">01</span>
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                  The Core Architecture
+                  Foundation
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  The foundation of your digital authority. Proven web structures built on 20 years of architectural mastery, delivering absolute operational resilience.
+                <p className="text-foreground/90 leading-relaxed">
+                  The foundation of your digital authority. <strong className="text-primary">Remember</strong>, true resilience is engineered, not assumed. We forge structures that deliver absolute operational invulnerability.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
                   {["Trust", "Foundation", "Mastery"].map((tech) => (
-                    <span key={tech} className="text-xs text-muted-foreground/60 font-mono border border-border/50 px-2 py-1">
+                    <span key={tech} className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1">
                       {tech}
                     </span>
                   ))}
@@ -318,14 +326,14 @@ export default function HomePage() {
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">02</span>
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                  The Organic Architecture
+                  Grow
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Semantic and GEO-spatial intelligence. Engineered for ecosystem dominance, ensuring your narrative is surfaced and sustained across global networks.
+                <p className="text-foreground/90 leading-relaxed">
+                  Semantic and GEO-spatial intelligence. <strong className="text-primary">Become</strong> omnipresent. We engineer for definitive ecosystem dominance, ensuring your narrative commands global networks.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
                   {["SEO", "Semantic", "Dominance"].map((tech) => (
-                    <span key={tech} className="text-xs text-muted-foreground/60 font-mono border border-border/50 px-2 py-1">
+                    <span key={tech} className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1">
                       {tech}
                     </span>
                   ))}
@@ -339,14 +347,14 @@ export default function HomePage() {
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">03</span>
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                  The Intelligence Layer
+                  Intelligence
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Requirement elicitation and high-stakes problem solving. We deploy AI only where it creates material leverage and strategic advantage.
+                <p className="text-foreground/90 leading-relaxed">
+                  <strong className="text-primary">Imagine</strong> problem resolution and requirement extraction. We weaponize AI only where it creates asymmetrical leverage and undisputed strategic advantage.
                 </p>
                 <div className="pt-4 flex flex-wrap gap-2">
                   {["AI/ML", "Strategy", "Leverage"].map((tech) => (
-                    <span key={tech} className="text-xs text-muted-foreground/60 font-mono border border-border/50 px-2 py-1">
+                    <span key={tech} className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1">
                       {tech}
                     </span>
                   ))}
@@ -358,6 +366,7 @@ export default function HomePage() {
       </section>
 
       <section id="path-discovery" className="py-14 md:py-20 px-6 relative">
+
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial="hidden"
@@ -393,9 +402,9 @@ export default function HomePage() {
                   </div>
                 </h3>
 
-                <div className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed text-start space-y-4">
+                <div className="text-foreground/70  md:text-base max-w-xl mx-auto leading-relaxed text-start space-y-4">
                   <p>
-                    True digital transformation isn&apos;t a solo sprint; it requires a{" "}
+                    True dominion over your infrastructure requires a partner {" "}
                     <span
                       className="text-primary text-2xl md:text-3xl"
                       style={{ fontFamily: "var(--font-arabic)" }}
@@ -406,7 +415,9 @@ export default function HomePage() {
                       <TooltipTrigger asChild>
                         <button
                           type="button"
-                          className="inline-flex size-4 items-center justify-center rounded-full border border-primary/70 bg-card/70 text-primary hover:bg-primary hover:text-primary-foreground transition-colors ms-1"
+                          onClick={(e) => e.preventDefault()}
+                          onTouchStart={(e) => e.currentTarget.focus()}
+                          className="inline-flex size-4 items-center justify-center rounded-full border border-primary/70 bg-card/70 text-primary hover:bg-primary hover:text-primary-foreground transition-colors ms-1 cursor-help md:cursor-pointer"
                           aria-label="What is a Rafiq?"
                         >
                           <Info className="h-3.5 w-3.5" />
@@ -416,20 +427,18 @@ export default function HomePage() {
                         side="top"
                         className="bg-card text-foreground border border-primary/40 shadow-lg space-y-1"
                       >
-                        <p className="text-3x1 font-mono text-primary">Rafiq</p>
-                        <p className="text-2x1 text-muted-foreground max-w-xs">
+                        <p className="text-3xl font-mono text-primary">Rafiq</p>
+                        <p className="text-sm text-foreground/70 max-w-xs">
                           Someone who walks the path with you.
                         </p>
                       </TooltipContent>
                     </Tooltip>
                   </p>
                   <p>
-                    This discovery phase is our handshake—a deliberate intake to identify your ultimate goals and your current
-                    state. Together, we map where the friction lies and where the potential is hidden.
+                    This discovery phase is not a pitch&mdash;it is a deliberate extraction of your ultimate objectives. Together, we isolate the friction and expose hidden leverage.
                   </p>
                   <p>
-                    My mission is to ensure your machine serves your story, not the other way around. After all, the shortest
-                    path between two points is a <s>straight line</s> rewarding experience.
+                    My mandate is to ensure your machine serves your empire. <strong>Because</strong> the shortest path between vision and reality is a guided ascent.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -460,24 +469,31 @@ export default function HomePage() {
               >
                 أ. س.
               </p>
-              <p className="text-muted-foreground text-xs mt-2 tracking-wider uppercase">
+              <p className="text-foreground/70 text-xs mt-2 tracking-wider uppercase">
                 Alex Seif
               </p>
             </div>
 
-            <div className="flex items-center gap-8 text-xs text-muted-foreground/60 font-mono">
-              <span>EG</span>
-              <span>AE</span>
-              <span>SA</span>
-              <span>RU</span>
-              <span>ES</span>
-              <span>GR</span>
-              <span>KW</span>
+            <div className="flex items-center gap-8 text-xs text-foreground/70 font-mono">
+              <span title="Egypt">EG</span>
+              <span title="United Arab Emirates">UAE</span>
+              <span title="Kingdom Saudia of Arabia">KSA</span>
+              <span title="Russia">RU</span>
+              <span title="Spain">ES</span>
+              <span title="Greece">GR</span>
+              <span title="Kuwait">KW</span>
             </div>
 
-            <p className="text-muted-foreground/40 text-xs font-mono">
-              © MMXXVI
-            </p>
+            <div className="flex items-center gap-6">
+              <p className="text-foreground/70/40 text-xs font-mono">
+                © MMXXVI
+              </p>
+              <img
+                src="/Alexandria-Lighthouse.png"
+                alt="Alexandria Lighthouse"
+                className="h-auto w-24 grayscale hover:grayscale-0 opacity-70  hover:opacity-100 transition-all duration-500 rounded-[12px]"
+              />
+            </div>
           </div>
         </div>
       </footer>
@@ -511,6 +527,6 @@ export default function HomePage() {
           </Button>
         </div>
       </motion.div>
-    </main>
+    </main >
   );
 }

@@ -19,7 +19,7 @@ The color system is built around a high-contrast, dark-mode-first aesthetic (Tec
 *   **Background (Dark):** Deep blacks #050505 and very dark greys (`oklch` very low lightness). Represents the terminal, the blueprint, and the foundation.
 *   **Foreground (Light):** Crisp whites #e8e8e8 and light greys for text readability.
 *   **Signature Accent (Dark Goldenrod - #B8860B):** Used strategically for map points, text shadows (glowing effects), and key interactive elements. This color adds a premium, established, and "pedigree" feel to the otherwise stark technical palette.
-*   **Muted Elements:** Translucent greys (`text-muted-foreground`) used for secondary text, borders, and grid lines to establish depth without clutter.
+*   **Muted Elements:** Translucent greys (`text-foreground/70`) used for secondary text, borders, and grid lines to establish depth without clutter.
 
 ## 4. Visual Motifs & UI Elements
 *   **The Blueprint Grid:** A recurring background motif (`blueprint-grid`) that subtly reinforces the "Architect" and "System Design" themes.
