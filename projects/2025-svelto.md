@@ -1,4 +1,4 @@
-## 🗂️ Project Dossier: Svelto (2025)
+##  Project Dossier: Svelto (2025)
 * **Project Name:** Svelto
 * **Timeline:** 2025
 * **URL:** https://svelto.net/

@@ -1,4 +1,4 @@
-## 🗂️ Project Dossier: bndko.com (2025)
+##  Project Dossier: bndko.com (2025)
 * **Project Name:** bndko.com
 * **Timeline:** 2025
 * **URL:** https://bndko.com/

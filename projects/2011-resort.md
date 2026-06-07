@@ -1,4 +1,4 @@
-  ## 🗂️ Project Dossier: Resort Choice (2011 – 2012)
+  ##  Project Dossier: Resort Choice (2011 – 2012)
 
   * Project Name: Resort Choice
   * Timeline: 2011 – 2012 (Complete Architectural & Infrastructure Lifecycle)
@@ -7,7 +7,7 @@
   * Architectural Identity: Lead Systems Architect & Technical Partner
   * System Summary: Architected and deployed a highly complex, multi-tenant property rental and resort management engine. The system consolidated public guest booking pipelines and private property owner management tools into a unified, high-performance portal. Engineered custom yield-management logic to handle dynamic, multi-tier pricing matrices, contractual booking constraints, and automated post-checkout damage assessment and turnover workflows.
 
-### 🧠 Core Architecture & System Engineering
+###  Core Architecture & System Engineering
   * **Unified Authentication & Intent Routing:** Designed a singular, seamless entry portal for both public guests and private property owners. The system dynamically adjusted behavioral permissions, interface views, and transactional rulesets based on the user's relational contract with the target property, eliminating fragmented software siloes.
   * **Contractual State Enforcement Engine:** Translated intricate legal property-owner contracts into rigid backend validation logic. The engine programmatically calculated reservation lead-times, owner usage limitations, and blackout windows, preventing inventory hoarding while maintaining open booking availability for high-yield public guests.
   * **Advanced Query Performance & Caching:** Handled massive pricing volatility (incorporating gala nights, seasonal spikes, early-bird rates, last-minute discounts, agency markups, and owner exemptions). Offloaded execution-heavy pricing algorithms from real-time runtimes by mapping raw transactional data into optimized database Views and pre-computed availability states, delivering instantaneous page response times.
@@ -18,7 +18,7 @@
 
   ---
 
-  ## 🏛️ CASE STUDY: Resort Choice – Multi-Tenant Yield Engines & Contractual State Logic
+  ##  CASE STUDY: Resort Choice – Multi-Tenant Yield Engines & Contractual State Logic
 
 * **1. Objective & Scope**
 Retained to architect a high-end property rental and resort management system capable of competing with early global booking engines. The platform had to reconcile conflicting operational demands: open public guest bookings, direct private owner occupancy, strict contractual legal constraints, and complex real-time operational turnover tracking.

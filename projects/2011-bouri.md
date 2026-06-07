@@ -1,4 +1,4 @@
-## 🗂️ Project Dossier: Bouri Center (2011 – 2013)
+##  Project Dossier: Bouri Center (2011 – 2013)
 * **Project Name:** Bouri Center
 * **Timeline:** 2011 – 2013 (Continuous Architecture & Integration Lifecycle)
 * **URL:** http://www.bouri.com/
@@ -6,7 +6,7 @@
 * **Architectural Identity:** Software Architect & Strategic Technical Partner
 * **System Summary:** Designed, engineered, and scaled a highly customized, multi-branch e-commerce ecosystem built on the Symfony framework. Handled end-to-end e-commerce logistics including complex coupon matrices, returns workflows, cross-branch stock management, and custom content-enrichment dashboards.
 
-### 🧠 Legacy Countermeasures & Strategic Architecture
+###  Legacy Countermeasures & Strategic Architecture
   * **The Operational Node Isolation Strategy:** To bypass structural resistance and long development delays from a rigid, uncooperative third-party corporate ERP vendor, executed a tactical isolation pattern. Modeled and configured the e-commerce database layer to mimic a standalone, physical retail branch with its own dedicated virtual inventory ledger. This architectural decoupling allowed the business to launch without requiring a single line of immediate modification to their core legacy software.
   * **Fault-Tolerant Data Remediation Pipeline:** Architected an asynchronous, human-in-the-loop ingestion pipeline to handle heavily fragmented, duplicated, and unnormalized product data extracted from the ERP via flat-file exports. Developed a custom web dashboard that intercepted the flawed data, allowing content editors to sanitize schema attributes, enrich descriptions, and link media assets before publishing to production.
   * **The API Evolution Blueprint:** Leveraging early web success to achieve buy-in from corporate stakeholders, authored and negotiated a comprehensive API specification contract for the client's external software vendor. Designed the structural requirements for versioned stock allocation, transactional item-reservation holds, and low-inventory webhook alerts, successfully driving the platform into a fully automated, real-time sync state.
@@ -15,7 +15,7 @@
 
 ---
 
-## 🏛️ CASE STUDY: Bouri Center – Legacy ERP Integration & Node Isolation
+##  CASE STUDY: Bouri Center – Legacy ERP Integration & Node Isolation
 
 * **1. Objective & Scope**
 Brought in to architect a customized e-commerce ecosystem for a major retail appliance chain. The mission required integrating frontend web storefront operations with a rigid, heavily siloed, and uncooperative legacy corporate ERP framework that managed physical retail branches.

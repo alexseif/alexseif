@@ -1,4 +1,4 @@
-## 🗂️ Project Dossier: Alexander Restaurant (2025)
+##  Project Dossier: Alexander Restaurant (2025)
 * **Project Name:** Alexander Restaurant
 * **Timeline:** 2025
 * **URL:** https://alexander-restaurant.com/

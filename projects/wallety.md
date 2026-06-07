@@ -8,20 +8,20 @@ subtitle: "High-Throughput Core Fintech & Airline Transaction Routing Infrastruc
 tech_stack: ["Go", "PHP", "Symfony Framework", "AWS Ecosystem", "High-Availability Load Balancers", "Asynchronous Queues", "PCI-DSS Hardening"]
 ---
 
-# 🗂️ Project Dossier
+#  Project Dossier
 Served as Chief Technology Officer (CTO) and Principal Architect, designing, scaling, and defending a massive financial technology core infrastructure. Engineered decoupled transactional layers and fault-tolerant routing systems capable of handling extreme continuous volume, securely commanding over 33% of all domestic air travel ticketing throughput nationwide.
 
-### 🧠 Core Architecture & System Engineering
+###  Core Architecture & System Engineering
 - **High-Concurrency Transaction Pipeline:** Architected an enterprise-grade payment routing engine designed to process rapid booking spikes without state-drift. Implemented fail-safe asynchronous queues and isolated worker clusters to absorb concurrent payload bursts seamlessly.
 - **Enterprise Infrastructure & Security Hardening:** Engineered the full AWS topology utilizing high-availability load balancers, multi-region database replication, and zero-trust IAM privilege matrix models. Hardened the entire ecosystem to meet strict corporate audit and PCI-DSS compliance requirements.
 - **Decoupled API Orchestration:** Designed microservice boundaries separating user-facing web layers from high-yield core processing layers, insulating the transactional engine from unexpected edge network interruptions or performance degradation.
 
-### 🚨 Engineering Notes / Edge Cases
+###  Engineering Notes / Edge Cases
 Successfully sustained mission-critical operations where any systemic failure or database latency carried immediate, high-material transactional costs, cementing a long-term architecture that outpaced standard consumer platforms.
 
 ---
 
-## ⚡ CASE STUDY 03: Wallety Engine (High-Concurrency Spike Management)
+# Use Case Case Study: Wallety Engine (High-Concurrency Spike Management)
 
 ### 1. Objective & Scope
 Engineered the technical core and infrastructure layout as CTO during the early web scaling era, capturing 33% of domestic air travel transactional throughput under extreme concurrency conditions.
