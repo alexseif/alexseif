@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Server, Shield, Brain, Terminal, Info, Mail, Phone, MessageSquare } from "lucide-react";
+import { MapPin, Mail, ArrowRight, Activity, Terminal, Shield, Workflow, Cpu, MessageSquare, Briefcase, FileCode2, Server, Brain, Info, Phone } from "lucide-react";
+import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { StatCounter } from "@/components/stat-counter";
@@ -543,45 +544,7 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-16 px-6 border-t border-border/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-center md:text-left">
-              <p
-                className="font-serif text-2xl text-primary"
-                style={{ fontFamily: "var(--font-arabic)" }}
-              >
-                أ. س.
-              </p>
-              <p className="text-foreground/70 text-xs mt-2 tracking-wider uppercase">
-                Alex Seif
-              </p>
-            </div>
-
-            <div className="flex items-center gap-8 text-xs text-foreground/70 font-mono">
-              <span title="Egypt">EG</span>
-              <span title="United Arab Emirates">UAE</span>
-              <span title="Kingdom Saudia of Arabia">KSA</span>
-              <span title="Russia">RU</span>
-              <span title="Spain">ES</span>
-              <span title="Greece">GR</span>
-              <span title="Kuwait">KW</span>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <p className="text-foreground/70/40 text-xs font-mono">
-                © MMXXVI
-              </p>
-              <img
-                src="/Alexandria-Lighthouse.png"
-                alt="Alexandria Lighthouse"
-                className="h-auto w-24 grayscale hover:grayscale-0 opacity-70  hover:opacity-100 transition-all duration-500 rounded-[12px]"
-              />
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       {/* Sticky Scroll Footer */}
       <motion.div
         style={{

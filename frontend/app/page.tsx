@@ -23,7 +23,7 @@ export default async function HomePage() {
     "sameAs": [
       "https://github.com/alexseif"
     ],
-    "knowsAbout": ["Software Architecture", "Enterprise Digital Training", "Sovereign Systems", "Fintech Transactions", "Air-Gapped Intranet System"]
+    "knowsAbout": ["Deep-End Enterprise Infrastructures", "Sovereign System Deployments", "Legacy Monolith Decoupling", "Static Code Forensics", "State-Preservation Queue Design", "Defensive Zero-Maintenance Engineering"]
   };
 
   return (

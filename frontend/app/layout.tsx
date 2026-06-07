@@ -11,14 +11,15 @@ const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playf
 export const metadata: Metadata = {
   title: 'Alex Seif | Systems Architect & Technical Partner',
   description:
-    'Bridging the gap between complex machines and human stories. 20+ years of architecting flow, resilience, and digital mastery.',
+    'Systems Architect & Technical Partner. 20+ years of defensive engineering, legacy monolith decoupling, and deep-end enterprise & sovereign infrastructure execution.',
   keywords: [
-    'Realising your system digitally',
-    'Infrastructure Design',
-    'Business Process Upscaling',
-    'Mission-Critical Partnership',
-    'Digital Transformation Strategy',
-    'Architecture for Human Expression',
+    'Systems Architect',
+    'Technical Partner',
+    'Sovereign Infrastructures',
+    'Legacy Monolith Decoupling',
+    'Static Code Forensics',
+    'State-Preservation Queue Design',
+    'Zero-Maintenance Engineering'
   ],
   generator: 'v0.app',
   icons: {

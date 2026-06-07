@@ -1,6 +1,7 @@
 import { getProjectBySlug, getProjectSlugs } from "@/lib/projects";
 import Link from "next/link";
 import { ArrowLeft, Terminal, Server, Building2, Code2, ShieldAlert } from "lucide-react";
+import { Footer } from "@/components/Footer";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { notFound } from "next/navigation";
@@ -235,6 +236,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </div>
     </main>
+    <Footer />
     </>
   );
 }

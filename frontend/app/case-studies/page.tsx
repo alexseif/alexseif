@@ -1,6 +1,7 @@
 import { getAllProjects } from "@/lib/projects";
 import Link from "next/link";
 import { ArrowLeft, Terminal, ArrowRight } from "lucide-react";
+import { Footer } from "@/components/Footer";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -99,6 +100,7 @@ export default async function CaseStudiesIndex() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
