@@ -1,22 +1,26 @@
-##  Project Dossier: Esorus Ecosystem (2020)
-* **Project Name:** Esorus (Core Marketplace) & DesignToGo (Growth Layer)
-* **Timeline:** 2020
-* **URL:** https://esorus.com/ | https://esorus.com/design-to-go
-* **Engagement Type:** Outsourcing Partner via Perfect Needs
-* **Architectural Identity:** Software Architect & Technical Partner
-* **Scale & Ecosystem Metrics:** * **Products Indexed:** 15,800+ Verified Structural & Decorative Items
-  * **Professional Network:** 1,200+ Registered Architects & Interior Designers
-  * **Design Assets:** 900+ High-Resolution Curated Inspirations
-  * **Commercial Vendors:** 300+ Enterprise B2B Material Suppliers
+---
+title: "Esorus Ecosystem & DesignToGo"
+year: 2020
+url: "https://esorus.com/"
+client_type: "B2B Marketplace & Professional Hub"
+agency: "Software Architect & Technical Partner via Perfect Needs"
+subtitle: "Enterprise Monolith Scaling & Multi-Vendor State Machine"
+tech_stack: ["Symfony Framework", "Database Normalization", "Multi-Vendor Logic", "High-Fidelity Asset Optimization", "Event Pipelines"]
+---
 
-###  System Architecture & Strategic Evolution
-* **The Symfony Marketplace Backbone:** Engineered a high-performance backend architecture utilizing the Symfony framework. Designed the core data models to cleanly isolate multi-vendor product catalogs, user-generated inspiration mood boards, and distinct company profile parameters.
-* **The Strategic Pivot Blueprint:** Handheld the client through a massive architecture evolution. Built the relational database from day one with the structural elasticity required to pivot seamlessly from an organic, content-based interior design hub into a transactional, multi-vendor enterprise B2B material sourcing engine.
-* **High-Aesthetic Performance Engineering:** Because the platform directly targets an audience of high-art caliber professionals, visual design and layout integrity were paramount. Developed clean, responsive frontend presentation layers backed by optimized media-loading and caching pipelines, achieving an elite SpeedIndex without compromising heavy, high-fidelity gallery rendering.
+# Project Dossier
+Architected a high-performance backend ecosystem supporting over 15,800 verified structural items and an active professional network of multi-thousand enterprise B2B vendors and architects. Displayed absolute ownership of the architectural lifecycle, successfully pivoting an organic content hub into a strict, transactional B2B material sourcing engine.
 
-###  DesignToGo: The Tactical Growth Engine
-* **Portal Scope:** Developed *DesignToGo* as a dedicated, specialized component within the primary Symfony cluster. 
-* **User Acquisition Pipeline:** Functioned as a custom-tailored event-driven portal designed to capture, verify, and onboard architectural professionals. This module served as the primary traffic and network driver that successfully scaled the community database to its current multi-thousand user volume.
+### Core Architecture & System Engineering
+- **The Symfony Marketplace Backbone:** Engineered utilizing strict framework architecture. Designed the core data models to cleanly isolate multi-vendor product catalogs, user-generated mood boards, and highly concurrent commercial supply chains without state bleed.
+- **High-Aesthetic Performance Optimization:** Because the platform targeted a high-art caliber audience, visual integrity was critical. Developed clean, responsive frontend layers backed by optimized caching pipelines to achieve elite SpeedIndex ratings while rendering heavy, high-fidelity galleries.
 
-* **Technical Stack:** Symfony Framework, Relational Database Normalization, Multi-Vendor Marketplace Logic, High-Fidelity Asset Optimization, Custom Event Pipelines, B2B Catalog Structures.
-* **Engineering Notes:** Managed through Perfect Needs. This ecosystem stands as a brilliant case study of using highly disciplined framework architecture (`Symfony`) to support both premium, aesthetic frontend layouts and complex database tracking across thousands of cross-referenced products, designers, and commercial suppliers.
+### Engineering Notes / Edge Cases
+Managed through Perfect Needs, this infrastructure proves the ability to execute deep-end database tracking across massive, interdependent commercial catalogs while maintaining aesthetic and technical frontend dominance.
+
+# Use Case Case Study: The Tactical Growth Engine
+### 1. Objective & Scope
+Handhold the client through a massive architecture evolution, structuring the database to seamlessly pivot from a design inspiration board into a multi-vendor corporate marketplace.
+
+### 2. Technical Decisions & Implementation
+Built *DesignToGo* as a dedicated, specialized component within the primary Symfony cluster. Functioning as a custom-tailored event-driven portal, it captured, verified, and seamlessly onboarded architectural professionals, scaling the core relational matrices flawlessly without choking execution threads or compromising concurrent transaction blocks.
