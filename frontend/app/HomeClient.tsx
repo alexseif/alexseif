@@ -528,6 +528,17 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
                 </Link>
               ))}
             </motion.div>
+
+            <motion.div variants={fadeInUp} className="flex justify-center pt-8">
+              <Link href="/case-studies">
+                <Button
+                  variant="outline"
+                  className="font-mono text-xs tracking-widest uppercase border-primary/30 text-foreground hover:bg-primary/10 hover:text-primary transition-all px-8 py-6 rounded-sm"
+                >
+                  Access Complete Vault
+                </Button>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
