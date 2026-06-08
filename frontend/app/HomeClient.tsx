@@ -559,6 +559,21 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
           </Button>
         </div>
       </motion.div>
+
+      {/* Minimalist Scroll Trigger for Resume */}
+      <motion.div
+        style={{
+          opacity: footerOpacity,
+        }}
+        className="fixed bottom-8 right-8 z-40 pointer-events-auto hidden lg:block"
+      >
+        <Link
+          href="/resume"
+          className="font-mono text-[10px] tracking-widest uppercase text-foreground/40 hover:text-primary transition-colors bg-background/50 hover:bg-card/80 backdrop-blur px-3 py-2 border border-border/50 rounded-sm"
+        >
+          [ Alex Seif Resume.pdf ]
+        </Link>
+      </motion.div>
     </main >
   );
 }

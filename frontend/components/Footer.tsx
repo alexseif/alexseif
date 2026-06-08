@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -28,6 +29,9 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
+            <Link href="/resume" className="text-foreground/70/40 hover:text-primary transition-colors text-[10px] font-mono tracking-widest uppercase">
+              [ Alex Seif Resume.pdf ]
+            </Link>
             <p className="text-foreground/70/40 text-xs font-mono">
               © MMXXVI
             </p>
