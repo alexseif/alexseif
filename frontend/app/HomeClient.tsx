@@ -179,23 +179,7 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
 
       {/* Section 2: The Pedigree (World Map Scroll) */}
       <section ref={scrollRef} className="min-h-[70vh] md:min-h-[100vh] relative py-20pb-28">
-        <div className="max-w-6xl mx-auto relative z-10">
-          {/* Tagline */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={stagger}
-            className="space-y-16 md:space-y-24"
-          >
-            <motion.div variants={fadeInUp} className="text-center space-y-4">
-              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono"></p>
-              <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
 
-              </h2>
-            </motion.div>
-          </motion.div>
-        </div>
         <div className="sticky top-0 h-[40vh] md:h-[70vh] flex items-center justify-center px-6">
           <motion.div
             style={{ opacity: mapOpacity, scale: mapScale }}
