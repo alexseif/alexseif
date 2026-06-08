@@ -1,11 +1,11 @@
 ---
 title: "Wallety"
-year: 2019
+year: 2009
 url: "https://wallety.com"
 client_type: "Fintech Enterprise"
 agency: "Chief Technology Officer (CTO)"
 subtitle: "High-Throughput Core Fintech & Airline Transaction Routing Infrastructure"
-tech_stack: ["Go", "PHP", "Symfony Framework", "AWS Ecosystem", "High-Availability Load Balancers", "Asynchronous Queues", "PCI-DSS Hardening"]
+tech_stack: ["PHP", "Symfony Framework", "AWS Ecosystem", "High-Availability Load Balancers", "Asynchronous Queues", "PCI-DSS Hardening"]
 ---
 
 #  Project Dossier

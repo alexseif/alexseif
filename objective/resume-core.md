@@ -7,14 +7,14 @@ location: "Cairo, Egypt (Open to relocation/sponsorship)"
 linkedin: "https://www.linkedin.com/in/alexseif/"
 website: "https://alexseif.com/"
 summary: |
-  Systems Architect and Technical Partner with 20+ years of active technical delivery from the trenches. Proven background designing, scaling, and protecting high-throughput application frameworks, data ingestion pipelines, and decoupled architectures. Expert at managing legacy refactoring cycles, microservices transitions, and offline/air-gapped infrastructure operations where system failure incurs direct material costs.
+  Systems Architect and Technical Partner with 20+ years of active technical delivery from the trenches. Proven background designing, scaling, and protecting high-throughput application frameworks, data ingestion pipelines, and decoupled architectures. Old-school full-stack practitioner commanding end-to-end delivery layers across PHP (Symfony), Python, React, Next.js, and automated DevOps configurations. Expert at managing legacy refactoring cycles, microservices transitions, and offline/air-gapped infrastructure operations where system failure incurs direct material costs.
 ---
 
-# Technical Core Competencies
-- **Languages & Core Ecosystems:** PHP (Symfony, PSR Standards), Go, JavaScript/TypeScript (Next.js, Node.js).
-- **Cloud & Infrastructure Engineering:** AWS Ecosystem (EC2, S3, RDS, IAM), DigitalOcean, Linux System Administration, High-Availability Balancing, Network Isolation Topologies.
+# 🛠️ Technical Core Competencies
+- **Languages & Core Ecosystems:** PHP (Symfony, PSR Standards), Python, JavaScript/TypeScript (React, Next.js, Node.js).
+- **Cloud & Infrastructure Engineering:** AWS Ecosystem (EC2, S3, RDS, IAM), DigitalOcean, Linux System Administration, High-Availability Balancing, Network Isolation Topologies, Automated Backup Loops.
 - **Data Engineering & Architecture:** Relational Schema Normalization, Database View Optimization, Asynchronous Queue Management, Webhook Integration, Data Sanitization Pipelines.
-- **Process & Delivery Control:** Requirement Elicitation, Automated Deployment Engineering, CI/CD Pipeline Design, Disaster Recovery (DR) Protocol Automation, Agile Engineering Leadership.
+- **Process & Delivery Control:** Requirement Elicitation, Automated Deployment Engineering, CI/CD Pipeline Design, Disaster Recovery (DR) Protocol Automation, Business O.S. Design.
 
 # Foundational Experience Summaries
 
@@ -25,6 +25,7 @@ summary: |
 - **Decoupled Architecture Rollouts (Svelto/bndko):** Designed headless product customization nodes and optimized web architectures. Stripped out legacy framework overhead to maintain elite performance speeds and synchronous database state retention during heavy traffic spikes.
 
 ## Chief Technology Officer (CTO) & Principal Architect | Wallety
-### 2019 – 2021
-- **Fintech Infrastructure Scaling:** Designed and protected the core payment and ticket routing infrastructure handling over 33% of all domestic air travel transactional throughput across Egypt.
-- **Hardened System Operations:** Built fault-tolerant asynchronous processing layers and atomic database transaction rulesets to guarantee financial integrity during regional gateway dropouts. Hardened cloud infrastructure metrics to pass rigid external corporate security and PCI-DSS data compliance audits.
+### 2009 – 2014
+- **Fintech Infrastructure Scaling:** Designed and defended the core payment and ticket routing infrastructure handling over 33% of all domestic air travel transactional throughput across Egypt.
+- **Hardened System Operations:** Built fault-tolerant asynchronous processing layers and atomic database transaction rulesets to guarantee financial integrity during regional gateway dropouts.
+- **PCI-DSS Compliance Mandates:** Led the end-to-end security engineering, multi-region tokenization strategies, and data-at-rest encryption pipelines required to achieve and maintain strict corporate audit and PCI-DSS compliance verification.
