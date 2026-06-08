@@ -129,7 +129,7 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
                 Realize that most problems are very simple;<br />
                 Imagine solutions that are also very simple;<br />
                 And so Remember the most valuable things in life<br />
-                Become the most simple things.
+                become the most simple things.
               </p>
             </div>
           </motion.div>
