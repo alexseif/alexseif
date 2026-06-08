@@ -189,9 +189,9 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
             className="space-y-16 md:space-y-24"
           >
             <motion.div variants={fadeInUp} className="text-center space-y-4">
-              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// Foundation</p>
+              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono"></p>
               <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-                Software Architect
+
               </h2>
             </motion.div>
           </motion.div>
@@ -303,9 +303,9 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
             className="space-y-20"
           >
             <motion.div variants={fadeInUp} className="text-center space-y-4">
-              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// Intelligence</p>
+              <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// Foundation</p>
               <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-                Technical Stack
+                Technical Partner
               </h2>
             </motion.div>
 
