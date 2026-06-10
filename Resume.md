@@ -27,7 +27,7 @@ Systems Architect and Software Engineer with 20+ years of technical delivery des
 ## PROFESSIONAL EXPERIENCE
 
 ### Freelance Software Engineer & Systems Architect
-**Independent Consultancy & Retainers** | January 2014 – Present
+**Independent Consultancy & Retainers** | January 2005 – Present
 *Provide requirements elicitation, full-stack development, database optimization, AI systems integration, devops automation, and infrastructure management for commercial enterprises, digital media agencies, and state public institutions.*
 
 #### AI & Data Pipeline Implementations:
