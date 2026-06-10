@@ -14,31 +14,35 @@ import remarkGfm from 'remark-gfm';
 
 // Simple utility to format the content specifically as requested
 function parseResumeContent(content: string) {
-  const sections = content.split(/(?=# 🛠️ Technical Stack Inventory|# 💼 Professional Experience|# 📜 Credentials & Background)/);
+  const sections = content.split(/(?=^## )/m);
 
+  let summary = '';
   let competencies = '';
   let experience = '';
   let credentials = '';
 
   sections.forEach(section => {
-    if (section.startsWith('# 🛠️ Technical Stack Inventory')) {
-      competencies = section.replace('# 🛠️ Technical Stack Inventory', '').trim();
-    } else if (section.startsWith('# 💼 Professional Experience')) {
-      experience = section.replace('# 💼 Professional Experience', '').trim();
-    } else if (section.startsWith('# 📜 Credentials & Background')) {
-      credentials = section.replace('# 📜 Credentials & Background', '').trim();
+    if (section.trim().startsWith('## PROFESSIONAL SUMMARY')) {
+      summary = section.replace(/^## PROFESSIONAL SUMMARY/m, '').trim();
+    } else if (section.trim().startsWith('## TECHNICAL STACK INVENTORY')) {
+      competencies = section.replace(/^## TECHNICAL STACK INVENTORY/m, '').trim();
+    } else if (section.trim().startsWith('## PROFESSIONAL EXPERIENCE')) {
+      experience = section.replace(/^## PROFESSIONAL EXPERIENCE/m, '').trim();
+    } else if (section.trim().startsWith('## EDUCATION & BACKGROUND')) {
+      credentials = section.replace(/^## EDUCATION & BACKGROUND/m, '').trim();
     }
   });
 
-  return { competencies, experience, credentials };
+  return { summary, competencies, experience, credentials };
 }
 
 export default function ResumePage() {
-  const filePath = path.join(process.cwd(), '../objective/resume-core.md');
+  const filePath = path.join(process.cwd(), '../Resume.md');
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  const { competencies, experience, credentials } = parseResumeContent(content);
+  const { summary, competencies, experience, credentials } = parseResumeContent(content);
+  const processedExperience = experience.replace(/^\*\*(.*?)\*\*\s*\|\s*(.*?)$/gm, '###### $1 | $2');
 
   return (
     <div className="resume-container min-h-screen bg-gray-100 py-10 print:py-0 print:bg-white flex justify-center">
@@ -97,13 +101,8 @@ export default function ResumePage() {
           {/* Summary Block */}
           <section className="mb-8 border-b-2 border-gray-900 pb-8">
             <p className="text-justify font-medium text-[15px] leading-relaxed mb-4">
-              {data.summary}
+              {summary}
             </p>
-            {data.passion && (
-              <p className="text-justify text-sm text-gray-700 italic border-l-2 border-gray-300 pl-4">
-                {data.passion}
-              </p>
-            )}
           </section>
 
           {/* Technical Core Competencies Matrix */}
@@ -111,8 +110,8 @@ export default function ResumePage() {
             <h3 className="text-lg font-bold uppercase tracking-wider mb-3 border-b border-gray-300 pb-1">Technical Stack Inventory</h3>
             <div className="text-sm">
               <ul className="space-y-2">
-                {competencies.split('\n').filter(line => line.trim().startsWith('-')).map((line, i) => {
-                  const match = line.match(/- \*\*(.*?)\*\*(.*)/);
+                {competencies.split('\n').filter(line => line.trim().startsWith('-') || line.trim().startsWith('*')).map((line, i) => {
+                  const match = line.match(/^[-*]\s+\*\*(.*?)\*\*(.*)/);
                   if (match) {
                     return (
                       <li key={i} className="flex flex-col sm:flex-row print:flex-row">
@@ -121,7 +120,7 @@ export default function ResumePage() {
                       </li>
                     );
                   }
-                  return <li key={i}>{line.replace('- ', '')}</li>;
+                  return <li key={i}>{line.replace(/^[-*]\s+/, '')}</li>;
                 })}
               </ul>
             </div>
@@ -134,8 +133,8 @@ export default function ResumePage() {
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  h2: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-900 uppercase tracking-wide" {...props} />,
-                  h3: ({ node, ...props }) => {
+                  h3: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-900 uppercase tracking-wide" {...props} />,
+                  h6: ({ node, ...props }) => {
                     const text = props.children?.toString() || '';
                     const [entity, timeline] = text.split(' | ');
                     return (
@@ -152,7 +151,7 @@ export default function ResumePage() {
                   strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />
                 }}
               >
-                {experience}
+                {processedExperience}
               </ReactMarkdown>
             </div>
           </section>
@@ -162,19 +161,18 @@ export default function ResumePage() {
             <section className="mb-8">
               <h3 className="text-lg font-bold uppercase tracking-wider mb-4 border-b border-gray-300 pb-1">Credentials & Background</h3>
               <div className="text-sm">
-                <ul className="space-y-3">
-                  {credentials.split('\n').filter(line => line.trim().startsWith('-')).map((line, i) => {
-                    const match = line.match(/- \*\*(.*?)\*\*(.*)/);
-                    if (match) {
-                      return (
-                        <li key={i} className="leading-relaxed text-justify">
-                          <strong>{match[1]}</strong>{match[2]}
-                        </li>
-                      );
-                    }
-                    return <li key={i} className="leading-relaxed text-justify">{line.replace('- ', '')}</li>;
-                  })}
-                </ul>
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    p: ({ node, ...props }) => <p className="text-sm text-gray-800 leading-relaxed mb-3 text-justify" {...props} />,
+                    ul: ({ node, ...props }) => <ul className="list-disc pl-5 space-y-3 text-justify text-sm mb-4" {...props} />,
+                    li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
+                    strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />,
+                    em: ({ node, ...props }) => <em className="italic text-gray-600 block mt-1" {...props} />,
+                  }}
+                >
+                  {credentials}
+                </ReactMarkdown>
               </div>
             </section>
           )}
