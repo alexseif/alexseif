@@ -40,6 +40,7 @@ Systems Architect and Software Engineer with 20+ years of technical delivery des
 * **MOI Egypt Blind Deployment Execution:** Built automated shell scripts to run complex Git path updates, dependency updates, and database schema migrations seamlessly on air-gapped intranet networks without direct developer access.
 * **Saudi Standards, Metrology and Quality Organization (SASO PTI):** Led a 3-year migration of a monolithic enterprise Drupal portal into a highly available Headless architecture. Built state-preservation and fail-safe queue mechanics to handle data payloads securely during external transaction timeouts.
 * **Dubai Police Department - Enterprise Training Network:** Configured compliance workflow engines and background tracking loops inside an isolated government cloud environment to monitor student progress.
+* **Salama Portal (KSA):** Engineered a state-subsidized cooperative insurance gateway using Drupal Enterprise CMS, deploying a high-concurrency transaction engine and secure data exchange layers to synchronize policy classifications with national enforcement agencies.
 
 #### Commercial & E-Commerce Implementations:
 * **Agazat Masr (Tourico):** Co-engineered a custom dynamic travel package assembly catalog and transaction engine. Built an asynchronous, email-driven booking queue that scaled the client to become a leading domestic tourism provider in Egypt, maintaining database integrity during intense search concurrent load. Supported and upgraded the codebase continuously for 3 consecutive years.

@@ -7,9 +7,10 @@ export default async function HomePage() {
   // Highlighted enterprise deep-dives as per blueprint
   const eliteSlugs = [
     "2020-moi-egypt-traffic",
+    "2020-salama",
+    "2021-saso",
     "2020-dubai-police-academy",
-    "wallety",
-    "2021-saso"
+    "2009-wallety"
   ];
 
   const eliteProjects = allProjects.filter((p) => eliteSlugs.includes(p.slug));
