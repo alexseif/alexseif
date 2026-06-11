@@ -122,8 +122,8 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
               Technical Partner <br />
               Author
             </p>
-          </motion.div>  <
-            motion.div variants={fadeInUp} className="space-y-3 pt-8">
+          </motion.div>
+          <motion.div variants={fadeInUp} className="space-y-3 pt-8">
             <div className="flex items-center justify-center gap-4 mb-12">
               <p className="text-foreground/70 text-md tracking-[0.15em] ">
                 Because of <strong className="text-primary">20+ yrs</strong> building the web;<br />
