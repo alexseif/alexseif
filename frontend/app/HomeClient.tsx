@@ -119,7 +119,8 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
             </div>
             <p className="text-foreground/70 text-md tracking-[0.3em] uppercase">
               Software Architect <br />
-              Technical Partner
+              Technical Partner <br />
+              Author
             </p>
           </motion.div>  <
             motion.div variants={fadeInUp} className="space-y-3 pt-8">
