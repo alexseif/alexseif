@@ -24,7 +24,7 @@ export default async function HomePage() {
     "sameAs": [
       "https://github.com/alexseif"
     ],
-    "knowsAbout": ["Deep-End Enterprise Infrastructures", "Sovereign System Deployments", "Legacy Monolith Decoupling", "Static Code Forensics", "State-Preservation Queue Design", "Defensive Zero-Maintenance Engineering"]
+    "knowsAbout": ["Deep-End Enterprise Infrastructures", "Digital System Deployments", "Legacy Monolith Decoupling", "Static Code Forensics", "State-Preservation Queue Design", "Defensive Zero-Maintenance Engineering"]
   };
 
   return (

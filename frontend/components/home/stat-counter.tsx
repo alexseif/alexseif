@@ -6,7 +6,7 @@ const stats = [
   {
     "count": "3",
     "label": "Governments & Nations",
-    "subtext": "Sovereign web systems serving citizens directly."
+    "subtext": "Digital web systems serving citizens directly."
   },
   {
     "count": "9",

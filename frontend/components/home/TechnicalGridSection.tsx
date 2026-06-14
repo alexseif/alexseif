@@ -33,16 +33,13 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                Foundation
+                Technical Partner for NGOs & Non-Profits
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                The foundation of your digital authority.{" "}
-                <strong className="text-primary">Remember</strong>, true resilience
-                is engineered, not assumed. We forge structures that deliver
-                absolute operational invulnerability.
+                We engineer resilient, cost-effective, and scalable infrastructures tailored for NGOs, ensuring maximum impact with minimal operational overhead.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["Trust", "Foundation", "Mastery"].map((tech) => (
+                {["Trust", "NGO Partnership", "Mastery"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"

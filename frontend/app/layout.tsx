@@ -9,13 +9,17 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Systems Architect & Technical Partner',
+  title: 'Alex Seif | Full Stack Software Engineer & Architect | NGO Technical Partner',
   description:
-    'Systems Architect & Technical Partner. 20+ years of defensive engineering, legacy monolith decoupling, and deep-end enterprise & sovereign infrastructure execution.',
+    'Senior Software Architect & Full Stack Software Engineer. 20+ years of defensive engineering. Trusted Technical Partner for NGOs, enterprises, and high-stakes infrastructures globally.',
   keywords: [
-    'Systems Architect',
+    'Software Architect',
+    'Full Stack Software Engineer',
     'Technical Partner',
-    'Sovereign Infrastructures',
+    'NGO Technical Partner',
+    'CTO as a Service',
+    'Systems Architect',
+    'Digital Infrastructures',
     'Legacy Monolith Decoupling',
     'Static Code Forensics',
     'State-Preservation Queue Design',
@@ -73,6 +77,27 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        {/* Schema.org JSON-LD */}
+        <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": ["Person", "ProfessionalService"],
+              "name": "Alex Seif",
+              "jobTitle": "Software Architect & Full Stack Software Engineer",
+              "url": "https://alexseif.com",
+              "description": "Expert Software Architect and Full Stack Engineer acting as a Technical Partner for NGOs and enterprise organizations globally.",
+              "areaServed": ["World", "North America", "GCC", "Europe", "Egypt", "UAE", "KSA"],
+              "knowsAbout": [
+                "Software Architecture",
+                "Full Stack Development",
+                "NGO Technical Partnership",
+                "Legacy Monolith Decoupling",
+                "System Integration"
+              ]
+            }
+          `}
+        </Script>
       </body>
     </html>
   )

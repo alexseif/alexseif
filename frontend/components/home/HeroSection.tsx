@@ -35,7 +35,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative pt-28 pb-16">
+    <header className="min-h-screen flex flex-col items-center justify-center px-6 relative pt-28 pb-16">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
         <div className="absolute top-3/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
@@ -75,8 +75,8 @@ export const HeroSection = () => {
             <div className="h-px w-12 bg-primary/50" />
           </div>
           <ul className="text-foreground/70 text-md tracking-[0.3em] uppercase">
-            <li>Software Architect</li>
-            <li>Technical Partner</li>
+            <li className="font-bold text-foreground">Software Architect & Full Stack Engineer</li>
+            <li>Technical Partner for NGOs</li>
             <li>Author</li>
             <li>Enabler</li>
           </ul>
@@ -103,6 +103,8 @@ export const HeroSection = () => {
           <button
             onClick={(e) => handleContact(e, "email")}
             className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+            aria-label="Contact Alex Seif via Email"
+            title="Email Alex Seif"
           >
             <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
               <Mail className="h-3.5 w-3.5" />
@@ -114,6 +116,8 @@ export const HeroSection = () => {
           <button
             onClick={(e) => handleContact(e, "whatsapp")}
             className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+            aria-label="Contact Alex Seif via WhatsApp"
+            title="WhatsApp Alex Seif"
           >
             <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
               <MessageSquare className="h-3.5 w-3.5" />
@@ -125,6 +129,8 @@ export const HeroSection = () => {
           <button
             onClick={(e) => handleContact(e, "github")}
             className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+            aria-label="View Alex Seif's GitHub Profile"
+            title="GitHub Profile"
           >
             <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
               <LucideGithub className="h-3.5 w-3.5" />
@@ -140,6 +146,8 @@ export const HeroSection = () => {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
             className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+            aria-label="Scroll to Path Discovery"
+            title="Path Discovery"
           >
             <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
               <ArrowRight className="h-3.5 w-3.5 rotate-90 sm:rotate-0" />
@@ -160,6 +168,6 @@ export const HeroSection = () => {
           <div className="w-px h-16 bg-gradient-to-b from-primary/60 to-transparent" />
         </motion.div>
       </motion.div>
-    </section>
+    </header>
   );
 };
