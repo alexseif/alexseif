@@ -108,21 +108,18 @@ export default function ResumePage() {
           {/* Technical Core Competencies Matrix */}
           <section className="mb-8">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-3 border-b border-gray-300 pb-1">Technical Stack Inventory</h3>
-            <div className="text-sm">
-              <ul className="space-y-2">
-                {competencies.split('\n').filter(line => line.trim().startsWith('-') || line.trim().startsWith('*')).map((line, i) => {
-                  const match = line.match(/^[-*]\s+\*\*(.*?)\*\*(.*)/);
-                  if (match) {
-                    return (
-                      <li key={i} className="flex flex-col sm:flex-row print:flex-row">
-                        <strong className="sm:w-1/3 print:w-1/3 shrink-0 sm:pr-4 print:pr-4">{match[1]}</strong>
-                        <span className="sm:w-2/3 print:w-2/3">{match[2].trim()}</span>
-                      </li>
-                    );
-                  }
-                  return <li key={i}>{line.replace(/^[-*]\s+/, '')}</li>;
-                })}
-              </ul>
+            <div className="text-sm resume-competencies">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h3: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-800 uppercase tracking-wide mt-6 mb-3 border-b border-gray-100 pb-1" {...props} />,
+                  ul: ({ node, ...props }) => <ul className="space-y-2 mb-4" {...props} />,
+                  li: ({ node, ...props }) => <li className="flex flex-col sm:flex-row print:flex-row leading-relaxed" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="sm:w-1/3 print:w-1/3 shrink-0 sm:pr-4 print:pr-4 font-bold text-gray-900" {...props} />
+                }}
+              >
+                {competencies}
+              </ReactMarkdown>
             </div>
           </section>
 

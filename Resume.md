@@ -1,26 +1,41 @@
 ---
 name: "Alex Seif"
 title: "Software Architect & Full Stack Software Engineer"
-location: "Cairo, Egypt (Open to Remote / International Relocation)"
+location: "Cairo, Egypt (Contract / Hybrid / Remote / Relocation)"
 phone: "+201004006332"
 email: "alex.seif@gmail.com"
 linkedin: "https://linkedin.com/in/alexseif/"
 website: "https://alexseif.com"
+github: "https://github.com/alexseif"
 ---
 
 ## PROFESSIONAL SUMMARY
+
 Senior Software Architect and Full-Stack Software Engineer with 20+ years of technical delivery designing, scaling, and protecting web applications and portals for enterprises of all sizes. Commands complete full-stack capabilities across backend domain logic, frontend interfaces, devops automation, and infrastructure management. Specializes in providing high-level technical execution and architectural leadership for complex legacy codebase migrations, integrating production-grade agentic AI systems, multi-agent workflows, and highly scalable RAG pipelines directly onto existing enterprise database footprints.
 
----
+
 
 ## TECHNICAL STACK INVENTORY
 
-* **AI Engineering & Orchestration:** LangGraph, Multi-Agent Workflows, Append-Only Data Reducers (operator.add), Cyclic Graph Topologies, Persistent State Checkpointing, RAG Pipelines, Semantic Text Chunking, Embedding Models, Vector Storage Interfaces.
-* **Core Programming Languages:** TypeScript / JavaScript (Node.js, Next.js, Vue.js), PHP (Symfony Framework, Drupal Enterprise, WordPress Core), Python, Go.
-* **Frontend Foundations:** React.js, Next.js, Vue.js, Tailwind CSS, HTML5, CSS3, SCSS, Responsive Layout Architecture.
-* **Databases & Queues:** MySQL / MariaDB, Local Vector Tables, Relational Schema Normalization, Database View Optimization, Asynchronous Task Queues, Webhooks.
-* **Cloud & Infrastructure (DevOps):** Acquia Cloud Platform, AWS (EC2, S3, RDS, IAM), DigitalOcean, Linux System Administration, Varnish Edge Caching, High-Availability Load Balancing, Docker Containerization.
-* **Methodologies & Design Principles:** Monolithic-to-Microservices Evolution, Headless Architecture, Test-Driven Development (TDD), Behavior-Driven Development (BDD), Requirements Elicitation, Legacy-to-Cloud Migration.
+### CTO
+* **Strategic Leadership:** Budgeting, Talent Management, Positive Leadership, Technology Strategy, Technical Partnership, Requirements Elicitation.
+* **Governance & Compliance:** Compliance by Design, Governmental-grade infrastructure and workflows, Security-first design, PCI DSS Compliance, Mission-critical and high-availability systems.
+
+### Software Architect
+* **System Design & Architecture:** Monolithic-to-Microservices Evolution, Headless Architecture, Legacy-to-Cloud Migration, Relational Schema Normalization.
+* **Domain Modeling & Complex Systems:** E-Commerce & Marketplaces (headless custom solutions, payment integrations), ERP System Integration, Advanced Booking Engines (High Concurrency, Tour/Package, Subscription, Calendar Sync, Multi-Currency/Language/Payment).
+* **AI Engineering & Orchestration:** LangGraph, Multi-Agent Workflows, Append-Only Data Reducers, Cyclic Graph Topologies, RAG Pipelines, Semantic Text Chunking, Embedding Models, Vector Storage Interfaces, Python. (Active Track)
+
+### Full Stack Software Engineer
+* **Core Languages & Frameworks:** PHP (Symfony, Laravel, Drupal Enterprise, WordPress Core), TypeScript / JavaScript (Node.js, Express.js, React.js, Next.js, Vue.js), Go.
+* **Frontend Foundations:** Tailwind CSS, HTML5, CSS3, SCSS, Responsive Layout Architecture.
+* **Data & API Layer:** MySQL / MariaDB, Database View Optimization, Asynchronous Task Queues, Webhooks, RESTful API Design & Integration, API Security & Documentation.
+* **Engineering Practices:** Test-Driven Development (TDD), Behavior-Driven Development (BDD), Performance Optimization.
+
+### DevOps & Team Leader
+* **Cloud & Infrastructure:** Acquia Cloud Platform, AWS (EC2, S3, RDS, IAM), DigitalOcean, Linux System Administration.
+* **Performance & Deployment:** Varnish Edge Caching, High-Availability Load Balancing, Docker Containerization.
+* **Team Management:** Agile/Scrum facilitation, Code Review, Mentorship, Cross-functional alignment, Technical Debt Management.
 
 ---
 
