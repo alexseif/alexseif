@@ -1,6 +1,6 @@
 ---
 name: "Alex Seif"
-title: "Software Architect & Full Stack Software Engineer"
+title: "Software Architect & Principal Software Engineer"
 location: "Cairo, Egypt (Contract / Hybrid / Remote / Relocation)"
 phone: "+201004006332"
 email: "alex.seif@gmail.com"
@@ -11,23 +11,19 @@ github: "https://github.com/alexseif"
 
 ## PROFESSIONAL SUMMARY
 
-Senior Software Architect and Full-Stack Software Engineer with 20+ years of technical delivery designing, scaling, and protecting web applications and portals for enterprises of all sizes. Commands complete full-stack capabilities across backend domain logic, frontend interfaces, devops automation, and infrastructure management. Specializes in providing high-level technical execution and architectural leadership for complex legacy codebase migrations, integrating production-grade agentic AI systems, multi-agent workflows, and highly scalable RAG pipelines directly onto existing enterprise database footprints.
+Senior Software Architect and Senior Software Architect and Principal Software Engineer with 20+ years of technical delivery designing, scaling, and protecting web applications and portals for enterprises of all sizes. Commands complete full-stack capabilities across backend domain logic, frontend interfaces, devops automation, and infrastructure management. Specializes in providing high-level technical execution and architectural leadership for complex legacy codebase migrations, integrating production-grade agentic AI systems, multi-agent workflows, and highly scalable RAG pipelines directly onto existing enterprise database footprints.
 
 
 
 ## TECHNICAL STACK INVENTORY
 
-### CTO
-* **Strategic Leadership:** Budgeting, Talent Management, Positive Leadership, Technology Strategy, Technical Partnership, Requirements Elicitation.
-* **Governance & Compliance:** Compliance by Design, Governmental-grade infrastructure and workflows, Security-first design, PCI DSS Compliance, Mission-critical and high-availability systems.
-
 ### Software Architect
-* **System Design & Architecture:** Monolithic-to-Microservices Evolution, Headless Architecture, Legacy-to-Cloud Migration, Relational Schema Normalization.
+* **System Design & Architecture:** Monolithic-to-Microservices Evolution, Headless Architecture, Legacy-to-Cloud Migration, Relational Schema Normalization, Design Principles.
 * **Domain Modeling & Complex Systems:** E-Commerce & Marketplaces (headless custom solutions, payment integrations), ERP System Integration, Advanced Booking Engines (High Concurrency, Tour/Package, Subscription, Calendar Sync, Multi-Currency/Language/Payment).
-* **AI Engineering & Orchestration:** LangGraph, Multi-Agent Workflows, Append-Only Data Reducers, Cyclic Graph Topologies, RAG Pipelines, Semantic Text Chunking, Embedding Models, Vector Storage Interfaces, Python. (Active Track)
+* **AI Engineering & Orchestration:** LangGraph, Multi-Agent Workflows, Append-Only Data Reducers, Cyclic Graph Topologies, RAG Pipelines, Semantic Text Chunking, Embedding Models, Vector Storage Interfaces, Python. *(Active Learning)*
 
-### Full Stack Software Engineer
-* **Core Languages & Frameworks:** PHP (Symfony, Laravel, Drupal Enterprise, WordPress Core), TypeScript / JavaScript (Node.js, Express.js, React.js, Next.js, Vue.js), Go.
+### Principal Software Engineer
+* **Core Languages & Frameworks:** PHP (Symfony, Laravel, Drupal Enterprise, WordPress Core), TypeScript / JavaScript (Node.js, React.js, Vue.js), Go *(Active Learning)*.
 * **Frontend Foundations:** Tailwind CSS, HTML5, CSS3, SCSS, Responsive Layout Architecture.
 * **Data & API Layer:** MySQL / MariaDB, Database View Optimization, Asynchronous Task Queues, Webhooks, RESTful API Design & Integration, API Security & Documentation.
 * **Engineering Practices:** Test-Driven Development (TDD), Behavior-Driven Development (BDD), Performance Optimization.
@@ -37,13 +33,22 @@ Senior Software Architect and Full-Stack Software Engineer with 20+ years of tec
 * **Performance & Deployment:** Varnish Edge Caching, High-Availability Load Balancing, Docker Containerization.
 * **Team Management:** Agile/Scrum facilitation, Code Review, Mentorship, Cross-functional alignment, Technical Debt Management.
 
+### CTO
+* **Strategic Leadership:** Budgeting, Talent Management, Positive Leadership, Technology Strategy, Technical Partnership, Requirements Elicitation. Prototyping vs Actual builds.
+* **Governance & Compliance:** Compliance by Design, Governmental-grade infrastructure and workflows, Security-first design, PCI DSS Compliance, Mission-critical and high-availability systems.
+
+
+### Computer Engineer (Discipline / Foundational)
+* **SCADA** Supervisory Control and Data Acquisition, embedded systems real time data monitoring for oil transport in Egypt.
+* **Technical Background:** Java, C++, bash, O.S. Design, O.S. implementation, Bash, Python, Algorithms, Database Design, OOP.
+
 ---
 
 ## PROFESSIONAL EXPERIENCE
 
-### Senior Freelance Software Architect & Full Stack Engineer
+### Senior Freelance Software Architect & Principal Engineer
 **Independent Consultancy & Retainers** | January 2005 – Present
-*Provide requirements elicitation, full-stack development, database optimization, AI systems integration, devops automation, and infrastructure management for commercial enterprises, digital media agencies, and state public institutions.*
+*Provide requirements elicitation, Solution architecture & design, design principles, full-stack development, database optimization, AI systems integration, devops automation, and infrastructure management for commercial enterprises, digital media agencies, and state public institutions.*
 
 #### AI & Data Pipeline Implementations:
 * **Production Agentic Workflow Engineering:** Designed and deployed autonomous text-scraping and system-monitoring topologies using LangGraph. Implemented append-only state channels via operator.add data reducers and persistent SQLite/PostgreSQL checkpointers, ensuring state safety and eliminating memory leaks across cyclic multi-worker execution loops.
@@ -74,13 +79,13 @@ Senior Software Architect and Full-Stack Software Engineer with 20+ years of tec
 * **State Machine Hardening:** Built a defensive transactional state machine that safely cached, retried, and committed atomic financial ledger updates during banking gateway or network dropouts.
 * **Security & Auditing:** Engineered data-at-rest encryption pipelines and multi-region tokenization frameworks to pass strict security audits and achieve full PCI-DSS compliance verification using Test-Driven Development (TDD) and Behavior-Driven Development (BDD).
 
-### Senior Web Developer & Systems Analyst
-**MitchDesigns & Freelance Engagements** | November 2003 – December 2011
+### Senior Software Engineer & Systems Analyst
+**MitchDesigns & Freelance Engagements** | November 2007 – December 2014
 *Executed full-stack web application development, custom coding, framework migrations, and local server management for regional businesses.*
 * **Bouri Center (Legacy ERP Integration):** Modeled and decoupled an e-commerce database to function independently as an isolated branch node, bypassing uncooperative legacy corporate ERP blocks. Built an ingestion gateway to sanitize corrupt vendor data streams before web production deployment.
 * **Resort Choice (Multi-Tenant Yield Engine):** Codified rental contract terms into validation logic within custom database views to enforce linear booking limits and completely prevent cross-channel double-booking race conditions.
-* **Infrastructure Custody:** Took complete ownership of bare-metal server configurations, localized staging builds, automated deployment tasks, and disaster recovery (DR) protocols.
-* **Egyptolution (Custom Media Portal):** Built a high-velocity custom MVC blogging engine utilizing clean JavaScript and layout parameters optimized for quick page loads and smooth media delivery to showcase hotel and tourism client portfolios across Egypt.
+* **Infrastructure Custody:** Responsible for on-premise provisioning, localized staging builds, automated production deployment loops, and disaster recovery (DR) protocols.
+* **Egyptolution (Custom Media Portal):** Built a high-velocity custom MVC Content Management System (CMS) optimized for low latency and high-volume media distribution.
 
 ---
 
@@ -89,4 +94,4 @@ Senior Software Architect and Full-Stack Software Engineer with 20+ years of tec
 * **Computer Engineering Curriculum**
   Arab Academy for Science, Technology and Maritime Transport (AASTMT)
   *Completed all core engineering coursework and technical syllabus up to the final graduation semester.*
-* **Verified Project Uptime:** 20+ years of active technical experience maintaining live software systems processing millions of records and servicing national populations across 3 countries (Egypt, KSA, UAE).
+* **Verified Project Uptime:** 20+ years of active technical experience maintaining live software systems processing millions of records and servicing national populations across 3 countries and enterprise solutions across regional and international jurisdictions (Egypt, KSA, UAE, EU, Russia).
