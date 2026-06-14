@@ -1,6 +1,6 @@
 ---
 name: "Alex Seif"
-title: "Systems Architect & Software Engineer"
+title: "Software Architect & Full Stack Software Engineer"
 location: "Cairo, Egypt (Open to Remote / International Relocation)"
 phone: "+201004006332"
 email: "alex.seif@gmail.com"
@@ -9,15 +9,15 @@ website: "https://alexseif.com"
 ---
 
 ## PROFESSIONAL SUMMARY
-Systems Architect and Software Engineer with 20+ years of technical delivery designing, scaling, and protecting web applications and portals for enterprises of all sizes. Commands complete full-stack capabilities across backend domain logic, frontend interfaces, devops automation, and infrastructure management. Specializes in legacy codebase migrations and integrating production-grade agentic AI systems, multi-agent workflows, and highly scalable RAG pipelines directly onto existing enterprise database footprints.
+Senior Software Architect and Full-Stack Software Engineer with 20+ years of technical delivery designing, scaling, and protecting web applications and portals for enterprises of all sizes. Commands complete full-stack capabilities across backend domain logic, frontend interfaces, devops automation, and infrastructure management. Specializes in providing high-level technical execution and architectural leadership for complex legacy codebase migrations, integrating production-grade agentic AI systems, multi-agent workflows, and highly scalable RAG pipelines directly onto existing enterprise database footprints.
 
 ---
 
 ## TECHNICAL STACK INVENTORY
 
 * **AI Engineering & Orchestration:** LangGraph, Multi-Agent Workflows, Append-Only Data Reducers (operator.add), Cyclic Graph Topologies, Persistent State Checkpointing, RAG Pipelines, Semantic Text Chunking, Embedding Models, Vector Storage Interfaces.
-* **Core Programming Languages:** PHP (Symfony Framework, Drupal Enterprise, WordPress Core, PSR Standards), Python, JavaScript / TypeScript (Next.js, Node.js), Go (Active Track).
-* **Frontend Foundations:** HTML5, CSS3, SCSS (Nested Preprocessors), Responsive Layout Architecture.
+* **Core Programming Languages:** TypeScript / JavaScript (Node.js, Next.js, Vue.js), PHP (Symfony Framework, Drupal Enterprise, WordPress Core), Python, Go.
+* **Frontend Foundations:** React.js, Next.js, Vue.js, Tailwind CSS, HTML5, CSS3, SCSS, Responsive Layout Architecture.
 * **Databases & Queues:** MySQL / MariaDB, Local Vector Tables, Relational Schema Normalization, Database View Optimization, Asynchronous Task Queues, Webhooks.
 * **Cloud & Infrastructure (DevOps):** Acquia Cloud Platform, AWS (EC2, S3, RDS, IAM), DigitalOcean, Linux System Administration, Varnish Edge Caching, High-Availability Load Balancing, Docker Containerization.
 * **Methodologies & Design Principles:** Monolithic-to-Microservices Evolution, Headless Architecture, Test-Driven Development (TDD), Behavior-Driven Development (BDD), Requirements Elicitation, Legacy-to-Cloud Migration.
@@ -26,7 +26,7 @@ Systems Architect and Software Engineer with 20+ years of technical delivery des
 
 ## PROFESSIONAL EXPERIENCE
 
-### Freelance Software Engineer & Systems Architect
+### Senior Freelance Software Architect & Full Stack Engineer
 **Independent Consultancy & Retainers** | January 2005 – Present
 *Provide requirements elicitation, full-stack development, database optimization, AI systems integration, devops automation, and infrastructure management for commercial enterprises, digital media agencies, and state public institutions.*
 
@@ -59,7 +59,7 @@ Systems Architect and Software Engineer with 20+ years of technical delivery des
 * **State Machine Hardening:** Built a defensive transactional state machine that safely cached, retried, and committed atomic financial ledger updates during banking gateway or network dropouts.
 * **Security & Auditing:** Engineered data-at-rest encryption pipelines and multi-region tokenization frameworks to pass strict security audits and achieve full PCI-DSS compliance verification using Test-Driven Development (TDD) and Behavior-Driven Development (BDD).
 
-### Contracted Web Developer & Systems Analyst
+### Senior Web Developer & Systems Analyst
 **MitchDesigns & Freelance Engagements** | November 2003 – December 2011
 *Executed full-stack web application development, custom coding, framework migrations, and local server management for regional businesses.*
 * **Bouri Center (Legacy ERP Integration):** Modeled and decoupled an e-commerce database to function independently as an isolated branch node, bypassing uncooperative legacy corporate ERP blocks. Built an ingestion gateway to sanitize corrupt vendor data streams before web production deployment.

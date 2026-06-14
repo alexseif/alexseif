@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Alex Seif - Print Ready Resume',
-  description: 'Print optimized resume dashboard',
+  title: 'Alex Seif | Senior Software Architect & Full Stack Engineer Resume',
+  description: 'Resume of Alex Seif, a Senior Software Architect and Full Stack Engineer specializing in high-level technical execution, scalable systems, and legacy migrations.',
 };
 
 import PrintButton from './PrintButton';
