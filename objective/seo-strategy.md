@@ -1,14 +1,14 @@
 # SEO Strategy: Alex Seif - Systems Architect & Technical Partner
 
 ## Target Personas
-1. **Recruiters & Tech Leaders**: Looking to hire a Senior Software Architect or Full Stack Software Engineer for high-level technical execution.
+1. **Recruiters & Tech Leaders**: Looking to hire a Senior Software Architect & Principal Software Engineer for high-level technical execution.
 2. **Founders & NGO Directors**: Looking for a "Technical Partner" or CTO as a Service to guide their entity's technical vision, specifically in non-profits or enterprises.
 
 ## Current On-Page SEO Implementation
 
 ### 1. Schema.org (JSON-LD)
 Added a comprehensive `Person` and `ProfessionalService` schema to the global layout.
-- Identifies you globally as a "Software Architect" and "Full Stack Software Engineer".
+- Identifies you globally as a "Software Architect & Principal Software Engineer".
 - Highlights the GEO scopes and areas served (Global, Egypt, UAE, KSA, etc.).
 - Highlights "Technical Partner for NGOs" as a specific value proposition.
 
@@ -18,7 +18,7 @@ Added a comprehensive `Person` and `ProfessionalService` schema to the global la
 - Updated `<button>` tags with contextual titles and descriptions for better indexing.
 
 ### 3. Metadata
-- Enhanced global metadata in `layout.tsx` to directly target keywords: "Software Architect", "Full Stack Software Engineer", and "Technical Partner".
+- Enhanced global metadata in `layout.tsx` to directly target keywords: "Software Architect", "Software Engineer", and "Technical Partner".
 
 ## Proposed Content Expansions (Awaiting Approval)
 
@@ -29,8 +29,8 @@ To truly dominate the SERPs for these keywords, we need to adapt some of the on-
 > Software Architect | Technical Partner | Author | Enabler
 
 **Proposed SEO-Optimized Version:**
-> **Software Architect & Full Stack Engineer** | Technical Partner for NGOs & Enterprises | Author | Enabler
-*Why:* Explicitly includes "Full Stack Engineer" and "NGOs & Enterprises" above the fold to capture immediate search intent.
+> **Software Architect & Principal Software Engineer** | Technical Partner for NGOs & Enterprises | Author | Enabler
+*Why:* Explicitly includes "Principle Software Engineer" and "NGOs & Enterprises" above the fold to capture immediate search intent.
 
 ### B. "The Offering" (Technical Grid) Content
 **Current:**
@@ -48,7 +48,7 @@ Add a 4th column or modify the "Foundation" column to explicitly mention:
 > Software Architecture around the globe
 
 **Proposed:**
-> **Global Software Architecture & Full Stack Consulting**
+> **Global Software Architecture & Principal Software Engineer Consulting**
 > Operating across North America, the GCC, and Europe, providing CTO-level technical partnership and defensive engineering for high-stakes environments.
 *Why:* Adding specific geographic terms helps with long-tail regional searches.
 

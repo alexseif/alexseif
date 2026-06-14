@@ -9,12 +9,12 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Full Stack Software Engineer & Architect | NGO Technical Partner',
+  title: 'Alex Seif | Software Architect & Principal Software Engineer | NGO Technical Partner',
   description:
-    'Senior Software Architect & Full Stack Software Engineer. 20+ years of defensive engineering. Trusted Technical Partner for NGOs, enterprises, and high-stakes infrastructures globally.',
+    'Software Architect & Principal Software Engineer. 20+ years of defensive engineering. Trusted Technical Partner for NGOs, enterprises, and high-stakes infrastructures globally.',
   keywords: [
     'Software Architect',
-    'Full Stack Software Engineer',
+    'Software Engineer',
     'Technical Partner',
     'NGO Technical Partner',
     'CTO as a Service',
@@ -84,12 +84,13 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": ["Person", "ProfessionalService"],
               "name": "Alex Seif",
-              "jobTitle": "Software Architect & Full Stack Software Engineer",
+              "jobTitle": "Software Architect & Principal Software Engineer",
               "url": "https://alexseif.com",
-              "description": "Expert Software Architect and Full Stack Engineer acting as a Technical Partner for NGOs and enterprise organizations globally.",
+              "description": "Expert Software Architect & Principal Software Engineer acting as a Technical Partner for NGOs and enterprise organizations globally.",
               "areaServed": ["World", "North America", "GCC", "Europe", "Egypt", "UAE", "KSA"],
               "knowsAbout": [
                 "Software Architecture",
+                "Principal Software Engineer",
                 "Full Stack Development",
                 "NGO Technical Partnership",
                 "Legacy Monolith Decoupling",

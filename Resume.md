@@ -11,9 +11,17 @@ github: "https://github.com/alexseif"
 
 ## PROFESSIONAL SUMMARY
 
-Senior Software Architect and Senior Software Architect and Principal Software Engineer with 20+ years of technical delivery designing, scaling, and protecting web applications and portals for enterprises of all sizes. Commands complete full-stack capabilities across backend domain logic, frontend interfaces, devops automation, and infrastructure management. Specializes in providing high-level technical execution and architectural leadership for complex legacy codebase migrations, integrating production-grade agentic AI systems, multi-agent workflows, and highly scalable RAG pipelines directly onto existing enterprise database footprints.
+Software Architect and Technical Partner with over 20 years of experience designing and maintaining mission-critical digital infrastructures. Proven track record in scaling systems from initial MVP to national-scale government operations serving 40 million+ users. Expert in decomposing and refactoring high-debt legacy systems into decoupled, resilient, and modern Symfony/PHP environments. Specialist in high-concurrency architecture, financial transaction routing, and sovereign-grade data security.
 
 
+## Core Competencies
+
+* **People first:** Systems are built for humans by humans, diligent design for systems, grace laws for humanity. 
+* **High-Concurrency Systems:** Architecting transactional engines for the Fintech and airline industries, capable of handling extreme, continuous loads with zero-latency requirements.
+* **Enterprise Architecture:** Expert in multi-tenant, high-availability, and headless architectures, including Drupal and Symfony-based enterprise solutions.
+* **Legacy Data Remediation:** Proven ability to salvage corrupted, fragmented, or undocumented legacy databases, refactoring them into clean, normalized, and performant relational schemas.
+* **DevOps & Infrastructure:** End-to-end management of deployment pipelines, server hardening, and disaster recovery planning, including work within air-gapped, high-security intranet environments.
+* **Strategic Roadmapping:** Translating complex business needs into precise, scalable technical specifications, bridging the gap between non-technical stakeholders and engineering teams
 
 ## TECHNICAL STACK INVENTORY
 
@@ -46,8 +54,8 @@ Senior Software Architect and Senior Software Architect and Principal Software E
 
 ## PROFESSIONAL EXPERIENCE
 
-### Senior Freelance Software Architect & Principal Engineer
-**Independent Consultancy & Retainers** | January 2005 – Present
+### Senior Independent Systems Architect & Technical Partner
+**Independent Consultancy & Retainers** | January 2014 – Present
 *Provide requirements elicitation, Solution architecture & design, design principles, full-stack development, database optimization, AI systems integration, devops automation, and infrastructure management for commercial enterprises, digital media agencies, and state public institutions.*
 
 #### AI & Data Pipeline Implementations:
@@ -80,7 +88,7 @@ Senior Software Architect and Senior Software Architect and Principal Software E
 * **Security & Auditing:** Engineered data-at-rest encryption pipelines and multi-region tokenization frameworks to pass strict security audits and achieve full PCI-DSS compliance verification using Test-Driven Development (TDD) and Behavior-Driven Development (BDD).
 
 ### Senior Software Engineer & Systems Analyst
-**MitchDesigns & Freelance Engagements** | November 2007 – December 2014
+**MitchDesigns & Freelance Engagements** | November 2007 – 2009 & 2014 - 2015
 *Executed full-stack web application development, custom coding, framework migrations, and local server management for regional businesses.*
 * **Bouri Center (Legacy ERP Integration):** Modeled and decoupled an e-commerce database to function independently as an isolated branch node, bypassing uncooperative legacy corporate ERP blocks. Built an ingestion gateway to sanitize corrupt vendor data streams before web production deployment.
 * **Resort Choice (Multi-Tenant Yield Engine):** Codified rental contract terms into validation logic within custom database views to enforce linear booking limits and completely prevent cross-channel double-booking race conditions.

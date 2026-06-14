@@ -40,7 +40,7 @@ export const WorldMapSection = () => {
             className="text-center mt-12 space-y-6"
           >
             <h2 className="text-foreground text-1xl md:text-2xl tracking-[0.2em] font-sans font-light uppercase">
-              Global Software <strong className="text-primary">Architecture</strong> & Full Stack Consulting
+              Global Software <strong className="text-primary">Architecture</strong> & Principal Software Engineer Consulting
             </h2>
             <p className="text-foreground/70 text-sm max-w-2xl mx-auto mt-4 leading-relaxed font-sans">
               Operating across North America, the GCC, and Europe, providing CTO-level technical partnership and defensive engineering for high-stakes environments.

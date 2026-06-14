@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Senior Software Architect & Full Stack Engineer Resume',
-  description: 'Resume of Alex Seif, a Senior Software Architect and Full Stack Engineer specializing in high-level technical execution, scalable systems, and legacy migrations.',
+  title: 'Alex Seif | Senior Software Architect & Principal Software Engineer Resume',
+  description: 'Resume of Alex Seif, a Senior Software Architect & Principal Software Engineer specializing in high-level technical execution, scalable systems, and legacy migrations.',
 };
 
 import PrintButton from './PrintButton';
@@ -18,14 +18,17 @@ function parseResumeContent(content: string) {
 
   let summary = '';
   let competencies = '';
+  let stack = '';
   let experience = '';
   let credentials = '';
 
   sections.forEach(section => {
     if (section.trim().startsWith('## PROFESSIONAL SUMMARY')) {
       summary = section.replace(/^## PROFESSIONAL SUMMARY/m, '').trim();
+    } else if (section.trim().startsWith('## Core Competencies')) {
+      competencies = section.replace(/^## Core Competencies/m, '').trim();
     } else if (section.trim().startsWith('## TECHNICAL STACK INVENTORY')) {
-      competencies = section.replace(/^## TECHNICAL STACK INVENTORY/m, '').trim();
+      stack = section.replace(/^## TECHNICAL STACK INVENTORY/m, '').trim();
     } else if (section.trim().startsWith('## PROFESSIONAL EXPERIENCE')) {
       experience = section.replace(/^## PROFESSIONAL EXPERIENCE/m, '').trim();
     } else if (section.trim().startsWith('## EDUCATION & BACKGROUND')) {
@@ -33,7 +36,7 @@ function parseResumeContent(content: string) {
     }
   });
 
-  return { summary, competencies, experience, credentials };
+  return { summary, competencies, stack, experience, credentials };
 }
 
 export default function ResumePage() {
@@ -41,7 +44,7 @@ export default function ResumePage() {
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  const { summary, competencies, experience, credentials } = parseResumeContent(content);
+  const { summary, competencies, stack, experience, credentials } = parseResumeContent(content);
   const processedExperience = experience.replace(/^\*\*(.*?)\*\*\s*\|\s*(.*?)$/gm, '###### $1 | $2');
 
   return (
@@ -106,7 +109,25 @@ export default function ResumePage() {
             </p>
           </section>
 
-          {/* Technical Core Competencies Matrix */}
+          {/* Core Competencies Matrix */}
+          <section className="mb-8">
+            <h3 className="text-lg font-bold uppercase tracking-wider mb-3 border-b border-gray-300 pb-1">Core Competencies</h3>
+            <div className="text-sm resume-competencies">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h3: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-800 uppercase tracking-wide mt-6 mb-3 border-b border-gray-100 pb-1" {...props} />,
+                  ul: ({ node, ...props }) => <ul className="space-y-2 mb-4" {...props} />,
+                  li: ({ node, ...props }) => <li className="flex flex-col sm:flex-row print:flex-row leading-relaxed" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="sm:w-1/3 print:w-1/3 shrink-0 sm:pr-4 print:pr-4 font-bold text-gray-900" {...props} />
+                }}
+              >
+                {competencies}
+              </ReactMarkdown>
+            </div>
+          </section>
+
+          {/* Technical Stack Matrix */}
           <section className="mb-8">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-3 border-b border-gray-300 pb-1">Technical Stack Inventory</h3>
             <div className="text-sm resume-competencies">
@@ -119,7 +140,7 @@ export default function ResumePage() {
                   strong: ({ node, ...props }) => <strong className="sm:w-1/3 print:w-1/3 shrink-0 sm:pr-4 print:pr-4 font-bold text-gray-900" {...props} />
                 }}
               >
-                {competencies}
+                {stack}
               </ReactMarkdown>
             </div>
           </section>
