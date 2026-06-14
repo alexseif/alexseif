@@ -72,10 +72,10 @@ export function StatCounter() {
         >
           <motion.div variants={fadeInUp} className="text-center space-y-4">
             <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// Scale & Impact</p>
-            <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              Software Architect
-            </h2>
-            {/* <h3>Operational Metrics</h3> */}
+            <h3 className="text-foreground text-2xl tracking-[0.2em] font-sans font-light uppercase">
+              Executed globally; <br /> Realised by precision;
+
+            </h3>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:gap-y-20">
