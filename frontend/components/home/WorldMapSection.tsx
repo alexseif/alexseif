@@ -43,8 +43,8 @@ export const WorldMapSection = () => {
               Software <strong className="text-primary">Architecture</strong> around the globe
             </h2>
           </motion.div>
-          {/* World Map SVG */}
-          <div className="relative w-full aspect-[2/1] bg-card/30 border border-border/50 rounded overflow-hidden">
+          {/* World Map SVG (Desktop) */}
+          <div className="hidden md:block relative w-full aspect-[2/1] bg-card/30 border border-border/50 rounded overflow-hidden">
             {/* Simplified world map outline */}
             <svg
               viewBox="0 0 100 50"
@@ -110,6 +110,18 @@ export const WorldMapSection = () => {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Mobile Country List (Mobile only) */}
+          <div className="flex md:hidden flex-wrap justify-center gap-2 mt-8">
+            {countries.map((country) => (
+              <span
+                key={country.code}
+                className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1 bg-card/10"
+              >
+                {country.name}
+              </span>
+            ))}
           </div>
 
 
