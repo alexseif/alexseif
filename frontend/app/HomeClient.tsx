@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MapPin, Mail, ArrowRight, Activity, Terminal, Shield, Workflow, Cpu, MessageSquare, Briefcase, FileCode2, Server, Brain, Info, Phone } from "lucide-react";
+import { MapPin, Mail, ArrowRight, Activity, Terminal, Shield, Workflow, Cpu, MessageSquare, Briefcase, FileCode2, Server, Brain, Info, Phone, LucideGithub } from "lucide-react";
+import { Linkedin } from "@/components/Icons";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
@@ -58,17 +59,31 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
     return false;
   };
 
-  const handleContact = (e: React.MouseEvent, type: 'email' | 'whatsapp') => {
+  const handleContact = (e: React.MouseEvent, type: 'email' | 'whatsapp' | 'linkedIn' | 'github') => {
     e.preventDefault();
     // Simple bot protection: string reconstruction
-    if (type === 'email') {
-      const user = "alex.seif";
-      const domain = "gmail.com";
-      window.location.href = `mailto:${user}@${domain}`;
-    } else {
-      const country = "20";
-      const rest = "1004006332";
-      window.open(`https://wa.me/${country}${rest}`, '_blank');
+    switch (type) {
+      case 'email':
+        const user = "alex.seif";
+        const domain = "gmail.com";
+        window.open(`mailto:${user}@${domain}`, '_blank');
+        break;
+      case 'whatsapp':
+        const country = "20";
+        const rest = "1004006332";
+        window.open(`https://wa.me/${country}${rest}`, '_blank');
+        break;
+      case 'linkedIn':
+        const linkedInuser = "alexseif";
+        const linkedIndomain = "linkedin.com";
+        window.open(`https://${linkedIndomain}/in/${linkedInuser}`, '_blank');
+        break;
+      case 'github':
+        const githubUser = "alexseif";
+        const githubDomain = "github.com";
+        window.open(`https://${githubDomain}/${githubUser}`, '_blank');
+        break;
+
     }
   };
 
@@ -117,20 +132,19 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
               </h1>
               <div className="h-px w-12 bg-primary/50" />
             </div>
-            <p className="text-foreground/70 text-md tracking-[0.3em] uppercase">
-              Software Architect <br />
-              Technical Partner <br />
-              Author
-            </p>
+            <ul className="text-foreground/70 text-md tracking-[0.3em] uppercase">
+              <li>Software Architect</li>
+              <li>Technical Partner</li>
+              <li>Author</li>
+              <li>Enabler</li>
+            </ul>
           </motion.div>
           <motion.div variants={fadeInUp} className="space-y-3 pt-8">
             <div className="flex items-center justify-center gap-4 mb-12">
               <p className="text-foreground/70 text-md tracking-[0.15em] ">
-                Because of <strong className="text-primary">20+ yrs</strong> building the web;<br />
-                Realize that most problems are very simple;<br />
-                Imagine solutions that are also very simple;<br />
-                And so Remember the most valuable things in life<br />
-                become the most simple things.
+                <strong>Because</strong> of <strong className="text-primary">20+ yrs</strong> building the web;<br />
+                <strong>Realize</strong> that most problems are very simple; <strong>Imagine</strong> solutions that are also very simple;<br />
+                And so <strong>Remember</strong> the most valuable things in life become the most <strong>simple</strong> things;
               </p>
             </div>
           </motion.div>
@@ -154,6 +168,15 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
                 <MessageSquare className="h-3.5 w-3.5" />
               </div>
               <span className="text-md font-mono tracking-[0.2em] uppercase">WhatsApp</span>
+            </button>
+            <button
+              onClick={(e) => handleContact(e, 'github')}
+              className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+            >
+              <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
+                <LucideGithub className="h-3.5 w-3.5" />
+              </div>
+              <span className="text-md font-mono tracking-[0.2em] uppercase">Github</span>
             </button>
             <button
               onClick={() => document.getElementById('path-discovery')?.scrollIntoView({ behavior: 'smooth' })}
