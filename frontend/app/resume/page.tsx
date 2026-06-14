@@ -94,6 +94,7 @@ export default function ResumePage() {
               <span>{data.phone}</span>
               <span>{data.location}</span>
               <a href={data.linkedin} target="_blank" rel="noreferrer" className="hover:text-black">linkedin.com/in/alexseif</a>
+              <a href={data.github} target="_blank" rel="noreferrer" className="hover:text-black">github.com/alexseif</a>
               <a href={data.website} target="_blank" rel="noreferrer" className="hover:text-black">alexseif.com</a>
             </div>
           </header>
