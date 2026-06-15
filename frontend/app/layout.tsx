@@ -9,21 +9,20 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Software Architect & Principal Software Engineer | NGO Technical Partner',
+  title: 'Alex Seif | Senior Lead Engineer & Technical Partner',
   description:
-    'Software Architect & Principal Software Engineer. 20+ years of defensive engineering. Trusted Technical Partner for NGOs, enterprises, and high-stakes infrastructures globally.',
+    'Senior Lead Engineer & Technical Partner. 20+ years of high-concurrency PHP/Symfony ecosystem architecture and production AI integration.',
   keywords: [
-    'Software Architect',
-    'Software Engineer',
+    'Senior Lead Engineer',
+    'Principal PHP Developer',
+    'Symfony Specialist',
     'Technical Partner',
-    'NGO Technical Partner',
-    'CTO as a Service',
     'Systems Architect',
     'Digital Infrastructures',
     'Legacy Monolith Decoupling',
-    'Static Code Forensics',
+    'Agentic AI',
+    'LangGraph',
     'State-Preservation Queue Design',
-    'Zero-Maintenance Engineering'
   ],
   generator: 'v0.app',
   icons: {
@@ -86,15 +85,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "@context": "https://schema.org",
               "@type": ["Person", "ProfessionalService"],
               "name": "Alex Seif",
-              "jobTitle": "Software Architect & Principal Software Engineer",
+              "jobTitle": "Senior Lead Engineer & Technical Partner",
               "url": "https://alexseif.com",
-              "description": "Expert Software Architect & Principal Software Engineer acting as a Technical Partner for NGOs and enterprise organizations globally.",
-              "areaServed": ["World", "North America", "GCC", "Europe", "Egypt", "UAE", "KSA"],
+              "description": "Expert Senior Lead Engineer acting as a Technical Partner for enterprise organizations globally.",
+              "areaServed": ["World", "Europe", "Egypt", "UAE", "KSA"],
               "knowsAbout": [
-                "Software Architecture",
-                "Principal Software Engineer",
-                "Full Stack Development",
-                "NGO Technical Partnership",
+                "PHP",
+                "Symfony",
+                "Relational Database Optimization",
+                "Agentic AI Engineering",
                 "Legacy Monolith Decoupling",
                 "System Integration"
               ]

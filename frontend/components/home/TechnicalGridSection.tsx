@@ -33,13 +33,13 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                Technical Partner for NGOs & Non-Profits
+                Legacy Modernization & Scale
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                We engineer resilient, cost-effective, and scalable infrastructures tailored for NGOs, ensuring maximum impact with minimal operational overhead.
+                Decomposing monolithic applications, optimizing sluggish MySQL database layers (3NF / Star Schema), and eliminating race conditions.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["Trust", "NGO Partnership", "Mastery"].map((tech) => (
+                {["3NF", "Star Schema", "Decoupling"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"
@@ -58,16 +58,13 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                Grow
+                High-Concurrency Engineering
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                Semantic and GEO-spatial intelligence.{" "}
-                <strong className="text-primary">Become</strong> omnipresent. We
-                engineer for definitive ecosystem dominance, ensuring your narrative
-                commands global networks.
+                Architecting distributed booking engines, custom locking state buffers, and fault-tolerant transaction pipelines.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["SEO", "Semantic", "Dominance"].map((tech) => (
+                {["Lock-State", "Distributed", "Fault-Tolerant"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"
@@ -86,16 +83,13 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                Intelligence
+                Production Agentic AI Engine
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                <strong className="text-primary">Imagine</strong> problem
-                resolution and requirement extraction. We weaponize AI only where
-                it creates asymmetrical leverage and undisputed strategic
-                advantage.
+                Decomposing unstructured historical data via Python RAG pipelines and executing persistent multi-agent loops utilizing LangGraph.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["AI/ML", "Strategy", "Leverage"].map((tech) => (
+                {["RAG", "LangGraph", "Multi-Agent"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"

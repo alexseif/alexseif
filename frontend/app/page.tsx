@@ -19,12 +19,12 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Alex Seif",
-    "jobTitle": "Systems Architect & Technical Partner",
+    "jobTitle": "Senior Lead Engineer & Technical Partner",
     "url": "https://alexseif.com",
     "sameAs": [
       "https://github.com/alexseif"
     ],
-    "knowsAbout": ["Deep-End Enterprise Infrastructures", "Digital System Deployments", "Legacy Monolith Decoupling", "Static Code Forensics", "State-Preservation Queue Design", "Defensive Zero-Maintenance Engineering"]
+    "knowsAbout": ["Deep-End Enterprise Infrastructures", "Digital System Deployments", "Legacy Monolith Decoupling", "PHP/Symfony", "Agentic AI Engineering", "Defensive Zero-Maintenance Engineering"]
   };
 
   return (

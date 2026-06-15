@@ -1,105 +1,71 @@
 ---
-name: "Alex Seif"
-title: "Software Architect & Principal Software Engineer"
-location: "Cairo, Egypt (Contract / Hybrid / Remote / Relocation)"
+name: "Eskandar (Alex) Seif"
+title: "Senior Lead Engineer & Technical Partner"
+location: "Cairo, Egypt | Open to Contract, Remote, and Relocation (EU / Gulf)"
 phone: "+201004006332"
 email: "alex.seif@gmail.com"
-linkedin: "https://linkedin.com/in/alexseif/"
-website: "https://alexseif.com"
+linkedin: "https://linkedin.com/in/alexseif"
 github: "https://github.com/alexseif"
+website: "https://alexseif.com"
 ---
 
-## PROFESSIONAL SUMMARY
-
-Software Architect and Technical Partner with over 20 years of experience designing and maintaining mission-critical digital infrastructures. Proven track record in scaling systems from initial MVP to national-scale government operations serving 40 million+ users. Expert in decomposing and refactoring high-debt legacy systems into decoupled, resilient, and modern Symfony/PHP environments. Specialist in high-concurrency architecture, financial transaction routing, and sovereign-grade data security.
-
-
-## Core Competencies
-
-* **People first:** Systems are built for humans by humans, diligent design for systems, grace laws for humanity. 
-* **High-Concurrency Systems:** Architecting transactional engines for the Fintech and airline industries, capable of handling extreme, continuous loads with zero-latency requirements.
-* **Enterprise Architecture:** Expert in multi-tenant, high-availability, and headless architectures, including Drupal and Symfony-based enterprise solutions.
-* **Legacy Data Remediation:** Proven ability to salvage corrupted, fragmented, or undocumented legacy databases, refactoring them into clean, normalized, and performant relational schemas.
-* **DevOps & Infrastructure:** End-to-end management of deployment pipelines, server hardening, and disaster recovery planning, including work within air-gapped, high-security intranet environments.
-* **Strategic Roadmapping:** Translating complex business needs into precise, scalable technical specifications, bridging the gap between non-technical stakeholders and engineering teams
-
-## TECHNICAL STACK INVENTORY
-
-### Software Architect
-* **System Design & Architecture:** Monolithic-to-Microservices Evolution, Headless Architecture, Legacy-to-Cloud Migration, Relational Schema Normalization, Design Principles.
-* **Domain Modeling & Complex Systems:** E-Commerce & Marketplaces (headless custom solutions, payment integrations), ERP System Integration, Advanced Booking Engines (High Concurrency, Tour/Package, Subscription, Calendar Sync, Multi-Currency/Language/Payment).
-* **AI Engineering & Orchestration:** LangGraph, Multi-Agent Workflows, Append-Only Data Reducers, Cyclic Graph Topologies, RAG Pipelines, Semantic Text Chunking, Embedding Models, Vector Storage Interfaces, Python. *(Active Learning)*
-
-### Principal Software Engineer
-* **Core Languages & Frameworks:** PHP (Symfony, Laravel, Drupal Enterprise, WordPress Core), TypeScript / JavaScript (Node.js, React.js, Vue.js), Go *(Active Learning)*.
-* **Frontend Foundations:** Tailwind CSS, HTML5, CSS3, SCSS, Responsive Layout Architecture.
-* **Data & API Layer:** MySQL / MariaDB, Database View Optimization, Asynchronous Task Queues, Webhooks, RESTful API Design & Integration, API Security & Documentation.
-* **Engineering Practices:** Test-Driven Development (TDD), Behavior-Driven Development (BDD), Performance Optimization.
-
-### DevOps & Team Leader
-* **Cloud & Infrastructure:** Acquia Cloud Platform, AWS (EC2, S3, RDS, IAM), DigitalOcean, Linux System Administration.
-* **Performance & Deployment:** Varnish Edge Caching, High-Availability Load Balancing, Docker Containerization.
-* **Team Management:** Agile/Scrum facilitation, Code Review, Mentorship, Cross-functional alignment, Technical Debt Management.
-
-### CTO
-* **Strategic Leadership:** Budgeting, Talent Management, Positive Leadership, Technology Strategy, Technical Partnership, Requirements Elicitation. Prototyping vs Actual builds.
-* **Governance & Compliance:** Compliance by Design, Governmental-grade infrastructure and workflows, Security-first design, PCI DSS Compliance, Mission-critical and high-availability systems.
-
-
-### Computer Engineer (Discipline / Foundational)
-* **SCADA** Supervisory Control and Data Acquisition, embedded systems real time data monitoring for oil transport in Egypt.
-* **Technical Background:** Java, C++, bash, O.S. Design, O.S. implementation, Bash, Python, Algorithms, Database Design, OOP.
+## Professional Profile
+Pragmatic Senior Lead Engineer with over 20 years of hands-on experience designing, scaling, and maintaining high-stakes digital infrastructure. Proven track record of taking complex web systems from zero to production, including national-scale public sector platforms serving millions of concurrent citizens. Deep technical specialist in the PHP/Symfony ecosystem, legacy database remediation, and relational schema optimization. Combines rigorous back-end engineering discipline with strong business requirement elicitation, focusing on iterative delivery, team longevity, and zero-downtime deployments.
 
 ---
 
-## PROFESSIONAL EXPERIENCE
+## Technical Stack Inventory
 
-### Senior Independent Systems Architect & Technical Partner
-**Independent Consultancy & Retainers** | January 2014 – Present
-*Provide requirements elicitation, Solution architecture & design, design principles, full-stack development, database optimization, AI systems integration, devops automation, and infrastructure management for commercial enterprises, digital media agencies, and state public institutions.*
+*   **Languages & Core Frameworks:** PHP (Symfony, Laravel, Core, Drupal Enterprise, Moodle), JavaScript/TypeScript (Node.js, React), Bash.
+*   **Data Layer & Optimization:** MySQL/MariaDB, Master-Slave Replication, Query Optimization, Advanced Database Views, Relational Schema Normalization, 3NF, Star Schema.
+*   **Infrastructure & Deployment:** Linux Systems Administration (CentOS), Nginx, Load Balancing, Custom Bash Automation, CI/CD Pipelines (GitHub Actions, Jenkins), Docker.
+*   **Engineering Governance:** Requirements Elicitation, Architecture Documentation (Wikis), Technical Debt Remediation, Test/QA Workflow Standardization, Mitigating Key-Person Risk ("Bus Factor").
 
-#### AI & Data Pipeline Implementations:
-* **Production Agentic Workflow Engineering:** Designed and deployed autonomous text-scraping and system-monitoring topologies using LangGraph. Implemented append-only state channels via operator.add data reducers and persistent SQLite/PostgreSQL checkpointers, ensuring state safety and eliminating memory leaks across cyclic multi-worker execution loops.
-* **Enterprise RAG Pipeline Architecture:** Engineered document ingestion pipelines to transform unstructured historical records into structured, queryable knowledge archives. Developed semantic text chunking algorithms with overlapping character windows and configured localized vector storage engines to map text embeddings alongside relational metadata tags.
-* **Ajel.sa (Mass Media Network):** Served as Technical Partner for 2–3 years managing the infrastructure for the #2 news outlet in Saudi Arabia. Maintained a hyper-scale enterprise Drupal environment hosted on Acquia Cloud, implementing Varnish edge caching and optimizing relational indexes to absorb traffic spikes during major breaking news cycles. Managed automated, asynchronous background ingestion pipelines to pull and parse content feeds from global networks like the BBC.
+---
 
-#### Public Sector & Digital Infrastructures:
-* **Egyptian Ministry of Interior (MOI) - Traffic & Aman Portal:** Architected a customized enterprise Drupal infrastructure and high-concurrency routing engine to schedule services across facilities and mobile units, servicing a population scale of 40M+ citizens.
-* **MOI Egypt Blind Deployment Execution:** Built automated shell scripts to run complex Git path updates, dependency updates, and database schema migrations seamlessly on air-gapped intranet networks without direct developer access.
-* **Saudi Standards, Metrology and Quality Organization (SASO PTI):** Led a 3-year migration of a monolithic enterprise Drupal portal into a highly available Headless architecture. Built state-preservation and fail-safe queue mechanics to handle data payloads securely during external transaction timeouts.
-* **Dubai Police Department - Enterprise Training Network:** Configured compliance workflow engines and background tracking loops inside an isolated government cloud environment to monitor student progress.
-* **Salama Portal (KSA):** Engineered a state-subsidized cooperative insurance gateway using Drupal Enterprise CMS, deploying a high-concurrency transaction engine and secure data exchange layers to synchronize policy classifications with national enforcement agencies.
+## Selected Professional Experience
 
-#### Commercial & E-Commerce Implementations:
-* **Agazat Masr (Tourico):** Co-engineered a custom dynamic travel package assembly catalog and transaction engine. Built an asynchronous, email-driven booking queue that scaled the client to become a leading domestic tourism provider in Egypt, maintaining database integrity during intense search concurrent load. Supported and upgraded the codebase continuously for 3 consecutive years.
-* **Esorus Ecosystem:** Designed a highly scalable database schema using Symfony to pivot a design content platform into a commercial B2B marketplace, indexing 15,800+ products, 1,200+ architects, and 300+ suppliers.
-* **Desoky & Soda:** Built decoupled backend structures and high-elasticity relational schemas using the Symfony framework to support database modifications during agile sprint cycles.
-* **Svelto:** Deployed a decoupled product personalization and print configuration engine utilizing an optimized WordPress and WooCommerce core architecture, handling secure payment gateway loops and asynchronous webhook hooks.
-* **Misfits LLC:** Architected a lightweight web catalog resulting in 6+ consecutive years of zero-maintenance uptime with zero code edits or structural patches required post-deployment.
-* **North South Consultants Exchange (NSCE):** Normalized fragmented, multi-lingual database models and built indexed custom taxonomies and geospatial mapping systems for international donor projects (UN, GIZ, EU).
-* **bndko.com:** Deployed a custom mobile-first front-end layout optimized for low SpeedIndex scores, connecting asynchronous form capture hooks directly to background outbound email marketing automation suites.
-* **Alexander Restaurant:** Deployed a zero-bloat digital interface using custom lightweight base themes, optimizing asset compression and mobile caching layers for instantaneous page execution.
+### Technical Partner & Senior Lead Engineer
+**iSoft (IdealSoft Emirates) | Technical Consultancy Retainer** | *January 2021 – December 2024*  
+Delivered ministry-level digital infrastructure, high-concurrency transactional routing engines, and API architectures for federal and municipal public sector clients across Egypt and the GCC region.
+
+*   **National Vehicle Inspection Infrastructure (Aman Portal & Egyptian Ministry of Interior):** Technical Lead for a public-private national initiative web ecosystem designed to offload vehicle inspections from traditional traffic departments to mobile vans and commercial hubs.
+    *   *System Evolution:* Directed a multi-phase implementation from an initial informational Drupal enterprise core to a dynamic geo-location routing system.
+    *   *API Integration:* Engineered a secure, high-availability back-to-back API integration with the state-level backend to map real-time point-of-service availability based on user-requested compliance services and citizen feedback loops.
+    
+*   **Air-Gapped Intranet Training Portal (Egyptian Ministry of Interior - Traffic Police Dept.):** Architected and deployed a highly locked-down Moodle enterprise training portal running on a state intranet for the mandatory licensing courses of civilian and commercial heavy-machinery drivers nationwide.
+    *   *Frontend UX Remediation:* Resolved severe user literacy challenges by advising on specialized UX flows tailored for a high-illiteracy demographic, ensuring accessibility and strict compliance with legal testing mandates.
+    *   *Deterministic Air-Gapped DevOps:* Solved absolute security clearance constraints by engineering a zero-network, turn-key deployment pipeline. Custom-patched a CentOS distribution to utilize a physical USB drive as a localized package provider and repository source.
+    *   *Automated Intranet Upgrades:* Authored fault-tolerant bash automation scripts allowing non-technical personnel with high-level site clearance to execute complex, multi-branch Git merges, schema migrations, and configuration state updates blindly and flawlessly without direct developer server access.
+*   **National Inspection Scheduling Infrastructure (SASO - Saudi Ministry of Standards, Metrology and Quality):** Architected and scaled the vehicle inspection and modification scheduling infrastructure from zero to production launch, managing nationwide traffic across multi-lane facilities within strict 15-minute scheduling blocks.
+    *   *Unified CMS & Knowledge Base:* Leveraged an enterprise Drupal setup to combine high-concurrency transactions with an effective public-facing content management system, delivering public news, compliance guides, and operational documentation seamlessly.
+    *   *Distributed State Locking Engine:* Solved severe data collision and race conditions where three independent clients—the public web portal, the state internal backend, and the mobile application—competed simultaneously for identical 15-minute scheduling slots.
+    *   *Optimized Booking Pipeline:* Engineered a transactional API lock-state system that deferred heavy validation by pushing slot selection to the absolute end of the user workflow. Implemented a deterministic 5-minute buffer lock on chosen time slots; if registration fields were not completed within the window, the state machine atomatically released the slot back to the global pool.
+    *   *Database Refactoring & Performance:* Remediated a sluggish API layer by restructuring data models into 3rd Normal Form (3NF) for transactional safety, combined with a Star Schema design for rapid analytical queries, driving heavy calendar and drop-down dataset loads to near-instant execution.
+    *   *Headless React Evolution:* Led the multi-phase migration of the monolithic architecture into a Headless ecosystem. Decoupled the validated core business workflows and securely exposed them via versioned APIs to a modern, high-performance React frontend.
+*   **State-Licensed Cooperative Insurance Platform (Salama Portal, Saudi Arabia):** Lead Engineer for the initial foundational project under the iSoft partnership, deploying an enterprise Drupal platform to manage high-volume, compliant digital car insurance registrations for one of the largest Shariah-compliant insurers in the MENA region.
+    *   *Architectural Blueprint:* Engineered the primary data registration workflows, validation mechanics, and secure transaction-handling layers that were later adopted and scaled across subsequent federal Saudi Arabian public portals.
+    *   *Regulatory Integration:* Structured data capture payloads and secure external API handshakes to ensure strict compliance with regional cooperative insurance regulations and legal security standards.
 
 ### Co-Founder & Chief Technology Officer (CTO)
-**Wallety (Fintech Platform)** | December 2009 – July 2015
-*Managed backend software engineering, transaction processing pipelines, and cloud security compliance for a high-volume travel ticketing application.*
-* **Core Ledger Scaling:** Engineered the backend asynchronous transaction routing systems that successfully processed over 33% of all domestic air travel ticketing throughput nationwide across Egypt.
-* **State Machine Hardening:** Built a defensive transactional state machine that safely cached, retried, and committed atomic financial ledger updates during banking gateway or network dropouts.
-* **Security & Auditing:** Engineered data-at-rest encryption pipelines and multi-region tokenization frameworks to pass strict security audits and achieve full PCI-DSS compliance verification using Test-Driven Development (TDD) and Behavior-Driven Development (BDD).
+**Wallety (Fintech Platform)** | *December 2009 – July 2015*  
+Architected, launched, and scaled Egypt’s first comprehensive secure online payment gateway from a solo-engineered MVP to a high-concurrency national infrastructure processing 33% of all domestic air travel ticketing throughput.
 
-### Senior Software Engineer & Systems Analyst
-**MitchDesigns & Freelance Engagements** | November 2007 – 2009 & 2014 - 2015
-*Executed full-stack web application development, custom coding, framework migrations, and local server management for regional businesses.*
-* **Bouri Center (Legacy ERP Integration):** Modeled and decoupled an e-commerce database to function independently as an isolated branch node, bypassing uncooperative legacy corporate ERP blocks. Built an ingestion gateway to sanitize corrupt vendor data streams before web production deployment.
-* **Resort Choice (Multi-Tenant Yield Engine):** Codified rental contract terms into validation logic within custom database views to enforce linear booking limits and completely prevent cross-channel double-booking race conditions.
-* **Infrastructure Custody:** Responsible for on-premise provisioning, localized staging builds, automated production deployment loops, and disaster recovery (DR) protocols.
-* **Egyptolution (Custom Media Portal):** Built a high-velocity custom MVC Content Management System (CMS) optimized for low latency and high-volume media distribution.
+*   **Zero-to-One Product Delivery:** Solely engineered and launched the initial production platform utilizing PHP and Symfony to solve critical banking infrastructure gaps regarding online fraud and regulatory non-compliance.
+*   **National Scale & GDS Integration:** Secured direct infrastructure integrations with all domestic acquiring banks, 200+ enterprise merchants within year one, and the Amadeus global distribution system (GDS).
+*   **Engineering Leadership & Scale:** Post-funding, scaled and directed a 30-person engineering organization, establishing technical roadmaps, architectural standards, and security-first development practices.
+*   **Defensive Transaction Routing:** Built transactional state mechanics to safely cache, retry, and commit atomic financial updates, mitigating systemic database latency and network dropouts across fragile legacy bank networks.
+
+### Senior Lead Engineer & Architecture Consultant
+**Independent Consultancy & Retainers** | *January 2014 – Present*
+*   **Hyper-Scale Mass Media (Ajel.sa via NileTech):** Managed the technical infrastructure for Saudi Arabia's #2 news outlet. Configured enterprise Varnish edge caching on an Acquia Cloud environment and tuned relational database indexing to absorb massive traffic spikes during breaking national news cycles. Built asynchronous background parsing pipelines to safely pull and ingest data feeds from global networks like the BBC without blocking main-thread application delivery.
+*   **B2B Marketplace Evolution (Esorus Ecosystem):** Designed a highly scalable relational database schema using Symfony to pivot a content platform into a commercial B2B marketplace indexing over 15,000+ specialized products and multi-party workflows.
 
 ---
 
-## EDUCATION & BACKGROUND
+## Education & Foundations
 
-* **Computer Engineering Curriculum**
-  Arab Academy for Science, Technology and Maritime Transport (AASTMT)
-  *Completed all core engineering coursework and technical syllabus up to the final graduation semester.*
-* **Verified Project Uptime:** 20+ years of active technical experience maintaining live software systems processing millions of records and servicing national populations across 3 countries and enterprise solutions across regional and international jurisdictions (Egypt, KSA, UAE, EU, Russia).
+**Computer Engineering Curriculum**  
+*Arab Academy for Science, Technology and Maritime Transport (AASTMT)*
+*   Completed 5-year core engineering coursework and technical syllabus through final year.
+*   Core Focus: Operating System Design & Implementation, Relational Database Design, SCADA Systems, and Advanced Algorithms.
