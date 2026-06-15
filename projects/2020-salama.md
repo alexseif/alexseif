@@ -1,19 +1,17 @@
 ---
-title: "Salama Portal"
+title: "Salama Car Insurance Registration Gateway"
 year: 2020
-url: "https://portal.salama.com.sa/SalamaPortal/"
-client_type: "Public Sector"
-agency: "Software Architect & Systems Technical Partner via iSoft"
-subtitle: "State-Subsidized Cooperative Insurance Gateway"
-tech_stack: ["Drupal Enterprise CMS", "API Integration", "Transaction Management", "Database Architecture", "Security Controls"]
+client_type: "Public Sector / Fintech"
+agency: "Technical Partner & Senior Lead Engineer via iSoft"
+tech_stack: ["Drupal Enterprise", "PHP", "MySQL", "REST API", "Data Validation Layers"]
 ---
 
-# Project Dossier
-Deployed as a technical pillar supporting national development initiatives in the Kingdom of Saudi Arabia (KSA). Engineered for a state-subsidized cooperative insurance entity managing vehicle insurance portfolios nationwide.
+# Use Case: Compliance-Driven Insurance Registration Engine
 
-### Core Architecture & System Engineering
-- **Transaction Engine:** Designed and deployed an enterprise-grade infrastructure capable of executing synchronous database operations, coverage validations, and premium computations.
-- **State Integration:** Engineered data exchange layers to process state-subsidized transaction rules, ensuring financial reporting, policy classifications, and regulatory oversight markers synchronized between corporate ledger databases and national enforcement agencies.
+### 1. Objective & Scope
+Co-developed the initial web gateway for Salama Cooperative Insurance Company to manage and automate high-volume car insurance registrations in Saudi Arabia. The system served as the architectural blueprint for validation workflows later adopted across our subsequent KSA public sector portals.
 
-### Engineering Notes / Edge Cases
-Implemented access control models, transactional logging, and encrypted payload routing to protect sensitive data according to cyber-security mandates. This project synthesized governmental policy changes into stable backend code structures.
+### 2. Technical Decisions & Implementation
+* **Validation State Architecture:** Engineered the core data registration and structural field validation layers inside an enterprise Drupal environment, ensuring error-free payload translation before data reached the backend processing nodes.
+* **Regulatory API Mapping:** Structured secure REST API handshakes and data capture payloads to enforce strict compliance with Saudi cooperative insurance regulations and legal security standards.
+* **Foundation for Scale:** Designed the system components using strict separation of concerns, creating highly reusable data models that streamlined the rapid deployment of future regional portal projects.

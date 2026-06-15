@@ -1,28 +1,17 @@
 ---
-title: "Dubai Police Academy"
+title: "Digital Training Platform — Dubai Police Academy"
 year: 2020
-url: "Private Connected Network"
 client_type: "Public Sector"
-agency: "Software Architect & Systems Technical Partner"
-subtitle: "Digital Training Platform & Police Academy LMS (2020)"
-tech_stack: ["Moodle LMS", "PHP 7.0+", "Linux Architecture", "MySQL", "Apache Web Server", "Network Topologies", "Continuous Deployment"]
+agency: "Technical Partner & Senior Lead Engineer via iSoft"
+tech_stack: ["Moodle LMS", "PHP 7+", "Linux", "MySQL", "Apache", "Continuous Staging Deployment"]
 ---
 
-#  Project Dossier
-Adapted and deployed a customized LMS architecture for the Dubai Police Academy, following the footprint of the Egyptian MOI deployment. This infrastructure operated within a connected enterprise private network, utilizing a compliance tracking and logic engine.
+# Use Case: Continuous Configuration Management on Private Government Networks
 
-###  Core Architecture & System Engineering
-- **Connected Infrastructure Architecture:** Leveraged live network access to establish remote deployment strategies and version-control staging environments, streamlining the delivery lifecycle compared to offline pipelines.
-- **Institutional Access Controls:** Programmatically managed course navigation to enforce training protocols, ensuring compliance pathways were adhered to by users.
-- **UX System Adaptations:** Adapted the application layer to support digital media training elements for a connected user demographic.
-
-###  Engineering Notes / Edge Cases
-The availability of active internet connectivity allowed the engineering focus to shift toward perimeter security compliance and continuous configuration management, demonstrating the flexibility of the core application framework across different security postures.
-
-#  Use Case Case Study
 ### 1. Objective & Scope
-Deploy an auditable digital education portal for the Dubai Police Academy to manage institutional training and tracking within an enterprise government network infrastructure.
+Adapted and deployed a highly auditable digital education and training tracker for the Dubai Police Academy, replicating the underlying core architecture of the Egyptian Ministry of Interior LMS platform, but optimized for an active, connected intranet environment.
 
 ### 2. Technical Decisions & Implementation
-- **Lifecycle Deployment:** Established network-driven server provisioning rules, deploying platform updates across staging environments prior to production go-live without requiring physical storage medium delivery.
-- **Compliance Progress Tracking:** Bound user tracking schemas to administrative progress metrics, creating audit trails of training and examination histories.
+* **Connected Staging Workflows:** Leveraged secure live network access to establish remote deployment strategies and version-controlled staging environments, removing the need for physical storage medium handovers.
+* **Perimeter Security Compliance:** Shifted engineering focus toward strict perimeter security compliance, network topology mapping, and continuous configuration management inside an isolated government cloud.
+* **Linear Course Tracking:** Bound database schemas to strict administrative metrics, creating permanent audit trails of user training progress and mandatory examination completion histories.

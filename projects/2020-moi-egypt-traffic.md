@@ -1,28 +1,18 @@
 ---
-title: "Egyptian Ministry of Interior - Traffic Department"
+title: "Air-Gapped Driver Licensing LMS — Egyptian Ministry of Interior"
 year: 2020
-url: "Intranet System"
 client_type: "Public Sector"
-agency: "Software Architect & Systems Technical Partner"
-subtitle: "Driver Licensing LMS Engine (2020)"
-tech_stack: ["Moodle LMS", "PHP 7.0.33", "Oracle Linux 7.6", "MySQL 5.7", "Apache 2.4", "Intranet Deployment", "Offline Voucher Auth", "Shell Scripting"]
+agency: "Senior Lead Engineer & Systems Analyst"
+tech_stack: ["Moodle LMS", "PHP 7.0.33", "Oracle Linux 7.6", "MySQL 5.7", "Bash Shell Scripting", "Custom Git Release Packages"]
 ---
 
-#  Project Dossier
-Architected and implemented a driver instruction and certification LMS for the Egyptian Ministry of Interior (Traffic Department) during the 2020 operational mandate. The system was customized to support a wide range of user literacy levels across vehicle licensing tiers. Engineered to run entirely within a closed intranet network without external internet dependencies.
+# Use Case: Zero-Network DevOps & UX Adaptation for High-Illiteracy Populations
 
-###  Core Architecture & System Engineering
-- **Offline Deployment Orchestration:** Managed core code modifications and database schema migrations within offline network constraints. Designed a multi-stage sandbox environment: developed migration procedures locally, engineered a bash script suite to execute code and database upgrades, and ran dry-runs to ensure stability when delivered via physical storage to the intranet.
-- **Asynchronous Offline Authentication:** Addressed the lack of live network links to the central billing department by building an offline verification engine. Integrated with physical cash-collection points to translate printed financial receipt numbers into valid, single-use system entry access vouchers inside Moodle, without live API cross-checks.
-- **UX Optimization:** Re-engineered the Moodle frontend layout and course navigation loops to support multimedia-driven educational milestones, allowing users with varying literacy levels to navigate mandatory training paths.
-
-###  Engineering Notes / Edge Cases
-Managed the Moodle application upgrade lifecycle within an offline environment. The deployment scripts functioned as state-machines to prevent file conflicts and ensure successful database execution on the intranet servers without direct developer access.
-
-#  Use Case Case Study
 ### 1. Objective & Scope
-The mandate required executing a driver certification platform for the Egyptian Traffic Department within an offline security infrastructure. The solution needed to handle millions of citizens of varying literacy levels while operating independently of the public internet.
+Architected and implemented a mandatory driver instruction and certification system for all civilian and commercial heavy-machinery license applicants across Egypt. The system had to serve millions of citizens with diverse literacy levels and operate entirely within a completely air-gapped intranet network with zero internet access due to state security mandates.
 
 ### 2. Technical Decisions & Implementation
-- **Deterministic Upstream Migrations:** Bypassed the lack of remote server access by implementing a local replication schema matching the server specifications (Oracle Linux 7.6, Apache 2.4, PHP 7.0.33, MySQL 5.7). Moodle git patches and file updates were wrapped into deterministic deployment packages.
-- **Sequential Curricular Constraints:** Enforced linear course tracking within the application database, locking subsequent training modules and certification triggers until explicit multimedia completion criteria were met.
+* **Hacked CentOS/Oracle Linux Deployment:** Solved absolute security clearance restrictions by customizing the server distribution to recognize a physical USB flash drive as the local package provider. This allowed the only technician with security clearance to plug in the drive, install required system dependencies, and pull the source code completely offline.
+* **Deterministic Automated Upgrades:** Authored fault-tolerant bash automation scripts that functioned as state machines. This enabled non-technical on-site personnel to execute complex, multi-branch Git merges, Moodle database schema migrations, and configuration updates blindly without causing file conflicts or production downtime.
+* **Asynchronous Offline Billing Vouchers:** Bypassed the total lack of network links to the central billing department. Built an offline engine that took printed receipt numbers from physical cash-collection points and translated them into valid, single-use access vouchers directly within Moodle's local database.
+* **UX Transformation for Low Literacy:** Stripped down and re-engineered the Moodle frontend layout. Replaced dense text-heavy flows with clean iconographies and linear, multimedia-driven video loops to ensure that illiterate commercial drivers could independently navigate the mandatory safety paths and complete tracking blocks.

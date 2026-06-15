@@ -1,36 +1,19 @@
 ---
-title: "Wallety"
+title: "Core Fintech & Transaction Routing Infrastructure — Wallety"
 year: 2009
-url: "https://wallety.com"
 client_type: "Fintech Enterprise"
-agency: "Chief Technology Officer (CTO) & Co-Founder"
-subtitle: "Core Fintech & Airline Transaction Routing Infrastructure"
-tech_stack: ["PHP", "Symfony Framework", "AWS Ecosystem", "Load Balancers", "Asynchronous Queues", "PCI-DSS Hardening", "MySQL (Master-Slave)", "CLI Daemons", "AJAX"]
-tags: ["#System-Decoupling", "#Concurrency-Optimization", "#Asynchronous-Processing", "#Data-Layer-Hardening", "#High-Availability-Clustering", "#Database-Replication", "#Infrastructure-Tiering", "#Compliance-By-Design", "#SLA-Preservation", "#Protocol-Rationalization", "#Identity-Federation", "#Component-Abstraction", "#Schema-Modeling"]
+agency: "Co-Founder & Chief Technology Officer (CTO)"
+tech_stack: ["PHP", "Symfony Framework", "MySQL (Master-Slave)", "AWS Ecosystem", "Load Balancers", "Asynchronous Queues", "CLI Daemons"]
 ---
 
-# Project Dossier
-Served as Co-Founder, Chief Technology Officer (CTO), and Principal Architect, leading a 6-month bootstrap phase that secured external venture investment. Scaled the technical and corporate organization to over 40 employees and onboarded 200 commercial merchants within the first 12 months.
-
-Engineered decoupled transactional layers and fault-tolerant routing systems to handle high volume, processing a significant portion of domestic air travel ticketing throughput nationwide. Implemented technical risk mitigation strategies to address regulatory compliance for early-stage online payment systems while maintaining structural compliance with national Know Your Customer (KYC) requirements.
-
-### Core Architecture & System Engineering
-- **High-Concurrency Transaction Pipeline:** Architected a payment routing engine designed to process booking spikes and maintain state. Implemented asynchronous queues and worker clusters to absorb concurrent payloads.
-- **Enterprise Infrastructure & Security Hardening:** Engineered the AWS topology utilizing load balancers, database replication, and IAM privilege matrix models. Configured the ecosystem to meet corporate audit, national KYC mandates, and PCI-DSS compliance requirements.
-- **Decoupled API Orchestration:** Designed microservice boundaries separating user-facing web layers from core processing layers, insulating the transactional engine from network interruptions.
-
-### Engineering Notes / Edge Cases
-Sustained operations where systemic failure or database latency carried material transactional costs, establishing an architecture optimized for continuous availability.
-
----
-
-# Use Case Case Study: Wallety Engine (Concurrency Management)
+# Use Case: Engineering a Highly Available Payment Gateway Under Market Restrictions
 
 ### 1. Objective & Scope
-Engineered the technical core, business logic models, and distributed infrastructure layout as CTO and Co-Founder, managing high domestic air travel transactional throughput under concurrent conditions.
+Co-founded and sole-engineered the MVP of Egypt’s first comprehensive secure online payment gateway from the ground up. The platform resolved severe national banking infrastructure anxieties regarding online fraud and capital flight, eventually scaling post-funding to command 33% of all domestic air travel ticketing throughput across Egypt.
 
 ### 2. Technical Decisions & Implementation
-* **Concurrency Processing:** Handled transaction spikes by implementing a 1-second cron loop combined with asynchronous AJAX for long-running processes, preventing incoming data from blocking the main server thread.
-* **Service Framework Design:** Organized the underlying framework with independent services, which were exposed to CLI commands to offload web execution overhead.
-* **Data Layer Optimization:** Optimized a MySQL instance by deploying a lightweight table dedicated to concurrent write actions.
-* **Horizontal Scaling & Continuity:** Scaled the environment horizontally across multiple servers behind a load balancer. Maintained session states and transaction persistence by configuring a master-slave MySQL replication cluster. This isolated the payment pipeline while integrating with bank payment gateways, Amadeus ticketing nodes, and active merchant settlement endpoints.
+* **Solo Launch to Organised Scale:** Built and launched the primary payment processing engine completely alone to secure market traction, subsequently growing and managing a funded 30-person engineering department to handle enterprise expansions.
+* **1-Second Asynchronous Queue Loops:** Managed extreme transaction spikes by deploying high-velocity 1-second background cron loops paired with asynchronous AJAX processing. This offloaded long-running payment gateway communications from the main HTTP thread, completely preventing incoming user traffic from blocking the application servers.
+* **Master-Slave Database Clustering:** Isolated the core payment pipelines by configuring a master-slave MySQL replication cluster behind high-availability load balancers. Deployed a specialized, lightweight transactional write table to process rapid, active ledger changes with minimal disk I/O overhead.
+* **Defensive State Machine Retries:** Developed a defensive transactional state machine within PHP/Symfony that safely cached, isolated, and committed atomic financial ledger rows during sudden external bank gateway timeouts or local network dropouts, preserving SLA compliance.
+* **GDS and Amadeus Integrations:** Built and maintained direct backend connection layers into the Amadeus Global Distribution System (GDS), matching real-time flight seat allocations with direct credit and debit acquiring bank protocols.
