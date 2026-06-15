@@ -53,7 +53,7 @@ export const StickyFooter = () => {
         style={{
           opacity: footerOpacity,
         }}
-        className="fixed bottom-8 right-8 z-40 pointer-events-auto hidden lg:block"
+        className="fixed bottom-8 left-8 z-40 pointer-events-auto hidden lg:block"
       >
         <Link
           href="/resume"
