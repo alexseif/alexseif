@@ -36,7 +36,7 @@ export default async function CaseStudiesIndex() {
       />
       <main className="min-h-screen bg-background blueprint-grid selection:bg-primary/20 selection:text-primary">
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-24">
-          
+
           {/* Top Navigation */}
           <div className="mb-12 md:mb-20">
             <Link href="/" className="inline-flex items-center gap-2 text-foreground/50 hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group">
@@ -56,7 +56,7 @@ export default async function CaseStudiesIndex() {
                 Complete Project Vault
               </h1>
               <p className="text-foreground/70 text-lg leading-relaxed pt-4">
-                Raw engineering validation. Access the complete index of architectural deployments, structural systems, and technical partnerships.
+                Raw engineering validation. Access the complete index of architectural deployments, structural systems, and NGO Technical Partnerships.
               </p>
             </div>
 

@@ -9,14 +9,14 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Senior Lead Engineer & Technical Partner',
+  title: 'Alex Seif | Senior Software Engineer & NGO Technical Partner',
   description:
-    'Senior Lead Engineer & Technical Partner. 20+ years of high-concurrency PHP/Symfony ecosystem architecture and production AI integration.',
+    'Senior Software Engineer & NGO Technical Partner. 20+ years of high-concurrency PHP/Symfony ecosystem architecture and production AI integration.',
   keywords: [
-    'Senior Lead Engineer',
+    'Senior Software Engineer',
     'Principal PHP Developer',
     'Symfony Specialist',
-    'Technical Partner',
+    'NGO Technical Partner',
     'Systems Architect',
     'Digital Infrastructures',
     'Legacy Monolith Decoupling',
@@ -85,9 +85,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "@context": "https://schema.org",
               "@type": ["Person", "ProfessionalService"],
               "name": "Alex Seif",
-              "jobTitle": "Senior Lead Engineer & Technical Partner",
+              "jobTitle": "Senior Software Engineer & NGO Technical Partner",
               "url": "https://alexseif.com",
-              "description": "Expert Senior Lead Engineer acting as a Technical Partner for enterprise organizations globally.",
+              "description": "Expert Senior Software Engineer acting as a NGO Technical Partner for enterprise organizations globally.",
               "areaServed": ["World", "Europe", "Egypt", "UAE", "KSA"],
               "knowsAbout": [
                 "PHP",

@@ -3,7 +3,7 @@ title: "Svelto"
 year: 2025
 url: "https://svelto.net/"
 client_type: "Commercial Enterprise"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "Transactional Configuration Engine"
 tech_stack: ["WordPress", "WooCommerce", "Paymob Integration", "Custom Print Logic", "Web Performance Optimization"]
 ---

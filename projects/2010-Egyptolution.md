@@ -3,14 +3,14 @@ title: "Egyptolution"
 year: 2010
 url: ""
 client_type: "Tourism & Media Network"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "Custom Media & Content Aggregation Architecture"
 tech_stack: ["PHP", "Custom MVC Framework", "MySQL", "Asset Caching Layers", "Localized CDN Routing"]
 tags: ["#Component-Abstraction", "#Data-Flow-Mapping", "#Schema-Modeling", "#System-Topology-Design", "#Protocol-Rationalization"]
 ---
 
 # Project Dossier
-Served as Software Architect and Systems Technical Partner, designing and deploying a custom media and blogging platform. The system was engineered to handle editorial content and high-resolution media assets for a portfolio of hotel and tourism operations. 
+Served as Software Architect and Systems NGO Technical Partner, designing and deploying a custom media and blogging platform. The system was engineered to handle editorial content and high-resolution media assets for a portfolio of hotel and tourism operations. 
 
 The platform was architected to achieve fast execution, low page-load latencies, and streamlined cross-platform social link tracking across mobile and desktop connections.
 

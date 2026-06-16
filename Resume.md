@@ -1,6 +1,6 @@
 ---
 name: "Eskandar (Alex) Seif"
-title: "Senior Lead Engineer & Technical Partner"
+title: "Senior Software Engineer & NGO Technical Partner"
 location: "Cairo, Egypt | Open to Contract, Remote, and Relocation (EU / Gulf)"
 phone: "+201004006332"
 email: "alex.seif@gmail.com"
@@ -10,7 +10,7 @@ website: "https://alexseif.com"
 ---
 
 ## Professional Profile
-Pragmatic Senior Lead Engineer with over 20 years of hands-on experience designing, scaling, and maintaining high-stakes digital infrastructure. Proven track record of taking complex web systems from zero to production, including national-scale public sector platforms serving millions of concurrent citizens. Deep technical specialist in the PHP/Symfony ecosystem, legacy database remediation, and relational schema optimization. Combines rigorous back-end engineering discipline with strong business requirement elicitation, focusing on iterative delivery, team longevity, and zero-downtime deployments.
+Pragmatic Senior Software Engineer with over 20 years of hands-on experience designing, scaling, and maintaining high-stakes digital infrastructure. Proven track record of taking complex web systems from zero to production, including national-scale public sector platforms serving millions of concurrent citizens. Deep technical specialist in the PHP/Symfony ecosystem, legacy database remediation, and relational schema optimization. Combines rigorous back-end engineering discipline with strong business requirement elicitation, focusing on iterative delivery, team longevity, and zero-downtime deployments.
 
 ---
 
@@ -25,7 +25,7 @@ Pragmatic Senior Lead Engineer with over 20 years of hands-on experience designi
 
 ## Selected Professional Experience
 
-### Technical Partner & Senior Lead Engineer
+### NGO Technical Partner & Senior Software Engineer
 **iSoft (IdealSoft Emirates) | Technical Consultancy Retainer** | *January 2021 – December 2024*  
 Delivered ministry-level digital infrastructure, high-concurrency transactional routing engines, and API architectures for federal and municipal public sector clients across Egypt and the GCC region.
 
@@ -56,7 +56,7 @@ Architected, launched, and scaled Egypt’s first comprehensive secure online pa
 *   **Engineering Leadership & Scale:** Post-funding, scaled and directed a 30-person engineering organization, establishing technical roadmaps, architectural standards, and security-first development practices.
 *   **Defensive Transaction Routing:** Built transactional state mechanics to safely cache, retry, and commit atomic financial updates, mitigating systemic database latency and network dropouts across fragile legacy bank networks.
 
-### Senior Lead Engineer & Architecture Consultant
+### Senior Software Engineer & Architecture Consultant
 **Independent Consultancy & Retainers** | *January 2014 – Present*
 *   **Hyper-Scale Mass Media (Ajel.sa via NileTech):** Managed the technical infrastructure for Saudi Arabia's #2 news outlet. Configured enterprise Varnish edge caching on an Acquia Cloud environment and tuned relational database indexing to absorb massive traffic spikes during breaking national news cycles. Built asynchronous background parsing pipelines to safely pull and ingest data feeds from global networks like the BBC without blocking main-thread application delivery.
 *   **B2B Marketplace Evolution (Esorus Ecosystem):** Designed a highly scalable relational database schema using Symfony to pivot a content platform into a commercial B2B marketplace indexing over 15,000+ specialized products and multi-party workflows.

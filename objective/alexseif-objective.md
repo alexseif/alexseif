@@ -1,7 +1,7 @@
 # Professional Objective & Profile Strategy
 
 ## 1. Targeted Professional Title
-*   **Primary Target:** Senior Lead Engineer & Technical Partner
+*   **Primary Target:** Senior Software Engineer & NGO Technical Partner
 *   **Alternative Track:** Staff / Principal Platform Engineer (PHP / Full-Stack)
 
 ## 2. Core Narrative Anchor

@@ -2,7 +2,7 @@
 title: "Salama Car Insurance Registration Gateway"
 year: 2020
 client_type: "Public Sector / Fintech"
-agency: "Technical Partner & Senior Lead Engineer via iSoft"
+agency: "NGO Technical Partner & Senior Software Engineer via iSoft"
 tech_stack: ["Drupal Enterprise", "PHP", "MySQL", "REST API", "Data Validation Layers"]
 ---
 

@@ -2,7 +2,7 @@
 
 ## 1. Brand Ethos & Positioning
 **Tagline:** "Two decades of architecting and maintaining stable web systems."
-**Core Concept:** The brand operates at the intersection of systems architecture and technical problem solving. It positions Alex Seif as a "Software Architect" and "Systems Technical Partner".
+**Core Concept:** The brand operates at the intersection of systems architecture and technical problem solving. It positions Alex Seif as a "Software Architect" and "Systems NGO Technical Partner".
 **Keywords:** Systems Architecture, Operational Stability, Technical Authority, Reliability.
 
 ## 2. Typography

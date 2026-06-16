@@ -40,7 +40,7 @@ export const WorldMapSection = () => {
             className="text-center mt-12 space-y-6"
           >
             <h2 className="text-foreground text-1xl md:text-2xl tracking-[0.2em] font-sans font-light uppercase">
-              Global Technical Partnership & <strong className="text-primary">Senior Lead</strong> Engineering Contracts
+              Global NGO Technical Partnership & <strong className="text-primary">Senior Lead</strong> Engineering Contracts
             </h2>
             <p className="text-foreground/70 text-sm max-w-2xl mx-auto mt-4 leading-relaxed font-sans">
               Operating remotely and on-site across Europe (targeting the Netherlands), the GCC, and Egypt, delivering operational reliability, automated deployment security, and clean engineering governance to high-stakes tech environments.

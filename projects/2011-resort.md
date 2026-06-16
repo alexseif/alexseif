@@ -3,14 +3,14 @@ title: "Resort Choice"
 year: 2011
 url: "https://resortchoice.com"
 client_type: "Global Hospitality / Real Estate"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "Multi-Tenant Property Management & Yield Logic Engine"
 tech_stack: ["PHP", "Custom MVC Framework", "MySQL", "Relational Yield Logic", "Automated Workflows", "Disaster Recovery Systems"]
 tags: ["#Schema-Modeling", "#Data-Flow-Mapping", "#Concurrency-Optimization", "#Data-Layer-Hardening", "#Domain-Driven-Design", "#Component-Abstraction", "#System-Topology-Design", "#Defensive-Release-Engineering"]
 ---
 
 # Project Dossier
-Retained as Software Architect and Systems Technical Partner to design and maintain a multi-tenant property rental and resort management engine. The platform reconciled conflicting operational demands: open public guest bookings, direct private property owner occupancy, legal constraints, and physical estate maintenance tracking. 
+Retained as Software Architect and Systems NGO Technical Partner to design and maintain a multi-tenant property rental and resort management engine. The platform reconciled conflicting operational demands: open public guest bookings, direct private property owner occupancy, legal constraints, and physical estate maintenance tracking. 
 
 By translating property rental contracts into validation logic, the engine enforced booking boundaries and prevented cross-channel double-booking race conditions at the database layer.
 

@@ -3,14 +3,14 @@ title: "Arts-Mart"
 year: 2012
 url: "https://www.arts-mart.com"
 client_type: "Art & E-commerce Enterprise"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "Interactive Art Customization & Asset Composition Engine"
 tech_stack: ["PHP", "Symfony Framework", "MySQL", "JavaScript/Canvas Engine", "Asset Layering Mechanics"]
 tags: ["#Component-Abstraction", "#Data-Flow-Mapping", "#Schema-Modeling", "#System-Decoupling", "#Middleware-Orchestration", "#Data-Layer-Hardening"]
 ---
 
 # Project Dossier
-Served as Software Architect and Systems Technical Partner, designing and implementing a specialized, interactive B2C e-commerce platform for Arts-Mart. The implementation supported complex, multi-layered frontend asset customization.
+Served as Software Architect and Systems NGO Technical Partner, designing and implementing a specialized, interactive B2C e-commerce platform for Arts-Mart. The implementation supported complex, multi-layered frontend asset customization.
 
 The system was split into a custom background data layout and a rendering engine that allowed end-users to dynamically customize product frameworks and visualize them in simulated environments.
 

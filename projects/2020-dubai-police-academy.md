@@ -2,7 +2,7 @@
 title: "Digital Training Platform — Dubai Police Academy"
 year: 2020
 client_type: "Public Sector"
-agency: "Technical Partner & Senior Lead Engineer via iSoft"
+agency: "NGO Technical Partner & Senior Software Engineer via iSoft"
 tech_stack: ["Moodle LMS", "PHP 7+", "Linux", "MySQL", "Apache", "Continuous Staging Deployment"]
 ---
 

@@ -3,14 +3,14 @@ title: "Bouri Center"
 year: 2011
 url: "https://bouri.com"
 client_type: "Retail & E-commerce Enterprise"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "ERP Integration & E-commerce Inventory Synchronization Engine"
 tech_stack: ["PHP", "Drupal", "MySQL", "ERP Connector Middleware", "Data Sanitization Pipelines"]
 tags: ["#System-Decoupling", "#Schema-Modeling", "#Data-Flow-Mapping", "#Middleware-Orchestration", "#Component-Abstraction", "#System-Forensics", "#Database-Replication", "#Infrastructure-Tiering"]
 ---
 
 # Project Dossier
-Served as Software Architect and Systems Technical Partner, designing an e-commerce engine and backend data synchronization pipeline for Bouri Center. The architecture integrated a web-facing retail catalog with an existing corporate ERP legacy system serving a multi-location brick-and-mortar retail chain. 
+Served as Software Architect and Systems NGO Technical Partner, designing an e-commerce engine and backend data synchronization pipeline for Bouri Center. The architecture integrated a web-facing retail catalog with an existing corporate ERP legacy system serving a multi-location brick-and-mortar retail chain. 
 
 To manage third-party system constraints, the platform decoupled the e-commerce storage layer from the live ERP nodes, structuring the web application database to function as an isolated physical store branch node.
 

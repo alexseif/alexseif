@@ -1,14 +1,14 @@
-# SEO Strategy: Alex Seif - Senior Lead Engineer & Technical Partner
+# SEO Strategy: Alex Seif - Senior Software Engineer & NGO Technical Partner
 
 ## Target Personas
-1.  **Engineering Directors & Tech Recruiters:** Looking to hire an expert Senior Lead Engineer or Staff/Principal PHP Developer to handle legacy modernizations, heavy database concurrency, and infrastructure stability.
-2.  **Founders, Enterprise Stakeholders, & Technical Partners:** Looking for an experienced technical partner or hands-on fractional engineering advisor to bridge the gap between business requirements and high-availability software execution.
+1.  **Engineering Directors & Tech Recruiters:** Looking to hire an expert Senior Software Engineer or Staff/Principal PHP Developer to handle legacy modernizations, heavy database concurrency, and infrastructure stability.
+2.  **Founders, Enterprise Stakeholders, & NGO Technical Partners:** Looking for an experienced NGO Technical Partner or hands-on fractional engineering advisor to bridge the gap between business requirements and high-availability software execution.
 
 ## Current On-Page SEO Implementation
 
 ### 1. Schema.org (JSON-LD)
 Added a comprehensive `Person` and `ProfessionalService` schema to the global web layout.
-*   Identifies you globally as a "Senior Lead Engineer & Technical Partner".
+*   Identifies you globally as a "Senior Software Engineer & NGO Technical Partner".
 *   Highlights the operational geographic scopes and areas served: Global, Egypt, UAE, and KSA.
 *   Explicitly references core technical proficiencies: PHP, Symfony, Relational Database Optimization, and Agentic AI engineering.
 
@@ -18,13 +18,13 @@ Added a comprehensive `Person` and `ProfessionalService` schema to the global we
 *   Replaced vague structural tags with contextual titles and code references for accurate keyword indexing.
 
 ### 3. Metadata Configuration
-*   Optimized layout metadata tags to target high-intent search terms: "Senior Lead Engineer", "Principal PHP Developer", "Symfony Specialist", and "Technical Partner".
+*   Optimized layout metadata tags to target high-intent search terms: "Senior Software Engineer", "Principal PHP Developer", "Symfony Specialist", and "NGO Technical Partner".
 
 ## Proposed Content Expansions (Aligning with Technical Strategy)
 
 ### A. Hero Section Component Update
-*   **Current Text:** `Software Architect | Technical Partner | Author | Enabler`
-*   **Proposed SEO-Optimized Version:** `Senior Lead Engineer & Technical Partner | High-Concurrency PHP/Symfony Ecosystems & Production AI Integration`
+*   **Current Text:** `Software Architect | NGO Technical Partner | Author | Enabler`
+*   **Proposed SEO-Optimized Version:** `Senior Software Engineer & NGO Technical Partner | High-Concurrency PHP/Symfony Ecosystems & Production AI Integration`
 *   *Justification:* Captures exact high-value search criteria above the fold while aligning precisely with your actual technical experience.
 
 ### B. "The Offering" (Technical Grid Layout)
@@ -36,5 +36,5 @@ Added a comprehensive `Person` and `ProfessionalService` schema to the global we
 
 ### C. Geographic Reach & Remote Target Optimization
 *   **Current Text:** `Software Architecture around the globe`
-*   **Proposed Text:** `Global Technical Partnership & Senior Lead Engineering Contracts`
+*   **Proposed Text:** `Global NGO Technical Partnership & Senior Software Engineering Contracts`
     *   Operating remotely and on-site across Europe (targeting the Netherlands), the GCC, and Egypt, delivering operational reliability, automated deployment security, and clean engineering governance to high-stakes tech environments.

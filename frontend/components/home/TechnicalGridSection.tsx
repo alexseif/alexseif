@@ -20,7 +20,7 @@ export const TechnicalGridSection = () => {
               // Foundation
             </p>
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              Technical Partner
+              NGO Technical Partner
             </h2>
           </motion.div>
 

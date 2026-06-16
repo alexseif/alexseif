@@ -3,7 +3,7 @@ title: "Esorus Ecosystem & DesignToGo"
 year: 2020
 url: "https://esorus.com/"
 client_type: "B2B Marketplace"
-agency: "Software Architect & Systems Technical Partner via Perfect Needs"
+agency: "Software Architect & Systems NGO Technical Partner via Perfect Needs"
 subtitle: "Enterprise Monolith Scaling & Multi-Vendor State Machine"
 tech_stack: ["Symfony Framework", "Database Normalization", "Multi-Vendor Logic", "Asset Optimization", "Event Pipelines"]
 ---

@@ -3,14 +3,14 @@ title: "Farah Nile Cruise"
 year: 2012
 url: "http://www.farahnilecruise.com"
 client_type: "Hospitality"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "Legacy Architecture Migration & Media Presentation Engine"
 tech_stack: ["PHP", "Symfony Framework", "MySQL", "Asset Pipeline Optimization", "Cache-Control Protocols"]
 tags: ["#Component-Abstraction", "#System-Decoupling", "#Data-Flow-Mapping", "#Infrastructure-Tiering", "#Protocol-Rationalization", "#Schema-Modeling"]
 ---
 
 # Project Dossier
-Served as Software Architect and Systems Technical Partner, supervising the modernization of a hospitality web asset by migrating a legacy script configuration onto the Symfony framework. The objective was to reuse backend architecture logic while meeting user experience requirements for a media-heavy presentation layer. 
+Served as Software Architect and Systems NGO Technical Partner, supervising the modernization of a hospitality web asset by migrating a legacy script configuration onto the Symfony framework. The objective was to reuse backend architecture logic while meeting user experience requirements for a media-heavy presentation layer. 
 
 The deployment combined relational database management with an optimized frontend asset delivery system.
 

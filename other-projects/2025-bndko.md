@@ -3,7 +3,7 @@ title: "Bndko"
 year: 2025
 url: "https://bndko.com/"
 client_type: "Commercial Enterprise"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "Speed Optimization & Data Pipeline"
 tech_stack: ["WordPress", "Custom Templates", "Mailchimp API", "Mobile-First Design", "Web Performance Tuning"]
 ---

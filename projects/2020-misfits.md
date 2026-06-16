@@ -3,7 +3,7 @@ title: "Misfits LLC"
 year: 2020
 url: "https://misfits-llc.com/"
 client_type: "Creative Agency"
-agency: "Software Architect & Systems Technical Partner"
+agency: "Software Architect & Systems NGO Technical Partner"
 subtitle: "Stable Production Deployment"
 tech_stack: ["WordPress Core", "Asset Compression", "Long-Lifespan Software Design", "Security Hardening", "Low-Weight Server Profiles"]
 ---
@@ -16,4 +16,4 @@ Deployed a digital portfolio designed to handle high-resolution visual assets. E
 - **Static Execution & Stability:** Since its deployment in 2020, the website has required zero code edits, structural patches, or layout corrections. It serves as an example of defensive engineering, functioning independently of technical debt accumulation.
 
 ### Engineering Notes / Edge Cases
-Managed directly as Technical Partner. This project demonstrates that appropriate technical planning, static code preservation, and structural restraint at the inception stage can minimize ongoing operational development costs.
+Managed directly as NGO Technical Partner. This project demonstrates that appropriate technical planning, static code preservation, and structural restraint at the inception stage can minimize ongoing operational development costs.
