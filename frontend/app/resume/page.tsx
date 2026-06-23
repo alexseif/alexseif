@@ -148,7 +148,9 @@ export default function ResumePage() {
                   h3: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-900 uppercase tracking-wide" {...props} />,
                   h6: ({ node, ...props }) => {
                     const text = flattenChildren(props.children);
-                    const [entity, timeline] = text.split(' | ');
+                    const parts = text.split(' | ');
+                    const timeline = parts.length > 1 ? parts[parts.length - 1] : '';
+                    const entity = parts.slice(0, parts.length - 1).join(' | ');
                     return (
                       <div className="flex justify-between items-baseline mb-3 pb-2 border-b border-gray-100">
                         <div className="font-medium text-gray-700">{entity}</div>

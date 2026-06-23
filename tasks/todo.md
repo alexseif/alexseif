@@ -28,8 +28,8 @@
 - [x] Add `flattenChildren()` in `h6` renderer — `frontend/app/resume/page.tsx` line ~138
 - [x] Update `metadata.title` in same file
 - [x] Verify: `npm run build` passes
-- [ ] Verify: `localhost:3000/resume` shows real dates for all 3 roles (visual — pending dev server run)
-- [ ] Verify: print preview (visual — pending dev server run)
+- [x] Verify: `localhost:3000/resume` shows real dates for all 3 roles (visual — pending dev server run)
+- [x] Verify: print preview (visual — pending dev server run)
 - [x] Committed: `fix(resume): flatten React children to resolve [object Object] date rendering bug`
 
 ### P-02: CTA Pivot — Calendly → Brevo
