@@ -1,8 +1,8 @@
 # SEO Strategy: Alex Seif - Senior Software Engineer & NGO Technical Partner
 
 ## Target Personas
-1.  **Engineering Directors & Tech Recruiters:** Looking to hire an expert Senior Software Engineer or Staff/Principal PHP Developer to handle legacy modernizations, heavy database concurrency, and infrastructure stability.
-2.  **Founders, Enterprise Stakeholders, & NGO Technical Partners:** Looking for an experienced NGO Technical Partner or hands-on fractional engineering advisor to bridge the gap between business requirements and high-availability software execution.
+1.  **Engineering Directors & Tech Recruiters:** Looking to hire a Principal Engineer or Staff PHP Engineer to own architecture decisions, lead legacy modernisations, solve high-concurrency state problems, and deliver in hostile environments (air-gapped networks, legacy bank infrastructure).
+2.  **Founders, Enterprise Stakeholders, & NGO Decision-Makers:** Looking for an experienced NGO Technical Partner or hands-on fractional CTO to bridge the gap between mission objectives and high-availability software execution — not a vendor, an embedded partner.
 
 ## Current On-Page SEO Implementation
 
@@ -13,12 +13,12 @@ Added a comprehensive `Person` and `ProfessionalService` schema to the global we
 *   Explicitly references core technical proficiencies: PHP, Symfony, Relational Database Optimization, and Agentic AI engineering.
 
 ### 2. Semantic HTML & Accessibility (ARIA)
-*   Updated `HeroSection.tsx` to use a semantic `<header>` and clean, accessible button elements.
+*   Updated `HeroSection.tsx` to use `"Principal Engineer & NGO Technical Partner"` as the primary title, with architecture-ownership language in the subtitle bullets.
 *   Ensured search engine bots and screen readers index primary actions unambiguously (e.g., `aria-label="Contact Alex Seif via Email"`).
 *   Replaced vague structural tags with contextual titles and code references for accurate keyword indexing.
 
 ### 3. Metadata Configuration
-*   Optimized layout metadata tags to target high-intent search terms: "Senior Software Engineer", "Principal PHP Developer", "Symfony Specialist", and "NGO Technical Partner".
+*   Optimized layout metadata tags to target high-intent search terms: `"Principal Engineer"`, `"Staff Engineer"`, `"Air-Gapped Deployment"`, `"Distributed State Locking"`, `"Symfony Specialist"`, and `"NGO Technical Partner"`.
 
 ## Proposed Content Expansions (Aligning with Technical Strategy)
 

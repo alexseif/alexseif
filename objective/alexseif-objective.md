@@ -1,11 +1,11 @@
 # Professional Objective & Profile Strategy
 
 ## 1. Targeted Professional Title
-*   **Primary Target:** Senior Software Engineer & NGO Technical Partner
-*   **Alternative Track:** Staff / Principal Platform Engineer (PHP / Full-Stack)
+*   **Primary Target:** Principal Engineer & NGO Technical Partner
+*   **Alternative Track:** Staff Engineer (PHP / Full-Stack Architecture)
 
 ## 2. Core Narrative Anchor
-Software Engineer and Systems Architect with 20+ years of continuous delivery across enterprise, e-commerce, and public-sector platforms. Trained in Computer Engineering at AASTMT, my career progressed from sole-engineering core fintech gateways to architecting high-concurrency federal infrastructure, scalable commercial applications, and relational database state engines.
+Principal Engineer and Systems Architect with 20+ years of continuous delivery across enterprise, fintech, e-commerce, and public-sector platforms. Trained in Computer Engineering at AASTMT, my career progressed from sole-engineering Egypt's first online payment gateway to architecting high-concurrency federal infrastructure, distributed state-locking engines, air-gapped deployment pipelines, and production-ready agentic AI orchestration systems.
 
 The core value proposition: bringing absolute architectural reliability and risk mitigation to high-traffic web ecosystems. Specializing in the strategic decomposition of legacy monoliths, high-concurrency state synchronization, and the seamless integration of production-ready AI agentic workflows and RAG pipelines into existing enterprise codebases.
 

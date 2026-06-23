@@ -1,9 +1,9 @@
 # Alex Seif – Brand Identity & Design System
 
 ## 1. Brand Ethos & Positioning
-**Tagline:** "Two decades of architecting and maintaining stable web systems."
-**Core Concept:** The brand operates at the intersection of systems architecture and technical problem solving. It positions Alex Seif as a "Software Architect" and "Systems NGO Technical Partner".
-**Keywords:** Systems Architecture, Operational Stability, Technical Authority, Reliability.
+**Tagline:** "Two decades of owning architecture decisions at national scale."
+**Core Concept:** The brand operates at the intersection of architecture ownership and technical problem solving in hostile environments. It positions Alex Seif as a "Principal Engineer" and "NGO Technical Partner" — rare in combination: senior enough to own architecture decisions, hands-on enough to implement them, experienced enough to have done it at scale in air-gapped ministries, legacy bank networks, and high-concurrency scheduling systems.
+**Keywords:** Architecture Ownership, Hostile-Environment Infrastructure, Operational Stability, Technical Authority, Reliability.
 
 ## 2. Typography
 The typographic system relies on a combination of modern sans-serif for clarity, a monospaced font for technical accents, and an Arabic serif for cultural alignment.
