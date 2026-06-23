@@ -5,7 +5,7 @@ import { Terminal, Info, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { fadeInUp, stagger } from "./animations";
-import { openCalendly } from "./utils";
+import { openBrevo } from "./utils";
 
 export const PathDiscoverySection = () => {
   return (
@@ -96,7 +96,7 @@ export const PathDiscoverySection = () => {
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
                 <Button
-                  onClick={openCalendly}
+                  onClick={openBrevo}
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-sm tracking-wider px-12 py-6 group disabled:opacity-80 w-full sm:w-auto"
                 >

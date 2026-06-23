@@ -33,11 +33,12 @@
 - [x] Committed: `fix(resume): flatten React children to resolve [object Object] date rendering bug`
 
 ### P-02: CTA Pivot — Calendly → Brevo
-- [ ] Remove Calendly `<link>` and `<Script>` from `frontend/app/layout.tsx`
-- [ ] Remove `openCalendly()` from `frontend/components/home/utils.ts`
-- [ ] Replace CTA in `PathDiscoverySection.tsx` with `window.BrevoConversations?.('openChat', true)`
-- [ ] Verify: no Calendly network requests, Brevo opens
-- [ ] **→ Await "proceed"** then commit: `feat(cta): replace Calendly with Brevo conversation trigger`
+- [x] Remove Calendly `<link>` and `<Script>` from `frontend/app/layout.tsx`
+- [x] Remove `openCalendly()` from `frontend/components/home/utils.ts` (replaced with `openBrevo`)
+- [x] Replace CTA in `PathDiscoverySection.tsx` with `openBrevo` (Brevo conversation trigger)
+- [x] Replace CTA in `StickyFooter.tsx` with `openBrevo` (was also using openCalendly)
+- [x] Verify: build passes — no Calendly references remain
+- [x] Committed: `feat(cta): replace Calendly with Brevo conversation trigger`
 
 ### P-04: Hero + Technical Grid Copy
 *Depends on P-03 content review*

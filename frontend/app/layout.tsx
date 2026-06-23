@@ -43,10 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://assets.calendly.com/assets/external/widget.css"
-          rel="stylesheet"
-        />
+
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -72,11 +69,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* End Google Tag Manager (noscript) */}
         {children}
 
-        {/* Calendly */}
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="lazyOnload"
-        />
 
         {/* Schema.org JSON-LD */}
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
