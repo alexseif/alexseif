@@ -4,13 +4,25 @@ import matter from 'gray-matter';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Senior Software Engineer & NGO Technical Partner Resume',
-  description: 'Resume of Alex Seif, a Senior Software Engineer & NGO Technical Partner specializing in high-concurrency PHP/Symfony ecosystems, legacy database remediation, and production AI integration.',
+  title: 'Alex Seif | Principal Engineer & NGO Technical Partner — Resume',
+  description: 'Resume of Alex Seif, a Principal Engineer & NGO Technical Partner specializing in high-concurrency PHP/Symfony ecosystems, legacy database remediation, and production AI integration.',
 };
 
 import PrintButton from './PrintButton';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+
+// Recursively extract plain text from any React node tree.
+// Required because ReactMarkdown passes inline nodes (bold, italic) as
+// React elements, not strings — .toString() would return "[object Object]".
+function flattenChildren(node: React.ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(flattenChildren).join('');
+  if (node && typeof node === 'object' && 'props' in (node as React.ReactElement)) {
+    return flattenChildren((node as React.ReactElement).props.children);
+  }
+  return '';
+}
 
 // Simple utility to format the content specifically as requested
 function parseResumeContent(content: string) {
@@ -135,7 +147,7 @@ export default function ResumePage() {
                 components={{
                   h3: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-900 uppercase tracking-wide" {...props} />,
                   h6: ({ node, ...props }) => {
-                    const text = props.children?.toString() || '';
+                    const text = flattenChildren(props.children);
                     const [entity, timeline] = text.split(' | ');
                     return (
                       <div className="flex justify-between items-baseline mb-3 pb-2 border-b border-gray-100">

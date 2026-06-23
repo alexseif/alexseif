@@ -10,26 +10,27 @@
 
 ---
 
-## Still Blocked — Human Task First
+## Preliminary Done — Revisit in ~1 Week
 
 ### P-03: Resume Content Review (Alex only — no AI)
-- [ ] Read `Resume.md` line by line — confirm or correct each bullet
+- [x] Preliminary pass done — corrections applied 2026-06-23 (iSoft framing, Mitchdesigns, consultancy date, parallel-thread context)
+- [ ] **Full line-by-line review** — revisit week of 2026-06-30
 - [ ] Remove any skill from Technical Stack not used in production
-- [ ] Review commit `956a3455` changes — confirm or request revert
+- [ ] Confirm or revert commit `956a3455` changes after full review
 - [ ] Confirm title: "Principal Engineer & NGO Technical Partner"
-- *P-04, P-05, P-06 resume links depend on this being done first*
+- *P-04, P-05, P-06 remain unblocked for structural work; content accuracy review pending*
 
 ---
 
 ## Ready to Execute (Awaiting "proceed" per task)
 
 ### P-01: Resume Date Rendering Bug
-- [ ] Add `flattenChildren()` in `h6` renderer — `frontend/app/resume/page.tsx` line ~138
-- [ ] Update `metadata.title` in same file
-- [ ] Verify: `npm run build` passes
-- [ ] Verify: `localhost:3000/resume` shows real dates for all 3 roles
-- [ ] Verify: print preview
-- [ ] **→ Await "proceed"** then commit: `fix(resume): flatten React children to resolve [object Object] date rendering bug`
+- [x] Add `flattenChildren()` in `h6` renderer — `frontend/app/resume/page.tsx` line ~138
+- [x] Update `metadata.title` in same file
+- [x] Verify: `npm run build` passes
+- [ ] Verify: `localhost:3000/resume` shows real dates for all 3 roles (visual — pending dev server run)
+- [ ] Verify: print preview (visual — pending dev server run)
+- [x] Committed: `fix(resume): flatten React children to resolve [object Object] date rendering bug`
 
 ### P-02: CTA Pivot — Calendly → Brevo
 - [ ] Remove Calendly `<link>` and `<Script>` from `frontend/app/layout.tsx`
