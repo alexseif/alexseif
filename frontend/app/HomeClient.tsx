@@ -8,7 +8,6 @@ import { TechnicalGridSection } from "@/components/home/TechnicalGridSection";
 import { NGOPartnerSection } from "@/components/home/NGOPartnerSection";
 import { PathDiscoverySection } from "@/components/home/PathDiscoverySection";
 import { CaseStudiesSection } from "@/components/home/CaseStudiesSection";
-import { StickyFooter } from "@/components/home/StickyFooter";
 
 export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) {
   return (
@@ -21,7 +20,6 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
       <PathDiscoverySection />
       <WorldMapSection />
       <Footer />
-      <StickyFooter />
     </main>
   );
 }

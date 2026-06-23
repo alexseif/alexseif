@@ -78,7 +78,7 @@ export const HeroSection = () => {
             <li className="font-bold text-foreground">Principal Engineer & NGO Technical Partner</li>
             <li>High-Concurrency Architecture</li>
             <li>State-Level Digital Infrastructure</li>
-            <li>Agentic AI Integration</li>
+            <li>Zero-Downtime Legacy Migrations</li>
           </ul>
         </motion.div>
         <motion.div variants={fadeInUp} className="space-y-3 pt-8">

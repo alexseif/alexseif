@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Shield, Brain } from "lucide-react";
+import { Server, Shield, Lock } from "lucide-react";
 import { fadeInUp, stagger } from "./animations";
 
 export const TechnicalGridSection = () => {
@@ -77,19 +77,19 @@ export const TechnicalGridSection = () => {
 
             <div className="bg-background p-10 space-y-6 group hover:bg-card/50 transition-colors duration-500">
               <div className="flex items-center gap-4">
-                <Brain className="h-5 w-5 text-primary" />
+                <Lock className="h-5 w-5 text-primary" />
                 <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">
                   03
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                Agentic AI Orchestration
+                Air-Gapped & Secure Deployments
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                Engineering deterministic multi-agent workflows, decoupling LLM context generation from critical execution paths for production-grade reliability.
+                Engineering zero-network, turn-key deployment pipelines and deterministic update mechanisms for highly secure, state-level intranets.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["Deterministic", "LangGraph", "Multi-Agent"].map((tech) => (
+                {["Air-Gapped", "On-Premises", "Zero-Network"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"

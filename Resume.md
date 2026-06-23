@@ -1,6 +1,6 @@
 ---
 name: "Eskandar (Alex) Seif"
-title: "Senior Software Engineer & NGO Technical Partner"
+title: "Principal Engineer & NGO Technical Partner"
 location: "Cairo, Egypt | Open to Contract, Remote, and Relocation (EU / Gulf)"
 phone: "+201004006332"
 email: "alex.seif@gmail.com"
@@ -10,7 +10,7 @@ website: "https://alexseif.com"
 ---
 
 ## Professional Profile
-Pragmatic Senior Software Engineer with over 20 years of hands-on experience designing, scaling, and maintaining high-stakes digital infrastructure. Proven track record of taking complex web systems from zero to production, including national-scale public sector platforms serving millions of concurrent citizens. Deep technical specialist in the PHP/Symfony ecosystem, legacy database remediation, and relational schema optimization. Combines rigorous back-end engineering discipline with strong business requirement elicitation, focusing on iterative delivery, team longevity, and zero-downtime deployments.
+Pragmatic Principal Engineer with over 20 years of hands-on experience designing, scaling, and maintaining high-stakes digital infrastructure. Proven track record of taking complex web systems from zero to production, including national-scale public sector platforms serving millions of concurrent citizens. Deep technical specialist in the PHP/Symfony ecosystem, legacy database remediation, and relational schema optimization. Combines rigorous back-end engineering discipline with strong business requirement elicitation, focusing on iterative delivery, team longevity, and zero-downtime deployments.
 
 ---
 
@@ -35,7 +35,7 @@ A complete repository of retrospective Architecture Decision Records (ADRs) docu
 
 ## Selected Professional Experience
 
-### Contract Technical Lead & Senior Software Engineer
+### Contract Technical Lead & Principal Engineer
 **iSoft (IdealSoft Emirates) | Contract Retainer** | *January 2021 – December 2024*  
 Contracted by iSoft to deliver ministry-level digital infrastructure, high-concurrency transactional routing engines, and API architectures for federal and municipal public sector clients across Egypt and the GCC region.
 
@@ -50,7 +50,7 @@ Contracted by iSoft to deliver ministry-level digital infrastructure, high-concu
 *   **National Inspection Scheduling Infrastructure (SASO - Saudi Ministry of Standards, Metrology and Quality):** Architected and scaled the vehicle inspection and modification scheduling infrastructure from zero to production launch, managing nationwide traffic across multi-lane facilities within strict 15-minute scheduling blocks.
     *   *Unified CMS & Knowledge Base:* Leveraged an enterprise Drupal setup to combine high-concurrency transactions with an effective public-facing content management system, delivering public news, compliance guides, and operational documentation seamlessly.
     *   *Distributed State Locking Engine:* Solved severe data collision and race conditions where three independent clients—the public web portal, the state internal backend, and the mobile application—competed simultaneously for identical 15-minute scheduling slots.
-    *   *Optimized Booking Pipeline:* Engineered a transactional API lock-state system that deferred heavy validation by pushing slot selection to the absolute end of the user workflow. Implemented a deterministic 5-minute buffer lock on chosen time slots; if registration fields were not completed within the window, the state machine atomatically released the slot back to the global pool.
+    *   *Optimized Booking Pipeline:* Engineered a transactional API lock-state system that deferred heavy validation by pushing slot selection to the absolute end of the user workflow. Implemented a deterministic 5-minute buffer lock on chosen time slots; if registration fields were not completed within the window, the state machine automatically released the slot back to the global pool.
     *   *Database Refactoring & Performance:* Remediated a sluggish API layer by restructuring data models into 3rd Normal Form (3NF) for transactional safety, combined with a Star Schema design for rapid analytical queries, driving heavy calendar and drop-down dataset loads to near-instant execution.
     *   *Headless React Evolution:* Led the multi-phase migration of the monolithic architecture into a Headless ecosystem. Decoupled the validated core business workflows and securely exposed them via versioned APIs to a modern, high-performance React frontend.
 *   **State-Licensed Cooperative Insurance Platform (Salama Portal, Saudi Arabia):** Lead Engineer for the initial foundational project under the iSoft partnership, deploying an enterprise Drupal platform to manage high-volume, compliant digital car insurance registrations for one of the largest Shariah-compliant insurers in the MENA region.
@@ -66,9 +66,9 @@ Architected, launched, and scaled Egypt’s first comprehensive secure online pa
 *   **Engineering Leadership & Scale:** Post-funding, scaled and directed a 30-person engineering organization, establishing technical roadmaps, architectural standards, and security-first development practices.
 *   **Defensive Transaction Routing:** Built transactional state mechanics to safely cache, retry, and commit atomic financial updates, mitigating systemic database latency and network dropouts across fragile legacy bank networks.
 
-### Senior Software Engineer & Principal Consultant
+### Principal Engineer & Technical Consultant
 **Independent Consultancy & Retainers** | *2006 – Present*  
-A continuous thread of direct personal engagement with organizations — running since 2006, predating and never deprioritizing any concurrent contracted or retainer role held simultaneously.
+A continuous thread of direct personal engagement with organizations — running since 2006, predating and never deprioritizing any concurrent contracted or retainer role held simultaneously. Between 2015 and 2021, this consultancy was my primary focus, delivering full-stack architecture, database optimization, and team scaling for international clients.
 
 *   **Principal Engineer & Embedded Technical Lead (Mitchdesigns | 2009–2014):** Served as de facto Principal Engineer for a boutique digital design agency over five continuous years, embedded full-time on-site. Established the core PHP framework and architectural standards adopted across all client project deliveries. Owned architecture decisions end-to-end, led code reviews and QA processes, engineered DevOps pipelines, and delivered structured Git workflow training sessions — mentoring and systematically upskilling the in-house team on engineering discipline, version control standards, and software craftsmanship.
 *   **Hyper-Scale Mass Media (Ajel.sa via NileTech):** Managed the technical infrastructure for Saudi Arabia's #2 news outlet. Configured enterprise Varnish edge caching on an Acquia Cloud environment and tuned relational database indexing to absorb massive traffic spikes during breaking national news cycles. Built asynchronous background parsing pipelines to safely pull and ingest data feeds from global networks like the BBC without blocking main-thread application delivery.
