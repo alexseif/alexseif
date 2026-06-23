@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { openCalendly } from "./utils";
+import { openBrevo } from "./utils";
 
 export const StickyFooter = () => {
   const { scrollY } = useScroll();
@@ -38,7 +38,7 @@ export const StickyFooter = () => {
           </div>
 
           <Button
-            onClick={openCalendly}
+            onClick={openBrevo}
             size="sm"
             className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-[10px] tracking-widest uppercase h-9 has-[>svg]:px-5 px-5 shrink-0 relative z-10"
           >
