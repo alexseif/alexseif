@@ -75,10 +75,10 @@ export const HeroSection = () => {
             <div className="h-px w-12 bg-primary/50" />
           </div>
           <ul className="text-foreground/70 text-md tracking-[0.3em] uppercase">
-            <li className="font-bold text-foreground">Senior Software Engineer & NGO Technical Partner</li>
-            <li>High-Concurrency Ecosystems</li>
-            <li>Governmental Grade & Public Sector Portals</li>
-            <li>Production AI Integrations</li>
+            <li className="font-bold text-foreground">Principal Engineer & NGO Technical Partner</li>
+            <li>High-Concurrency Architecture</li>
+            <li>State-Level Digital Infrastructure</li>
+            <li>Agentic AI Integration</li>
           </ul>
         </motion.div>
         <motion.div variants={fadeInUp} className="space-y-3 pt-8">

@@ -42,10 +42,10 @@
 
 ### P-04: Hero + Technical Grid Copy
 *Depends on P-03 content review*
-- [ ] Update title + 3 subtitle bullets in `HeroSection.tsx`
-- [ ] Reframe 3 pillars in `TechnicalGridSection.tsx` to architecture-ownership language
-- [ ] Verify: build + browser screenshot desktop + mobile
-- [ ] **→ Await "proceed"** then commit: `feat(hero,grid): update copy to Principal Engineer positioning`
+- [x] Update title + 3 subtitle bullets in `HeroSection.tsx`
+- [x] Reframe 3 pillars in `TechnicalGridSection.tsx` to architecture-ownership language
+- [x] Verify: build + browser screenshot desktop + mobile
+- [x] Committed: `feat(hero,grid): update copy to Principal Engineer positioning`
 
 ### P-05: NGO Technical Partner Section
 *Depends on P-03 content review*

@@ -20,7 +20,7 @@ export const TechnicalGridSection = () => {
               // Foundation
             </p>
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              NGO Technical Partner
+              Principal Engineering
             </h2>
           </motion.div>
 
@@ -33,13 +33,13 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                Legacy Modernization & Scale
+                Architecture & Legacy Decoupling
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                Decomposing monolithic applications, optimizing sluggish MySQL database layers (3NF / Star Schema), and eliminating race conditions.
+                Decomposing monolithic architectures, establishing strict API boundaries, and orchestrating zero-downtime data migrations across complex legacy systems.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["3NF", "Star Schema", "Decoupling"].map((tech) => (
+                {["API Boundaries", "Zero-Downtime", "Decoupling"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"
@@ -58,13 +58,13 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                High-Concurrency Engineering
+                High-Concurrency Infrastructure
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                Architecting distributed booking engines, custom locking state buffers, and fault-tolerant transaction pipelines.
+                Engineering distributed state-locking mechanisms, fault-tolerant transaction pipelines, and resilient databases for national-scale throughput.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["Lock-State", "Distributed", "Fault-Tolerant"].map((tech) => (
+                {["State-Locking", "National-Scale", "Resiliency"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"
@@ -83,13 +83,13 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl font-sans font-light tracking-wide">
-                Production Agentic AI Engine
+                Agentic AI Orchestration
               </h3>
               <p className="text-foreground/90 leading-relaxed">
-                Decomposing unstructured historical data via Python RAG pipelines and executing persistent multi-agent loops utilizing LangGraph.
+                Engineering deterministic multi-agent workflows, decoupling LLM context generation from critical execution paths for production-grade reliability.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
-                {["RAG", "LangGraph", "Multi-Agent"].map((tech) => (
+                {["Deterministic", "LangGraph", "Multi-Agent"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs text-foreground/70 font-mono border border-border/50 px-2 py-1"
