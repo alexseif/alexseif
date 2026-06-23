@@ -25,9 +25,9 @@ Pragmatic Senior Software Engineer with over 20 years of hands-on experience des
 
 ## Selected Professional Experience
 
-### NGO Technical Partner & Senior Software Engineer
-**iSoft (IdealSoft Emirates) | Technical Consultancy Retainer** | *January 2021 – December 2024*  
-Delivered ministry-level digital infrastructure, high-concurrency transactional routing engines, and API architectures for federal and municipal public sector clients across Egypt and the GCC region.
+### Contract Technical Lead & Senior Software Engineer
+**iSoft (IdealSoft Emirates) | Contract Retainer** | *January 2021 – December 2024*  
+Contracted by iSoft to deliver ministry-level digital infrastructure, high-concurrency transactional routing engines, and API architectures for federal and municipal public sector clients across Egypt and the GCC region.
 
 *   **National Vehicle Inspection Infrastructure (Aman Portal & Egyptian Ministry of Interior):** Technical Lead for a public-private national initiative web ecosystem designed to offload vehicle inspections from traditional traffic departments to mobile vans and commercial hubs.
     *   *System Evolution:* Directed a multi-phase implementation from an initial informational Drupal enterprise core to a dynamic geo-location routing system.
@@ -56,8 +56,11 @@ Architected, launched, and scaled Egypt’s first comprehensive secure online pa
 *   **Engineering Leadership & Scale:** Post-funding, scaled and directed a 30-person engineering organization, establishing technical roadmaps, architectural standards, and security-first development practices.
 *   **Defensive Transaction Routing:** Built transactional state mechanics to safely cache, retry, and commit atomic financial updates, mitigating systemic database latency and network dropouts across fragile legacy bank networks.
 
-### Senior Software Engineer & Architecture Consultant
-**Independent Consultancy & Retainers** | *January 2014 – Present*
+### Senior Software Engineer & Principal Consultant
+**Independent Consultancy & Retainers** | *2006 – Present*  
+A continuous thread of direct personal engagement with organizations — running since 2006, predating and never deprioritizing any concurrent contracted or retainer role held simultaneously.
+
+*   **Principal Engineer & Embedded Technical Lead (Mitchdesigns | 2009–2014):** Served as de facto Principal Engineer for a boutique digital design agency over five continuous years, embedded full-time on-site. Established the core PHP framework and architectural standards adopted across all client project deliveries. Owned architecture decisions end-to-end, led code reviews and QA processes, engineered DevOps pipelines, and delivered structured Git workflow training sessions — mentoring and systematically upskilling the in-house team on engineering discipline, version control standards, and software craftsmanship.
 *   **Hyper-Scale Mass Media (Ajel.sa via NileTech):** Managed the technical infrastructure for Saudi Arabia's #2 news outlet. Configured enterprise Varnish edge caching on an Acquia Cloud environment and tuned relational database indexing to absorb massive traffic spikes during breaking national news cycles. Built asynchronous background parsing pipelines to safely pull and ingest data feeds from global networks like the BBC without blocking main-thread application delivery.
 *   **B2B Marketplace Evolution (Esorus Ecosystem):** Designed a highly scalable relational database schema using Symfony to pivot a content platform into a commercial B2B marketplace indexing over 15,000+ specialized products and multi-party workflows.
 
