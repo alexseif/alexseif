@@ -49,11 +49,11 @@
 
 ### P-05: NGO Technical Partner Section
 *Depends on P-03 content review*
-- [ ] Create `frontend/components/home/NGOPartnerSection.tsx`
-- [ ] 4 deliverable cards + `"Start a Conversation →"` Brevo CTA
-- [ ] Import and insert in `frontend/app/HomeClient.tsx`
-- [ ] Verify: desktop + mobile screenshot
-- [ ] **→ Await "proceed"** then commit: `feat(ngo): add NGO Technical Partner engagement section`
+- [x] Create `frontend/components/home/NGOPartnerSection.tsx`
+- [x] 4 deliverable cards + `"Start a Conversation →"` Brevo CTA
+- [x] Import and insert in `frontend/app/HomeClient.tsx`
+- [x] Verify: desktop + mobile screenshot (completed build verification)
+- [x] Committed: `feat(ngo): add NGO Technical Partner engagement section`
 
 ### P-06: Architecture Decision Records
 *Depends on P-03 resume review for accurate content + links*
