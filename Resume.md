@@ -23,6 +23,16 @@ Pragmatic Senior Software Engineer with over 20 years of hands-on experience des
 
 ---
 
+## Architecture Portfolio
+
+A complete repository of retrospective Architecture Decision Records (ADRs) documenting significant technical choices across high-stakes engineering projects.
+
+*   [ADR-001: Distributed Slot Locking for High-Concurrency Vehicle Inspection Booking (SASO)](https://github.com/alexseif/decisions/blob/main/ADR-001-saso-slot-locking.md)
+*   [ADR-002: Defensive Transaction Routing and State Caching across Legacy Bank Networks (Wallety)](https://github.com/alexseif/decisions/blob/main/ADR-002-wallety-transaction-routing.md)
+*   [ADR-003: Deterministic Air-Gapped Deployment Pipeline using Physical Media (Egyptian MOI)](https://github.com/alexseif/decisions/blob/main/ADR-003-airgapped-deployment-pipeline.md)
+
+---
+
 ## Selected Professional Experience
 
 ### Contract Technical Lead & Senior Software Engineer

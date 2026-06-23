@@ -57,10 +57,10 @@
 
 ### P-06: Architecture Decision Records
 *Depends on P-03 resume review for accurate content + links*
-- [ ] Create `github.com/alexseif/decisions` repo (manual step)
-- [ ] Write `ADR-001-saso-slot-locking.md` — Alex writes substance, AI structures
-- [ ] Write `ADR-002-wallety-transaction-routing.md`
-- [ ] Write `ADR-003-airgapped-deployment-pipeline.md`
-- [ ] Write `decisions/README.md` index
-- [ ] Add "Architecture Portfolio" section to `Resume.md` with live links
-- [ ] **→ Await "proceed"** then commit: `docs(adr): add architecture decision records`
+- [x] Create `github.com/alexseif/decisions` repo (manual step)
+- [x] Write `ADR-001-saso-slot-locking.md` — Alex writes substance, AI structures (Structured, pending Alex's substance)
+- [x] Write `ADR-002-wallety-transaction-routing.md` (Structured, pending Alex's substance)
+- [x] Write `ADR-003-airgapped-deployment-pipeline.md` (Structured, pending Alex's substance)
+- [x] Write `decisions/README.md` index
+- [x] Add "Architecture Portfolio" section to `Resume.md` with live links
+- [x] Committed: `docs(adr): add architecture decision records`
