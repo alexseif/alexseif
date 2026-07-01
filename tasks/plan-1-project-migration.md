@@ -5,16 +5,16 @@
 **Dependency:** This must be completed before Task 3 (Resume Builder) and Task 4 (Frontend Refactor) can proceed, as they rely on the new YAML structure.
 
 ## 2. Token Cost Analysis & Approach Selection
-To satisfy the requirement of "optimizing token usage by using a coded script" while maintaining the semantic accuracy required by the schema (`core_competencies` vs `quantifiable_engineering_impact`), we have three technical approaches:
+To satisfy the requirement of optimizing token usage and ensuring predictable execution, we have shifted from an autonomous agent framework to a lightweight, deterministic API call architecture. 
 
-| Approach | Estimated Tokens | Cost (Gemini 1.5 Pro standard) | Accuracy | Tooling Needed |
+| Approach | Estimated Tokens | Cost | Accuracy | Tooling Needed |
 | :--- | :--- | :--- | :--- | :--- |
-| **A. Heuristic Script (Regex/Node)** | 0 tokens | $0.00 | **Low** (Dumps all text randomly) | None (Vanilla JS) |
-| **B. `smolagents` (Python)** | ~15k In / 5k Out | ~$0.10 | **High** | Python, `smolagents`, User API Key |
-| **C. Native Agent Batching** | ~25k In / 10k Out | ~$0.15 | **High** | None (Built-in context) |
+| **A. Heuristic Script (Regex)** | 0 tokens | $0.00 | **Low** | None |
+| **B. `smolagents` (Python)** | ~40k In / 15k Out | ~$0.20 | **High** | Fails in Sandbox / Over-utilizes tokens |
+| **C. Lightweight Native API (Python)** | ~10k In / 5k Out | ~$0.05 | **High** | `huggingface_hub`, `python-dotenv` |
 
 **Shortest Path to Objective Recommendation:**
-**Approach B (`smolagents`) is Confirmed.** As part of your learning journey and establishing a foundation for long-term token optimization and local execution, we will build a Python script utilizing Hugging Face's `smolagents`. This transitions control from closed-environment LLM "magic" into a repeatable, infrastructure-as-code script that you own.
+**Approach C (Lightweight Native API) is Confirmed.** We are dropping the `smolagents` framework because its code-executing sandbox adds unnecessary complexity and massive token overhead for a simple text-to-text transformation. We will use a direct API call to the Hugging Face Inference endpoints. Dependencies are formalized in `requirements.txt` and `package.json`.
 
 ## 3. Work Slicing (Vertical Slices)
 
