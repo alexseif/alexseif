@@ -1,0 +1,37 @@
+project_id: "Air-Gapped Driver Licensing LMS — Egyptian Ministry of Interior"
+client_name: "Egyptian Ministry of Interior"
+client_type: "Public Sector"
+project_role: "Senior Software Engineer & Systems Analyst"
+timeline:
+  start_year: 2020
+  end_year: 2020
+architectural_context: "Architected and implemented a mandatory driver instruction and certification system for all civilian and commercial heavy-machinery license applicants across Egypt. The system operated entirely within a completely air-gapped intranet network with zero internet access due to state security mandates, serving millions of citizens with diverse literacy levels."
+technical_stack:
+  languages:
+    - "PHP 7.0.33"
+    - "Bash Shell Scripting"
+  frameworks:
+    - "Moodle LMS"
+  infrastructure_cloud:
+    - "Oracle Linux 7.6"
+  data_layers:
+    - "MySQL 5.7"
+core_competencies:
+  - "System Security & Compliance"
+  - "Offline Development & Deployment"
+  - "DevOps Automation"
+  - "User Experience Design for Low Literacy Populations"
+  - "Database Management"
+  - "Custom Linux Distribution Configuration"
+quantifiable_engineering_impact:
+  - "Enabled deployment in a fully air-gapped environment through custom USB-based package management"
+  - "Reduced operational downtime by implementing deterministic automated upgrade processes"
+  - "Supported offline billing voucher generation without network connectivity"
+  - "Improved accessibility for low-literacy users through iconography and multimedia UX design"
+edge_cases_managed:
+  - "Zero-network environment constraints"
+  - "High-security clearance requirements"
+  - "Diverse literacy levels among end-users"
+  - "Non-technical on-site personnel execution"
+  - "Multi-branch Git merge operations in offline environments"
+  - "Database schema migrations without network access"

@@ -6,7 +6,7 @@
 - [x] **Task 1.4:** Execute migration of the first batch (5 files) into `/projects/*.yaml`.
 - [x] **Task 1.5:** Run JSON Schema validation (`npm run validate:projects`) on the first batch.
 - [x] **CHECKPOINT:** Human review of pilot YAML structures.
-- [ ] **Task 2.1:** Execute migration for the remaining files.
-- [ ] **Task 2.2:** Run JSON Schema validation on all `/projects/*.yaml` files.
-- [ ] **CHECKPOINT:** Human review of the full dataset to ensure semantic accuracy before destructive operations.
+- [x] **Task 2.1:** Execute migration for the remaining files.
+- [x] **Task 2.2:** Run JSON Schema validation on all `/projects/*.yaml` files.
+- [x] **CHECKPOINT:** Human review of the full dataset to ensure semantic accuracy before destructive operations.
 - [ ] **Task 3.1:** Execute deletion of `/projects/*.md` files.

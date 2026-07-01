@@ -1,0 +1,32 @@
+project_id: "Resort Choice"
+client_name: "Global Hospitality / Real Estate"
+client_type: "Global Hospitality / Real Estate"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2011
+  end_year: 2011
+architectural_context: "Retained as Software Architect and NGO Technical Partner to design and maintain a multi-tenant property rental and resort management engine. The platform reconciled conflicting operational demands: open public guest bookings, direct private property owner occupancy, legal constraints, and physical estate maintenance tracking. By translating property rental contracts into validation logic, the engine enforced booking boundaries and prevented cross-channel double-booking race conditions at the database layer."
+technical_stack:
+  languages: ["PHP"]
+  frameworks: ["Custom MVC Framework"]
+  infrastructure_cloud: []
+  data_layers: ["MySQL", "Relational Yield Logic"]
+core_competencies:
+  - "Schema Modeling"
+  - "Data Flow Mapping"
+  - "Concurrency Optimization"
+  - "Data Layer Hardening"
+  - "Domain Driven Design"
+  - "Component Abstraction"
+  - "System Topology Design"
+  - "Defensive Release Engineering"
+quantifiable_engineering_impact:
+  - "Engineered a billing and reservation matrix that calculated variables including seasonal adjustments, tier-based commission margins, and multi-guest utility splits"
+  - "Moved dynamic pricing formula logic into MySQL database views, reducing database execution times and keeping the interface responsive during booking spikes"
+  - "Implemented database-level row locks and linear availability checks to mitigate race conditions between public guests and private property owners"
+  - "Written an explicit database state machine that transitions property records between predefined structural states providing an auditable data trail"
+edge_cases_managed:
+  - "Programmatically integrated resort maintenance workflows into the availability calendar"
+  - "Enforced a dual-state operational lock before and after every booking"
+  - "Auto-generated background work orders for physical property inspections"
+  - "Managed multi-owner hardware billing splits"

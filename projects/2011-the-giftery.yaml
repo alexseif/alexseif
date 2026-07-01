@@ -1,0 +1,38 @@
+project_id: "The Giftery"
+client_name: "N/A"
+client_type: "E-commerce"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2011
+  end_year: 2011
+architectural_context: "The project involved re-engineering e-commerce software conventions to establish a user-centric wedding registry engine, designed around privacy mechanics enabling decentralized, user-managed gift repositories paired with secure, unauthenticated guest access pathways."
+technical_stack:
+  languages:
+    - "PHP"
+  frameworks:
+    - "Symfony Framework"
+  infrastructure_cloud: []
+  data_layers:
+    - "MySQL"
+core_competencies:
+  - "Component-Abstraction"
+  - "Data-Flow-Mapping"
+  - "Schema-Modeling"
+  - "System-Decoupling"
+  - "Identity-Federation"
+  - "API-Contract-Design"
+  - "Framework Migration"
+  - "Decentralized Registry Schema"
+  - "Token-Based Guest Routing"
+  - "Domain Context Refactoring"
+  - "Authentication Bypass"
+  - "Modular Service Abstraction"
+quantifiable_engineering_impact:
+  - "Managed migration onto Symfony framework, introducing structured ORM, dependency injection, and MVC isolation."
+  - "Designed relational database topology allowing dynamic linking of product assets to private user-event entities."
+  - "Engineered token-based routing system enabling guest access without standard user registration."
+  - "Implemented cryptographic URL signature validation eliminating database authentication overhead for guests."
+  - "Utilized Symfony's service container to decouple notification delivery, payment processing, and registry allocation logic."
+edge_cases_managed:
+  - "Built guest allocation tracker preserving transaction and cart states for unauthenticated visitors using direct URL parameter validation."
+  - "Protected checkout pathways from session expiration."

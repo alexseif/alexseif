@@ -1,0 +1,33 @@
+project_id: "Core Fintech & Transaction Routing Infrastructure — Wallety"
+client_name: "Wallety"
+client_type: "Fintech Enterprise"
+project_role: "Co-Founder & Chief Technology Officer (CTO)"
+timeline:
+  start_year: 2009
+  end_year: 2009
+architectural_context: "Engineered Egypt’s first comprehensive secure online payment gateway from the ground up, addressing national banking infrastructure challenges related to online fraud and capital flight. The platform scaled post-funding to process 33% of all domestic air travel ticketing throughput across Egypt."
+technical_stack:
+  languages: ["PHP"]
+  frameworks: ["Symfony Framework"]
+  infrastructure_cloud: ["AWS Ecosystem", "Load Balancers"]
+  data_layers: ["MySQL (Master-Slave)", "Asynchronous Queues", "CLI Daemons"]
+core_competencies:
+  - "Payment Gateway Architecture"
+  - "High Availability Systems"
+  - "Database Clustering"
+  - "Asynchronous Processing"
+  - "Financial Transaction Management"
+  - "API Integration"
+  - "Scalable Infrastructure Design"
+quantifiable_engineering_impact:
+  - "Built and launched the primary payment processing engine solo to secure market traction"
+  - "Scaled to handle 33% of all domestic air travel ticketing throughput across Egypt"
+  - "Deployed 1-second asynchronous queue loops to manage transaction spikes without blocking user traffic"
+  - "Implemented master-slave MySQL replication for high availability and reduced disk I/O overhead"
+  - "Developed a defensive transactional state machine ensuring SLA compliance during external timeouts"
+  - "Integrated with Amadeus Global Distribution System for real-time flight seat allocation"
+edge_cases_managed:
+  - "Extreme transaction spikes"
+  - "External bank gateway timeouts"
+  - "Local network dropouts"
+  - "High-availability requirements under market restrictions"

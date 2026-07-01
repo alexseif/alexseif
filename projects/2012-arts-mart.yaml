@@ -1,0 +1,39 @@
+project_id: "Arts-Mart"
+client_name: "Arts-Mart"
+client_type: "Art & E-commerce Enterprise"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2012
+  end_year: 2012
+architectural_context: "Served as Software Architect and NGO Technical Partner, designing and implementing a specialized, interactive B2C e-commerce platform for Arts-Mart. The implementation supported complex, multi-layered frontend asset customization. The system was split into a custom background data layout and a rendering engine that allowed end-users to dynamically customize product frameworks and visualize them in simulated environments."
+technical_stack:
+  languages:
+    - "PHP"
+    - "JavaScript"
+  frameworks:
+    - "Symfony Framework"
+  infrastructure_cloud: []
+  data_layers:
+    - "MySQL"
+core_competencies:
+  - "Component Abstraction"
+  - "Data Flow Mapping"
+  - "Schema Modeling"
+  - "System Decoupling"
+  - "Middleware Orchestration"
+  - "Data Layer Hardening"
+  - "Interactive Rendering Engine"
+  - "Asset Layering Storage"
+  - "Coordinate Mapping"
+  - "Domain Service Isolation"
+quantifiable_engineering_impact:
+  - "Engineered a data layout inside the storage engine to map composite relational attributes to single product records, optimizing backend layout and allowing retrieval of multi-layered visual dependencies in a single database transaction."
+  - "Devised a JavaScript manipulation engine to handle real-time graphic composition inside the browser, rendering combinations of frames, artwork, and interior elements dynamically based on user input."
+  - "Isolated the user-controlled interactive state from standard shopping cart logic, preserving client-side layout manipulations without generating unnecessary database write loops or impacting session stability."
+  - "Mapped the inventory as modular, coordinate-aware database records linked to transparent asset fragments rather than storing flat, pre-rendered image combinations for every possible variation."
+  - "Created a front-end engine that computed object relative tracking coordinates, processing real-time user drag-and-drop actions locally and packaging the finalized structural asset layout profile during cart submission."
+edge_cases_managed:
+  - "Technical constraint of executing multi-layered interactive layouts"
+  - "Memory management and rendering bottlenecks"
+  - "Real-time graphic composition inside the browser"
+  - "Client-side interaction loops not causing payment processing delays"

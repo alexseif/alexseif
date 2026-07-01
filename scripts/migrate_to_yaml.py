@@ -54,7 +54,10 @@ def migrate_batch(client: InferenceClient, batch_size: int = 5) -> None:
         print("No markdown files found to migrate.")
         return
 
-    batch: List[str] = md_files[:batch_size]
+    # Filter out files that already have a corresponding .yaml
+    pending_files = [f for f in md_files if not os.path.exists(f.replace(".md", ".yaml"))]
+
+    batch: List[str] = pending_files[:batch_size]
     print(f"Starting API migration for {len(batch)} files...")
 
     for file_path in batch:
@@ -121,8 +124,8 @@ def migrate_batch(client: InferenceClient, batch_size: int = 5) -> None:
 if __name__ == "__main__":
     try:
         hf_client = initialize_client()
-        # Execute 5 files as a pilot to verify the logic
-        migrate_batch(client=hf_client, batch_size=5)
+        # Execute the remaining files
+        migrate_batch(client=hf_client, batch_size=100)
     except ValueError as e:
         print(f"Configuration Error: {e}")
         exit(1)

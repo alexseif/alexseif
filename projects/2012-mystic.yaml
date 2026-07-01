@@ -1,0 +1,32 @@
+project_id: "Mystic Evenings"
+client_name: "Mystic Evenings"
+client_type: "Retail & E-commerce"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2012
+  end_year: 2012
+architectural_context: "Served as Software Architect and NGO Technical Partner, designing and deploying a custom e-commerce platform for Mystic Evenings on the Symfony framework. The business context demanded a responsive web presence capable of handling media-dense catalogs without introducing server latency. The platform replaced basic retail scripting with structured framework architecture, isolating inventory management dependencies and securing transaction data paths."
+technical_stack:
+  languages: ["PHP"]
+  frameworks: ["Symfony Framework"]
+  infrastructure_cloud: []
+  data_layers: ["MySQL", "Hierarchical Inventory Schemas", "Localized Content Caching"]
+core_competencies:
+  - "Component Abstraction"
+  - "Data Flow Mapping"
+  - "Schema Modeling"
+  - "System Decoupling"
+  - "Data Layer Hardening"
+  - "Infrastructure Tiering"
+  - "Framework Standardisation"
+  - "Relational Schema Normalization"
+  - "Modular Codebase Architecture"
+quantifiable_engineering_impact:
+  - "Resolved variant layout fragmentation by writing entity-relation rules for multi-attribute products, bypassing duplicate product tables and maintaining catalog query response times."
+  - "Configured explicit cache-control headers and localized storage organization matrices to isolate asset-rendering workflows from the primary web application request loop, ensuring low load times across connections."
+  - "Utilized Symfony's dependency injection container to split application behaviors into self-contained service classes, minimizing technical debt surface area for long-term project iteration."
+edge_cases_managed:
+  - "High-resolution image asset overhead"
+  - "Concurrent administrative data modifications"
+  - "Thread execution pool exhaustion during collection launches"
+  - "Search traffic impacting system speed indices"

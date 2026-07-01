@@ -1,0 +1,31 @@
+project_id: "Periodic Technical Inspection Platform — Saudi Ministry of Standards (SASO)"
+client_name: "Saudi Ministry of Standards (SASO)"
+client_type: "Public Sector"
+project_role: "Senior Software Engineer via iSoft"
+timeline:
+  start_year: 2021
+  end_year: 2024
+architectural_context: "Led the 3-year migration and optimization of Saudi Arabia's nationwide vehicle inspection and modification scheduling system, managing immense daily volume and orchestrating vehicle service lanes across the country into tight 15-minute scheduling blocks."
+technical_stack:
+  languages: []
+  frameworks: ["Drupal", "React"]
+  infrastructure_cloud: []
+  data_layers: ["3NF Database Design", "Star Schema", "Distributed State Locking"]
+core_competencies:
+  - "Distributed Systems"
+  - "Concurrency Control"
+  - "Database Design"
+  - "Headless Architecture"
+  - "API Development"
+  - "System Migration"
+  - "Engineering Leadership"
+  - "Agile Methodologies"
+quantifiable_engineering_impact:
+  - "Reduced database latency under peak loads by refactoring fragmented tables into 3rd Normal Form (3NF) and implementing a Star Schema for rapid read queries."
+  - "Implemented a distributed time-slot lock system that increased system capacity by allowing slots to be released back to the public pool after 5 minutes of inactivity."
+  - "Led the migration from a legacy monolithic Drupal core to a decoupled, headless ecosystem, improving performance and scalability."
+  - "Standardized engineering communication through a project-wide terminology dictionary and mapped Jira workflows to engineering release calendars, reducing unplanned hotfixes."
+edge_cases_managed:
+  - "Concurrency collisions in a distributed booking engine with three competing clients."
+  - "Handling proxy authorizations for Indian and foreign-national drivers without compromising security."
+  - "Managing high-volume scheduling blocks with strict 15-minute intervals."

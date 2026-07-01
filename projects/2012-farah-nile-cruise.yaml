@@ -1,0 +1,30 @@
+project_id: "Farah Nile Cruise"
+client_name: "Farah Nile Cruise"
+client_type: "Hospitality"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2012
+  end_year: 2012
+architectural_context: "Served as Software Architect and NGO Technical Partner, supervising the modernization of a hospitality web asset by migrating a legacy script configuration onto the Symfony framework. The objective was to reuse backend architecture logic while meeting user experience requirements for a media-heavy presentation layer. The deployment combined relational database management with an optimized frontend asset delivery system."
+technical_stack:
+  languages: [PHP]
+  frameworks: [Symfony Framework]
+  infrastructure_cloud: []
+  data_layers: [MySQL]
+core_competencies:
+  - Component Abstraction
+  - System Decoupling
+  - Data Flow Mapping
+  - Infrastructure Tiering
+  - Protocol Rationalization
+  - Schema Modeling
+  - Modular Codebase Standardisation
+  - Asset Ingestion Pipeline Tuning
+  - Clean Component Abstraction
+quantifiable_engineering_impact:
+  - "Orchestrated the transition of procedural PHP code into a modular, object-oriented framework layout using Symfony's routing components and configuration containers"
+  - "Engineered an asset management protocol to handle uncompressed media files without blocking the application rendering thread"
+  - "Configured the hosting infrastructure to handle high-resolution visual files asynchronously, protecting memory bounds during concurrent visitor spikes"
+edge_cases_managed:
+  - "Managed the migration path by establishing data mapping configurations that bridged legacy tabular schemas into framework-compliant entities"
+  - "Minimized structural data regressions for active booking requests during the porting window"

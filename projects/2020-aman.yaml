@@ -1,0 +1,26 @@
+project_id: "Aman Vehicle Inspection Ecosystem — Egyptian Ministry of Interior"
+client_name: "Egyptian Ministry of Interior"
+client_type: "Public Sector"
+project_role: "NGO Technical Partner & Senior Software Engineer via iSoft"
+timeline:
+  start_year: 2020
+  end_year: 2020
+architectural_context: "The project involved developing a nationwide web ecosystem to facilitate vehicle inspections by redirecting them from traditional traffic police departments to mobile inspection vans, commercial hubs, and shopping malls. The system evolved from a basic informational portal into a fully interactive booking platform, integrating with state-level databases through secure APIs and enabling dynamic geo-location routing for inspection services."
+technical_stack:
+  languages: [PHP]
+  frameworks: [Drupal Enterprise]
+  infrastructure_cloud: []
+  data_layers: [MySQL, Relational Database Scheduling]
+core_competencies:
+  - Multi-Phase Architecture Evolution
+  - Back-to-Back API Integration
+  - Dynamic Location Matching
+  - Citizen Feedback Loop
+quantifiable_engineering_impact:
+  - "Engineered a secure, high-availability API connection linking the Drupal frontend directly with the state-level backend database"
+  - "Developed relational scheduling filters allowing users to find the closest mobile van or commercial kiosk with exact tools and capacity"
+  - "Built an integrated support and data-collection system capturing, routing, and logging citizen issues during field operations"
+edge_cases_managed:
+  - "Real-time tracking of mobile inspection units"
+  - "Dynamic matching of user requirements with available inspection capabilities"
+  - "Handling citizen feedback and support requests within the portal"

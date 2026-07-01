@@ -1,0 +1,28 @@
+project_id: "Alexander Restaurant"
+client_name: "Private Operations"
+client_type: "Commercial Hospitality"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2025
+  end_year: 2025
+architectural_context: "A minimalist digital menu asset for a commercial hospitality client requiring an accessible operational platform. Avoided over-engineering by favoring a customized base theme, focusing on tactical restraint and simplicity to deliver a targeted deployment as an NGO Technical Partner."
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies:
+  - "WordPress Development"
+  - "Base Theme Customization"
+  - "Speed Optimization"
+  - "Responsive Web Design"
+  - "Technical Restraint"
+  - "Minimal Overhead Solutions"
+quantifiable_engineering_impact:
+  - "Maintained consistent page-load speeds on mobile endpoints"
+  - "Removed friction for end-users through optimized performance"
+  - "Provided a simple content update pipeline for management"
+edge_cases_managed:
+  - "Avoided over-engineering by favoring a customized base theme instead of decoupled architectures"
+  - "Eliminated reliance on subscription-dependent plugins"
+  - "Executed targeted deployment as NGO Technical Partner"

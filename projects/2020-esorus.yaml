@@ -1,0 +1,33 @@
+project_id: "Esorus Ecosystem & DesignToGo"
+client_name: "Esorus"
+client_type: "B2B Marketplace"
+project_role: "Software Architect & NGO Technical Partner via Perfect Needs"
+timeline:
+  start_year: 2020
+  end_year: 2020
+architectural_context: "Architected a backend ecosystem supporting over 15,800 structural items and a professional network of enterprise B2B vendors and architects. Managed the architectural lifecycle, successfully transitioning an organic content hub into a transactional B2B material sourcing engine."
+technical_stack:
+  languages: []
+  frameworks: 
+    - "Symfony Framework"
+  infrastructure_cloud: []
+  data_layers: 
+    - "Database Normalization"
+core_competencies:
+  - "Backend Ecosystem Design"
+  - "Multi-Vendor Logic"
+  - "Database Normalization"
+  - "Event-Driven Architecture"
+  - "Performance Optimization"
+  - "Symfony Framework"
+  - "Asset Optimization"
+  - "Multi-Vendor State Machine"
+quantifiable_engineering_impact:
+  - "Engineered a backend ecosystem supporting over 15,800 structural items"
+  - "Developed responsive frontend layers with optimized caching pipelines for improved SpeedIndex ratings"
+  - "Built *DesignToGo* as a specialized component within the primary Symfony cluster"
+  - "Scaled core relational matrices without straining execution threads or compromising concurrent transaction blocks"
+edge_cases_managed:
+  - "Database tracking across interdependent commercial catalogs"
+  - "Maintaining functional frontend performance during complex architectural transitions"
+  - "Managing concurrent transaction blocks in a multi-vendor environment"

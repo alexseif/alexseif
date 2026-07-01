@@ -1,0 +1,33 @@
+project_id: "Egyptolution"
+client_name: "Tourism & Media Network"
+client_type: "Tourism & Media Network"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2010
+  end_year: 2010
+architectural_context: "Served as Software Architect and NGO Technical Partner, designing and deploying a custom media and blogging platform. The system was engineered to handle editorial content and high-resolution media assets for a portfolio of hotel and tourism operations. The platform was architected to achieve fast execution, low page-load latencies, and streamlined cross-platform social link tracking across mobile and desktop connections."
+technical_stack:
+  languages: [PHP]
+  frameworks: ["Custom MVC Framework"]
+  infrastructure_cloud: ["Localized CDN Routing"]
+  data_layers: [MySQL]
+core_competencies:
+  - "Component Abstraction"
+  - "Data Flow Mapping"
+  - "Schema Modeling"
+  - "System Topology Design"
+  - "Protocol Rationalization"
+  - "Content Ingestion Schema Design"
+  - "Asset Delivery Abstraction"
+  - "MVC Execution"
+  - "Render Pipeline Acceleration"
+  - "Media Optimization Automation"
+  - "Decoupled Data Flow Logic"
+quantifiable_engineering_impact:
+  - "Reduced server-side processing overhead during traffic surges through custom object-oriented static asset caching."
+  - "Prevented high-resolution visual presentations from slowing down the primary rendering thread via programmatic image scaling and asset compression."
+  - "Achieved fast execution and low page-load latencies through optimized content ingestion schema and asset handling lifecycle."
+edge_cases_managed:
+  - "Fast link-sharing with minimal metadata payload sizes for link resolution."
+  - "Cross-platform social link tracking across mobile and desktop connections."
+  - "Read lock conditions during editorial updates by optimizing relational database layout for text and asset indexing."

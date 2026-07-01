@@ -1,0 +1,27 @@
+project_id: "Salama Car Insurance Registration Gateway"
+client_name: "Salama Cooperative Insurance Company"
+client_type: "Public Sector / Fintech"
+project_role: "NGO Technical Partner & Senior Software Engineer"
+timeline:
+  start_year: 2020
+  end_year: 2020
+architectural_context: "The project involved co-developing a web gateway for Salama Cooperative Insurance Company to manage and automate high-volume car insurance registrations in Saudi Arabia. It served as the architectural blueprint for validation workflows adopted across subsequent KSA public sector portals, emphasizing compliance-driven design and scalable data models."
+technical_stack:
+  languages: [PHP]
+  frameworks: [Drupal Enterprise]
+  infrastructure_cloud: []
+  data_layers: [MySQL, REST API, Data Validation Layers]
+core_competencies:
+  - "Enterprise Drupal Development"
+  - "Compliance-Driven System Design"
+  - "REST API Integration"
+  - "Data Validation Layer Implementation"
+  - "Scalable Architecture Design"
+quantifiable_engineering_impact:
+  - "Engineered core data registration and structural field validation layers within an enterprise Drupal environment, ensuring error-free payload translation before data reached backend processing nodes."
+  - "Structured secure REST API handshakes and data capture payloads to enforce strict compliance with Saudi cooperative insurance regulations and legal security standards."
+  - "Designed system components with strict separation of concerns, enabling highly reusable data models that streamlined rapid deployment of future regional portal projects."
+edge_cases_managed:
+  - "Handling high-volume car insurance registrations under strict regulatory compliance requirements."
+  - "Ensuring secure data transmission and validation in a regulated financial services environment."
+  - "Managing complex data flow between frontend validation and backend processing nodes."
