@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project",
+  "type": "object",
+  "properties": {
+    "project_id": { "type": "string" },
+    "client_name": { "type": "string" },
+    "client_type": { "type": "string" },
+    "project_role": { "type": "string" },
+    "timeline": {
+      "type": "object",
+      "properties": {
+        "start_year": { "type": "integer" },
+        "end_year": { "type": "integer" }
+      },
+      "required": ["start_year", "end_year"]
+    },
+    "architectural_context": { "type": "string" },
+    "technical_stack": {
+      "type": "object",
+      "properties": {
+        "languages": { "type": "array", "items": { "type": "string" } },
+        "frameworks": { "type": "array", "items": { "type": "string" } },
+        "infrastructure_cloud": { "type": "array", "items": { "type": "string" } },
+        "data_layers": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "core_competencies": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "quantifiable_engineering_impact": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "edge_cases_managed": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["project_id", "client_name", "project_role", "timeline", "architectural_context"]
+}

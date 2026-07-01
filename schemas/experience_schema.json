@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Professional Experience",
+  "type": "object",
+  "properties": {
+    "company_agency": { "type": "string" },
+    "employment_type": { "type": "string", "description": "e.g., Contract, Full-time, Fractional" },
+    "timeline": {
+      "type": "object",
+      "properties": {
+        "start_year": { "type": "integer" },
+        "end_year": { "type": "integer", "description": "Can be null for 'Present'" }
+      },
+      "required": ["start_year"]
+    },
+    "primary_role": { "type": "string" },
+    "agency_level_impact": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["company_agency", "timeline", "primary_role", "agency_level_impact"]
+}

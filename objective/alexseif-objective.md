@@ -1,13 +1,14 @@
 # Professional Objective & Profile Strategy
 
-## 1. Targeted Professional Title
-*   **Primary Target:** Principal Engineer & NGO Technical Partner
-*   **Alternative Track:** Staff Engineer (PHP / Full-Stack Architecture)
+## 1. Tiered Professional Objectives & Title
+**Targeted Title:** Software Architect & NGO Technical Partner
+
+*   **Primary Objective (Relocation):** Secure a high-quality, permanent Software Architect role based in the Netherlands.
+*   **Secondary Objective (NGO Sector):** Attract NGOs seeking an embedded Technical Partner for secure web portals, Data Sovereignty compliance, custom RAG pipelines, AI workflow integration, and staff AI prompting/configuration training.
+*   **Tertiary Objective (Market Value):** Capture highly compensated remote Software Architecture or Senior Engineering contracts globally.
 
 ## 2. Core Narrative Anchor
-Principal Engineer and Systems Architect with 20+ years of continuous delivery across enterprise, fintech, e-commerce, and public-sector platforms. Trained in Computer Engineering at AASTMT, my career progressed from sole-engineering Egypt's first online payment gateway to architecting high-concurrency federal infrastructure, distributed state-locking engines, air-gapped deployment pipelines, and production-ready agentic AI orchestration systems.
-
-The core value proposition: bringing absolute architectural reliability and risk mitigation to high-traffic web ecosystems. Specializing in the strategic decomposition of legacy monoliths, high-concurrency state synchronization, and the seamless integration of production-ready AI agentic workflows and RAG pipelines into existing enterprise codebases.
+Software Architect & NGO Technical Partner with 20+ years architecting and shipping mission-critical systems — from national-scale government infrastructure serving millions of citizens to fintech platforms processing a third of a country's domestic transaction volume. I specialize in solving the hard problems: distributed state under contention, legacy systems that can't go down during migration, and architecture that survives contact with bureaucracy, scale, and time.
 
 ## 3. Core Technical Capabilities
 *   **Languages & Frameworks:** PHP (Symfony, Laravel, Core, Drupal Enterprise, Moodle), JavaScript/TypeScript (Node.js, React), Bash, Python.
