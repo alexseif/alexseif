@@ -3,7 +3,7 @@ title: "Alexander Restaurant"
 year: 2025
 url: "Private Operations"
 client_type: "Commercial Hospitality"
-agency: "Software Architect & Systems NGO Technical Partner"
+agency: "Software Architect & NGO Technical Partner"
 subtitle: "Hospitality Digital Asset"
 tech_stack: ["WordPress", "Base Theme Customization", "Speed Optimization", "Responsive Web Design"]
 ---

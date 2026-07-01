@@ -3,14 +3,14 @@ title: "Mystic Evenings"
 year: 2012
 url: "http://www.mysticevenings.com"
 client_type: "Retail & E-commerce"
-agency: "Software Architect & Systems NGO Technical Partner"
+agency: "Software Architect & NGO Technical Partner"
 subtitle: "E-commerce Catalog & Asset Management Pipeline"
 tech_stack: ["PHP", "Symfony Framework", "MySQL", "Hierarchical Inventory Schemas", "Localized Content Caching"]
 tags: ["#Component-Abstraction", "#Data-Flow-Mapping", "#Schema-Modeling", "#System-Decoupling", "#Data-Layer-Hardening", "#Infrastructure-Tiering"]
 ---
 
 # Project Dossier
-Served as Software Architect and Systems NGO Technical Partner, designing and deploying a custom e-commerce platform for Mystic Evenings on the Symfony framework. The business context demanded a responsive web presence capable of handling media-dense catalogs without introducing server latency. 
+Served as Software Architect and NGO Technical Partner, designing and deploying a custom e-commerce platform for Mystic Evenings on the Symfony framework. The business context demanded a responsive web presence capable of handling media-dense catalogs without introducing server latency. 
 
 The platform replaced basic retail scripting with structured framework architecture, isolating inventory management dependencies and securing transaction data paths.
 

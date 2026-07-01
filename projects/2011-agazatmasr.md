@@ -3,14 +3,14 @@ title: "Agazat Masr (Tourico)"
 year: 2011
 url: "https://www.agazatmasr.com"
 client_type: "Tourism & Hospitality Enterprise"
-agency: "Software Architect & Systems NGO Technical Partner"
+agency: "Software Architect & NGO Technical Partner"
 subtitle: "Tourism Inventory & Email-Driven Booking Engine"
 tech_stack: ["PHP", "Custom MVC Framework", "MySQL", "Dynamic Package Assembly Engine", "Asynchronous Mail Routing"]
 tags: ["#Schema-Modeling", "#Data-Flow-Mapping", "#Component-Abstraction", "#System-Decoupling", "#Middleware-Orchestration"]
 ---
 
 # Project Dossier
-Served as Software Architect and Systems NGO Technical Partner, co-engineering a digital brochure and asynchronous transaction management system. The platform supported the client in scaling its domestic tourism offerings in Egypt. 
+Served as Software Architect and NGO Technical Partner, co-engineering a digital brochure and asynchronous transaction management system. The platform supported the client in scaling its domestic tourism offerings in Egypt. 
 
 The architecture addressed multi-tier inventory aggregation challenges by combining dynamic packages, excursions, and transport transfers into a relational lookup model, maintaining performance under regular traffic loads.
 

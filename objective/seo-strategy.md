@@ -18,13 +18,13 @@ Added a comprehensive `Person` and `ProfessionalService` schema to the global we
 *   Replaced vague structural tags with contextual titles and code references for accurate keyword indexing.
 
 ### 3. Metadata Configuration
-*   Optimized layout metadata tags to target high-intent search terms: `"Principal Engineer"`, `"Staff Engineer"`, `"Air-Gapped Deployment"`, `"Distributed State Locking"`, `"Symfony Specialist"`, and `"NGO Technical Partner"`.
+*   Optimized layout metadata tags to target high-intent search terms: `"Software Architect"`, `"Staff Engineer"`,`"Principal Engineer"`, `"Air-Gapped Deployment"`, `"Distributed State Locking"`, `"Symfony Specialist"`, and `"NGO Technical Partner"`.
 
 ## Proposed Content Expansions (Aligning with Technical Strategy)
 
 ### A. Hero Section Component Update
-*   **Current Text:** `Software Architect | NGO Technical Partner | Author | Enabler`
-*   **Proposed SEO-Optimized Version:** `Senior Software Engineer & NGO Technical Partner | High-Concurrency PHP/Symfony Ecosystems & Production AI Integration`
+*   **Current Text:** `Software Architect | NGO Technical Partner `
+*   **Proposed SEO-Optimized Version:** `Software Architect & NGO Technical Partner | High-Concurrency PHP/Symfony Ecosystems & Production AI Integration`
 *   *Justification:* Captures exact high-value search criteria above the fold while aligning precisely with your actual technical experience.
 
 ### B. "The Offering" (Technical Grid Layout)

@@ -3,7 +3,7 @@ title: "Misfits LLC"
 year: 2020
 url: "https://misfits-llc.com/"
 client_type: "Creative Agency"
-agency: "Software Architect & Systems NGO Technical Partner"
+agency: "Software Architect & NGO Technical Partner"
 subtitle: "Stable Production Deployment"
 tech_stack: ["WordPress Core", "Asset Compression", "Long-Lifespan Software Design", "Security Hardening", "Low-Weight Server Profiles"]
 ---

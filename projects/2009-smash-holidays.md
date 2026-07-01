@@ -3,14 +3,14 @@ title: "Smash Holidays"
 year: 2009
 url: ""
 client_type: "Tour Operator / Booking Agency"
-agency: "Software Architect & Systems NGO Technical Partner"
+agency: "Software Architect & NGO Technical Partner"
 subtitle: "Custom Booking Engine & RAD Architectural Design"
 tech_stack: ["PHP", "Custom MVC Framework", "MySQL Database Views", "Query Optimization", "Domain-Driven Design (DDD), Rapid Application Development (RAD)"]
 tags: ["#Concurrency-Optimization", "#Data-Layer-Hardening", "#Domain-Driven-Design", "#Schema-Modeling", "#Component-Abstraction", "#Data-Flow-Mapping", "#Protocol-Rationalization", "#Middleware-Orchestration", "#System-Decoupling"]
 ---
 
 # Project Dossier
-Served as Software Architect and Systems NGO Technical Partner, designing and delivering a custom hotel room booking and availability engine. Successfully resolved computational overhead bottlenecks where early queries required significant time to evaluate multi-factor availability and pricing variables. 
+Served as Software Architect and NGO Technical Partner, designing and delivering a custom hotel room booking and availability engine. Successfully resolved computational overhead bottlenecks where early queries required significant time to evaluate multi-factor availability and pricing variables. 
 
 Following initial deployment, engineered a Rapid Application Development (RAD) MVC framework to support feature iterations and system scaling. The resulting platform served as the core infrastructure for multiple agencies managing inventory and distribution channels.
 
