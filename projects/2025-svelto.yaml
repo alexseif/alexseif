@@ -1,0 +1,27 @@
+project_id: "Svelto"
+client_name: "N/A"
+client_type: "Commercial Enterprise"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2025
+  end_year: 2025
+architectural_context: "Designed and deployed a product personalization and on-demand print configuration engine atop a modified WooCommerce architecture. Engineered the checkout pipeline to support concurrent transaction volume."
+technical_stack:
+  languages: []
+  frameworks: ["WordPress", "WooCommerce"]
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies:
+  - "Transactional Configuration Engine"
+  - "Payment Gateway Integration"
+  - "Custom Print Logic"
+  - "Web Performance Optimization"
+  - "System Engineering"
+  - "Dynamic Print File Generation"
+quantifiable_engineering_impact:
+  - "Engineered payment webhooks to ensure synchronous state preservation during transaction processing"
+  - "Bypassed off-the-shelf plugins to bind the personalization logic natively into the core execution thread, protecting execution speed"
+  - "Supported concurrent transaction volume through optimized checkout pipeline"
+edge_cases_managed:
+  - "Managing complex user-configured matrices without yielding server stability"
+  - "Compromising the speed index during critical conversion pathways"

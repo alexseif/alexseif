@@ -1,0 +1,13 @@
+{
+  "name": "alexseif-data-pipeline",
+  "version": "1.0.0",
+  "description": "Validation pipeline for resume and project data",
+  "scripts": {
+    "validate:projects": "ajv validate -s schemas/project_schema.json -d \"projects/*.yaml\"",
+    "validate:experience": "ajv validate -s schemas/experience_schema.json -d \"experience/*.yaml\""
+  },
+  "dependencies": {
+    "ajv-cli": "^5.0.0",
+    "ajv-formats": "^3.0.0"
+  }
+}

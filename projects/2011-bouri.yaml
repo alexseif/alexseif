@@ -1,0 +1,31 @@
+project_id: "Bouri Center"
+client_name: "Bouri Center"
+client_type: "Retail & E-commerce Enterprise"
+project_role: "Software Architect & NGO Technical Partner"
+timeline:
+  start_year: 2011
+  end_year: 2011
+architectural_context: "Served as Software Architect and NGO Technical Partner, designing an e-commerce engine and backend data synchronization pipeline for Bouri Center. The architecture integrated a web-facing retail catalog with an existing corporate ERP legacy system serving a multi-location brick-and-mortar retail chain. To manage third-party system constraints, the platform decoupled the e-commerce storage layer from the live ERP nodes, structuring the web application database to function as an isolated physical store branch node."
+technical_stack:
+  languages: ["PHP"]
+  frameworks: ["Drupal"]
+  infrastructure_cloud: []
+  data_layers: ["MySQL", "ERP Connector Middleware", "Data Sanitization Pipelines"]
+core_competencies:
+  - "System Decoupling"
+  - "Schema Modeling"
+  - "Data Flow Mapping"
+  - "Middleware Orchestration"
+  - "Component Abstraction"
+  - "System Forensics"
+  - "Database Replication"
+  - "Infrastructure Tiering"
+quantifiable_engineering_impact:
+  - "Designed middleware abstraction layers to decouple multi-location inventory updates from frontend rendering, allowing the architecture to handle retail stock updates without dependency on real-time third-party API availability."
+  - "Engineered a human-in-the-loop ingestion portal to normalize and sanitize inconsistent vendor data streams, validating unformatted product listings prior to live production database insertion."
+  - "Optimized the relational schema within a customized Drupal architecture to enforce categorical indexing and relational taxonomy trees, ensuring consistent page-load speeds across home and kitchen appliance inventories."
+  - "Built schema-validation layers to preserve the transactional integrity of the online catalog over a multi-year deployment lifecycle."
+edge_cases_managed:
+  - "Conducted system forensics to reverse-engineer required data synchronization formats due to limited documentation from the external ERP vendor."
+  - "Implemented a validation schema to evaluate incoming inventory payloads, isolating data anomalies or duplicate entity definitions in a staging environment for administrative review."
+  - "Organized application workflows into independent service modules to ensure modifications to consumer interfaces did not affect background synchronization scripts."
