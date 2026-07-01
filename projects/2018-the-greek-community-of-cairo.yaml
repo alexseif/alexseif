@@ -1,0 +1,17 @@
+project_id: the-greek-community-of-cairo
+client_name: Alex Seif
+client_type: NGO
+project_role: Software Engineer
+timeline:
+  start_year: 2018
+  end_year: 2018
+architectural_context: Setup and customised a wordpress site, to serve as a portal
+  for this community's presence, activities and history
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

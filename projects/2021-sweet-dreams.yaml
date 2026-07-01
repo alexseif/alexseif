@@ -1,0 +1,32 @@
+project_id: sweet-dreams
+client_name: Sweet Dreams (Friend's Venture)
+client_type: Direct
+project_role: Software Engineer
+timeline:
+  start_year: 2021
+  end_year: 2021
+architectural_context: Handheld a founder through the rapid launch of a passion project
+  selling home textiles and bedding online. Engineered a streamlined, lightweight,
+  and cost-effective WordPress and WooCommerce e-Commerce minimum viable product (MVP).
+  Focused on stripping away structural friction to deliver a fast, fully functional
+  digital storefront, enabling the client to immediately test market validation and
+  manage inventories with zero technical overhead.
+technical_stack:
+  languages:
+  - WordPress
+  - WooCommerce
+  - E-Commerce I
+  - frastructure
+  - Respo
+  - sive Layouts
+  - Agile MVP Deployme
+  - t
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact:
+- Acted as a trusted Technical Partner to deliver an immediate, low-overhead commercial
+  storefront for a short-lived retail passion project, prioritizing speed-to-market
+  and administrative simplicity.
+edge_cases_managed: []

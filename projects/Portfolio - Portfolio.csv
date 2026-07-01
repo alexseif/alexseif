@@ -1,0 +1,151 @@
+Title,Year,Year End,URL,Client Type,Client / Agency,Subtitle,Description,Technical Stack,Skills,Notes /Edge Cases,
+BUSINESS SOLUTIONS,2004,,,,Alex Seif,Business ideas + Software Engineering = Solutions,Business ideas + Software Engineering = Solutions,,,,
+ARABIC MEDICAL SOCIAL WEBSITE,2005,,,,Alex Seif,"Aiming to relate Arabic speaking medical professionals and medicine scholars together, through forums, articles, news and events.","Aiming to relate Arabic speaking medical professionals and medicine scholars together, through forums, articles, news and events.",,,,
+SYKOHEIL DENTISTRY CLINIC,2006,,http://sykoheil.com/,,Alex Seif,Maintained a site for a dentistry clinic for 6 months to ensure security and to enhance the site's initial traffic,,,,,
+MITCHDESIGNS,2009,2012,http://www.mitchdesigns.com/,Outsourcing Partner,MITCHDESIGNS,Outsourced to this design company so it can deliver on it's promises,2009 - 2014,"Self made Custom PHP MVC Framework 
+mySQL
+HTML, CSS, JS
+Symfony","* Requirement Elicitation
+* Software Design
+* Database Design
+* Infrastructure Setup
+* Team development
+* CI/CD
+* Testing development
+* Documentation & Code Quality
+* Defining Deliverables ",,
+SMASH HOLIDAYS,2009,,,Outsourcing Partner,MITCHDESIGNS,"Customer Tailored Tour Operator Booking System, with a full fledged CMS",,"Self made Custom PHP MVC Framework 
+mySQL
+HTML, CSS, JS","* Requirement Elicitation
+* Software Design
+* Database Design
+* Infrastructure Setup
+* Team development
+* CI/CD
+* Testing development
+* Documentation & Code Quality
+* Defining Deliverables 
+* Nested Queries 
+* Query Optimization 
+* Advanced pricing Schema
+* PageSpeed load",,
+EGYPTOLUTION,2010,,,Outsourcing Partner,MITCHDESIGNS,Requirement elicitation & consulting,2010 - 2013,Requirement elicitation & consulting,,,
+ORTHODOX BOTSWANA,2010,,,NGO,Alex Seif,Webpresence,2010-2011,,,,
+TAZIRY,2010,,https://taziry.com/,Outsourcing Partner,MITCHDESIGNS,,Consulting,,,,
+TRAINING STAFF,2010,,,Outsourcing Partner,MITCHDESIGNS,,2010-2015,,,,
+WALLETY,2010,2014,wallety.com,Fintech Enterprise Startup,Chief Technology Officer (CTO) @ CLI APPs,High-Throughput Core Fintech & Airline Transaction Routing Infrastructure,"Served as CTO and Principal Systems Architect for a major fintech payment platform. Designed and deployed a highly optimized, decoupled core routing infrastructure capable of processing continuous, extreme concurrency loads, successfully commanding over 33% of all domestic air travel ticketing throughput nationwide. Hardened the cloud infrastructure for strict corporate audit and PCI-DSS compliance, isolating volatile consumer entry networks from high-yield atomic transaction microservices.","PHP, Symfony Framework, AWS Ecosystem, High-Availability Load Balancers, Asynchronous Queues, PCI-DSS Hardening.",,Sustained mission-critical core architectures where even milliseconds of systemic database latency carried material financial penalties and immediate transaction processing failure costs.,
+AGAZAT MASR,2011,,https://www.agazatmasr.com/,Outsourcing Partner,MITCHDESIGNS,"Custom Tailored Web brochure to tourism packages with an Integrated, Email based, Booking Management System","Agazat Masr (Tourico)
+Members:Alex Seif, Malak Mitch
+Custom Tailored Web brochure to tourism packages with an Email Booking Management System
+2011 - 2013",,,,
+BOURI CENTER,2011,,BOURI,Outsourcing Partner,MITCHDESIGNS,Custom Tailored E-Commerce System for Retail Appliance Chains (2011 - 2013),"Designed and scaled a highly customized e-commerce ecosystem built on Symfony. To bypass structural blocking from an uncooperative legacy ERP vendor, modeled the e-commerce database layer to mimic a standalone, physical retail branch node with its own dedicated virtual inventory ledger. Architected an asynchronous, human-in-the-loop remediation pipeline with a custom dashboard to intercept and sanitize fragmented, duplicated, and unnormalized product data exports before production ingestion. Leveraged early web traction to design a comprehensive API specification contract for the client's vendor, establishing requirements for versioned stock allocation, transactional holds, and automated inventory sync.","Symfony Framework, Relational Schema Modeling, E-Commerce Inventory Engines, Legacy ERP Data Remediation, API Specification Design, Asynchronous Data Ingestion.",,"Overcame absolute third-party vendor blocking by decoupling the platform into an isolated physical retail branch simulation. Successfully shifted corporate management's operational mindset, using early web metrics to drive stakeholder spend on a fully automated, state-synchronized API upgrade.","Bouri
+Members:Alex Seif, Malak Mitch
+Custom tailored eCommerce System for home and kitchen appliances
+2011 - 2013"
+RESORT CHOICE,2011,,https://www.resortchoice.com/,Outsourcing Partner,MITCHDESIGNS,Multi-Tenant Property Rental & High-Yield Resort Management Engine (2011 - 2012),"Architected and deployed a multi-tenant resort management and rental engine that unified public guest bookings and private property-owner operations. Codified complex property contracts directly into the business logic layer to automatically enforce booking windows and prevent inventory collisions. Engineered a high-performance yield engine capable of calculating fluid variables (gala nights, seasonal spikes, early-bird rates, and owner exemptions) instantly by utilizing optimized database Views and decoupled service layers. Solely responsible for requirements elicitation, database normalization, asynchronous JS/AJAX validation, staging/production server provisioning, automated deployment integration, and disaster recovery processes.","PHP, Symfony Framework, Complex Relational Schemas, Optimized SQL Views, Advanced Yield Management Engines, Asynchronous JS/AJAX, Server Provisioning & DR.",,"Translated complex legal contracts and real-world offline operational logistics (damage assessments, turn-over workorders, and multi-owner asset billing) directly into rigid programmatic software boundaries. Built a system so seamless that property owners frequently booked other available inventory within the network.",
+THE GIFTERY,2011,,http://www.thegiftery.com/,Outsourcing Partner,MITCHDESIGNS,Consulting & Problem solving,2011-2012,,,,
+ALSSON,2012,,http://www.alsson.com/,Contracted /OutSourcing,MITCHDESIGNS,Consulting,2012 - 2013,,,,
+ARTS MART,2012,,https://www.arts-mart.com/,Contracted /OutSourcing,MITCHDESIGNS,Consulting,2012 - 2013,,,,
+FARAH NILE CRUISE,2012,,http://www.farahnilecruise.com/,Contracted /OutSourcing,MITCHDESIGNS,Farah means Happiness and Joy in Arabic; and this is simply what we aspire: make our Guest happy and satisfied to have chosen us for their trip along the Nile.,"Farah Nile Cruise
+May 2011 to June 2011
+Members:Alex Seif, Romario Sameh, Malak Mitch
+2012-2013",,,,
+MYSTIC EVENINGS,2012,,http://www.mysticevenings.com/,Contracted /OutSourcing,MITCHDESIGNS,,Consulting,,,,
+MYZOUK,2012,,,Contracted /OutSourcing,MITCHDESIGNS,,"MyZouk - Architecture, oversight, consultation
+Custom tailored listing for premium items (Cars, Boats, etc..)
+Consulting",,,,
+SOHO SQUARE,2012,,http://www.soho-sharm.com/,Contracted /OutSourcing,MITCHDESIGNS,,Event eCommerce addon,,,,
+WHO'S JAMMING,2012,,,Contracted /OutSourcing,MITCHDESIGNS,,Consulting,,,,
+YADAWEYA,2012,,http://www.yadaweya.com/,Contracted /OutSourcing,MITCHDESIGNS,,Consulting,,,,
+BAILANDO,2014,,bailando-eg.com,Direct,Alex Seif,Digitally crafted their online presence,2014 - till today,,,,
+ODIOUS,2014,,odiousband.com,Direct,Alex Seif,Digitally delivering their music to their fanbase,2014-today,,,,
+ORIENT COPPER COMPANY,2014,,orientcopper.com,Direct,Alex Seif,Themed Wordpress site for simplicity of this factory's digital presence.,2014 - today,,,,
+DIMITRIS CAVOURAS - ΔΗΜΉΤΡΗΣ ΚΆΒΟΥΡΑΣ,2015,,https://www.facebook.com/dimitriscavouras/,NGO,Alex Seif,"Dispensed his political statement and controlled his message on twitter
+",,,,,
+THE GREEK COMMUNITY OF ALEXANDRIA,2015,,,NGO,Alex Seif,"Setup and customised a wordpress site, to serve as a portal for this community's presence, activities and history",2015 - today,,,,
+THOMAS SAFETY,2015,,http://thomas-safety.com/,Direct,Alex Seif,Corporate Website for purpose of digital presence and product catalog,2015-today,,,,
+VISALLC,2015,,http://mevisa.ru/,Direct,Alex Seif,"Developed a custom mini-ERP that integrates with different platforms (wordpress, modx) and multiple websites. To consolidate orders, employees and management","2015 - today (MeVisa, VisaLLC & TravelBox.ru, miniERP)",,,,
+218TV.NET,2016,,218TV.NET,Outsourcing,NileTech,Implemented a layout based on PSD's for this Drupal based website with high traffic. In addition to adding new features to Drupal.,,,,,
+DESIGN & MORE INTERNATIONAL,2016,,design-more.net,Direct,Alex Seif,Designed & built a website that reflects their spirit and theme on a platform to publish their achievements.,2016 - today,,,,
+INTRADE,2016,,e-intrade.com,Direct,Alex Seif,"is an Import & Export firm with global reach, that aims to publicise their establishment, products and services, in addition to a brochure.",,,,,
+L3D,2016,,http://www.law3andakdam.com/,NGO,Alex Seif,Consulting,,,,,
+THE GREEK COMMUNITY OF ALEXANDRIA,2016,,ekalexandria.org,NGO,Alex Seif,Delivered every directors message and report through infographics in their annual report,,,,,
+ZILLION HOME BUYERS,2016,,,Direct,Alex Seif,Real state squeeze page,,,,,
+TURATHUNA,2017,,http://turathuna.ae/,NGO,NileTech,The Cultural Programs and Heritage Festivals Committee - Abu Dhabi,,,,,
+Faros Omogenias,2017,,farosomogenias.gr,NGO,Alex Seif,Greek News website,,,,,
+EMICS,2017,,,Direct,Alex Seif,,,,,,
+Cafe Supreme,2017,,,Direct,Alex Seif,,,,,,
+STARTUP WORKSHOPS,2017,,,Direct,ITI,,,,,,
+HSP,2017,,,Direct,Alex Seif,,,,,,
+Ajel,2017,2019,ajel.sa,Outsourcing,NileTech,,,,,,
+THE GREEK COMMUNITY OF CAIRO,2018,,ekkairo.org,NGO,Alex Seif,"Setup and customised a wordpress site, to serve as a portal for this community's presence, activities and history",,,,,
+Women2030,2018,,,NGO,NileTech,,,,,,
+AGAZAT MASR (Tourico),2018,,agazatmasr.com,Direct,Alex Seif,"Maintenance of Custom Tailored Web brochure to tourism packages with an Integrated, Email based, Booking Management System","Consultation for upgrade of Custom Tailored Web brochure to tourism packages with an Integrated, Email based, Booking Management System",,,,
+Osman Co Educational Services,2018,,osmanco-ec.com,Direct,Alex Seif,Kaplan Pathway courses Official representitive in Egypt and the Gulf,,,,,
+Cafe Supreme,2018,,ajel.sa,Direct,Alex Seif,,,,,,
+Saaed,2018,,Saaed.ae,Contrat,softech,,,,,,
+e-intrade.com,2019,,e-intrade.com,Direct,Alex Seif,,,,,,
+Know How,2019,,knowhow.com.eg,Direct,Alex Seif,,,,,,
+Noble.tv,2019,,Noble.tv,Contract,AHCC,,,,,,
+SaudiAuto,2019,,https://saudiauto.com.sa/en/,Outsourcing,Niletech,,,,,,
+Complex Server Migration ,2019,,"https://islamicttf.org/home
+https://hadithportal.com/",Contract,AHCC,,,,,,
+Alfa Freight,2019,,https://alfa-freight.com/,,,,,,,,
+FMG,2019,,,,Focus Media Group,,,,,,
+Faros Omogenias,2019,,,NGO,Alex Seif,,,,,,
+EMICS,2019,,,Direct,Alex Seif,,,,,,
+AlKawass Group,2019,,,,,,,,,,
+Art Mania Shop,2019,,,,,,,,,,
+Art Mania POS,2019,,,,,,,,,,
+Art Mania Center,2019,,,,,,,,,,
+Know How,2019,,,,,,,,,,
+Misfits LLC,2020,,https://misfits-llc.com/,Direct,George Seif (Misfits LLC),High-End Cultural Production Portal & Low-Maintenance Architecture,"Served as long-term Technical Partner to design and engineer the official digital portal for Misfits LLC, an art, event, and conference production house specializing in the high-caliber cultural and artistic exchange between Europe and Egypt. Built a lightweight, exceptionally hardened web architecture optimized for structural longevity and permanent visual asset presentation. Engineered the platform's core code configurations so defensively that the system has maintained flawless operational stability, zero downtime, and absolute security for over six consecutive years with zero code modifications or maintenance interventions, requiring only standard annual resource renewals.","WordPress, Custom Core Configurations, Long-Lived System Architecture, Resource Optimization, Asset Hardening",,"Demonstrates an elite low-weight execution strategy; built a highly stable, zero-maintenance digital showcase for a prominent cross-continental creative agency that has remained entirely untouched since 2020.",
+Esorus,2020,,https://esorus.com/,Outsourcing Partner,Perfect Needs (for Esorus),B2B Multi-Vendor Material Marketplace & Creative Community,"Architected and engineered a high-end digital hub and multi-vendor marketplace built entirely on the Symfony framework for the interior design and architectural supply ecosystem. Structured a robust, highly elastic database schema designed to scale alongside community growth, successfully supporting a massive transition from a content-driven design network into a commercial B2B material supply catalog. Engineered premium front-end components and optimized media-rendering pipelines to ensure flawless, high-speed aesthetics matching the elite standards of an architectural user base. Scaled the platform data layers to cleanly index and serve over 15,800+ products, 1,200+ professional designers, 900+ curated design inspirations, and 300+ enterprise material suppliers.","Symfony Framework, Multi-Vendor Marketplace Architecture, Relational Schema Modeling, High-Performance Media Pipelines, B2B E-Commerce Systems",,Successfully scaled data structures to manage extensive multi-attribute vendor catalogs without performance degradation; prioritized pixel-perfect structural execution to appeal to high-art caliber users.,
+DesignToGo (Esorus),2020,,https://esorus.com/design-to-go,Outsourcing Partner,Perfect Needs (for Esorus),Community Growth Engine & Transactional Event Pipeline,"Designed and deployed a specialized event and community engagement application layer embedded within the core Esorus Symfony ecosystem. Engineered to act as a primary catalyst for scaling the user network, this high-performance portal managed real-time user registrations, dynamic interaction hooks, and custom front-end presentation layouts. Crafted with elite visual design standards to capture user traction, seamlessly capturing rich behavioral data that laid the technical foundation for the platform's long-term commercial data expansion.","Symfony Framework, Event Management Components, Dynamic Front-End Hooks, Growth Engineering, High-Aesthetic Web Design",,Engineered as a tactical frontend extension of the primary Symfony ecosystem to drive organic designer acquisition and test multi-attribute database filtering under sudden event traffic spikes.,
+Aman (Egyptian Ministry of Interior),2020,,http://site.aman-egypt.com/,Outsourcing Partner,iSoft (for Egyptian Traffic Authority / MOI),Sovereign E-Traffic & Fleet Logistics Booking Engine,"Architected and engineered the official national service portal for Aman, operating under the umbrella of the Egyptian Traffic Authority and the Ministry of Interior. Built on a highly secure, enterprise-hardened Drupal infrastructure, the system digitizes and orchestrates the scheduling and localized dispatching pipelines for Egypt's three primary traffic service divisions: Technical Inspection Centers, Driving Clean-Training Schools, and Electronic Traffic Units. Engineered a high-concurrency geo-location routing and calendar reservation engine allowing millions of citizens to dynamically locate, filter, and book appointments across a distributed nationwide network of permanent brick-and-mortar stations, localized mall stalls, and mobile traffic units.","Drupal Enterprise, Geo-Spatial Mapping, Fleet Routing Engines, Dynamic Slot Allocation, Sovereign Security Architecture",,"Successfully scaled data structures to handle heavy local traffic concurrency during nationwide registration surges, providing flawless data privacy controls in absolute compliance with Egyptian Ministry of Interior digital security mandates.",
+Salama Portal,2020,,https://portal.salama.com.sa/SalamaPortal/,Outsourcing Partner,iSoft (for Salama Cooperative Insurance),Sovereign Cooperative Insurance Gateway & National Vision 2030 Integration,"Architected and engineered the mission-critical national cooperative vehicle insurance portal for Salama, a core state-subsidized enterprise aligned with the Kingdom of Saudi Arabia’s Vision 2030 reform initiatives. Built on a highly hardened and optimized Drupal infrastructure, the system serves as a high-concurrency transactional gateway handling thousands of automated insurance evaluations, policy issuances, and state subsidy allocations daily. Integrated secure, low-latency API verification channels to sync real-time driver records and vehicle metrics against strict sovereign regulatory and risk-assessment parameters.","Drupal, High-Concurrency Enterprise Systems, API Microservices, Sovereign Compliance Frameworks, Database Security Hardening",,"Engineered a fail-safe transactional architecture to process high-volume state-subsidized vehicle insurance claims, strictly satisfying Saudi national digital security compliance criteria while ensuring frictionless automated policy routing.",
+MINISTRY OF INTERIOR EGYPT,2020,,,,,Air-Gapped Intranet SystemGovernment / Public SectorTechnical PartnerAir-Gapped,"High-Accessibility Driver Licensing LMS Engine (2020)Architected and deployed an air-gapped
+high-security driver certification system inside the Egyptian Ministry of Interior's intranet. Customized Moodle to execute linear
+mandatory course progression pathways tailored specifically to bridge extreme literacy gaps for citizenship licensing. Designed an asynchronous authentication system that generated single-use platform login tokens derived from physical cash-collection print receipts
+eliminating the need for a live API billing bridge. Developed deterministic migration frameworks and automated shell script payloads to enable flawless
+zero-access physical server upgrades by local devops teams.Moodle LMS","PHP 7.0.33
+Oracle Linux 7.6
+MySQL 5.7
+Apache 2.4","Air-Gapped Intranet Optimization
+Offline Voucher Auth
+Shell Scripting.Solved the critical constraint of blind deployment on an isolated intranet by treating git-level upgrades and database schema modifications as deterministic
+single-execution state machine scripts.",,
+DUBAI POLICE ACADEMY,2020,,,,,,Private Connected NetworkGovernment / Public SectorTechnical PartnerEnterprise Digital Training Platform & Police Academy LMS (2020)Re-engineered and migrated the core mandatory training and tracking LMS structure developed for the Egyptian MOI to support the Dubai Police Academy. Configured the platform to operate inside a connected enterprise government infrastructure using the live network topology to establish streamlined automated staging and deployment loops. Maintained strict backend progress tracking to enforce absolute course compliance pathways coupled with a localized frontend interface adapted for high-fidelity media delivery.Moodle LMS,"PHP 7.0+
+Linux Enterprise Architecture
+MySQL Enterprise
+Apache Web Server",,Connected Network Staging.Leveraged the transition from an air-gapped to a connected infrastructure to shift engineering focus from delivery logistics to high-availability cluster optimizations and security compliance.,
+Sweet Dreams,2021,,,Direct,Sweet Dreams (Friend's Venture),Agile E-Commerce MVP Launch & Deployment,"Handheld a founder through the rapid launch of a passion project selling home textiles and bedding online. Engineered a streamlined, lightweight, and cost-effective WordPress and WooCommerce e-Commerce minimum viable product (MVP). Focused on stripping away structural friction to deliver a fast, fully functional digital storefront, enabling the client to immediately test market validation and manage inventories with zero technical overhead.","WordPress, WooCommerce, E-Commerce Infrastructure, Responsive Layouts, Agile MVP Deployment",,"Acted as a trusted Technical Partner to deliver an immediate, low-overhead commercial storefront for a short-lived retail passion project, prioritizing speed-to-market and administrative simplicity.",
+Sovereign Vehicle Inspection Portal (UAE),2021,,https://www.rta.ae,Outsourcing Partner,iSoft (for UAE Entities),"Structural System Audit, Risk Elicitation & Strategic Roadmap","Retained via iSoft following verified success with Saudi national infrastructure (SASO) to evaluate and architect the expansion of a state-level vehicle safety and automated reservation platform for the United Arab Emirates. Dissected an immense, severely undocumented, and fragmented legacy codebase to map data flows, identify multi-threaded execution vulnerabilities, and catalog integration dependencies. Conducted deep risk elicitation and determined that specific production requirements diverged from long-term execution alignment. Formulated a comprehensive technical recovery strategy and a reality-focused operational game plan, providing the sovereign client with an actionable path to stabilize, refactor, and safely deploy their infrastructure.","Technical Architecture Auditing, Risk Assessment, Requirements Elicitation, Sovereign System Engineering, Strategic Roadmapping",,"Served as Principal Technical Auditor through a multi-year iSoft relationship. Formulated structural recovery roadmaps for a chaotic, undocumented state system and executed a strategic transition blueprint before stepping back from active production roles.",
+Desoky & Soda,2021,,https://desokyandsoda.com/,Outsourcing Partner,Perfect Needs (for Desoky & Soda),"Technical Consultation, Architecture & Feature Roadmap","Retained as Principal Technical Consultant to architect the foundational feature roadmaps and operational requirements for a high-volume hospitality and digital ordering platform. Translated the business owner’s scaling objectives into precise functional specifications and decoupled database structures utilizing the Symfony framework. Engineered a highly adaptable architectural pathway designed to withstand agile development pivots, allowing features to shift smoothly during execution without disrupting the underlying database integrity or backend schemas.","Symfony Framework, Database Architecture Design, Requirements Elicitation, Agile Technical Consulting, Feature Mapping",,"Served under the Perfect Needs umbrella to bridge business logic with software engineering; prioritized database schema elasticity and framework tooling to allow rapid, zero-downtime pivots during active coding sprints.",
+Vehicle Safety (SASO PTI),2021,,https://pti.saso.gov.sa/apt/,Outsourcing Partner,iSoft (for SASO),National Vehicle Inspection & Automated Booking Engine,"Architected, engineered, and continuously evolved the official, mission-critical national web portal for the Saudi Standards, Metrology and Quality Organization (SASO). Designed to serve the entire Saudi population across diverse demographic, literacy, and linguistic backgrounds. Spearheaded a 3-year iterative lifecycle that migrated a monolithic Drupal system into a high-availability headless architecture. Integrated deep real-time backend synchronization with sovereign core systems to validate car types and license classifications against slot availability, while developing fault-tolerant logic to handle failing payment gateways and edge-case operational realities like third-party driver substitutions.","Drupal, Headless Architecture, Custom API Integrations, Multi-language Core, High-Availability Systems, UX/UI Inclusivity Design",,"Engineered extreme fault-tolerant state-preservation mechanisms to mitigate external payment gateway dropouts. Architected inclusive, visual-first user flows using concise imagery to guarantee flawless navigation accessibility for users across all educational levels and classes nationwide.",
+Svelto,2025,,https://svelto.net/,Direct,Wael Latif,Custom Print E-Commerce Infrastructure & Gateway Integration,"Designed and deployed a highly customized product personalization and on-demand print configuration engine on top of a tailored WordPress and WooCommerce architecture. Engineered the full end-to-end checkout pipeline, integrating secure local payment gateways to handle real-time automated transactional routing.","WordPress, WooCommerce, Custom Product Personalization, Paymob Integration, Web Performance Optimization",,Engineered custom print file configuration layers and automated payment webhooks to ensure synchronous state preservation during transaction spikes.,
+bndko.com,2025,,https://bndko.com/,Direct,Nermeen,Custom WordPress Web Presence & Integration,"Architected and deployed a lightweight, custom-templated WordPress web presence engineered with a strict minimum-plugin philosophy. Developed with a highly responsive, mobile-first design ensuring an exceptional SpeedIndex and optimal core web vitals. Integrated seamlessly with an enterprise email marketing platform to bridge custom front-end capture hooks with high-volume outbound campaign infrastructure.","WordPress, Custom Templates, Mailchimp API, Mobile-First Design, Web Performance Optimization",,Built with a clean-room approach to eliminate plugin bloat entirely; optimized for maximum speed index and mobile responsiveness.,
+North South Consultants Exchange (NSCE),2025,,https://nsce-inter.com/en/home/,Direct,North South Consultants Exchange,"Custom Portal Facelift, Structural Database Upgrade & Retainer","Successfully executed a full visual facelift and critical architectural overhaul of a multi-language international development portal. Salvaged and unified heavily corrupted, conflicting legacy database structures caused by previous multilingual plugins and Advanced Custom Fields (ACF). Engineered a highly optimized, custom-indexed relational taxonomy system supporting hundreds of global development projects across three languages, mapping complex metadata attributes dynamically onto custom multi-faceted filters and interactive spatial maps. Transitioned into an active Technical Partner contract for ongoing quarterly maintenance and SEO validation.","WordPress, Advanced Custom Fields (ACF Pro), Multilingual Core Architecture, Custom Geo-Spatial Mapping, Faceted Filtering Engines, Database Normalization, Core Web Vitals Optimization",,"Overcame extreme structural technical debt by cleaning corrupt metadata pools to unify database performance. Optimized frontend query execution speeds to serve as a reliable internal project database while providing institutional-grade transparency to global donor organizations (UN, GIZ, EU, NGO sponsors).",
+Alexander Restaurant,2025,,https://alexander-restaurant.com/,Direct,Nicolas Katsibris,Digital Menu Deployment & Web Presence,"Designed and deployed a clean, highly efficient digital restaurant menu and localized web presence utilizing a streamlined, lightweight WordPress base-theme configuration. Focused on extreme simplicity, mobile-first readability, and zero-bloat execution to ensure rapid menu loading speeds for on-site and remote customers.","WordPress, Base Theme Customization, Responsive Web Design, Speed Optimization",,"Executed a minimal-overhead development strategy to deliver a cost-effective, high-performance digital menu that completely eliminates platform complexity for a local hospitality business.",
+SEF Academy (SEA),2024,2024,https://www.sea.sa/,,,,"Based on the email history, your engagement with Meem Development centered primarily on the SEF Academy (SEA) project, with a focus on Moodle CMS integration, system architecture, and technical support.Technical Efforts & Contributions
+
+1. Moodle CMS & LMS Optimization
+Authentication & SSO: You guided the team through configuring SAML 2.0 with Keycloak and Moodle, including troubleshooting metadata import/export and realm settings.1
+Feature Development & Debugging: You were responsible for several core LMS tasks including:
+Resolving course image display issues in the ""My Courses"" card view.23
+Fixing ""Change Course Type"" functionalities and removing custom formats.23
+Implementing Moodle breadcrumbs and CSS fixes for assignment submission feedback.4
+Enabling Multi-language content filters and managing Arabic translations for courses and categories.4
+Email & Certificate System: You provided extensive support for the ""Email Certificate"" module, troubleshooting PHP Mailer and SMTP integration issues to ensure students received certificates upon course completion.25
+2. Infrastructure, DevOps & Database Work
+Database Management: You assisted with complex database tasks, including creating MySQL database dumps for Test/UAT environments and configuring secure MySQL access via SSH tunnels for the development team.678
+Environment Troubleshooting: You acted as a technical lead in diagnosing environment-specific server issues, including reviewing server logs, enabling debugging levels, and checking file permissions for moodledata.47
+Deployment: You contributed to defining the release process, including providing a release notes template.9
+3. Integration & Knowledge Transfer
+MS Teams Integration: You worked on Microsoft Teams plugin integration.10
+Knowledge Transfer: You conducted a knowledge transfer (KT) session for the business team (specifically Mahmoud Srour) regarding the Teams integration.11
+Administrative & Operational Context
+Contracting & Payment: You were hired as a Senior PHP Developer in June 2024. Throughout the engagement, you frequently managed administrative tasks, including submitting timesheets and bills.12101314
+Payment Negotiations: Due to persistent payment delays, you successfully negotiated a ""prepaid engagement"" model where you estimated task efforts and required payment upfront to continue work.415
+Service Termination: On August 13, 2024, you formally notified the team of your decision to discontinue services, citing recurring management and payment concerns.10
+Would you like me to extract any specific details regarding the outstanding payment status or the technical documentation provided in these threads?",,,,

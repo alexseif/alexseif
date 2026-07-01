@@ -1,0 +1,33 @@
+project_id: mitchdesigns
+client_name: MITCHDESIGNS
+client_type: Outsourcing Partner
+project_role: N/A
+timeline:
+  start_year: 2009
+  end_year: 2012
+architectural_context: "Outsourced to this design company so it can deliver on its promises."
+technical_stack:
+  languages:
+    - PHP
+    - HTML
+    - CSS
+    - JS
+  frameworks:
+    - Self made Custom PHP MVC Framework
+    - Symfony
+  infrastructure_cloud: []
+  data_layers:
+    - mySQL
+core_competencies:
+  - Requirement Elicitation
+  - Software Design
+  - Database Design
+  - Infrastructure Setup
+  - Team development
+  - CI/CD
+  - Testing development
+  - Documentation & Code Quality
+  - Defining Deliverables
+quantifiable_engineering_impact:
+  - 2009 - 2014
+edge_cases_managed: []

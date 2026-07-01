@@ -1,0 +1,41 @@
+project_id: sovereign-vehicle-inspection-p
+client_name: iSoft (for UAE Entities)
+client_type: Outsourcing Partner
+project_role: Software Engineer
+timeline:
+  start_year: 2021
+  end_year: 2021
+architectural_context: Retained via iSoft following verified success with Saudi national
+  infrastructure (SASO) to evaluate and architect the expansion of a state-level vehicle
+  safety and automated reservation platform for the United Arab Emirates. Dissected
+  an immense, severely undocumented, and fragmented legacy codebase to map data flows,
+  identify multi-threaded execution vulnerabilities, and catalog integration dependencies.
+  Conducted deep risk elicitation and determined that specific production requirements
+  diverged from long-term execution alignment. Formulated a comprehensive technical
+  recovery strategy and a reality-focused operational game plan, providing the sovereign
+  client with an actionable path to stabilize, refactor, and safely deploy their infrastructure.
+technical_stack:
+  languages:
+  - Tech
+  - ical Architecture Auditi
+  - g
+  - Risk Assessme
+  - t
+  - Requireme
+  - ts Elicitatio
+  - Sovereig
+  - System E
+  - gi
+  - eeri
+  - g
+  - Strategic Roadmappi
+  - g
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact:
+- Served as Principal Technical Auditor through a multi-year iSoft relationship. Formulated
+  structural recovery roadmaps for a chaotic, undocumented state system and executed
+  a strategic transition blueprint before stepping back from active production roles.
+edge_cases_managed: []

@@ -1,0 +1,16 @@
+project_id: whos-jamming
+client_name: MITCHDESIGNS
+client_type: Contracted /OutSourcing
+project_role: Consulting
+timeline:
+  start_year: 2012
+  end_year: 2012
+architectural_context: "Consulting project for MITCHDESIGNS."
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

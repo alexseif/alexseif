@@ -1,0 +1,17 @@
+project_id: turathuna
+client_name: NileTech
+client_type: NGO
+project_role: Software Engineer
+timeline:
+  start_year: 2017
+  end_year: 2017
+architectural_context: The Cultural Programs and Heritage Festivals Committee - Abu
+  Dhabi
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

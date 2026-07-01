@@ -1,0 +1,36 @@
+project_id: desoky-soda
+client_name: Perfect Needs (for Desoky & Soda)
+client_type: Outsourcing Partner
+project_role: Technical Consultant
+timeline:
+  start_year: 2021
+  end_year: 2021
+architectural_context: Retained as Principal Technical Consultant to architect the
+  foundational feature roadmaps and operational requirements for a high-volume hospitality
+  and digital ordering platform. Translated the business owner’s scaling objectives
+  into precise functional specifications and decoupled database structures utilizing
+  the Symfony framework. Engineered a highly adaptable architectural pathway designed
+  to withstand agile development pivots, allowing features to shift smoothly during
+  execution without disrupting the underlying database integrity or backend schemas.
+technical_stack:
+  languages:
+  - Symfo
+  - y Framework
+  - Database Architecture Desig
+  - Requireme
+  - ts Elicitatio
+  - Agile Tech
+  - ical Co
+  - sulti
+  - g
+  - Feature Mappi
+  - g
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact:
+- Served under the Perfect Needs umbrella to bridge business logic with software engineering;
+  prioritized database schema elasticity and framework tooling to allow rapid, zero-downtime
+  pivots during active coding sprints.
+edge_cases_managed: []

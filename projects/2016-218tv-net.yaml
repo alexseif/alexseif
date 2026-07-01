@@ -1,0 +1,17 @@
+project_id: 218tv-net
+client_name: NileTech
+client_type: Outsourcing
+project_role: Software Engineer
+timeline:
+  start_year: 2016
+  end_year: 2016
+architectural_context: Implemented a layout based on PSD's for this Drupal based website
+  with high traffic. In addition to adding new features to Drupal.
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

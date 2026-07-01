@@ -1,0 +1,18 @@
+project_id: myzouk
+client_name: MITCHDESIGNS
+client_type: Contracted /OutSourcing
+project_role: Architecture, oversight, consultation
+timeline:
+  start_year: 2012
+  end_year: 2012
+architectural_context: "MyZouk - Architecture, oversight, consultation. Custom tailored listing for premium items (Cars, Boats, etc..). Consulting."
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact:
+  - Custom tailored listing for premium items (Cars, Boats, etc.)
+  - Consulting services provided
+edge_cases_managed: []

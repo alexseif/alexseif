@@ -1,0 +1,16 @@
+project_id: know-how
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+timeline:
+  start_year: 2019
+  end_year: 2019
+architectural_context: N/A
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

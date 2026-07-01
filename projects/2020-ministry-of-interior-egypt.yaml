@@ -1,0 +1,63 @@
+project_id: ministry-of-interior-egypt
+client_name: MINISTRY OF INTERIOR EGYPT
+client_type: N/A
+project_role: Software Architect
+timeline:
+  start_year: 2020
+  end_year: 2020
+architectural_context: 'High-Accessibility Driver Licensing LMS Engine (2020)Architected
+  and deployed an air-gapped
+
+  high-security driver certification system inside the Egyptian Ministry of Interior''s
+  intranet. Customized Moodle to execute linear
+
+  mandatory course progression pathways tailored specifically to bridge extreme literacy
+  gaps for citizenship licensing. Designed an asynchronous authentication system that
+  generated single-use platform login tokens derived from physical cash-collection
+  print receipts
+
+  eliminating the need for a live API billing bridge. Developed deterministic migration
+  frameworks and automated shell script payloads to enable flawless
+
+  zero-access physical server upgrades by local devops teams.Moodle LMS'
+technical_stack:
+  languages:
+  - 'PHP 7.0.33
+
+    Oracle Li'
+  - 'ux 7.6
+
+    MySQL 5.7
+
+    Apache 2.4'
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies:
+- Air-Gapped I
+- tra
+- et Optimizatio
+- Offli
+- 'e Voucher Auth
+
+  Shell Scripti'
+- g.Solved the critical co
+- strai
+- t of bli
+- d deployme
+- t o
+- a
+- isolated i
+- tra
+- et by treati
+- g git-level upgrades a
+- d database schema modificatio
+- s as determi
+- 'istic
+
+  si'
+- gle-executio
+- state machi
+- e scripts.
+quantifiable_engineering_impact: []
+edge_cases_managed: []

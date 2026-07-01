@@ -1,0 +1,16 @@
+project_id: thomas-safety
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+timeline:
+  start_year: 2015
+  end_year: 2015
+architectural_context: 2015-today
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

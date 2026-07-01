@@ -1,0 +1,16 @@
+project_id: training-staff
+client_name: MITCHDESIGNS
+client_type: Outsourcing Partner
+project_role: N/A
+timeline:
+  start_year: 2010
+  end_year: 2015
+architectural_context: "The project involved training staff, with a duration spanning from 2010 to 2015."
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

@@ -1,0 +1,16 @@
+project_id: zillion-home-buyers
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+timeline:
+  start_year: 2016
+  end_year: 2016
+architectural_context: Real state squeeze page
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

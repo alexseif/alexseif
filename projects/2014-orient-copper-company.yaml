@@ -1,0 +1,17 @@
+project_id: orient-copper-company
+client_name: Alex Seif
+client_type: Direct
+project_role: N/A
+timeline:
+  start_year: 2014
+  end_year: 0
+architectural_context: Themed Wordpress site for simplicity of this factory's digital presence.
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact:
+  - 2014 - today
+edge_cases_managed: []

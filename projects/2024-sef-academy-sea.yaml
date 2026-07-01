@@ -1,0 +1,76 @@
+project_id: sef-academy-sea
+client_name: SEF Academy (SEA)
+client_type: N/A
+project_role: Software Engineer
+timeline:
+  start_year: 2024
+  end_year: 2024
+architectural_context: 'Based on the email history, your engagement with Meem Development
+  centered primarily on the SEF Academy (SEA) project, with a focus on Moodle CMS
+  integration, system architecture, and technical support.Technical Efforts & Contributions
+
+
+  1. Moodle CMS & LMS Optimization
+
+  Authentication & SSO: You guided the team through configuring SAML 2.0 with Keycloak
+  and Moodle, including troubleshooting metadata import/export and realm settings.1
+
+  Feature Development & Debugging: You were responsible for several core LMS tasks
+  including:
+
+  Resolving course image display issues in the "My Courses" card view.23
+
+  Fixing "Change Course Type" functionalities and removing custom formats.23
+
+  Implementing Moodle breadcrumbs and CSS fixes for assignment submission feedback.4
+
+  Enabling Multi-language content filters and managing Arabic translations for courses
+  and categories.4
+
+  Email & Certificate System: You provided extensive support for the "Email Certificate"
+  module, troubleshooting PHP Mailer and SMTP integration issues to ensure students
+  received certificates upon course completion.25
+
+  2. Infrastructure, DevOps & Database Work
+
+  Database Management: You assisted with complex database tasks, including creating
+  MySQL database dumps for Test/UAT environments and configuring secure MySQL access
+  via SSH tunnels for the development team.678
+
+  Environment Troubleshooting: You acted as a technical lead in diagnosing environment-specific
+  server issues, including reviewing server logs, enabling debugging levels, and checking
+  file permissions for moodledata.47
+
+  Deployment: You contributed to defining the release process, including providing
+  a release notes template.9
+
+  3. Integration & Knowledge Transfer
+
+  MS Teams Integration: You worked on Microsoft Teams plugin integration.10
+
+  Knowledge Transfer: You conducted a knowledge transfer (KT) session for the business
+  team (specifically Mahmoud Srour) regarding the Teams integration.11
+
+  Administrative & Operational Context
+
+  Contracting & Payment: You were hired as a Senior PHP Developer in June 2024. Throughout
+  the engagement, you frequently managed administrative tasks, including submitting
+  timesheets and bills.12101314
+
+  Payment Negotiations: Due to persistent payment delays, you successfully negotiated
+  a "prepaid engagement" model where you estimated task efforts and required payment
+  upfront to continue work.415
+
+  Service Termination: On August 13, 2024, you formally notified the team of your
+  decision to discontinue services, citing recurring management and payment concerns.10
+
+  Would you like me to extract any specific details regarding the outstanding payment
+  status or the technical documentation provided in these threads?'
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact: []
+edge_cases_managed: []

@@ -1,0 +1,18 @@
+project_id: orthodox-botswana
+client_name: Alex Seif
+client_type: NGO
+project_role: Webpresence
+timeline:
+  start_year: 2010
+  end_year: 2011
+architectural_context: "The project involved creating a web presence for Orthodox Botswana, focusing on establishing an online platform to support their operations and outreach efforts."
+technical_stack:
+  languages: []
+  frameworks: []
+  infrastructure_cloud: []
+  data_layers: []
+core_competencies: []
+quantifiable_engineering_impact:
+  - "Established a functional web presence for Orthodox Botswana"
+  - "Supported online outreach and operational communication"
+edge_cases_managed: []
