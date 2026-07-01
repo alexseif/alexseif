@@ -1,0 +1,34 @@
+project_id: "saso_svis_platform"
+client_name: "Saudi Standards, Metrology and Quality Organization (SASO)"
+client_type: "Public Sector / National Infrastructure"
+project_role: "Principal Software Architect (via iSoft)"
+timeline:
+  start_year: 2020
+  end_year: 2023
+architectural_context: "Mission-critical national vehicle inspection scheduling infrastructure, managing extreme daily throughput and requiring strict concurrency control across web, mobile, and internal government portals."
+technical_stack:
+  languages: ["PHP", "JavaScript"]
+  frameworks: ["Drupal", "React"]
+  infrastructure_cloud:
+    [
+      "CentOS",
+      "Apache",
+      "Multi-Node Topology",
+      "Load Balancers",
+      "DAST/SAST Tooling",
+    ]
+  data_layers: ["MySQL", "Master-Slave Replication", "3NF", "Star Schema"]
+core_competencies:
+  - "Distributed State Locking"
+  - "Concurrency Management"
+  - "Headless Architecture Migration"
+  - "Enterprise Release Management"
+  - "Application Security (DevSecOps)"
+quantifiable_engineering_impact:
+  - "Engineered an API-driven distributed time-slot lock system utilizing a strict 5-minute TTL buffer, completely eliminating critical race conditions between three competing client platforms."
+  - "Executed a secure, zero-downtime architectural evolution: scaling the initial monolithic Drupal installation into a distributed 3-server topology, before ultimately decoupling into a headless React ecosystem to isolate backend workloads."
+  - "Refactored fragmented transactional tables into 3rd Normal Form (3NF) for write safety, paired with a Star Schema for sub-second read query execution during peak calendar rendering."
+  - "Defined and enforced a strict enterprise CI/CD deployment pipeline (Develop, Testing, Preproduction, Master), halting unplanned hotfixes and neutralizing continuous DAST/SAST vulnerabilities (Anti-CSRF, CSP, SQLi)."
+edge_cases_managed:
+  - "Overhauled checkout state logic to support legally validated proxy authorizations for foreign-national drivers without violating strict KSA government tracking protocols."
+  - "Maintained absolute state security and data integrity across every phase of the multi-node and headless migrations under severe government compliance scrutiny."

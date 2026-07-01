@@ -1,0 +1,10 @@
+company_agency: "iSoft"
+timeline:
+  start_year: 2017
+  end_year: 2022
+primary_role: "Principal Software Architect & Technical Lead"
+agency_level_impact:
+  - "Architected a strict 4-tier environment topology (Dev, Testing, Staging, Preproduction) integrated directly with a mandated Git workflow to ensure safe, isolated deployment pipelines."
+  - "Eliminated weekend critical failures by enforcing a 'Tuesday-only' production deployment schedule, ensuring adequate weekday burn-in and rapid mitigation windows."
+  - "Restructured project management workflows within Jira, explicitly defining the boundaries between epics, milestones, planning issues, and actionable engineering tasks."
+  - "Led technical upskilling initiatives, mentoring engineering staff on RESTful API design standards and training the QA department in automated form testing protocols."

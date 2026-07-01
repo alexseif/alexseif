@@ -1,29 +1,22 @@
-project_id: "Digital Training Platform — Dubai Police Academy"
-client_name: "NGO Technical Partner & Senior Software Engineer via iSoft"
-client_type: "Public Sector"
-project_role: "Senior Software Engineer"
+project_id: "dubai_police_academy_port"
+client_name: "Dubai Police Academy"
+client_type: "Public Sector / Law Enforcement"
+project_role: "Technical Lead (via iSoft)"
 timeline:
-  start_year: 2020
-  end_year: 2020
-architectural_context: "Adapted and deployed a highly auditable digital education and training tracker for the Dubai Police Academy, replicating the underlying core architecture of the Egyptian Ministry of Interior LMS platform, but optimized for an active, connected intranet environment. The system was designed with strict perimeter security compliance, network topology mapping, and continuous configuration management in mind, tailored for an isolated government cloud environment."
+  start_year: 2021
+  end_year: 2021
+architectural_context: "Ported and upgraded an existing compliance-driven LMS codebase for external delivery to a third-party DevOps team."
 technical_stack:
-  languages: [PHP]
-  frameworks: [Moodle LMS]
-  infrastructure_cloud: [Linux, Apache]
-  data_layers: [MySQL]
+  languages: ["PHP"]
+  frameworks: ["Moodle LMS"]
+  infrastructure_cloud: []
+  data_layers: ["MySQL"]
 core_competencies:
-  - "Continuous Configuration Management"
-  - "Perimeter Security Compliance"
-  - "Network Topology Mapping"
-  - "Staging Environment Deployment"
-  - "Database Schema Design"
-  - "Audit Trail Implementation"
+  - "Codebase Portability"
+  - "Core System Upgrades"
+  - "UI/UX Integration"
 quantifiable_engineering_impact:
-  - "Established secure live network access for remote deployment strategies and version-controlled staging environments, eliminating the need for physical storage medium handovers."
-  - "Implemented strict perimeter security compliance and continuous configuration management within an isolated government cloud environment."
-  - "Designed database schemas bound to strict administrative metrics, creating permanent audit trails of user training progress and mandatory examination completion histories."
+  - "Executed a major version upgrade of the legacy Moodle ecosystem to align with modern dependencies prior to client handover."
+  - "Integrated custom UI/UX layers and landing pages provided by the design department into the core LMS architecture."
 edge_cases_managed:
-  - "Remote deployment in a highly secure, isolated government cloud environment"
-  - "Compliance with strict perimeter security requirements"
-  - "Handling of mandatory examination completion tracking"
-  - "Managing continuous configuration management in a private network setting"
+  - "Defined strict infrastructure baseline requirements (Linux/Apache) for PHP enterprise deployments, ultimately forcing an engagement termination when client DevOps mandated an incompatible Windows Server environment."

@@ -1,31 +1,28 @@
-project_id: "Bouri Center"
+project_id: "bouri_center_ecommerce"
 client_name: "Bouri Center"
-client_type: "Retail & E-commerce Enterprise"
-project_role: "Software Architect & NGO Technical Partner"
+client_type: "Retail Enterprise"
+project_role: "Software Architect (via MitchDesigns)"
 timeline:
   start_year: 2011
-  end_year: 2011
-architectural_context: "Served as Software Architect and NGO Technical Partner, designing an e-commerce engine and backend data synchronization pipeline for Bouri Center. The architecture integrated a web-facing retail catalog with an existing corporate ERP legacy system serving a multi-location brick-and-mortar retail chain. To manage third-party system constraints, the platform decoupled the e-commerce storage layer from the live ERP nodes, structuring the web application database to function as an isolated physical store branch node."
+  end_year: 2013
+architectural_context: "Architected a custom e-commerce platform and synchronization pipeline to integrate a web-facing storefront with a highly restrictive legacy corporate ERP system."
 technical_stack:
-  languages: ["PHP"]
-  frameworks: ["Drupal"]
-  infrastructure_cloud: []
-  data_layers: ["MySQL", "ERP Connector Middleware", "Data Sanitization Pipelines"]
+  languages: ["PHP", "JavaScript"]
+  frameworks: ["Custom PHP MVC", "Symfony"]
+  infrastructure_cloud: ["Rackspace Cloud"]
+  data_layers:
+    ["MySQL", "Asynchronous CSV Ingestion", "REST API Specifications"]
 core_competencies:
-  - "System Decoupling"
-  - "Schema Modeling"
-  - "Data Flow Mapping"
-  - "Middleware Orchestration"
-  - "Component Abstraction"
-  - "System Forensics"
-  - "Database Replication"
-  - "Infrastructure Tiering"
+  - "Legacy System Remediation"
+  - "Requirement Elicitation"
+  - "Relational Schema Modeling"
+  - "OOP Architecture"
+  - "Rapid Application Development (RAD)"
 quantifiable_engineering_impact:
-  - "Designed middleware abstraction layers to decouple multi-location inventory updates from frontend rendering, allowing the architecture to handle retail stock updates without dependency on real-time third-party API availability."
-  - "Engineered a human-in-the-loop ingestion portal to normalize and sanitize inconsistent vendor data streams, validating unformatted product listings prior to live production database insertion."
-  - "Optimized the relational schema within a customized Drupal architecture to enforce categorical indexing and relational taxonomy trees, ensuring consistent page-load speeds across home and kitchen appliance inventories."
-  - "Built schema-validation layers to preserve the transactional integrity of the online catalog over a multi-year deployment lifecycle."
+  - "Bypassed absolute structural blocking from an uncooperative third-party ERP vendor by modeling the e-commerce database layer to simulate a standalone, physical retail branch node with a dedicated virtual inventory ledger."
+  - "Engineered an asynchronous, human-in-the-loop data ingestion and remediation pipeline to sanitize fragmented product exports prior to production insertion."
+  - "Developed a custom Rapid Application Development (RAD) tool to parallelize database architecture changes with application logic execution, strictly adhering to OOP standards."
+  - "Authored comprehensive API specifications to govern transactional holds, shipping-to-cash workflows, and inventory synchronization across the client's IT infrastructure."
 edge_cases_managed:
-  - "Conducted system forensics to reverse-engineer required data synchronization formats due to limited documentation from the external ERP vendor."
-  - "Implemented a validation schema to evaluate incoming inventory payloads, isolating data anomalies or duplicate entity definitions in a staging environment for administrative review."
-  - "Organized application workflows into independent service modules to ensure modifications to consumer interfaces did not affect background synchronization scripts."
+  - "Overcame severe vendor lock-in by designing decoupled middleware that insulated front-end consumers from real-time ERP API failures."
+  - "Enforced strict cloud-only deployment policies (Rackspace) against client requests for substandard third-party hosting environments to guarantee baseline performance metrics."

@@ -1,27 +1,21 @@
-project_id: "Bndko"
+project_id: "bndko_marketing"
 client_name: "Bndko"
-client_type: "Commercial Enterprise"
-project_role: "Software Architect & NGO Technical Partner"
+client_type: "Independent Consultancy"
+project_role: "Full-Stack Developer"
 timeline:
   start_year: 2025
   end_year: 2025
-architectural_context: "Engineered a custom-templated web system focusing on minimizing plugin dependencies, delivering an optimized, mobile-first responsive architecture that maintains target SpeedIndex ratings while preventing active technical debt accumulation through direct code structuring."
+architectural_context: "Lightweight marketing portal utilizing a bespoke WordPress theme to maximize front-end performance metrics."
 technical_stack:
-  languages: []
-  frameworks: []
-  infrastructure_cloud: []
-  data_layers: []
+  languages: ["PHP 8.2", "HTML/SCSS/JS"]
+  frameworks: ["WordPress (Custom Theme)"]
+  infrastructure_cloud: ["DigitalOcean", "Nginx", "Cloudflare"]
+  data_layers: ["MySQL"]
 core_competencies:
-  - "Custom Template Development"
-  - "Mobile-First Design"
-  - "Web Performance Tuning"
-  - "Data Pipeline Integration"
-  - "Plugin Decoupling"
-  - "Speed Index Optimization"
+  - "Custom Theme Development"
+  - "Front-End Performance Tuning"
+  - "Server Provisioning"
 quantifiable_engineering_impact:
-  - "Reduced plugin dependencies by structuring templates directly in code, minimizing execution loops."
-  - "Improved site performance and maintained target SpeedIndex ratings through optimized architecture."
-  - "Enabled seamless data synchronization between web forms and external email marketing suite without blocking main execution threads."
-edge_cases_managed:
-  - "Limited external dependencies through custom development approach."
-  - "Ensured structural stability across application lifecycle with focus on mobile responsiveness and speed index optimization."
+  - "Achieved 100/100 PageSpeed rating by bypassing off-the-shelf plugins and writing native theme logic."
+  - "Configured Cloudflare edge caching and Nginx routing on DigitalOcean to minimize TTFB (Time to First Byte)."
+edge_cases_managed: []
