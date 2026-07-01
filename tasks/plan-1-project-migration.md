@@ -27,6 +27,7 @@ To satisfy the requirement of "optimizing token usage by using a coded script" w
 ### Slice 2: Bulk Migration & Validation
 *   **Task 2.1:** Execute the remaining migrations in consecutive batches (or via script execution).
 *   **Verification:** Run the `ajv` validation against all 23 output YAML files.
+*   **Checkpoint:** Final human review of the generated YAML data to ensure nothing was lost from the original markdown files.
 
 ### Slice 3: Clean-up
 *   **Task 3.1:** Delete all legacy `.md` files from `/projects/`.

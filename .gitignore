@@ -12,3 +12,9 @@ frontend/.env.local
 # OS
 .DS_Store
 backend/var/log/dev.log
+
+# Python
+venv/
+.env
+__pycache__/
+*.pyc

@@ -8,4 +8,5 @@
 - [ ] **CHECKPOINT:** Human review of pilot YAML structures.
 - [ ] **Task 2.1:** Execute migration for the remaining files.
 - [ ] **Task 2.2:** Run JSON Schema validation on all `/projects/*.yaml` files.
+- [ ] **CHECKPOINT:** Human review of the full dataset to ensure semantic accuracy before destructive operations.
 - [ ] **Task 3.1:** Execute deletion of `/projects/*.md` files.
