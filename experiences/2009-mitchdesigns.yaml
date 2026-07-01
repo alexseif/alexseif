@@ -1,0 +1,9 @@
+company_agency: "MitchDesigns"
+timeline:
+  start_year: 2009
+  end_year: 2012
+primary_role: "Lead Software Engineer / Architect"
+agency_level_impact:
+  - "Spearheaded the design and architecture of a custom PHP MVC framework utilized across multiple high-traffic travel booking and retail platforms, significantly reducing code-base bloat."
+  - "Established standard operational procedures for Requirement Elicitation and CI/CD, bridging the gap between non-technical design teams and enterprise-grade backend infrastructure."
+  - "Governed the database lifecycle for diverse retail and tourism clients, implementing advanced indexing strategies and schema optimization that enabled concurrent inventory management."

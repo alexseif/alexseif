@@ -1,0 +1,26 @@
+project_id: "smash_holidays_booking"
+client_name: "Smash Holidays"
+client_type: "Tour Operator / Booking Agency"
+project_role: "Lead Systems Architect (via MitchDesigns)"
+timeline:
+  start_year: 2009
+  end_year: 2012
+architectural_context: "Architected a custom-built travel booking and inventory engine, requiring high-concurrency availability checks across complex pricing rules and inventory stop-sales."
+technical_stack:
+  languages: ["PHP"]
+  frameworks: ["Custom MVC Framework"]
+  infrastructure_cloud: ["Media Temple"]
+  data_layers: ["MySQL", "Relational Database Views", "Query Optimization"]
+core_competencies:
+  - "Algorithmic Complexity Reduction"
+  - "Database Schema Normalization"
+  - "Inventory Logic Modeling"
+  - "Custom MVC Architecture"
+  - "Data Normalization Pipelines"
+quantifiable_engineering_impact:
+  - "Transformed a search engine from computationally prohibitive execution times to sub-second responses by refactoring multi-factor nested pricing queries into pre-computed, indexed MySQL database views."
+  - "Engineered a custom MVC framework that isolated business-rule logic from user-interface rendering, enabling rapid feature iterations for booking season openings and dynamic price adjustment."
+  - "Built a heterogeneous ingestion layer to normalize diverse vendor data streams (GDS XML, Excel, Unstructured Email) into a single, unified availability ledger."
+edge_cases_managed:
+  - "Resolved server resource exhaustion (kmemsize limits) on shared hosting environments by flattening complex query hierarchies and optimizing object-relational mapping."
+  - "Implemented robust business-logic triggers to enforce time-sensitive inventory constraints such as 'Stop Sale' blocks, 'Early Bird' incentives, and 'Gala Night' surcharges."
