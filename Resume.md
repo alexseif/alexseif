@@ -1,6 +1,6 @@
 ---
 name: "Eskandar (Alex) Seif"
-title: "Principal Engineer & NGO Technical Partner"
+title: "Software Architect & NGO Technical Partner"
 location: "Cairo, Egypt | Open to Contract, Remote, and Relocation (EU / Gulf)"
 phone: "+201004006332"
 email: "alex.seif@gmail.com"
@@ -10,7 +10,7 @@ website: "https://alexseif.com"
 ---
 
 ## Professional Profile
-Pragmatic Principal Engineer with over 20 years of hands-on experience designing, scaling, and maintaining high-stakes digital infrastructure. Proven track record of taking complex web systems from zero to production, including national-scale public sector platforms serving millions of concurrent citizens. Deep technical specialist in the PHP/Symfony ecosystem, legacy database remediation, and relational schema optimization. Combines rigorous back-end engineering discipline with strong business requirement elicitation, focusing on iterative delivery, team longevity, and zero-downtime deployments.
+Pragmatic Software Architect with over 20 years of hands-on experience designing, scaling, and maintaining high-stakes digital infrastructure. Proven track record of taking complex web systems from zero to production, including national-scale public sector platforms serving millions of concurrent citizens. Deep technical specialist in the PHP/Symfony ecosystem, legacy database remediation, and relational schema optimization. Combines rigorous back-end engineering discipline with strong business requirement elicitation, focusing on iterative delivery, team longevity, and zero-downtime deployments.
 
 ---
 
@@ -35,7 +35,7 @@ A complete repository of retrospective Architecture Decision Records (ADRs) docu
 
 ## Selected Professional Experience
 
-### Contract Technical Lead & Principal Engineer
+### Contract Technical Lead & Software Architect
 **iSoft (IdealSoft Emirates) | Contract Retainer** | *January 2021 – December 2024*  
 Contracted by iSoft to deliver ministry-level digital infrastructure, high-concurrency transactional routing engines, and API architectures for federal and municipal public sector clients across Egypt and the GCC region.
 
@@ -66,11 +66,11 @@ Architected, launched, and scaled Egypt’s first comprehensive secure online pa
 *   **Engineering Leadership & Scale:** Post-funding, scaled and directed a 30-person engineering organization, establishing technical roadmaps, architectural standards, and security-first development practices.
 *   **Defensive Transaction Routing:** Built transactional state mechanics to safely cache, retry, and commit atomic financial updates, mitigating systemic database latency and network dropouts across fragile legacy bank networks.
 
-### Principal Engineer & Technical Consultant
+### Software Architect & Technical Consultant
 **Independent Consultancy & Retainers** | *2006 – Present*  
 A continuous thread of direct personal engagement with organizations — running since 2006, predating and never deprioritizing any concurrent contracted or retainer role held simultaneously. Between 2015 and 2021, this consultancy was my primary focus, delivering full-stack architecture, database optimization, and team scaling for international clients.
 
-*   **Principal Engineer & Embedded Technical Lead (Mitchdesigns | 2009–2014):** Served as de facto Principal Engineer for a boutique digital design agency over five continuous years, embedded full-time on-site. Established the core PHP framework and architectural standards adopted across all client project deliveries. Owned architecture decisions end-to-end, led code reviews and QA processes, engineered DevOps pipelines, and delivered structured Git workflow training sessions — mentoring and systematically upskilling the in-house team on engineering discipline, version control standards, and software craftsmanship.
+*   **Software Architect & Embedded Technical Lead (Mitchdesigns | 2009–2014):** Served as de facto Software Architect for a boutique digital design agency over five continuous years, embedded full-time on-site. Established the core PHP framework and architectural standards adopted across all client project deliveries. Owned architecture decisions end-to-end, led code reviews and QA processes, engineered DevOps pipelines, and delivered structured Git workflow training sessions — mentoring and systematically upskilling the in-house team on engineering discipline, version control standards, and software craftsmanship.
 *   **Hyper-Scale Mass Media (Ajel.sa via NileTech):** Managed the technical infrastructure for Saudi Arabia's #2 news outlet. Configured enterprise Varnish edge caching on an Acquia Cloud environment and tuned relational database indexing to absorb massive traffic spikes during breaking national news cycles. Built asynchronous background parsing pipelines to safely pull and ingest data feeds from global networks like the BBC without blocking main-thread application delivery.
 *   **B2B Marketplace Evolution (Esorus Ecosystem):** Designed a highly scalable relational database schema using Symfony to pivot a content platform into a commercial B2B marketplace indexing over 15,000+ specialized products and multi-party workflows.
 

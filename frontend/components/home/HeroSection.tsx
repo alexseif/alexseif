@@ -75,7 +75,7 @@ export const HeroSection = () => {
             <div className="h-px w-12 bg-primary/50" />
           </div>
           <ul className="text-foreground/70 text-md tracking-[0.3em] uppercase">
-            <li className="font-bold text-foreground">Principal Engineer & NGO Technical Partner</li>
+            <li className="font-bold text-foreground">Software Architect & NGO Technical Partner</li>
             <li>High-Concurrency Architecture</li>
             <li>State-Level Digital Infrastructure</li>
             <li>Zero-Downtime Legacy Migrations</li>

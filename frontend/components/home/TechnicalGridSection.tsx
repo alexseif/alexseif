@@ -17,10 +17,9 @@ export const TechnicalGridSection = () => {
         >
           <motion.div variants={fadeInUp} className="text-center space-y-4">
             <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
-              // Foundation
             </p>
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              Principal Engineering
+              Software Architecting
             </h2>
           </motion.div>
 

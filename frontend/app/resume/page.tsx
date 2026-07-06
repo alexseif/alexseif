@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Principal Engineer & NGO Technical Partner — Resume',
-  description: 'Resume of Alex Seif, a Principal Engineer & NGO Technical Partner specializing in high-concurrency PHP/Symfony ecosystems, legacy database remediation, and production AI integration.',
+  title: 'Alex Seif | Software Architect & NGO Technical Partner — Resume',
+  description: 'Resume of Alex Seif, a Software Architect & NGO Technical Partner specializing in high-concurrency PHP/Symfony ecosystems, legacy database remediation, and production AI integration.',
 };
 
 import PrintButton from './PrintButton';

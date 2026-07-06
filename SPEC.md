@@ -16,7 +16,7 @@ Software Architect & NGO Technical Partner
 **Tiered Professional Objectives:**
 1. **Primary Objective (European/Global Placement):** Secure a high-quality Software Architecture or Senior PHP/Full-Stack Engineering role (contract, remote, or permanent) with a strong preference for relocation to the Netherlands.
 2. **Secondary Objective (NGO Sector):** Attract NGOs seeking a Technical Partner for specific software needs, including: secure web portals, Data Sovereignty compliance, custom RAG pipelines, AI workflow integration, and staff training on AI prompting/configuration.
-3. **Tertiary Objective (Market Value):** Capture highly compensated remote Software Architecture, Senior PHP Engineer, or Principal Engineer contracts/roles globally.
+3. **Tertiary Objective (Market Value):** Capture highly compensated remote Software Architecture, Senior PHP Engineer, or Software Architect contracts/roles globally.
 
 **Brand Ethos & Positioning (Sourced from `alexseif_brand_identity.md`):**
 *Tagline:* "Two decades of owning architecture decisions at national scale."
@@ -37,7 +37,7 @@ Software Architect & NGO Technical Partner
 - Professional experiences — rendered from `/experiences/*.yaml`
 - Selected projects (for resume) — pulled via `/selected_projects/`
 - Homepage sections (Hero, Technical Grid, NGO section, World Map, CTA)
-- SEO metadata and JSON-LD schema (Targeting "Principal Engineer", "NGO Technical Partner", "Software Architect")
+- SEO metadata and JSON-LD schema (Targeting "Software Architect", "NGO Technical Partner", "Principle Engineer")
 
 **Resume Compilation Architecture (`/resume`):**
 The precise compilation pipeline, data structures, and schemas for `Resume.md` are documented in `RESUME_SPEC.md`. It strictly uses a pure YAML data store approach (Path B).
