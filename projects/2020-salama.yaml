@@ -1,27 +1,43 @@
-project_id: "Salama Car Insurance Registration Gateway"
+project_id: "salama_insurance_gateway"
 client_name: "Salama Cooperative Insurance Company"
-client_type: "Public Sector / Fintech"
-project_role: "NGO Technical Partner & Senior Software Engineer"
+client_type: "Fintech / Regulated Financial Services"
+project_role: "Senior Software Engineer via iSoft"
 timeline:
-  start_year: 2020
-  end_year: 2020
-architectural_context: "The project involved co-developing a web gateway for Salama Cooperative Insurance Company to manage and automate high-volume car insurance registrations in Saudi Arabia. It served as the architectural blueprint for validation workflows adopted across subsequent KSA public sector portals, emphasizing compliance-driven design and scalable data models."
+  start_year: 2021
+  end_year: 2021
+  note: "Confirm whether this was 2020 pre-iSoft or
+    early 2021 under iSoft retainer"
+architectural_context: >
+  Web registration gateway for Shariah-compliant cooperative 
+  car insurance in Saudi Arabia. Served as the foundational 
+  architectural blueprint — validation workflows, data models, 
+  and API integration patterns established here were reused 
+  across subsequent Saudi public sector portals delivered 
+  under the same iSoft engagement.
 technical_stack:
-  languages: [PHP]
-  frameworks: [Drupal Enterprise]
+  languages: ["PHP"]
+  frameworks: ["Drupal Enterprise"]
   infrastructure_cloud: []
-  data_layers: [MySQL, REST API, Data Validation Layers]
+  data_layers: ["MySQL", "REST API"]
 core_competencies:
-  - "Enterprise Drupal Development"
   - "Compliance-Driven System Design"
-  - "REST API Integration"
-  - "Data Validation Layer Implementation"
-  - "Scalable Architecture Design"
+  - "Enterprise Drupal Development"
+  - "REST API Integration & Payload Validation"
+  - "Reusable Architecture Patterns"
 quantifiable_engineering_impact:
-  - "Engineered core data registration and structural field validation layers within an enterprise Drupal environment, ensuring error-free payload translation before data reached backend processing nodes."
-  - "Structured secure REST API handshakes and data capture payloads to enforce strict compliance with Saudi cooperative insurance regulations and legal security standards."
-  - "Designed system components with strict separation of concerns, enabling highly reusable data models that streamlined rapid deployment of future regional portal projects."
+  - "Engineered core registration and field validation layers
+    in enterprise Drupal, ensuring payload integrity before
+    data reached backend processing — establishing the
+    validation pattern reused across subsequent iSoft
+    Saudi portal deliveries."
+  - "Structured secure REST API handshakes to external
+    regulatory systems [confirm: SAMA? Najm? other?],
+    enforcing compliance with Saudi cooperative insurance
+    regulations and legal data security standards."
 edge_cases_managed:
-  - "Handling high-volume car insurance registrations under strict regulatory compliance requirements."
-  - "Ensuring secure data transmission and validation in a regulated financial services environment."
-  - "Managing complex data flow between frontend validation and backend processing nodes."
+  - "Payload translation between frontend validation state
+    and backend regulatory API requirements — ensuring
+    data format, field completeness, and compliance
+    constraints were enforced before external submission."
+  - "[Add the specific regulatory system name and
+    its constraints when confirmed]"

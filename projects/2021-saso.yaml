@@ -1,31 +1,74 @@
-project_id: "Periodic Technical Inspection Platform — Saudi Ministry of Standards (SASO)"
-client_name: "Saudi Ministry of Standards (SASO)"
-client_type: "Public Sector"
-project_role: "Senior Software Engineer via iSoft"
+project_id: "saso_inspection_scheduling"
+client_name: "Saudi Ministry of Standards,
+  Metrology and Quality (SASO)"
+client_type: "Public Sector — Federal"
+project_role: "Technical Lead & Senior Software Engineer
+  via iSoft"
 timeline:
   start_year: 2021
   end_year: 2024
-architectural_context: "Led the 3-year migration and optimization of Saudi Arabia's nationwide vehicle inspection and modification scheduling system, managing immense daily volume and orchestrating vehicle service lanes across the country into tight 15-minute scheduling blocks."
+architectural_context: >
+  Nationwide vehicle inspection and modification scheduling 
+  platform managing multi-lane inspection facilities across 
+  Saudi Arabia within strict 15-minute booking blocks. 
+  Delivered across three phases over three years — 
+  initial platform build, optimization, and headless 
+  migration — with intervening work on other iSoft 
+  engagements between phases. Three independent clients 
+  (public web portal, state internal backend, mobile 
+  application) competed simultaneously for identical 
+  time slots under concurrent load. Hosted on 
+  government-subsidized third-party infrastructure; 
+  production access was restricted — all validation 
+  performed on simulated pre-production environments.
 technical_stack:
-  languages: []
-  frameworks: ["Drupal", "React"]
-  infrastructure_cloud: []
-  data_layers: ["3NF Database Design", "Star Schema", "Distributed State Locking"]
+  languages: ["PHP", "JavaScript"]
+  frameworks: ["Drupal 8/9", "React"]
+  infrastructure_cloud: [
+      "Government-subsidized third-party
+      hosting (pre-production simulation)",
+    ]
+  data_layers: ["MySQL", "3NF Schema", "Star Schema"]
 core_competencies:
-  - "Distributed Systems"
-  - "Concurrency Control"
-  - "Database Design"
-  - "Headless Architecture"
-  - "API Development"
-  - "System Migration"
-  - "Engineering Leadership"
-  - "Agile Methodologies"
+  - "Distributed Concurrency Control"
+  - "Relational Database Design & Optimization"
+  - "Headless Architecture Migration"
+  - "API Design & State Management"
+  - "Legacy System Remediation"
+  - "Engineering Process Standardization"
 quantifiable_engineering_impact:
-  - "Reduced database latency under peak loads by refactoring fragmented tables into 3rd Normal Form (3NF) and implementing a Star Schema for rapid read queries."
-  - "Implemented a distributed time-slot lock system that increased system capacity by allowing slots to be released back to the public pool after 5 minutes of inactivity."
-  - "Led the migration from a legacy monolithic Drupal core to a decoupled, headless ecosystem, improving performance and scalability."
-  - "Standardized engineering communication through a project-wide terminology dictionary and mapped Jira workflows to engineering release calendars, reducing unplanned hotfixes."
+  - "Resolved distributed booking collisions across three
+    competing clients by designing a deterministic
+    state-lock system: slot selection deferred validation
+    to the final workflow step, with a 5-minute inactivity
+    window automatically returning abandoned slots to the
+    pool — recovering previously wasted scheduling capacity
+    at national scale."
+  - "Restructured fragmented data models into 3NF for
+    transactional integrity combined with Star Schema for
+    analytical read performance, reducing calendar and
+    dropdown dataset load times to near-instant execution
+    under peak load."
+  - "Led multi-phase migration from monolithic Drupal core
+    to decoupled headless architecture: extracted validated
+    business logic into versioned APIs consumed by a React
+    frontend, improving frontend deployment independence
+    and API reuse across clients."
+  - "Established project-wide engineering terminology
+    dictionary and Jira workflow standards aligned to
+    release calendars."
 edge_cases_managed:
-  - "Concurrency collisions in a distributed booking engine with three competing clients."
-  - "Handling proxy authorizations for Indian and foreign-national drivers without compromising security."
-  - "Managing high-volume scheduling blocks with strict 15-minute intervals."
+  - "Three-way concurrent booking collisions: public portal,
+    state backend, and mobile app competing for identical
+    15-minute slots simultaneously — solved via distributed
+    state locking with deterministic timeout."
+  - "Proxy authorization gap: system assumed vehicle owner
+    and driver were identical; real-world usage required
+    owners to delegate inspection appointments to third-party
+    drivers. Implemented a portal-level proxy authorization
+    layer to handle delegation without compromising booking
+    integrity or owner accountability."
+  - "All pre-production validation performed on simulated
+    environments due to restricted production access —
+    required deterministic, environment-agnostic code and
+    rigorous pre-deployment testing discipline."
