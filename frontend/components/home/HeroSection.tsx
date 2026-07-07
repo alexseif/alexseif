@@ -51,7 +51,7 @@ export const HeroSection = () => {
       >
         <motion.div variants={fadeInUp} className="space-y-6">
           <p
-            className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary/90 leading-tight"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary leading-tight"
             style={{
               fontFamily: "var(--font-arabic)",
               fontWeight: 700,
