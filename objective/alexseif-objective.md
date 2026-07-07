@@ -4,7 +4,7 @@
 **Targeted Title:** Software Architect & NGO Technical Partner
 
 *   **Primary Objective (Relocation):** Secure a high-quality, permanent Software Architect role based in the Netherlands.
-*   **Secondary Objective (NGO Sector):** Attract NGOs seeking an embedded Technical Partner for secure web portals, Data Sovereignty compliance, custom RAG pipelines, AI workflow integration, and staff AI prompting/configuration training.
+*   **Secondary Objective (NGO Sector):** Attract NGOs seeking an NGO Technical Partner for secure web portals, Data Sovereignty compliance, custom RAG pipelines, AI workflow integration, and staff AI prompting/configuration training.
 *   **Tertiary Objective (Market Value):** Capture highly compensated remote Software Architecture or Senior Engineering contracts globally.
 
 ## 2. Core Narrative Anchor

@@ -42,7 +42,7 @@ export const NGOPartnerSection = () => {
         >
           <motion.div variants={fadeInUp} className="text-center space-y-4">
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              Embedded Technical Partner
+              NGO Technical Partner
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
               For organizations needing an independent technical lead to own the engineering function, oversee vendors, and guide architectural strategy without the overhead of a full-time executive hire.
