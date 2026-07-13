@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, ArrowRight, MessageSquare, LucideGithub } from "lucide-react";
 import { fadeInUp, stagger } from "./animations";
+import { openBrevo } from "./utils";
 
 export const HeroSection = () => {
   const handleContact = (
@@ -66,100 +67,69 @@ export const HeroSection = () => {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInUp} className="space-y-3 pt-8">
-          <div className="flex items-center justify-center gap-4 mb-12">
+        <motion.div variants={fadeInUp} className="space-y-6 pt-8">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-12 bg-primary/50" />
             <h1 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
               ALEX SEIF
             </h1>
             <div className="h-px w-12 bg-primary/50" />
           </div>
-          <ul className="text-foreground/80 text-md tracking-[0.3em] uppercase">
-            <li className="font-bold text-foreground">Software Architect & NGO Technical Partner</li>
-            <li>Web Applications</li>
-            <li>Requirements Elicitation</li>
-            <li>Infrastructure</li>
-            <li>Process Digitizing</li>
-          </ul>
+          <div className="text-foreground/80 text-lg tracking-[0.2em] uppercase font-bold">
+            Software Architect & NGO Technical Partner
+          </div>
         </motion.div>
-        <motion.div variants={fadeInUp} className="space-y-3 pt-8">
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <p className="text-foreground/70 text-md tracking-[0.15em] ">
-              <ul className="text-foreground/80 text-md tracking-[0.15em]">
-                <li><strong>Because</strong> of{" "} <strong className="text-primary">20+ yrs</strong> building the web;</li>
-                <li><strong>Realize</strong> that most problems are simple;{" "}</li>
-                <li><strong>Imagine</strong> simple solutions;</li>
-                <li><strong>Remember</strong> that the most valuable things in life are <strong>simple</strong>;</li>
-              </ul>
-
-              <br />
-
-              <br />
-
+        <motion.div variants={fadeInUp} className="space-y-6 pt-4">
+          <div className="text-foreground/70 text-base md:text-lg leading-relaxed max-w-3xl mx-auto space-y-6 font-sans">
+            <p>
+              I've spent 20 years solving the problems that come before the code — understanding what's actually needed, designing how it fits together, and building systems that survive contact with reality.
+            </p>
+            <p>
+              Air-gapped government ministries. National payment gateways. Tourism platforms that became the market reference. Ministry-level scheduling infrastructure under distributed load. Whatever you're building, I've probably worked in harder constraints.
             </p>
           </div>
         </motion.div>
 
         <motion.div
           variants={fadeInUp}
-          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-2"
+          className="flex flex-col items-center justify-center gap-6 pt-8"
         >
           <button
-            onClick={(e) => handleContact(e, "email")}
-            className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
-            aria-label="Contact Alex Seif via Email"
-            title="Email Alex Seif"
+            onClick={openBrevo}
+            className="group relative px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-mono tracking-widest uppercase text-sm border border-primary overflow-hidden"
           >
-            <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
-              <Mail className="h-3.5 w-3.5" />
-            </div>
-            <span className="text-md font-mono tracking-[0.2em] uppercase">
-              Email
+            <span className="relative z-10 flex items-center gap-2">
+              <MessageSquare className="h-4 w-4" />
+              Let's talk about your problem
             </span>
           </button>
-          <button
-            onClick={(e) => handleContact(e, "whatsapp")}
-            className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
-            aria-label="Contact Alex Seif via WhatsApp"
-            title="WhatsApp Alex Seif"
-          >
-            <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
-              <MessageSquare className="h-3.5 w-3.5" />
-            </div>
-            <span className="text-md font-mono tracking-[0.2em] uppercase">
-              WhatsApp
-            </span>
-          </button>
-          <button
-            onClick={(e) => handleContact(e, "github")}
-            className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
-            aria-label="View Alex Seif's GitHub Profile"
-            title="GitHub Profile"
-          >
-            <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
-              <LucideGithub className="h-3.5 w-3.5" />
-            </div>
-            <span className="text-md font-mono tracking-[0.2em] uppercase">
-              Github
-            </span>
-          </button>
-          <button
-            onClick={() =>
-              document
-                .getElementById("path-discovery")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="group flex items-center gap-2 text-foreground/50 hover:text-primary transition-colors cursor-pointer"
-            aria-label="Scroll to Path Discovery"
-            title="Path Discovery"
-          >
-            <div className="h-8 w-8 rounded-full border border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
-              <ArrowRight className="h-3.5 w-3.5 rotate-90 sm:rotate-0" />
-            </div>
-            <span className="text-md font-mono tracking-[0.2em] uppercase">
-              Path Discovery
-            </span>
-          </button>
+          
+          <div className="flex items-center gap-6 mt-4">
+            <button
+              onClick={(e) => handleContact(e, "email")}
+              className="group flex items-center text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+              aria-label="Contact Alex Seif via Email"
+              title="Email Alex Seif"
+            >
+              <Mail className="h-5 w-5" />
+            </button>
+            <button
+              onClick={(e) => handleContact(e, "whatsapp")}
+              className="group flex items-center text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+              aria-label="Contact Alex Seif via WhatsApp"
+              title="WhatsApp Alex Seif"
+            >
+              <MessageSquare className="h-5 w-5" />
+            </button>
+            <button
+              onClick={(e) => handleContact(e, "github")}
+              className="group flex items-center text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+              aria-label="View Alex Seif's GitHub Profile"
+              title="GitHub Profile"
+            >
+              <LucideGithub className="h-5 w-5" />
+            </button>
+          </div>
         </motion.div>
 
         <motion.div
