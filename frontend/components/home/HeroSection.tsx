@@ -74,24 +74,28 @@ export const HeroSection = () => {
             </h1>
             <div className="h-px w-12 bg-primary/50" />
           </div>
-          <ul className="text-foreground/70 text-md tracking-[0.3em] uppercase">
+          <ul className="text-foreground/80 text-md tracking-[0.3em] uppercase">
             <li className="font-bold text-foreground">Software Architect & NGO Technical Partner</li>
-            <li>High-Concurrency Architecture</li>
-            <li>State-Level Digital Infrastructure</li>
-            <li>Zero-Downtime Legacy Migrations</li>
+            <li>Web Applications</li>
+            <li>Requirements Elicitation</li>
+            <li>Infrastructure</li>
+            <li>Process Digitizing</li>
           </ul>
         </motion.div>
         <motion.div variants={fadeInUp} className="space-y-3 pt-8">
           <div className="flex items-center justify-center gap-4 mb-12">
             <p className="text-foreground/70 text-md tracking-[0.15em] ">
-              <strong>Because</strong> of{" "}
-              <strong className="text-primary">20+ yrs</strong> building the web;
+              <ul className="text-foreground/80 text-md tracking-[0.15em]">
+                <li><strong>Because</strong> of{" "} <strong className="text-primary">20+ yrs</strong> building the web;</li>
+                <li><strong>Realize</strong> that most problems are simple;{" "}</li>
+                <li><strong>Imagine</strong> simple solutions;</li>
+                <li><strong>Remember</strong> that the most valuable things in life are <strong>simple</strong>;</li>
+              </ul>
+
               <br />
-              <strong>Realize</strong> that most problems are very simple;{" "}
-              <strong>Imagine</strong> solutions that are also very simple;
+
               <br />
-              And so <strong>Remember</strong> the most valuable things in life
-              become the most <strong>simple</strong> things;
+
             </p>
           </div>
         </motion.div>
