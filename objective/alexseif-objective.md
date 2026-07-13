@@ -13,9 +13,13 @@ Software Architect & NGO Technical Partner
 
 ## 3. Core Narrative
 
-Software Architect & NGO Technical Partner with 20+ years designing and shipping systems under real constraints — air-gapped ministries, fragile bank networks, shared hosting resource limits, and regulatory frameworks that couldn't be argued with.
+**Tagline:** "I build the systems behind the systems — and I've been doing it for 20 years."
 
-I specialize in the requirement-to-architecture moment: collecting what stakeholders actually need (not what they say they need), mapping how things currently work, and designing the database, APIs, and infrastructure required to solve the real problem. I've done this in government ministries, fintech startups, national media infrastructure, and tourism platforms — from Cairo to Riyadh to Dubai.
+I am a Software Architect & NGO Technical Partner operating at the intersection of architecture ownership and technical problem solving. I solve the hard problems that come before the code — understanding what's actually needed, designing how it fits together, and building systems that survive contact with reality. 
+
+I've spent 20 years doing this under real constraints — air-gapped government ministries, fragile bank networks, national payment gateways under distributed load, and regulatory frameworks that couldn't be argued with. 
+
+Most people come to me when they need to build something that doesn't exist yet, when they have something that works but can't scale or change, or when they need someone to own the technical function instead of just advising on it. My approach is approachable, human, and honest ("Whatever the problem is, I've probably solved a harder one.").
 
 What I don't do: manual testing. I design the quality gates, define the validation requirements, and establish the QA process. I don't man the gates myself.
 

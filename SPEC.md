@@ -2,7 +2,8 @@
 
 > **Version:** 1.5 | **Date:** 2026-07-01
 > **Purpose:** Source of truth for all work on this repository. Agnostic to any specific LLM.
-> **Scope:** This file covers ONLY alexseif.com. freeworld-job-finder and php-jobspy have their own specs.
+> **Scope:** This file covers ONLY alexseif.com. 
+> **Planning Reference:** In any future phase of planning, ALWAYS reference `objective/alexseif-objective.md` and `alexseif_brand_identity.md` for core narrative and brand positioning.
 
 ---
 
@@ -14,14 +15,15 @@
 Software Architect & NGO Technical Partner
 
 **Tiered Professional Objectives:**
-1. **Primary Objective (European/Global Placement):** Secure a high-quality Software Architecture or Senior PHP/Full-Stack Engineering role (contract, remote, or permanent) with a strong preference for relocation to the Netherlands.
-2. **Secondary Objective (NGO Sector):** Attract NGOs seeking a Technical Partner for specific software needs, including: secure web portals, Data Sovereignty compliance, custom RAG pipelines, AI workflow integration, and staff training on AI prompting/configuration.
-3. **Tertiary Objective (Market Value):** Capture highly compensated remote Software Architecture, Senior PHP Engineer, or Software Architect contracts/roles globally.
+1. **Primary Objective:** Represent 20+ years of software architecture experience honestly and completely, including projects previously undocumented.
+2. **Secondary Objective:** Secure a permanent Software Architect or Principal Engineer role in the Netherlands or EU, with relocation.
+3. **Tertiary Objective:** Attract NGOs seeking an embedded Technical Partner for secure web portals, data sovereignty compliance, legacy system rescue, and staff technical capability building.
 
 **Brand Ethos & Positioning (Sourced from `alexseif_brand_identity.md`):**
-*Tagline:* "Two decades of owning architecture decisions at national scale."
-*Core Concept:* Operating at the intersection of architecture ownership and technical problem solving in hostile environments. The brand positions Alex as senior enough to own architecture decisions, hands-on enough to implement them, and experienced enough to have done it at scale (air-gapped ministries, legacy bank networks, high-concurrency scheduling systems).
-*Keywords:* Architecture Ownership, Hostile-Environment Infrastructure, Operational Stability, Technical Authority, Reliability.
+*Tagline:* "I build the systems behind the systems — and I've been doing it for 20 years."
+*Core Concept:* Operating at the intersection of architecture ownership and technical problem solving. The brand positions Alex as a problem solver, not just a credential. It focuses on the hard realities of building systems: "You have a system that can't go down but needs to change." The tone should be human, approachable, and highly competent without being arrogant. The CTA barrier should be lowered from a formal engagement to an open conversation ("Tell me the problem. I'll tell you honestly.").
+*Keywords:* Problem Solver, Architecture Ownership, Hostile-Environment Infrastructure, Operational Stability, Human Approachability, Technical Authority.
+*Copywriting Source of Truth:* Refer to `HOMEPAGE_COPY.md` for the precise tone and structure of the homepage content.
 
 **Target Audiences (SEO Personas):**
 *   **Persona A — European / Global Engineering Leaders:** Hiring managers (Directors/VP of Engineering) seeking an expert PHP/Symfony Architect capable of owning decisions, implementing them, and navigating complex legacy or high-concurrency environments.
@@ -33,9 +35,8 @@ Software Architect & NGO Technical Partner
 
 **In scope:**
 - Professional identity, title, and positioning copy
-- Case studies (`/case-studies/`) — rendered from `/projects/*.yaml`
 - Professional experiences — rendered from `/experiences/*.yaml`
-- Selected projects (for resume) — pulled via `/selected_projects/`
+- Selected projects — pulled via `/selected_projects/` (used as the single source for both the Resume and the Case Studies section)
 - Homepage sections (Hero, Technical Grid, NGO section, World Map, CTA)
 - SEO metadata and JSON-LD schema (Targeting "Software Architect", "NGO Technical Partner", "Principle Engineer")
 
@@ -101,8 +102,8 @@ References to `projects/*.yaml` items that are specifically highlighted in the g
 
 ## 5. Resolved Decisions
 
-**Q1 — CTA Strategy:** Path B — Brevo + existing direct contacts.
-Keep Email and WhatsApp buttons in the Hero. All section-level CTA buttons trigger the Brevo conversation widget.
+**Q1 — CTA Strategy:** Path B — Brevo + existing direct contacts (WhatsApp + Email).
+*Reasoning:* To remain approachable and "chill". WhatsApp is how Egyptians and Gulf clients actually reach out. We shouldn't make them find a widget for primary contact. Keep Email and WhatsApp buttons in the Hero. All section-level CTA buttons trigger the Brevo conversation widget.
 
 ---
 
@@ -143,4 +144,4 @@ Keep Email and WhatsApp buttons in the Hero. All section-level CTA buttons trigg
 
 **Always:** Preserve Arabic greeting, Rafiq concept, dark-mode palette. Align with Brand Tone of Voice.
 **Ask first:** Any new homepage section. Altering case study slugs.
-**Never:** Add npm deps without approval. Use raw hex values in TSX. Commit AI-generated resume content without human review.
+**Never:** Add npm deps without approval. Use raw hex values in TSX. Commit AI-generated resume content without human review. Own QA execution (design the strategy, but do not execute).
