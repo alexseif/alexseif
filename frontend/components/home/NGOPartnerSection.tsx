@@ -40,13 +40,21 @@ export const NGOPartnerSection = () => {
           variants={stagger}
           className="space-y-16"
         >
-          <motion.div variants={fadeInUp} className="text-center space-y-4">
+          <motion.div variants={fadeInUp} className="text-center space-y-6 max-w-3xl mx-auto">
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              NGO Technical Partner
+              FOR NGOs SPECIFICALLY
             </h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-              For organizations needing an independent technical lead to own the engineering function, oversee vendors, and guide architectural strategy without the overhead of a full-time executive hire.
-            </p>
+            <div className="text-foreground/80 leading-relaxed text-sm md:text-base space-y-4 text-left">
+              <p>
+                You have a transparency platform, a donor portal, or a data system that was built by whoever was available at the time. It works until it doesn't. Nobody owns it technically.
+              </p>
+              <p>
+                I've worked with international NGOs reporting to UN, GIZ, and EU institutional donors. I understand data sovereignty, multilingual requirements, geographic data visualization, and the reality that your budget isn't elastic.
+              </p>
+              <p>
+                I offer retainer-based technical partnership — not a project quote, not a consultancy firm. One person who knows your system and is reachable when it matters.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
