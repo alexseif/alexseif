@@ -1,6 +1,6 @@
 - [x] Task 1: Update Hero Section (`HeroSection.tsx`) with new copy and CTA.
 - [x] Task 2: Refactor "What I Actually Do" (`TechnicalGridSection.tsx`) into the new 3-pillar problem layout and add disclaimer.
-- [ ] Task 3: Update Selected Work (`CaseStudiesSection.tsx`) intro text to match the new narrative.
+- [x] Task 3: Update Selected Work (`CaseStudiesSection.tsx`) intro text to match the new narrative.
 - [ ] Task 4: Update NGO Section (`NGOPartnerSection.tsx`) to replace the deliverables grid with the new text-driven layout and "Start a conversation" CTA.
 - [ ] Task 5: Refactor "The Honest Version" (`PathDiscoverySection.tsx`) title, text, and change CTA to link to `/case-studies`.
 - [ ] Task 6: Build/Update Resume Generation Pipeline (`scripts/generate_resume.py`) to compile `Resume.md` from `experiences/*.yaml` and `projects/selected/*.yaml`.

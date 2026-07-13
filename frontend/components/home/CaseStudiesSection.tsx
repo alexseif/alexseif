@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Terminal, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, stagger } from "./animations";
 
@@ -17,21 +17,10 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
           variants={stagger}
           className="space-y-12"
         >
-          <motion.div variants={fadeInUp} className="space-y-4">
-            <div className="flex items-center gap-4">
-              <Terminal className="h-5 w-5 text-primary" />
-              <span className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
-                System Logs
-              </span>
-            </div>
+          <motion.div variants={fadeInUp} className="space-y-6">
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              Elite Deep-Dives
+              SELECTED WORK
             </h2>
-            <p className="text-foreground/70 max-w-2xl leading-relaxed">
-              Raw engineering validation. Select a project dossier to examine the
-              architectural identity, technical stack, and engagement type of our
-              premier deployments.
-            </p>
           </motion.div>
 
           <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-4">
