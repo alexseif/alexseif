@@ -5,25 +5,26 @@ project_role: "Senior Software Engineer via iSoft"
 timeline:
   start_year: 2021
   end_year: 2021
-  note: "Confirm whether this was 2020 pre-iSoft or
-    early 2021 under iSoft retainer"
 architectural_context: >
   Web registration gateway for Shariah-compliant cooperative 
   car insurance in Saudi Arabia. Served as the foundational 
   architectural blueprint — validation workflows, data models, 
   and API integration patterns established here were reused 
   across subsequent Saudi public sector portals delivered 
-  under the same iSoft engagement.
+  under the same iSoft engagement. Both Salama and SASO 
+  required load balancer implementations to manage high 
+  concurrency.
 technical_stack:
   languages: ["PHP"]
   frameworks: ["Drupal Enterprise"]
-  infrastructure_cloud: []
+  infrastructure_cloud: ["Load Balancer"]
   data_layers: ["MySQL", "REST API"]
 core_competencies:
   - "Compliance-Driven System Design"
   - "Enterprise Drupal Development"
   - "REST API Integration & Payload Validation"
   - "Reusable Architecture Patterns"
+  - "Load Balancing & Concurrency Control"
 quantifiable_engineering_impact:
   - "Engineered core registration and field validation layers
     in enterprise Drupal, ensuring payload integrity before
@@ -31,13 +32,12 @@ quantifiable_engineering_impact:
     validation pattern reused across subsequent iSoft
     Saudi portal deliveries."
   - "Structured secure REST API handshakes to external
-    regulatory systems [confirm: SAMA? Najm? other?],
-    enforcing compliance with Saudi cooperative insurance
-    regulations and legal data security standards."
+    regulatory systems, enforcing compliance with Saudi cooperative
+    insurance regulations and legal data security standards."
 edge_cases_managed:
   - "Payload translation between frontend validation state
     and backend regulatory API requirements — ensuring
     data format, field completeness, and compliance
     constraints were enforced before external submission."
-  - "[Add the specific regulatory system name and
-    its constraints when confirmed]"
+  - "Managed high volume traffic and concurrency via load
+    balancer tuning, ensuring service availability under load."

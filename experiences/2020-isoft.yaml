@@ -1,7 +1,7 @@
 company_agency: "iSoft"
 timeline:
-  start_year: 2017
-  end_year: 2022
+  start_year: 2020
+  end_year: 2024
 primary_role: "Principal Software Architect & Technical Lead"
 agency_level_impact:
   - "Architected a strict 4-tier environment topology (Dev, Testing, Staging, Preproduction) integrated directly with a mandated Git workflow to ensure safe, isolated deployment pipelines."

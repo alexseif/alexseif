@@ -1,16 +1,29 @@
-project_id: saaed
-client_name: softech
-client_type: Contrat
-project_role: Software Engineer
+project_id: "saaed_car_insurance_portal"
+client_name: "Softech"
+client_type: "Subsidized Company / Fintech"
+project_role: "Systems Stabilization Engineer & Software Consultant"
 timeline:
   start_year: 2018
   end_year: 2018
-architectural_context: N/A
+architectural_context: >
+  UAE government-subsidized car insurance portal. Engaged to stabilize 
+  and maintain a legacy, heavily sluggish system. The codebase was a 
+  highly fragile, multi-network WordPress installation that failed 
+  under minor code modifications.
 technical_stack:
-  languages: []
-  frameworks: []
-  infrastructure_cloud: []
-  data_layers: []
-core_competencies: []
-quantifiable_engineering_impact: []
-edge_cases_managed: []
+  languages: ["PHP"]
+  frameworks: ["WordPress (Multi-network)"]
+  infrastructure_cloud: ["CentOS / On-Premise"]
+  data_layers: ["MySQL"]
+core_competencies:
+  - "Systems Stabilization & Legacy Maintenance"
+  - "OS Package Pinning & Repository Patching"
+  - "Role-Based Access Control (RBAC) Debugging"
+  - "Dependency Management & Retrofitting"
+quantifiable_engineering_impact:
+  - "Maintained system availability by performing deep investigation and OS-level package repository patching to pin incompatible versioned dependencies."
+  - "Diagnosed and resolved critical privilege escalations and visibility bugs across complex multi-tiered user roles (client, admin, agents)."
+  - "Enforced defensive staging workflows to ensure small updates did not trigger fatal cascade crashes on production."
+edge_cases_managed:
+  - "Dependency rot: resolved legacy PHP runtime incompatibility by manually pinning and backporting OS packages."
+  - "Role management complexity: debugged hidden role permissions and scope constraints across multi-site networks."
