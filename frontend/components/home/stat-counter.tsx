@@ -77,10 +77,10 @@ export function StatCounter() {
               }}
               dir="rtl"
             >
-              مُبَارَكٌ الآتِي بِاسْمِ الرَّبِّ
+              «وَعَمَلَ أَيْدِينَا ثَبِّتْهُ»
             </p>
             <p className="text-foreground/70 tracking-[0.2em] uppercase font-sans">
-              Blessed is He who comes in the name of the Lord.
+              “Establish the work of our hands.”
             </p>
           </motion.div>
         </motion.div>
