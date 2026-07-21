@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -35,10 +36,12 @@ export function Footer() {
             <p className="text-foreground/70/40 text-xs font-mono">
               © MMXXVI
             </p>
-            <img
-              src="/Alexandria-Lighthouse.png"
+            <Image
+              src="/Alexandria-Lighthouse.webp"
               alt="Alexandria Lighthouse"
               title="Alexandria Lighthouse"
+              width={96}
+              height={151}
               className="h-auto w-24 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-500 rounded-[12px]"
             />
           </div>

@@ -18,8 +18,8 @@ import remarkGfm from 'remark-gfm';
 function flattenChildren(node: React.ReactNode): string {
   if (typeof node === 'string' || typeof node === 'number') return String(node);
   if (Array.isArray(node)) return node.map(flattenChildren).join('');
-  if (node && typeof node === 'object' && 'props' in (node as React.ReactElement)) {
-    return flattenChildren((node as React.ReactElement).props.children);
+  if (node && typeof node === 'object' && 'props' in node) {
+    return flattenChildren((node as any).props.children);
   }
   return '';
 }
