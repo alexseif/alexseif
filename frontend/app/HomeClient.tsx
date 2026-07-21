@@ -1,7 +1,7 @@
 "use client";
 
 import { Footer } from "@/components/Footer";
-import { StatCounter } from "@/components/home/stat-counter";
+import { StatCounterSection } from "@/components/home/StatCounterSection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { WorldMapSection } from "@/components/home/WorldMapSection";
 import { TechnicalGridSection } from "@/components/home/TechnicalGridSection";
@@ -13,7 +13,7 @@ export default function HomeClient({ eliteProjects }: { eliteProjects: any[] }) 
   return (
     <main className="min-h-screen bg-background overflow-x-hidden blueprint-grid">
       <HeroSection />
-      <StatCounter />
+      <StatCounterSection />
       <TechnicalGridSection />
       <NGOPartnerSection />
       <CaseStudiesSection eliteProjects={eliteProjects} />
