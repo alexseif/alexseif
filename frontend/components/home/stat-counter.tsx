@@ -61,7 +61,30 @@ export function StatCounter() {
         <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
       </div>
-
+      <div className="flex flex-col items-center justify-center px-6 relative pb-16">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
+          className="text-center space-y-10 max-w-4xl relative z-10">
+          <motion.div variants={fadeInUp} className="space-y-6">
+            <p
+              className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary leading-tight"
+              style={{
+                fontFamily: "var(--font-arabic)",
+                fontWeight: 700,
+                textShadow: "0 0 8px rgba(184, 134, 11, 0.35)",
+              }}
+              dir="rtl"
+            >
+              مُبَارَكٌ الآتِي بِاسْمِ الرَّبِّ
+            </p>
+            <p className="text-foreground/70 tracking-[0.2em] uppercase font-sans">
+              Blessed is He who comes in the name of the Lord.
+            </p>
+          </motion.div>
+        </motion.div>
+      </div>
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial="hidden"
@@ -106,6 +129,6 @@ export function StatCounter() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </section >
   );
 }
