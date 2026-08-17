@@ -1,0 +1,58 @@
+---
+date_created: 2026-07-30 14:21:04
+tags:
+  - project
+status: active
+---
+project_id: "eka_portal_modernization"
+client_name: "Greek Community of Alexandria (EKA)"
+client_type: "Non-Profit / Community Organization"
+project_role: "Lead Systems Architect & Full-Stack Developer"
+timeline:
+  start_year: 2026
+  end_year: 2026
+architectural_context: >
+  Full programmatic technical modernization of a bloated legacy WordPress portal 
+  (dependent on BeTheme, WPBakery, and LayerSlider) into a clean, exceptionally 
+  lightweight Full Site Editing (FSE) block theme. Required a strict 1:1 visual 
+  replication of the legacy design without any manual content rewriting. Executed 
+  via a repeatable, validated, script-first programmatic workflow heavily orchestrated 
+  by Agentic AI, requiring strict API token optimization strategies.
+technical_stack:
+  languages: ["PHP", "SCSS", "JavaScript", "Bash"]
+  frameworks: ["WordPress FSE (Block Themes)", "Gutenberg Block API", "WP-CLI"]
+  infrastructure_cloud: ["Nginx (Reverse Proxy & Staging)"]
+  data_layers: ["MySQL", "Polylang Translation Mapping"]
+  testing_and_ai: ["Playwright (Visual Regression)", "Agentic AI Orchestration", "AST Block Serialization Parser"]
+core_competencies:
+  - "Programmatic Legacy Data Migration"
+  - "AI-Orchestrated Software Engineering"
+  - "WordPress FSE & Block Theme Architecture"
+  - "Visual Regression Testing & DOM Scoping"
+  - "Bash/CLI Automation & API Token Optimization"
+  - "Complex Multilingual Schema Mapping (Polylang)"
+quantifiable_engineering_impact:
+  - "Engineered an AI-driven, script-first migration pipeline that drastically slashed 
+    LLM API token costs by offloading repetitive database operations to auto-generated 
+    Bash and PHP WP-CLI scripts."
+  - "Achieved a mathematically verified 1:1 visual parity with the legacy design by 
+    integrating Playwright for pixel-perfect regression testing against the live production DOM."
+  - "Replaced bloated, proprietary shortcodes (LayerSlider, WPBakery) with lightweight, 
+    serialized Gutenberg blocks verified via AST (`@wordpress/block-serialization-default-parser`), 
+    eliminating the performance drag of third-party page builders."
+  - "Automated the extraction and normalization of 15 years of malformed HTML newsletters 
+    into a pristine Custom Post Type, featuring auto-generated PDF thumbnails via 
+    ImageMagick and Ghostscript."
+edge_cases_managed:
+  - "Media Library Bloat: Prevented staging environment storage exhaustion by implementing 
+    an Nginx reverse proxy to stream a 60GB media library directly from the live production 
+    server during local development."
+  - "Token-Wasting Fatal Errors: Enforced strict PHP CLI version routing (`php7.4 $(which wp)`) 
+    in staging scripts to prevent environment crashes and API token waste during a staged 
+    migration from PHP 7.4 to 8.2."
+  - "Orphaned Multilingual Layouts: Solved complex Right-To-Left (RTL) Arabic, Greek, and 
+    English layout disparities by generating explicit language-specific FSE block templates 
+    (e.g., `header-ar`, `front-page-el`) instead of relying on brittle PHP overrides."
+  - "Malformed Legacy Timestamps: Parsed unstructured, flat-HTML text nodes for legacy newsletters, 
+    programmatically mapping Greek string text (e.g., 'Μάρτιος 2026') into true MySQL 
+    timestamps to maintain absolute chronological integrity."

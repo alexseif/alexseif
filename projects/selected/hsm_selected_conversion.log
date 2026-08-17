@@ -1,0 +1,40 @@
+============================================================
+INITIATING HSM CV COMPILER PIPELINE (PARALLEL - SELECTED)
+Temporal State: 2026-08-16 22:26:48 EEST
+Target Directory: selected/hsm_exports/
+Log File: selected/hsm_selected_conversion.log
+Concurrency Limit: 4 jobs
+============================================================
+[22:26:48] PROCESSING: selected/2009-wallety.yaml
+[22:26:48] PROCESSING: selected/2009-smash-holidays.yaml
+[22:26:48] PROCESSING: selected/2011-agazatmasr.yaml
+[22:26:48] PROCESSING: selected/2017-hsp.yaml
+[SUCCESS] Generated: selected/hsm_exports/2009-smash-holidays.md (4147 bytes)
+[22:27:23] PROCESSING: selected/2018-saaed.yaml
+[SUCCESS] Generated: selected/hsm_exports/2009-wallety.md (5490 bytes)
+[22:27:23] PROCESSING: selected/2019-complex-server-migration.yaml
+[SUCCESS] Generated: selected/hsm_exports/2017-hsp.md (2895 bytes)
+[22:27:38] PROCESSING: selected/2020-aman.yaml
+[SUCCESS] Generated: selected/hsm_exports/2018-saaed.md (3662 bytes)
+[22:28:21] PROCESSING: selected/2020-dubai-police-academy.yaml
+[SUCCESS] Generated: selected/hsm_exports/2020-aman.md (4125 bytes)
+[22:28:29] PROCESSING: selected/2020-moi-egypt-traffic.yaml
+[SUCCESS] Generated: selected/hsm_exports/2011-agazatmasr.md (4401 bytes)
+[22:28:54] PROCESSING: selected/2021-salama.yaml
+[SUCCESS] Generated: selected/hsm_exports/2019-complex-server-migration.md (5815 bytes)
+[22:29:01] PROCESSING: selected/2021-saso.yaml
+[SUCCESS] Generated: selected/hsm_exports/2020-moi-egypt-traffic.md (5753 bytes)
+[22:29:21] PROCESSING: selected/2024-sef-academy-sea.yaml
+[SUCCESS] Generated: selected/hsm_exports/2020-dubai-police-academy.md (2817 bytes)
+[22:29:21] PROCESSING: selected/2025-nsce.yaml
+[SUCCESS] Generated: selected/hsm_exports/2021-salama.md (3509 bytes)
+[22:29:30] PROCESSING: selected/2026-barincairo.yaml
+[SUCCESS] Generated: selected/hsm_exports/2021-saso.md (5748 bytes)
+[22:29:38] PROCESSING: selected/2026-ekalexandria-modernization.yaml
+[SUCCESS] Generated: selected/hsm_exports/2025-nsce.md (5048 bytes)
+[SUCCESS] Generated: selected/hsm_exports/2024-sef-academy-sea.md (4606 bytes)
+[SUCCESS] Generated: selected/hsm_exports/2026-barincairo.md (10580 bytes)
+[SUCCESS] Generated: selected/hsm_exports/2026-ekalexandria-modernization.md (5672 bytes)
+============================================================
+PIPELINE COMPLETE.
+============================================================
