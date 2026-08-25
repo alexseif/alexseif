@@ -4,9 +4,22 @@ import { Amiri, Inter, Playfair_Display } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
-const _amiri = Amiri({ subsets: ["arabic", "latin"], weight: ["400", "700"], variable: "--font-arabic" });
-const _inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const _amiri = Amiri({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "700"],
+  variable: "--font-arabic",
+  display: "swap",
+});
+const _inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+const _playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: 'Alex Seif | Software Architect & NGO Technical Partner',
@@ -41,11 +54,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Loaded on idle to prevent blocking FCP / TBT */}
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
