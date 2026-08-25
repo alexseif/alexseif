@@ -1,3 +1,15 @@
+---
+slug: 2017-faros-omogenias
+title: Alex Seif
+year: 2017
+client_name: Alex Seif
+client_type: NGO
+project_role: Software Engineer
+subtitle: Greek News website
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Independent Technical Consultant | 2017
 
 ## 1. Executive Summary & Architectural Context

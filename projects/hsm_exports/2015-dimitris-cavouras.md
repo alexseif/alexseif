@@ -1,3 +1,15 @@
+---
+slug: 2015-dimitris-cavouras
+title: Alex Seif
+year: 2015
+client_name: Alex Seif
+client_type: NGO
+project_role: Software Engineer
+subtitle: Dispensed his political statement and controlled his message on twitter
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Independent Software Architect | 2015
 
 ## 1. Executive Summary & Stated Architectural Baseline

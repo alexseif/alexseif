@@ -77,6 +77,9 @@ export EXPORT_DIR
 # Run with xargs in parallel
 printf "%s\n" "${YAML_FILES[@]}" | xargs -I {} -P "$MAX_PARALLEL" bash -c 'process_file "$@"' _ {}
 
+echo "[$(date +'%H:%M:%S')] Injecting frontmatter into exports..."
+python3 ../scripts/inject_frontmatter.py
+
 echo "============================================================"
 echo "PIPELINE COMPLETE."
 echo "============================================================"

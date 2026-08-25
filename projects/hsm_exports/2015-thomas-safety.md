@@ -1,3 +1,15 @@
+---
+slug: 2015-thomas-safety
+title: Alex Seif
+year: 2015
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+subtitle: 2015-today
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Thomas Safety / Independent Technical Consultant | 2015
 
 ## Architectural Context & Overview

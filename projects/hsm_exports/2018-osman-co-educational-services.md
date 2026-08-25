@@ -1,3 +1,15 @@
+---
+slug: 2018-osman-co-educational-services
+title: Alex Seif
+year: 2018
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+subtitle: Kaplan Pathway courses Official representitive in Egypt and the Gulf
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Osman Co. Educational Services | 2018
 
 ## Architectural Context & Enterprise Scope

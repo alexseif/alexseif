@@ -1,3 +1,15 @@
+---
+slug: 2014-bailando
+title: Alex Seif
+year: 2014
+client_name: Alex Seif
+client_type: Direct
+project_role: N/A
+subtitle: Digitally crafted their online presence. 2014 - till today.
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Independent Software Architect | 2014 – Present
 
 ## Executive Summary & Architectural Context

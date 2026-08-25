@@ -1,3 +1,20 @@
+---
+slug: 2011-resort
+title: Global Hospitality / Real Estate
+year: 2011
+client_name: Global Hospitality / Real Estate
+client_type: Global Hospitality / Real Estate
+project_role: Software Architect & NGO Technical Partner
+subtitle: Retained as Software Architect and NGO Technical Partner to design and maintain
+  a multi-tenant property rental and resort management engine. The platf...
+tech_stack:
+- PHP
+- Custom MVC Framework
+- MySQL
+- Relational Yield Logic
+selected: false
+---
+
 # Lead Software Architect | Global Hospitality / Real Estate | 2011
 
 ## Executive Summary & Architectural Context

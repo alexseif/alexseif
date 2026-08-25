@@ -1,3 +1,16 @@
+---
+slug: 2016-the-greek-community-of-alexand
+title: Alex Seif
+year: 2016
+client_name: Alex Seif
+client_type: NGO
+project_role: Software Engineer
+subtitle: Delivered every directors message and report through infographics in their
+  annual report
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | The Greek Community of Alexandria | 2016
 
 ## 1. Executive Summary & Engagement Context

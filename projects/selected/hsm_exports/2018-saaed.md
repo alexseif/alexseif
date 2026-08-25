@@ -1,3 +1,20 @@
+---
+slug: 2018-saaed
+title: Softech
+year: 2018
+client_name: Softech
+client_type: Subsidized Company / Fintech
+project_role: Systems Stabilization Engineer & Software Consultant
+subtitle: UAE government-subsidized car insurance portal. Engaged to stabilize  and
+  maintain a legacy, heavily sluggish system. The codebase was a  highly fragi...
+tech_stack:
+- PHP
+- WordPress (Multi-network)
+- CentOS / On-Premise
+- MySQL
+selected: true
+---
+
 # Lead Software Architect | Softech | 2018
 
 ## Executive Summary & Architectural Context

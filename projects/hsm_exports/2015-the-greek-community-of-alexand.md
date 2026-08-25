@@ -1,3 +1,15 @@
+---
+slug: 2015-the-greek-community-of-alexand
+title: Alex Seif
+year: 2015
+client_name: Alex Seif
+client_type: NGO
+project_role: Software Engineer
+subtitle: 2015 - today
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | The Greek Community of Alexandria / Independent | 2015 – Present
 
 ## Executive Summary & Architectural Context

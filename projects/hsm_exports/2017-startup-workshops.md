@@ -1,3 +1,15 @@
+---
+slug: 2017-startup-workshops
+title: ITI
+year: 2017
+client_name: ITI
+client_type: Direct
+project_role: Software Engineer
+subtitle: N/A
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | ITI | 2017
 
 ## 1. Executive Summary & Architectural Context

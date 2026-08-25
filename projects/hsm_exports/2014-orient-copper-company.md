@@ -1,3 +1,15 @@
+---
+slug: 2014-orient-copper-company
+title: Alex Seif
+year: 2014
+client_name: Alex Seif
+client_type: Direct
+project_role: N/A
+subtitle: Themed Wordpress site for simplicity of this factory's digital presence.
+tech_stack: []
+selected: false
+---
+
 Lead Software Architect | Independent Technical Consultant | 2014 – Present
 
 ## Enterprise Case Study: Industrial Digital Infrastructure Architecture (Orient Copper Company)

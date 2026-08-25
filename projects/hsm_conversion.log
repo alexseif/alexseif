@@ -1,96 +1,53 @@
 ============================================================
 INITIATING HSM CV COMPILER PIPELINE (PARALLEL - ROOT DIRECTORY)
-Temporal State: 2026-08-16 22:30:42 EEST
+Temporal State: 2026-08-17 12:06:25 EEST
 Target Directory: hsm_exports/
 Log File: hsm_conversion.log
 Concurrency Limit: 4 jobs
 ============================================================
-[22:30:42] PROCESSING: 2004-business-solutions.yaml
-[22:30:42] PROCESSING: 2006-sykoheil-dentistry-clinic.yaml
-[22:30:42] PROCESSING: 2005-arabic-medical-social-website.yaml
-[22:30:42] PROCESSING: 2010-Egyptolution.yaml
-[SUCCESS] Generated: hsm_exports/2005-arabic-medical-social-website.md (2951 bytes)
-[22:31:11] PROCESSING: 2010-orthodox-botswana.yaml
-[SUCCESS] Generated: hsm_exports/2006-sykoheil-dentistry-clinic.md (2872 bytes)
-[22:31:12] PROCESSING: 2010-taziry.yaml
-[SUCCESS] Generated: hsm_exports/2004-business-solutions.md (1803 bytes)
-[22:31:15] PROCESSING: 2010-training-staff.yaml
-[SUCCESS] Generated: hsm_exports/2010-Egyptolution.md (3947 bytes)
-[22:31:19] PROCESSING: 2011-bouri.yaml
-[SUCCESS] Generated: hsm_exports/2010-taziry.md (3971 bytes)
-[22:31:44] PROCESSING: 2011-resort.yaml
-[SUCCESS] Generated: hsm_exports/2010-orthodox-botswana.md (4346 bytes)
-[22:31:45] PROCESSING: 2011-the-giftery.yaml
-[SUCCESS] Generated: hsm_exports/2011-bouri.md (3768 bytes)
-[22:31:47] PROCESSING: 2012-alsson.yaml
-[SUCCESS] Generated: hsm_exports/2010-training-staff.md (4630 bytes)
-[22:31:54] PROCESSING: 2012-arts-mart.yaml
-[SUCCESS] Generated: hsm_exports/2011-resort.md (3215 bytes)
-[22:32:08] PROCESSING: 2012-farah-nile-cruise.yaml
-[SUCCESS] Generated: hsm_exports/2011-the-giftery.md (3466 bytes)
-[22:32:09] PROCESSING: 2012-mystic.yaml
-[SUCCESS] Generated: hsm_exports/2012-arts-mart.md (4877 bytes)
-[22:32:28] PROCESSING: 2012-myzouk.yaml
-[SUCCESS] Generated: hsm_exports/2012-alsson.md (5187 bytes)
-[22:32:35] PROCESSING: 2012-soho-square.yaml
-[SUCCESS] Generated: hsm_exports/2012-farah-nile-cruise.md (3135 bytes)
-[22:32:44] PROCESSING: 2012-who-s-jamming.yaml
-[SUCCESS] Generated: hsm_exports/2012-mystic.md (5247 bytes)
-[22:32:45] PROCESSING: 2012-yadaweya.yaml
-[SUCCESS] Generated: hsm_exports/2012-myzouk.md (1984 bytes)
-[22:32:59] PROCESSING: 2014-bailando.yaml
-[SUCCESS] Generated: hsm_exports/2012-soho-square.md (3686 bytes)
-[22:33:07] PROCESSING: 2014-odious.yaml
-[SUCCESS] Generated: hsm_exports/2012-yadaweya.md (2679 bytes)
-[22:33:10] PROCESSING: 2014-orient-copper-company.yaml
-[SUCCESS] Generated: hsm_exports/2012-who-s-jamming.md (2717 bytes)
-[22:33:13] PROCESSING: 2015-dimitris-cavouras.yaml
-[SUCCESS] Generated: hsm_exports/2014-bailando.md (2611 bytes)
-[22:33:30] PROCESSING: 2015-the-greek-community-of-alexand.yaml
-[SUCCESS] Generated: hsm_exports/2014-odious.md (2517 bytes)
-[22:33:41] PROCESSING: 2015-thomas-safety.yaml
-[SUCCESS] Generated: hsm_exports/2014-orient-copper-company.md (4258 bytes)
-[22:33:44] PROCESSING: 2015-visallc.yaml
-[SUCCESS] Generated: hsm_exports/2015-dimitris-cavouras.md (5365 bytes)
-[22:33:48] PROCESSING: 2016-218tv-net.yaml
-[SUCCESS] Generated: hsm_exports/2015-visallc.md (6092 bytes)
-[22:34:11] PROCESSING: 2016-design-more-international.yaml
-[SUCCESS] Generated: hsm_exports/2016-218tv-net.md (3550 bytes)
-[22:34:15] PROCESSING: 2016-intrade.yaml
-[SUCCESS] Generated: hsm_exports/2015-thomas-safety.md (4319 bytes)
-[22:34:37] PROCESSING: 2016-l3d.yaml
-[SUCCESS] Generated: hsm_exports/2016-design-more-international.md (4576 bytes)
-[22:35:07] PROCESSING: 2016-the-greek-community-of-alexand.yaml
-[SUCCESS] Generated: hsm_exports/2016-l3d.md (2756 bytes)
-[22:35:30] PROCESSING: 2016-zillion-home-buyers.yaml
-[SUCCESS] Generated: hsm_exports/2016-intrade.md (4017 bytes)
-[22:35:31] PROCESSING: 2017-ajel.yaml
-[SUCCESS] Generated: hsm_exports/2017-ajel.md (4244 bytes)
-[22:36:07] PROCESSING: 2017-cafe-supreme.yaml
-[SUCCESS] Generated: hsm_exports/2016-the-greek-community-of-alexand.md (3120 bytes)
-[22:36:11] PROCESSING: 2017-emics.yaml
-[SUCCESS] Generated: hsm_exports/2016-zillion-home-buyers.md (3121 bytes)
-[22:36:16] PROCESSING: 2017-faros-omogenias.yaml
+[12:06:25] PROCESSING: 2004-business-solutions.yaml
+[12:06:25] PROCESSING: 2005-arabic-medical-social-website.yaml
+[12:06:25] PROCESSING: 2006-sykoheil-dentistry-clinic.yaml
+[12:06:25] PROCESSING: 2010-Egyptolution.yaml
+[SUCCESS] Generated: hsm_exports/2006-sykoheil-dentistry-clinic.md (2920 bytes)
+[12:06:50] PROCESSING: 2010-orthodox-botswana.yaml
+[SUCCESS] Generated: hsm_exports/2005-arabic-medical-social-website.md (2987 bytes)
+[12:06:50] PROCESSING: 2010-taziry.yaml
+[SUCCESS] Generated: hsm_exports/2004-business-solutions.md (3924 bytes)
+[12:06:50] PROCESSING: 2010-training-staff.yaml
+[SUCCESS] Generated: hsm_exports/2010-Egyptolution.md (3610 bytes)
+[12:06:59] PROCESSING: 2011-bouri.yaml
+[SUCCESS] Generated: hsm_exports/2010-orthodox-botswana.md (3262 bytes)
+[12:07:12] PROCESSING: 2011-resort.yaml
+[SUCCESS] Generated: hsm_exports/2010-training-staff.md (4411 bytes)
+[12:07:12] PROCESSING: 2011-the-giftery.yaml
 Authentication required. Please visit the URL to log in:
-  https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com&code_challenge=CrI9xuBi-ohjDj-wQbJuvJrQ1pa7jJpxzaQxffvOfc8&code_challenge_method=S256&prompt=consent&redirect_uri=https%3A%2F%2Fantigravity.google%2Foauth-callback&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcclog+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fexperimentsandconfigs+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faicode+openid&state=-yqgzVjuSCnd6ENZBbj8iw
+  https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com&code_challenge=riTH6qaTl8gswqc2WsO-c8QUBe5rfzumnujDhGPffg0&code_challenge_method=S256&prompt=consent&redirect_uri=https%3A%2F%2Fantigravity.google%2Foauth-callback&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcclog+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fexperimentsandconfigs+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faicode+openid&state=Ce3AsjV8WuQHDdKMiUtcbQ
 
 Waiting for authentication (timeout 60s)...
 Or, paste the authorization code here and press Enter:
-[SUCCESS] Generated: hsm_exports/2015-the-greek-community-of-alexand.md (5518 bytes)
-[22:36:32] SKIPPING (exists in selected/): 2017-hsp.yaml
-[22:36:32] PROCESSING: 2017-startup-workshops.yaml
-[SUCCESS] Generated: hsm_exports/2017-faros-omogenias.md (4595 bytes)
-[22:37:18] PROCESSING: 2017-turathuna.yaml
+Authentication required. Please visit the URL to log in:
+  https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com&code_challenge=xph7LLRxUDL4ObUrKH55Oa0Y9_0SivuyCfhVsCjCAm8&code_challenge_method=S256&prompt=consent&redirect_uri=https%3A%2F%2Fantigravity.google%2Foauth-callback&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcclog+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fexperimentsandconfigs+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faicode+openid&state=GYSCy8sHB0ujoVV5VCaZZw
+
+Waiting for authentication (timeout 60s)...
+Or, paste the authorization code here and press Enter:
+[SUCCESS] Generated: hsm_exports/2011-bouri.md (3220 bytes)
+[12:07:28] PROCESSING: 2012-alsson.yaml
+[SUCCESS] Generated: hsm_exports/2010-taziry.md (3570 bytes)
+[12:07:28] PROCESSING: 2012-arts-mart.yaml
+[SUCCESS] Generated: hsm_exports/2012-alsson.md (3855 bytes)
+[12:07:48] PROCESSING: 2012-farah-nile-cruise.yaml
+[SUCCESS] Generated: hsm_exports/2012-arts-mart.md (4314 bytes)
+[12:07:49] PROCESSING: 2012-mystic.yaml
+[SUCCESS] Generated: hsm_exports/2012-farah-nile-cruise.md (3248 bytes)
+[12:08:19] PROCESSING: 2012-myzouk.yaml
+[SUCCESS] Generated: hsm_exports/2012-mystic.md (5127 bytes)
+[12:08:20] PROCESSING: 2012-soho-square.yaml
 Error: authentication timed out.
 Error: authentication failed or timed out
-[FAILED] Agent execution failed for: 2017-cafe-supreme.yaml
-[22:37:24] PROCESSING: 2018-cafe-supreme.yaml
-[SUCCESS] Generated: hsm_exports/2017-startup-workshops.md (3536 bytes)
-[22:37:26] PROCESSING: 2018-osman-co-educational-services.yaml
-Authentication required. Please visit the URL to log in:
-  https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com&code_challenge=SE2ktFaC6Lfrx3-TLmAOaXa3knOdJIgTfF9sIOgiIE4&code_challenge_method=S256&prompt=consent&redirect_uri=https%3A%2F%2Fantigravity.google%2Foauth-callback&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcclog+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fexperimentsandconfigs+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faicode+openid&state=lCPUXmAmSv78tGXUVLg2tQ
-
-Waiting for authentication (timeout 60s)...
-Or, paste the authorization code here and press Enter:
-[SUCCESS] Generated: hsm_exports/2017-emics.md (3942 bytes)
-[22:37:51] PROCESSING: 2018-the-greek-community-of-cairo.yaml
+Error: authentication timed out.
+Error: authentication failed or timed out
+[FAILED] Agent execution failed for: 2011-the-giftery.yaml
+[FAILED] Agent execution failed for: 2011-resort.yaml
+[12:08:25] PROCESSING: 2012-who-s-jamming.yaml
+[12:08:25] PROCESSING: 2012-yadaweya.yaml

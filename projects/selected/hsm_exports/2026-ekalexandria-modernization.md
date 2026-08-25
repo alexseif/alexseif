@@ -1,3 +1,29 @@
+---
+slug: 2026-ekalexandria-modernization
+title: Greek Community of Alexandria (EKA)
+year: 2026
+client_name: Greek Community of Alexandria (EKA)
+client_type: Non-Profit / Community Organization
+project_role: Lead Systems Architect & Full-Stack Developer
+subtitle: Full programmatic technical modernization of a bloated legacy WordPress
+  portal  (dependent on BeTheme, WPBakery, and LayerSlider) into a clean, except...
+tech_stack:
+- PHP
+- SCSS
+- JavaScript
+- Bash
+- WordPress FSE (Block Themes)
+- Gutenberg Block API
+- WP-CLI
+- Nginx (Reverse Proxy & Staging)
+- MySQL
+- Polylang Translation Mapping
+- Playwright (Visual Regression)
+- Agentic AI Orchestration
+- AST Block Serialization Parser
+selected: true
+---
+
 # Lead Software Architect | Greek Community of Alexandria (EKA) | 2026
 
 ## Executive Summary & Architectural Reframe

@@ -1,3 +1,16 @@
+---
+slug: 2012-yadaweya
+title: MITCHDESIGNS
+year: 2012
+client_name: MITCHDESIGNS
+client_type: Contracted /OutSourcing
+project_role: Consulting
+subtitle: Consulting project for YADAWEYA, focusing on providing strategic guidance
+  and support.
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | MITCHDESIGNS | 2012
 
 ## Executive Summary & Architectural Context

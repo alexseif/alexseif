@@ -1,3 +1,21 @@
+---
+slug: 2021-salama
+title: Salama Cooperative Insurance Company
+year: 2021
+client_name: Salama Cooperative Insurance Company
+client_type: Fintech / Regulated Financial Services
+project_role: Senior Software Engineer via iSoft
+subtitle: Web registration gateway for Shariah-compliant cooperative  car insurance
+  in Saudi Arabia. Served as the foundational  architectural blueprint — valid...
+tech_stack:
+- PHP
+- Drupal Enterprise
+- Load Balancer
+- MySQL
+- REST API
+selected: true
+---
+
 Lead Software Architect | Salama Cooperative Insurance Company | 2021
 
 ## 1. Architectural Context & Scope

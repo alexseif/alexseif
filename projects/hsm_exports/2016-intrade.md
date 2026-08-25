@@ -1,3 +1,16 @@
+---
+slug: 2016-intrade
+title: Alex Seif
+year: 2016
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+subtitle: is an Import & Export firm with global reach, that aims to publicise their
+  establishment, products and services, in addition to a brochure.
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Intrade / Independent | 2016
 
 ## Executive Summary & Architectural Context

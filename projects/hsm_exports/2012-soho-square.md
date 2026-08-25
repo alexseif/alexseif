@@ -1,3 +1,16 @@
+---
+slug: 2012-soho-square
+title: MITCHDESIGNS
+year: 2012
+client_name: MITCHDESIGNS
+client_type: Contracted /OutSourcing
+project_role: N/A
+subtitle: Event eCommerce addon for SOHO SQUARE, developed as part of a larger event
+  management platform.
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | MITCHDESIGNS | 2012
 
 ## Executive Summary & Architectural Context

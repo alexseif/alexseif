@@ -1,3 +1,19 @@
+---
+slug: 2020-dubai-police-academy
+title: Dubai Police Academy
+year: 2021
+client_name: Dubai Police Academy
+client_type: Public Sector / Law Enforcement
+project_role: Technical Lead (via iSoft)
+subtitle: Ported and upgraded an existing compliance-driven LMS codebase for external
+  delivery to a third-party DevOps team.
+tech_stack:
+- PHP
+- Moodle LMS
+- MySQL
+selected: true
+---
+
 # Lead Software Architect | iSoft | 2021
 
 ## Executive Summary

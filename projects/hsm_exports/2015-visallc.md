@@ -1,3 +1,15 @@
+---
+slug: 2015-visallc
+title: Alex Seif
+year: 2015
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+subtitle: 2015 - today (MeVisa, VisaLLC & TravelBox.ru, miniERP)
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Independent Technical Consultant | 2015 – Present
 
 ## Executive Summary

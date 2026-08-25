@@ -1,3 +1,21 @@
+---
+slug: 2024-sef-academy-sea
+title: Meem Development (SEF Academy)
+year: 2024
+client_name: Meem Development (SEF Academy)
+client_type: EdTech / Corporate Training
+project_role: Integration Architect & Technical Lead
+subtitle: Moodle LMS deployment requiring SSO federation, infrastructure  stabilization,
+  and cross-platform service integration for a  corporate academy environ...
+tech_stack:
+- PHP
+- Moodle
+- Keycloak
+- Linux Server
+- MySQL
+selected: true
+---
+
 # Lead Software Architect | Meem Development | 2024
 
 ## Executive Overview & Architectural Scope

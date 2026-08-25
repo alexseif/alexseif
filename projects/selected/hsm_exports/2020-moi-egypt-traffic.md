@@ -1,3 +1,21 @@
+---
+slug: 2020-moi-egypt-traffic
+title: Egyptian Ministry of Interior (Traffic Police Department)
+year: 2021
+client_name: Egyptian Ministry of Interior (Traffic Police Department)
+client_type: Public Sector — Federal
+project_role: Senior Software Engineer & Systems Architect via iSoft
+subtitle: Mandatory driver instruction and certification LMS for all  civilian and
+  commercial heavy-machinery license applicants  across Egypt. Operated entirel...
+tech_stack:
+- PHP 7.0.33
+- Bash
+- Moodle LMS
+- Oracle Linux 7.6 (air-gapped, on-premise state infrastructure)
+- MySQL 5.7
+selected: true
+---
+
 # Lead Software Architect | iSoft | 2021 – 2022
 
 ## Executive Overview & Architectural Context

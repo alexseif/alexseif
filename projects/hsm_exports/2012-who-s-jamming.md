@@ -1,3 +1,15 @@
+---
+slug: 2012-who-s-jamming
+title: MITCHDESIGNS
+year: 2012
+client_name: MITCHDESIGNS
+client_type: Contracted /OutSourcing
+project_role: Consulting
+subtitle: Consulting project for MITCHDESIGNS.
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | MITCHDESIGNS | 2012
 
 ## Architectural Context & Engagement Overview

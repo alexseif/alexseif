@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Network, Eye, ShieldAlert, GraduationCap, ArrowRight } from "lucide-react";
+import { FileCheck, ShieldCheck, Lock, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, stagger } from "./animations";
 import { openBrevo } from "./utils";
@@ -9,29 +9,29 @@ import { openBrevo } from "./utils";
 export const NGOPartnerSection = () => {
   const deliverables = [
     {
-      icon: Network,
-      title: "Architecture & Strategy",
-      description: "Fractional technical leadership to design decoupled architectures, define robust API boundaries, and establish scalable engineering roadmaps."
+      icon: FileCheck,
+      title: "Donor & Transparency Portals",
+      description: "High-integrity web platforms built for UN, GIZ, and EU reporting standards and public donor accountability."
     },
     {
-      icon: Eye,
-      title: "Vendor & Delivery Oversight",
-      description: "Independent technical auditing of third-party agencies, enforcing code quality, and ensuring business requirements translate into working infrastructure."
+      icon: ShieldCheck,
+      title: "Agency & Vendor Oversight",
+      description: "Independent technical review of third-party agency deliverables, validating code quality and data integrity before sign-off."
     },
     {
-      icon: ShieldAlert,
-      title: "Legacy Infrastructure Rescue",
-      description: "Remediation of sluggish, undocumented legacy monoliths. Structuring zero-downtime migrations and eliminating critical race conditions."
+      icon: Lock,
+      title: "Data Sovereignty & Security",
+      description: "Multilingual systems engineered with strict data sovereignty, GDPR compliance, and perimeter security zoning."
     },
     {
-      icon: GraduationCap,
-      title: "Knowledge Transfer",
-      description: "Mentoring internal teams, establishing deterministic Git workflows, and mitigating key-person risks across your engineering organization."
+      icon: Clock,
+      title: "Dedicated System Retainer",
+      description: "One experienced architect who knows your codebase deeply and is on-call when critical operational needs arise."
     }
   ];
 
   return (
-    <section className="py-20 px-6 relative bg-card/10">
+    <section className="py-20 px-6 relative bg-card/10 border-t border-border/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
@@ -40,45 +40,48 @@ export const NGOPartnerSection = () => {
           variants={stagger}
           className="space-y-16"
         >
-          <motion.div variants={fadeInUp} className="text-center space-y-6 max-w-3xl mx-auto">
+          {/* Header */}
+          <motion.div variants={fadeInUp} className="text-center space-y-4 max-w-3xl mx-auto">
+            <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
+              // Embedded Technical Partnership
+            </p>
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              FOR NGOs SPECIFICALLY
+              For NGOs & Non-Profits
             </h2>
-            <div className="text-foreground/80 leading-relaxed text-sm md:text-base space-y-4 text-left">
-              <p>
-                You have a transparency platform, a donor portal, or a data system that was built by whoever was available at the time. It works until it doesn't. Nobody owns it technically.
-              </p>
-              <p>
-                I've worked with international NGOs reporting to UN, GIZ, and EU institutional donors. I understand data sovereignty, multilingual requirements, geographic data visualization, and the reality that your budget isn't elastic.
-              </p>
-              <p>
-                I offer retainer-based technical partnership — not a project quote, not a consultancy firm. One person who knows your system and is reachable when it matters.
-              </p>
-            </div>
+            <p className="text-foreground/80 font-mono text-sm md:text-base leading-relaxed text-center pt-2">
+              You have a transparency portal, donor reporting dashboard, or data system that lacks a dedicated technical lead. I provide fractional, retainer-based technical ownership — ensuring data sovereignty, compliance with UN/EU/GIZ institutional donors, and vendor accountability without agency overhead.
+            </p>
           </motion.div>
 
+          {/* 4 Pillars Grid */}
           <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {deliverables.map((item, index) => (
-              <div key={index} className="bg-background border border-border/50 p-6 space-y-4 group hover:border-primary/50 transition-colors">
-                <div className="h-10 w-10 bg-card/50 flex items-center justify-center rounded-sm">
-                  <item.icon className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+              <div
+                key={index}
+                className="bg-background border border-border/50 p-6 space-y-4 group hover:border-primary/50 transition-colors flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="h-10 w-10 bg-primary/10 flex items-center justify-center rounded-sm border border-primary/20">
+                    <item.icon className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-foreground font-sans font-medium uppercase tracking-wider text-sm">
+                    {item.title}
+                  </h3>
+                  <p className="text-foreground/70 font-mono text-xs leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-foreground font-sans font-medium uppercase tracking-wider text-sm">
-                  {item.title}
-                </h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  {item.description}
-                </p>
               </div>
             ))}
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="flex justify-center pt-8">
+          {/* CTA */}
+          <motion.div variants={fadeInUp} className="flex justify-center pt-4">
             <Button
               onClick={openBrevo}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono tracking-wider px-8 py-6 group"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-xs tracking-widest uppercase px-8 py-6 rounded-sm group shadow-md"
             >
-              Start a Conversation
+              Discuss Your Portal or Program
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>

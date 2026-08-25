@@ -15,9 +15,9 @@ const stats: Stat[] = [
     subtext: "Digital web systems serving citizens directly.",
   },
   {
-    count: "9",
-    label: "Neighborhood Countries",
-    subtext: "Active digital footprints across 5 continents.",
+    count: "55+",
+    label: "Architectural Systems",
+    subtext: "Documented enterprise deployments and engineering case studies.",
   },
   {
     count: "40M+",

@@ -1,3 +1,15 @@
+---
+slug: 2014-odious
+title: Alex Seif
+year: 2014
+client_name: Alex Seif
+client_type: Direct
+project_role: N/A
+subtitle: Digitally delivering their music to their fanbase.
+tech_stack: []
+selected: false
+---
+
 Lead Software Architect | Alex Seif | 2014
 
 ---

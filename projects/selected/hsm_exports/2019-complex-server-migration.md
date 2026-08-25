@@ -1,3 +1,15 @@
+---
+slug: 2019-complex-server-migration
+title: AHCC
+year: 2019
+client_name: AHCC
+client_type: Contract
+project_role: Software Engineer
+subtitle: N/A
+tech_stack: []
+selected: true
+---
+
 Lead Software Architect | Independent Technical Consultant | 2019
 
 ### System & Engineering Context

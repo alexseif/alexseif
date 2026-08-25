@@ -1,83 +1,94 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { Metadata } from 'next';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Software Architect & NGO Technical Partner — Resume',
-  description: 'Resume of Alex Seif, a Software Architect & NGO Technical Partner specializing in high-concurrency PHP/Symfony ecosystems, legacy database remediation, and production AI integration.',
+  title: "Alex Seif | Senior Software Architect & Principal Systems Engineer — Resume",
+  description:
+    "Resume of Alex Seif, a Senior Software Architect specializing in high-concurrency PHP/Symfony ecosystems, legacy database remediation, distributed systems, and production AI integration.",
 };
 
-import PrintButton from './PrintButton';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import PrintButton from "./PrintButton";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 // Recursively extract plain text from any React node tree.
-// Required because ReactMarkdown passes inline nodes (bold, italic) as
-// React elements, not strings — .toString() would return "[object Object]".
 function flattenChildren(node: React.ReactNode): string {
-  if (typeof node === 'string' || typeof node === 'number') return String(node);
-  if (Array.isArray(node)) return node.map(flattenChildren).join('');
-  if (node && typeof node === 'object' && 'props' in node) {
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(flattenChildren).join("");
+  if (node && typeof node === "object" && "props" in node) {
     return flattenChildren((node as any).props.children);
   }
-  return '';
+  return "";
 }
 
-// Simple utility to format the content specifically as requested
 function parseResumeContent(content: string) {
   const sections = content.split(/(?=^## )/m);
 
-  let summary = '';
-  let stack = '';
-  let experience = '';
-  let credentials = '';
+  let summary = "";
+  let stack = "";
+  let portfolio = "";
+  let experience = "";
+  let credentials = "";
 
-  sections.forEach(section => {
-    if (section.trim().match(/^## Professional Profile/i)) {
-      summary = section.replace(/^## Professional Profile/mi, '').trim();
-    } else if (section.trim().match(/^## Technical Stack Inventory/i)) {
-      stack = section.replace(/^## Technical Stack Inventory/mi, '').trim();
-    } else if (section.trim().match(/^## Selected Professional Experience/i)) {
-      experience = section.replace(/^## Selected Professional Experience/mi, '').trim();
-    } else if (section.trim().match(/^## Education & Foundations/i)) {
-      credentials = section.replace(/^## Education & Foundations/mi, '').trim();
+  sections.forEach((section) => {
+    const trimmed = section.replace(/---\s*$/, "").trim();
+    if (trimmed.match(/^## Professional (Summary|Profile)/i)) {
+      summary = trimmed.replace(/^## Professional (Summary|Profile)/mi, "").replace(/---\s*$/, "").trim();
+    } else if (trimmed.match(/^## Technical Stack/i)) {
+      stack = trimmed.replace(/^## Technical Stack.*$/mi, "").replace(/---\s*$/, "").trim();
+    } else if (
+      trimmed.match(/^## (Featured Architectural Engagements|Selected Architectural Engagements|Architecture Portfolio)/i)
+    ) {
+      portfolio = trimmed
+        .replace(/^## (Featured Architectural Engagements|Selected Architectural Engagements|Architecture Portfolio).*$/mi, "")
+        .replace(/---\s*$/, "")
+        .trim();
+    } else if (trimmed.match(/^## Professional Experience/i)) {
+      experience = trimmed.replace(/^## Professional Experience/mi, "").replace(/---\s*$/, "").trim();
+    } else if (trimmed.match(/^## Education/i)) {
+      credentials = trimmed.replace(/^## Education.*$/mi, "").replace(/---\s*$/, "").trim();
     }
   });
 
-  return { summary, stack, experience, credentials };
+  return { summary, stack, portfolio, experience, credentials };
 }
 
 export default function ResumePage() {
-  const filePath = path.join(process.cwd(), '../Resume.md');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const filePath = path.join(process.cwd(), "../Resume.md");
+  const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const { summary, stack, experience, credentials } = parseResumeContent(content);
-  const processedExperience = experience.replace(/^\*\*(.*?)\*\*\s*\|\s*(.*?)$/gm, '###### $1 | $2');
+  const { summary, stack, portfolio, experience, credentials } =
+    parseResumeContent(content);
+  const processedExperience = experience.replace(
+    /^\*\*(.*?)\*\*\s*\|\s*(.*?)$/gm,
+    "###### $1 | $2"
+  );
 
   return (
     <div className="resume-container min-h-screen bg-gray-100 py-10 print:py-0 print:bg-white flex justify-center">
       <div className="resume-paper relative w-full max-w-4xl bg-white shadow-lg print:shadow-none p-12 print:p-0">
-
         {/* Floating Utility Action */}
         <PrintButton />
 
-        <style dangerouslySetInnerHTML={{
-          __html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           @media print {
             body { 
               background: #fff; 
               color: #000; 
-              font-size: 11pt; 
-              line-height: 1.4; 
+              font-size: 10pt; 
+              line-height: 1.35; 
               margin: 0; 
               padding: 0; 
               -webkit-print-color-adjust: exact;
             }
             @page { 
               size: A4; 
-              margin: 20mm; 
+              margin: 18mm 16mm; 
             }
             nav, button, .no-print { 
               display: none !important; 
@@ -85,104 +96,229 @@ export default function ResumePage() {
             .page-break { 
               page-break-before: always; 
             }
-            /* Ensure clean typography */
             * {
               font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
             }
             .resume-paper {
               max-width: 100% !important;
             }
+            section {
+              page-break-inside: avoid;
+            }
           }
-        `}} />
+        `,
+          }}
+        />
 
         <div className="font-sans text-gray-900 leading-relaxed max-w-[800px] mx-auto print:mx-0 print:max-w-none">
           {/* Header Block */}
-          <header className="border-b-2 border-gray-900 pb-6 mb-6">
-            <h1 className="text-4xl font-bold tracking-tight mb-1">{data.name}</h1>
-            <h2 className="text-xl text-gray-700 font-medium mb-4">{data.title}</h2>
+          <header className="border-b-2 border-gray-900 pb-5 mb-5">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1 text-gray-900">
+              {data.name}
+            </h1>
+            <h2 className="text-lg md:text-xl text-gray-700 font-semibold mb-3">
+              {data.title}
+            </h2>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-gray-600">
-              <a href={"mailto:" + data.email} className="hover:text-black">{data.email}</a>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-gray-600 font-medium">
+              <a href={"mailto:" + data.email} className="hover:text-black transition-colors">
+                {data.email}
+              </a>
+              <span>•</span>
               <span>{data.phone}</span>
+              <span>•</span>
               <span>{data.location}</span>
-              <a href={data.linkedin} target="_blank" rel="noreferrer" className="hover:text-black">linkedin.com/in/alexseif</a>
-              <a href={data.github} target="_blank" rel="noreferrer" className="hover:text-black">github.com/alexseif</a>
-              <a href={data.website} target="_blank" rel="noreferrer" className="hover:text-black">alexseif.com</a>
+              <span>•</span>
+              <a
+                href={data.website || "https://alexseif.com"}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-black font-semibold text-gray-900 underline transition-colors"
+              >
+                alexseif.com
+              </a>
             </div>
           </header>
 
-          {/* Summary Block */}
-          <section className="mb-8 border-b-2 border-gray-900 pb-8">
-            <p className="text-justify font-medium text-[15px] leading-relaxed mb-4">
-              {summary}
-            </p>
-          </section>
+          {/* Professional Summary */}
+          {summary && (
+            <section className="mb-6 border-b border-gray-200 pb-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-2 font-mono">
+                Professional Summary
+              </h3>
+              <p className="text-justify font-normal text-[14px] leading-relaxed text-gray-800">
+                {summary}
+              </p>
+            </section>
+          )}
 
+          {/* Technical Stack & Competencies */}
+          {stack && (
+            <section className="mb-6 border-b border-gray-200 pb-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 font-mono">
+                Technical Stack & Architecture Competencies
+              </h3>
+              <div className="text-sm resume-competencies">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    ul: ({ node, ...props }) => (
+                      <ul className="space-y-2 mb-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li
+                        className="flex flex-col sm:flex-row print:flex-row leading-relaxed text-gray-800 text-[13.5px]"
+                        {...props}
+                      />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong
+                        className="sm:w-2/5 print:w-2/5 shrink-0 sm:pr-4 print:pr-4 font-bold text-gray-900"
+                        {...props}
+                      />
+                    ),
+                  }}
+                >
+                  {stack}
+                </ReactMarkdown>
+              </div>
+            </section>
+          )}
 
+          {/* Featured Architectural Engagements */}
+          {portfolio && (
+            <section className="mb-6 border-b border-gray-200 pb-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 font-mono">
+                Featured Architectural Engagements (Deep Dives)
+              </h3>
+              <div className="text-sm resume-portfolio">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    ul: ({ node, ...props }) => (
+                      <ul className="space-y-3 mb-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="leading-relaxed text-justify text-gray-800 text-[13.5px]" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-bold text-gray-900" {...props} />
+                    ),
+                    em: ({ node, ...props }) => (
+                      <em className="italic text-gray-600 text-xs" {...props} />
+                    ),
+                    a: ({ node, ...props }) => (
+                      <a
+                        className="text-gray-900 font-semibold underline hover:text-black"
+                        target="_blank"
+                        rel="noreferrer"
+                        {...props}
+                      />
+                    ),
+                  }}
+                >
+                  {portfolio}
+                </ReactMarkdown>
+              </div>
+            </section>
+          )}
 
-          {/* Technical Stack Matrix */}
-          <section className="mb-8">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-3 border-b border-gray-300 pb-1">Technical Stack Inventory</h3>
-            <div className="text-sm resume-competencies">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  h3: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-800 uppercase tracking-wide mt-6 mb-3 border-b border-gray-100 pb-1" {...props} />,
-                  ul: ({ node, ...props }) => <ul className="space-y-2 mb-4" {...props} />,
-                  li: ({ node, ...props }) => <li className="flex flex-col sm:flex-row print:flex-row leading-relaxed" {...props} />,
-                  strong: ({ node, ...props }) => <strong className="sm:w-1/3 print:w-1/3 shrink-0 sm:pr-4 print:pr-4 font-bold text-gray-900" {...props} />
-                }}
-              >
-                {stack}
-              </ReactMarkdown>
-            </div>
-          </section>
+          {/* Professional Experience */}
+          {experience && (
+            <section className="mb-6 border-b border-gray-200 pb-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4 font-mono">
+                Professional Experience
+              </h3>
+              <div className="space-y-6 text-sm resume-experience">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h3: ({ node, ...props }) => (
+                      <h4
+                        className="font-bold text-[15px] text-gray-900 uppercase tracking-wide"
+                        {...props}
+                      />
+                    ),
+                    h6: ({ node, ...props }) => {
+                      const text = flattenChildren(props.children);
+                      const parts = text.split(" | ");
+                      const timeline = parts.length > 1 ? parts[parts.length - 1] : "";
+                      const entity = parts.slice(0, parts.length - 1).join(" | ");
+                      return (
+                        <div className="flex justify-between items-baseline mb-2.5 pb-1.5 border-b border-gray-100">
+                          <div className="font-semibold text-gray-800 text-[13.5px]">{entity}</div>
+                          <div className="text-right font-medium text-gray-600 text-xs whitespace-nowrap ml-4">
+                            {timeline}
+                          </div>
+                        </div>
+                      );
+                    },
+                    h4: ({ node, ...props }) => (
+                      <h5
+                        className="font-bold text-xs text-gray-800 mt-4 mb-2 uppercase tracking-wider"
+                        {...props}
+                      />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p
+                        className="text-[13.5px] text-gray-800 leading-relaxed mb-2.5 text-justify"
+                        {...props}
+                      />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul
+                        className="list-disc pl-5 space-y-2 text-justify text-[13.5px] mb-3 text-gray-800"
+                        {...props}
+                      />
+                    ),
+                    li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-semibold text-gray-900" {...props} />
+                    ),
+                  }}
+                >
+                  {processedExperience}
+                </ReactMarkdown>
+              </div>
+            </section>
+          )}
 
-          {/* Experience Hierarchy */}
-          <section className="mb-8">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-6 border-b border-gray-300 pb-1">Professional Experience</h3>
-            <div className="space-y-8 text-sm resume-experience">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  h3: ({ node, ...props }) => <h4 className="font-bold text-base text-gray-900 uppercase tracking-wide" {...props} />,
-                  h6: ({ node, ...props }) => {
-                    const text = flattenChildren(props.children);
-                    const parts = text.split(' | ');
-                    const timeline = parts.length > 1 ? parts[parts.length - 1] : '';
-                    const entity = parts.slice(0, parts.length - 1).join(' | ');
-                    return (
-                      <div className="flex justify-between items-baseline mb-3 pb-2 border-b border-gray-100">
-                        <div className="font-medium text-gray-700">{entity}</div>
-                        <div className="text-right font-medium text-gray-600 whitespace-nowrap ml-4">{timeline}</div>
-                      </div>
-                    );
-                  },
-                  h4: ({ node, ...props }) => <h5 className="font-bold text-sm text-gray-800 mt-5 mb-2 uppercase tracking-wide" {...props} />,
-                  p: ({ node, ...props }) => <p className="text-sm text-gray-800 leading-relaxed mb-3 text-justify" {...props} />,
-                  ul: ({ node, ...props }) => <ul className="list-disc pl-5 space-y-2 text-justify text-sm mb-4" {...props} />,
-                  li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
-                  strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />
-                }}
-              >
-                {processedExperience}
-              </ReactMarkdown>
-            </div>
-          </section>
-
-          {/* Credentials */}
+          {/* Education & Credentials */}
           {credentials && (
-            <section className="mb-8">
-              <h3 className="text-lg font-bold uppercase tracking-wider mb-4 border-b border-gray-300 pb-1">Credentials & Background</h3>
+            <section className="mb-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 font-mono">
+                Education & Foundations
+              </h3>
               <div className="text-sm">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    p: ({ node, ...props }) => <p className="text-sm text-gray-800 leading-relaxed mb-3 text-justify" {...props} />,
-                    ul: ({ node, ...props }) => <ul className="list-disc pl-5 space-y-3 text-justify text-sm mb-4" {...props} />,
-                    li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
-                    strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />,
-                    em: ({ node, ...props }) => <em className="italic text-gray-600 block mt-1" {...props} />,
+                    p: ({ node, ...props }) => (
+                      <p
+                        className="text-[13.5px] text-gray-800 leading-relaxed mb-2 text-justify"
+                        {...props}
+                      />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul
+                        className="list-disc pl-5 space-y-2 text-justify text-[13.5px] mb-3"
+                        {...props}
+                      />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="leading-relaxed text-gray-800" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-bold text-gray-900" {...props} />
+                    ),
+                    a: ({ node, ...props }) => (
+                      <a
+                        className="text-gray-900 font-semibold underline hover:text-black"
+                        target="_blank"
+                        rel="noreferrer"
+                        {...props}
+                      />
+                    ),
                   }}
                 >
                   {credentials}
@@ -191,16 +327,19 @@ export default function ResumePage() {
             </section>
           )}
 
-          {/* Footer Link Attachment */}
-          <footer className="mt-12 pt-6 border-t border-gray-200 print:border-gray-900 grid grid-cols-1">
-            <p className="text-xs text-gray-400 print:text-black print:text-[10pt] leading-relaxed text-justify">
-              Note: This document serves as a high-density chronological technical execution summary. To review the complete, interactive multi-decade project database, raw input validation structures, and detailed architectural use-case records, access the dynamic digital directory via:{' '}
-              <a href="https://alexseif.com/case-studies" className="text-gray-500 hover:text-black print:text-black font-medium underline print:no-underline">
+          {/* Footer Note */}
+          <footer className="mt-8 pt-4 border-t border-gray-200 print:border-gray-900">
+            <p className="text-xs text-gray-500 print:text-black print:text-[9pt] leading-relaxed text-justify">
+              <strong>Single Source of Truth:</strong> Complete 20-year multi-project architectural
+              vault, systems diagrams, and engineering dossiers available at:{" "}
+              <a
+                href="https://alexseif.com/case-studies"
+                className="text-gray-900 hover:text-black print:text-black font-semibold underline print:no-underline"
+              >
                 https://alexseif.com/case-studies
               </a>
             </p>
           </footer>
-
         </div>
       </div>
     </div>

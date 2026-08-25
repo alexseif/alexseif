@@ -1,3 +1,20 @@
+---
+slug: 2011-agazatmasr
+title: Agazat Masr (Tourico)
+year: 2011
+client_name: Agazat Masr (Tourico)
+client_type: Tourism & Hospitality
+project_role: Software Architect via Mitchdesigns
+subtitle: Egyptian domestic tourism platform inheriting the pricing  engine and database
+  abstraction layer from Smashholidays,  extended to aggregate packages, ...
+tech_stack:
+- PHP
+- Custom MVC Framework
+- MySQL
+- Inherited Pricing Schema from Smashholidays
+selected: true
+---
+
 # Lead Software Architect | Agazat Masr (Tourico) | 2011 – 2014
 
 ## Executive Summary & Client Context

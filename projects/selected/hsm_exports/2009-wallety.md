@@ -1,3 +1,23 @@
+---
+slug: 2009-wallety
+title: Wallety
+year: 2009
+client_name: Wallety
+client_type: Fintech Enterprise
+project_role: Co-Founder & Chief Technology Officer (CTO)
+subtitle: Engineered Egypt’s first comprehensive secure online payment gateway from
+  the ground up, addressing national banking infrastructure challenges related...
+tech_stack:
+- PHP
+- Symfony Framework
+- AWS Ecosystem
+- Load Balancers
+- MySQL (Master-Slave)
+- Asynchronous Queues
+- CLI Daemons
+selected: true
+---
+
 # Lead Software Architect | Wallety | 2009
 
 ## Executive Summary & Architectural Context

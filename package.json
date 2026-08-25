@@ -4,7 +4,8 @@
   "description": "Validation pipeline for resume and project data",
   "scripts": {
     "validate:projects": "ajv validate -s schemas/project_schema.json -d \"projects/*.yaml\"",
-    "validate:experience": "ajv validate -s schemas/experience_schema.json -d \"experience/*.yaml\""
+    "validate:experience": "ajv validate -s schemas/experience_schema.json -d \"experience/*.yaml\"",
+    "build:pdf": "python3 scripts/generate_pdf.py"
   },
   "dependencies": {
     "ajv-cli": "^5.0.0",

@@ -1,3 +1,22 @@
+---
+slug: 2009-smash-holidays
+title: Smash Holidays
+year: 2009
+client_name: Smash Holidays
+client_type: Tour Operator
+project_role: Lead Systems Architect via Mitchdesigns
+subtitle: Custom travel booking and inventory engine built before  modern booking
+  APIs and Composer existed. Hotels lacked  universal GDS connectivity, requirin...
+tech_stack:
+- PHP
+- Custom MVC Framework (pre-Composer)
+- Media Temple (shared hosting)
+- MySQL
+- Optimized Views
+- Relational Pricing Schema
+selected: true
+---
+
 # Lead Software Architect | Mitchdesigns | 2009 – 2012
 
 ## Executive Summary & Client Context

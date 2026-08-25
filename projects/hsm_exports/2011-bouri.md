@@ -1,49 +1,68 @@
-# Lead Software Architect | Bouri Center (via MitchDesigns) | 2011 – 2013
+---
+slug: 2011-bouri
+title: Bouri Center
+year: 2011
+client_name: Bouri Center
+client_type: Retail Enterprise
+project_role: Software Architect (via MitchDesigns)
+subtitle: Architected a custom e-commerce platform and synchronization pipeline to
+  integrate a web-facing storefront with a highly restrictive legacy corporate ...
+tech_stack:
+- PHP
+- JavaScript
+- Custom PHP MVC
+- Symfony
+- Rackspace Cloud
+- MySQL
+- Asynchronous CSV Ingestion
+- REST API Specifications
+selected: false
+---
 
-## Architectural Context
-Architected and delivered a resilient e-commerce platform and asynchronous data synchronization pipeline to interface a modern web-facing retail storefront with a highly restrictive, legacy corporate Enterprise Resource Planning (ERP) system. The legacy architecture presented significant structural obstacles and vendor constraints, requiring custom middleware and isolated database modeling to ensure transactional integrity, system uptime, and scalable data ingestion.
+# Lead Software Architect | MitchDesigns | 2011 – 2013
+
+## Client Overview & Architectural Context
+* **Client:** Bouri Center
+* **Domain:** Retail Enterprise
+* **Role:** Lead Software Architect (via MitchDesigns)
+* **Scope:** Architectural design and implementation of a custom e-commerce platform and synchronization pipeline to integrate a web-facing storefront with a highly restrictive legacy corporate ERP system.
 
 ---
 
-## Technical Ecosystem & Stack
-
-* **Languages & Core Runtimes:** PHP, JavaScript (ES5+)
-* **Frameworks & Architecture:** Custom PHP MVC, Symfony Component Infrastructure, OOP Principles
-* **Infrastructure & Cloud:** Rackspace Cloud Infrastructure
-* **Data Layer & Protocol Specifications:** MySQL (Relational Schema Optimization), Asynchronous CSV Ingestion Pipeline, RESTful API Specification
+## Technical Stack & Infrastructure Specification
+* **Primary Languages:** PHP, JavaScript
+* **Framework Architecture:** Custom PHP MVC, Symfony Framework Components
+* **Cloud Infrastructure:** Rackspace Cloud Infrastructure
+* **Data Layers & Protocols:** MySQL, Asynchronous CSV Ingestion Pipelines, REST API Specifications
 
 ---
 
-## Core Competencies
+## Core Technical Competencies
 * Legacy System Remediation
-* Requirement Elicitation & Domain Analysis
-* Relational Schema Modeling & Isolation
-* Object-Oriented Architecture (OOP)
-* Rapid Application Development (RAD) Tooling
+* Requirement Elicitation & Domain Modeling
+* Relational Schema Modeling
+* Object-Oriented Programming (OOP) Architecture
+* Rapid Application Development (RAD) Framework Design
 
 ---
 
-## Quantifiable Engineering & Business Impact
+## Engineering Implementation & System Architecture
 
-1. **Legacy ERP Structural Remediation**
-   * **Challenge:** Complete vendor inertia and structural immutability from an uncooperative third-party ERP provider threatened project viability.
-   * **Architectural Solution:** Designed a virtualized node pattern within the e-commerce relational MySQL schema. Modeled the web store layer as an isolated, standalone physical retail branch featuring a dedicated virtual inventory ledger. This abstracted legacy system limitations while preventing inventory state corruption.
+### 1. Legacy ERP Integration & Virtual Ledger Modeling
+To bypass structural blocking from an uncooperative third-party ERP vendor, the e-commerce database layer was modeled to simulate a standalone physical retail branch node within the corporate domain. This architecture introduced a dedicated virtual inventory ledger that insulated transaction state processing from legacy database constraints.
 
-2. **Human-in-the-Loop Data Ingestion & Sanitization**
-   * **Challenge:** High error rates and schema inconsistency in legacy product data exports routinely broke production databases.
-   * **Architectural Solution:** Engineered an asynchronous, human-in-the-loop data ingestion pipeline. Implemented automated validation rules and staging tables to audit, sanitize, and remediate fragmented CSV product feeds prior to final production database insertion, reducing catalog sync failures to 0%.
+### 2. Asynchronous Human-in-the-Loop Remediation Pipeline
+Engineered an asynchronous data ingestion engine designed to process, sanitize, and validate fragmented legacy product exports prior to database insertion. The pipeline incorporated human-in-the-loop remediation triggers to capture and rectify malformed data attributes without interrupting background ingestion queue execution.
 
-3. **Application Development Velocity Acceleration**
-   * **Challenge:** Tight delivery schedules required concurrent development of database schemas and complex domain logic.
-   * **Architectural Solution:** Developed a custom Rapid Application Development (RAD) code generator enforcing strict OOP standards. The tool auto-generated data access layers and boilerplate controller code directly from schema alterations, parallelizing database modeling with application logic execution.
+### 3. Accelerated Application Framework & RAD Tooling
+Designed and deployed a custom Rapid Application Development (RAD) tool adhering strictly to object-oriented programming (OOP) standards. The engine parallelized relational schema migrations directly with application logic execution, significantly accelerating iteration cycles while maintaining strict code quality and architectural integrity.
 
-4. **Transaction & Workflow Protocol Standardization**
-   * **Challenge:** Lack of standardized interfaces between retail systems risked double-allocations and unhandled order states.
-   * **Architectural Solution:** Authored formal REST API specifications governing transactional inventory holds, order state transitions, shipping-to-cash workflows, and bidirectional inventory synchronization across the client's broader IT environment.
+### 4. Inter-System API Specifications & Transaction Governance
+Authored technical REST API specifications to govern cross-system workflows between the digital storefront and enterprise back-office infrastructure. Specifications defined precise state transitions for transactional holds, shipping-to-cash workflows, and asynchronous inventory reconciliation loops.
 
 ---
 
-## Risk Mitigation & Edge-Case Management
+## Edge Case Management & Operational Governance
 
-* **Vendor Lock-In & Fault Isolation:** Mitigated high ERP API failure rates by implementing a decoupled middleware architecture. Insulated the front-end user experience from back-end unavailability, allowing order capture to persist uninterrupted during upstream ERP outages.
-* **Infrastructure Governance:** Enforced strict cloud-only deployment standards on Rackspace Cloud, refusing legacy third-party shared hosting constraints to guarantee baseline throughput, low latency SLAs, and scalable compute resource allocation.
+* **Subsystem Isolation against Vendor Failure:** Overcame severe third-party vendor lock-in by implementing decoupled middleware architectures. Front-end consumer interfaces were insulated from upstream ERP API downtime and latency spikes, ensuring continuous availability.
+* **Strict Infrastructure Governance:** Enforced cloud-only deployment policies utilizing Rackspace Cloud infrastructure against client proposals for substandard shared hosting providers, ensuring baseline operational metrics, predictable I/O throughput, and security compliance.

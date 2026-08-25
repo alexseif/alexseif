@@ -1,3 +1,40 @@
+---
+slug: 2026-barincairo
+title: barincairo.com
+year: 2026
+client_name: barincairo.com
+client_type: Digital Cartographic Platform & Geospatial Directory
+project_role: Software Architect & Lead Full-Stack Engineer
+subtitle: A living cartographic index and web application dedicated to historic bars,
+  rooftops, and  nightlife institutions in Downtown Cairo (Wust El Balad). A...
+tech_stack:
+- TypeScript
+- Python 3.12
+- SQL
+- HTML5
+- CSS3 / TailwindCSS 4
+- Vite 8
+- React 19
+- FastAPI
+- SQLAdmin
+- MapLibre GL JS
+- TanStack Query v5
+- Docker / Docker Compose
+- Nginx (Reverse Proxy)
+- Vercel Analytics
+- PostgreSQL 15+
+- PostGIS 3.3+
+- GeoAlchemy2
+- AsyncPG
+- GeoJSON
+- Pytest
+- Vitest
+- Testing Library
+- OpenAPI Schema Validation
+- Agentic AI Orchestration (Antigravity CLI)
+selected: true
+---
+
 # Enterprise Case Study: Decoupled Geospatial Platform & Web GIS Architecture (barincairo.com)
 
 **Lead Software Architect | Independent Software Architect | 2026**

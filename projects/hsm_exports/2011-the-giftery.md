@@ -1,3 +1,19 @@
+---
+slug: 2011-the-giftery
+title: N/A
+year: 2011
+client_name: N/A
+client_type: E-commerce
+project_role: Software Architect & NGO Technical Partner
+subtitle: The project involved re-engineering e-commerce software conventions to establish
+  a user-centric wedding registry engine, designed around privacy mecha...
+tech_stack:
+- PHP
+- Symfony Framework
+- MySQL
+selected: false
+---
+
 # Lead Software Architect | Independent | 2011
 
 ## Enterprise Case Study: The Giftery

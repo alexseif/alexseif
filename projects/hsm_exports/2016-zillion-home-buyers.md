@@ -1,3 +1,15 @@
+---
+slug: 2016-zillion-home-buyers
+title: Alex Seif
+year: 2016
+client_name: Alex Seif
+client_type: Direct
+project_role: Software Engineer
+subtitle: Real state squeeze page
+tech_stack: []
+selected: false
+---
+
 # Lead Software Architect | Alex Seif | 2016
 
 ## Executive Summary
