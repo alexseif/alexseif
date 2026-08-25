@@ -1,6 +1,10 @@
-- [x] Task 1: Update Hero Section (`HeroSection.tsx`) with new copy and CTA.
-- [x] Task 2: Refactor "What I Actually Do" (`TechnicalGridSection.tsx`) into the new 3-pillar problem layout and add disclaimer.
-- [x] Task 3: Update Selected Work (`CaseStudiesSection.tsx`) intro text to match the new narrative.
-- [ ] Task 4: Update NGO Section (`NGOPartnerSection.tsx`) to replace the deliverables grid with the new text-driven layout and "Start a conversation" CTA.
-- [ ] Task 5: Refactor "The Honest Version" (`PathDiscoverySection.tsx`) title, text, and change CTA to link to `/case-studies`.
-- [ ] Task 6: Build/Update Resume Generation Pipeline (`scripts/generate_resume.py`) to compile `Resume.md` from `experiences/*.yaml` and `projects/selected/*.yaml`.
+- [x] Task 1: Update Hero Section (`HeroSection.tsx`) with minimal copy, single source of truth, and CTAs.
+- [x] Task 2: Refactor "What I Actually Do" (`TechnicalGridSection.tsx`) into the 3-pillar web architecture layout and add Requirements Elicitation callout.
+- [x] Task 3: Build dedicated landing page for Requirements Elicitation & Technical Consultation (`/requirements-elicitation`).
+- [x] Task 4: Update Stats Counter (`StatCounterSection.tsx`) to highlight 55+ Architectural Systems.
+- [x] Task 5: Update NGO Section (`NGOPartnerSection.tsx`) to streamlined donor-compliance and retainer layout.
+- [x] Task 6: Migrate project data from YAML to Markdown frontmatter across all 55 case studies.
+- [x] Task 7: Build programmatic Headless Chrome PDF generator (`scripts/generate_pdf.py`) and compile ATS-optimized Dutch HSM CV.
+- [x] Task 8: Implement GitHub Actions CI/CD workflow (`.github/workflows/ci-cd.yml`).
+- [x] Task 9: Implement Performance optimizations (GTM `lazyOnload`, font `display: swap`, eliminate hydration waterfalls).
+- [ ] Task 10: Run `bash deployer.sh` on production server and verify Google PageSpeed score.
