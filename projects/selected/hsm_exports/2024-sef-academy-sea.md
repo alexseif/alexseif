@@ -14,6 +14,8 @@ tech_stack:
 - Linux Server
 - MySQL
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Meem Development | 2024

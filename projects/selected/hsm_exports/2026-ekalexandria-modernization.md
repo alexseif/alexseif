@@ -22,6 +22,8 @@ tech_stack:
 - Agentic AI Orchestration
 - AST Block Serialization Parser
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Greek Community of Alexandria (EKA) | 2026

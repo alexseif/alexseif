@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: 2015 - today (MeVisa, VisaLLC & TravelBox.ru, miniERP)
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Independent Technical Consultant | 2015 – Present

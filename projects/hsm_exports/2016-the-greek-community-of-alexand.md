@@ -9,6 +9,8 @@ subtitle: Delivered every directors message and report through infographics in t
   annual report
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | The Greek Community of Alexandria | 2016

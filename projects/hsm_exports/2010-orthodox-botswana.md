@@ -5,10 +5,11 @@ year: 2010
 client_name: Alex Seif
 client_type: NGO
 project_role: Webpresence
-subtitle: The project involved creating a web presence for Orthodox Botswana, focusing
-  on establishing an online platform to support their operations and outrea...
+subtitle: The project involved creating a web presence for Orthodox Botswana, focusing on establishing an online platform to support their operations and outrea...
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Alex Seif / Independent Technical Consultant | 2010 – 2011

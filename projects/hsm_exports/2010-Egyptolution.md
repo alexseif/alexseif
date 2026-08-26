@@ -13,6 +13,8 @@ tech_stack:
 - Localized CDN Routing
 - MySQL
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Independent | 2010

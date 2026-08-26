@@ -10,5 +10,8 @@
   "dependencies": {
     "ajv-cli": "^5.0.0",
     "ajv-formats": "^3.0.0"
+  },
+  "devDependencies": {
+    "baseline-browser-mapping": "^2.11.19"
   }
 }

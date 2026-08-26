@@ -13,6 +13,8 @@ tech_stack:
 - MySQL
 - Inherited Pricing Schema from Smashholidays
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Agazat Masr (Tourico) | 2011 – 2014

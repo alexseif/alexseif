@@ -33,6 +33,8 @@ tech_stack:
 - OpenAPI Schema Validation
 - Agentic AI Orchestration (Antigravity CLI)
 selected: true
+tags:
+  - case-study
 ---
 
 # Enterprise Case Study: Decoupled Geospatial Platform & Web GIS Architecture (barincairo.com)

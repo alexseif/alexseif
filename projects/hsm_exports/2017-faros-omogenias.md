@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: Greek News website
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Independent Technical Consultant | 2017

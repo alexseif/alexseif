@@ -14,6 +14,8 @@ tech_stack:
 - Hierarchical Inventory Schemas
 - Localized Content Caching
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Mystic Evenings / Independent Software Architect | 2012

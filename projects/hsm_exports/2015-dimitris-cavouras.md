@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: Dispensed his political statement and controlled his message on twitter
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Independent Software Architect | 2015

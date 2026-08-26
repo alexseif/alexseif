@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: 2015 - today
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | The Greek Community of Alexandria / Independent | 2015 – Present

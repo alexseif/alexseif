@@ -14,6 +14,8 @@ tech_stack:
 - MySQL
 - REST API
 selected: true
+tags:
+  - case-study
 ---
 
 Lead Software Architect | Salama Cooperative Insurance Company | 2021

@@ -9,6 +9,8 @@ subtitle: Consulting project for YADAWEYA, focusing on providing strategic guida
   and support.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | MITCHDESIGNS | 2012

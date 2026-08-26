@@ -12,6 +12,8 @@ tech_stack:
 - Symfony Framework
 - MySQL
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Farah Nile Cruise | 2012

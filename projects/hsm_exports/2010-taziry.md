@@ -9,6 +9,8 @@ subtitle: Consulting project for TAZIRY, focusing on providing strategic guidanc
   and technical expertise to support business objectives.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | MITCHDESIGNS | 2010

@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: 2015-today
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Thomas Safety / Independent Technical Consultant | 2015

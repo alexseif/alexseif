@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: N/A
 tech_stack: []
 selected: true
+tags:
+  - case-study
 ---
 
 Lead Software Architect | Independent Technical Consultant | 2019

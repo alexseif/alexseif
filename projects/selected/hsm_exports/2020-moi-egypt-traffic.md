@@ -14,6 +14,8 @@ tech_stack:
 - Oracle Linux 7.6 (air-gapped, on-premise state infrastructure)
 - MySQL 5.7
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | iSoft | 2021 – 2022

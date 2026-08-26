@@ -8,6 +8,8 @@ project_role: N/A
 subtitle: Business ideas + Software Engineering = Solutions
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Alex Seif / Independent | 2004

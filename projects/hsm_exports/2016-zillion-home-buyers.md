@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: Real state squeeze page
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Alex Seif | 2016

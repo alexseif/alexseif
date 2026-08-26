@@ -9,6 +9,8 @@ subtitle: MyZouk - Architecture, oversight, consultation. Custom tailored listin
   for premium items (Cars, Boats, etc..). Consulting.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Technical Consultant (MITCHDESIGNS) | 2012

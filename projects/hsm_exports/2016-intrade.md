@@ -9,6 +9,8 @@ subtitle: is an Import & Export firm with global reach, that aims to publicise t
   establishment, products and services, in addition to a brochure.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Intrade / Independent | 2016

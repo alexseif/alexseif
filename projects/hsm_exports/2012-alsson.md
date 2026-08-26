@@ -8,6 +8,8 @@ project_role: Consulting
 subtitle: 2012 - 2013
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 Lead Software Architect | MITCHDESIGNS | 2012 - 2013

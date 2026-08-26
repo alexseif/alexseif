@@ -9,6 +9,8 @@ subtitle: Event eCommerce addon for SOHO SQUARE, developed as part of a larger e
   management platform.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | MITCHDESIGNS | 2012

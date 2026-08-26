@@ -12,6 +12,8 @@ tech_stack:
 - Moodle LMS
 - MySQL
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | iSoft | 2021

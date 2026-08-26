@@ -9,6 +9,8 @@ subtitle: Setup and customised a wordpress site, to serve as a portal for this c
   presence, activities and history
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 Lead Software Architect | Independent Technical Consultant | 2018

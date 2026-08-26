@@ -13,6 +13,8 @@ tech_stack:
 - Symfony Framework
 - MySQL
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Arts-Mart | 2012

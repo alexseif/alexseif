@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: 2016 - today
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Alex Seif | 2016

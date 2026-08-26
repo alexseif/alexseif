@@ -9,6 +9,8 @@ subtitle: The project involved training staff, with a duration spanning from 201
   to 2015.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | MITCHDESIGNS / Technical Consultant | 2010 – 2015

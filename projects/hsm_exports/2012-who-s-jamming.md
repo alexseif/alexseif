@@ -8,6 +8,8 @@ project_role: Consulting
 subtitle: Consulting project for MITCHDESIGNS.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | MITCHDESIGNS | 2012

@@ -16,6 +16,8 @@ tech_stack:
 - Asynchronous Queues
 - CLI Daemons
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Wallety | 2009

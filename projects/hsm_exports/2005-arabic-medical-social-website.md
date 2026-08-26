@@ -5,10 +5,11 @@ year: 2005
 client_name: Alex Seif
 client_type: N/A
 project_role: N/A
-subtitle: Aiming to relate Arabic speaking medical professionals and medicine scholars
-  together, through forums, articles, news and events.
+subtitle: Aiming to relate Arabic speaking medical professionals and medicine scholars together, through forums, articles, news and events.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Independent Software Architect | 2005

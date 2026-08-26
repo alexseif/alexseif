@@ -17,6 +17,8 @@ tech_stack:
 - Asynchronous CSV Ingestion
 - REST API Specifications
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | MitchDesigns | 2011 – 2013

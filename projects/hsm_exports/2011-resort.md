@@ -13,6 +13,8 @@ tech_stack:
 - MySQL
 - Relational Yield Logic
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Global Hospitality / Real Estate | 2011

@@ -8,6 +8,8 @@ project_role: Software Engineer
 subtitle: Kaplan Pathway courses Official representitive in Egypt and the Gulf
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Osman Co. Educational Services | 2018

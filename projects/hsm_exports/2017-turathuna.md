@@ -8,5 +8,7 @@ project_role: Software Engineer
 subtitle: The Cultural Programs and Heritage Festivals Committee - Abu Dhabi
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 

@@ -8,6 +8,8 @@ project_role: N/A
 subtitle: Digitally delivering their music to their fanbase.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 Lead Software Architect | Alex Seif | 2014

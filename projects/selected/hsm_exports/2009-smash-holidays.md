@@ -15,6 +15,8 @@ tech_stack:
 - Optimized Views
 - Relational Pricing Schema
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Mitchdesigns | 2009 – 2012

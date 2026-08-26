@@ -8,6 +8,8 @@ project_role: N/A
 subtitle: Themed Wordpress site for simplicity of this factory's digital presence.
 tech_stack: []
 selected: false
+tags:
+  - case-study
 ---
 
 Lead Software Architect | Independent Technical Consultant | 2014 – Present

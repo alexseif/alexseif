@@ -13,6 +13,8 @@ tech_stack:
 - CentOS / On-Premise
 - MySQL
 selected: true
+tags:
+  - case-study
 ---
 
 # Lead Software Architect | Softech | 2018
