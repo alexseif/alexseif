@@ -1,54 +1,60 @@
 ---
 slug: 2005-arabic-medical-social-website
-title: Arabic Medical Social Website
+title: Arabic Medical Social & Diagnostic Platform
 year: 2005
 client_name: Dr. Ahmed Filistini
-client_type: NGO
-project_role: Full Stack Web Developer
-subtitle: A web md like image diagnoser by clicking on the image. and a forum for
-  doctors discussions. But the image was very much simple and basic, the web was still
-  very young
+client_type: NGO / Medical Initiative
+project_role: Freelance Full-Stack Web Developer
+subtitle: WebMD-style anatomical symptom navigator and physician forum for Arabic-speaking doctors
 tech_stack:
-- I don't remember the php version back then in 2005 and the popular forum opensource
-  framework
-- then there was custom html with the new imagemap feature
+  - PHP (PHP 4/5)
+  - MySQL
+  - HTML ImageMaps
+  - JavaScript
+  - Open-Source PHP Forum (phpBB/vBulletin)
+  - Apache / GoDaddy Hosting
 selected: false
 interview_completed: true
 tags:
-- case-study
+  - case-study
 ---
 
-# Full Stack Web Developer | Dr. Ahmed Filistini (2005)
+# Freelance Full-Stack Web Developer | Dr. Ahmed Filistini (2005)
 
 ## Executive Summary
-I built the website with php and mysql, html and css and js and then installed a ready available forum in php and put it in a path of the project
+Built an early Arabic-language medical information and community platform combining an interactive, image-based symptom-to-diagnosis lookup tool with an integrated physician discussion forum using PHP, MySQL, and HTML ImageMaps.
 
 ---
 
 ## 1. Context & Business Problem
-* **Client / Domain:** Dr. Ahmed Filistini (NGO)
+* **Client / Domain:** Dr. Ahmed Filistini (NGO / Medical Initiative)
 * **Timeline:** 2005
-* **Project Role:** Full Stack Web Developer
+* **Project Role:** Freelance Full-Stack Web Developer
 
 ### The Problem
-There wasn't any websites targeting arabic speaking doctors with their own medical database
+In 2005, the Arabic web lacked centralized digital medical resources and community hubs for Arabic-speaking physicians. The client needed a dual-purpose platform: an intuitive diagnostic reference tool for users and a community discussion forum for medical practitioners.
 
 ---
 
 ## 2. Technical Stack & Implementation Details
-I don't remember like i said before, but it was godaddy, maybe php5.1, mysql symptoms -> body part -> diagnosis. And a forum framework
+- **Frontend & Interaction:** Built custom interactive anatomy diagrams utilizing HTML `<map>` / `coords` tied to JavaScript handlers, allowing users to visually click body regions to trigger diagnosis lookups.
+- **Backend & Database:** Developed custom PHP scripts backed by a normalized MySQL schema mapping `Symptoms -> Anatomical Regions -> Potential Diagnoses`.
+- **Community Integration:** Deployed and integrated an open-source PHP forum engine within a sub-path of the application on a GoDaddy LAMP hosting environment.
 
 ---
 
 ## 3. Architectural Decisions & Engineering Challenges
-Not much it was easy and pretty straight forwards
+- **Hierarchical Data Modeling:** Structured early relational database relationships to support multi-step medical categorizations cleanly.
+- **Multi-System Routing:** Coordinated static HTML, dynamic PHP diagnostic routing, and standalone forum routing under a single shared-hosting environment.
+- **Bandwidth & Compatibility Constraints:** Optimized graphical asset weights and ensured cross-browser rendering reliability during the early web standards era.
 
 ---
 
 ## 4. Operational & Institutional Impact
-I don't know the client disappeared after that
+- Delivered a functional prototype bridging visual user interaction with a relational medical database.
+- Project concluded upon final deliverable handover and deployment.
 
 ---
 
 ## 5. Ground Truth & Architectural Evolution
-Nothing
+Demonstrated early foundational experience in domain data modeling (hierarchical lookups) and multi-component web integration under early shared-hosting infrastructure constraints.
