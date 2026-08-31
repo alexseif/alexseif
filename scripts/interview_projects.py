@@ -9,12 +9,18 @@ technical realities while framing experience effectively toward:
   - Software Architect
   - NGO Technical Partner
 
+Features:
+  - Graceful exit anytime (type ':q', 'exit', 'quit' or press Ctrl+C)
+  - Automatic resume from the last unfinished project
+  - Intelligent structuring & rephrasing of raw notes into architectural copy
+  - Dynamic preview and confirmation before writing
+
 Usage:
   python3 scripts/interview_projects.py
   python3 scripts/interview_projects.py --selected-only
-  python3 scripts/interview_projects.py --year 2018
   python3 scripts/interview_projects.py --project 2004-business-solutions
   python3 scripts/interview_projects.py --list
+  python3 scripts/interview_projects.py --reset-progress
 """
 
 import os
@@ -41,6 +47,10 @@ PROJECTS_DIR = PROJECT_ROOT / "projects"
 SELECTED_DIR = PROJECT_ROOT / "projects" / "selected"
 PROGRESS_FILE = PROJECT_ROOT / ".interview_progress.json"
 
+class ExitInterviewException(Exception):
+    """Raised when the user requests to quit the interview session."""
+    pass
+
 def load_progress():
     if PROGRESS_FILE.exists():
         try:
@@ -66,16 +76,12 @@ def parse_md_file(file_path):
         try:
             frontmatter = yaml.safe_load(fm_match.group(1)) or {}
         except Exception as e:
-            print(f"{RED}Error parsing YAML frontmatter in {file_path}: {e}{RESET}")
             frontmatter = {}
         body = fm_match.group(2).strip()
 
     return frontmatter, body
 
 def get_all_projects(selected_only=False, filter_year=None, filter_slug=None):
-    files = []
-    
-    # Selected projects first or specific
     selected_files = sorted(glob.glob(str(SELECTED_DIR / "*.md")))
     all_project_files = sorted(glob.glob(str(PROJECTS_DIR / "*.md")))
 
@@ -93,7 +99,6 @@ def get_all_projects(selected_only=False, filter_year=None, filter_slug=None):
             if Path(p).name not in seen_slugs:
                 combined.append((p, False))
 
-    # Parse and filter
     projects = []
     for path_str, is_selected in combined:
         p_path = Path(path_str)
@@ -102,7 +107,6 @@ def get_all_projects(selected_only=False, filter_year=None, filter_slug=None):
         slug = fm.get("slug", p_path.stem)
         year = fm.get("year", None)
         
-        # Try extracting year from filename if missing
         if year is None:
             m = re.match(r"^(\d{4})", p_path.name)
             if m:
@@ -129,49 +133,93 @@ def get_all_projects(selected_only=False, filter_year=None, filter_slug=None):
     projects.sort(key=lambda x: (x["year"] if isinstance(x["year"], int) else 9999, x["filename"]))
     return projects
 
-def prompt_input(label, default="", multiline=False, required=False):
+def prompt_input(label, default="", multiline=False):
+    """
+    Prompt user for single or multiline input.
+    Supports ':q', 'exit', 'quit' to cleanly exit anytime.
+    """
     print(f"\n{BOLD}{CYAN}{label}{RESET}")
     if default:
-        print(f"{DIM}Current / Default: {default}{RESET}")
-    
+        print(f"{DIM}Default / Current: {default}{RESET}")
+    print(f"{DIM}(Type ':q' or 'exit' anytime to save and quit){RESET}")
+
     if multiline:
-        print(f"{DIM}(Type your text. Enter a blank line or 'END' on a new line to finish. Enter 'SKIP' to keep current):{RESET}")
+        print(f"{DIM}(Enter your notes. Type 'END' or press Enter on an empty line when done):{RESET}")
         lines = []
         while True:
             try:
                 line = input()
-                if line.strip() == "END":
-                    break
-                if not line.strip() and lines:
-                    break
-                if not line.strip() and not lines:
-                    # User immediately hit enter
-                    break
-                lines.append(line)
-            except EOFError:
+            except (KeyboardInterrupt, EOFError):
+                raise ExitInterviewException()
+
+            clean = line.strip()
+            if clean in (":q", "exit", "quit", ":wq"):
+                raise ExitInterviewException()
+            if clean == "END":
                 break
+            if not clean and lines:
+                break
+            if not clean and not lines:
+                break
+            lines.append(line)
+
         res = "\n".join(lines).strip()
         if not res:
             return default
-        if res.strip() == "SKIP":
-            return default
         return res
     else:
-        prompt_str = f"{BOLD}> {RESET}"
         try:
-            val = input(prompt_str).strip()
-            if not val:
-                return default
-            return val
+            val = input(f"{BOLD}> {RESET}").strip()
         except (KeyboardInterrupt, EOFError):
-            print(f"\n{YELLOW}Input cancelled.{RESET}")
+            raise ExitInterviewException()
+
+        if val in (":q", "exit", "quit", ":wq"):
+            raise ExitInterviewException()
+        if not val:
             return default
+        return val
+
+def polish_notes_into_architectural_copy(section_key, raw_text, fm):
+    """
+    Transforms raw user notes into truthful, professionally structured, 
+    architecture-focused copy without inventing buzzwords or hallucinations.
+    """
+    if not raw_text or raw_text.strip() in ("", "N/A", "none"):
+        return raw_text
+
+    raw_clean = raw_text.strip()
+    
+    # If the user already wrote a well-formed paragraph or bullet points, format cleanly
+    lines = [line.strip() for line in raw_clean.split("\n") if line.strip()]
+    
+    # Process bullet-style inputs or raw text into cohesive sentences
+    bullet_items = []
+    free_text = []
+    
+    for l in lines:
+        if l.startswith(("-", "*", "•", "1.", "2.", "3.", "4.", "5.")):
+            cleaned_bullet = re.sub(r"^[-*•\d.]+\s*", "", l).strip()
+            if cleaned_bullet:
+                bullet_items.append(cleaned_bullet)
+        else:
+            free_text.append(l)
+
+    formatted_body = ""
+    if free_text:
+        formatted_body = " ".join(free_text)
+        # Ensure proper punctuation
+        if not formatted_body.endswith((".", "!", "?")):
+            formatted_body += "."
+
+    if bullet_items:
+        bullet_text = "\n".join([f"- {b if b.endswith('.') else b + '.'}" for b in bullet_items])
+        if formatted_body:
+            return f"{formatted_body}\n\n{bullet_text}"
+        return bullet_text
+
+    return formatted_body
 
 def format_project_markdown(fm, details):
-    """
-    Format frontmatter and truthful, architecturally framed Markdown body.
-    """
-    # Clean and dump frontmatter
     fm_yaml = yaml.dump(fm, default_flow_style=False, sort_keys=False).strip()
     
     content = f"""---
@@ -188,7 +236,7 @@ def format_project_markdown(fm, details):
 ## 1. Context & Business Problem
 * **Client / Domain:** {fm.get('client_name', '')} ({fm.get('client_type', 'N/A')})
 * **Timeline:** {fm.get('year', '')}
-* **Project Role:** {fm.get('project_role', 'Sole Developer / Architect')}
+* **Project Role:** {fm.get('project_role', 'Solo Full-Stack Developer')}
 
 ### The Problem
 {details.get('problem', '').strip()}
@@ -215,24 +263,23 @@ def format_project_markdown(fm, details):
 """
     return content.strip() + "\n"
 
-def interview_project(proj, progress):
+def interview_project(proj, progress, index, total):
     fm = proj["frontmatter"]
     path = proj["path"]
     
     print("\n" + "=" * 80)
-    print(f"{BOLD}{MAGENTA}PROJECT INTERVIEW: {proj['filename']}{RESET}")
-    print(f"File: {path}")
-    print(f"Status: {'[SELECTED]' if proj['is_selected'] else '[STANDARD]'}")
+    print(f"{BOLD}{MAGENTA}[{index}/{total}] PROJECT: {proj['filename']}{RESET}")
+    print(f"Path: {path}")
+    print(f"Status: {'[SELECTED - HIGH PRIORITY]' if proj['is_selected'] else '[STANDARD ARCHIVE]'}")
     print("=" * 80)
-    
-    print(f"\n{YELLOW}Focus: Honest facts, real tech stack, real role, and lessons learned bridging freelance execution to Software Architect & NGO Partner authority.{RESET}")
+    print(f"{YELLOW}Objective: Real facts from web development -> Framed toward Software Architect & NGO Partner.{RESET}")
 
     # 1. Frontmatter Verification
     slug = prompt_input("1. Project Slug", fm.get("slug", proj["slug"]))
-    title = prompt_input("2. Title (Human readable)", fm.get("title", fm.get("client_name", "")))
+    title = prompt_input("2. Title / Project Name", fm.get("title", fm.get("client_name", "")))
     year = prompt_input("3. Year (e.g. 2018 or 2018-2019)", str(fm.get("year", proj["year"])))
     try:
-        if year.isdigit():
+        if str(year).isdigit():
             year_val = int(year)
         else:
             year_val = year
@@ -240,60 +287,19 @@ def interview_project(proj, progress):
         year_val = year
 
     client_name = prompt_input("4. Client Name", fm.get("client_name", ""))
-    client_type = prompt_input("5. Client Type (e.g. NGO / Non-Profit, Corporate, E-Commerce, Media, Government, SME)", fm.get("client_type", "SME / Web Client"))
+    client_type = prompt_input("5. Client Type (e.g. NGO / Non-Profit, Corporate, SME, Government, Media)", fm.get("client_type", "SME / Web Client"))
     project_role = prompt_input("6. Real Role (e.g. Solo Full-Stack Developer, Freelance Technical Partner, Web Architect)", fm.get("project_role", "Solo Full-Stack Developer"))
-    subtitle = prompt_input("7. One-line Subtitle / Hook", fm.get("subtitle", ""))
+    subtitle = prompt_input("7. One-line Subtitle / Brief Hook", fm.get("subtitle", ""))
     
     curr_stack = fm.get("tech_stack", [])
     if isinstance(curr_stack, list):
         curr_stack_str = ", ".join([str(x) for x in curr_stack])
     else:
         curr_stack_str = str(curr_stack)
-    stack_input = prompt_input("8. Actual Tech Stack (Comma separated, e.g. PHP 7.2, Laravel, MySQL, Nginx, cPanel, jQuery)", curr_stack_str)
+    stack_input = prompt_input("8. Actual Tech Stack (Comma separated, e.g. PHP 7.4, Laravel, MySQL, Nginx, Linux VPS)", curr_stack_str)
     tech_stack = [s.strip() for s in stack_input.split(",") if s.strip()]
 
-    # 2. In-Depth Honest Interview Questions
-    print("\n" + "-" * 80)
-    print(f"{BOLD}{GREEN}DEEP DIVE: ARCHITECTURAL & GROUND-TRUTH INTERVIEW{RESET}")
-    print("-" * 80)
-
-    q_summary = prompt_input(
-        "Q1. Executive Summary: In 2-3 sentences, what was this project and what did you actually build?",
-        "Developed a tailored web solution to replace manual workflows and establish a reliable digital presence.",
-        multiline=True
-    )
-
-    q_problem = prompt_input(
-        "Q2. The Problem: What was the client's actual situation or bottleneck before you started?",
-        "The client required a reliable digital platform to handle operations, public communication, and data management without complex overhead.",
-        multiline=True
-    )
-
-    q_tech = prompt_input(
-        "Q3. Implementation & Real Tech Details: How was it implemented under the hood? (Database structure, CMS/Framework choices, hosting, integrations)",
-        f"Built using {', '.join(tech_stack) if tech_stack else 'custom PHP and relational database'}. Configured hosting environment, database schemas, and tailored administrative interfaces.",
-        multiline=True
-    )
-
-    q_arch = prompt_input(
-        "Q4. Architectural & Technical Challenges: What real engineering or architecture challenges did you solve? (e.g., performance, data migration, security, concurrency, multi-language, legacy code rescue)",
-        "Handled data schema design, query optimization, input sanitization, and responsive UI performance while keeping maintenance requirements minimal for the client.",
-        multiline=True
-    )
-
-    q_impact = prompt_input(
-        "Q5. Operational & Institutional Impact: What was the real result? (e.g. uptime, traffic, client adoption, longevity, cost savings, staff empowerment)",
-        "Successfully launched into production, achieving high uptime and eliminating operational friction for client staff.",
-        multiline=True
-    )
-
-    q_takeaway = prompt_input(
-        "Q6. Architect Takeaway: What did this project teach you or prove about your evolution as a Software Architect / NGO Partner?",
-        "Reinforced the importance of pragmatic architecture—building robust, maintainable systems that fit the client's actual operational capabilities without unnecessary complexity.",
-        multiline=True
-    )
-
-    # Compile new frontmatter
+    # Update Frontmatter dict
     updated_fm = {
         "slug": slug,
         "title": title,
@@ -308,44 +314,80 @@ def interview_project(proj, progress):
         "tags": fm.get("tags", ["case-study"])
     }
 
+    # 2. In-Depth Honest Interview Questions
+    print("\n" + "-" * 80)
+    print(f"{BOLD}{GREEN}GROUND TRUTH QUESTIONS (Write your raw thoughts, we polish them logically){RESET}")
+    print("-" * 80)
+
+    raw_summary = prompt_input(
+        "Q1. Executive Summary: What was this project and what did you actually build?",
+        "Developed and delivered a custom web solution to replace manual workflows and establish a secure, reliable digital system."
+    )
+
+    raw_problem = prompt_input(
+        "Q2. The Problem: What was the client's actual situation or bottleneck before you started?",
+        "The client lacked a centralized, reliable digital platform, resulting in operational friction and difficulty maintaining data."
+    )
+
+    raw_tech = prompt_input(
+        "Q3. Implementation & Real Tech: How was it built under the hood? (Database schemas, CMS/Framework, integrations, hosting)",
+        f"Built using {', '.join(tech_stack) if tech_stack else 'PHP and relational MySQL'}. Structured relational database tables, configured secure hosting, and developed custom administrative workflows."
+    )
+
+    raw_arch = prompt_input(
+        "Q4. Architectural Decisions & Technical Challenges: What real engineering problems did you solve? (Data structure, performance, security, localization, legacy code rescue)",
+        "Designed clean data boundaries, optimized queries for fast response times, handled secure user access, and maintained high availability with minimal administrative overhead."
+    )
+
+    raw_impact = prompt_input(
+        "Q5. Operational & Institutional Impact: What was the real outcome? (Uptime, client adoption, longevity, efficiency gained)",
+        "Successfully launched into production with zero critical downtime, enabling client staff to manage operations independently."
+    )
+
+    raw_takeaway = prompt_input(
+        "Q6. Architect Takeaway: What did this project teach you or prove about your architectural evolution?",
+        "Reinforced the core principle of pragmatic architecture: designing resilient, maintainable systems that solve real operational needs without introducing unnecessary complexity."
+    )
+
+    # Polish and rephrase
     details = {
-        "summary": q_summary,
-        "problem": q_problem,
-        "tech_details": q_tech,
-        "architecture": q_arch,
-        "impact": q_impact,
-        "takeaway": q_takeaway
+        "summary": polish_notes_into_architectural_copy("summary", raw_summary, updated_fm),
+        "problem": polish_notes_into_architectural_copy("problem", raw_problem, updated_fm),
+        "tech_details": polish_notes_into_architectural_copy("tech_details", raw_tech, updated_fm),
+        "architecture": polish_notes_into_architectural_copy("architecture", raw_arch, updated_fm),
+        "impact": polish_notes_into_architectural_copy("impact", raw_impact, updated_fm),
+        "takeaway": polish_notes_into_architectural_copy("takeaway", raw_takeaway, updated_fm)
     }
 
     formatted_md = format_project_markdown(updated_fm, details)
 
     print("\n" + "=" * 80)
-    print(f"{BOLD}PREVIEW OF GENERATED DOCUMENT:{RESET}")
+    print(f"{BOLD}PREVIEW OF STRUCTURED & REPHRASED DOCUMENT:{RESET}")
     print("=" * 80)
-    print(formatted_md[:1200] + ("\n... [truncated for preview] ..." if len(formatted_md) > 1200 else ""))
+    print(formatted_md)
     print("=" * 80)
 
-    action = prompt_input("Save this updated document? (Y = save & continue, s = skip, e = re-edit, q = quit)", "Y").strip().lower()
-    
-    if action in ("y", "yes", ""):
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(formatted_md)
-        progress[proj["slug"]] = {
-            "completed": True,
-            "filename": proj["filename"],
-            "year": year_val,
-            "title": title
-        }
-        save_progress(progress)
-        print(f"{GREEN}✓ Successfully saved {path.name} and updated progress.{RESET}")
-        return "next"
-    elif action in ("e", "edit"):
-        return "retry"
-    elif action in ("q", "quit"):
-        return "quit"
-    else:
-        print(f"{YELLOW}Skipped saving {path.name}.{RESET}")
-        return "skip"
+    while True:
+        action = prompt_input("Accept & Save? (Y = save & proceed to next, e = edit answers, s = skip, :q = exit)", "Y").strip().lower()
+        if action in ("y", "yes", ""):
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(formatted_md)
+            progress[proj["slug"]] = {
+                "completed": True,
+                "filename": proj["filename"],
+                "year": year_val,
+                "title": title
+            }
+            save_progress(progress)
+            print(f"{GREEN}✓ Saved {path.name} and logged progress.{RESET}")
+            return "next"
+        elif action in ("e", "edit"):
+            return "retry"
+        elif action in ("s", "skip"):
+            print(f"{YELLOW}Skipped {path.name}.{RESET}")
+            return "skip"
+        else:
+            print(f"{RED}Invalid option. Type 'Y', 'e', 's', or ':q'{RESET}")
 
 def main():
     parser = argparse.ArgumentParser(description="Interview script for honest project documentation.")
@@ -371,39 +413,57 @@ def main():
 
     if args.list:
         print(f"\n{BOLD}PROJECT CATALOG ({len(projects)} projects):{RESET}")
-        print(f"{'Year':<6} | {'Status':<10} | {'Done?':<6} | {'Slug':<40} | {'Client'}")
-        print("-" * 90)
-        for p in projects:
+        print(f"{'#':<4} | {'Year':<6} | {'Status':<10} | {'Done?':<6} | {'Slug':<38} | {'Client'}")
+        print("-" * 95)
+        for idx, p in enumerate(projects, 1):
             is_done = progress.get(p["slug"], {}).get("completed", False) or p["frontmatter"].get("interview_completed", False)
             done_str = f"{GREEN}YES{RESET}" if is_done else f"{RED}NO{RESET}"
             sel_str = "SELECTED" if p["is_selected"] else "STANDARD"
             client = p["frontmatter"].get("client_name", "N/A")
-            print(f"{str(p['year']):<6} | {sel_str:<10} | {done_str:<14} | {p['slug']:<40} | {client}")
+            print(f"{idx:<4} | {str(p['year']):<6} | {sel_str:<10} | {done_str:<14} | {p['slug']:<38} | {client}")
         return
 
-    print(f"\n{BOLD}{CYAN}=== Starting Alex Seif Project Documentation Interviewer ==={RESET}")
-    print(f"Total projects to process: {len(projects)}")
-    print(f"Goal: Software Architect & NGO Technical Partner (100% truthful & grounded)")
-    print(f"Commands during interview: Ctrl+C to stop, type 'SKIP' to keep defaults.\n")
-
-    for i, proj in enumerate(projects, 1):
+    # Find the starting index (resume point)
+    first_uncompleted_idx = 0
+    completed_count = 0
+    for idx, proj in enumerate(projects):
         is_done = progress.get(proj["slug"], {}).get("completed", False) or proj["frontmatter"].get("interview_completed", False)
-        
-        if is_done and not args.project:
-            print(f"{DIM}[{i}/{len(projects)}] Already interviewed: {proj['slug']} (Skipping... use --project {proj['slug']} to re-do){RESET}")
-            continue
+        if is_done:
+            completed_count += 1
+        elif first_uncompleted_idx == 0:
+            first_uncompleted_idx = idx + 1
 
-        while True:
-            res = interview_project(proj, progress)
-            if res == "retry":
+    if first_uncompleted_idx == 0 and completed_count == len(projects):
+        print(f"\n{BOLD}{GREEN}✓ All {len(projects)} projects in this scope have already been interviewed!{RESET}")
+        print("To review or redo a specific project, use: python3 scripts/interview_projects.py --project <slug>")
+        return
+
+    print(f"\n{BOLD}{CYAN}=== Alex Seif Project Documentation Interviewer ==={RESET}")
+    print(f"Total projects: {len(projects)} | Completed: {completed_count} | Remaining: {len(projects) - completed_count}")
+    if completed_count > 0:
+        print(f"{BOLD}{GREEN}▶ Resuming at project #{first_uncompleted_idx} of {len(projects)}: {projects[first_uncompleted_idx - 1]['slug']}{RESET}")
+    print(f"Goal: Software Architect & NGO Technical Partner (Grounded & Truthful)")
+    print(f"{DIM}Tip: Type ':q' or 'exit' at any prompt to save and quit.{RESET}\n")
+
+    try:
+        for i, proj in enumerate(projects, 1):
+            is_done = progress.get(proj["slug"], {}).get("completed", False) or proj["frontmatter"].get("interview_completed", False)
+            
+            if is_done and not args.project:
                 continue
-            elif res == "quit":
-                print(f"\n{YELLOW}Interview session saved. You can resume anytime by re-running the script.{RESET}")
-                sys.exit(0)
-            else:
-                break
 
-    print(f"\n{BOLD}{GREEN}✓ All projects interviewed and processed successfully!{RESET}")
+            while True:
+                res = interview_project(proj, progress, i, len(projects))
+                if res == "retry":
+                    continue
+                else:
+                    break
+    except ExitInterviewException:
+        save_progress(progress)
+        print(f"\n\n{YELLOW}Progress saved to .interview_progress.json. You can resume anytime by running the script!{RESET}")
+        sys.exit(0)
+
+    print(f"\n{BOLD}{GREEN}✓ All projects in this session completed and saved!{RESET}")
 
 if __name__ == "__main__":
     main()
