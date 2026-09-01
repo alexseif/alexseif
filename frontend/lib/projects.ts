@@ -2,8 +2,22 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const hsmExportsDir = path.join(process.cwd(), "../projects/hsm_exports");
-const selectedHsmExportsDir = path.join(process.cwd(), "../projects/selected/hsm_exports");
+function getBaseProjectsDir(): string {
+  const cwd = process.cwd();
+  if (fs.existsSync(path.join(cwd, "projects"))) {
+    return path.join(cwd, "projects");
+  }
+  if (fs.existsSync(path.join(cwd, "../projects"))) {
+    return path.join(cwd, "../projects");
+  }
+  return path.join(cwd, "projects");
+}
+
+function getDirs() {
+  const baseDir = getBaseProjectsDir();
+  const selectedDir = path.join(baseDir, "selected");
+  return { baseDir, selectedDir };
+}
 
 export interface ProjectData {
   slug: string;
@@ -22,11 +36,18 @@ export interface ProjectData {
 
 export function getProjectSlugs(): string[] {
   try {
-    const mainFiles = fs.existsSync(hsmExportsDir)
-      ? fs.readdirSync(hsmExportsDir).filter((f) => f.endsWith(".md"))
+    const { baseDir, selectedDir } = getDirs();
+    const mainFiles = fs.existsSync(baseDir)
+      ? fs
+          .readdirSync(baseDir, { withFileTypes: true })
+          .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".md"))
+          .map((dirent) => dirent.name)
       : [];
-    const selectedFiles = fs.existsSync(selectedHsmExportsDir)
-      ? fs.readdirSync(selectedHsmExportsDir).filter((f) => f.endsWith(".md"))
+    const selectedFiles = fs.existsSync(selectedDir)
+      ? fs
+          .readdirSync(selectedDir, { withFileTypes: true })
+          .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".md"))
+          .map((dirent) => dirent.name)
       : [];
 
     const slugs = Array.from(
@@ -41,11 +62,13 @@ export function getProjectSlugs(): string[] {
 
 export function getProjectBySlug(slug: string): ProjectData {
   const realSlug = slug.replace(/\.(md|yaml)$/, "");
-  let fullPath = path.join(selectedHsmExportsDir, `${realSlug}.md`);
+  const { baseDir, selectedDir } = getDirs();
+
+  let fullPath = path.join(selectedDir, `${realSlug}.md`);
   let isSelected = true;
 
   if (!fs.existsSync(fullPath)) {
-    fullPath = path.join(hsmExportsDir, `${realSlug}.md`);
+    fullPath = path.join(baseDir, `${realSlug}.md`);
     isSelected = false;
   }
 
@@ -81,8 +104,13 @@ export function getProjectBySlug(slug: string): ProjectData {
 
 export function getSelectedProjects(): ProjectData[] {
   try {
-    if (!fs.existsSync(selectedHsmExportsDir)) return [];
-    const files = fs.readdirSync(selectedHsmExportsDir).filter((f) => f.endsWith(".md"));
+    const { selectedDir } = getDirs();
+    if (!fs.existsSync(selectedDir)) return [];
+    const files = fs
+      .readdirSync(selectedDir, { withFileTypes: true })
+      .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".md"))
+      .map((dirent) => dirent.name);
+
     return files
       .map((file) => getProjectBySlug(file))
       .sort((a, b) => (a.year > b.year ? -1 : 1));
@@ -94,13 +122,22 @@ export function getSelectedProjects(): ProjectData[] {
 
 export function getArchiveProjects(): ProjectData[] {
   try {
-    if (!fs.existsSync(hsmExportsDir)) return [];
+    const { baseDir, selectedDir } = getDirs();
+    if (!fs.existsSync(baseDir)) return [];
+
     const selectedFiles = new Set(
-      fs.existsSync(selectedHsmExportsDir)
-        ? fs.readdirSync(selectedHsmExportsDir).filter((f) => f.endsWith(".md"))
+      fs.existsSync(selectedDir)
+        ? fs
+            .readdirSync(selectedDir, { withFileTypes: true })
+            .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".md"))
+            .map((dirent) => dirent.name)
         : []
     );
-    const mainFiles = fs.readdirSync(hsmExportsDir).filter((f) => f.endsWith(".md"));
+
+    const mainFiles = fs
+      .readdirSync(baseDir, { withFileTypes: true })
+      .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".md"))
+      .map((dirent) => dirent.name);
 
     const archiveOnly = mainFiles.filter((f) => !selectedFiles.has(f));
     return archiveOnly
