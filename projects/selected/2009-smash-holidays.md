@@ -33,7 +33,7 @@ The system evaluated and executed complex pricing matrices at query time based o
 * **Project Role:** Solo Full-Stack Engineer & Software Architect
 
 ### The Problem
-No off-the-shelf software in 2009 could accommodate heterogeneous supplier data (GDS vs. non-GDS) alongside intricate contract rules, variable occupancy tiers, and multi-currency pricing while returning search results within acceptable latency bounds.
+No off-the-shelf software in 2009 could accommodate diverse supplier data (GDS vs. non-GDS) alongside intricate contract rules, variable occupancy tiers, and multi-currency pricing while returning search results within acceptable latency bounds.
 
 ---
 
@@ -48,7 +48,7 @@ No off-the-shelf software in 2009 could accommodate heterogeneous supplier data 
 - **Multi-Dimensional Pricing Schema Design:** Structured relational tables to capture complex multi-occupancy matrices, seasonal periods, and dynamic amenity add-ons.
 - **Low-Latency SQL View Architecture:** Restructured nested calculation loops out of application memory and into indexed database-level computed views.
 - **Framework Decoupling & Enterprise Logic Isolation:** Designed a modular MVC framework that decoupled high-frequency seasonal UI updates from the underlying booking transaction logic.
-- **Heterogeneous Data Feed Normalization:** Ingested and standardized disparate supplier inputs spanning automated GDS XML feeds, spreadsheet exports, and direct CMS inputs into a single availability ledger.
+- **Diverse Data Feed Normalization:** Ingested and standardized disparate supplier inputs spanning automated GDS XML feeds, spreadsheet exports, and direct CMS inputs into a single availability ledger.
 
 ---
 
