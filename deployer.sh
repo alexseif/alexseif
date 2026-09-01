@@ -24,12 +24,10 @@ npm install --no-audit
 echo "🔨 Executing Next.js Build..."
 NODE_OPTIONS="--max-old-space-size=1024" npm run build
 
-echo "♻️ Restarting PM2 Cleanly..."
-# Clear any orphaned processes on port 3000
-fuser -k 3000/tcp 2>/dev/null || true
-
-# Restart or start PM2 instance from frontend directory
-pm2 restart alexseif-frontend 2>/dev/null || pm2 start npm --name "alexseif-frontend" -- start
+# Restart PM2 cleanly using ecosystem config from project root
+echo "♻️ Reloading PM2 Service..."
+cd "$PROJECT_ROOT"
+pm2 startOrReload ecosystem.config.cjs --update-env
 pm2 save
 
 echo "✅ Deployment Successful. The machine is serving the story."
