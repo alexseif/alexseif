@@ -4,5 +4,17 @@
     "filename": "2005-arabic-medical-social-website.md",
     "year": 2005,
     "title": "Arabic Medical Social Website"
+  },
+  "2006-sykoheil-dentistry-clinic": {
+    "completed": true,
+    "filename": "2006-sykoheil-dentistry-clinic.md",
+    "year": 2006,
+    "title": "SYKoheil Dentistry Clinic"
+  },
+  "2009-smash-holidays": {
+    "completed": true,
+    "filename": "2009-smash-holidays.md",
+    "year": 2009,
+    "title": "Smash Holidays"
   }
 }
