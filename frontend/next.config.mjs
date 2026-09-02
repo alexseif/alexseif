@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
   // Enable standard HTTP ETags for 304 conditional validation
   generateEtags: true,
 

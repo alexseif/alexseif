@@ -1,5 +1,12 @@
-import HomeClient from "./HomeClient";
 import { getSelectedProjects } from "@/lib/projects";
+import { HeroSection } from "@/components/home/HeroSection";
+import { StatCounterSection } from "@/components/home/StatCounterSection";
+import { TechnicalGridSection } from "@/components/home/TechnicalGridSection";
+import { NGOPartnerSection } from "@/components/home/NGOPartnerSection";
+import { CaseStudiesSection } from "@/components/home/CaseStudiesSection";
+import { PathDiscoverySection } from "@/components/home/PathDiscoverySection";
+import { WorldMapSection } from "@/components/home/WorldMapSection";
+import { Footer } from "@/components/Footer";
 
 export default async function HomePage() {
   const allSelected = getSelectedProjects();
@@ -10,22 +17,18 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Alex Seif",
-    "jobTitle": "Software Architect & Full-Stack Developer",
+    "jobTitle": "Software Architect & NGO Technical Partner",
     "url": "https://alexseif.com",
     "sameAs": [
-      "https://github.com/alexseif",
-      "https://linkedin.com/in/alexseif"
+      "https://github.com/alexseif"
     ],
     "knowsAbout": [
-      "Software Architecture",
-      "Full-Stack Development",
-      "Symfony Framework",
-      "Drupal Enterprise",
-      "WordPress Multisite & FSE",
-      "PostgreSQL PostGIS",
-      "MySQL 3NF & Star Schema",
-      "High-Concurrency Routing",
-      "Zero-Downtime Infrastructure Migrations"
+      "Deep-End Enterprise Infrastructures",
+      "Digital System Deployments",
+      "Legacy Monolith Decoupling",
+      "PHP/Symfony",
+      "Agentic AI Engineering",
+      "Defensive Zero-Maintenance Engineering"
     ]
   };
 
@@ -35,7 +38,16 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HomeClient eliteProjects={eliteProjects} />
+      <main className="min-h-screen bg-background overflow-x-hidden blueprint-grid">
+        <HeroSection />
+        <StatCounterSection />
+        <TechnicalGridSection />
+        <NGOPartnerSection />
+        <CaseStudiesSection eliteProjects={eliteProjects} />
+        <PathDiscoverySection />
+        <WorldMapSection />
+        <Footer />
+      </main>
     </>
   );
 }

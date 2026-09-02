@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Amiri, Inter, Playfair_Display } from 'next/font/google'
+import { Amiri, Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
@@ -13,11 +13,6 @@ const _amiri = Amiri({
 const _inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-const _playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -97,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
       </head>
-      <body className={`${_amiri.variable} ${_inter.variable} ${_playfair.variable} font-sans antialiased`}>
+      <body className={`${_amiri.variable} ${_inter.variable} font-sans antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

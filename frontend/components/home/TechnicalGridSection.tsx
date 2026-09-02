@@ -1,23 +1,14 @@
-"use client";
-
-import { motion } from "framer-motion";
+import React from "react";
 import Link from "next/link";
 import { Globe, RefreshCw, Users, FileCode2, ArrowRight } from "lucide-react";
-import { fadeInUp, stagger } from "./animations";
 
 export const TechnicalGridSection = () => {
   return (
     <section className="py-20 px-6 relative border-t border-border/30">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="space-y-16"
-        >
+        <div className="space-y-16">
           {/* Header */}
-          <motion.div variants={fadeInUp} className="text-center space-y-4">
+          <div className="text-center space-y-4">
             <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
               // Web Architecture & Digital Platforms
             </p>
@@ -27,10 +18,10 @@ export const TechnicalGridSection = () => {
             <p className="text-foreground/75 text-sm md:text-base tracking-wide font-mono max-w-2xl mx-auto">
               I design, rescue, and scale high-concurrency web applications, interactive portals, and enterprise websites:
             </p>
-          </motion.div>
+          </div>
 
           {/* 3-Column Service Grid */}
-          <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-px bg-border">
+          <div className="grid md:grid-cols-3 gap-px bg-border">
             {/* 01: Custom Web Apps & New Platforms */}
             <div className="bg-background p-8 md:p-10 space-y-6 group hover:bg-card/50 transition-colors duration-500 flex flex-col justify-between">
               <div className="space-y-4">
@@ -114,13 +105,10 @@ export const TechnicalGridSection = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Standalone Unique Value Proposition: Requirements Elicitation */}
-          <motion.div
-            variants={fadeInUp}
-            className="p-8 md:p-10 border border-primary/40 bg-card/30 rounded-sm relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl"
-          >
+          <div className="p-8 md:p-10 border border-primary/40 bg-card/30 rounded-sm relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
             <div className="space-y-3 max-w-3xl">
               <div className="flex items-center gap-3">
                 <FileCode2 className="h-5 w-5 text-primary" />
@@ -143,8 +131,8 @@ export const TechnicalGridSection = () => {
               Explore Consultation
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

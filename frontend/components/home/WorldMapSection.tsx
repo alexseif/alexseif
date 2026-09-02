@@ -1,7 +1,4 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
 
 const countries = [
   { name: "Egypt", code: "EG", x: 53, y: 38 },
@@ -14,38 +11,20 @@ const countries = [
 ];
 
 export const WorldMapSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: scrollRef,
-    offset: ["start end", "end start"],
-  });
-
-  const mapOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-  const mapScale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
-
   return (
-    <section ref={scrollRef} className="min-h-[70vh] md:min-h-[100vh] relative py-20 pb-28">
-      <div className="sticky top-0 h-[40vh] md:h-[70vh] flex items-center justify-center px-6">
-        <motion.div
-          style={{ opacity: mapOpacity, scale: mapScale }}
-          className="max-w-5xl w-full relative"
-        >
+    <section className="relative py-20 pb-28 border-t border-border/30">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="w-full relative">
           {/* Text overlay */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="text-center mt-12 space-y-6"
-          >
+          <div className="text-center mb-12 space-y-6">
             <h2 className="text-foreground text-1xl md:text-2xl tracking-[0.2em] font-sans font-light uppercase">
               Global NGO Technical Partnership & <strong className="text-primary">Senior Lead</strong> Engineering Contracts
             </h2>
             <p className="text-foreground/70 text-sm max-w-2xl mx-auto mt-4 leading-relaxed font-sans">
               Operating remotely and on-site across Europe (targeting the Netherlands), the GCC, and Egypt, delivering operational reliability, automated deployment security, and clean engineering governance to high-stakes tech environments.
             </p>
-          </motion.div>
+          </div>
+
           {/* World Map SVG (Desktop) */}
           <div className="hidden md:block relative w-full aspect-[2/1] bg-card/30 border border-border/50 rounded overflow-hidden">
             {/* Simplified world map outline */}
@@ -126,9 +105,7 @@ export const WorldMapSection = () => {
               </span>
             ))}
           </div>
-
-
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import React from "react";
 
 interface Stat {
   count: string;
@@ -41,26 +39,9 @@ const stats: Stat[] = [
   },
 ];
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
-  },
-};
-
-const stagger = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
 function StatCard({ stat }: { stat: Stat }) {
   return (
-    <motion.div variants={fadeInUp} className="group flex flex-col space-y-5">
+    <div className="group flex flex-col space-y-5">
       <div className="flex items-center gap-6">
         <span
           className="text-6xl md:text-7xl font-sans font-light text-foreground/90 tracking-tighter"
@@ -79,7 +60,7 @@ function StatCard({ stat }: { stat: Stat }) {
           {stat.subtext}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -93,14 +74,8 @@ export function StatCounterSection() {
       </div>
 
       <div className="flex flex-col items-center justify-center px-6 relative pb-16">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="text-center space-y-10 max-w-4xl relative z-10"
-        >
-          <motion.div variants={fadeInUp} className="space-y-6">
+        <div className="text-center space-y-10 max-w-4xl relative z-10">
+          <div className="space-y-6">
             <p
               className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary leading-tight"
               style={{
@@ -115,33 +90,26 @@ export function StatCounterSection() {
             <p className="text-foreground/70 tracking-[0.2em] uppercase font-sans">
               “Establish the work of our hands.”
             </p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="space-y-16 md:space-y-24"
-        >
-          <motion.div variants={fadeInUp} className="text-center space-y-4">
+        <div className="space-y-16 md:space-y-24">
+          <div className="text-center space-y-4">
             <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">// Scale & Impact</p>
             <h3 className="text-foreground text-2xl tracking-[0.2em] font-sans font-light uppercase">
               Executed globally; <br /> Realised by precision;
             </h3>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:gap-y-20">
             {stats.map((stat, index) => (
               <StatCard key={index} stat={stat} />
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 }
-

@@ -1,29 +1,20 @@
-"use client";
-
+import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { fadeInUp, stagger } from "./animations";
 
 export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) => {
   return (
     <section className="py-20 px-6 relative border-t border-border/30 bg-card/10">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="space-y-12"
-        >
-          <motion.div variants={fadeInUp} className="space-y-6">
+        <div className="space-y-12">
+          <div className="space-y-6">
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
               SELECTED WORK
             </h2>
-          </motion.div>
+          </div>
 
-          <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {eliteProjects.map((project) => (
               <Link key={project.slug} href={`/case-studies/${project.slug}`}>
                 <div className="group block border border-border bg-background p-8 hover:bg-card/50 hover:border-primary/50 transition-all duration-300 h-full flex flex-col justify-between">
@@ -61,19 +52,19 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
                 </div>
               </Link>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div variants={fadeInUp} className="flex justify-center pt-8">
+          <div className="flex justify-center pt-8">
             <Link href="/case-studies">
               <Button
                 variant="outline"
-                className="font-mono text-xs tracking-widest uppercase border-primary/30 text-foreground hover:bg-primary/10 hover:text-primary transition-all px-8 py-6 rounded-sm"
+                className="font-mono text-xs tracking-widest uppercase border-primary/30 text-foreground hover:bg-primary/10 hover:text-primary transition-all px-8 py-6 rounded-sm cursor-pointer"
               >
                 Access Complete Vault
               </Button>
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

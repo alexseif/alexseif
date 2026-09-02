@@ -1,10 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
+import React from "react";
 import { FileCheck, ShieldCheck, Lock, Clock, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { fadeInUp, stagger } from "./animations";
-import { openBrevo } from "./utils";
+import { BrevoButton } from "./BrevoButton";
 
 export const NGOPartnerSection = () => {
   const deliverables = [
@@ -33,15 +29,9 @@ export const NGOPartnerSection = () => {
   return (
     <section className="py-20 px-6 relative bg-card/10 border-t border-border/30">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="space-y-16"
-        >
+        <div className="space-y-16">
           {/* Header */}
-          <motion.div variants={fadeInUp} className="text-center space-y-4 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
             <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
               // Embedded Technical Partnership
             </p>
@@ -51,10 +41,10 @@ export const NGOPartnerSection = () => {
             <p className="text-foreground/80 font-mono text-sm md:text-base leading-relaxed text-center pt-2">
               You have a transparency portal, donor reporting dashboard, or data system that lacks a dedicated technical lead. I provide fractional, retainer-based technical ownership — ensuring data sovereignty, compliance with UN/EU/GIZ institutional donors, and vendor accountability without agency overhead.
             </p>
-          </motion.div>
+          </div>
 
           {/* 4 Pillars Grid */}
-          <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {deliverables.map((item, index) => (
               <div
                 key={index}
@@ -73,19 +63,19 @@ export const NGOPartnerSection = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* CTA */}
-          <motion.div variants={fadeInUp} className="flex justify-center pt-4">
-            <Button
-              onClick={openBrevo}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-xs tracking-widest uppercase px-8 py-6 rounded-sm group shadow-md"
+          <div className="flex justify-center pt-4">
+            <BrevoButton
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-xs tracking-widest uppercase px-8 py-4 rounded-sm group shadow-md inline-flex items-center justify-center cursor-pointer transition-colors"
+              ariaLabel="Discuss Your Portal or Program"
             >
               Discuss Your Portal or Program
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </motion.div>
-        </motion.div>
+            </BrevoButton>
+          </div>
+        </div>
       </div>
     </section>
   );
