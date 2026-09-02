@@ -1,0 +1,83 @@
+name: CI/CD Production Build & Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: production_deployment
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Build Next.js in GitHub Cloud
+        working-directory: ./frontend
+        run: npm run build
+
+      - name: Package Standalone Artifact
+        working-directory: ./frontend
+        run: |
+          cp -r public .next/standalone/frontend/public
+          cp -r .next/static .next/standalone/frontend/.next/static
+          tar -czf /tmp/release.tar.gz -C .next/standalone/frontend .
+
+      - name: Deploy Artifact to Production VPS via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          source: "/tmp/release.tar.gz"
+          target: "/tmp/"
+
+      - name: Extract & Zero-Downtime Reload with Health Check
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            set -e
+            echo "📦 Extracting release artifact..."
+            mkdir -p /var/www/alexseif.com/frontend/.standalone
+            tar -xzf /tmp/release.tar.gz -C /var/www/alexseif.com/frontend/.standalone
+            rm -f /tmp/release.tar.gz
+
+            echo "♻️ Reloading PM2..."
+            cd /var/www/alexseif.com
+            pm2 startOrReload ecosystem.config.cjs --update-env
+            pm2 save
+
+            echo "🩺 Running Health Check on port 3000..."
+            sleep 3
+            for i in {1..10}; do
+              if curl -sf http://127.0.0.1:3000/ > /dev/null; then
+                echo "✅ Health check passed! Website is live and healthy."
+                exit 0
+              fi
+              echo "Waiting for Next.js to respond ($i/10)..."
+              sleep 1
+            done
+
+            echo "❌ Health check failed after 10 seconds! Checking logs:"
+            pm2 logs alexseif-frontend --lines 30 --nostream
+            exit 1
