@@ -27,6 +27,19 @@ Deep specialist in the PHP ecosystem (Symfony, Drupal Enterprise, WordPress Core
 
 ---
 
+## Featured Architectural Engagements (Deep Dives)
+
+* **[barincairo.com (2026)](https://alexseif.com/case-studies/2026-barincairo)** (Software Architect & Full-Stack Developer)
+  Architected a decoupled Web GIS platform (React 19 SPA, Python 3.12 FastAPI, PostGIS) featuring sub-second spatial viewport queries, automated multi-tier web scraping pipelines, and Docker containerized deployment.
+* **[Greek Community of Alexandria Portal Modernization (2026)](https://alexseif.com/case-studies/2026-ekalexandria-modernization)** (Software Architect & Full-Stack Developer)
+  Programmatically decoupled and modernized a legacy CMS monolith into a lightweight, zero-dependency Full Site Editing architecture via script-first AST parsing workflows with 1:1 visual fidelity.
+* **[North South Consultants Exchange (NSCE) (2025)](https://alexseif.com/case-studies/2025-nsce)** (Software Architect & Full-Stack Developer)
+  Architected an institutional project impact and donor transparency platform used by international development funders (UN, GIZ, EU) to evaluate multi-country programs across the MENA region.
+* **[Region-First Payment Gateway (Wallety) (2009)](https://alexseif.com/case-studies/2009-wallety)** (Co-Founder & Software Architect)
+  Architected and deployed Egypt's first independent online payment gateway from scratch. Engineered asynchronous CLI queue daemons and defensive transactional state machines, scaling the platform to process 33% of domestic airline ticketing transactions.
+
+---
+
 ## Professional Experience
 
 ### Software Architect & Full-Stack Developer
@@ -73,13 +86,8 @@ Architected, launched, and scaled an early online payment gateway in Egypt, proc
 
 ---
 
-## Education
+## Education & Foundations
 
-### B.Sc. in Business Information Systems (BIS)
-**Arab Academy for Science, Technology and Maritime Transport (AASTMT)**
-
+* **B.Sc. in Business Information Systems (BIS)** | Arab Academy for Science, Technology & Maritime Transport (AASTMT)
 * **Completed 5-Year Engineering Curriculum Coursework:** Operating Systems Design, Relational Database Theory, Algorithms & Data Structures, SCADA Systems.
-
----
-
-*Interactive Case Studies & Architecture Vault: [alexseif.com/case-studies](https://alexseif.com/case-studies)*
+* **Interactive Engineering Vault & Case Studies:** Complete 20-year multi-project archive and detailed architectural use cases available at [alexseif.com/case-studies](https://alexseif.com/case-studies)
