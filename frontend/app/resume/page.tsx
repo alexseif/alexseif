@@ -4,9 +4,12 @@ import matter from "gray-matter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Alex Seif | Senior Software Architect & Principal Systems Engineer — Resume",
+  title: "Alex Seif | Software Architect & Full-Stack Developer - Resume",
   description:
-    "Resume of Alex Seif, a Senior Software Architect specializing in high-concurrency PHP/Symfony ecosystems, legacy database remediation, distributed systems, and production AI integration.",
+    "Resume of Alex Seif, Software Architect & Full-Stack Developer specializing in high-concurrency PHP/Symfony, Drupal, WordPress, PostgreSQL/PostGIS, and zero-downtime database optimization.",
+  alternates: {
+    canonical: "/resume",
+  },
 };
 
 import PrintButton from "./PrintButton";

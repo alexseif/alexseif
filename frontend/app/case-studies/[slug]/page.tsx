@@ -24,13 +24,17 @@ export async function generateMetadata({
   try {
     const project = getProjectBySlug(slug);
     return {
-      title: `${project.title} | Alex Seif`,
+      title: `${project.title} | Case Study`,
       description:
         project.subtitle ||
-        `Case study on ${project.title} architecture and technical execution.`,
+        `Architectural case study on ${project.title} by Alex Seif.`,
+      alternates: {
+        canonical: `/case-studies/${slug}`,
+      },
       openGraph: {
-        title: `${project.title} | Architectural Case Study`,
+        title: `${project.title} | Architectural Case Study | Alex Seif`,
         description: project.subtitle,
+        url: `https://alexseif.com/case-studies/${slug}`,
       },
     };
   } catch (e) {

@@ -10,12 +10,23 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Alex Seif",
-    "jobTitle": "Software Architect & NGO Technical Partner",
+    "jobTitle": "Software Architect & Full-Stack Developer",
     "url": "https://alexseif.com",
     "sameAs": [
-      "https://github.com/alexseif"
+      "https://github.com/alexseif",
+      "https://linkedin.com/in/alexseif"
     ],
-    "knowsAbout": ["Deep-End Enterprise Infrastructures", "Digital System Deployments", "Legacy Monolith Decoupling", "PHP/Symfony", "Agentic AI Engineering", "Defensive Zero-Maintenance Engineering"]
+    "knowsAbout": [
+      "Software Architecture",
+      "Full-Stack Development",
+      "Symfony Framework",
+      "Drupal Enterprise",
+      "WordPress Multisite & FSE",
+      "PostgreSQL PostGIS",
+      "MySQL 3NF & Star Schema",
+      "High-Concurrency Routing",
+      "Zero-Downtime Infrastructure Migrations"
+    ]
   };
 
   return (

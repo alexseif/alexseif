@@ -5,12 +5,16 @@ import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "System Logs | Case Studies | Alex Seif",
+  title: "Case Studies & Architectural Vault | Alex Seif",
   description:
-    "Raw engineering validation. Examine the architectural identity, technical stack, and engagement type of all deployments.",
+    "Engineering case studies and system dossiers by Alex Seif. High-concurrency systems, Symfony payment engines, Drupal portals, WordPress FSE migrations, and Web GIS platforms.",
+  alternates: {
+    canonical: "/case-studies",
+  },
   openGraph: {
-    title: "System Logs | Case Studies",
-    description: "Explore the full architectural vault and engineering dossiers.",
+    title: "Case Studies & Architectural Vault | Alex Seif",
+    description: "Explore the full architectural vault, systems topologies, and engineering dossiers.",
+    url: "https://alexseif.com/case-studies",
   },
 };
 

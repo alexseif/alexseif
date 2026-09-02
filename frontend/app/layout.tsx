@@ -22,20 +22,49 @@ const _playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Alex Seif | Software Architect & NGO Technical Partner',
+  metadataBase: new URL('https://alexseif.com'),
+  title: {
+    default: 'Alex Seif | Software Architect & Full-Stack Developer',
+    template: '%s | Alex Seif',
+  },
   description:
-    'Software Architect & NGO Technical Partner. 20+ years of high-concurrency PHP/Symfony ecosystem architecture and zero-downtime legacy migrations.',
+    'Software Architect and Full-Stack Developer with over 20 years of experience in high-concurrency systems architecture, Symfony, Drupal, WordPress, PostgreSQL/PostGIS, and zero-downtime database optimization.',
   keywords: [
     'Software Architect',
-    'Principal PHP Developer',
-    'Symfony Specialist',
-    'NGO Technical Partner',
-    'Systems Architect',
-    'Digital Infrastructures',
-    'Legacy Monolith Decoupling',
-    'State-Preservation Queue Design',
+    'Full-Stack Developer',
+    'Symfony Developer',
+    'Drupal Developer',
+    'WordPress Developer',
+    'PHP 8 Specialist',
+    'React Developer',
+    'FastAPI',
+    'PostgreSQL PostGIS',
+    'MySQL Replication',
+    'High-Concurrency Systems',
+    'Zero-Downtime Migration',
+    'Cloud Infrastructure',
+    'Netherlands Relocation',
   ],
-  generator: 'v0.app',
+  authors: [{ name: 'Alex Seif', url: 'https://alexseif.com' }],
+  creator: 'Alex Seif',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://alexseif.com',
+    siteName: 'Alex Seif | Software Architect & Full-Stack Developer',
+    title: 'Alex Seif | Software Architect & Full-Stack Developer',
+    description:
+      '20+ years of hands-on software architecture, Symfony, Drupal, WordPress, PostgreSQL/PostGIS, and zero-downtime database optimization.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alex Seif | Software Architect & Full-Stack Developer',
+    description:
+      '20+ years of hands-on software architecture, Symfony, Drupal, WordPress, and zero-downtime database optimization.',
+  },
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
@@ -81,7 +110,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* End Google Tag Manager (noscript) */}
         {children}
 
-
         {/* Schema.org JSON-LD */}
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
           {`
@@ -89,17 +117,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "@context": "https://schema.org",
               "@type": ["Person", "ProfessionalService"],
               "name": "Alex Seif",
-              "jobTitle": "Software Architect & NGO Technical Partner",
+              "jobTitle": "Software Architect & Full-Stack Developer",
               "url": "https://alexseif.com",
-              "description": "Expert Software Architect acting as a NGO Technical Partner for enterprise organizations globally.",
-              "areaServed": ["World", "Europe", "Egypt", "UAE", "KSA"],
+              "description": "Software Architect and Full-Stack Developer specializing in high-concurrency systems, Symfony, Drupal, WordPress, and database optimization.",
+              "areaServed": ["Netherlands", "Europe", "Global", "Egypt", "UAE", "Saudi Arabia"],
               "knowsAbout": [
-                "PHP",
+                "Software Architecture",
+                "Full-Stack Development",
                 "Symfony",
-                "Relational Database Optimization",
-                "Agentic AI Engineering",
-                "Legacy Monolith Decoupling",
-                "System Integration"
+                "Drupal Enterprise",
+                "WordPress Multisite & FSE",
+                "PHP 8",
+                "React",
+                "Python FastAPI",
+                "PostgreSQL PostGIS",
+                "MySQL Master-Slave Replication",
+                "Zero-Downtime Migrations",
+                "Air-Gapped Intranet Architecture",
+                "High-Concurrency Systems"
               ]
             }
           `}
