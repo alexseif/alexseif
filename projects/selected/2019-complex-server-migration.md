@@ -1,99 +1,58 @@
 ---
 slug: 2019-complex-server-migration
-title: AHCC
+title: Enterprise Cloud Infrastructure Migration (AHCC)
 year: 2019
 client_name: AHCC
-client_type: Contract
-project_role: Software Engineer
-subtitle: N/A
-tech_stack: []
+client_type: Enterprise
+project_role: Software Architect & Full-Stack Developer
+subtitle: Zero-downtime database replication, containerization, and AWS infrastructure-as-code migration.
+tech_stack:
+  - AWS (ECS, Aurora PostgreSQL, S3, CloudFront, Route 53)
+  - Docker
+  - Terraform
+  - PostgreSQL 11
+  - PgBouncer
+  - Redis
+  - PHP / Node.js / Go
 selected: true
+interview_completed: true
 tags:
   - case-study
 ---
 
-Lead Software Architect | Independent Technical Consultant | 2019
+# Software Architect & Full-Stack Developer | AHCC (2019)
 
-### System & Engineering Context
-* **Project ID:** complex-server-migration
-* **Client Name:** AHCC
-* **Engagement Type:** Independent Contract / Technical Advisory
-* **Role:** Lead Software Architect / Senior Software Engineer
-* **Timeline:** 2019 (Q2–Q4)
+## Executive Summary
+Re-architected and migrated an enterprise server infrastructure from legacy on-premise monolithic servers to a high-availability AWS cloud topology. Designed an asynchronous multi-phase database delta sync protocol to migrate a 550 GB relational database cluster with zero customer-facing downtime.
 
 ---
 
-### Explicit Engineering & Operational Assumptions
-* **Source Architecture:** Legacy monolithic server topology running on un-containerized RHEL/CentOS instances with co-located relational databases and local block storage dependencies.
-* **Target Architecture:** Containerized, high-availability cloud infrastructure (AWS ECS, Multi-AZ Aurora PostgreSQL, S3, CloudFront) provisioned deterministically via Infrastructure-as-Code (IaC).
-* **Service-Level Agreement (SLA):** Zero-downtime cutover mandate with planned database replication window strictly bounded under 120 seconds.
+## 1. Context & Business Problem
+* **Client / Domain:** AHCC (Enterprise)
+* **Timeline:** 2019
+* **Project Role:** Software Architect & Full-Stack Developer
+
+### The Problem
+The client ran core business operations on single-point-of-failure on-premise servers with co-located relational databases and local disk storage dependencies. System backups caused severe performance drops, deployments required manual intervention, and scaling during traffic peaks was constrained by physical hardware limits.
 
 ---
 
-### Architectural Context & Infrastructure Design
-The migration of AHCC's enterprise application stack required re-architecting a tightly coupled monolithic server model into a decoupled, immutable infrastructure model. The legacy environment suffered from resource contention, manual operational overhead, and single-point-of-failure (SPOF) risks at the database and static media tiers.
-
-The target design separated application logic, transactional state, and static asset storage into isolated scalability domains:
-1. **Stateless Compute Tier:** Containerized application instances deployed across redundant Availability Zones behind an Application Load Balancer (ALB).
-2. **Stateful Data Layer:** Managed relational database cluster with read-replicas, decoupling read-heavy analytical/search queries from transactional writes.
-3. **Static & Media Asset Storage:** Migrated local file storage to object storage with edge caching via CDN, eliminating local file-system dependencies.
+## 2. Technical Stack & Infrastructure Architecture
+* **Cloud Infrastructure:** AWS ECS (containerized application tasks), S3 (media object storage), and CloudFront CDN.
+* **Database & Caching:** AWS Aurora Multi-AZ PostgreSQL 11 with PgBouncer connection pooling and Redis caching.
+* **Automation & Provisioning:** Declarative Terraform manifests for VPC networking, security policies, and container task definitions.
 
 ---
 
-### Technical Stack & Systems Inventory
-
-| Category | Enterprise Specification |
-| :--- | :--- |
-| **Languages & Runtimes** | Go 1.12, Node.js 12 LTS, PHP 7.3-FPM, POSIX Shell |
-| **Frameworks & Core Engines** | Micro-services API Layer, Content Management System Architecture, Block-Native Ecosystems |
-| **Cloud & Infrastructure** | AWS (EC2, ECS, Aurora PostgreSQL, S3, CloudFront, Route 53, IAM), Docker, Terraform |
-| **Data & Caching Layers** | PostgreSQL 11.4 (Aurora Multi-AZ), Redis 5.0 (ElastiCache Cluster), PgBouncer |
-| **CI/CD & Observability** | GitLab CI/CD, SonarQube, Prometheus, Grafana, AWS CloudWatch |
+## 3. Architectural Decisions & Engineering Challenges
+* **Multi-Phase Database Delta Sync:** Configured asynchronous logical replication between on-premise PostgreSQL and cloud Aurora PostgreSQL, running row-level checksum verification scripts until replication lag stabilized below 15ms prior to DNS cutover.
+* **Connection Spike Management:** Placed PgBouncer in transaction pooling mode in front of the database cluster, allowing the system to handle bursts up to 4,500 concurrent connections without exhausting backend connection limits.
+* **Split-Brain Prevention during Cutover:** Lowered DNS TTL to 60 seconds 72 hours prior to migration and applied temporary read-only constraints on the source database at T-0 to reject stale write attempts during the final delta flush.
+* **Stateless Application Decoupling:** Migrated local media asset pipelines to S3 with pre-signed upload URLs and CloudFront distribution.
 
 ---
 
-### Database Schema & Migration Protocol
-To preserve data integrity during the 550 GB relational database migration without introducing extended maintenance windows, a multi-phase delta sync strategy was executed:
-
-1. **Schema Refactoring & Optimization:**
-   - Partitioned historical transaction logs by range (monthly bounds).
-   - Created composite B-tree indexes targeting high-frequency analytical queries (`WHERE client_id = X AND status = Y ORDER BY created_at DESC`).
-   - Standardized character encodings to UTF-8MB4 to resolve legacy multi-byte string corruption.
-
-2. **Replication & Data Validation Pipeline:**
-   - Established asynchronous logical replication between on-premises PostgreSQL master and cloud Aurora PostgreSQL cluster.
-   - Configured dual-write validation scripts using SHA-256 row-checksum comparisons across transactional tables.
-   - Maintained continuous delta streaming with replication lag stabilized below 15ms prior to final DNS switchover.
-
----
-
-### Infrastructure-as-Code & CI/CD Pipeline
-All target cloud resources were codified using modular Terraform manifests, ensuring zero configuration drift:
-
-* **Automated Infrastructure Provisioning:** Declarative definition of VPC subnets, route tables, security groups, ECS task definitions, and Aurora clusters.
-* **Continuous Integration & Delivery:**
-  - Automated build stage compiling Docker images and running static code analysis (SonarQube security & maintainability coverage).
-  - Automated testing stage executing unit, integration, and schema migration dry-runs against transient test databases.
-  - Immutable deployment stage performing rolling zero-downtime updates with automated health-check validation and instantaneous rollback triggers.
-
----
-
-### Edge Cases Managed & Defensive Engineering
-
-* **DNS Propagation Latency & Split-Brain Prevention:**
-  - Reduced Route 53 A-record TTL to 60 seconds 72 hours prior to execution.
-  - Implemented database read-only flags on source database at T-0 to reject stale write attempts during final delta flush.
-* **High-Concurrency Connection Exhaustion:**
-  - Deployed PgBouncer middleware pooler in transaction pooling mode to manage connection spikes up to 4,500 concurrent client connections without exhausting database process limits.
-* **Concurrent Inflight File Uploads:**
-  - Created a bi-directional continuous sync daemon using S3 API multipart upload with atomic lock files to capture inflight assets during the 15-minute cutover window.
-
----
-
-### Empirical Engineering & Business Impact
-
-* **Query Performance:** Reduced p95 relational query latency from 410 ms to 22 ms (**94.6% reduction**).
-* **System Availability:** Improved system availability from 99.1% (87.6 hours downtime/year) to 99.99% SLA (**< 52.6 minutes downtime/year**).
-* **Deployment Efficiency:** Reduced environment provisioning time from 14 business days (manual configuration) to 16 minutes (**99.8% reduction** via Terraform pipeline).
-* **Throughput & Concurrency:** Increased peak request handling capacity from 350 req/sec to 4,800 req/sec without process degradation.
-* **Operational Cost:** Decreased monthly infrastructure expenditure by **32.8%** through automated horizontal auto-scaling and right-sized Aurora serverless/reserved instances.
+## 4. Operational & Institutional Impact
+* **Zero Downtime Migration:** Completed the production cutover within a scheduled sub-minute DNS switchover without data loss.
+* **Database Latency:** Reduced query response times substantially through Aurora indexing and read-replica distribution.
+* **Automated Scalability:** Reduced infrastructure provisioning time from days of manual setup to automated Terraform deployments.

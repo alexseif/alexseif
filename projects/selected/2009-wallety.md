@@ -1,98 +1,59 @@
 ---
 slug: 2009-wallety
-title: Wallety
+title: Wallety Payment Gateway
 year: 2009
 client_name: Wallety
-client_type: Fintech Enterprise
+client_type: Fintech / Payment Gateway
 project_role: Co-Founder & Chief Technology Officer (CTO)
-subtitle: Engineered Egypt’s first comprehensive secure online payment gateway from
-  the ground up, addressing national banking infrastructure challenges related...
+subtitle: Scaled Egypt's early online payment infrastructure, handling 33% of national domestic flight ticketing volume.
 tech_stack:
-- PHP
-- Symfony Framework
-- AWS Ecosystem
-- Load Balancers
-- MySQL (Master-Slave)
-- Asynchronous Queues
-- CLI Daemons
+  - PHP
+  - Symfony Framework
+  - AWS (EC2, ELB)
+  - MySQL (Master-Slave)
+  - Asynchronous Queues
+  - CLI Daemons
+  - Amadeus GDS API
 selected: true
+interview_completed: true
 tags:
   - case-study
 ---
 
-# Lead Software Architect | Wallety | 2009
+# Software Architect & Full-Stack Developer | Wallety (2009)
 
-## Executive Summary & Architectural Context
-Wallety addressed national banking and payment infrastructure constraints in Egypt, establishing the region's first comprehensive secure online payment gateway. The platform was engineered to solve systemic challenges concerning online transaction security, credit card fraud mitigation, and high availability under unstable local telecommunications infrastructure. Post-funding, the architecture successfully scaled to process 33% of all domestic air travel ticketing throughput across Egypt.
-
----
-
-## Infrastructure & Systems Topology
-
-```
-+-----------------------------------------------------------------------------------+
-|                                  AWS ECOSYSTEM                                    |
-|                                                                                   |
-|  +-------------------+        +-------------------+        +-------------------+  |
-|  | Enterprise Load   | -----> |   Symfony (PHP)   | -----> | Asynchronous CLI  |  |
-|  |    Balancer       |        |   App Instances   |        |   Queue Daemons   |  |
-|  +-------------------+        +-------------------+        +-------------------+  |
-|                                         |                            |            |
-|                                         v                            v            |
-|                               +-------------------+        +-------------------+  |
-|                               |   MySQL Master    | -----> |   MySQL Slaves    |  |
-|                               |     (Writes)      | (Repl) |      (Reads)      |  |
-|                               +-------------------+        +-------------------+  |
-+-----------------------------------------|-----------------------------------------+
-                                          v
-                   +-----------------------------------------------+
-                   | Amadeus GDS & Banking Partner Gateway Network |
-                   +-----------------------------------------------+
-```
-
-### 1. High-Availability Compute & Load Balancing Layer
-* **Ingress & Traffic Distribution**: AWS Cloud ecosystem utilizing Enterprise Load Balancers to terminate SSL and distribute incoming HTTPS traffic across stateless application nodes.
-* **Domain Framework**: Developed on Symfony Framework (PHP), enforcing domain-driven isolation, strict object-oriented paradigms, and clean service layers for core payment workflows.
-
-### 2. Database Schema & Data Layer Replication
-* **Master-Slave Topology**: Clustered MySQL architecture separating write and read workloads:
-  * **Master Node**: Dedicated exclusively to ACID-compliant transactional state mutations and write operations.
-  * **Slave Nodes**: Serviced read-heavy queries, transaction logging, and real-time audit reporting.
-* **I/O Overhead Reduction**: Substantially minimized disk I/O bottlenecks on the master node, maintaining high-throughput execution during peak demand periods.
-
-### 3. Asynchronous Processing & Queue Architecture
-* **Non-Blocking Execution**: Decoupled synchronous HTTP request/response handling from long-running payment settlement tasks via CLI daemons.
-* **Queue Loop Frequency**: Engineered 1-second asynchronous queue execution loops to ingest and process transaction bursts without locking web-tier thread pools.
+## Executive Summary
+Engineered an online payment gateway built to handle high-concurrency payment settlements in Egypt under unstable telecommunications infrastructure. The platform integrated directly with banking gateways and the Amadeus Global Distribution System (GDS), scaling to process 33% of all domestic air travel ticketing volume across Egypt.
 
 ---
 
-## Technical Stack
+## 1. Context & Business Problem
+* **Client / Domain:** Wallety (Fintech / Payment Gateway)
+* **Timeline:** 2009
+* **Project Role:** Software Architect & Full-Stack Developer
 
-| Layer | Component / Specification |
-| :--- | :--- |
-| **Language & Framework** | PHP, Symfony Framework |
-| **Cloud Infrastructure** | AWS Ecosystem, Load Balancers |
-| **Database & Storage** | MySQL (Master-Slave Replication), Asynchronous Queues, CLI Daemons |
-| **API Integrations** | Amadeus Global Distribution System (GDS) API, External Bank Gateways |
-
----
-
-## Core Engineering Implementations & Edge Case Mitigation
-
-### 1. Defensive Transactional State Machine
-* **Constraint**: Frequent external bank gateway timeouts and volatile local network dropouts risked inconsistent states, unconfirmed bookings, or lost callbacks.
-* **Engineered Solution**: Implemented a deterministic transactional state machine (`PENDING`, `AUTHORIZED`, `SETTLED`, `FAILED`, `RECONCILED`).
-* **Resilience**: Integrated automatic status reconciliation and polling routines, guaranteeing strict SLA compliance and zero transaction leakage during third-party service degradation.
-
-### 2. Real-Time Amadeus GDS Synchronization
-* **Integration Logic**: Connected the core payment routing engine directly to the Amadeus Global Distribution System (GDS) for instantaneous flight seat allocation.
-* **Concurrency Management**: Enforced atomic database transactions aligning seat lock operations with payment gateway authorization confirmations, eliminating double-booking under extreme traffic spikes.
+### The Problem
+During 2009, regional banking APIs in Egypt suffered from high timeout rates and lack of standardized payment interfaces. Airlines and merchants required a fault-tolerant intermediary payment engine that could guarantee transactional consistency without losing booking state during network interruptions.
 
 ---
 
-## Quantifiable Engineering & Business Impact
+## 2. Technical Stack & Systems Infrastructure
+* **Application Framework:** Symfony (PHP), enforcing domain separation and isolated payment state machines.
+* **Data Layer:** MySQL with Master-Slave replication separating write-heavy transaction processing from read-heavy reporting.
+* **Infrastructure:** AWS compute nodes behind Elastic Load Balancers terminating SSL.
+* **Background Processing:** Long-running CLI daemons executing asynchronous queue loops every second.
 
-* **National Scale**: Scaled system throughput to capture **33% of all domestic air travel ticketing volume** across Egypt.
-* **Autonomous Delivery**: Single-handedly architected, implemented, and deployed the core payment engine to achieve initial production launch and secure institutional funding.
-* **Queue Latency**: Maintained 1-second queue processing intervals during severe transaction spikes, insulating end users from gateway latency.
-* **High Availability**: Optimized master-slave database replication to eliminate I/O disk contention, sustaining continuous service uptime despite national market telecom restrictions.
+---
+
+## 3. Core Architectural Decisions
+* **Deterministic Transactional State Machine:** Implemented explicit state tracking (Pending, Authorized, Settled, Failed, Reconciled) with automated polling to reconcile dropped bank callbacks.
+* **Master-Slave Database Topology:** Dedicated the master database node strictly to ACID-compliant writes while routing reporting and transaction audit queries to read replicas, eliminating disk I/O contention.
+* **Atomic GDS Booking Alignment:** Enforced atomic database transactions that coupled flight seat reservation locks in Amadeus GDS with payment gateway authorization confirmations to prevent double bookings.
+* **Asynchronous Queue Orchestration:** Decoupled synchronous HTTP request handling from slow upstream bank gateway settlements using background CLI queue workers.
+
+---
+
+## 4. Operational & Business Impact
+* **Scale & Throughput:** Scaled payment processing throughput to support 33% of domestic air travel ticketing in Egypt.
+* **System Resilience:** Maintained consistent transaction reconciliation despite frequent external bank network drops.
+* **Queue Latency:** Sustained 1-second queue processing intervals during ticket sale spikes, insulating checkout flows from gateway latency.
