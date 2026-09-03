@@ -72,7 +72,7 @@ export default function ResumePage() {
 
   return (
     <div className="resume-container min-h-screen bg-gray-100 py-10 print:py-0 print:bg-white flex justify-center">
-      <div className="resume-paper relative w-full max-w-4xl bg-white shadow-lg print:shadow-none p-12 print:p-0">
+      <div className="resume-paper relative w-full max-w-4xl bg-white shadow-lg print:shadow-none p-10 print:p-0">
         {/* Floating Utility Action */}
         <PrintButton />
 
@@ -82,32 +82,49 @@ export default function ResumePage() {
           @media print {
             body { 
               background: #fff; 
-              color: #000; 
-              font-size: 10pt; 
-              line-height: 1.35; 
+              color: #111; 
+              font-size: 9pt; 
+              line-height: 1.25; 
               margin: 0; 
               padding: 0; 
               -webkit-print-color-adjust: exact;
             }
             @page { 
               size: A4; 
-              margin: 18mm 16mm; 
+              margin: 10mm 12mm 10mm 12mm; 
             }
             nav, button, .no-print { 
               display: none !important; 
-            }
-            .page-break { 
-              page-break-before: always; 
             }
             * {
               font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
             }
             .resume-paper {
               max-width: 100% !important;
+              padding: 0 !important;
+            }
+            header {
+              margin-bottom: 2.5mm !important;
+              padding-bottom: 2mm !important;
             }
             section {
-              page-break-inside: avoid;
+              margin-bottom: 2.5mm !important;
+              padding-bottom: 2mm !important;
+              page-break-inside: auto !important;
             }
+            .resume-experience > div,
+            .resume-experience li,
+            .resume-competencies li {
+              page-break-inside: avoid !important;
+            }
+            h1 { font-size: 16pt !important; margin-bottom: 0.5mm !important; }
+            h2 { font-size: 10.5pt !important; margin-bottom: 1mm !important; }
+            h3 { font-size: 8pt !important; margin-bottom: 1mm !important; letter-spacing: 0.05em !important; }
+            h4 { font-size: 9.5pt !important; margin-top: 2mm !important; margin-bottom: 0.5mm !important; }
+            h5 { font-size: 7.5pt !important; margin-top: 1mm !important; margin-bottom: 0.5mm !important; }
+            p, li { font-size: 8.5pt !important; line-height: 1.25 !important; }
+            ul { margin-bottom: 1mm !important; }
+            footer { margin-top: 2mm !important; padding-top: 1.5mm !important; }
           }
         `,
           }}
@@ -115,15 +132,15 @@ export default function ResumePage() {
 
         <div className="font-sans text-gray-900 leading-relaxed max-w-[800px] mx-auto print:mx-0 print:max-w-none">
           {/* Header Block */}
-          <header className="border-b-2 border-gray-900 pb-5 mb-5">
+          <header className="border-b-2 border-gray-900 pb-3 mb-3">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1 text-gray-900">
               {data.name}
             </h1>
-            <h2 className="text-lg md:text-xl text-gray-700 font-semibold mb-3">
+            <h2 className="text-lg md:text-xl text-gray-700 font-semibold mb-2">
               {data.title}
             </h2>
 
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-gray-600 font-medium">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs md:text-sm text-gray-600 font-medium">
               <a href={"mailto:" + data.email} className="hover:text-black transition-colors">
                 {data.email}
               </a>
@@ -145,11 +162,11 @@ export default function ResumePage() {
 
           {/* Professional Summary */}
           {summary && (
-            <section className="mb-6 border-b border-gray-200 pb-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-2 font-mono">
+            <section className="mb-3.5 border-b border-gray-200 pb-3.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
                 Professional Summary
               </h3>
-              <p className="text-justify font-normal text-[14px] leading-relaxed text-gray-800">
+              <p className="text-justify font-normal text-[13.5px] leading-relaxed text-gray-800">
                 {summary}
               </p>
             </section>
@@ -157,8 +174,8 @@ export default function ResumePage() {
 
           {/* Technical Stack & Competencies */}
           {stack && (
-            <section className="mb-6 border-b border-gray-200 pb-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 font-mono">
+            <section className="mb-3.5 border-b border-gray-200 pb-3.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2 font-mono">
                 Technical Stack & Architecture Competencies
               </h3>
               <div className="text-sm resume-competencies">
@@ -166,17 +183,17 @@ export default function ResumePage() {
                   remarkPlugins={[remarkGfm]}
                   components={{
                     ul: ({ node, ...props }) => (
-                      <ul className="space-y-2 mb-2" {...props} />
+                      <ul className="space-y-1.5 mb-1" {...props} />
                     ),
                     li: ({ node, ...props }) => (
                       <li
-                        className="flex flex-col sm:flex-row print:flex-row leading-relaxed text-gray-800 text-[13.5px]"
+                        className="flex flex-col sm:flex-row print:flex-row leading-snug text-gray-800 text-[13px]"
                         {...props}
                       />
                     ),
                     strong: ({ node, ...props }) => (
                       <strong
-                        className="sm:w-2/5 print:w-2/5 shrink-0 sm:pr-4 print:pr-4 font-bold text-gray-900"
+                        className="sm:w-2/5 print:w-2/5 shrink-0 sm:pr-3 print:pr-3 font-bold text-gray-900"
                         {...props}
                       />
                     ),
@@ -188,21 +205,21 @@ export default function ResumePage() {
             </section>
           )}
 
-          {/* Featured Architectural Engagements */}
+          {/* Featured Architectural Engagements (rendered if present in markdown) */}
           {portfolio && (
-            <section className="mb-6 border-b border-gray-200 pb-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 font-mono">
-                Featured Architectural Engagements (Deep Dives)
+            <section className="mb-3.5 border-b border-gray-200 pb-3.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2 font-mono">
+                Featured Architectural Engagements
               </h3>
               <div className="text-sm resume-portfolio">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
                     ul: ({ node, ...props }) => (
-                      <ul className="space-y-3 mb-2" {...props} />
+                      <ul className="space-y-2 mb-1" {...props} />
                     ),
                     li: ({ node, ...props }) => (
-                      <li className="leading-relaxed text-justify text-gray-800 text-[13.5px]" {...props} />
+                      <li className="leading-snug text-justify text-gray-800 text-[13px]" {...props} />
                     ),
                     strong: ({ node, ...props }) => (
                       <strong className="font-bold text-gray-900" {...props} />
@@ -228,17 +245,17 @@ export default function ResumePage() {
 
           {/* Professional Experience */}
           {experience && (
-            <section className="mb-6 border-b border-gray-200 pb-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4 font-mono">
+            <section className="mb-3.5 border-b border-gray-200 pb-3.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2 font-mono">
                 Professional Experience
               </h3>
-              <div className="space-y-6 text-sm resume-experience">
+              <div className="space-y-3 text-sm resume-experience">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
                     h3: ({ node, ...props }) => (
                       <h4
-                        className="font-bold text-[15px] text-gray-900 uppercase tracking-wide"
+                        className="font-bold text-[14px] text-gray-900 uppercase tracking-wide mt-2 mb-0.5"
                         {...props}
                       />
                     ),
@@ -248,9 +265,9 @@ export default function ResumePage() {
                       const timeline = parts.length > 1 ? parts[parts.length - 1] : "";
                       const entity = parts.slice(0, parts.length - 1).join(" | ");
                       return (
-                        <div className="flex justify-between items-baseline mb-2.5 pb-1.5 border-b border-gray-100">
-                          <div className="font-semibold text-gray-800 text-[13.5px]">{entity}</div>
-                          <div className="text-right font-medium text-gray-600 text-xs whitespace-nowrap ml-4">
+                        <div className="flex justify-between items-baseline mb-1 pb-0.5 border-b border-gray-100">
+                          <div className="font-semibold text-gray-800 text-[12.5px]">{entity}</div>
+                          <div className="text-right font-medium text-gray-600 text-xs whitespace-nowrap ml-3">
                             {timeline}
                           </div>
                         </div>
@@ -258,23 +275,23 @@ export default function ResumePage() {
                     },
                     h4: ({ node, ...props }) => (
                       <h5
-                        className="font-bold text-xs text-gray-800 mt-4 mb-2 uppercase tracking-wider"
+                        className="font-bold text-xs text-gray-800 mt-2 mb-0.5 uppercase tracking-wider"
                         {...props}
                       />
                     ),
                     p: ({ node, ...props }) => (
                       <p
-                        className="text-[13.5px] text-gray-800 leading-relaxed mb-2.5 text-justify"
+                        className="text-[12.5px] text-gray-800 leading-snug mb-1 text-justify"
                         {...props}
                       />
                     ),
                     ul: ({ node, ...props }) => (
                       <ul
-                        className="list-disc pl-5 space-y-2 text-justify text-[13.5px] mb-3 text-gray-800"
+                        className="list-disc pl-4 space-y-0.5 text-justify text-[12.5px] mb-1.5 text-gray-800"
                         {...props}
                       />
                     ),
-                    li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
+                    li: ({ node, ...props }) => <li className="leading-snug" {...props} />,
                     strong: ({ node, ...props }) => (
                       <strong className="font-semibold text-gray-900" {...props} />
                     ),
@@ -288,8 +305,8 @@ export default function ResumePage() {
 
           {/* Education & Credentials */}
           {credentials && (
-            <section className="mb-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 font-mono">
+            <section className="mb-3.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 font-mono">
                 Education & Foundations
               </h3>
               <div className="text-sm">
@@ -298,18 +315,18 @@ export default function ResumePage() {
                   components={{
                     p: ({ node, ...props }) => (
                       <p
-                        className="text-[13.5px] text-gray-800 leading-relaxed mb-2 text-justify"
+                        className="text-[12.5px] text-gray-800 leading-snug mb-1 text-justify"
                         {...props}
                       />
                     ),
                     ul: ({ node, ...props }) => (
                       <ul
-                        className="list-disc pl-5 space-y-2 text-justify text-[13.5px] mb-3"
+                        className="list-disc pl-4 space-y-0.5 text-justify text-[12.5px] mb-1.5"
                         {...props}
                       />
                     ),
                     li: ({ node, ...props }) => (
-                      <li className="leading-relaxed text-gray-800" {...props} />
+                      <li className="leading-snug text-gray-800" {...props} />
                     ),
                     strong: ({ node, ...props }) => (
                       <strong className="font-bold text-gray-900" {...props} />
@@ -331,9 +348,9 @@ export default function ResumePage() {
           )}
 
           {/* Footer Note */}
-          <footer className="mt-8 pt-4 border-t border-gray-200 print:border-gray-900">
-            <p className="text-xs text-gray-500 print:text-black print:text-[9pt] leading-relaxed text-justify">
-              <strong>Single Source of Truth:</strong> Complete 20-year multi-project architectural
+          <footer className="mt-4 pt-2 border-t border-gray-200 print:border-gray-900">
+            <p className="text-xs text-gray-500 print:text-black print:text-[8pt] leading-snug text-justify">
+              <strong>Projects:</strong> Complete 20-year multi-project architectural
               vault, systems diagrams, and engineering dossiers available at:{" "}
               <a
                 href="https://alexseif.com/case-studies"
