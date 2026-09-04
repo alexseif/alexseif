@@ -1,54 +1,43 @@
 ---
 slug: 2011-resort
-title: Global Hospitality / Real Estate
+title: "Resort Sales & Management (La Manga Club Vacation Rentals)"
 year: 2011
-client_name: Global Hospitality / Real Estate
-client_type: Global Hospitality / Real Estate
-project_role: Software Architect & NGO Technical Partner
-subtitle: Retained as Software Architect and NGO Technical Partner to design and maintain
-  a multi-tenant property rental and resort management engine. The platf...
+client_name: "MITCHDesigns (End-Client: Resort Sales & Management)"
+client_type: "Hospitality & Property Management"
+project_role: "Software Architect"
+subtitle: "Architected a multi-portal property rental and operations engine for luxury holiday homes in La Manga Club, scaling booking operations to £1M/month."
 tech_stack:
-- PHP
-- Custom MVC Framework
-- MySQL
-- Relational Yield Logic
+  - "PHP"
+  - "Custom MVC Framework"
+  - "MySQL (Views & Transactional Locks)"
+  - "Multi-Portal RBAC Architecture"
+  - "Turnover & Inspection State Machine"
+  - "Apache / Linux"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | Global Hospitality / Real Estate | 2011
+# Software Architect | MITCHDesigns - Resort Sales & Management (2011 - 2012)
 
-## Executive Summary & Architectural Context
-Retained as Software Architect and NGO Technical Partner to design, implement, and maintain a multi-tenant property rental and resort management engine for Global Hospitality / Real Estate. The platform reconciled conflicting operational and business domains, including public guest booking channels, private property owner occupancy windows, regulatory compliance constraints, and physical estate maintenance logistics.
+## Overview
+Resort Sales & Management operated a property management and holiday rental business at the La Manga Club resort in Spain, partnering with private villa and apartment owners to market, manage, inspect, and book luxury accommodations for international travelers. The client engaged MITCHDesigns to overhaul their legacy processes and automate their entire property catalog, booking lifecycle, and maintenance operations.
 
-By encoding complex property rental contracts directly into relational validation logic, the engine enforced deterministic booking boundaries and eliminated cross-channel double-booking race conditions at the database persistence layer.
+As Software Architect, designed the core custom PHP MVC framework and multi-portal system architecture that powered three distinct operational workflows:
+1. **Public Guest Booking Portal:** A consumer-facing catalog showcasing detailed property amenities, high-resolution photography, and real-time availability.
+2. **Operations & Property Management Portal:** An administrative back-office to contract with property owners, set dynamic seasonal tariffs, schedule cleaning crews, and track mandatory pre- and post-stay physical inspections.
+3. **Property Owner Portal:** A dedicated self-service channel allowing homeowners to block out private occupancy dates and review rental yield statements.
 
----
+Automating these workflows eliminated double-booking conflicts and streamlined resort operations to handle over £1,000,000 GBP in monthly booking volume.
 
-## System Architecture & Technical Topology
+## Key Technical Challenges & Architecture
 
-* **Role**: Lead Software Architect & Technical Partner
-* **Timeline**: 2011
-* **Core Language**: PHP
-* **Application Framework**: Custom Object-Oriented MVC Architecture
-* **Data & Persistence Layer**: MySQL, Relational Yield Logic Engine
-* **Core Competencies**: Schema Modeling, Data Flow Mapping, Concurrency Optimization, Data Layer Hardening, Domain-Driven Design, Component Abstraction, System Topology Design, Defensive Release Engineering
+### 1. Multi-Portal Access Control & State Management
+Designed a decoupled role-based architecture serving three distinct user domains from a unified database layer, ensuring strict data isolation between public guests, property owners, and resort management staff.
 
----
+### 2. Operational Buffers & Maintenance State Machine
+Integrated physical resort logistics directly into the availability engine. Programmed automated operational locks before and after each guest reservation to guarantee mandatory maintenance, cleaning, and inspection buffers before releasing properties back into the public availability pool.
 
-## Quantifiable Engineering & Database Impact
-
-1. **Transactional Billing & Yield Engine**: Engineered a multi-variable billing and reservation matrix capable of evaluating complex pricing structures, seasonal tariff adjustments, tier-based commission margins, and multi-guest utility splits.
-2. **Persistence-Layer Query Optimization**: Migrated calculation logic for dynamic pricing formulas directly into optimized MySQL database views, significantly lowering application server load and maintaining consistent query performance during high-concurrency booking spikes.
-3. **Database Concurrency Control**: Implemented database-level row locking mechanisms (`FOR UPDATE`) and linear availability verification routines, completely eliminating double-booking race conditions between public guest channels and private owner access portals.
-4. **Auditable Database State Machine**: Designed and deployed an explicit database-backed state machine governing property record transitions across predefined structural states, establishing a deterministic, immutable audit trail for financial and legal reconciliation.
-
----
-
-## Edge Case Engineering & Operational Control
-
-* **Maintenance & Availability Integration**: Programmatically integrated physical resort maintenance workflows directly into the core availability calendar.
-* **Dual-State Operational Locks**: Programmed mandatory dual-state operational locks preceding and succeeding every booking lifecycle to enforce mandatory inspection, cleaning, and administrative buffers.
-* **Automated Background Work-Order Pipeline**: Architected automated trigger logic generating background work orders for physical estate inspections upon specific state-machine transitions.
-* **Multi-Owner Hardware Billing Reconciliation**: Formulated precise cost-allocation models to calculate and split shared hardware and physical infrastructure maintenance fees across multi-owner property structures.
+### 3. Dynamic Yield & Database Query Optimization
+Engineered seasonal rate calculations and multi-tier commission structures directly into optimized MySQL database views, offloading compute overhead from the application server and eliminating race conditions during high-volume booking periods.

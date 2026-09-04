@@ -1,53 +1,37 @@
 ---
 slug: 2012-who-s-jamming
-title: MITCHDESIGNS
+title: "Who's Jamming (Coca-Cola Musician Social Network)"
 year: 2012
-client_name: MITCHDESIGNS
-client_type: Contracted /OutSourcing
-project_role: Consulting
-subtitle: Consulting project for MITCHDESIGNS.
-tech_stack: []
+client_name: "MITCHDesigns (End-Client: Coca-Cola)"
+client_type: "Corporate Brand & Social Community"
+project_role: "Software Architect & Lead Full-Stack Developer"
+subtitle: "Architected a niche social networking platform for a Coca-Cola campaign connecting musicians through shared musical influences, jam requests, and gig bookings."
+tech_stack:
+  - "PHP"
+  - "Custom MVC Framework"
+  - "JavaScript (Custom Component Packages)"
+  - "MySQL (Social Graph & Recommendation Indexing)"
+  - "Apache / Linux"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | MITCHDESIGNS | 2012
+# Software Architect & Lead Full-Stack Developer | MITCHDesigns - Coca-Cola Who's Jamming (2012)
 
-## Architectural Context & Engagement Overview
-- **Engagement Role**: Technical Consultant / Independent Software Architect
-- **Client Organization**: MITCHDESIGNS
-- **Project Identifier**: `whos-jamming`
-- **Timeline**: 2012
+## Overview
+Who's Jamming was a digital community initiative and brand campaign commissioned by Coca-Cola through digital agency MITCHDesigns. The project created a dedicated niche social network connecting amateur and professional musicians across Egypt to discover peers, form bands, organize jam sessions, and secure gig bookings.
 
-## Stated Engineering Assumptions
-- **Deployment Topology**: Single-tenant Linux execution environment paired with relational database storage and high-performance Nginx web server infrastructure.
-- **Architectural Scope**: Transformation and performance optimization of legacy Content Management System Architecture into a modular, high-throughput web application platform.
-- **Baseline Workload**: High-frequency read queries alongside concurrent asset ingestion for media-centric workloads.
+Served as Software Architect and Lead Full-Stack Developer. Architected the core social graph on the proprietary custom PHP MVC framework and packaged JavaScript libraries, engineered major backend systems (including the musical recommendation algorithm and session request engine), and led the engineering team building the member profiles, interactive feeds, and administrative moderation dashboards.
 
-## System Architecture & Infrastructure Logic
+## Key Technical Challenges & Architecture
 
-### 1. Application & Component Tier
-- Modular decoupling of monolithic content workflows using Content Management System Architecture design patterns.
-- Implementation of stateless execution models across core application modules to facilitate horizontal scale readiness.
+### 1. Music-Centric Social Graph & Recommendation Engine
+Designed relational database schemas to model musician profiles, instruments, proficiency levels, and music genres. Built a relational matching algorithm that evaluated mutual favorite bands, artists, and geographical proximity to suggest relevant musicians for collaborative jam sessions.
 
-### 2. Database Schema & Persistence Engineering
-- Relational schema normalization and indexing optimization for relational data stores.
-- Query path refactoring to eliminate unindexed table scans, reducing lock contention during peak concurrent operations.
+### 2. Jam Requests & Gig Booking Workflows
+Engineered structured interaction workflows allowing members to follow fellow artists, dispatch direct jam invitations, schedule studio rehearsals, and submit commercial booking inquiries for live events, complete with automated email and on-site notifications.
 
-### 3. Infrastructure & Deployment Pipelines
-- Automated build verification and deployment scripts targeting staging and production web clusters.
-- Configuration hardening to enforce environment isolation and uniform deployment artifacts across runtime nodes.
-
-## Quantifiable Engineering & Business Impact
-
-| Metric / Objective | Baseline State | Post-Architecture State | Technical & Business Impact |
-| :--- | :--- | :--- | :--- |
-| **Server Response Time (TTFB)** | ~1,200 ms | ~310 ms | 74% reduction in initial time-to-first-byte latency across dynamic routes |
-| **Database Query Efficiency** | High lock contention | Zero deadlock occurrences | 38% reduction in peak database CPU utilization under peak load |
-| **Deployment Reliability** | Manual execution | Automated script pipeline | Reduced deployment failure rate to < 0.1% across releases |
-| **System Availability** | Intermittent downtime | 99.95% availability | Sustained operational stability during high-volume campaign traffic |
-
-## Edge Cases & Architectural Risk Mitigation
-- **High-Concurrency I/O Bottlenecks**: Engineered asynchronous file buffering and query caching to prevent thread starvation under concurrent media requests.
-- **Schema Migration Integrity**: Designed transactional rollback mechanisms for relational data updates, ensuring zero data loss during schema transformations.
+### 3. Modular Frontend Component Packages & Administrative Panel
+Integrated reusable JavaScript packages to power interactive audio players, dynamic profile media galleries, and social feeds, supported by a comprehensive administrative back-office for campaign moderators to oversee content and manage community reports.

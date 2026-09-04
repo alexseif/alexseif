@@ -1,42 +1,38 @@
 ---
 slug: 2012-yadaweya
-title: MITCHDESIGNS
+title: "Yadaweya (Fair-Trade Artisan Handcrafts Marketplace)"
 year: 2012
-client_name: MITCHDESIGNS
-client_type: Contracted /OutSourcing
-project_role: Consulting
-subtitle: Consulting project for YADAWEYA, focusing on providing strategic guidance
-  and support.
-tech_stack: []
+client_name: "MITCHDesigns (End-Client: Yadaweya)"
+client_type: "Social Enterprise & Fair-Trade E-Commerce"
+project_role: "Software Architect & Lead Full-Stack Developer"
+subtitle: "Architected a community-based e-commerce marketplace and online payment platform empowering traditional Egyptian artisans and local craft communities."
+tech_stack:
+  - "PHP"
+  - "Custom MVC Framework"
+  - "MySQL"
+  - "Online Payment Platform Integration"
+  - "Artisan Community & Craft Catalog"
+  - "Apache / Linux"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | MITCHDESIGNS | 2012
+# Software Architect & Lead Full-Stack Developer | MITCHDesigns - Yadaweya (2012)
 
-## Executive Summary & Architectural Context
-Strategic technical advisory and architectural consultation executed for **YADAWEYA** under contract with **MITCHDESIGNS**. Primary scope comprised system architecture auditing, technical governance formulation, and operational risk mitigation for enterprise-grade Content Management System Architecture and web platform infrastructure.
+## Overview
+Yadaweya is an Egyptian social enterprise and fair-trade e-commerce marketplace dedicated to preserving authentic handmade crafts and empowering marginalized artisan communities across Egypt (from Nubia and Upper Egypt to the Sinai Peninsula and Siwa Oasis). Contracted through digital agency MITCHDesigns, this project engineered Yadaweya's community-driven e-commerce platform.
 
-## System Architecture & Technical Stack
-* **Architectural Blueprint**: Decoupled Content Management System Architecture & Block-Native Ecosystem Planning
-* **Data Layer Architecture**: Relational Schema Modeling, Query Execution Optimization, and Indexing Governance
-* **Infrastructure & Deployment**: High-Availability Hosting Topologies, Reverse-Proxy Caching Layers, and CDN Offloading Strategies
-* **CI/CD & Operational Pipelines**: Environment Parity Enforcement (Development, Staging, Production) and Automated Verification Workflows
+Served as Software Architect and Lead Full-Stack Developer throughout the engagement. Elicited requirements directly with social enterprise stakeholders, coordinated the development and design teams, and engineered the core e-commerce catalog, shopping cart, and secure payment processing platform on the proprietary custom PHP MVC framework and MySQL.
 
-## Core Engineering Competencies
-* **Architectural Auditing & Governance**: Rigorous technical evaluation of system bottlenecks, infrastructural risk factors, and platform extension patterns.
-* **Database & Data Layer Optimization**: Schema normalization, indexing strategy alignment, and reduction of redundant database read/write IOPS.
-* **Performance Engineering & Caching Topology**: Multi-tiered caching layer design across edge networks and application middleware.
-* **Security & Vulnerability Management**: Implementation of strict data sanitization vectors, API access boundaries, and role-based access control (RBAC).
+## Key Technical Challenges & Architecture
 
-## Quantifiable Engineering Impact
-* **Latency Reduction**: Decreased application response latency by 42% through query execution path optimization and edge asset caching.
-* **System Uptime & Stability**: Engineered infrastructure topology targeted for 99.9% uptime compliance, mitigating peak concurrent traffic bottlenecks.
-* **Deployment Efficiency**: Reduced deployment cycle overhead by 35% through standardized environment configurations and release verification protocols.
-* **Security Posture**: Achieved 100% compliance against baseline web application security guidelines during independent auditing phases.
+### 1. Community-Centric Artisan Catalog
+Modeled relational schemas connecting individual handcraft products directly to their artisan creators, craft traditions, and regional Egyptian governorates, creating an immersive, mission-driven shopping experience.
 
-## Edge Cases & Risk Mitigation
-* **Concurrency Spikes**: Designed stateless application tier configurations to prevent database pool exhaustion during unexpected throughput spikes.
-* **Data Migration & Integrity**: Formulated strict zero-downtime database migration strategies ensuring absolute schema consistency.
-* **Legacy System Interoperability**: Implemented clear abstraction layers between legacy content repositories and modern presentation tiers.
+### 2. Core E-Commerce & Checkout Engine
+Architected the multi-category product catalog, inventory tracking, and dynamic cart calculation engine to handle variable handcraft attributes, international shipping fees, and multi-currency orders.
+
+### 3. Payment Platform Integration
+Engineered secure transaction processing pipelines, integrating payment gateway interfaces with atomic order status management and automated customer order confirmations.

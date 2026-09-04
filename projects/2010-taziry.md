@@ -1,70 +1,33 @@
 ---
 slug: 2010-taziry
-title: MITCHDESIGNS
+title: "Taziry Ecolodge & Sustainable Village"
 year: 2010
-client_name: MITCHDESIGNS
-client_type: Outsourcing Partner
-project_role: Consulting
-subtitle: Consulting project for TAZIRY, focusing on providing strategic guidance
-  and technical expertise to support business objectives.
-tech_stack: []
+client_name: "MITCHDesigns (End-Client: Taziry)"
+client_type: "Hospitality & Sustainable Tourism"
+project_role: "Software Architect"
+subtitle: "Architected the initial showcase and booking engine for an eco-resort in the Siwa Oasis on a custom PHP MVC framework."
+tech_stack:
+  - "PHP"
+  - "Custom MVC Framework"
+  - "MySQL"
+  - "Booking & Reservation Logic"
+  - "SEO Meta Engine"
+  - "Apache / Linux"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | MITCHDESIGNS | 2010
+# Software Architect | MITCHDesigns - Taziry Ecolodge (2010)
 
-## Executive Summary & Architectural Context
-* **Client / Partner:** MITCHDESIGNS (Outsourcing Partner)
-* **Target Enterprise:** TAZIRY
-* **Engagement Role:** Independent Technical Consultant / Strategic Software Architect
-* **Timeline:** 2010
-* **Domain:** Strategic Technical Consulting & Content Management System Architecture
+## Overview
+Taziry is an eco-lodge and cultural heritage retreat located in the Siwa Oasis, Egypt. Built on behalf of digital agency MITCHDesigns, this project delivered Taziry's inaugural web presence, room showcase, and direct reservation engine.
 
-Strategic technical consulting engagement executed on behalf of MITCHDESIGNS for end-client TAZIRY. Primary objective was to deliver high-level architectural oversight, technical risk auditing, and strategic guidance to align core system design with long-term enterprise scalability goals.
+Served as Software Architect, providing the foundational custom PHP MVC framework and designing the relational database schema implemented by the frontend and backend developers. Engineered a content management system featuring granular SEO meta management, alongside a booking availability engine capable of calculating dynamic room rates based on date ranges, adult and children occupancies, and room tiers.
 
----
-
-## Architectural Strategy & Engineering Logic
-
-### 1. System Topology & Application Architecture
-* Conducted architectural code audits to evaluate system modularity and component decoupling within Content Management System Architecture frameworks.
-* Formulated architectural blueprints for Block-Native Ecosystems, establishing standardized patterns for data access layers and presentation logic.
-* Established separation of concerns between core application services and customized business logic extensions to prevent technical debt accumulation.
-
-### 2. Database Schema & Data Layer Optimization
-* Evaluated relational database schema definitions, identifying indexing requirements and normalization bottlenecks.
-* Designed data access patterns to enforce referential integrity across custom data tables.
-* Recommended query caching and storage engine configurations optimized for read-heavy workload profiles.
-
-### 3. Infrastructure, Environment & CI/CD Governance
-* Defined multi-environment deployment strategies establishing strict isolation across Development, Staging, and Production tiers.
-* Formulated automated deployment guidelines incorporating version-controlled asset pipelines and database migration scripts.
-* Specified backup and disaster recovery protocols to ensure data redundancy and system reliability SLAs.
-
----
-
-## Technical Stack Specification (Enterprise Baseline)
-
-* **Languages:** PHP (Server-Side Execution), SQL (Relational Data Queries), JavaScript (Client-Side Interactivity)
-* **Frameworks & Core Engines:** Block-Native Ecosystems / Modular Content Management System Architecture
-* **Database & Data Layer:** Relational DBMS (MySQL / InnoDB Engine Architecture), Query Caching Layer
-* **Infrastructure & Hosting Environment:** Enterprise Linux OS, Apache HTTP Server, Automated Deployment Scripts
-* **Version Control & Tooling:** Git / Version-Controlled Asset Workflows
-
----
-
-## Quantifiable Engineering & Business Impact
-
-* **Audit Coverage:** 100% architectural code and infrastructure review completed across all core TAZIRY application modules.
-* **Schema Integrity:** 0 high-severity database indexing anomalies identified following schema optimization recommendations.
-* **Risk Reduction:** Eliminated single-point-of-failure vulnerabilities in environment configuration workflows prior to production rollout.
-* **Strategic Delivery:** Delivered on-schedule technical roadmap detailing modular expansion paths for sub-systems over a multi-year lifecycle.
-
----
-
-## Edge Cases & Risk Governance
-
-* **Third-Party Outsourcing Interface:** Established clear API interface specifications and technical governance standards between MITCHDESIGNS development teams and TAZIRY stakeholders.
-* **Legacy Component Compatibility:** Managed structural transitions by defining backward-compatible interface layers, mitigating regression risks during system updates.
+## Key Technologies & Architecture
+* **Custom PHP MVC Framework:** Provided the foundational architecture, MVC routing, and controllers for developer implementation.
+* **Reservation & Occupancy Calculations:** Designed the booking workflow and transactional schema supporting date-based room availability and adult/child guest pricing logic.
+* **SEO-Optimized CMS:** Built dynamic metadata management tools within the custom CMS to maximize organic search indexing for international eco-tourism.
+* **Data Layer:** Structured normalized MySQL database tables managing lodge accommodations, seasonal availability calendars, and booking inquiries.

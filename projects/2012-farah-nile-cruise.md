@@ -1,66 +1,33 @@
 ---
 slug: 2012-farah-nile-cruise
-title: Farah Nile Cruise
+title: "Farah Nile Cruise (Luxury Hospitality & Booking Engine)"
 year: 2012
-client_name: Farah Nile Cruise
-client_type: Hospitality
-project_role: Software Architect & NGO Technical Partner
-subtitle: Served as Software Architect and NGO Technical Partner, supervising the
-  modernization of a hospitality web asset by migrating a legacy script configur...
+client_name: "MITCHDesigns (End-Client: Farah Nile Cruise)"
+client_type: "Luxury River Hospitality & Tourism"
+project_role: "Software Architect & Full-Stack Developer"
+subtitle: "Architected the inaugural digital showcase, cruise itinerary manager, and cabin reservation engine for a premier luxury Nile cruiser."
 tech_stack:
-- PHP
-- Symfony Framework
-- MySQL
+  - "PHP"
+  - "Custom MVC Framework"
+  - "MySQL"
+  - "Cruise Itinerary & Cabin Booking Engine"
+  - "Administrative CMS Back-Office"
+  - "Apache / Linux"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | Farah Nile Cruise | 2012
+# Software Architect & Full-Stack Developer | MITCHDesigns - Farah Nile Cruise (2012)
 
-## 1. Architectural Overview & Executive Context
-* **Client & Domain:** Farah Nile Cruise | Enterprise Hospitality
-* **Role Title:** Lead Software Architect & Technical Consultant
-* **Timeline:** 2012
-* **System Scope:** Complete architectural modernization of a legacy hospitality web application, executing a structured migration from procedural configurations onto the Symfony framework. The initiative prioritized domain logic reuse, relational schema alignment, asset pipeline tuning, and high-concurrency memory isolation.
+## Overview
+Farah Nile Cruise is a premier luxury river cruiser operating sailing itineraries between Luxor and Aswan in Upper Egypt. Contracted through digital agency MITCHDesigns, this project engineered Farah's inaugural web presence and reservation engine, establishing the digital brand that helped secure its initial commercial success.
 
----
+Served as Software Architect and Full-Stack Developer across the complete project lifecycle, from initial requirement elicitation with cruise operators through delivery and ongoing maintenance. Built on the proprietary custom PHP MVC framework and MySQL, the platform combined an editorial visual showcase with an administrative management backend.
 
-## 2. Infrastructure & System Architecture
-
-### 2.1 Backend Framework Topology & Component Abstraction
-* **Framework Transition:** Refactored legacy procedural PHP scripts into an enterprise-grade, object-oriented architecture utilizing Symfony routing components and dependency injection configuration containers.
-* **System Decoupling:** Separated domain business logic from presentation concerns by instituting service layer boundaries and modular codebase standardization.
-* **Data Flow Mapping:** Designed deterministic request execution paths, enforcing strict protocol rationalization between incoming client traffic, application controllers, and database access interfaces.
-
-### 2.2 Infrastructure Tiering & Non-Blocking Asset Pipeline
-* **Asynchronous Media Protocol:** Engineered a specialized asset management protocol to handle uncompressed high-resolution media payloads without blocking the application runtime execution thread.
-* **Resource Protection:** Configured hosting infrastructure tiers and PHP process execution parameters to stream visual assets asynchronously, safeguarding application memory bounds against exhaustion during concurrent user traffic spikes.
-
----
-
-## 3. Database Schema & Migration Strategy
-
-* **Relational Database Management System:** MySQL
-* **Schema Modeling & Entity Mapping:** Formulated schema transformation maps to bridge unnormalized, legacy tabular databases into framework-compliant entities without disrupting historical transactional records.
-* **Data Integrity Preservation:** Implemented data mapping validation routines that eliminated structural data regressions for active booking requests throughout the porting and deployment window.
-
----
-
-## 4. Core Competencies
-
-* Component Abstraction & Clean Architecture
-* System Decoupling & Modularization
-* Data Flow Mapping & Schema Modeling
-* Infrastructure Tiering & Capacity Planning
-* Protocol Rationalization & Request Lifecycle Optimization
-* Modular Codebase Standardization
-* Asset Ingestion & Delivery Pipeline Tuning
-
----
-
-## 5. Quantifiable Engineering & Business Impact
-
-* **Codebase Modernization:** Successfully transitioned 100% of procedural PHP legacy scripts into an extensible, object-oriented framework layout using Symfony configuration containers and routing modules.
-* **Thread & Memory Optimization:** Decoupled media ingestion and static asset rendering from the primary HTTP execution thread, stabilizing server memory utilization under high concurrency.
-* **Zero Data Loss Migration:** Executed live schema mapping and entity integration with zero data regressions or state corruption across active booking request pipelines.
+## Key Technical Challenges & Architecture
+* **Cruise Itinerary & Trip Management:** Designed relational database schemas to model multi-day sailing itineraries (3, 4, and 7-night cruises), seasonal scheduling calendars, cabin tier pricing, and amenity inventories.
+* **Direct Booking & Reservation Engine:** Built reservation workflows and validation rules to handle dynamic date selection, cabin occupancy parameters, and customer booking inquiries without cross-channel scheduling conflicts.
+* **Administrative Operations CMS:** Engineered an administrative control panel empowering cruise operations staff to manage trip dates, adjust seasonal tariffs, update cabin details, and process reservation pipelines autonomously.
+* **High-Resolution Media & Performance:** Structured asset caching and lightweight layout rendering to showcase high-resolution ship photography and deck plans smoothly across international travel markets.

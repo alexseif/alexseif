@@ -3,18 +3,324 @@
     "completed": true,
     "filename": "2005-arabic-medical-social-website.md",
     "year": 2005,
-    "title": "Arabic Medical Social Website"
+    "title": "Arabic Medical Social & Diagnostic Platform"
   },
   "2006-sykoheil-dentistry-clinic": {
     "completed": true,
     "filename": "2006-sykoheil-dentistry-clinic.md",
     "year": 2006,
-    "title": "SYKoheil Dentistry Clinic"
+    "title": "SYKoheil Dentistry Clinic Modernization"
+  },
+  "2010-Egyptolution": {
+    "completed": true,
+    "filename": "2010-Egyptolution.md",
+    "year": 2010,
+    "title": "Egyptolution (Tourism & Culture Magazine)"
+  },
+  "2010-orthodox-botswana": {
+    "completed": true,
+    "filename": "2010-orthodox-botswana.md",
+    "year": 2010,
+    "title": "Orthodox Mission in Botswana"
+  },
+  "2010-taziry": {
+    "completed": true,
+    "filename": "2010-taziry.md",
+    "year": 2010,
+    "title": "Taziry Ecolodge & Sustainable Village"
+  },
+  "2010-training-staff": {
+    "completed": true,
+    "filename": "2010-training-staff.md",
+    "year": 2010,
+    "title": "Engineering Enablement & Developer Mentorship"
+  },
+  "2011-bouri": {
+    "completed": true,
+    "filename": "2011-bouri.md",
+    "year": 2011,
+    "title": "Bouri Center (E-Commerce & Enterprise ERP Integration)"
+  },
+  "2011-resort": {
+    "completed": true,
+    "filename": "2011-resort.md",
+    "year": 2011,
+    "title": "Resort Sales & Management (La Manga Club Vacation Rentals)"
+  },
+  "2011-the-giftery": {
+    "completed": true,
+    "filename": "2011-the-giftery.md",
+    "year": 2011,
+    "title": "The Giftery (Online Gifting & Wedding Registry Platform)"
+  },
+  "2012-alsson": {
+    "completed": true,
+    "filename": "2012-alsson.md",
+    "year": 2012,
+    "title": "El Alsson British & American International School"
+  },
+  "2012-arts-mart": {
+    "completed": true,
+    "filename": "2012-arts-mart.md",
+    "year": 2012,
+    "title": "Arts-Mart (Contemporary Art Marketplace & Custom Framing)"
+  },
+  "2012-farah-nile-cruise": {
+    "completed": true,
+    "filename": "2012-farah-nile-cruise.md",
+    "year": 2012,
+    "title": "Farah Nile Cruise (Luxury Hospitality & Booking Engine)"
+  },
+  "2012-mystic": {
+    "completed": true,
+    "filename": "2012-mystic.md",
+    "year": 2012,
+    "title": "Mystic Evenings (Luxury Fashion E-Commerce & Boutique)"
+  },
+  "2012-myzouk": {
+    "completed": true,
+    "filename": "2012-myzouk.md",
+    "year": 2012,
+    "title": "MyZouk (Luxury Asset & Classifieds Marketplace)"
+  },
+  "2012-soho-square": {
+    "completed": true,
+    "filename": "2012-soho-square.md",
+    "year": 2012,
+    "title": "SOHO Square Sharm El Sheikh (Event Ticketing & E-Commerce Engine)"
+  },
+  "2012-who-s-jamming": {
+    "completed": true,
+    "filename": "2012-who-s-jamming.md",
+    "year": 2012,
+    "title": "Who's Jamming (Coca-Cola Musician Social Network)"
+  },
+  "2012-yadaweya": {
+    "completed": true,
+    "filename": "2012-yadaweya.md",
+    "year": 2012,
+    "title": "Yadaweya (Fair-Trade Artisan Handcrafts Marketplace)"
+  },
+  "2014-bailando": {
+    "completed": false,
+    "filename": "2014-bailando.md",
+    "year": 2014,
+    "title": "Alex Seif"
+  },
+  "2014-odious": {
+    "completed": false,
+    "filename": "2014-odious.md",
+    "year": 2014,
+    "title": "Alex Seif"
+  },
+  "2014-orient-copper-company": {
+    "completed": false,
+    "filename": "2014-orient-copper-company.md",
+    "year": 2014,
+    "title": "Alex Seif"
+  },
+  "2015-dimitris-cavouras": {
+    "completed": false,
+    "filename": "2015-dimitris-cavouras.md",
+    "year": 2015,
+    "title": "Alex Seif"
+  },
+  "2015-the-greek-community-of-alexand": {
+    "completed": false,
+    "filename": "2015-the-greek-community-of-alexand.md",
+    "year": 2015,
+    "title": "Alex Seif"
+  },
+  "2015-thomas-safety": {
+    "completed": false,
+    "filename": "2015-thomas-safety.md",
+    "year": 2015,
+    "title": "Alex Seif"
+  },
+  "2015-visallc": {
+    "completed": false,
+    "filename": "2015-visallc.md",
+    "year": 2015,
+    "title": "Alex Seif"
+  },
+  "2016-218tv-net": {
+    "completed": false,
+    "filename": "2016-218tv-net.md",
+    "year": 2016,
+    "title": "NileTech"
+  },
+  "2016-design-more-international": {
+    "completed": false,
+    "filename": "2016-design-more-international.md",
+    "year": 2016,
+    "title": "Alex Seif"
+  },
+  "2016-intrade": {
+    "completed": false,
+    "filename": "2016-intrade.md",
+    "year": 2016,
+    "title": "Alex Seif"
+  },
+  "2016-l3d": {
+    "completed": false,
+    "filename": "2016-l3d.md",
+    "year": 2016,
+    "title": "Alex Seif"
+  },
+  "2016-the-greek-community-of-alexand": {
+    "completed": false,
+    "filename": "2016-the-greek-community-of-alexand.md",
+    "year": 2016,
+    "title": "Alex Seif"
+  },
+  "2016-zillion-home-buyers": {
+    "completed": false,
+    "filename": "2016-zillion-home-buyers.md",
+    "year": 2016,
+    "title": "Alex Seif"
+  },
+  "2017-ajel": {
+    "completed": false,
+    "filename": "2017-ajel.md",
+    "year": 2017,
+    "title": "Ajel.sa"
+  },
+  "2017-cafe-supreme": {
+    "completed": false,
+    "filename": "2017-cafe-supreme.md",
+    "year": 2017,
+    "title": "Alex Seif"
+  },
+  "2017-emics": {
+    "completed": false,
+    "filename": "2017-emics.md",
+    "year": 2017,
+    "title": "Alex Seif"
+  },
+  "2017-faros-omogenias": {
+    "completed": false,
+    "filename": "2017-faros-omogenias.md",
+    "year": 2017,
+    "title": "Alex Seif"
+  },
+  "2017-startup-workshops": {
+    "completed": false,
+    "filename": "2017-startup-workshops.md",
+    "year": 2017,
+    "title": "ITI"
+  },
+  "2017-turathuna": {
+    "completed": false,
+    "filename": "2017-turathuna.md",
+    "year": 2017,
+    "title": "NileTech"
+  },
+  "2018-cafe-supreme": {
+    "completed": false,
+    "filename": "2018-cafe-supreme.md",
+    "year": 2018,
+    "title": "Alex Seif"
+  },
+  "2018-osman-co-educational-services": {
+    "completed": false,
+    "filename": "2018-osman-co-educational-services.md",
+    "year": 2018,
+    "title": "Alex Seif"
+  },
+  "2018-the-greek-community-of-cairo": {
+    "completed": false,
+    "filename": "2018-the-greek-community-of-cairo.md",
+    "year": 2018,
+    "title": "Alex Seif"
   },
   "2009-smash-holidays": {
     "completed": true,
-    "filename": "2009-smash-holidays.md",
+    "filename": "selected/2009-smash-holidays.md",
     "year": 2009,
-    "title": "Smash Holidays"
+    "title": "Smash Holidays Booking & Pricing Engine"
+  },
+  "2009-wallety": {
+    "completed": true,
+    "filename": "selected/2009-wallety.md",
+    "year": 2009,
+    "title": "Wallety Payment Gateway"
+  },
+  "2011-agazatmasr": {
+    "completed": true,
+    "filename": "selected/2011-agazatmasr.md",
+    "year": 2011,
+    "title": "Agazat Masr (Tourico)"
+  },
+  "2017-hsp": {
+    "completed": true,
+    "filename": "selected/2017-hsp.md",
+    "year": 2017,
+    "title": "HSP Healthcare Services Platform"
+  },
+  "2018-saaed": {
+    "completed": true,
+    "filename": "selected/2018-saaed.md",
+    "year": 2018,
+    "title": "Saaed Automotive Insurance Portal (Softech)"
+  },
+  "2019-complex-server-migration": {
+    "completed": true,
+    "filename": "selected/2019-complex-server-migration.md",
+    "year": 2019,
+    "title": "Enterprise Cloud Infrastructure Migration (AHCC)"
+  },
+  "2020-aman": {
+    "completed": true,
+    "filename": "selected/2020-aman.md",
+    "year": 2020,
+    "title": "Aman Vehicle Inspection Portal (Ministry of Interior)"
+  },
+  "2020-dubai-police-academy": {
+    "completed": true,
+    "filename": "selected/2020-dubai-police-academy.md",
+    "year": 2021,
+    "title": "Dubai Police Academy LMS Upgrade"
+  },
+  "2020-moi-egypt-traffic": {
+    "completed": true,
+    "filename": "selected/2020-moi-egypt-traffic.md",
+    "year": 2021,
+    "title": "National Air-Gapped Driver Testing LMS (Ministry of Interior)"
+  },
+  "2021-salama": {
+    "completed": true,
+    "filename": "selected/2021-salama.md",
+    "year": 2021,
+    "title": "Salama Cooperative Insurance Registration Gateway"
+  },
+  "2021-saso": {
+    "completed": true,
+    "filename": "selected/2021-saso.md",
+    "year": 2021,
+    "title": "SASO National Vehicle Inspection & Modification Scheduling Platform"
+  },
+  "2024-sef-academy-sea": {
+    "completed": true,
+    "filename": "selected/2024-sef-academy-sea.md",
+    "year": 2024,
+    "title": "Meem Development (SEF Academy)"
+  },
+  "2025-nsce": {
+    "completed": true,
+    "filename": "selected/2025-nsce.md",
+    "year": 2025,
+    "title": "North South Consultants Exchange (NSCE)"
+  },
+  "2026-barincairo": {
+    "completed": true,
+    "filename": "selected/2026-barincairo.md",
+    "year": 2026,
+    "title": "barincairo.com"
+  },
+  "2026-ekalexandria-modernization": {
+    "completed": true,
+    "filename": "selected/2026-ekalexandria-modernization.md",
+    "year": 2026,
+    "title": "Greek Community of Alexandria Modernization"
   }
 }

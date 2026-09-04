@@ -1,56 +1,32 @@
 ---
 slug: 2010-orthodox-botswana
-title: Alex Seif
+title: "Orthodox Mission in Botswana"
 year: 2010
-client_name: Alex Seif
-client_type: NGO
-project_role: Webpresence
-subtitle: The project involved creating a web presence for Orthodox Botswana, focusing on establishing an online platform to support their operations and outrea...
-tech_stack: []
+client_name: "Orthodox Mission in Botswana"
+client_type: "NGO & Community Outreach"
+project_role: "Solo Full-Stack Developer"
+subtitle: "Engineered a lightweight, web-accessible community portal and publishing platform for an NGO mission in Southern Africa using a custom PHP MVC framework."
+tech_stack:
+  - "PHP"
+  - "Custom MVC Framework"
+  - "MySQL"
+  - "Web Accessibility"
+  - "Apache / Linux"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | Alex Seif / Independent Technical Consultant | 2010 – 2011
+# Solo Full-Stack Developer | Orthodox Mission in Botswana (2010)
 
-## Enterprise Case Study: Orthodox Botswana Digital Platform Architecture
+## Overview
+Engineered an independent community portal and digital outreach platform for the Orthodox Mission in Botswana, supporting non-profit operational communications, mission updates, and community engagement in Southern Africa.
 
-### 1. Executive Summary & System Context
-- **Client Organization**: Orthodox Botswana (Non-Governmental Organization)
-- **Engagement Scope**: Digital Platform Engineering & Content Management System Architecture
-- **Primary Objective**: Architect, provision, and deploy a resilient digital infrastructure to support regional non-profit operations, operational communications, and public outreach programs across low-bandwidth network environments.
+Built the platform from the ground up on a proprietary custom PHP MVC framework and MySQL. Focused on semantic HTML, web accessibility, lightweight asset delivery, and minimal server-side overhead to ensure reliable access and fast page loads over low-bandwidth network connections and across diverse client devices in the region.
 
----
-
-### 2. Engineering Logic & System Design
-- **Tiered Architecture**: Engineered a decoupled multi-tier web application topology separating presentation delivery, application logic, and persistence layers.
-- **Content Management System Architecture**: Provisioned a block-native content management infrastructure customized for role-based content authoring, structured metadata categorization, and dynamic page rendering.
-- **Asset Delivery Strategy**: Enforced strict HTTP caching policies, lightweight DOM trees, and static asset optimization algorithms tailored for sub-Saharan network latency profiles.
-
----
-
-### 3. Database Schema & Data Layer Strategy
-- **Relational Data Schema**: Designed a normalized relational database schema governing core content taxonomies, publication states, and audit trails.
-- **Query Optimization**: Implemented indexing on primary content lookup keys to achieve constant-time lookup performance (\(O(1)\)) for high-frequency public pages.
-- **Binary Blob Handling**: Segregated static media storage from relational metadata tables to prevent database bloat and ensure transactional integrity during state mutations.
-
----
-
-### 4. Infrastructure & CI/CD Pipeline
-- **Continuous Deployment**: Built an automated release process utilizing version-controlled deployment scripts for zero-downtime application updates.
-- **Environment Consistency**: Maintained parity between local development and production runtime configurations to eliminate configuration drift.
-- **Resiliency & Backup**: Configured scheduled incremental database backups and static asset snapshots to minimize Recovery Point Objective (RPO) and Recovery Time Objective (RTO).
-
----
-
-### 5. Edge Cases & Systems Resiliency
-- **Low-Bandwidth Adaptation**: Optimized total page payload sizes (<500 KB initial load) through minification, vector graphics utilization, and asynchronous non-critical resource loading to mitigate connectivity drops.
-- **Cross-Browser & Device Compatibility**: Enforced semantic HTML5 standards and responsive viewport layouts, ensuring system accessibility across legacy desktop hardware and early mobile web browsers.
-
----
-
-### 6. Quantifiable Engineering & Business Impact
-- **Platform Availability**: Established a high-availability online platform maintaining 99.9%+ operational uptime throughout the engagement period.
-- **Outreach Scaling**: Digitized 100% of organizational outreach materials, transitioning physical communication workflows into scalable digital distribution channels.
-- **Operational Integration**: Streamlined administrative publish-and-update latency from days to near-real-time execution.
+## Key Technologies & Tools
+* **Custom PHP MVC Framework:** Developed a clean, lightweight architecture for content management and community announcements.
+* **Web Accessibility & Semantics:** Structured semantic markup to guarantee accessible navigation across varied browser environments.
+* **Data Layer:** Normalized MySQL relational schema for articles, event schedules, and community records.
+* **Low-Bandwidth Optimization:** Implemented minimal CSS/JS asset footprints and efficient page rendering tailored for regional connectivity constraints.
