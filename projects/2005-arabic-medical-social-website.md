@@ -4,7 +4,7 @@ title: Arabic Medical Social & Diagnostic Platform
 year: 2005
 client_name: Dr. Ahmed Filistini
 client_type: Medical Directory / Community
-project_role: Solo Full-Stack Developer
+project_role: Full-Stack DeveloperFull-Stack Developer
 subtitle: WebMD-style anatomical symptom navigator and physician forum for Arabic-speaking doctors.
 tech_stack:
   - PHP 4/5
@@ -19,7 +19,7 @@ tags:
   - case-study
 ---
 
-# Solo Full-Stack Developer | Dr. Ahmed Filistini (2005)
+# Full-Stack DeveloperFull-Stack Developer | Dr. Ahmed Filistini (2005)
 
 ## Overview
 Built an early Arabic-language medical information and community platform combining an interactive, image-based symptom-to-diagnosis lookup tool with an integrated physician discussion forum.

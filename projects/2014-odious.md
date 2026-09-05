@@ -1,54 +1,33 @@
 ---
 slug: 2014-odious
-title: Alex Seif
+title: "Odious (Electronic Press Kit & Official Band Portal)"
 year: 2014
-client_name: Alex Seif
-client_type: Direct
-project_role: N/A
-subtitle: Digitally delivering their music to their fanbase.
-tech_stack: []
+client_name: "Odious"
+client_type: "Music & Entertainment"
+project_role: "Full-Stack DeveloperFull-Stack Developer"
+subtitle: "Engineered an official artist portal and interactive Electronic Press Kit (EPK) for an internationally acclaimed Egyptian progressive metal band, maintaining 10+ years of operational uptime."
+tech_stack:
+  - "WordPress"
+  - "PHP"
+  - "Media Integration (Bandcamp & YouTube)"
+  - "Electronic Press Kit (EPK)"
+  - "MediaTemple to DigitalOcean Migration"
+  - "Linux / Nginx"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-Lead Software Architect | Alex Seif | 2014
+# Full-Stack DeveloperFull-Stack Developer | Odious (2014 - Present)
 
----
+## Overview
+Odious is an internationally recognized progressive oriental metal band founded in Alexandria, Egypt. As their direct technical partner, engineered the band's official web presence and interactive Electronic Press Kit (EPK) to support international album releases, European tour announcements, and global festival bookings.
 
-### Executive Summary
-Architected and deployed a resilient digital asset delivery platform engineered for direct-to-consumer (D2C) media distribution. Designed high-availability content management system architecture, object-storage workflows, and content delivery network (CDN) edge caching to ensure low-latency media streaming and secure asset downloads.
+Served as Full-Stack DeveloperFull-Stack Developer handling end-to-end delivery and infrastructure management. Built a customized WordPress platform tailored for the music industry, integrating streaming media players, discography archives, tour date tracking, and press assets. The platform has maintained continuous operational longevity for over a decade, surviving infrastructure transitions from MediaTemple to DigitalOcean.
 
----
-
-### Architectural Context & System Requirements
-* **Domain**: Digital Media Distribution & Direct-to-Consumer Content Infrastructure
-* **Objective**: Establish a high-throughput content pipeline capable of serving high-bitrate media directly to global end users.
-* **Constraints & Targets**:
-  * High-concurrency scalability to support sudden traffic bursts associated with media releases.
-  * Low latency static asset delivery across distributed geographic locations.
-  * Secure tokenized access for premium media asset downloads.
-
----
-
-### Engineering Logic & Infrastructure Design
-
-#### 1. Content Distribution & Edge Storage
-* Architected a decoupled media distribution pipeline segregating application rendering logic from static binary payload stores.
-* Deployed global CDN edge-caching strategies to offload origin server bandwidth, targeting sub-200ms TTFB (Time to First Byte) for media streaming.
-* Structured blob/object storage buckets configured with timed access tokens to prevent unauthorized hotlinking and bandwidth exploitation.
-
-#### 2. Database Schema & Data Layer Architecture
-* Normalized transactional data schemas to handle metadata indexing (catalog items, release schedules, download logging).
-* Applied database index optimizations on primary content lookup vectors, maintaining read-heavy query performance ($>90\%$ read-to-write ratio).
-
-#### 3. Continuous Integration & Deployment (CI/CD)
-* Established structured release pipelines for configuration updates and media metadata ingestion.
-* Implemented cache invalidation rules triggered upon content publishing to guarantee global data consistency across distributed edge nodes.
-
----
-
-### Quantifiable Business & Engineering Impact
-* **Direct Content Delivery**: Engineered an unmediated D2C media pipeline, eliminating third-party aggregator dependency for asset distribution.
-* **Origin Offloading**: Achieved an estimated $>80\%$ edge-cache hit ratio for static media requests, minimizing origin infrastructure overhead.
-* **Availability & Reliability**: Maintained $99.9\%$ system uptime throughout peak launch windows.
+## Key Technologies & Tools
+* **Interactive Electronic Press Kit (EPK):** Structured dedicated press sections providing promoters, festival organizers, and record labels with instant access to high-resolution assets, stage plots, and bio materials.
+* **Discography & Media Streaming:** Integrated Bandcamp and YouTube APIs alongside lightweight audio components to deliver album streams without slowing down page load times.
+* **Tour Management & Fan Engagement:** Configured live concert date scheduling, ticket purchase routing, and official merchandise channels.
+* **Infrastructure & Server Migration:** Managed deployment on MediaTemple and later executed a zero-downtime server migration to an isolated DigitalOcean Linux instance.

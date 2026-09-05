@@ -236,7 +236,7 @@ def format_project_markdown(fm, details):
 ## 1. Context & Business Problem
 * **Client / Domain:** {fm.get('client_name', '')} ({fm.get('client_type', 'N/A')})
 * **Timeline:** {fm.get('year', '')}
-* **Project Role:** {fm.get('project_role', 'Solo Full-Stack Developer')}
+* **Project Role:** {fm.get('project_role', 'Full-Stack DeveloperFull-Stack Developer')}
 
 ### The Problem
 {details.get('problem', '').strip()}
@@ -288,7 +288,7 @@ def interview_project(proj, progress, index, total):
 
     client_name = prompt_input("4. Client Name", fm.get("client_name", ""))
     client_type = prompt_input("5. Client Type (e.g. NGO / Non-Profit, Corporate, SME, Government, Media)", fm.get("client_type", "SME / Web Client"))
-    project_role = prompt_input("6. Real Role (e.g. Solo Full-Stack Developer, Freelance Technical Partner, Web Architect)", fm.get("project_role", "Solo Full-Stack Developer"))
+    project_role = prompt_input("6. Real Role (e.g. Full-Stack DeveloperFull-Stack Developer, Freelance Technical Partner, Web Architect)", fm.get("project_role", "Full-Stack DeveloperFull-Stack Developer"))
     subtitle = prompt_input("7. One-line Subtitle / Brief Hook", fm.get("subtitle", ""))
     
     curr_stack = fm.get("tech_stack", [])

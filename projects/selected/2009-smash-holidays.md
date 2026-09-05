@@ -4,7 +4,7 @@ title: Smash Holidays Booking & Pricing Engine
 year: 2009
 client_name: Smash Holidays
 client_type: Tour Operator / Travel
-project_role: Solo Full-Stack Engineer & Software Architect
+project_role: Full-Stack DeveloperFull-Stack Engineer & Software Architect
 subtitle: Custom travel booking and multi-factor contract pricing engine built on a custom MVC framework prior to modern cloud booking APIs and Composer.
 tech_stack:
   - PHP (Custom Enterprise MVC Architecture)
@@ -18,7 +18,7 @@ tags:
   - case-study
 ---
 
-# Solo Full-Stack Engineer & Software Architect | Smash Holidays (2009)
+# Full-Stack DeveloperFull-Stack Engineer & Software Architect | Smash Holidays (2009)
 
 ## Executive Summary
 Engineered a custom travel booking and inventory management engine constructed prior to standardized cloud booking APIs and modern package managers. The primary architectural challenge stemmed from extreme supplier fragmentation, as a significant portion of hotel inventory lacked Global Distribution System (GDS) connectivity.
@@ -30,7 +30,7 @@ The system evaluated and executed complex pricing matrices at query time based o
 ## 1. Context & Business Problem
 * **Client / Domain:** Smash Holidays (Tour Operator)
 * **Timeline:** 2009
-* **Project Role:** Solo Full-Stack Engineer & Software Architect
+* **Project Role:** Full-Stack DeveloperFull-Stack Engineer & Software Architect
 
 ### The Problem
 No off-the-shelf software in 2009 could accommodate diverse supplier data (GDS vs non-GDS) alongside intricate contract rules, variable occupancy tiers, and multi-currency pricing while returning search results within acceptable latency bounds.

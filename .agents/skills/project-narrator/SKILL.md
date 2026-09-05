@@ -49,7 +49,7 @@ title: "Project Title"
 year: 2020
 client_name: "Client Name"
 client_type: "Corporate / SME / NGO / Government"
-project_role: "Software Architect / Solo Full-Stack Developer"
+project_role: "Software Architect / Full-Stack Developer"
 subtitle: "One crisp, factual summary sentence."
 tech_stack:
   - "PHP"

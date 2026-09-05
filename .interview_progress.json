@@ -102,52 +102,46 @@
     "title": "Yadaweya (Fair-Trade Artisan Handcrafts Marketplace)"
   },
   "2014-bailando": {
-    "completed": false,
+    "completed": true,
     "filename": "2014-bailando.md",
     "year": 2014,
-    "title": "Alex Seif"
+    "title": "Bailando (Kids Playground & Cafe)"
   },
   "2014-odious": {
-    "completed": false,
+    "completed": true,
     "filename": "2014-odious.md",
     "year": 2014,
-    "title": "Alex Seif"
+    "title": "Odious (Electronic Press Kit & Official Band Portal)"
   },
   "2014-orient-copper-company": {
-    "completed": false,
+    "completed": true,
     "filename": "2014-orient-copper-company.md",
     "year": 2014,
-    "title": "Alex Seif"
-  },
-  "2015-dimitris-cavouras": {
-    "completed": false,
-    "filename": "2015-dimitris-cavouras.md",
-    "year": 2015,
-    "title": "Alex Seif"
+    "title": "Orient Copper Company"
   },
   "2015-the-greek-community-of-alexand": {
-    "completed": false,
+    "completed": true,
     "filename": "2015-the-greek-community-of-alexand.md",
     "year": 2015,
-    "title": "Alex Seif"
+    "title": "The Greek Community of Alexandria (Portal & Transparency Engine)"
   },
   "2015-thomas-safety": {
-    "completed": false,
+    "completed": true,
     "filename": "2015-thomas-safety.md",
     "year": 2015,
-    "title": "Alex Seif"
+    "title": "Thomas Safety (Industrial Safety Equipment Showcase)"
   },
   "2015-visallc": {
-    "completed": false,
+    "completed": true,
     "filename": "2015-visallc.md",
     "year": 2015,
-    "title": "Alex Seif"
+    "title": "VisaLLC, MeVisa & TravelBox (Multi-Brand Visa Portals & Centralized miniERP)"
   },
   "2016-218tv-net": {
-    "completed": false,
+    "completed": true,
     "filename": "2016-218tv-net.md",
     "year": 2016,
-    "title": "NileTech"
+    "title": "218TV.net (High-Traffic Broadcast News & Strangler-Fig Drupal Migration)"
   },
   "2016-design-more-international": {
     "completed": false,
@@ -164,12 +158,6 @@
   "2016-l3d": {
     "completed": false,
     "filename": "2016-l3d.md",
-    "year": 2016,
-    "title": "Alex Seif"
-  },
-  "2016-the-greek-community-of-alexand": {
-    "completed": false,
-    "filename": "2016-the-greek-community-of-alexand.md",
     "year": 2016,
     "title": "Alex Seif"
   },

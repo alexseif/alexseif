@@ -1,45 +1,31 @@
 ---
 slug: 2014-bailando
-title: Alex Seif
+title: "Bailando (Kids Playground & Cafe)"
 year: 2014
-client_name: Alex Seif
-client_type: Direct
-project_role: N/A
-subtitle: Digitally crafted their online presence. 2014 - till today.
-tech_stack: []
+client_name: "Bailando"
+client_type: "Family Entertainment & Hospitality"
+project_role: "Full-Stack DeveloperFull-Stack Developer"
+subtitle: "Engineered a responsive showcase website and birthday event inquiry platform on WordPress hosted on DigitalOcean."
+tech_stack:
+  - "WordPress"
+  - "PHP"
+  - "MySQL"
+  - "DigitalOcean / Linux"
+  - "Event Inquiry Forms"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | Independent Software Architect | 2014 – Present
+# Full-Stack DeveloperFull-Stack Developer | Bailando (2014)
 
-## Executive Summary & Architectural Context
-Architected, deployed, and continuously maintained a resilient Content Management System Architecture and enterprise digital presence for Alex Seif. Engineered a high-availability online platform designed for sustained operational longevity, performance efficiency, and scalable content delivery from 2014 through present.
+## Overview
+Bailando is a family cafe, children's playground, and party venue in Alexandria, Egypt, specializing in kids' entertainment and birthday celebrations. This project delivered Bailando's digital showcase to market its playground facilities, activity schedules, and birthday event packages.
 
-## Client & Project Specifications
-- **Project Identifier**: `bailando`
-- **Client**: Alex Seif (Direct Engagement)
-- **Role**: Lead Software Architect / Technical Consultant
-- **Engagement Duration**: 2014 – Present (10+ Years Active Operational Lifecycle)
+Handled the complete implementation as Full-Stack DeveloperFull-Stack Developer. Built a clean, mobile-responsive showcase on WordPress, integrated customer inquiry workflows for birthday party reservations, and provisioned reliable cloud hosting on DigitalOcean Linux infrastructure.
 
-## Architectural Design & Systems Infrastructure
-- **System Topography**: Block-Native Ecosystem & Content Management System Architecture.
-- **Presentation Layer**: Standards-compliant responsive interface optimized for minimal Cumulative Layout Shift (CLS) and low First Contentful Paint (FCP) latencies.
-- **Data Layer & Storage Architecture**: Relational database schema structured for query optimization, transactional stability, and schema migration integrity.
-- **Infrastructure & Maintenance Strategy**: Continuous deployment pipelines, automated edge caching, structured backup schedules, and proactive security hardening to ensure long-term platform stability over a multi-year lifecycle.
-
-## Core Engineering Competencies
-- Enterprise Web Architecture & Digital Presence Engineering
-- Content Management System Architecture Design
-- Relational Database Schema Normalization & Query Tuning
-- Infrastructure Security, Lifecycle Management & SLA Optimization
-
-## Quantifiable Engineering & Business Impact
-- **Sustained Platform Longevity**: Maintained continuous operational availability (99.9%+ uptime) across a 10+ year production lifespan (2014 – Present).
-- **End-to-End Delivery**: Executed complete architectural lifecycle ownership—from initial domain configuration and schema definition to continuous infrastructure maintenance.
-- **Performance Optimization**: Orchestrated asset compression and HTTP resource delivery pipelines to maintain low latency and minimal server overhead under varying traffic volumes.
-
-## Operational Edge Cases & Mitigations
-- **Legacy System Migration & Compatibility**: Executed backward-compatible runtime and schema updates over a 10-year period without service degradation.
-- **Automated Security Hardening**: Implemented rate-limiting, access control policies, and Web Application Firewall (WAF) mitigations to neutralize automated attack vectors.
+## Key Technologies & Tools
+* **WordPress & PHP:** Developed a lightweight custom theme showcasing play areas, menu offerings, and birthday package pricing.
+* **Lead Generation & Event Inquiries:** Structured validation forms and automated email routing for parent party bookings and venue inquiries.
+* **Cloud Hosting & Deployment:** Provisioned and configured an isolated DigitalOcean Linux droplet with Nginx and MySQL for high availability and low maintenance overhead.

@@ -4,7 +4,7 @@ title: "Orthodox Mission in Botswana"
 year: 2010
 client_name: "Orthodox Mission in Botswana"
 client_type: "NGO & Community Outreach"
-project_role: "Solo Full-Stack Developer"
+project_role: "Full-Stack DeveloperFull-Stack Developer"
 subtitle: "Engineered a lightweight, web-accessible community portal and publishing platform for an NGO mission in Southern Africa using a custom PHP MVC framework."
 tech_stack:
   - "PHP"
@@ -18,7 +18,7 @@ tags:
   - "case-study"
 ---
 
-# Solo Full-Stack Developer | Orthodox Mission in Botswana (2010)
+# Full-Stack DeveloperFull-Stack Developer | Orthodox Mission in Botswana (2010)
 
 ## Overview
 Engineered an independent community portal and digital outreach platform for the Orthodox Mission in Botswana, supporting non-profit operational communications, mission updates, and community engagement in Southern Africa.
