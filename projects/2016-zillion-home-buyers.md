@@ -1,42 +1,30 @@
 ---
 slug: 2016-zillion-home-buyers
-title: Alex Seif
+title: "Zillion Home Buyers (Real Estate Lead Acquisition Page)"
 year: 2016
-client_name: Alex Seif
-client_type: Direct
-project_role: Software Engineer
-subtitle: Real state squeeze page
-tech_stack: []
+client_name: "Zillion Home Buyers"
+client_type: "Real Estate Investment"
+project_role: "Solo Full-Stack Developer"
+subtitle: "Delivered a lightweight, high-converting static HTML/CSS lead generation landing page for a real estate acquisition company."
+tech_stack:
+  - "HTML5 / CSS3 / JavaScript"
+  - "PHP Form Processing"
+  - "Lead Capture & Email Routing"
+  - "Linux / Nginx"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | Alex Seif | 2016
+# Solo Full-Stack Developer | Zillion Home Buyers (2016)
 
-## Executive Summary
-Architected and deployed a high-concurrency real estate lead acquisition platform ("Zillion Home Buyers") engineered for rapid lead capture, low-latency form processing, and resilient data integration. Built upon a modular Content Management System Architecture, the solution transformed high-volume campaign traffic into structured lead records while maintaining strict SLAs for response time and platform reliability.
+## Overview
+Zillion Home Buyers was a real estate investment enterprise focused on direct property acquisitions. The company required an uncluttered, high-converting squeeze page designed to capture prospective seller inquiries and property details from targeted advertising campaigns.
 
-## Architectural Overview & Engineering Logic
-- **Ingestion & Capture Layer**: Formulated a lightweight, decoupled frontend squeeze interface designed to eliminate render-blocking resources and achieve sub-second document completion times.
-- **Core Platform Architecture**: Utilized a hardened Content Management System Architecture configured with strict execution bounds, object caching layers, and decoupled asset pipelines to process incoming user telemetry without database contention.
-- **Persistence & Schema Optimization**: Implemented a normalized relational database schema (MySQL) with optimized multi-column indexing on lead metadata, regional identifiers, and transaction timestamps to prevent row-locking under concurrent writes.
-- **Asynchronous Integration Pipeline**: Designed non-blocking webhooks to dispatch validated lead payloads to downstream CRM engines and notification services, incorporating exponential backoff retries to guarantee delivery during upstream API degradation.
+Hired independently as Solo Full-Stack Developer to design, develop, and deploy the solution. Built a lightweight, mobile-responsive static HTML/CSS landing page paired with secure server-side form processing to maximize conversion rates and deliver near-instant page loads.
 
-## Technical Stack
-- **Architectural Pattern**: Content Management System Architecture / Block-Native Ecosystem Patterns
-- **Core Engine & Runtimes**: PHP 7.0 execution runtime, HHVM object cache
-- **Data & Persistence**: Relational DBMS (MySQL InnoDB, query optimization, indexed schema)
-- **Web Infrastructure & Edge**: Nginx reverse proxy layer, Varnish HTTP acceleration, TLS termination
-- **CI/CD & Deployment**: Automated deployment shell pipelines, environment configuration locking
-
-## Engineering Metrics & Quantifiable Business Impact
-- **Latency Reduction**: Decreased end-to-end lead submission latency by 62%, optimizing response times from 1.8s down to 684ms.
-- **System Throughput**: Sustained peak load of 1,200 concurrent requests per minute during campaign execution windows with zero transactional data loss.
-- **Payload Optimization**: Compressed initial DOM payload size by 54% (from 2.4MB to 1.1MB), increasing submission completion rates by 28%.
-- **Platform Availability**: Maintained 99.98% operational uptime across active marketing campaign cycles.
-
-## Edge Cases & Resiliency Management
-- **Downstream Service Failures**: Implemented asynchronous memory queue buffers to isolate the form ingestion pipeline from downstream CRM timeout events.
-- **Traffic Burst Protection**: Deployed IP rate-limiting and static asset caching at the Nginx ingress boundary to mitigate infrastructure strain during viral campaign spikes.
-- **Payload Validation & Sanitization**: Constructed strict server-side schema verification and sanitization protocols to block injection attempts and eliminate malformed telemetry.
+## Key Technologies & Tools
+* **Static Performance Optimization:** Built with clean, semantic HTML5 and vanilla CSS3 to eliminate render-blocking assets and guarantee sub-second page loads.
+* **Lead Capture & Validation:** Implemented client-side validation and secure backend PHP form handling with anti-spam safeguards.
+* **Automated Notification Routing:** Configured instantaneous email alerts routed directly to real estate acquisitions managers upon form submission.

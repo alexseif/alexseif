@@ -144,34 +144,28 @@
     "title": "218TV.net (High-Traffic Broadcast News & Strangler-Fig Drupal Migration)"
   },
   "2016-design-more-international": {
-    "completed": false,
+    "completed": true,
     "filename": "2016-design-more-international.md",
     "year": 2016,
-    "title": "Alex Seif"
+    "title": "Design More International (Architectural Portfolio & Media Engine)"
   },
   "2016-intrade": {
-    "completed": false,
+    "completed": true,
     "filename": "2016-intrade.md",
     "year": 2016,
-    "title": "Alex Seif"
+    "title": "Intrade (Global Import & Export Product Catalog)"
   },
   "2016-l3d": {
-    "completed": false,
+    "completed": true,
     "filename": "2016-l3d.md",
     "year": 2016,
-    "title": "Alex Seif"
+    "title": "L3D (Emergency Blood Donation & Donor Registry Platform)"
   },
   "2016-zillion-home-buyers": {
-    "completed": false,
+    "completed": true,
     "filename": "2016-zillion-home-buyers.md",
     "year": 2016,
-    "title": "Alex Seif"
-  },
-  "2017-ajel": {
-    "completed": false,
-    "filename": "2017-ajel.md",
-    "year": 2017,
-    "title": "Ajel.sa"
+    "title": "Zillion Home Buyers (Real Estate Lead Acquisition Page)"
   },
   "2017-cafe-supreme": {
     "completed": false,
@@ -238,6 +232,12 @@
     "filename": "selected/2011-agazatmasr.md",
     "year": 2011,
     "title": "Agazat Masr (Tourico)"
+  },
+  "2017-ajel": {
+    "completed": true,
+    "filename": "selected/2017-ajel.md",
+    "year": 2017,
+    "title": "Ajel.sa (High-Concurrency Saudi News Network & Acquia Cloud Architecture)"
   },
   "2017-hsp": {
     "completed": true,
@@ -310,5 +310,11 @@
     "filename": "selected/2026-ekalexandria-modernization.md",
     "year": 2026,
     "title": "Greek Community of Alexandria Modernization"
+  },
+  "2026-ekkairo-modernization": {
+    "completed": true,
+    "filename": "selected/2026-ekkairo-modernization.md",
+    "year": 2026,
+    "title": "Greek Community of Cairo Modernization"
   }
 }
