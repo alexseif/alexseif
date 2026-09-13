@@ -197,12 +197,6 @@
     "year": 2017,
     "title": "Turathuna (Abu Dhabi Cultural Programs & Heritage Festivals Platform)"
   },
-  "2018-osman-co-educational-services": {
-    "completed": false,
-    "filename": "2018-osman-co-educational-services.md",
-    "year": 2018,
-    "title": "Alex Seif"
-  },
   "2018-the-greek-community-of-cairo": {
     "completed": false,
     "filename": "2018-the-greek-community-of-cairo.md",
@@ -234,7 +228,7 @@
     "title": "Ajel.sa (High-Concurrency Saudi News Network & Acquia Cloud Architecture)"
   },
   "2017-hsp": {
-    "completed": true,
+    "completed": false,
     "filename": "selected/2017-hsp.md",
     "year": 2017,
     "title": "HSP Healthcare Services Platform"
