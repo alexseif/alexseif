@@ -4,62 +4,38 @@ title: barincairo.com
 year: 2026
 client_name: barincairo.com
 client_type: Geospatial Web Directory
-project_role: Software Architect & Full-Stack Developer
-subtitle: Decoupled Web GIS and cartographic index for historic nightlife institutions in Downtown Cairo.
+project_role: "Senior Full-Stack Engineer"
+subtitle: "Architected a decoupled Web GIS platform on React 19, FastAPI (Python 3.12), and PostGIS, engineering dynamic bounding-box GeoJSON streaming and automated spatial deduplication."
 tech_stack:
-  - TypeScript
-  - Python 3.12
-  - React 19
-  - Vite 8
-  - FastAPI
-  - PostgreSQL 15+
-  - PostGIS 3.3+
-  - MapLibre GL JS
-  - TanStack Query v5
-  - TailwindCSS v4
-  - Docker Compose
-  - Nginx
+  - "React 19 & TypeScript"
+  - "FastAPI (Python 3.12) & AsyncPG"
+  - "PostgreSQL 15+ & PostGIS 3.3+"
+  - "MapLibre GL JS & TanStack Query v5"
+  - "TailwindCSS v4 & Vite 8"
+  - "Docker Compose & Nginx Reverse Proxy"
 selected: false
 interview_completed: true
 tags:
   - case-study
 ---
 
-# Software Architect & Full-Stack Developer | barincairo.com (2026)
+# Senior Full-Stack Engineer | barincairo.com | 2026
 
-## Executive Summary
-Architected and implemented a decoupled Web GIS platform and cartographic index dedicated to historic establishments in Downtown Cairo (Wust El Balad). Built as a decoupled architecture pairing a React 19 single-page application with a Python 3.12 FastAPI backend and PostGIS spatial engine.
+### Context & Scale
+barincairo.com is a specialized Web GIS cartographic directory documenting historic hospitality and cultural institutions across Downtown Cairo (Wust El Balad). Serving dense vector cartography with dynamic bounding-box queries and multi-stop walking itineraries required strict decoupling between WebGL map rendering and server-side spatial calculations to prevent main-thread UI frame drops. Additionally, automated entity scrapers frequently generated overlapping venue entries with varied spelling and coordinates. Designed and implemented the complete platform as an independent full-stack engagement using React 19, Python 3.12 FastAPI, and a PostGIS spatial database engine.
 
----
+### Architectural Decisions
+- **Decoupled Web GIS & Viewport Streaming:** Separated client-side WebGL vector rendering from server-side database querying. Leveraged PostGIS GiST spatial indexing and compressed GeoJSON payloads to achieve sub-second viewport data streaming during client pan and zoom gestures.
+- **Spatial Proximity & Routing:** Implemented ST_Intersects for dynamic bounding-box queries and combined ST_DWithin with ST_Distance on spatial points (SRID 4326) to generate real-time proximity sorting and walking route itineraries.
+- **Automated Spatial Deduplication Pipeline:** Built a multi-stage ingestion pipeline matching entity keys alongside spatial proximity boundaries (ST_DWithin < 15 meters), reducing entity duplication to 0% across overlapping harvest runs.
+- **End-to-End Type Synchronization:** Implemented an automated build pipeline generating TypeScript interfaces directly from FastAPI OpenAPI specifications, guaranteeing compile-time type safety across frontend TanStack Query hooks.
 
-## 1. Context & Domain Scope
-* **Client / Domain:** barincairo.com (Geospatial Web Directory)
-* **Timeline:** 2026
-* **Project Role:** Software Architect & Full-Stack Developer
+### Engineering Execution
+- **PostGIS Point Synthesis:** Engineered custom SQLAdmin view-models that exposed standard float latitude and longitude coordinates to operators while dynamically synthesizing native PostGIS Point geometries on database write, preventing serialization faults.
+- **React 19 & MapLibre Integration:** Built a responsive vector interface using MapLibre GL JS, Vite 8, TailwindCSS v4, and TanStack Query v5 for optimistic caching and background revalidation.
+- **Containerized Deployment:** Packaged services into isolated Docker Compose network bridges behind an Nginx reverse proxy configured with HTTP/2 and Gzip compression.
 
-### The Challenge
-Serving vector cartography with dynamic bounding-box queries and multi-stop route calculations across dense urban layouts requires strict decoupling between client WebGL tile rendering and backend spatial queries to prevent UI frame drops. Additionally, venue harvesting required automated spatial deduplication to prevent overlapping scrapes from corrupting the dataset.
-
----
-
-## 2. Technical Stack & Systems Infrastructure
-* **Frontend:** React 19 SPA powered by Vite 8, MapLibre GL JS for vector rendering, TanStack Query v5 for server state, and TailwindCSS v4.
-* **Backend:** FastAPI (Python 3.12), SQLAdmin control plane, AsyncPG, and GeoAlchemy2.
-* **Database:** PostgreSQL 15+ with PostGIS 3.3+ spatial extension (SRID 4326).
-* **Containerization & Edge:** Docker Compose network bridge (`barincairo_net`) behind an Nginx reverse proxy.
-
----
-
-## 3. Architectural Decisions & Engineering Challenges
-* **Decoupled Web GIS & Viewport Streaming:** Separated WebGL vector cartography from server-side spatial database processing. Utilized PostGIS spatial GIST indexing and compressed GeoJSON streaming to achieve sub-second viewport data streaming during pan and zoom actions.
-* **Spatial Queries & Proximity Calculations:** Implemented `ST_Intersects` for dynamic bounding-box filtering and combined `ST_DWithin` with `ST_Distance` for real-time proximity sorting and route generation.
-* **Automated Spatial Deduplication Pipeline:** Built a multi-stage ingestion pipeline combining primary entity keys (`place_id`) with spatial proximity boundaries (`ST_DWithin < 15 meters`), reducing entity duplication to 0% across overlapping harvest runs.
-* **Type-Safe Contract Synchronization:** Established an automated build pipeline that derives TypeScript definitions directly from FastAPI OpenAPI specifications, guaranteeing compile-time type safety across frontend state hooks.
-* **Admin Spatial Serialization Handling:** Built custom SQLAdmin view-models that exposed standard float latitude and longitude inputs and dynamically synthesized native PostGIS `Point` geometries on record write, eliminating serialization errors.
-
----
-
-## 4. Operational & Institutional Impact
-* **Cartographic Performance:** Achieved sub-second data streaming across high-density urban map viewports.
-* **Data Accuracy:** Eliminated location duplication across automated web scrapes with spatial proximity thresholds.
-* **Container Parity:** Enforced complete staging and production environment parity using isolated Docker Compose networking.
+### Measurable Impact
+- **Sub-Second Viewport Streaming:** Maintained smooth 60 FPS UI performance with sub-second GeoJSON bounding-box queries across high-density urban point clusters.
+- **0% Entity Duplication:** Proximity-based spatial deduplication completely eliminated duplicate venue entries across repeated scraper ingestions.
+- **Environment Parity:** Enforced strict development, staging, and production parity using isolated Docker Compose bridge networks.
