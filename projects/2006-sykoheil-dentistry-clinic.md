@@ -4,8 +4,8 @@ title: SYKoheil Dentistry Clinic Modernization
 year: 2006
 client_name: Dr. Koheil
 client_type: Private Healthcare / Dentistry Clinic
-project_role: Full-Stack DeveloperFull-Stack Developer
-subtitle: Legacy modernization and performance optimization migrating Flash to native web standards.
+project_role: Senior Full-Stack Engineer
+subtitle: Legacy modernization migrating Adobe Flash to standards-compliant PHP 5 and semantic web architecture.
 tech_stack:
   - PHP 5
   - MySQL
@@ -19,15 +19,23 @@ tags:
   - case-study
 ---
 
-# Full-Stack DeveloperFull-Stack Developer | Dr. Koheil (2006)
+# Senior Full-Stack Engineer | Dr. Koheil | 2006
 
-## Overview
-Migrated a healthcare practice website from Adobe Flash to standard open web technologies (PHP 5, MySQL, semantic HTML, CSS, and JavaScript). The original Flash site caused frequent browser rendering crashes, lacked search indexability, and failed to load on emerging browsers.
+## Context & Scale
+Private dental healthcare clinic in Alexandria, Egypt. The existing practice website was built as an Adobe Flash (.swf) application that suffered from frequent browser rendering crashes, zero search engine indexability, and total incompatibility with standards-compliant mobile and desktop web browsers.
 
-Extracted content and assets from compiled `.swf` binaries into accessible HTML pages, added structured meta tags for search discoverability, and implemented lightweight PHP form handlers with MySQL persistence for patient appointment inquiries.
+## Architectural Decisions
+* **Decompilation & Asset Decoupling:** Extracted media assets, layout structures, and textual content from compiled Flash binaries into decoupled, standards-compliant HTML and CSS templates.
+* **Direct Server-Side Inquiry Architecture:** Replaced opaque client-side action scripts with server-side validated PHP request handlers backed by a normalized MySQL schema.
+* **Semantic Discoverability Engine:** Restructured site markup into hierarchical semantic HTML with structured meta tags, heading hierarchies, and canonical URLs to establish organic search engine indexing.
 
-## Key Technologies & Tools
-* PHP 5 (inquiry processing and dynamic routing)
-* MySQL (appointment request persistence)
-* Semantic HTML, CSS, and vanilla JavaScript
-* Apache web server configuration and caching headers
+## Engineering Execution
+* **Backend:** PHP 5 server-side request processing with input sanitization and automated email dispatch alongside database writes.
+* **Data Layer:** MySQL relational schema storing timestamped patient inquiries and appointment requests.
+* **Frontend:** Standards-compliant semantic HTML, CSS, and vanilla JavaScript without third-party framework overhead.
+* **Infrastructure:** Apache web server deployment on Linux shared hosting, configuring HTTP caching headers for static asset delivery.
+
+## Measurable Impact
+* Eliminated browser crash rates and third-party plugin dependencies by phasing out Adobe Flash completely.
+* Achieved first-time organic search engine indexing for the clinic's specialized dental services.
+* Automated direct appointment inquiry capture via relational database storage instead of fragile mailto links.
