@@ -4,53 +4,38 @@ title: Salama Cooperative Insurance Registration Gateway
 year: 2021
 client_name: Salama Cooperative Insurance (via iSoft)
 client_type: Fintech / Regulated Financial Services
-project_role: Software Architect & Full-Stack Developer
-subtitle: Web registration gateway for Shariah-compliant motor insurance in Saudi Arabia enforcing SAMA regulatory compliance.
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Architected a Shariah-compliant motor insurance registration gateway on Drupal and PHP, enforcing SAMA regulatory compliance and multi-stage payload validation."
 tech_stack:
-  - PHP
   - Drupal Enterprise
-  - MySQL
-  - RESTful APIs
-  - Layer 7 Load Balancing
+  - "PHP"
+  - "MySQL (ACID Compliance & Transaction Persistence)"
+  - "RESTful Regulatory APIs"
+  - "Layer 7 Load Balancing & Reverse Proxy"
+  - "Saudi Central Bank (SAMA) Compliance"
 selected: true
 interview_completed: true
 tags:
   - case-study
 ---
 
-# Software Architect & Full-Stack Developer | Salama Cooperative Insurance (2021)
+# Lead Full-Stack Engineer & Architect | Salama Cooperative Insurance (via iSoft) | 2021
 
-## Executive Summary
-Designed and delivered the web registration gateway for Salama Cooperative Insurance in Saudi Arabia. The platform established the architectural baseline for payload validation, transactional integrity, and regulatory REST API integrations under Saudi Central Bank (SAMA) compliance standards.
+### Context & Scale
+Salama Cooperative Insurance (contracted via iSoft) is a leading provider of Shariah-compliant motor insurance in the Kingdom of Saudi Arabia. Operating under the regulatory oversight of the Saudi Central Bank (SAMA), customer policy registration required sub-second data validation against strict statutory schemas and external government insurance endpoints. Surges during national policy renewal cycles generated high concurrent traffic, while malformed user inputs risked tripping regulatory API rejections and audit compliance issues. Retained as Lead Full-Stack Engineer and Architect to engineer the registration gateway, implement strict pre-ingestion validation, and establish resilient API communication boundaries.
 
----
+### Architectural Decisions
+- **Pre-Ingestion Multi-Stage Validation:** Designed a multi-stage validation layer in PHP that verified customer data completeness, national identification formats, and vehicle parameters prior to dispatching requests to external insurance backends, halting invalid submissions at the ingress boundary.
+- **Fault-Tolerant Resilient API Wrappers:** Built deterministic error-handling and timeout wrappers around third-party regulatory endpoints, ensuring network latency or temporary upstream downtime did not stall registration sessions or corrupt local state.
+- **ACID-Compliant Transaction Persistence:** Enforced strict database transactions in MySQL to guarantee that policyholder profiles, identity verification tokens, and registration payloads were committed atomically.
+- **Layer 7 Load Balancing Architecture:** Configured Layer 7 reverse proxies and load balancers to distribute incoming traffic across stateless PHP application nodes, insulating the core registration engine from renewal traffic spikes.
 
-## 1. Context & Problem
-* **Client / Domain:** Salama Cooperative Insurance (Saudi Arabia)
-* **Timeline:** 2021
-* **Project Role:** Software Architect & Full-Stack Developer
+### Engineering Execution
+- **Custom Drupal Service Architecture:** Developed bespoke Drupal services and controllers managing multi-step onboarding, identity verification tokenization, and secure registration callback handling.
+- **Regulatory Schema Compliance:** Encoded SAMA regulatory validation rules into deterministic backend validators, rejecting non-compliant data before any external API egress.
+- **Stateless Node Configuration:** Structured application sessions and file upload pipelines to run across stateless web nodes behind reverse proxies without session drift.
 
-### The Challenge
-Insurance registration required real-time validation against strict regulatory schemas and external government insurance databases. Incoming customer submissions during peak policy renewal periods caused high connection concurrency and required strict field validation to prevent malformed data from reaching downstream regulatory services.
-
----
-
-## 2. Technical Stack & Implementation
-* **Application Framework:** Drupal Enterprise Core with custom PHP validation services.
-* **Data Layer:** MySQL relational database ensuring ACID-compliant transaction persistence.
-* **Integrations:** RESTful APIs interfacing with Saudi regulatory endpoints.
-* **Infrastructure:** Layer 7 load balancer arrays distributing traffic across stateless compute nodes.
-
----
-
-## 3. Architectural Decisions & Engineering Challenges
-* **Pre-Ingestion Payload Validation:** Built a multi-stage validation layer in Drupal that checked data completeness and field formats before dispatching requests to external insurance backends, eliminating downstream processing rejections.
-* **Fault-Isolated API Wrappers:** Implemented deterministic error-handling wrappers around external regulatory endpoints to insulate the user registration flow from third-party network latency.
-* **Traffic Distribution:** Configured Layer 7 load balancing rules to manage connection bursts during annual policy renewal spikes without service degradation.
-
----
-
-## 4. Operational & Institutional Impact
-* **Compliance Assurance:** Successfully passed all regulatory audits for Shariah-compliant financial software infrastructure under SAMA standards.
-* **Blueprint Reusability:** The validation and API integration patterns established in this project served as the reference architecture for subsequent Saudi public portal deployments.
-* **Ingress Data Integrity:** Reduced registration transaction failure rates by filtering malformed payloads at the ingress gateway.
+### Measurable Impact
+- **SAMA Compliance Certification:** Passed all regulatory audits for Shariah-compliant financial software infrastructure under Saudi Central Bank standards.
+- **Downstream Error Elimination:** Pre-ingestion validation filtered out malformed registration requests, dramatically reducing downstream processing rejections.
+- **Reusable Enterprise Architecture:** The API integration patterns, validation architecture, and fault-tolerance wrappers served as the institutional blueprint for subsequent regulated Saudi public sector portal deployments.
