@@ -1,9 +1,11 @@
-company_agency: "MitchDesigns"
+company_agency: "MITCHDesigns"
+employment_type: "Full-time & Embedded Architect"
 timeline:
   start_year: 2009
-  end_year: 2012
-primary_role: "Lead Software Engineer / Architect"
+  end_year: 2014
+primary_role: "Lead Software Engineer & Web Architect"
 agency_level_impact:
-  - "Spearheaded the design and architecture of a custom PHP MVC framework utilized across multiple high-traffic travel booking and retail platforms, significantly reducing code-base bloat."
-  - "Established standard operational procedures for Requirement Elicitation and CI/CD, bridging the gap between non-technical design teams and enterprise-grade backend infrastructure."
-  - "Governed the database lifecycle for diverse retail and tourism clients, implementing advanced indexing strategies and schema optimization that enabled concurrent inventory management."
+  - "Architected a custom PHP MVC framework that served as the technical foundation for over 15 client platforms, eliminating boilerplate and maintaining consistent sub-100ms response times."
+  - "Engineered dynamic contract pricing and automated reservation engines for flagship travel clients, including Smash Holidays and Agazat Masr (Tourico)."
+  - "Designed normalized relational schemas and compound MySQL indexing strategies for high-inventory retail and e-commerce clients, including The Giftery registry and Bouri Center."
+  - "Established agency-wide technical standards for Git workflows, requirements elicitation, and server provisioning, bridging creative design teams with backend systems."

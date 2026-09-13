@@ -1,0 +1,10 @@
+company_agency: "Independent Architectural Consultancy & Retainers"
+employment_type: "Principal Technical Consultant"
+timeline:
+  start_year: 2006
+primary_role: "Principal Software Architect & Full-Stack Developer"
+agency_level_impact:
+  - "Architected HSP for Focus Media Group (FMG): a 3-tier event booking, meeting room allocation, and real-time hallway digital signage wayfinding system deployed across luxury hotels (Hilton), tech hubs (The GrEEK Campus in Cairo), and corporate clients (Mercedes-Benz)."
+  - "Delivered long-term web architecture for historic Hellenic diaspora institutions, including a 10-year portal for the Greek Community of Cairo (EKK) serving 300,000 annual visitors, followed by 2026 enterprise Full Site Editing (FSE) modernizations for both EKA and EKK."
+  - "Modernized an institutional donor transparency platform for North South Consultants Exchange (NSCE) serving UN, GIZ, and EU development programs, resolving database translation corruption and optimizing queries for 20,000 monthly organic impressions."
+  - "Architected decoupled Web GIS platforms, including barincairo.com (React 19, Python 3.12 FastAPI, PostGIS vector tile streaming), and lead acquisition infrastructure for corporate clients (AlKawass Group, Zillion Home Buyers)."

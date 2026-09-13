@@ -1,10 +1,12 @@
-company_agency: "iSoft"
+company_agency: "iSoft (IdealSoft Emirates)"
+employment_type: "Retainer & Contract"
 timeline:
   start_year: 2020
   end_year: 2024
 primary_role: "Principal Software Architect & Technical Lead"
 agency_level_impact:
-  - "Architected a strict 4-tier environment topology (Dev, Testing, Staging, Preproduction) integrated directly with a mandated Git workflow to ensure safe, isolated deployment pipelines."
-  - "Eliminated weekend critical failures by enforcing a 'Tuesday-only' production deployment schedule, ensuring adequate weekday burn-in and rapid mitigation windows."
-  - "Restructured project management workflows within Jira, explicitly defining the boundaries between epics, milestones, planning issues, and actionable engineering tasks."
-  - "Led technical upskilling initiatives, mentoring engineering staff on RESTful API design standards and training the QA department in automated form testing protocols."
+  - "Architected the nationwide vehicle inspection booking engine for Saudi SASO, implementing a transactional state-locking engine with a 5-minute reservation buffer to eliminate race conditions across web, mobile, and physical inspection lanes."
+  - "Engineered an air-gapped Moodle certification portal on a restricted intranet for the Egyptian Ministry of Interior (Traffic Police), utilizing custom-patched Oracle Linux OS repositories on physical media with zero internet connectivity."
+  - "Designed the core booking and dispatch API integration for Egypt's nationwide Aman vehicle inspection network, redirecting citizen volume to commercial inspection hubs and mobile inspection vans."
+  - "Engineered pre-ingestion validation mechanics and transaction pipelines for compliant digital automotive insurance for Salama under Saudi Central Bank (SAMA) regulatory standards."
+  - "Enforced a strict 4-tier environment topology (Dev, Testing, Staging, Preproduction) and a Tuesday-only production deployment schedule, eliminating weekend critical failures."

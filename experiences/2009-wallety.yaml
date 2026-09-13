@@ -1,0 +1,11 @@
+company_agency: "Wallety"
+employment_type: "Co-Founder & Software Architect"
+timeline:
+  start_year: 2009
+  end_year: 2015
+primary_role: "Co-Founder & Software Architect"
+agency_level_impact:
+  - "Architected and launched an early online payment gateway in Egypt, processing 33% of all domestic air travel ticketing volume."
+  - "Solely engineered the core payment gateway engine in PHP and Symfony under PCI DSS security standards, ensuring transaction settlements survived unstable telecom connections."
+  - "Built direct financial integrations with domestic acquiring banks, 200+ enterprise merchants, and the Amadeus Global Distribution System (GDS) for atomic flight seat reservations."
+  - "Clustered MySQL separating master ACID writes from slave read-reporting, and engineered 1-second CLI background daemon loops to process transaction batches asynchronously."

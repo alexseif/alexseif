@@ -1,9 +1,10 @@
 company_agency: "Meem Development (SEF Academy)"
+employment_type: "Contract"
 timeline:
   start_year: 2024
   end_year: 2024
 primary_role: "Integration Architect & Technical Lead"
 agency_level_impact:
-  - "Architected and deployed SAML 2.0 Single Sign-On (SSO) via Keycloak, resolving critical metadata and authentication blockages."
-  - "Defined and enforced secure database administration protocols and release candidate documentation for the broader development team."
-  - "Engineered and stabilized complex core LMS integrations, including automated certificate issuance via SMTP and direct Microsoft Teams platform hooks."
+  - "Architected and deployed enterprise SAML 2.0 Single Sign-On (SSO) via Keycloak across Moodle LMS, a custom student registration web app, and the administrative portal, resolving authentication token failures."
+  - "Configured role-isolated SSH tunneling topologies for distributed engineering teams, enabling secure concurrent database administration across Test and UAT instances without public port exposure."
+  - "Engineered and stabilized core LMS integrations, including automated certificate generation and dispatch via authenticated SMTP relays and enterprise Microsoft Teams hooks."

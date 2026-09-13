@@ -1,0 +1,10 @@
+company_agency: "NileTech"
+employment_type: "Lead Technical Partner"
+timeline:
+  start_year: 2016
+  end_year: 2017
+primary_role: "Lead Full-Stack Engineer & Architect"
+agency_level_impact:
+  - "Executed a Strangler-Fig pattern migration for 218TV, safely transitioning high-concurrency broadcast news operations into an enterprise Drupal architecture with Varnish reverse-proxy caching sustaining 15,000 active concurrent connections."
+  - "Architected a government-grade bilingual Drupal platform for Turathuna (Abu Dhabi Cultural Programs & Heritage Festivals Committee), featuring broadcast TV program archives, festival calendars, and native Arabic RTL typography."
+  - "Standardized automated deployment scripts, server security hardening, and database query caching across production client environments."
