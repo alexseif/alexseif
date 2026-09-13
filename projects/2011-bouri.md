@@ -4,8 +4,8 @@ title: "Bouri Center (E-Commerce & Enterprise ERP Integration)"
 year: 2011
 client_name: "MITCHDesigns (End-Client: Bouri Center)"
 client_type: "Retail Enterprise & Distribution"
-project_role: "Software Architect & Lead Full-Stack Developer"
-subtitle: "Architected a custom e-commerce platform and inventory synchronization pipeline integrating a digital storefront with a legacy corporate ERP."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Custom e-commerce architecture and asynchronous ERP inventory ledger integrating a retail storefront with legacy enterprise systems."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework & Rapid Application Development (RAD)"
@@ -19,23 +19,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect & Lead Full-Stack Developer | MITCHDesigns - Bouri Center (2011 - 2013)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (Bouri Center) | 2011 - 2013
 
-## Overview
-Bouri Center is a leading distributor and retailer of premium household and kitchen appliances in Egypt (including Kenwood, De'Longhi, and Braun). Through MITCHDesigns, this project delivered Bouri's flagship e-commerce storefront and integrated it directly with their corporate enterprise resource planning (ERP) back-office.
+## Context & Scale
+Bouri Center is a premier national retail distributor in Egypt representing global consumer household appliance brands (including Kenwood, De'Longhi, and Braun). Through agency MITCHDesigns, this project delivered Bouri's flagship direct-to-consumer e-commerce platform and synchronized digital transactions with their restrictive legacy corporate ERP back-office.
 
-Served as Software Architect and Lead Full-Stack Developer across the entire project lifecycle. Led requirement elicitation with corporate stakeholders, negotiated API contracts with third-party ERP vendors, architected the core custom PHP MVC framework, modeled relational schemas, built major backend systems, conducted code reviews, and managed DevOps provisioning on Rackspace Cloud infrastructure.
+## Architectural Decisions
+* **Virtual Branch ERP Ledger Architecture:** To resolve rigid legacy ERP interfaces and third-party vendor latency, modeled the digital storefront as an autonomous virtual retail branch. Designed a localized transactional inventory ledger that decoupled customer checkout processing from upstream ERP downtime and sync bottlenecks.
+* **Asynchronous Catalog Ingestion & Data Remediation:** Built an asynchronous background pipeline to parse, normalize, and validate fragmented legacy product catalog feeds. Integrated human-in-the-loop validation triggers that quarantined malformed SKU attributes without interrupting background ingestion queues.
+* **Rapid Application Development (RAD) Engine:** Engineered an object-oriented PHP MVC foundation featuring an in-house RAD tool that automated relational schema migrations alongside application logic, accelerating feature delivery while maintaining strict architectural quality gates.
 
-## Key Technical Challenges & Architecture
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 application core with Symfony components, REST API specifications, and transactional order state machines (inventory holds, payment validation, fulfillment).
+* **Data Layer:** Normalized MySQL relational database using InnoDB transactional tables for orders, SKU variations, pricing rules, and inventory reconciliation logs.
+* **Frontend:** Responsive semantic HTML, modular CSS, and vanilla JavaScript interaction handlers for shopping cart and checkout flows.
+* **Infrastructure & DevOps:** Provisioned and managed Linux server environments on Rackspace Cloud with isolated staging and production tiers, automated deployment scripts, and automated database snapshot routines.
 
-### 1. ERP Integration & Virtual Branch Ledger
-Faced with restrictive legacy ERP constraints and rigid third-party vendor interfaces, modeled the e-commerce database layer to represent the digital storefront as an independent virtual retail branch. This architecture created a dedicated local inventory ledger that decoupled web checkout transactions from upstream ERP latency and outages.
-
-### 2. Asynchronous Ingestion & Data Remediation
-Engineered an asynchronous batch processing engine to parse, sanitize, and normalize fragmented legacy product catalog feeds. Integrated human-in-the-loop validation triggers that flagged malformed SKU attributes without halting background queue execution.
-
-### 3. Rapid Application Development (RAD) Engine
-Designed and implemented an object-oriented Rapid Application Development engine that synchronized schema migrations with application logic, accelerating feature delivery across the engineering team while maintaining strict architectural quality gates.
-
-### 4. Cloud Infrastructure & DevOps Governance
-Managed infrastructure provisioning on Rackspace Cloud Linux servers, establishing dedicated staging and production tiers, automated deployment scripts, and database backup routines to guarantee high uptime and transactional reliability.
+## Measurable Impact
+* Ensured zero customer checkout interruption by isolating storefront transactions from upstream ERP downtime and network latency spikes.
+* Automated catalog ingestion and synchronization across thousands of SKUs and product variations.
+* Successfully migrated enterprise operations to Rackspace Cloud infrastructure, establishing reliable I/O throughput and high platform uptime.
