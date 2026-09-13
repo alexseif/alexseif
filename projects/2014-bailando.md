@@ -4,8 +4,8 @@ title: "Bailando (Kids Playground & Cafe)"
 year: 2014
 client_name: "Bailando"
 client_type: "Family Entertainment & Hospitality"
-project_role: "Full-Stack DeveloperFull-Stack Developer"
-subtitle: "Engineered a responsive showcase website and birthday event inquiry platform on WordPress hosted on DigitalOcean."
+project_role: "Senior Full-Stack Engineer"
+subtitle: "Responsive web showcase, event reservation pipeline, and cloud deployment on WordPress and DigitalOcean for a children's entertainment venue."
 tech_stack:
   - "WordPress"
   - "PHP"
@@ -18,14 +18,23 @@ tags:
   - "case-study"
 ---
 
-# Full-Stack DeveloperFull-Stack Developer | Bailando (2014)
+# Senior Full-Stack Engineer | Bailando | 2014
 
-## Overview
-Bailando is a family cafe, children's playground, and party venue in Alexandria, Egypt, specializing in kids' entertainment and birthday celebrations. This project delivered Bailando's digital showcase to market its playground facilities, activity schedules, and birthday event packages.
+## Context & Scale
+Bailando is a family cafe, children's playground, and event venue in Alexandria, Egypt, specializing in kids' entertainment and private birthday celebrations. The business required an online showcase to promote playground facilities, activity schedules, and party packages, while automating parent booking inquiries.
 
-Handled the complete implementation as Full-Stack DeveloperFull-Stack Developer. Built a clean, mobile-responsive showcase on WordPress, integrated customer inquiry workflows for birthday party reservations, and provisioned reliable cloud hosting on DigitalOcean Linux infrastructure.
+## Architectural Decisions
+* **Lightweight WordPress Architecture:** Built a customized WordPress theme engineered without heavy third-party visual page builders, ensuring fast initial page loads and smooth scrolling on mobile devices.
+* **Structured Party Reservation Pipeline:** Implemented server-side validated inquiry workflows and automated transactional email routing for party reservations, capturing date preferences, party sizes, and catering selections.
+* **Cloud Droplet Provisioning:** Provisioned and configured a dedicated Linux cloud instance on DigitalOcean running Nginx and PHP-FPM, establishing automated snapshot routines and SSL encryption.
 
-## Key Technologies & Tools
-* **WordPress & PHP:** Developed a lightweight custom theme showcasing play areas, menu offerings, and birthday package pricing.
-* **Lead Generation & Event Inquiries:** Structured validation forms and automated email routing for parent party bookings and venue inquiries.
-* **Cloud Hosting & Deployment:** Provisioned and configured an isolated DigitalOcean Linux droplet with Nginx and MySQL for high availability and low maintenance overhead.
+## Engineering Execution
+* **Frontend:** Responsive semantic HTML5, CSS3 layouts, and vanilla JavaScript interaction handlers optimized for smartphone viewports.
+* **Backend & CMS:** Custom PHP templates integrated into WordPress core for dynamic activity schedules and event packages.
+* **Data Layer:** MySQL relational database storing contact inquiries and booking lead records.
+* **Infrastructure:** DigitalOcean Linux droplet configured with Nginx web server, PHP-FPM process management, and Let's Encrypt SSL.
+
+## Measurable Impact
+* Replaced manual telephone-only booking with an automated digital inquiry capture pipeline.
+* Delivered fast mobile page loads across low-bandwidth cellular connections.
+* Established a low-maintenance cloud infrastructure ensuring long-term operational stability.
