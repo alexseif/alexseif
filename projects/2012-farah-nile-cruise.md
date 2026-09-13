@@ -4,8 +4,8 @@ title: "Farah Nile Cruise (Luxury Hospitality & Booking Engine)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Farah Nile Cruise)"
 client_type: "Luxury River Hospitality & Tourism"
-project_role: "Software Architect & Full-Stack Developer"
-subtitle: "Architected the inaugural digital showcase, cruise itinerary manager, and cabin reservation engine for a premier luxury Nile cruiser."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Luxury river cruiser portal, multi-day itinerary scheduling, and direct cabin reservation architecture on custom PHP MVC."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -19,15 +19,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect & Full-Stack Developer | MITCHDesigns - Farah Nile Cruise (2012)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (Farah Nile Cruise) | 2012
 
-## Overview
-Farah Nile Cruise is a premier luxury river cruiser operating sailing itineraries between Luxor and Aswan in Upper Egypt. Contracted through digital agency MITCHDesigns, this project engineered Farah's inaugural web presence and reservation engine, establishing the digital brand that helped secure its initial commercial success.
+## Context & Scale
+Farah Nile Cruise is a premier luxury river hospitality vessel operating sailing itineraries between Luxor and Aswan in Upper Egypt. Contracted through digital agency MITCHDesigns, this engagement engineered Farah's inaugural web presence and reservation engine, requiring multi-day sailing itinerary management (3, 4, and 7-night cruises), cabin tier pricing, and seasonal calendar coordination for international travelers.
 
-Served as Software Architect and Full-Stack Developer across the complete project lifecycle, from initial requirement elicitation with cruise operators through delivery and ongoing maintenance. Built on the proprietary custom PHP MVC framework and MySQL, the platform combined an editorial visual showcase with an administrative management backend.
+## Architectural Decisions
+* **Relational Itinerary & Seasonal Tariff Schema:** Modeled complex cruise sailing schedules across multiple departure ports (Luxor and Aswan), seasonal pricing brackets, and cabin categories into a normalized MySQL schema with deterministic availability checking.
+* **Decoupled Operations Back-Office CMS:** Engineered an administrative management panel allowing cruise coordinators to independently schedule departure dates, block out maintenance windows, and manage booking inquiries without developer intervention.
+* **Non-Blocking High-Resolution Media Delivery:** Optimized high-resolution ship photography, cabin layouts, and deck plan assets using browser caching headers, progressive rendering, and static asset minification to ensure fast load times across international travel source markets.
 
-## Key Technical Challenges & Architecture
-* **Cruise Itinerary & Trip Management:** Designed relational database schemas to model multi-day sailing itineraries (3, 4, and 7-night cruises), seasonal scheduling calendars, cabin tier pricing, and amenity inventories.
-* **Direct Booking & Reservation Engine:** Built reservation workflows and validation rules to handle dynamic date selection, cabin occupancy parameters, and customer booking inquiries without cross-channel scheduling conflicts.
-* **Administrative Operations CMS:** Engineered an administrative control panel empowering cruise operations staff to manage trip dates, adjust seasonal tariffs, update cabin details, and process reservation pipelines autonomously.
-* **High-Resolution Media & Performance:** Structured asset caching and lightweight layout rendering to showcase high-resolution ship photography and deck plans smoothly across international travel markets.
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 MVC application core with modular controllers handling trip date validation, cabin occupancy calculations, and booking dispatch workflows.
+* **Data Layer:** Normalized MySQL relational database with foreign key constraints across sailing schedules, cabin tiers, rate rules, and customer inquiries.
+* **Frontend:** Standards-compliant semantic HTML, modular CSS layouts, and vanilla JavaScript interaction handlers for itinerary selection and cabin tour previews.
+* **Infrastructure:** Apache web server running on Linux with URL rewriting for SEO-optimized cruise package paths and gzip asset compression.
+
+## Measurable Impact
+* Delivered Farah Nile Cruise's initial digital reservation channel, capturing direct international traveler inquiries without intermediary booking platform fees.
+* Eliminated manual booking reconciliation by giving cruise operations staff autonomous administrative control over sailing schedules and tariffs.
+* Sustained fast page load times globally for high-resolution visual deck plans and cabin galleries.
