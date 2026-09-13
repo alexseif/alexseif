@@ -17,7 +17,7 @@ tech_stack:
   - Nginx Reverse Proxy
   - Playwright (Visual Regression)
   - AST Block Serialization Parser
-selected: true
+selected: false
 interview_completed: true
 tags:
   - case-study

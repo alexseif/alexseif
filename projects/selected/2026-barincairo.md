@@ -19,7 +19,7 @@ tech_stack:
   - TailwindCSS v4
   - Docker Compose
   - Nginx
-selected: true
+selected: false
 interview_completed: true
 tags:
   - case-study

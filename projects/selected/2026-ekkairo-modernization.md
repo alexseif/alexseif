@@ -18,7 +18,7 @@ tech_stack:
   - AST Block Serialization Parser
   - CSS / SCSS
   - JavaScript / ES6
-selected: true
+selected: false
 interview_completed: true
 tags:
   - case-study
