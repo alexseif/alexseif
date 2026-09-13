@@ -22,3 +22,6 @@ __pycache__/
 
 # Node
 /node_modules/
+
+# Agents
+.agents/skills/project-narrator
