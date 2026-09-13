@@ -168,10 +168,10 @@
     "title": "Zillion Home Buyers (Real Estate Lead Acquisition Page)"
   },
   "2017-cafe-supreme": {
-    "completed": false,
+    "completed": true,
     "filename": "2017-cafe-supreme.md",
     "year": 2017,
-    "title": "Alex Seif"
+    "title": "Cafe Supreme (Brand Platform & Franchisee Portal)"
   },
   "2017-emics": {
     "completed": false,
@@ -196,12 +196,6 @@
     "filename": "2017-turathuna.md",
     "year": 2017,
     "title": "NileTech"
-  },
-  "2018-cafe-supreme": {
-    "completed": false,
-    "filename": "2018-cafe-supreme.md",
-    "year": 2018,
-    "title": "Alex Seif"
   },
   "2018-osman-co-educational-services": {
     "completed": false,
