@@ -4,8 +4,8 @@ title: "Mystic Evenings (Luxury Fashion E-Commerce & Boutique)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Mystic Evenings)"
 client_type: "Luxury Fashion & Retail E-Commerce"
-project_role: "Software Architect & Full-Stack Developer"
-subtitle: "Architected a custom e-commerce storefront, high-resolution lookbook, and secure payment gateway integration for a high-end evening wear boutique."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Luxury fashion e-commerce architecture, SKU variant matrix, and transactional payment gateway integration on custom PHP MVC."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -19,20 +19,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect & Full-Stack Developer | MITCHDesigns - Mystic Evenings (2012)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (Mystic Evenings) | 2012
 
-## Overview
-Mystic Evenings was an upscale fashion brand and boutique specializing in luxury evening gowns and designer formal wear in Cairo. Contracted through digital agency MITCHDesigns, this project delivered Mystic Evenings' inaugural digital storefront and e-commerce platform.
+## Context & Scale
+Mystic Evenings was an upscale fashion brand and boutique specializing in luxury evening gowns and formal wear in Cairo. Contracted through digital agency MITCHDesigns, this project delivered Mystic's inaugural digital storefront, requiring high-resolution visual lookbooks, complex garment SKU variant management, and transactional checkout integration with local bank payment acquiring gateways.
 
-Served as Software Architect and Full-Stack Developer across all phases, from requirement elicitation with brand managers to full implementation and deployment. Built on the proprietary custom PHP MVC framework and MySQL, the platform combined high-resolution editorial lookbook presentations with a structured inventory catalog and secure online checkout gateway.
+## Architectural Decisions
+* **Multi-Attribute SKU & Variant Schema:** Designed a normalized relational database schema managing multi-dimensional garment attributes (sizing matrices, color palettes, fabric options, and physical boutique inventory levels) without redundant catalog duplication.
+* **Transactional Payment Gateway & Inventory Locking:** Engineered transactional checkout workflows interfacing with bank payment gateways. Implemented database row-level allocation locks (SELECT ... FOR UPDATE) upon checkout initiation, holding inventory during payment handshakes to prevent overselling limited-edition gowns.
+* **Lookbook Asset Isolation & Delivery Optimization:** Decoupled heavy editorial photography and fabric close-up rendering from the core request loop using aggressive HTTP cache-control headers, image compression, and progressive rendering to ensure sub-second page loads.
 
-## Key Technical Challenges & Architecture
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 MVC application core with Symfony components and decoupled domain services for payment verification, inventory reconciliation, and order fulfillment.
+* **Data Layer:** Normalized MySQL relational database using InnoDB transactional engine for order state machines, SKU variations, and customer accounts.
+* **Frontend:** Responsive semantic HTML, modular CSS layouts, and vanilla JavaScript interaction handlers for interactive lookbook galleries and dynamic product variant selectors.
+* **Infrastructure:** Apache web server running on Linux with SSL encryption and URL rewriting for clean collection routing.
 
-### 1. High-End Fashion Lookbook & Visual Presentation
-Engineered lightweight visual rendering pipelines and structured asset caching to display high-resolution lookbook galleries and detailed gown fabric close-ups smoothly without degrading page load speeds.
-
-### 2. Multi-Attribute SKU & Variant Modeling
-Designed normalized relational database schemas managing complex garment attributes, including size matrices, color variations, fabric availability, and boutique inventory stock levels.
-
-### 3. Secure Payment Gateway Integration
-Architected secure checkout transaction workflows, integrating direct acquiring bank payment gateway interfaces with transactional validation mechanics and inventory deduction locks to prevent overselling limited-edition dresses.
+## Measurable Impact
+* Successfully launched Mystic Evenings' initial direct-to-consumer digital commerce channel.
+* Completely prevented overselling of one-off and limited-edition evening gowns through transactional database inventory locks.
+* Maintained sub-second catalog and lookbook page load speeds while serving high-resolution fashion media.
