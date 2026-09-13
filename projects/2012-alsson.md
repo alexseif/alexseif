@@ -4,8 +4,8 @@ title: "El Alsson British & American International School"
 year: 2012
 client_name: "MITCHDesigns (End-Client: El Alsson School)"
 client_type: "International K-12 Education"
-project_role: "Software Architect & Engineering Coach"
-subtitle: "Architected the digital institutional portal, curriculum catalog, and admissions inquiry engine for a premier international school."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Institutional education portal, dual-curriculum catalog, and parent admissions architecture for an international K-12 school."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -18,15 +18,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect & Engineering Coach | MITCHDesigns - El Alsson School (2012 - 2013)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (El Alsson School) | 2012 - 2013
 
-## Overview
-El Alsson British and American International School is a leading private educational institution in Cairo. Through digital agency MITCHDesigns, this project delivered El Alsson's modern web portal to showcase its academic departments, publish detailed British and American curriculum catalogs, and automate parent inquiry and campus tour booking workflows.
+## Context & Scale
+El Alsson British and American International School is a leading private K-12 educational institution in Cairo. Digital agency MITCHDesigns was commissioned to build El Alsson's modern institutional portal, unifying two distinct educational tracks (British National Curriculum and American Diploma) while handling seasonal traffic surges from prospective parent admissions applications.
 
-Served as Software Architect and Engineering Coach. Led requirement elicitation with school administrators, defined the technical architecture and delivery roadmap, and coached agency developers on implementing features within the custom PHP MVC framework using its standardized documentation and design patterns.
+## Architectural Decisions
+* **Dual-Curriculum Academic Data Modeling:** Structured complex dual-track academic hierarchies into normalized relational entities, separating Key Stages, grade levels, departmental syllabi, and faculty directories for dynamic retrieval.
+* **Automated Admissions & Tour Pipeline:** Designed a multi-step parent application workflow with server-side input validation, document attachment processing, and automated campus tour scheduling to replace manual paper application intake.
+* **Developer Enablement & Framework Governance:** Mentored agency developers on utilizing the custom PHP MVC framework's routing conventions, database abstraction layer, and controller standards to ensure predictable delivery.
 
-## Key Technical Challenges & Architecture
-* **Requirement Elicitation & Information Architecture:** Structured complex dual-curriculum (British National Curriculum and American Diploma) academic hierarchies into a clean, searchable departmental catalog.
-* **Admissions & Campus Tour Workflows:** Modeled relational database tables and secure validation workflows to handle prospective parent admissions inquiries and automated campus tour scheduling.
-* **Developer Coaching & Framework Standards:** Guided development teams on utilizing the custom PHP MVC framework's core libraries, routing conventions, and database abstraction layers to ensure fast, maintainable delivery.
-* **Data Layer & Performance:** Normalized MySQL schema with composite indexing to handle high-traffic seasonal admission spikes and rich campus multimedia galleries smoothly.
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 MVC application core with modular controllers managing academic catalogs, administrative content publishing, and inquiry dispatches.
+* **Data Layer:** Normalized MySQL relational schema with composite indexing on admission status, departmental taxonomies, and event booking tables.
+* **Frontend:** Standards-compliant semantic HTML, modular CSS layouts, and vanilla JavaScript interaction handlers for admissions forms and media showcases.
+* **Infrastructure:** Apache web server running on Linux with opcode caching and browser caching headers for static campus photography.
+
+## Measurable Impact
+* Fully digitized the admissions intake workflow, handling seasonal application traffic surges without server performance degradation.
+* Provided parents with a fast, structured dual-curriculum directory, eliminating administrative manual inquiries.
+* Mentored junior and mid-level developers to successfully execute feature delivery according to architectural specifications.
