@@ -186,10 +186,10 @@
     "title": "Faros Omogenias (Bilingual Greek Diaspora News Magazine)"
   },
   "2017-startup-workshops": {
-    "completed": false,
+    "completed": true,
     "filename": "2017-startup-workshops.md",
     "year": 2017,
-    "title": "ITI"
+    "title": "ITI Startup Workshops (Technical Mentorship & MVP Scoping)"
   },
   "2017-turathuna": {
     "completed": false,
