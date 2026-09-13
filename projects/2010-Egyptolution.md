@@ -4,8 +4,8 @@ title: "Egyptolution (Tourism & Culture Magazine)"
 year: 2010
 client_name: "MITCHDesigns"
 client_type: "Digital Agency"
-project_role: "Software Architect"
-subtitle: "Architected a custom PHP MVC framework and automated background media optimization pipeline for a rich-media tourism publication."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Custom PHP MVC framework and automated background media processing pipeline for a rich-media tourism publication."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -19,15 +19,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect | MITCHDesigns - Egyptolution (2010)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (Egyptolution) | 2010
 
-## Overview
-Egyptolution was an online digital magazine dedicated to Egyptian tourism, culture, and travel, featuring heavy mixed media, editorial photography, and rich-text articles.
+## Context & Scale
+Commissioned by digital agency MITCHDesigns to engineer Egyptolution, an online tourism and culture publication featuring heavy editorial photography and long-form articles. In 2010, the regional web landscape was constrained by low consumer bandwidth, while the editorial desk required frequent publishing of high-resolution visual media.
 
-As Software Architect for MITCHDesigns, designed the core object-oriented PHP MVC framework and relational database schemas used by the engineering team to build the platform. To overcome the bandwidth and rendering limitations of the 2010 web landscape in Egypt, engineered an automated background media pipeline driven by cron jobs. The background workers pre-processed, scaled, and compressed high-resolution imagery into optimized delivery tiers, combined with lazy-loading mechanics and server-side fragment caching to maintain fast page loads without blocking the web server thread during editorial uploads.
+## Architectural Decisions
+* **Custom Object-Oriented PHP MVC Framework:** Architected an in-house model-view-controller core, separating routing, business logic, and presentation templates for clean modular extension by the development team.
+* **Relational Schema Decoupling:** Isolated heavy article text columns and media metadata into dedicated indexed MySQL tables, preventing table read-locks during concurrent editorial writes and traffic spikes.
+* **Asynchronous Media Pipeline:** Decoupled media ingestion from the HTTP request cycle by routing image processing to scheduled cron workers that generated tiered resolution variants before storage persistence.
 
-## Key Technologies & Architecture
-* **Custom PHP MVC Framework:** Architected the foundational model-view-controller engine and routing layer implemented by the developer team.
-* **Automated Media Optimization Pipeline:** Engineered scheduled background cron scripts to batch process, resize, and compress high-resolution media assets asynchronously.
-* **Delivery & Performance:** Implemented browser lazy loading and application caching tiers to ensure fast page loads across mixed-bandwidth client connections.
-* **Data Layer:** Normalized MySQL relational schema separating heavy media metadata and article content for fast indexing.
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 MVC application core with centralized URL routing and input sanitization.
+* **Data Layer:** MySQL relational schema with index tuning on article taxonomy, publication status, and author foreign keys.
+* **Asset Pipeline:** Scheduled background workers executing programmatic image scaling and compression (GD/ImageMagick) into thumbnail, preview, and hero tiers.
+* **Delivery & Caching:** Server-side fragment caching and client-side lazy loading to minimize initial DOM payload over bandwidth-constrained networks.
+
+## Measurable Impact
+* Eliminated web server thread blocking during editorial uploads by offloading media processing to background workers.
+* Maintained fast page loads across 2010-era regional 3G and ADSL connections.
+* Provided MITCHDesigns with an internal reusable MVC foundation for subsequent client publications.
