@@ -4,8 +4,8 @@ title: "Taziry Ecolodge & Sustainable Village"
 year: 2010
 client_name: "MITCHDesigns (End-Client: Taziry)"
 client_type: "Hospitality & Sustainable Tourism"
-project_role: "Software Architect"
-subtitle: "Architected the initial showcase and booking engine for an eco-resort in the Siwa Oasis on a custom PHP MVC framework."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Custom PHP MVC framework, room showcase, and direct reservation architecture for an eco-retreat in the Siwa Oasis."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -19,15 +19,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect | MITCHDesigns - Taziry Ecolodge (2010)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (Taziry Ecolodge) | 2010
 
-## Overview
-Taziry is an eco-lodge and cultural heritage retreat located in the Siwa Oasis, Egypt. Built on behalf of digital agency MITCHDesigns, this project delivered Taziry's inaugural web presence, room showcase, and direct reservation engine.
+## Context & Scale
+Built on behalf of digital agency MITCHDesigns for Taziry, an off-grid eco-lodge and cultural heritage retreat in the Siwa Oasis, Egypt. The objective was to establish Taziry's inaugural international web presence and engineer a direct booking and accommodation showcase platform.
 
-Served as Software Architect, providing the foundational custom PHP MVC framework and designing the relational database schema implemented by the frontend and backend developers. Engineered a content management system featuring granular SEO meta management, alongside a booking availability engine capable of calculating dynamic room rates based on date ranges, adult and children occupancies, and room tiers.
+## Architectural Decisions
+* **Custom PHP MVC Framework Core:** Architected an object-oriented MVC framework baseline, decoupling request routing, business logic, and presentation templates for implementation by the developer team.
+* **Occupancy & Seasonal Pricing Schema:** Designed a normalized relational database schema calculating dynamic accommodation rates across date ranges, room tiers, and guest configurations (differentiating adult and child occupancies).
+* **SEO Metadata & Clean Routing Engine:** Integrated metadata management within the administration layer alongside clean URL routing to maximize search engine indexing for international eco-tourism.
 
-## Key Technologies & Architecture
-* **Custom PHP MVC Framework:** Provided the foundational architecture, MVC routing, and controllers for developer implementation.
-* **Reservation & Occupancy Calculations:** Designed the booking workflow and transactional schema supporting date-based room availability and adult/child guest pricing logic.
-* **SEO-Optimized CMS:** Built dynamic metadata management tools within the custom CMS to maximize organic search indexing for international eco-tourism.
-* **Data Layer:** Structured normalized MySQL database tables managing lodge accommodations, seasonal availability calendars, and booking inquiries.
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 handling reservation request validation, dynamic tariff computation, and automated email confirmation dispatches.
+* **Data Layer:** MySQL relational schema indexing room inventory, seasonal availability calendars, and booking transaction logs.
+* **Frontend:** Standards-compliant semantic HTML, modular CSS layouts, and vanilla JavaScript interaction handlers.
+* **Infrastructure:** Apache web server running on a Linux LAMP stack with mod_rewrite rules for canonical URL enforcement.
+
+## Measurable Impact
+* Delivered Taziry's first direct online reservation channel, capturing guest bookings without intermediary agency commissions.
+* Provided MITCHDesigns with a structured booking and CMS engine successfully executed by their development team.
+* Established high organic search visibility across competitive international eco-tourism keywords.
