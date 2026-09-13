@@ -1,71 +1,41 @@
 ---
 slug: 2017-faros-omogenias
-title: Alex Seif
+title: "Faros Omogenias (Bilingual Greek Diaspora News Magazine)"
 year: 2017
-client_name: Alex Seif
-client_type: NGO
-project_role: Software Engineer
-subtitle: Greek News website
-tech_stack: []
+client_name: "Dimitri Cavouras (Faros Omogenias)"
+client_type: "Community Media / Publishing"
+project_role: "Full-Stack Web Developer"
+subtitle: "Delivered a bilingual Greek and English digital news magazine on WordPress, establishing UTF-8 multilingual publishing workflows and mobile-responsive editorial layouts for the Hellenic diaspora in Egypt."
+tech_stack:
+  - "WordPress"
+  - "PHP"
+  - "MySQL"
+  - "Multilingual (Greek / English)"
+  - "CSS3 / Responsive Design"
+  - "JavaScript"
+  - "Linux / Apache"
 selected: false
+interview_completed: true
 tags:
-  - case-study
+  - "case-study"
 ---
 
-# Lead Software Architect | Independent Technical Consultant | 2017
+# Full-Stack Web Developer | Faros Omogenias (Dimitri Cavouras) | 2017
 
-## 1. Executive Summary & Architectural Context
-- **Project Identifier**: `faros-omogenias`
-- **Client Organization**: Alex Seif (Non-Governmental Organization)
-- **Role**: Lead Software Architect
-- **Timeline**: 2017 – 2017
-- **Domain Context**: High-throughput digital publishing and media distribution platform serving regional and international news consumers.
-- **Core Mandate**: Refactor and deploy a resilient Content Management System Architecture capable of sustaining high-concurrency reader surges during breaking news cycles while maintaining sub-250ms p95 latency and high-availability operational SLAs.
+## Context & Scale
+Faros Omogenias (Φάρος Ομογένειας) was founded by Dimitri Cavouras and colleagues as an independent community media initiative reporting cultural, civic, and historical news for the Hellenic diaspora in Egypt and abroad. The initiative required a digital news magazine capable of dual-language publishing in Greek and English. Alex Seif was independently contracted to design and implement the news portal on WordPress, establishing a reliable editorial platform and beginning a long-standing technical partnership that continues to this day.
 
----
+## Architectural Decisions
+* **Bilingual Content Architecture:** Structured dual-language content handling for Greek and English using WordPress multi-taxonomy and translation mappings, ensuring independent permalinks and cleanly separated editorial streams.
+* **Multilingual Typographic Hierarchy:** Implemented web font loading and UTF-8 encoding specifically calibrated for Greek characters, ensuring proper rendering across desktop and mobile devices without font substitution artifacts.
+* **Categorized News Layout:** Engineered an editorial magazine grid supporting headline banners, featured cultural articles, opinion columns, and embedded photo galleries.
 
-## 2. Stated Architectural Assumptions & Governance
-*Per enterprise governance protocols, the technical baselines for this engagement were established as follows:*
-- **Application Engine**: Monolithic Content Management System Architecture utilizing a Block-Native Ecosystem for content layout, decoupled from public-facing transport and caching infrastructure.
-- **Persistence Engine**: Relational database architecture structured on the InnoDB storage engine, with dedicated compound indexing for taxonomy navigation and chronological content retrieval.
-- **Edge Architecture**: Layered HTTP/2 reverse-proxy configuration backed by Content Delivery Network (CDN) edge rules for static asset offloading and media payload caching.
+## Engineering Execution
+* **Frontend:** Responsive HTML5 and CSS3 templates tailored for high readability and fast asset loading on mobile devices over cellular connections.
+* **CMS & Backend:** Custom WordPress theme built in PHP, configuring editorial user roles, bilingual categorization, and automated thumbnail generation.
+* **Data Layer & Hosting:** Deployed on a Linux host with MySQL, configuring browser caching headers, Gzip compression, and automated database backups.
 
----
-
-## 3. Infrastructure & Network Topology
-- **Edge Caching & Reverse Proxy**: Configured an Nginx reverse-proxy fronted by Varnish Cache, establishing an edge cache hit ratio exceeding 94% for dynamic publishing routes.
-- **Payload & Bandwidth Optimization**: Enforced edge-level Brotli/Gzip compression and static asset fingerprinting, reducing origin egress network transfer by 68%.
-- **High-Availability Routing**: Designed a stateless application worker node configuration behind automated health-checking load balancers to eliminate single-point-of-failure (SPOF) risks during traffic bursts.
-
----
-
-## 4. Database Schema & Data Layer Engineering
-- **Relational Query Optimization**: Normalized core entity tables and created compound secondary indexes across `content_status`, `publication_date`, and `taxonomy_id` columns, eliminating unindexed table scans during homepage rendering.
-- **In-Memory Object Caching**: Integrated a persistent Redis key-value datastore for transient SQL query result sets, reducing database execution overhead per request from 52 queries to fewer than 7.
-- **Decoupled Media Pipeline**: Isolated binary media storage (images and video assets) to dedicated external object storage containers, decoupling static file I/O operations from database transactional compute.
-
----
-
-## 5. CI/CD Pipeline & Automated Release Engineering
-- **Zero-Downtime Deployment**: Architected a Git-driven continuous delivery pipeline incorporating atomic symbolic link switching (`current` -> `releases/build_HASH`), enabling instant rollbacks without service disruption.
-- **Immutable Configuration Enforcement**: Environment parameters and database credentials were strictly isolated outside web-accessible directory roots to prevent unauthorized path traversal and disclosure vulnerabilities.
-- **Automated Validation**: Integrated static code analysis, syntax verification, and automated schema migration checks prior to production deployment execution.
-
----
-
-## 6. Edge Cases & Reliability Engineering
-- **High-Burst News Spikes**: Implemented stale-while-revalidate HTTP caching headers at edge nodes to serve cached snapshots during database lock contention triggered by rapid traffic spikes.
-- **Transactional Migration Handling**: Executed legacy database structural refactoring using idempotent SQL scripts backed by point-in-time recovery rollback points.
-- **Security Hardening**: Enforced strict input sanitization pipelines, endpoint rate-limiting rules, and explicit execution prevention policies within upload directories.
-
----
-
-## 7. Quantifiable Engineering Impact
-
-| Performance Metric | Baseline / Pre-Intervention | Post-Architecture Implementation | Empirical Variance |
-| :--- | :--- | :--- | :--- |
-| **P95 Response Latency** | 1,450 ms | 210 ms | **85.5% reduction** |
-| **Peak Concurrency Throughput** | 250 requests/sec | 3,200 requests/sec | **12.8x capacity expansion** |
-| **Edge Cache Hit Ratio** | 18.4% | 94.2% | **+75.8 percentage points** |
-| **Database Query Execution Time** | 380 ms (avg) | 18 ms (avg) | **95.2% latency reduction** |
-| **Operational Uptime SLA** | 98.20% | 99.98% | **Tier-3 Enterprise Level** |
+## Measurable Impact
+* **International Community Reach:** Successfully launched the publication, connecting Hellenic diaspora readers in Alexandria, Cairo, Greece, and worldwide with regional community news.
+* **Self-Sufficient Editorial Operations:** Enabled non-technical contributors to independently draft, format, and publish bilingual stories.
+* **Enduring Partnership:** Established an enduring technical collaboration with Dimitri Cavouras that continues across ongoing initiatives.
