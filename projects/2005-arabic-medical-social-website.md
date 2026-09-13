@@ -4,8 +4,8 @@ title: Arabic Medical Social & Diagnostic Platform
 year: 2005
 client_name: Dr. Ahmed Filistini
 client_type: Medical Directory / Community
-project_role: Full-Stack DeveloperFull-Stack Developer
-subtitle: WebMD-style anatomical symptom navigator and physician forum for Arabic-speaking doctors.
+project_role: Senior Full-Stack Engineer
+subtitle: Anatomical symptom navigator and physician discussion forum for Arabic-speaking doctors.
 tech_stack:
   - PHP 4/5
   - MySQL
@@ -19,16 +19,23 @@ tags:
   - case-study
 ---
 
-# Full-Stack DeveloperFull-Stack Developer | Dr. Ahmed Filistini (2005)
+# Senior Full-Stack Engineer | Dr. Ahmed Filistini | 2005
 
-## Overview
-Built an early Arabic-language medical information and community platform combining an interactive, image-based symptom-to-diagnosis lookup tool with an integrated physician discussion forum.
+## Context & Scale
+Early Arabic-language digital health reference directory and physician community portal commissioned by Dr. Ahmed Filistini. In 2005, regional Arabic medical resources and practitioner networks were largely absent from the web. The objective was to deliver a dual-purpose platform: an intuitive anatomical symptom lookup tool for patients and an integrated discussion forum for licensed medical professionals.
 
-The platform connected visual anatomy diagrams via HTML `<map>` coordinate handlers with a normalized MySQL database mapping symptoms, body regions, and potential diagnoses. Integrated a phpBB discussion forum under the same domain on a shared Apache LAMP environment, coordinating static assets, custom PHP routing, and forum authentication.
+## Architectural Decisions
+* **Hierarchical Diagnostic Data Model:** Designed a normalized MySQL relational schema linking anatomical regions, reported symptoms, and potential diagnoses in a structured query tree.
+* **Dual-Application Topology:** Hosted custom dynamic PHP diagnostic scripts alongside an isolated phpBB forum instance under a unified domain on an Apache LAMP stack.
+* **Spatial Coordinate Mapping:** Utilized HTML `<map>` coordinate handlers and client-side JavaScript to translate interactive diagram clicks into relational queries without external frontend framework overhead.
 
-## Key Technologies & Tools
-* PHP 4/5 (custom routing and query handlers)
-* MySQL (relational symptom and diagnostic lookups)
-* HTML ImageMaps, JavaScript, and CSS
-* phpBB forum deployment and integration
-* Apache / Linux shared hosting
+## Engineering Execution
+* **Backend:** PHP 4/5 procedural and modular handlers processing user inputs, request sanitization, and database queries.
+* **Data Layer:** MySQL 4.x tables indexing diagnostic mappings and practitioner directory entries.
+* **Community Engine:** Configured and integrated a phpBB discussion forum, managing path routing and Apache web server configurations.
+* **Frontend:** Semantic HTML, CSS, JavaScript, and asset optimization for early web browsers and dial-up/low-bandwidth connections.
+
+## Measurable Impact
+* Successfully deployed an early interactive Arabic anatomical symptom navigator on the web.
+* Maintained low page payload footprint, ensuring fast render times on constrained shared hosting environments.
+* Concluded with turnkey production handover and client deployment.
