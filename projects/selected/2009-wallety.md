@@ -4,56 +4,38 @@ title: Wallety Payment Gateway
 year: 2009
 client_name: Wallety
 client_type: Fintech / Payment Gateway
-project_role: Co-Founder & Chief Technology Officer (CTO)
-subtitle: Scaled Egypt's early online payment infrastructure, handling 33% of national domestic flight ticketing volume.
+project_role: "Co-Founder & Chief Technology Officer (CTO)"
+subtitle: "Scaled Egypt's early online payment infrastructure, handling 33% of national domestic flight ticketing volume."
 tech_stack:
-  - PHP
-  - Symfony Framework
-  - AWS (EC2, ELB)
-  - MySQL (Master-Slave)
-  - Asynchronous Queues
-  - CLI Daemons
-  - Amadeus GDS API
+  - "PHP (Symfony)"
+  - "AWS (EC2, ELB)"
+  - "MySQL (Master-Slave Replication)"
+  - "CLI Queue Daemons & Background Workers"
+  - "Amadeus GDS API"
+  - "Banking & Payment Gateways"
 selected: true
 interview_completed: true
 tags:
   - case-study
 ---
 
-# Software Architect & Full-Stack Developer | Wallety (2009)
+# Co-Founder & Chief Technology Officer (CTO) | Wallety | 2009
 
-## Executive Summary
-Engineered an online payment gateway built to handle high-concurrency payment settlements in Egypt under unstable telecommunications infrastructure. The platform integrated directly with banking gateways and the Amadeus Global Distribution System (GDS), scaling to process 33% of all domestic air travel ticketing volume across Egypt.
+### Context & Scale
+Wallety was an early payment gateway platform built to process high-concurrency online transactions in Egypt. Regional banking APIs suffered from frequent network drops, high timeout rates, and unreliable callback notifications under unstable national telecommunications infrastructure. Airlines and travel merchants required a fault-tolerant intermediary payment gateway that could guarantee transactional consistency without losing booking state or double-booking passenger seats. The platform scaled to handle 33% of all domestic air travel ticketing volume across Egypt, integrating directly with regional banking gateways and the Amadeus Global Distribution System (GDS).
 
----
+### Architectural Decisions
+- **Deterministic Transaction State Machine:** Implemented an explicit transactional state engine (Pending, Authorized, Settled, Failed, Reconciled) backed by automated polling routines to reconcile dropped bank callbacks deterministically.
+- **Master-Slave Database Topology:** Dedicated the MySQL master database strictly to ACID-compliant transactional writes while routing read-heavy audit and reporting queries to read replicas, preventing disk I/O contention during peak sales.
+- **Asynchronous Worker Pipelines:** Decoupled synchronous user-facing HTTP request cycles from slow upstream banking gateways by dispatching payment settlements to persistent CLI queue daemons operating on 1-second loops.
+- **Atomic GDS Booking Alignment:** Designed transactional handshakes that coupled temporary seat holds in Amadeus GDS directly with payment pre-authorization confirmations, preventing race conditions and double bookings.
 
-## 1. Context & Business Problem
-* **Client / Domain:** Wallety (Fintech / Payment Gateway)
-* **Timeline:** 2009
-* **Project Role:** Software Architect & Full-Stack Developer
+### Engineering Execution
+- **Symfony Domain Layer:** Enforced clean separation of concerns in Symfony/PHP, isolating payment state logic, banking protocol drivers, and GDS interfaces into modular service boundaries.
+- **AWS Infrastructure & Load Balancing:** Provisioned AWS EC2 compute instances behind Elastic Load Balancers (ELB) with SSL termination and automated health monitoring.
+- **Continuous Reconciliation Daemons:** Built background CLI daemons that periodically audited pending payment states against bank transaction logs, resolving unacknowledged settlements without manual staff intervention.
 
-### The Problem
-During 2009, regional banking APIs in Egypt suffered from high timeout rates and lack of standardized payment interfaces. Airlines and merchants required a fault-tolerant intermediary payment engine that could guarantee transactional consistency without losing booking state during network interruptions.
-
----
-
-## 2. Technical Stack & Systems Infrastructure
-* **Application Framework:** Symfony (PHP), enforcing domain separation and isolated payment state machines.
-* **Data Layer:** MySQL with Master-Slave replication separating write-heavy transaction processing from read-heavy reporting.
-* **Infrastructure:** AWS compute nodes behind Elastic Load Balancers terminating SSL.
-* **Background Processing:** Long-running CLI daemons executing asynchronous queue loops every second.
-
----
-
-## 3. Core Architectural Decisions
-* **Deterministic Transactional State Machine:** Implemented explicit state tracking (Pending, Authorized, Settled, Failed, Reconciled) with automated polling to reconcile dropped bank callbacks.
-* **Master-Slave Database Topology:** Dedicated the master database node strictly to ACID-compliant writes while routing reporting and transaction audit queries to read replicas, eliminating disk I/O contention.
-* **Atomic GDS Booking Alignment:** Enforced atomic database transactions that coupled flight seat reservation locks in Amadeus GDS with payment gateway authorization confirmations to prevent double bookings.
-* **Asynchronous Queue Orchestration:** Decoupled synchronous HTTP request handling from slow upstream bank gateway settlements using background CLI queue workers.
-
----
-
-## 4. Operational & Business Impact
-* **Scale & Throughput:** Scaled payment processing throughput to support 33% of domestic air travel ticketing in Egypt.
-* **System Resilience:** Maintained consistent transaction reconciliation despite frequent external bank network drops.
-* **Queue Latency:** Sustained 1-second queue processing intervals during ticket sale spikes, insulating checkout flows from gateway latency.
+### Measurable Impact
+- **33% National Flight Volume:** Successfully handled high-concurrency payment throughput for one-third of Egypt's domestic airline ticketing volume.
+- **Zero Inconsistent States:** Deterministic transaction state machine and background reconcilers eliminated dropped orders and double-booking errors during external banking outages.
+- **High-Availability Checkout:** 1-second queue cycles insulated frontend checkout flows from external bank response latency, maintaining fast user response times during high-volume fare promotions.
