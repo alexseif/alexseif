@@ -192,10 +192,10 @@
     "title": "ITI Startup Workshops (Technical Mentorship & MVP Scoping)"
   },
   "2017-turathuna": {
-    "completed": false,
+    "completed": true,
     "filename": "2017-turathuna.md",
     "year": 2017,
-    "title": "NileTech"
+    "title": "Turathuna (Abu Dhabi Cultural Programs & Heritage Festivals Platform)"
   },
   "2018-osman-co-educational-services": {
     "completed": false,
