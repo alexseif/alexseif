@@ -20,9 +20,16 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
                 <div className="group block border border-border bg-background p-8 hover:bg-card/50 hover:border-primary/50 transition-all duration-300 h-full flex flex-col justify-between">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-primary text-xs font-mono border border-primary/30 px-2 py-1 rounded-sm bg-primary/5">
-                        {project.year}
-                      </span>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-primary text-xs font-mono border border-primary/30 px-2 py-1 rounded-sm bg-primary/5">
+                          {project.year}
+                        </span>
+                        {project.industry && (
+                          <span className="text-[11px] font-mono text-foreground/50 tracking-wide uppercase">
+                            // {project.industry}
+                          </span>
+                        )}
+                      </div>
                       <ArrowRight className="h-4 w-4 text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                     </div>
                     <h3 className="text-foreground text-xl font-sans font-light tracking-wide group-hover:text-primary transition-colors">

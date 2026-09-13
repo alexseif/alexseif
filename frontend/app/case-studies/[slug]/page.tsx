@@ -1,6 +1,6 @@
 import { getProjectBySlug, getProjectSlugs } from "@/lib/projects";
 import Link from "next/link";
-import { ArrowLeft, Terminal, Server, Building2, Code2, ShieldAlert, Cpu } from "lucide-react";
+import { ArrowLeft, Terminal, Server, Building2, Code2, ShieldAlert, Cpu, Briefcase } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -69,7 +69,7 @@ export default async function CaseStudyPage({
     ),
     h3: ({ children }: { children?: ReactNode }) => (
       <h3 className="text-xl font-sans font-light tracking-wide text-primary mt-10 mb-4 flex items-center gap-2">
-        <span className="text-primary/50 text-sm font-mono">//</span>
+        <span className="text-primary text-sm font-mono">//</span>
         {children}
       </h3>
     ),
@@ -104,7 +104,7 @@ export default async function CaseStudyPage({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-primary hover:text-primary/80 underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-all"
+        className="text-primary hover:text-primary underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-all"
       >
         {children}
       </a>
@@ -120,7 +120,7 @@ export default async function CaseStudyPage({
         <div className="flex items-center justify-between px-4 py-2 bg-card/60 border-b border-border/40 text-xs font-mono text-foreground/60">
           <div className="flex items-center gap-2">
             <Cpu className="h-3.5 w-3.5 text-primary" />
-            <span className="tracking-widest uppercase text-[11px] text-primary/90">
+            <span className="tracking-widest uppercase text-[11px] text-primary">
               System Architecture & Topology Specification
             </span>
           </div>
@@ -267,8 +267,20 @@ export default async function CaseStudyPage({
                         Engagement Role
                       </span>
                       <div className="flex items-center gap-2 text-foreground/90 text-sm">
-                        <ShieldAlert className="h-3.5 w-3.5 text-primary/70" />
+                        <ShieldAlert className="h-3.5 w-3.5 text-primary" />
                         {project.agency}
+                      </div>
+                    </div>
+                  )}
+
+                  {project.industry && (
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[10px] text-foreground/40 font-mono tracking-widest uppercase">
+                        Market Sector // Industry
+                      </span>
+                      <div className="flex items-center gap-2 text-foreground/90 text-sm">
+                        <Briefcase className="h-3.5 w-3.5 text-primary" />
+                        {project.industry}
                       </div>
                     </div>
                   )}
@@ -279,7 +291,7 @@ export default async function CaseStudyPage({
                         Architecture Identity
                       </span>
                       <div className="flex items-center gap-2 text-foreground/90 text-sm">
-                        <Building2 className="h-3.5 w-3.5 text-primary/70" />
+                        <Building2 className="h-3.5 w-3.5 text-primary" />
                         {project.client_type}
                       </div>
                     </div>
@@ -291,7 +303,7 @@ export default async function CaseStudyPage({
                         Network Context
                       </span>
                       <div className="flex items-center gap-2 text-foreground/90 text-sm">
-                        <Server className="h-3.5 w-3.5 text-primary/70" />
+                        <Server className="h-3.5 w-3.5 text-primary" />
                         {project.url}
                       </div>
                     </div>
@@ -311,7 +323,7 @@ export default async function CaseStudyPage({
                       {project.tech_stack.map((tech) => (
                         <span
                           key={tech}
-                          className="text-xs text-primary/80 font-mono tracking-wider bg-primary/5 px-2.5 py-1.5 border border-primary/20 rounded-sm"
+                          className="text-xs text-primary font-mono tracking-wider bg-primary/5 px-2.5 py-1.5 border border-primary/20 rounded-sm"
                         >
                           {tech}
                         </span>

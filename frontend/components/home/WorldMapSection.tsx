@@ -80,7 +80,7 @@ export const WorldMapSection = () => {
               {countries.map((country) => (
                 <div
                   key={country.code}
-                  className="absolute text-xs text-primary/70 font-mono tracking-wider opacity-0 md:opacity-100"
+                  className="absolute text-xs text-primary font-mono tracking-wider opacity-0 md:opacity-100"
                   style={{
                     left: `${country.x}%`,
                     top: `${country.y}%`,

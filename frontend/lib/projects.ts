@@ -26,6 +26,7 @@ export interface ProjectData {
   url?: string;
   client_name?: string;
   client_type?: string;
+  industry?: string;
   agency?: string;
   project_role?: string;
   subtitle?: string;
@@ -82,6 +83,7 @@ export function getProjectBySlug(slug: string): ProjectData {
   const title = data.title || data.client_name || realSlug.replace(/-/g, " ");
   const year = data.year || 0;
   const client_type = data.client_type || "";
+  const industry = data.industry || client_type || "";
   const agency = data.project_role || data.agency || "";
   const subtitle = data.subtitle || "";
   const tech_stack = Array.isArray(data.tech_stack) ? data.tech_stack : [];
@@ -93,6 +95,7 @@ export function getProjectBySlug(slug: string): ProjectData {
     url: data.url || "",
     client_name: data.client_name || title,
     client_type,
+    industry,
     agency,
     project_role: data.project_role || agency,
     subtitle,

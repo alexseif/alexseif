@@ -80,7 +80,7 @@ export default async function CaseStudiesIndex() {
                   <h2 className="text-xl md:text-2xl font-sans font-light tracking-wide text-foreground">
                     Featured Architectural Engagements
                   </h2>
-                  <span className="text-xs font-mono text-primary/70 ml-auto uppercase tracking-widest">
+                  <span className="text-xs font-mono text-primary ml-auto uppercase tracking-widest">
                     [{selectedProjects.length} Selected]
                   </span>
                 </div>
@@ -97,9 +97,16 @@ export default async function CaseStudiesIndex() {
 
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
-                            <span className="text-primary text-xs font-mono border border-primary/40 px-2.5 py-1 rounded-sm bg-primary/10">
-                              {project.year}
-                            </span>
+                            <div className="flex items-center gap-2.5 flex-wrap">
+                              <span className="text-primary text-xs font-mono border border-primary/40 px-2.5 py-1 rounded-sm bg-primary/10">
+                                {project.year}
+                              </span>
+                              {project.industry && (
+                                <span className="text-xs font-mono text-primary/80 tracking-wide uppercase">
+                                  // {project.industry}
+                                </span>
+                              )}
+                            </div>
                             <ArrowRight className="h-4 w-4 text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all mr-6" />
                           </div>
 
@@ -108,7 +115,7 @@ export default async function CaseStudiesIndex() {
                           </h3>
 
                           {project.project_role && (
-                            <p className="text-xs font-mono text-primary/80 tracking-wide uppercase">
+                            <p className="text-xs font-mono text-primary tracking-wide uppercase">
                               // {project.project_role}
                             </p>
                           )}
@@ -123,7 +130,7 @@ export default async function CaseStudiesIndex() {
                             {project.tech_stack.slice(0, 4).map((tech: string) => (
                               <span
                                 key={tech}
-                                className="text-[10px] text-primary/80 font-mono tracking-wider uppercase bg-primary/5 px-2 py-1 border border-primary/20"
+                                className="text-[10px] text-primary font-mono tracking-wider uppercase bg-primary/5 px-2 py-1 border border-primary/20"
                               >
                                 {tech}
                               </span>
@@ -161,9 +168,16 @@ export default async function CaseStudiesIndex() {
                       <div className="group block border border-border bg-background p-8 hover:bg-card/50 hover:border-primary/50 transition-all duration-300 h-full flex flex-col justify-between">
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
-                            <span className="text-primary text-xs font-mono border border-primary/30 px-2 py-1 rounded-sm bg-primary/5">
-                              {project.year}
-                            </span>
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="text-primary text-xs font-mono border border-primary/30 px-2 py-1 rounded-sm bg-primary/5">
+                                {project.year}
+                              </span>
+                              {project.industry && (
+                                <span className="text-[11px] font-mono text-foreground/50 tracking-wide uppercase">
+                                  // {project.industry}
+                                </span>
+                              )}
+                            </div>
                             <ArrowRight className="h-4 w-4 text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                           </div>
                           <h3 className="text-foreground text-xl font-sans font-light tracking-wide group-hover:text-primary transition-colors">

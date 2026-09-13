@@ -29,7 +29,7 @@ export const TechnicalGridSection = () => {
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">
                     01
                   </span>
-                  <Globe className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
+                  <Globe className="h-5 w-5 text-primary transition-colors" />
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide leading-snug">
                   Custom Web Apps & New Platforms
@@ -42,7 +42,7 @@ export const TechnicalGridSection = () => {
                 {["SaaS & Web Apps", "Interactive Portals", "Fast Web APIs"].map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs text-primary/80 font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
+                    className="text-xs text-primary font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
                   >
                     {tag}
                   </span>
@@ -57,7 +57,7 @@ export const TechnicalGridSection = () => {
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">
                     02
                   </span>
-                  <RefreshCw className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
+                  <RefreshCw className="h-5 w-5 text-primary transition-colors" />
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide leading-snug">
                   Website Modernization & Speed
@@ -70,7 +70,7 @@ export const TechnicalGridSection = () => {
                 {["CMS Decoupling", "Web Performance", "Zero Downtime"].map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs text-primary/80 font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
+                    className="text-xs text-primary font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
                   >
                     {tag}
                   </span>
@@ -85,7 +85,7 @@ export const TechnicalGridSection = () => {
                   <span className="text-primary text-xs tracking-[0.3em] uppercase font-mono">
                     03
                   </span>
-                  <Users className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
+                  <Users className="h-5 w-5 text-primary transition-colors" />
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide leading-snug">
                   Fractional Web Tech Lead
@@ -98,7 +98,7 @@ export const TechnicalGridSection = () => {
                 {["Fractional CTO", "Agency Oversight", "Web Security"].map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs text-primary/80 font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
+                    className="text-xs text-primary font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
                   >
                     {tag}
                   </span>

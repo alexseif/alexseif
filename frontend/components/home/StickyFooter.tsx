@@ -29,7 +29,7 @@ export const StickyFooter = () => {
           <div className="absolute inset-0 opacity-10 pointer-events-none blueprint-grid" />
 
           <div className="flex flex-col min-w-0 relative z-10">
-            <span className="text-[10px] text-primary/60 font-mono tracking-[0.2em] uppercase mb-0.5">
+            <span className="text-[10px] text-primary font-mono tracking-[0.2em] uppercase mb-0.5">
               Navigation // Intake
             </span>
             <h4 className="text-foreground text-xs md:text-sm font-sans font-light tracking-wide truncate">
