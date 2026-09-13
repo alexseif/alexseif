@@ -4,6 +4,7 @@ title: "Agazat Masr (Tourico)"
 year: 2011
 client_name: "MITCHDesigns (End-Client: Agazat Masr / Tourico)"
 client_type: "Tourism & Hospitality"
+industry: "Travel Tech & Tourism"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Architected a domestic tourism aggregation engine on custom PHP MVC and MySQL, structuring multi-tier package pricing and asynchronous offline booking orchestration."
 tech_stack:

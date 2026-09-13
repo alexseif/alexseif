@@ -4,6 +4,7 @@ title: Saaed Automotive Insurance Portal (Softech)
 year: 2018
 client_name: Softech / Saaed
 client_type: Automotive Insurance / Public Sector Contractor
+industry: "Automotive Insurance & Public Sector"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Stabilized a UAE automotive insurance portal on WordPress Multisite and on-premise CentOS, remediating cross-tenant privilege escalation and pinning OS runtime dependencies."
 tech_stack:

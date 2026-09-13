@@ -4,6 +4,7 @@ title: "Who's Jamming (Coca-Cola Musician Social Network)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Coca-Cola)"
 client_type: "Corporate Brand & Social Community"
+industry: "Entertainment & Social Community"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Niche social network architecture, relational recommendation engine, and jam session booking workflows for a Coca-Cola campaign."
 tech_stack:

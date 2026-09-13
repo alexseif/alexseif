@@ -4,6 +4,7 @@ title: "MyZouk (Luxury Asset & Classifieds Marketplace)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: MyZouk)"
 client_type: "Luxury E-Commerce & Classifieds"
+industry: "Luxury Retail & Classifieds"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Extensible multi-category luxury asset catalog and dynamic attribute architecture on custom PHP MVC."
 tech_stack:

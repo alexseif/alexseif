@@ -4,6 +4,7 @@ title: "Resort Sales & Management (La Manga Club Vacation Rentals)"
 year: 2011
 client_name: "MITCHDesigns (End-Client: Resort Sales & Management)"
 client_type: "Hospitality & Property Management"
+industry: "Hospitality & Property Management"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Multi-portal vacation rental architecture, turnover state machine, and concurrency control for luxury resort properties."
 tech_stack:

@@ -4,6 +4,7 @@ title: "Taziry Ecolodge & Sustainable Village"
 year: 2010
 client_name: "MITCHDesigns (End-Client: Taziry)"
 client_type: "Hospitality & Sustainable Tourism"
+industry: "Hospitality & Sustainable Tourism"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Custom PHP MVC framework, room showcase, and direct reservation architecture for an eco-retreat in the Siwa Oasis."
 tech_stack:

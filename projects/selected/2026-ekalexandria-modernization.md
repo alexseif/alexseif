@@ -4,6 +4,7 @@ title: Greek Community of Alexandria Modernization
 year: 2026
 client_name: Greek Community of Alexandria (EKA)
 client_type: Non-Profit / Community Organization
+industry: "Non-Profit & Civic Diaspora"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Modernized a 15-year legacy institutional portal into a block-native WordPress FSE architecture, parsing shortcode ASTs and automating tri-lingual RTL/LTR layout parity."
 tech_stack:

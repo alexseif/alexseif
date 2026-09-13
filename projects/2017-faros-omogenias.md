@@ -4,6 +4,7 @@ title: "Faros Omogenias (Bilingual Greek Diaspora News Magazine)"
 year: 2017
 client_name: "Dimitri Cavouras (Faros Omogenias)"
 client_type: "Community Media / Publishing"
+industry: "News Media & Publishing"
 project_role: "Full-Stack Web Developer"
 subtitle: "Delivered a bilingual Greek and English digital news magazine on WordPress, establishing UTF-8 multilingual publishing workflows and mobile-responsive editorial layouts for the Hellenic diaspora in Egypt."
 tech_stack:

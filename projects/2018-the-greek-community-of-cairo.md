@@ -4,6 +4,7 @@ title: "The Greek Community of Cairo (Institutional Portal & Newsletter)"
 year: 2018
 client_name: "The Greek Community of Cairo (EKK)"
 client_type: "Non-Profit / Community Organization"
+industry: "Non-Profit & Civic Diaspora"
 project_role: "Lead Full-Stack Developer & Technical Consultant"
 subtitle: "Architected the official digital community portal and newsletter pipeline for the Greek Community of Cairo on WordPress and PHP 7.4, serving 300,000 annual visitors across a decade of production uptime."
 tech_stack:

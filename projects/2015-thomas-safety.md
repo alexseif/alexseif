@@ -4,6 +4,7 @@ title: "Thomas Safety (Industrial Safety Equipment Showcase)"
 year: 2015
 client_name: "Thomas Safety"
 client_type: "Industrial Safety & Equipment Supplier"
+industry: "Industrial Safety & Procurement"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "B2B industrial safety equipment catalog, Request for Quote (RFQ) pipeline, and cloud deployment on WordPress and DigitalOcean."
 tech_stack:

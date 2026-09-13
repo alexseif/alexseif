@@ -4,6 +4,7 @@ title: "Mystic Evenings (Luxury Fashion E-Commerce & Boutique)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Mystic Evenings)"
 client_type: "Luxury Fashion & Retail E-Commerce"
+industry: "Luxury Fashion & E-Commerce"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Luxury fashion e-commerce architecture, SKU variant matrix, and transactional payment gateway integration on custom PHP MVC."
 tech_stack:

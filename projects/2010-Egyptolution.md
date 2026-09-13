@@ -4,6 +4,7 @@ title: "Egyptolution (Tourism & Culture Magazine)"
 year: 2010
 client_name: "MITCHDesigns"
 client_type: "Digital Agency"
+industry: "Digital Agency & Web Solutions"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Custom PHP MVC framework and automated background media processing pipeline for a rich-media tourism publication."
 tech_stack:

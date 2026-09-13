@@ -4,6 +4,7 @@ title: "Cafe Supreme (Brand Platform & Franchisee Portal)"
 year: 2017
 client_name: "AlKawass Group (End-Client: Cafe Supreme)"
 client_type: "Corporate / F&B Franchise"
+industry: "Food & Beverage Franchise"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Delivered a brand showcase, 34-store national branch locator, and prospective franchisee portal on a custom WordPress infrastructure for a prominent Canadian cafe chain in Egypt."
 tech_stack:

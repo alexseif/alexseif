@@ -4,6 +4,7 @@ title: "EMICS (Marine Insurance Consultations & Services)"
 year: 2017
 client_name: "EMICS"
 client_type: "Maritime Services & Insurance Consultancy"
+industry: "Maritime Insurance & Surveying"
 project_role: "Full-Stack Web Developer"
 subtitle: "Restructured and modernized the web presence for an Egyptian maritime insurance consultancy on WordPress, optimizing service readability, mobile responsiveness, and administrative management."
 tech_stack:

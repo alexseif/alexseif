@@ -4,6 +4,7 @@ title: Arabic Medical Social & Diagnostic Platform
 year: 2005
 client_name: Dr. Ahmed Filistini
 client_type: Medical Directory / Community
+industry: "Healthcare & Medical Directory"
 project_role: Senior Full-Stack Engineer
 subtitle: Anatomical symptom navigator and physician discussion forum for Arabic-speaking doctors.
 tech_stack:

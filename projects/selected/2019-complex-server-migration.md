@@ -4,6 +4,7 @@ title: Enterprise Cloud Infrastructure Migration (AHCC)
 year: 2019
 client_name: AHCC
 client_type: Enterprise
+industry: "Enterprise Cloud Infrastructure"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Architected and executed a zero-downtime enterprise migration to AWS using Terraform, ECS, Aurora PostgreSQL, and PgBouncer, syncing a 550 GB database cluster without data loss."
 tech_stack:

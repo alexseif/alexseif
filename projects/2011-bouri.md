@@ -4,6 +4,7 @@ title: "Bouri Center (E-Commerce & Enterprise ERP Integration)"
 year: 2011
 client_name: "MITCHDesigns (End-Client: Bouri Center)"
 client_type: "Retail Enterprise & Distribution"
+industry: "Consumer Retail & Distribution"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Custom e-commerce architecture and asynchronous ERP inventory ledger integrating a retail storefront with legacy enterprise systems."
 tech_stack:

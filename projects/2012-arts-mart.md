@@ -4,6 +4,7 @@ title: "Arts-Mart (Contemporary Art Marketplace & Custom Framing)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Arts-Mart)"
 client_type: "Art Gallery & E-Commerce Enterprise"
+industry: "Fine Art & E-Commerce"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "E-commerce architecture and real-time browser framing preview engine for a premier contemporary art marketplace."
 tech_stack:

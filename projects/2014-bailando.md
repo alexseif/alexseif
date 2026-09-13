@@ -4,6 +4,7 @@ title: "Bailando (Kids Playground & Cafe)"
 year: 2014
 client_name: "Bailando"
 client_type: "Family Entertainment & Hospitality"
+industry: "Hospitality & Family Entertainment"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Responsive web showcase, event reservation pipeline, and cloud deployment on WordPress and DigitalOcean for a children's entertainment venue."
 tech_stack:

@@ -4,6 +4,7 @@ title: barincairo.com
 year: 2026
 client_name: barincairo.com
 client_type: Geospatial Web Directory
+industry: "Geospatial & Urban Tech"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Architected a decoupled Web GIS platform on React 19, FastAPI (Python 3.12), and PostGIS, engineering dynamic bounding-box GeoJSON streaming and automated spatial deduplication."
 tech_stack:

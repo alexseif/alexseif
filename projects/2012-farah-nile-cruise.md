@@ -4,6 +4,7 @@ title: "Farah Nile Cruise (Luxury Hospitality & Booking Engine)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Farah Nile Cruise)"
 client_type: "Luxury River Hospitality & Tourism"
+industry: "Maritime Hospitality & Tourism"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Luxury river cruiser portal, multi-day itinerary scheduling, and direct cabin reservation architecture on custom PHP MVC."
 tech_stack:

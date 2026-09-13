@@ -4,6 +4,7 @@ title: "Orient Copper Company"
 year: 2014
 client_name: "Orient Copper Company"
 client_type: "Industrial Manufacturing"
+industry: "Industrial Manufacturing"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Lightweight single-page showcase, B2B procurement routing, and optimized WordPress architecture for an industrial copper manufacturing plant."
 tech_stack:

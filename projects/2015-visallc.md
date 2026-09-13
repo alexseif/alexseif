@@ -4,6 +4,7 @@ title: "VisaLLC, MeVisa & TravelBox (Multi-Brand Visa Portals & Centralized mini
 year: 2015
 client_name: "VisaLLC (TravelBox / MeVisa)"
 client_type: "Travel & Consular Visa Services"
+industry: "Consular & Travel Tech"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Multi-brand visa intake portals and custom centralized miniERP with bidirectional webhook synchronization."
 tech_stack:

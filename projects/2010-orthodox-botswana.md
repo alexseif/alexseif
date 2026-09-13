@@ -4,6 +4,7 @@ title: "Orthodox Mission in Botswana"
 year: 2010
 client_name: "Orthodox Mission in Botswana"
 client_type: "NGO & Community Outreach"
+industry: "Non-Profit & Civic Outreach"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Lightweight community portal and publishing platform engineered for an NGO in Southern Africa using a custom PHP MVC architecture."
 tech_stack:

@@ -4,6 +4,7 @@ title: Salama Cooperative Insurance Registration Gateway
 year: 2021
 client_name: Salama Cooperative Insurance (via iSoft)
 client_type: Fintech / Regulated Financial Services
+industry: "Fintech & Insurance"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Architected a Shariah-compliant motor insurance registration gateway on Drupal and PHP, enforcing SAMA regulatory compliance and multi-stage payload validation."
 tech_stack:

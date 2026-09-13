@@ -4,6 +4,7 @@ title: "Turathuna (Abu Dhabi Cultural Programs & Heritage Festivals Platform)"
 year: 2017
 client_name: "NileTech (End-Client: Abu Dhabi Cultural Programs & Heritage Festivals Committee)"
 client_type: "Government / Cultural Heritage"
+industry: "Government & Cultural Heritage"
 project_role: "Lead Full-Stack Engineer & Web Architect"
 subtitle: "Architected a government-grade bilingual Drupal platform for Abu Dhabi's Cultural Programs and Heritage Festivals Committee, featuring broadcast TV program catalogs and seasonal event schedules."
 tech_stack:

@@ -4,6 +4,7 @@ title: Smash Holidays Booking & Pricing Engine
 year: 2009
 client_name: Smash Holidays
 client_type: Tour Operator / Travel
+industry: "Travel Tech & Tourism"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Architected a custom travel booking and multi-factor contract pricing engine on PHP and MySQL, eliminating a 6-minute query bottleneck into sub-second execution under strict shared memory limits."
 tech_stack:

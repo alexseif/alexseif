@@ -4,6 +4,7 @@ title: "SOHO Square Sharm El Sheikh (Event Ticketing & E-Commerce Engine)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: SOHO Square)"
 client_type: "Entertainment & Hospitality Destination"
+industry: "Entertainment & Hospitality"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "High-concurrency concert ticketing architecture, TTL inventory holds, and embeddable booking widget for Sharm El Sheikh's entertainment hub."
 tech_stack:

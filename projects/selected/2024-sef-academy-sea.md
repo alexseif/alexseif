@@ -4,6 +4,7 @@ title: Meem Development (SEF Academy)
 year: 2024
 client_name: Meem Development (SEF Academy)
 client_type: EdTech / Corporate Training
+industry: "EdTech & Professional Training"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Stabilized a corporate Moodle LMS on Keycloak SAML 2.0 SSO federation, encrypted remote database tunneling, and transactional graduation certificate delivery."
 tech_stack:

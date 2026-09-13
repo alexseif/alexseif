@@ -4,6 +4,7 @@ title: "ITI Startup Workshops (Technical Mentorship & MVP Scoping)"
 year: 2017
 client_name: "Information Technology Institute (ITI)"
 client_type: "Government / Technology Institute"
+industry: "Tech Incubation & EdTech"
 project_role: "Technical Advisor & Software Architect"
 subtitle: "Delivered interactive technical workshops and architecture mentorship for aspiring tech founders at ITI, focusing on pragmatic MVP scoping, technical feasibility, and infrastructure budgeting."
 tech_stack:

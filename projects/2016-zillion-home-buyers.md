@@ -4,6 +4,7 @@ title: "Zillion Home Buyers (Real Estate Lead Acquisition Page)"
 year: 2016
 client_name: "Zillion Home Buyers"
 client_type: "Real Estate Investment"
+industry: "Real Estate Investment"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Engineered a high-converting lead acquisition landing page with vanilla HTML5/CSS3 and secure PHP backend validation, minimizing page weight and latency for paid advertising traffic."
 tech_stack:

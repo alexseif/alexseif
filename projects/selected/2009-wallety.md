@@ -4,6 +4,7 @@ title: Wallety Payment Gateway
 year: 2009
 client_name: Wallety
 client_type: Fintech / Payment Gateway
+industry: "Fintech & Payment Systems"
 project_role: "Co-Founder & Chief Technology Officer (CTO)"
 subtitle: "Scaled Egypt's early online payment infrastructure, handling 33% of national domestic flight ticketing volume."
 tech_stack:

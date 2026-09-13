@@ -4,6 +4,7 @@ title: "Engineering Enablement & Developer Mentorship"
 year: 2010
 client_name: "MITCHDesigns"
 client_type: "Digital Agency"
+industry: "Professional Training & EdTech"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Institutionalized OOP patterns, 3NF schema design, Git release branching, and delivery workflows across an agency engineering team."
 tech_stack:

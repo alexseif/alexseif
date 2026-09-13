@@ -4,6 +4,7 @@ title: "Design More International (Architectural Portfolio & Media Engine)"
 year: 2016
 client_name: "Design More International"
 client_type: "Architecture & Conceptual Design Studio"
+industry: "Architecture & Spatial Design"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Engineered a high-performance architectural portfolio and media delivery pipeline on WordPress and PHP, optimizing high-resolution rendering delivery and asset caching for international audiences."
 tech_stack:

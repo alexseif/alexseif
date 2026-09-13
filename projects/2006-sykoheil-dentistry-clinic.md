@@ -4,6 +4,7 @@ title: SYKoheil Dentistry Clinic Modernization
 year: 2006
 client_name: Dr. Koheil
 client_type: Private Healthcare / Dentistry Clinic
+industry: "Healthcare & Clinical Services"
 project_role: Senior Full-Stack Engineer
 subtitle: Legacy modernization migrating Adobe Flash to standards-compliant PHP 5 and semantic web architecture.
 tech_stack:

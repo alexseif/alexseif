@@ -4,6 +4,7 @@ title: "Yadaweya (Fair-Trade Artisan Handcrafts Marketplace)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Yadaweya)"
 client_type: "Social Enterprise & Fair-Trade E-Commerce"
+industry: "Fair-Trade E-Commerce"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Fair-trade e-commerce architecture, regional artisan lineage schema, and multi-currency payment integration on custom PHP MVC."
 tech_stack:

@@ -4,6 +4,7 @@ title: "Odious (Electronic Press Kit & Official Band Portal)"
 year: 2014
 client_name: "Odious"
 client_type: "Music & Entertainment"
+industry: "Music & Entertainment"
 project_role: "Senior Full-Stack Engineer"
 subtitle: "Official artist portal, interactive EPK, and streaming media architecture on WordPress and DigitalOcean for an international touring metal band."
 tech_stack:

@@ -4,6 +4,7 @@ title: Greek Community of Cairo Modernization
 year: 2026
 client_name: Greek Community of Cairo (EKK)
 client_type: Non-Profit / Community Organization
+industry: "Non-Profit & Civic Diaspora"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Modernized an enterprise community portal into a block-native WordPress FSE architecture, migrating 4,870 records via AST parsing and automating a dual-runtime cutover."
 tech_stack:

@@ -4,6 +4,7 @@ title: Dubai Police Academy LMS Upgrade
 year: 2021
 client_name: Dubai Police Academy (via iSoft)
 client_type: Public Sector / Law Enforcement
+industry: "Law Enforcement & Public Sector"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Modernized and upgraded the Dubai Police Academy Moodle LMS, preserving historical student training audit records and enforcing Linux infrastructure baselines."
 tech_stack:

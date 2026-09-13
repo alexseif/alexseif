@@ -4,6 +4,7 @@ title: National Air-Gapped Driver Testing LMS (Ministry of Interior)
 year: 2021
 client_name: Egyptian Ministry of Interior (via iSoft)
 client_type: Public Sector / Federal
+industry: "Government & Public Sector"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Architected an air-gapped national driver examination LMS on hardened Oracle Linux, engineering zero-network USB package mirroring and idempotent operator automation."
 tech_stack:

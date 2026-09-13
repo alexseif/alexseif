@@ -4,6 +4,7 @@ title: "El Alsson British & American International School"
 year: 2012
 client_name: "MITCHDesigns (End-Client: El Alsson School)"
 client_type: "International K-12 Education"
+industry: "International K-12 Education"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Institutional education portal, dual-curriculum catalog, and parent admissions architecture for an international K-12 school."
 tech_stack:

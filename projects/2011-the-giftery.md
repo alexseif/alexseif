@@ -4,6 +4,7 @@ title: "The Giftery (Online Gifting & Wedding Registry Platform)"
 year: 2011
 client_name: "MITCHDesigns (End-Client: The Giftery)"
 client_type: "E-Commerce & Digital Registry"
+industry: "E-Commerce & Digital Registry"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "E-commerce architecture, tokenized guest checkout, and atomic registry allocation for Egypt's pioneer digital gifting platform."
 tech_stack:
