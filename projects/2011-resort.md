@@ -4,8 +4,8 @@ title: "Resort Sales & Management (La Manga Club Vacation Rentals)"
 year: 2011
 client_name: "MITCHDesigns (End-Client: Resort Sales & Management)"
 client_type: "Hospitality & Property Management"
-project_role: "Software Architect"
-subtitle: "Architected a multi-portal property rental and operations engine for luxury holiday homes in La Manga Club, scaling booking operations to £1M/month."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Multi-portal vacation rental architecture, turnover state machine, and concurrency control for luxury resort properties."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -19,25 +19,24 @@ tags:
   - "case-study"
 ---
 
-# Software Architect | MITCHDesigns - Resort Sales & Management (2011 - 2012)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (Resort Sales & Management) | 2011 - 2012
 
-## Overview
-Resort Sales & Management operated a property management and holiday rental business at the La Manga Club resort in Spain, partnering with private villa and apartment owners to market, manage, inspect, and book luxury accommodations for international travelers. The client engaged MITCHDesigns to overhaul their legacy processes and automate their entire property catalog, booking lifecycle, and maintenance operations.
+## Context & Scale
+Resort Sales & Management operated a luxury villa and apartment rental agency at the La Manga Club resort in Spain, handling over 1,000,000 GBP in monthly reservation volume. The business required a synchronized digital platform to eliminate scheduling conflicts across three competing domains: public vacationers, private villa owners, and on-site cleaning and inspection crews.
 
-As Software Architect, designed the core custom PHP MVC framework and multi-portal system architecture that powered three distinct operational workflows:
-1. **Public Guest Booking Portal:** A consumer-facing catalog showcasing detailed property amenities, high-resolution photography, and real-time availability.
-2. **Operations & Property Management Portal:** An administrative back-office to contract with property owners, set dynamic seasonal tariffs, schedule cleaning crews, and track mandatory pre- and post-stay physical inspections.
-3. **Property Owner Portal:** A dedicated self-service channel allowing homeowners to block out private occupancy dates and review rental yield statements.
+## Architectural Decisions
+* **Multi-Portal RBAC Topology:** Engineered a decoupled role-based architecture serving three discrete user interfaces (public booking catalog, private homeowner calendar, and operational back-office) backed by a unified data layer.
+* **Turnover State Machine:** Modeled an explicit database state machine enforcing mandatory pre- and post-stay turnover locks (cleaning schedules and physical inspection sign-offs) before releasing properties back into the public availability pool.
+* **Concurrency Control & Row Locking:** Implemented pessimistic database row locking (SELECT ... FOR UPDATE) during reservation transactions, eliminating double-booking race conditions between public guest checkouts and owner date reservations.
+* **Database-Driven Yield Engine:** Encoded dynamic seasonal pricing, length-of-stay discounts, and multi-tier commission structures directly into optimized MySQL database views, offloading compute overhead from the application layer.
 
-Automating these workflows eliminated double-booking conflicts and streamlined resort operations to handle over £1,000,000 GBP in monthly booking volume.
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 MVC application core with modular controllers routing domain-specific workflows and transactional checkout pipelines.
+* **Data Layer:** Normalized MySQL relational schema utilizing InnoDB transactional row locking and indexed foreign keys for property amenities, calendars, and audit logs.
+* **Frontend:** Standards-compliant semantic HTML, modular CSS layouts, and JavaScript calendar controls for date-range selection.
+* **Infrastructure:** Apache web server running on Linux with URL rewriting for canonical property URLs and HTTP caching for static image assets.
 
-## Key Technical Challenges & Architecture
-
-### 1. Multi-Portal Access Control & State Management
-Designed a decoupled role-based architecture serving three distinct user domains from a unified database layer, ensuring strict data isolation between public guests, property owners, and resort management staff.
-
-### 2. Operational Buffers & Maintenance State Machine
-Integrated physical resort logistics directly into the availability engine. Programmed automated operational locks before and after each guest reservation to guarantee mandatory maintenance, cleaning, and inspection buffers before releasing properties back into the public availability pool.
-
-### 3. Dynamic Yield & Database Query Optimization
-Engineered seasonal rate calculations and multi-tier commission structures directly into optimized MySQL database views, offloading compute overhead from the application server and eliminating race conditions during high-volume booking periods.
+## Measurable Impact
+* Scaled property rental and back-office management workflows to reliably process over 1,000,000 GBP per month in booking transactions.
+* Completely eliminated cross-channel double-booking conflicts through strict database-level transactional locks.
+* Automated on-site maintenance and cleaning dispatch schedules, removing manual spreadsheet tracking for operations teams.
