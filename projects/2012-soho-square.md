@@ -4,8 +4,8 @@ title: "SOHO Square Sharm El Sheikh (Event Ticketing & E-Commerce Engine)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: SOHO Square)"
 client_type: "Entertainment & Hospitality Destination"
-project_role: "Software Architect & Lead Full-Stack Developer"
-subtitle: "Architected a high-concurrency concert and festival ticketing e-commerce platform and embeddable widget engine for Sharm El Sheikh's premier entertainment hub."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "High-concurrency concert ticketing architecture, TTL inventory holds, and embeddable booking widget for Sharm El Sheikh's entertainment hub."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -19,20 +19,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect & Lead Full-Stack Developer | MITCHDesigns - SOHO Square (2012)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (SOHO Square) | 2012
 
-## Overview
-SOHO Square is a premier dining, shopping, and nightlife entertainment square located in Sharm El Sheikh, Egypt, renowned for hosting international concerts, theatrical performances, and major seasonal festivals. Contracted through digital agency MITCHDesigns, this project engineered a dedicated subdomain e-commerce platform to handle high-demand concert ticket reservations and online payment processing.
+## Context & Scale
+SOHO Square is a premier dining, shopping, and nightlife entertainment destination located in Sharm El Sheikh, Egypt, renowned for hosting international concerts, theatrical performances, and major seasonal festivals. Contracted through digital agency MITCHDesigns, this project engineered a dedicated ticketing platform and embeddable widget to process high-demand ticket reservations and online card payments during traffic bursts.
 
-Served as Software Architect and Lead Full-Stack Developer across the entire project lifecycle, from initial requirement gathering through architecture, development, payment integration, and production deployment. Built on the proprietary custom PHP MVC framework and MySQL, the platform featured a standalone ticketing checkout engine alongside a lightweight embeddable widget integrated into SOHO Square's primary marketing portal.
+## Architectural Decisions
+* **High-Concurrency Ticket Holds & Race Condition Elimination:** Implemented database row-level locking (SELECT ... FOR UPDATE) during reservation transactions to eliminate inventory overselling. Designed an automated 8-minute Time-To-Live (TTL) inventory hold mechanism that locked selected seats during checkout and automatically released abandoned reservations back to the public pool.
+* **Cross-Domain Embeddable Widget Architecture:** Engineered a lightweight client-side booking widget embedded directly into SOHO Square's main portal. Designed a secure cross-domain handshake between the marketing domain and the ticketing subdomain, maintaining cart state during the transition to secure checkout.
+* **Idempotent Payment Settlement Pipeline:** Engineered idempotent transaction handlers for acquiring bank payment webhooks, ensuring atomic order completion, preventing duplicate ticket generation on network retries, and issuing digital confirmation passes immediately upon settlement.
 
-## Key Technical Challenges & Architecture
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 MVC application core handling ticket allocations, order state machines, and payment gateway interfaces.
+* **Data Layer:** Normalized MySQL relational database using InnoDB transactional tables, separating events, ticket tiers, temporal holds, orders, and payment audit logs with covering indexes.
+* **Frontend:** Standards-compliant semantic HTML, modular CSS layouts, and cross-domain vanilla JavaScript widget interactions.
+* **Infrastructure:** Apache web server running on Linux with SSL termination and FastCGI process optimization.
 
-### 1. High-Concurrency Ticket Holds & Race Condition Elimination
-During high-traffic concert announcements, multiple users attempted to purchase limited VIP and general admission tickets simultaneously. Implemented database row-level locking (`SELECT ... FOR UPDATE`) and a time-to-live (TTL) inventory hold mechanism that locked selected tickets for 8 minutes during checkout, automatically releasing uncompleted reservations back to the public pool without overselling.
-
-### 2. Embeddable Widget & Cross-Domain Integration
-Engineered an embeddable client-side booking widget embedded directly into SOHO Square's main content portal. Designed a secure cross-domain communication handshake between the marketing site and the dedicated ticketing subdomain, maintaining cart state and routing users to a secure checkout.
-
-### 3. Online Payment Gateway Integration
-Integrated direct acquiring bank payment gateway interfaces with transactional validation checks, ensuring atomic order completion, immediate ticket issuance, and automated confirmation dispatches upon payment settlement.
+## Measurable Impact
+* Achieved zero inventory over-allocation or duplicate seat sales during peak concert on-sale traffic spikes.
+* Completely isolated high-concurrency ticket purchasing traffic from the main marketing portal.
+* Automated digital ticket issuance and payment reconciliation, replacing manual box-office booking procedures.
