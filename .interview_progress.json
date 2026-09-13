@@ -228,10 +228,10 @@
     "title": "Ajel.sa (High-Concurrency Saudi News Network & Acquia Cloud Architecture)"
   },
   "2017-hsp": {
-    "completed": false,
+    "completed": true,
     "filename": "selected/2017-hsp.md",
     "year": 2017,
-    "title": "HSP Healthcare Services Platform"
+    "title": "HSP (Hospitality Hall & Event Space Allocation Platform)"
   },
   "2018-saaed": {
     "completed": true,
