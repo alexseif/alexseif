@@ -4,8 +4,8 @@ title: "Yadaweya (Fair-Trade Artisan Handcrafts Marketplace)"
 year: 2012
 client_name: "MITCHDesigns (End-Client: Yadaweya)"
 client_type: "Social Enterprise & Fair-Trade E-Commerce"
-project_role: "Software Architect & Lead Full-Stack Developer"
-subtitle: "Architected a community-based e-commerce marketplace and online payment platform empowering traditional Egyptian artisans and local craft communities."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Fair-trade e-commerce architecture, regional artisan lineage schema, and multi-currency payment integration on custom PHP MVC."
 tech_stack:
   - "PHP"
   - "Custom MVC Framework"
@@ -19,20 +19,23 @@ tags:
   - "case-study"
 ---
 
-# Software Architect & Lead Full-Stack Developer | MITCHDesigns - Yadaweya (2012)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns (Yadaweya) | 2012
 
-## Overview
-Yadaweya is an Egyptian social enterprise and fair-trade e-commerce marketplace dedicated to preserving authentic handmade crafts and empowering marginalized artisan communities across Egypt (from Nubia and Upper Egypt to the Sinai Peninsula and Siwa Oasis). Contracted through digital agency MITCHDesigns, this project engineered Yadaweya's community-driven e-commerce platform.
+## Context & Scale
+Yadaweya is an Egyptian social enterprise and fair-trade e-commerce marketplace dedicated to preserving traditional handmade crafts and empowering artisan workshops across rural and marginalized regions in Egypt (including Nubia, Upper Egypt, Sinai, and the Siwa Oasis). Contracted through digital agency MITCHDesigns, this project engineered Yadaweya's direct-to-consumer e-commerce platform and international export portal.
 
-Served as Software Architect and Lead Full-Stack Developer throughout the engagement. Elicited requirements directly with social enterprise stakeholders, coordinated the development and design teams, and engineered the core e-commerce catalog, shopping cart, and secure payment processing platform on the proprietary custom PHP MVC framework and MySQL.
+## Architectural Decisions
+* **Artisan Provenance Relational Schema:** Modeled a normalized MySQL database schema connecting individual handcrafted products directly to artisan profiles, regional governorate lineages, and cultural craft traditions, preserving craft authenticity and creator attribution throughout the shopping experience.
+* **Multi-Currency & Variable Freight Calculations:** Engineered dynamic cart calculation algorithms handling variable dimensional weights for delicate handcrafted goods, international carrier freight rules, and real-time multi-currency conversions for global buyers.
+* **Atomic Payment Settlement Architecture:** Structured secure online checkout transaction workflows interfacing with local payment gateways, enforcing atomic order state transitions and automated buyer and artisan notification dispatches upon payment confirmation.
 
-## Key Technical Challenges & Architecture
+## Engineering Execution
+* **Backend:** Object-oriented PHP 5 MVC application core managing product catalogs, shopping cart logic, order fulfillment states, and administrative content management.
+* **Data Layer:** Normalized MySQL relational database with composite indexes covering artisan profiles, product taxonomies, order items, and localized shipping rates.
+* **Frontend:** Standards-compliant semantic HTML, modular CSS layouts, and vanilla JavaScript interaction handlers for catalog browsing, artisan storytelling, and shopping cart updates.
+* **Infrastructure:** Apache web server running on Linux with SSL encryption and canonical URL rewrites for search engine optimization.
 
-### 1. Community-Centric Artisan Catalog
-Modeled relational schemas connecting individual handcraft products directly to their artisan creators, craft traditions, and regional Egyptian governorates, creating an immersive, mission-driven shopping experience.
-
-### 2. Core E-Commerce & Checkout Engine
-Architected the multi-category product catalog, inventory tracking, and dynamic cart calculation engine to handle variable handcraft attributes, international shipping fees, and multi-currency orders.
-
-### 3. Payment Platform Integration
-Engineered secure transaction processing pipelines, integrating payment gateway interfaces with atomic order status management and automated customer order confirmations.
+## Measurable Impact
+* Delivered Egypt's pioneer fair-trade handcrafts marketplace, connecting rural artisan workshops directly with global consumers.
+* Digitized product catalog and order fulfillment across hundreds of unique handmade craft items.
+* Automated shipping and international payment settlement, eliminating manual invoicing for social enterprise operations staff.
