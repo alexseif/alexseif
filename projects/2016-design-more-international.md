@@ -4,29 +4,37 @@ title: "Design More International (Architectural Portfolio & Media Engine)"
 year: 2016
 client_name: "Design More International"
 client_type: "Architecture & Conceptual Design Studio"
-project_role: "Solo Full-Stack Developer"
-subtitle: "Architected a high-performance WordPress portfolio for an award-winning architectural firm, engineering custom media-loading pipelines for high-resolution visual assets."
+project_role: "Senior Full-Stack Engineer"
+subtitle: "Engineered a high-performance architectural portfolio and media delivery pipeline on WordPress and PHP, optimizing high-resolution rendering delivery and asset caching for international audiences."
 tech_stack:
-  - "WordPress (Heavily Customized Theme)"
+  - "WordPress"
   - "PHP"
-  - "Custom Media Optimization & Lazy-Loading"
   - "MySQL"
   - "Linux / Nginx"
+  - "JavaScript"
+  - "CSS3 / Responsive Design"
 selected: false
 interview_completed: true
 tags:
   - "case-study"
 ---
 
-# Solo Full-Stack Developer | Design More International (2016)
+# Senior Full-Stack Engineer | Design More International | 2016
 
-## Overview
-Design More International is an award-winning architectural firm competing globally in conceptual and structural design competitions. The firm required a digital portfolio that could present large, ultra-high-resolution architectural renders and project blueprints without sacrificing page load performance or international search visibility.
+### Context & Scale
+Design More International is an architecture and conceptual design firm competing globally in commercial design competitions. The firm required a digital portfolio capable of showcasing high-resolution architectural renders, plans, and drawings to international design juries and prospective clients. Standard commercial themes introduced severe performance penalties when loading multi-megabyte image assets; the studio needed an engineer to deliver a bespoke, lightweight web platform from theme design to production hosting.
 
-Contracted directly as Solo Full-Stack Developer to design, build, and deploy the platform end to end. Built on a heavily customized WordPress theme, engineered a custom media-loading and caching strategy that balanced high-fidelity visual presentation with strict PageSpeed and Core Web Vitals requirements.
+### Architectural Decisions
+- **Custom Theme Architecture:** Engineered a bespoke WordPress theme from scratch in PHP, rejecting bloated commercial themes and visual page builders to minimize DOM complexity and eliminate redundant CSS and JavaScript payloads.
+- **Multi-Tier Media Delivery Pipeline:** Implemented automated image downsampling routines on upload alongside client-side lazy loading, ensuring high-fidelity visual assets only load when entering the active viewport.
+- **Nginx Caching and Asset Expiry:** Configured Nginx static asset caching headers and gzip compression to serve media assets efficiently across international networks.
 
-## Key Technologies & Architecture
-* **Custom Architectural Theme Development:** Engineered a bespoke WordPress theme tailored to high-density visual grids, full-screen project showcases, and conceptual design competition archives.
-* **High-Resolution Asset Optimization:** Built multi-tier responsive image pipelines and lazy-loading routines to serve high-fidelity architectural renders while keeping initial payload footprints minimal.
-* **Performance Tuning & Caching:** Configured edge caching headers and database query optimization to ensure sub-second page delivery for international clients and competition juries.
-* **Independent End-to-End Delivery:** Managed complete project lifecycle from initial requirements and frontend styling to Linux server provisioning and DNS configuration.
+### Engineering Execution
+- **Structured Portfolio Modeling:** Designed custom WordPress post types and taxonomies for architectural projects, categorizing works by typology, award status, competition year, and scale.
+- **Responsive Gallery and Media Viewer:** Built a custom CSS grid and lightweight JavaScript lightbox gallery tailored to ultra-wide architectural renders and technical elevations without third-party plugin dependencies.
+- **Linux Server Deployment:** Provisioned and configured a Linux server running Nginx and PHP-FPM, implementing strict file permission boundaries and MySQL query optimization.
+
+### Measurable Impact
+- **Eliminated Builder Overhead:** Removed all external builder dependencies, reducing page payload and script execution overhead compared to standard agency themes.
+- **Optimized Media Loading:** Viewport-based lazy loading reduced initial page weight across image-heavy project galleries, maintaining high visual fidelity during design competition evaluations.
+- **Independent Delivery:** Successfully delivered the complete solution from frontend templating to production infrastructure deployment.
