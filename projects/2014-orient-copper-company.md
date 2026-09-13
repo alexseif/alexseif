@@ -4,8 +4,8 @@ title: "Orient Copper Company"
 year: 2014
 client_name: "Orient Copper Company"
 client_type: "Industrial Manufacturing"
-project_role: "Full-Stack DeveloperFull-Stack Developer"
-subtitle: "Delivered a lightweight, responsive one-page WordPress showcase for an industrial copper manufacturing factory."
+project_role: "Senior Full-Stack Engineer"
+subtitle: "Lightweight single-page showcase, B2B procurement routing, and optimized WordPress architecture for an industrial copper manufacturing plant."
 tech_stack:
   - "WordPress"
   - "PHP"
@@ -18,14 +18,23 @@ tags:
   - "case-study"
 ---
 
-# Full-Stack DeveloperFull-Stack Developer | Orient Copper Company (2014)
+# Senior Full-Stack Engineer | Orient Copper Company | 2014
 
-## Overview
-Orient Copper Company is an industrial copper manufacturing factory in Egypt. The company required an uncluttered, professional digital web presence to introduce its factory capabilities, manufacturing services, and commercial contact channels to B2B procurement partners.
+## Context & Scale
+Orient Copper Company is an industrial manufacturing facility in Egypt producing copper alloys, rods, and custom extrusions. The enterprise required a clean, professional web presence to present factory capabilities, industrial certifications, and manufacturing capacities to international B2B procurement officers and supply chain partners.
 
-As Full-Stack DeveloperFull-Stack Developer, delivered a responsive single-page WordPress solution. Focused on clean typography, lightweight asset delivery, and straightforward content management so factory administrators could update business details with zero technical friction.
+## Architectural Decisions
+* **Lightweight Single-Page WordPress Architecture:** Engineered a streamlined single-page custom WordPress theme devoid of visual builder plugins, ensuring instantaneous loading and smooth sectional navigation for corporate desktop and mobile browsers.
+* **Direct B2B Procurement Routing:** Implemented server-side validated quote request and contact workflows with automated transactional routing directly to factory sales and procurement representatives.
+* **Asset Optimization & Minimal Attack Surface:** Stripped unused script libraries, disabled legacy XML-RPC endpoints, and applied server-level HTTP caching headers to maintain low latency and eliminate common security exposure vectors.
 
-## Key Technologies & Tools
-* **WordPress Single-Page Architecture:** Customized a lightweight WordPress theme tailored for single-page navigational flow, highlighting factory capabilities, quality standards, and contact details.
-* **B2B Inquiry Routing:** Configured verified contact and quote inquiry forms routed directly to factory sales representatives.
-* **Performance & Low Maintenance:** Optimized assets for fast initial load times and minimal ongoing server maintenance overhead.
+## Engineering Execution
+* **Frontend:** Standards-compliant semantic HTML5, responsive CSS3 grid layouts, and vanilla JavaScript smooth-scrolling interaction handlers.
+* **CMS & Backend:** Custom WordPress theme and PHP template logic modeling manufacturing specifications, quality compliance standards, and product line galleries.
+* **Data Layer:** MySQL relational database storing contact inquiries and core factory capability metadata.
+* **Infrastructure:** Apache web server running on Linux with gzip asset compression and browser caching rules.
+
+## Measurable Impact
+* Delivered Orient Copper's initial digital showcase for international industrial procurement partners.
+* Automated B2B quote and specification inquiries directly into factory sales workflows.
+* Minimized ongoing server compute and maintenance overhead through a lean, zero-bloat codebase.
