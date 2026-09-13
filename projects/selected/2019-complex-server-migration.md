@@ -4,55 +4,38 @@ title: Enterprise Cloud Infrastructure Migration (AHCC)
 year: 2019
 client_name: AHCC
 client_type: Enterprise
-project_role: Software Architect & Full-Stack Developer
-subtitle: Zero-downtime database replication, containerization, and AWS infrastructure-as-code migration.
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Architected and executed a zero-downtime enterprise migration to AWS using Terraform, ECS, Aurora PostgreSQL, and PgBouncer, syncing a 550 GB database cluster without data loss."
 tech_stack:
   - AWS (ECS, Aurora PostgreSQL, S3, CloudFront, Route 53)
-  - Docker
-  - Terraform
-  - PostgreSQL 11
-  - PgBouncer
+  - "Terraform (Infrastructure as Code)"
+  - "Docker"
+  - "PostgreSQL 11 & PgBouncer"
   - Redis
   - PHP / Node.js / Go
-selected: true
+selected: false
 interview_completed: true
 tags:
   - case-study
 ---
 
-# Software Architect & Full-Stack Developer | AHCC (2019)
+# Lead Full-Stack Engineer & Architect | AHCC | 2019
 
-## Executive Summary
-Re-architected and migrated an enterprise server infrastructure from legacy on-premise monolithic servers to a high-availability AWS cloud topology. Designed an asynchronous multi-phase database delta sync protocol to migrate a 550 GB relational database cluster with zero customer-facing downtime.
+### Context & Scale
+AHCC is an enterprise organization managing mission-critical business systems on single-point-of-failure on-premise physical infrastructure. Co-located relational databases and local disk storage dependencies caused acute operational bottlenecks: automated backups caused severe disk I/O degradation, system updates required risky manual intervention, and traffic surges were hard-bounded by bare-metal capacity. Retained as Lead Full-Stack Engineer and Architect to modernize the platform, author declarative Infrastructure as Code (IaC), containerize services, and execute a zero-downtime cloud migration of an active 550 GB PostgreSQL cluster to AWS.
 
----
+### Architectural Decisions
+- **Asynchronous Multi-Phase Database Sync:** Configured asynchronous logical replication between on-premise PostgreSQL and AWS Aurora PostgreSQL Multi-AZ, verifying consistency via row-level checksum verification until replication lag stabilized below 15ms prior to final cutover.
+- **Split-Brain Prevention Protocol:** Reduced DNS TTL on Route 53 to 60 seconds 72 hours before cutover, enforcing temporary read-only database locks on the on-premise source at T-0 to reject stale writes during the final delta drain.
+- **Connection Spikes with PgBouncer:** Deployed PgBouncer in transaction pooling mode in front of the Aurora PostgreSQL cluster, enabling the infrastructure to absorb bursts of up to 4,500 concurrent connections without backend process exhaustion.
+- **Stateless Container Decoupling:** Decoupled local disk dependencies by migrating user asset pipelines to Amazon S3 with pre-signed upload URLs and CloudFront CDN distribution, packaging applications into stateless Docker containers on AWS ECS.
 
-## 1. Context & Business Problem
-* **Client / Domain:** AHCC (Enterprise)
-* **Timeline:** 2019
-* **Project Role:** Software Architect & Full-Stack Developer
+### Engineering Execution
+- **Declarative Terraform Provisioning:** Authored modular Terraform manifests to provision VPC networking, multi-AZ subnets, security policies, ECS task definitions, and Aurora failover rules in version control.
+- **Multi-Service Containerization:** Packaged multi-language services (PHP, Node.js, and Go) into lightweight multi-stage Docker images deployed to AWS ECS clusters.
+- **Cutover Rehearsal & Validation:** Executed simulated staging cutovers to validate replication consistency, database foreign key constraints, and read/write failover procedures before live execution.
 
-### The Problem
-The client ran core business operations on single-point-of-failure on-premise servers with co-located relational databases and local disk storage dependencies. System backups caused severe performance drops, deployments required manual intervention, and scaling during traffic peaks was constrained by physical hardware limits.
-
----
-
-## 2. Technical Stack & Infrastructure Architecture
-* **Cloud Infrastructure:** AWS ECS (containerized application tasks), S3 (media object storage), and CloudFront CDN.
-* **Database & Caching:** AWS Aurora Multi-AZ PostgreSQL 11 with PgBouncer connection pooling and Redis caching.
-* **Automation & Provisioning:** Declarative Terraform manifests for VPC networking, security policies, and container task definitions.
-
----
-
-## 3. Architectural Decisions & Engineering Challenges
-* **Multi-Phase Database Delta Sync:** Configured asynchronous logical replication between on-premise PostgreSQL and cloud Aurora PostgreSQL, running row-level checksum verification scripts until replication lag stabilized below 15ms prior to DNS cutover.
-* **Connection Spike Management:** Placed PgBouncer in transaction pooling mode in front of the database cluster, allowing the system to handle bursts up to 4,500 concurrent connections without exhausting backend connection limits.
-* **Split-Brain Prevention during Cutover:** Lowered DNS TTL to 60 seconds 72 hours prior to migration and applied temporary read-only constraints on the source database at T-0 to reject stale write attempts during the final delta flush.
-* **Stateless Application Decoupling:** Migrated local media asset pipelines to S3 with pre-signed upload URLs and CloudFront distribution.
-
----
-
-## 4. Operational & Institutional Impact
-* **Zero Downtime Migration:** Completed the production cutover within a scheduled sub-minute DNS switchover without data loss.
-* **Database Latency:** Reduced query response times substantially through Aurora indexing and read-replica distribution.
-* **Automated Scalability:** Reduced infrastructure provisioning time from days of manual setup to automated Terraform deployments.
+### Measurable Impact
+- **Zero Customer Downtime:** Migrated the 550 GB enterprise PostgreSQL database and active services to AWS within a scheduled sub-minute DNS cutover window with zero data corruption.
+- **4,500 Concurrent Connection Throughput:** PgBouncer transaction pooling prevented database pool exhaustion during high-concurrency traffic bursts.
+- **Automated Provisioning:** Reduced infrastructure spin-up times from several days of manual server setup to automated, reproducible Terraform execution.
