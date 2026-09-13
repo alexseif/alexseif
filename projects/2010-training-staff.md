@@ -4,8 +4,8 @@ title: "Engineering Enablement & Developer Mentorship"
 year: 2010
 client_name: "MITCHDesigns"
 client_type: "Digital Agency"
-project_role: "Software Architect & Engineering Mentor"
-subtitle: "Institutionalized engineering standards, Git workflows, OOP patterns, 3NF schema design, and project delivery pipelines across an agency developer team."
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Institutionalized OOP patterns, 3NF schema design, Git release branching, and delivery workflows across an agency engineering team."
 tech_stack:
   - "PHP (OOP & Design Patterns)"
   - "Git Branching & Release Workflows"
@@ -18,16 +18,22 @@ tags:
   - "case-study"
 ---
 
-# Software Architect & Engineering Mentor | MITCHDesigns (2010 - 2015)
+# Lead Full-Stack Engineer & Architect | MITCHDesigns | 2010 - 2015
 
-## Overview
-Between 2010 and 2015, served as Software Architect and technical mentor for digital agency MITCHDesigns, establishing core engineering governance, developer upskilling programs, and standardized project delivery workflows.
+## Context & Scale
+Long-term engineering leadership and developer enablement engagement spanning 2010 to 2015 for digital agency MITCHDesigns. The agency required an operational transformation to migrate its technical workforce from ad-hoc procedural scripting and manual FTP file transfers to professional software engineering standards supporting dozens of concurrent client platforms.
 
-Mentored in-house software engineers through the transition from unstructured scripting to a professional, scalable software engineering practice. Established reusable code libraries, formalized Git version control branching strategies, taught relational database normalization (3NF), and integrated Basecamp task workflows with defined QA validation gates. This enablement transformed the agency's technical workforce into a self-sufficient engineering team capable of concurrently architecting and deploying dozens of complex client web platforms.
+## Architectural Decisions
+* **Modular OOP Architecture & Standardized Patterns:** Standardized object-oriented design patterns, MVC application structures, and reusable component libraries to eliminate redundant boilerplate across agency client projects.
+* **Relational Schema Normalization (3NF):** Institutionalized rigorous database modeling standards, Third Normal Form (3NF) relational design, foreign key constraints, and query execution plan analysis (EXPLAIN) to eliminate N+1 query bottlenecks.
+* **Disciplined Version Control & Release Pipelines:** Replaced direct FTP server edits with structured Git branching strategies and isolated development, staging, and production environments.
 
-## Key Initiatives & Engineering Curriculum
-* **Architectural Patterns & Code Reusability:** Mentored developers on Object-Oriented Programming (OOP), design patterns, modular code packaging, and clean code documentation standards.
-* **Database Modeling & Performance:** Trained engineers on relational schema normalization to Third Normal Form (3NF), query indexing, and SQL execution analysis to prevent bottlenecks.
-* **Version Control & Release Workflows:** Implemented disciplined Git branching and commit practices, eliminating manual FTP deployments in favor of structured release cycles.
-* **Operating System & Tooling Integration:** Guided engineers on leveraging system-level toolsets, including Linux server administration, automated cron daemons, and asynchronous event triggers.
-* **Task Management & QA Quality Gates:** Structured delivery pipelines within Basecamp, establishing objective criteria to measure milestones, validate functionality, and ensure QA sign-off prior to client release.
+## Engineering Execution
+* **Mentorship & Technical Upskilling:** Conducted structured code reviews, pair programming, and architectural design sessions in PHP, MySQL, JavaScript, and semantic web standards.
+* **Systems & Automation Tooling:** Guided engineers on Linux server administration, Apache virtual host management, scheduled cron daemons, and asynchronous task execution.
+* **Delivery & QA Quality Gates:** Structured delivery pipelines within Basecamp, establishing objective criteria for milestone validation and QA sign-off prior to staging and production deployments.
+
+## Measurable Impact
+* Transformed the developer group into an autonomous engineering team capable of independently deploying and maintaining multi-tier client web applications.
+* Eliminated deployment-related production outages by enforcing version-controlled Git release workflows.
+* Significantly reduced runtime database query latency across client applications through systematic schema indexing and query optimization.
