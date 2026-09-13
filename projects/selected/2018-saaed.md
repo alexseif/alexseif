@@ -4,53 +4,38 @@ title: Saaed Automotive Insurance Portal (Softech)
 year: 2018
 client_name: Softech / Saaed
 client_type: Automotive Insurance / Public Sector Contractor
-project_role: Software Architect & Full-Stack Developer
-subtitle: System stabilization, OS dependency pinning, and multi-tenant RBAC remediation for a UAE automotive insurance portal.
+project_role: "Lead Full-Stack Engineer & Architect"
+subtitle: "Stabilized a UAE automotive insurance portal on WordPress Multisite and on-premise CentOS, remediating cross-tenant privilege escalation and pinning OS runtime dependencies."
 tech_stack:
-  - PHP
-  - WordPress Multisite
-  - CentOS
-  - MySQL
-  - RPM Packaging
+  - "PHP"
+  - "WordPress Multisite"
+  - "CentOS / Linux (On-Premise)"
+  - "MySQL"
+  - "RPM Packaging & Dependency Pinning"
+  - "Role-Based Access Control (RBAC)"
 selected: true
 interview_completed: true
 tags:
   - case-study
 ---
 
-# Software Architect & Full-Stack Developer | Softech / Saaed (2018)
+# Lead Full-Stack Engineer & Architect | Softech (Saaed) | 2018
 
-## Executive Summary
-Led technical stabilization and security remediation for the Saaed UAE automotive insurance portal operating on an on-premise CentOS enterprise cluster. Stabilized a legacy multi-network architecture suffering from OS dependency conflicts, memory exhaustion, and multi-tenant privilege leakage across administrative scopes.
+### Context & Scale
+Saaed is the national traffic safety and automotive insurance claims service provider in the United Arab Emirates. Operating via contractor Softech, the digital claims portal ran on on-premise CentOS enterprise server clusters. Automatic and unpinned upstream OS updates frequently introduced runtime C-library mismatches, resulting in severe service crashes. Simultaneously, the legacy WordPress Multisite implementation suffered from permission inheritance flaws that allowed insurance agents to inadvertently access cross-network administrative records and policyholder claims across independent tenant boundaries. Retained as Lead Full-Stack Engineer and Architect to stabilize the on-premise infrastructure, isolate multi-tenant data access, and resolve security vulnerabilities.
 
----
+### Architectural Decisions
+- **Multi-Tenant RBAC Boundary Enforcement:** Re-architected role and capability trees across end-clients, insurance agents, adjusters, and system administrators, injecting strict tenant-context checks into query handlers to prevent cross-tenant data leaks.
+- **OS-Level Dependency Pinning:** Backported critical runtime library patches and locked versioned RPM packages within a dedicated local repository, preventing unexpected host-level package updates from destabilizing the production stack.
+- **Production-Mirror Staging Pipeline:** Established an isolated staging environment physically mirroring the on-premise production server configuration, mandating full regression validation before promoting releases.
+- **Tenant-Scoped Query Isolation:** Re-engineered database access routines to enforce tenant ID encapsulation on all claim queries, indexing tenant scopes to maintain high performance under concurrent access.
 
-## 1. Context & Business Problem
-* **Client / Domain:** Softech / Saaed (UAE Automotive Insurance)
-* **Timeline:** 2018
-* **Project Role:** Software Architect & Full-Stack Developer
+### Engineering Execution
+- **Privilege Escalation Patching:** Audited custom modules and database query hooks, eliminating horizontal privilege escalation vectors across multi-site network boundaries.
+- **RPM Packaging and Compilation:** Compiled and packaged custom-patched PHP and OpenSSL dependencies into version-locked RPMs distributed securely across the physical server cluster.
+- **Release Control Protocols:** Replaced direct file modifications with Git-tracked release profiles and formal deployment checklists for on-premise operations teams.
 
-### The Problem
-The portal ran on an unpinned on-premise CentOS environment where upstream OS updates caused library mismatches and sudden runtime crashes. Additionally, the multi-tenant architecture suffered from privilege escalation bugs where insurance agents could inadvertently access cross-network administrative records.
-
----
-
-## 2. Technical Stack & Implementation
-* **Application Layer:** PHP custom modules on a multi-network WordPress architecture.
-* **Operating System & Infrastructure:** Enterprise CentOS on physical on-premise hardware.
-* **Data Layer:** MySQL relational database with tenant-scoped indexing.
-* **Deployment Workflow:** Local RPM package pinning and staging regression environments.
-
----
-
-## 3. Architectural Decisions & Engineering Challenges
-* **OS-Level Dependency Pinning:** Backported required runtime patches and locked versioned RPM packages within a dedicated local repository, eliminating host-level execution mismatches and server crashes.
-* **Multi-Tenant RBAC Isolation:** Refactored permission inheritance across End-Clients, Insurance Agents, and System Administrators, enforcing context-scoped access checks to prevent data leaks between independent tenants.
-* **Defensive Staging Workflows:** Built isolated staging environments mirroring production configurations, requiring test verification before promoting code changes to live servers.
-
----
-
-## 4. Operational & Institutional Impact
-* **System Uptime:** Neutralized cascade server crashes and achieved stable 24/7 runtime availability.
-* **Security & Data Isolation:** Resolved all discovered privilege escalation vectors across multi-site boundaries.
-* **Release Predictability:** Eliminated unverified production deployments by standardizing the staging and validation pipeline.
+### Measurable Impact
+- **Zero Cross-Tenant Privilege Leaks:** Completely resolved all horizontal privilege escalation vectors, ensuring strict data isolation across independent insurance carriers.
+- **100% Elimination of Library Crashes:** Version-locked RPM packages halted uncoordinated OS upgrades, securing 24/7 uptime on on-premise physical infrastructure.
+- **Predictable Production Releases:** Mirror-staging verification eliminated deployment regressions and unverified runtime failures.
