@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import { Mail, ArrowRight, MessageSquare, FileText, Compass } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
 import { BrevoButton } from "./BrevoButton";
 
 export const HeroSection = () => {
@@ -47,35 +46,10 @@ export const HeroSection = () => {
         </div>
 
         {/* Minimal High-Impact Core Pitch */}
-        <div className="space-y-4 pt-2">
-          <div className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto space-y-3 font-mono text-center">
-            <p>
-              20 years of hands-on software architecture and production delivery. Specializing in high-concurrency PHP (Symfony), TypeScript/React, relational data modeling (PostgreSQL/MySQL), and zero-downtime migrations.
-            </p>
-            <p className="text-primary font-medium tracking-wide text-sm md:text-base">
-              // Pragmatic engineering. Zero downtime.
-            </p>
-          </div>
-        </div>
-
-        {/* Direct Action Hub */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/40 hover:bg-primary/20 transition-all font-mono text-xs tracking-widest uppercase px-6 py-3 rounded-sm shadow-sm group"
-          >
-            <Compass className="h-4 w-4" />
-            Explore Case Studies
-            <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-
-          <Link
-            href="/resume"
-            className="inline-flex items-center gap-2 bg-card/60 text-foreground/90 border border-border hover:border-primary/40 hover:text-primary transition-all font-mono text-xs tracking-widest uppercase px-6 py-3 rounded-sm shadow-sm"
-          >
-            <FileText className="h-4 w-4" />
-            Executive CV (PDF)
-          </Link>
+        <div className="pt-2">
+          <p className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-mono text-center">
+            20 years of copy-pasting until AI came along.
+          </p>
         </div>
 
         {/* Contact Links */}
