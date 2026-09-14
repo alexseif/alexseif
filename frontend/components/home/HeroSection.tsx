@@ -42,7 +42,7 @@ export const HeroSection = () => {
             <div className="h-px w-12 bg-primary/50" />
           </div>
           <p className="text-foreground/80 text-sm md:text-base tracking-[0.25em] uppercase text-center font-mono">
-            Software Architect & NGO Technical Partner
+            Software Architect | Senior Full-Stack Engineer
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export const HeroSection = () => {
         <div className="space-y-4 pt-2">
           <div className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto space-y-3 font-mono text-center">
             <p>
-              20 years of hands-on software architecture. Specializing in high-concurrency PHP/Symfony ecosystems, distributed database optimization, and hostile-environment infrastructure.
+              20 years of hands-on software architecture and production delivery. Specializing in high-concurrency PHP (Symfony), TypeScript/React, relational data modeling (PostgreSQL/MySQL), and zero-downtime migrations.
             </p>
             <p className="text-primary font-medium tracking-wide text-sm md:text-base">
               // Pragmatic engineering. Zero downtime.
