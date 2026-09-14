@@ -41,7 +41,7 @@ export const HeroSection = () => {
             <div className="h-px w-12 bg-primary/50" />
           </div>
           <p className="text-foreground/80 text-sm md:text-base tracking-[0.25em] uppercase text-center font-mono">
-            Software Architect | Senior Full-Stack Engineer
+            Software Architect | Full-Stack Engineer
           </p>
         </div>
 
