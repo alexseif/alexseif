@@ -21,8 +21,8 @@ export const NGOPartnerSection = () => {
     },
     {
       icon: Clock,
-      title: "Dedicated System Retainer",
-      description: "One experienced architect who knows your codebase deeply and is on-call when critical operational needs arise."
+      title: "Technical Retainer & Continuity",
+      description: "Direct architectural ownership and on-call engineering availability for critical operational cutovers."
     }
   ];
 
@@ -33,13 +33,13 @@ export const NGOPartnerSection = () => {
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
-              // Embedded Technical Partnership
+              // Institutional & Civic Platforms
             </p>
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              For NGOs & Non-Profits
+              Institutional & NGO Platforms
             </h2>
             <p className="text-foreground/80 font-mono text-sm md:text-base leading-relaxed text-center pt-2">
-              You have a transparency portal, donor reporting dashboard, or data system that lacks a dedicated technical lead. I provide fractional, retainer-based technical ownership — ensuring data sovereignty, compliance with UN/EU/GIZ institutional donors, and vendor accountability without agency overhead.
+              Transparency portals, donor reporting dashboards, and civic data systems require dedicated technical governance. I provide hands-on architectural ownership: ensuring multilingual data sovereignty, compliance with UN, EU, and GIZ institutional donors, and vendor accountability without agency overhead.
             </p>
           </div>
 
@@ -69,9 +69,9 @@ export const NGOPartnerSection = () => {
           <div className="flex justify-center pt-4">
             <BrevoButton
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-xs tracking-widest uppercase px-8 py-4 rounded-sm group shadow-md inline-flex items-center justify-center cursor-pointer transition-colors"
-              ariaLabel="Discuss Your Portal or Program"
+              ariaLabel="Discuss Your Platform or Program"
             >
-              Discuss Your Portal or Program
+              Discuss Your Platform or Program
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </BrevoButton>
           </div>
