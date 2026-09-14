@@ -59,7 +59,7 @@ export const StickyFooter = () => {
           href="/resume"
           className="font-mono text-[10px] tracking-widest uppercase text-foreground/40 hover:text-primary transition-colors bg-background/50 hover:bg-card/80 backdrop-blur px-3 py-2 border border-border/50 rounded-sm"
         >
-          [ Alex Seif Resume.pdf ]
+          [ Alex Seif CV.pdf ]
         </Link>
       </motion.div>
     </>

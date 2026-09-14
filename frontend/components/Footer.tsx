@@ -31,7 +31,7 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <Link href="/resume" className="text-foreground/70/40 hover:text-primary transition-colors text-[10px] font-mono tracking-widest uppercase">
-              [ Alex Seif Resume.pdf ]
+              [ Alex Seif CV.pdf ]
             </Link>
             <p className="text-foreground/70/40 text-xs font-mono">
               © MMXXVI
