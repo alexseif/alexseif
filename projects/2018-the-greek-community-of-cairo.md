@@ -29,7 +29,7 @@ The Greek Community of Cairo (Ελληνική Κοινότητα Καΐρου /
 ## Architectural Decisions
 * **Institutional Archive & Taxonomy Design:** Structured hierarchical WordPress taxonomies and custom post formats to organize historical documentation, community school programs, philanthropic initiatives, and chronological civic notices.
 * **Diaspora Newsletter Pipeline:** Engineered an integrated digital newsletter subscription and broadcast mechanism, allowing editorial staff to distribute announcements and cultural updates directly to thousands of diaspora subscribers worldwide.
-* **Low-Maintenance System Architecture:** Configured a resilient, low-overhead WordPress deployment on PHP 7.4 and MySQL designed to minimize administrative dependencies and withstand sustained public traffic without ongoing architectural intervention.
+* **Low-Maintenance Software Architecture:** Configured a resilient, low-overhead WordPress deployment on PHP 7.4 and MySQL designed to minimize administrative dependencies and withstand sustained public traffic without ongoing architectural intervention.
 
 ## Engineering Execution
 * **Frontend:** Built responsive HTML5 and CSS3 templates with multilingual character support, ensuring clear typography for Greek, Arabic, and English readers across desktop and mobile devices.

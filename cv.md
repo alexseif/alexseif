@@ -1,5 +1,5 @@
 # Eskandar (Alex) Seif
-**Senior Full-Stack Engineer | Systems Architecture**  
+**Software Architect | Senior Full-Stack Engineer**  
 *Specialization: High-Concurrency Web Platforms | Modern PHP (Symfony / Drupal / WordPress) | React / Python FastAPI | Database Architecture*
 
 * **Location:** Cairo, Egypt (Available for Immediate Remote / B2B Contract | Open to Relocation to the Netherlands / EU)
@@ -13,9 +13,9 @@
 
 ## Professional Summary
 
-Pragmatic Senior Full-Stack Engineer and Systems Architect with over 20 years of hands-on experience designing, scaling, and maintaining production web platforms, transactional engines, and data-intensive applications. Strong background in modern PHP (Symfony, Drupal Enterprise, WordPress FSE/ACF, Moodle), TypeScript and React, Python (FastAPI), and relational database architecture (MySQL, PostgreSQL/PostGIS).
+Pragmatic Software Architect and Senior Full-Stack Engineer with over 20 years of hands-on experience designing, scaling, and maintaining production web platforms, transactional engines, and data-intensive applications. Strong background in modern PHP (Symfony, Drupal Enterprise, WordPress FSE/ACF, Moodle), TypeScript and React, Python (FastAPI), and relational database architecture (MySQL, PostgreSQL/PostGIS).
 
-Proven track record taking systems from initial design through zero-downtime production delivery, including nationwide public sector infrastructure, high-concurrency transactional routing engines, air-gapped intranet deployments, and decoupled Web GIS platforms. Focuses on pragmatic system architecture, 3NF/Star schema normalization, deterministic CI/CD automation, and GDPR/PCI-DSS compliance.
+Proven track record taking systems from initial design through zero-downtime production delivery, including nationwide public sector infrastructure, high-concurrency transactional routing engines, air-gapped intranet deployments, and decoupled Web GIS platforms. Focuses on pragmatic software architecture, 3NF/Star schema normalization, deterministic CI/CD automation, and GDPR/PCI-DSS compliance.
 
 ---
 

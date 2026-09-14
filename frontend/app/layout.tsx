@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: '%s | Alex Seif',
   },
   description:
-    'Software Architect and Full-Stack Developer with over 20 years of experience in high-concurrency systems architecture, Symfony, Drupal, WordPress, PostgreSQL/PostGIS, and zero-downtime database optimization.',
+    'Software Architect and Full-Stack Developer with over 20 years of experience in high-concurrency software architecture, Symfony, Drupal, WordPress, PostgreSQL/PostGIS, and zero-downtime database optimization.',
   keywords: [
     'Software Architect',
     'Full-Stack Developer',

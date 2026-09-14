@@ -121,7 +121,7 @@ export default async function CaseStudyPage({
           <div className="flex items-center gap-2">
             <Cpu className="h-3.5 w-3.5 text-primary" />
             <span className="tracking-widest uppercase text-[11px] text-primary">
-              System Architecture & Topology Specification
+              Software Architecture & Topology Specification
             </span>
           </div>
           <div className="flex items-center gap-1.5 opacity-60">

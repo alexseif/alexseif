@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Eliminate software failure before writing a single line of code. A rigorous architectural consultation sprint that converts ambiguous business needs into build-ready engineering blueprints.",
   openGraph: {
-    title: "Requirements Elicitation & System Architecture Consultation",
+    title: "Requirements Elicitation & Software Architecture Consultation",
     description:
       "Turn ambiguous business goals into deterministic, battle-tested software blueprints before spending budget on development.",
     url: "https://alexseif.com/requirements-elicitation",
@@ -60,7 +60,7 @@ export default function RequirementsElicitationPage() {
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl font-sans font-light tracking-wide text-foreground leading-tight">
-              Requirements Elicitation & System Architecture Consultation
+              Requirements Elicitation & Software Architecture Consultation
             </h1>
             <p className="text-foreground/80 text-lg md:text-xl font-mono leading-relaxed pt-2">
               Sound architecture decisions help most when the end goal is vague. When your vision is still evolving, we eliminate costly guesswork upfront by establishing decoupled boundaries and clean data foundations that allow your system to adapt without total rewrites.

@@ -8,7 +8,7 @@ industry: "Tech Incubation & EdTech"
 project_role: "Technical Advisor & Software Architect"
 subtitle: "Delivered interactive technical workshops and architecture mentorship for aspiring tech founders at ITI, focusing on pragmatic MVP scoping, technical feasibility, and infrastructure budgeting."
 tech_stack:
-  - "System Architecture & Scoping"
+  - "Software Architecture & Scoping"
   - "MVP Definition & Roadmapping"
   - "Technical Feasibility Analysis"
   - "Infrastructure Budgeting"
