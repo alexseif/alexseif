@@ -5,7 +5,7 @@ year: 2006
 client_name: Dr. Koheil
 client_type: Private Healthcare / Dentistry Clinic
 industry: "Healthcare & Clinical Services"
-project_role: Senior Full-Stack Engineer
+project_role: Full-Stack Engineer
 subtitle: Legacy modernization migrating Adobe Flash to standards-compliant PHP 5 and semantic web architecture.
 tech_stack:
   - PHP 5
@@ -20,7 +20,7 @@ tags:
   - case-study
 ---
 
-# Senior Full-Stack Engineer | Dr. Koheil | 2006
+# Full-Stack Engineer | Dr. Koheil | 2006
 
 ## Context & Scale
 Private dental healthcare clinic in Alexandria, Egypt. The existing practice website was built as an Adobe Flash (.swf) application that suffered from frequent browser rendering crashes, zero search engine indexability, and total incompatibility with standards-compliant mobile and desktop web browsers.

@@ -5,7 +5,7 @@ year: 2005
 client_name: Dr. Ahmed Filistini
 client_type: Medical Directory / Community
 industry: "Healthcare & Medical Directory"
-project_role: Senior Full-Stack Engineer
+project_role: Full-Stack Engineer
 subtitle: Anatomical symptom navigator and physician discussion forum for Arabic-speaking doctors.
 tech_stack:
   - PHP 4/5
@@ -20,7 +20,7 @@ tags:
   - case-study
 ---
 
-# Senior Full-Stack Engineer | Dr. Ahmed Filistini | 2005
+# Full-Stack Engineer | Dr. Ahmed Filistini | 2005
 
 ## Context & Scale
 Early Arabic-language digital health reference directory and physician community portal commissioned by Dr. Ahmed Filistini. In 2005, regional Arabic medical resources and practitioner networks were largely absent from the web. The objective was to deliver a dual-purpose platform: an intuitive anatomical symptom lookup tool for patients and an integrated discussion forum for licensed medical professionals.

@@ -5,7 +5,7 @@ year: 2017
 client_name: "AlKawass Group (End-Client: Cafe Supreme)"
 client_type: "Corporate / F&B Franchise"
 industry: "Food & Beverage Franchise"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Delivered a brand showcase, 34-store national branch locator, and prospective franchisee portal on a custom WordPress infrastructure for a prominent Canadian cafe chain in Egypt."
 tech_stack:
   - "WordPress (Custom Theme & Post Types)"
@@ -21,7 +21,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Cafe Supreme (AlKawass Group) | 2017
+# Full-Stack Engineer | Cafe Supreme (AlKawass Group) | 2017
 
 ### Context & Scale
 Cafe Supreme is a Class A cafe franchise originally founded in Canada that expanded across Egypt under master franchisee AlKawass Group, operating up to 34 stores nationwide. To support its retail operations and continued commercial expansion, AlKawass Group contracted an independent full-stack build. The company required a centralized web platform to present brand quality standards, help customers locate regional stores, and provide a dedicated digital portal to capture and qualify prospective franchise applications.

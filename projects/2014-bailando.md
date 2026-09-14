@@ -5,7 +5,7 @@ year: 2014
 client_name: "Bailando"
 client_type: "Family Entertainment & Hospitality"
 industry: "Hospitality & Family Entertainment"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Responsive web showcase, event reservation pipeline, and cloud deployment on WordPress and DigitalOcean for a children's entertainment venue."
 tech_stack:
   - "WordPress"
@@ -19,7 +19,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Bailando | 2014
+# Full-Stack Engineer | Bailando | 2014
 
 ## Context & Scale
 Bailando is a family cafe, children's playground, and event venue in Alexandria, Egypt, specializing in kids' entertainment and private birthday celebrations. The business required an online showcase to promote playground facilities, activity schedules, and party packages, while automating parent booking inquiries.

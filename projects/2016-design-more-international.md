@@ -5,7 +5,7 @@ year: 2016
 client_name: "Design More International"
 client_type: "Architecture & Conceptual Design Studio"
 industry: "Architecture & Spatial Design"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Engineered a high-performance architectural portfolio and media delivery pipeline on WordPress and PHP, optimizing high-resolution rendering delivery and asset caching for international audiences."
 tech_stack:
   - "WordPress"
@@ -20,7 +20,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Design More International | 2016
+# Full-Stack Engineer | Design More International | 2016
 
 ### Context & Scale
 Design More International is an architecture and conceptual design firm competing globally in commercial design competitions. The firm required a digital portfolio capable of showcasing high-resolution architectural renders, plans, and drawings to international design juries and prospective clients. Standard commercial themes introduced severe performance penalties when loading multi-megabyte image assets; the studio needed an engineer to deliver a bespoke, lightweight web platform from theme design to production hosting.

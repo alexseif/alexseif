@@ -5,7 +5,7 @@ year: 2015
 client_name: "Thomas Safety"
 client_type: "Industrial Safety & Equipment Supplier"
 industry: "Industrial Safety & Procurement"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "B2B industrial safety equipment catalog, Request for Quote (RFQ) pipeline, and cloud deployment on WordPress and DigitalOcean."
 tech_stack:
   - "WordPress"
@@ -19,7 +19,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Thomas Safety | 2015
+# Full-Stack Engineer | Thomas Safety | 2015
 
 ## Context & Scale
 Thomas Safety is an industrial safety supplier in Egypt providing personal protective equipment (PPE), occupational health gear, and workplace safety devices. The enterprise required a digital catalog and structured quotation platform to streamline inbound procurement requests from industrial manufacturing plants and corporate safety officers.

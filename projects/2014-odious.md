@@ -5,7 +5,7 @@ year: 2014
 client_name: "Odious"
 client_type: "Music & Entertainment"
 industry: "Music & Entertainment"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Official artist portal, interactive EPK, and streaming media architecture on WordPress and DigitalOcean for an international touring metal band."
 tech_stack:
   - "WordPress"
@@ -20,7 +20,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Odious | 2014 - Present
+# Full-Stack Engineer | Odious | 2014 - Present
 
 ## Context & Scale
 Odious is an internationally touring progressive metal band founded in Alexandria, Egypt, performing at European festivals and publishing studio releases worldwide. As their technical partner since 2014, engineered their official web presence and digital press kit, serving global record labels, festival promoters, and international listeners over a 10+ year operational lifespan.

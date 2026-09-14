@@ -5,7 +5,7 @@ year: 2016
 client_name: "Intrade"
 client_type: "International Trade & Import/Export"
 industry: "International Trade & Logistics"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Delivered a structured B2B trade catalog and inquiry routing system on WordPress and PHP, optimizing product specification delivery for low-bandwidth global commercial partners."
 tech_stack:
   - "WordPress"
@@ -20,7 +20,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Intrade | 2016
+# Full-Stack Engineer | Intrade | 2016
 
 ### Context & Scale
 Intrade is an international import and export trading firm managing multi-category commodity distribution and cross-border commercial transactions. The company required a structured digital platform to present product lines, technical specifications, and downloadable commercial brochures to wholesale partners worldwide. The primary engineering challenge was delivering an intuitive catalog experience that remained fast and accessible across international networks and low-bandwidth trade environments without introducing bulky e-commerce overhead.

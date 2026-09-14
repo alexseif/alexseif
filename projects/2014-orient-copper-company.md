@@ -5,7 +5,7 @@ year: 2014
 client_name: "Orient Copper Company"
 client_type: "Industrial Manufacturing"
 industry: "Industrial Manufacturing"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Lightweight single-page showcase, B2B procurement routing, and optimized WordPress architecture for an industrial copper manufacturing plant."
 tech_stack:
   - "WordPress"
@@ -19,7 +19,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Orient Copper Company | 2014
+# Full-Stack Engineer | Orient Copper Company | 2014
 
 ## Context & Scale
 Orient Copper Company is an industrial manufacturing facility in Egypt producing copper alloys, rods, and custom extrusions. The enterprise required a clean, professional web presence to present factory capabilities, industrial certifications, and manufacturing capacities to international B2B procurement officers and supply chain partners.

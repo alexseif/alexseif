@@ -5,7 +5,7 @@ year: 2010
 client_name: "Orthodox Mission in Botswana"
 client_type: "NGO & Community Outreach"
 industry: "Non-Profit & Civic Outreach"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Lightweight community portal and publishing platform engineered for an NGO in Southern Africa using a custom PHP MVC architecture."
 tech_stack:
   - "PHP"
@@ -19,7 +19,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Orthodox Mission in Botswana | 2010
+# Full-Stack Engineer | Orthodox Mission in Botswana | 2010
 
 ## Context & Scale
 Independent community outreach and non-profit publishing platform for the Orthodox Mission in Botswana, supporting regional initiatives and operational communications across Southern Africa. The primary technical constraint was sustaining accessibility across low-bandwidth, high-latency mobile networks and diverse legacy hardware.

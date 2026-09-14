@@ -5,7 +5,7 @@ year: 2026
 client_name: barincairo.com
 client_type: Geospatial Web Directory
 industry: "Geospatial & Urban Tech"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Architected a decoupled Web GIS platform on React 19, FastAPI (Python 3.12), and PostGIS, engineering dynamic bounding-box GeoJSON streaming and automated spatial deduplication."
 tech_stack:
   - "React 19 & TypeScript"
@@ -20,7 +20,7 @@ tags:
   - case-study
 ---
 
-# Senior Full-Stack Engineer | barincairo.com | 2026
+# Full-Stack Engineer | barincairo.com | 2026
 
 ### Context & Scale
 barincairo.com is a specialized Web GIS cartographic directory documenting historic hospitality and cultural institutions across Downtown Cairo (Wust El Balad). Serving dense vector cartography with dynamic bounding-box queries and multi-stop walking itineraries required strict decoupling between WebGL map rendering and server-side spatial calculations to prevent main-thread UI frame drops. Additionally, automated entity scrapers frequently generated overlapping venue entries with varied spelling and coordinates. Designed and implemented the complete platform as an independent full-stack engagement using React 19, Python 3.12 FastAPI, and a PostGIS spatial database engine.

@@ -5,7 +5,7 @@ year: 2016
 client_name: "Zillion Home Buyers"
 client_type: "Real Estate Investment"
 industry: "Real Estate Investment"
-project_role: "Senior Full-Stack Engineer"
+project_role: "Full-Stack Engineer"
 subtitle: "Engineered a high-converting lead acquisition landing page with vanilla HTML5/CSS3 and secure PHP backend validation, minimizing page weight and latency for paid advertising traffic."
 tech_stack:
   - "HTML5 / Semantic Markup"
@@ -20,7 +20,7 @@ tags:
   - "case-study"
 ---
 
-# Senior Full-Stack Engineer | Zillion Home Buyers | 2016
+# Full-Stack Engineer | Zillion Home Buyers | 2016
 
 ### Context & Scale
 Zillion Home Buyers was a real estate investment enterprise specializing in direct residential property acquisitions. The company ran targeted pay-per-click advertising campaigns but experienced friction and drop-offs when driving traffic to bloated corporate pages. The business required an ultra-fast, mobile-first lead acquisition page engineered to capture seller property details, contact info, and asking prices with minimal latency.
