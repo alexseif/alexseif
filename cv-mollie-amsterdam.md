@@ -1,8 +1,8 @@
 # Eskandar (Alex) Seif
 **Senior FullStack Engineer | Software Architect**  
-*Specialization: High-Concurrency Web Platforms | Modern PHP (Symfony / Drupal / WordPress) | React / Python FastAPI | Database Architecture*
+*Specialization: Modern PHP (Symfony / PHP 8.x) | TypeScript & React | High-Concurrency Web Platforms | Database Architecture*
 
-* **Location:** Cairo, Egypt (Available for Immediate Remote / B2B Contract | Open to Relocation to the Netherlands / EU)
+* **Location:** Cairo, Egypt (Relocating to Amsterdam / Netherlands | IND High Skilled Migrant Sponsorship Ready | 30% Ruling Eligible)
 * **Email:** alex.seif@gmail.com
 * **Phone:** +201004006332
 * **LinkedIn:** [linkedin.com/in/alexseif](https://linkedin.com/in/alexseif)
@@ -13,21 +13,28 @@
 
 ## Professional Summary
 
-Senior FullStack Engineer and Software Architect with over 20 years of hands-on experience building the web in fintech, hospitality, and eCommerce. Pragmatic delivery across modern PHP (Symfony, Drupal Enterprise, WordPress FSE/ACF, Moodle), TypeScript and React, Python (FastAPI), and relational database architecture (MySQL, PostgreSQL/PostGIS).
+Senior FullStack Engineer and Software Architect with over 20 years of hands-on experience building the web in fintech, hospitality, and eCommerce. Pragmatic delivery across modern PHP (Symfony, PHP 8.x OOP, Drupal, WordPress), TypeScript and React, Python (FastAPI), and relational database architecture (MySQL, PostgreSQL).
 
-Proven track record taking web platforms from initial design through zero-downtime production delivery, including high-concurrency transactional routing engines, payment gateways, nationwide public sector platforms, and decoupled web applications. Focuses on clean software architecture, 3NF schema normalization, deterministic CI/CD automation, and GDPR/PCI-DSS compliance.
+Proven track record taking web applications from initial design through zero-downtime production delivery, including payment gateways, high-concurrency transactional routing engines, nationwide public sector platforms, and decoupled web platforms. Focuses on clean software architecture, 3NF schema normalization, deterministic CI/CD automation, and GDPR/PCI-DSS compliance.
 
 ---
 
-## Technical Stack & Architecture Competencies
+## Core Fintech & Transaction Architecture Highlights
 
-* **Architecture & System Design:** Distributed Systems, Decoupled Architecture, High-Concurrency Routing, Transactional State Machines, Domain-Driven Design (DDD), REST & OpenAPI Contract Synchronization.
-* **PHP Ecosystem:** Symfony Framework, Drupal Enterprise (Core, 8/9/10), WordPress (Full Site Editing, ACF Pro, Gutenberg Block API, Multisite), Moodle LMS, Custom MVC Frameworks, PHP 8.x OOP.
-* **Full-Stack & Frontend:** TypeScript, React (React 19, Hooks), JavaScript (ES6+), Node.js, TailwindCSS, Vite, HTML5, CSS3 / SCSS.
-* **Python & Geospatial:** Python 3.12, FastAPI, PostgreSQL 15+, PostGIS 3.3+ (Spatial Indexing, SRID 4326, GeoJSON, Viewport Vector Streaming).
-* **Database & Data Layer Optimization:** MySQL / MariaDB (Master-Slave Replication, Query Optimization, 3NF Normalization, Star Schema Views, Indexed Views), Redis (Object Caching).
-* **DevOps, Cloud & Infrastructure:** Docker / Docker Compose, Linux Administration (Debian, CentOS, Oracle Linux), Nginx (Reverse Proxy, Caching), AWS (EC2, ELB, S3, CloudFront), CI/CD (GitHub Actions), Air-Gapped Intranet Deployment, Bash Automation.
-* **Security & Regulatory Compliance:** GDPR Compliance, PCI DSS Architecture, SAML 2.0 / Keycloak SSO Federation, SAMA Standards, Role-Based Access Control (RBAC).
+* **PCI DSS Payment Gateway (Wallety):** Solely engineered the core payment gateway in PHP and Symfony handling 33% of domestic air travel ticketing volume in Egypt. Built direct acquiring bank integrations, Amadeus GDS atomic seat reservation state machines, clustered MySQL master-slave replication, and 1-second asynchronous CLI transaction daemons.
+* **High-Concurrency State Machine (SASO):** Architected the nationwide vehicle inspection booking platform managing multi-lane facilities. Engineered a deterministic 5-minute transactional state-locking engine in PHP and MySQL that completely eliminated race conditions across competing web, mobile, and backend channels for 15-minute appointment slots.
+* **High-Throughput Web Scale & Caching (NileTech / Hospitality):** Engineered multi-tier Redis and Varnish caching hierarchies offloading 85% of dynamic database read queries and sustaining sub-50ms latencies under traffic surges of 15,000 active concurrent connections.
+
+---
+
+## Technical Stack & Competencies
+
+* **Backend & Web Frameworks:** PHP 8.x OOP (Symfony Framework, Drupal Enterprise, WordPress, Custom MVC Frameworks), Python 3.12 (FastAPI), Node.js.
+* **Frontend & UI:** TypeScript, React (React 19, Hooks), JavaScript (ES6+), TailwindCSS, Vite, HTML5, CSS3 / SCSS.
+* **Databases & Data Layer:** MySQL / MariaDB (Master-Slave Clustering, Query Optimization, 3NF Normalization, Compound Indexing), PostgreSQL / PostGIS, Redis (Persistent Object Caching).
+* **Architecture & API Design:** Decoupled Web Applications, REST & OpenAPI Contract Synchronization, Transactional State Machines, Domain-Driven Design (DDD), Microservices.
+* **DevOps, Cloud & Infrastructure:** Docker / Docker Compose, Linux Administration (Debian, CentOS, Oracle Linux), Nginx (Reverse Proxy & Caching), AWS (EC2, S3, CloudFront), CI/CD (GitHub Actions), Bash Automation.
+* **Security & Regulatory Compliance:** PCI DSS Architecture, GDPR Compliance, SAML 2.0 / Keycloak SSO Federation, Role-Based Access Control (RBAC).
 
 ---
 
@@ -51,44 +58,38 @@ Proven track record taking web platforms from initial design through zero-downti
 ### Principal Software Architect & Technical Lead
 **iSoft (IdealSoft Emirates) | Retainer & Contract** | *2020 - 2024*
 
-Contracted to deliver ministry-level digital infrastructure, high-concurrency transactional routing engines, and API architectures for federal and municipal public sector clients across Egypt and Saudi Arabia.
-
 * **National Vehicle Inspection Scheduling (SASO - Saudi Ministry of Standards, Metrology and Quality):** Architected the nationwide vehicle inspection booking system managing multi-lane facilities. Engineered a distributed transactional state-locking engine with a deterministic 5-minute buffer that eliminated race conditions across competing web, mobile, and backend channels for 15-minute appointment slots. Remodeled database schemas into 3NF for transactional safety and Star Schema for real-time reporting. Decoupled Drupal core to expose versioned REST APIs to a high-performance React client.
-* **Air-Gapped Intranet Certification Platform (Egyptian Ministry of Interior - Traffic Police Dept.):** Architected and deployed an enterprise Moodle training portal on a restricted state intranet for mandatory licensing courses nationwide with zero internet access. Engineered a deterministic zero-network deployment pipeline using a custom-patched Oracle Linux OS repository on physical USB storage with fault-tolerant Bash migration scripts and offline cryptographic fee verification.
-* **National Vehicle Inspection Digital Ecosystem (Aman Portal):** Designed the digital booking and dispatch engine for nationwide vehicle inspections, redirecting citizen volume from congested municipal police departments to commercial hubs and mobile inspection vans via high-availability backend API integration.
 * **State-Licensed Cooperative Insurance Platform (Salama Portal - Saudi Arabia):** Engineered core registration workflows, pre-ingestion validation mechanics, and secure transaction-handling layers for compliant digital automotive insurance under Saudi Central Bank (SAMA) regulatory standards.
+* **National Vehicle Inspection Digital Ecosystem (Aman Portal):** Designed the digital booking and dispatch engine for nationwide vehicle inspections, redirecting citizen volume from congested municipal police departments to commercial hubs and mobile inspection vans via high-availability backend API integration.
+* **Air-Gapped Intranet Certification Platform (Egyptian Ministry of Interior - Traffic Police Dept.):** Architected and deployed an enterprise Moodle training portal on a restricted state intranet for mandatory licensing courses nationwide with zero internet access. Engineered a deterministic zero-network deployment pipeline using a custom-patched Oracle Linux OS repository on physical USB storage with fault-tolerant Bash migration scripts and offline cryptographic fee verification.
 * **Enterprise Governance & Deployment Reliability:** Enforced a strict 4-tier environment topology (Dev, Testing, Staging, Preproduction) and a Tuesday-only production deployment schedule, eliminating weekend critical failures.
 
 ### Lead Full-Stack Engineer & Architect
 **NileTech & Digital Media Retainers** | *2016 - 2019*
 
 * **High-Concurrency Digital News Network (Ajel.sa | 2017 - 2019):** Architected and scaled Saudi Arabia's premier digital newspaper on Drupal Enterprise and Acquia Cloud Enterprise. Engineered a multi-tier caching hierarchy combining Varnish edge caching with Redis persistent object caching, offloading over 85% of dynamic database read queries and preserving sub-50ms response times during breaking news traffic surges. Implemented a 3-tier automated CI/CD release pipeline that eliminated cutover downtime.
+* **Hospitality Space Allocation Platform (HSP | Focus Media Group | 2017):** Architected a 3-tier event booking, meeting room allocation, and real-time hallway digital signage wayfinding system deployed across luxury hotels (Hilton) and corporate venues.
 * **Strangler-Fig News Broadcast Migration (218TV.net | 2016):** Executed a Strangler-Fig pattern migration for high-traffic broadcast news operations into an enterprise Drupal architecture, configuring Varnish reverse-proxy caching sustaining 15,000 active concurrent connections.
 * **Civic & Cultural Heritage Platform (Turathuna | 2017):** Architected a bilingual Drupal platform for the Abu Dhabi Cultural Programs & Heritage Festivals Committee with broadcast TV archives, festival calendars, and native Arabic RTL typography.
-* **Hospitality Space Allocation Platform (HSP | Focus Media Group | 2017):** Architected a 3-tier event booking, meeting room allocation, and real-time hallway digital signage wayfinding system deployed across luxury hotels (Hilton) and corporate venues.
 * **Automotive Insurance Portal Stabilization (Saaed via Softech | 2018):** Stabilized an on-premise CentOS WordPress Multisite insurance portal, backporting and pinning legacy RPM packages to eliminate host crashes and refactoring multi-tenant RBAC permissions.
 
 ### Co-Founder & Software Architect
 **Wallety (Fintech Payment Gateway)** | *December 2009 - July 2015*
 
-Architected, launched, and scaled an early online payment gateway in Egypt, processing 33% of all domestic air travel ticketing volume.
-
-* **PCI DSS Compliant Core Engine:** Solely engineered the core payment gateway in PHP and Symfony adhering to PCI DSS security standards, handling online payment settlements under unstable telecommunications infrastructure.
+* **PCI DSS Compliant Core Engine:** Solely engineered the core payment gateway in PHP and Symfony adhering to PCI DSS security standards, handling online payment settlements under unstable telecommunications infrastructure and processing 33% of domestic air travel transactions.
 * **GDS & Banking Integrations:** Built direct integrations with domestic acquiring banks, 200+ enterprise merchants, and the Amadeus Global Distribution System (GDS) for atomic flight seat reservations.
 * **Master-Slave Replication & CLI Daemons:** Clustered MySQL separating master ACID writes from slave read-reporting, and engineered 1-second CLI background daemon loops to process transaction batches asynchronously.
 
 ### Lead Software Engineer & Web Architect
 **MITCHDesigns** | *2009 - 2014*
 
-Embedded Software Architect for a boutique digital design agency, establishing backend architecture standards across commercial client platforms.
-
 * **Custom PHP MVC Framework:** Architected a modular PHP MVC framework that served as the technical foundation for over 15 client platforms, eliminating boilerplate and delivering sub-100ms response times.
 * **Dynamic Contract Pricing & Booking Engines:** Engineered dynamic pricing rules and reservation engines for travel tech platforms including Smash Holidays and Agazat Masr (Tourico).
-* **Data Modeling & Team Enablement:** Designed normalized relational schemas and compound MySQL indexing strategies for high-inventory retail clients (The Giftery, Bouri Center). Established agency Git workflows, requirements elicitation SOPs, and developer training.
+* **Data Modeling & eCommerce Enablement:** Designed normalized relational schemas and compound MySQL indexing strategies for high-inventory retail eCommerce clients (The Giftery, Bouri Center). Established agency Git workflows, requirements elicitation SOPs, and developer training.
 
 ---
 
 ## Education & Foundations
 
 * **Completed 5-Year Engineering Curriculum Coursework in Computer Engineering (AASTMT):** Operating Systems Design, Relational Database Theory, Algorithms & Data Structures, SCADA Systems.
-* **Continuous Specialization:** Low-level LLM architecture (*AI Engineering from Scratch*), agentic CLI engineering (Antigravity), and open-source data pipelines (`php-jobspy`, `freeworld-job-finder`).
+* **Continuous Specialization:** AI engineering and agentic CLI workflows, open-source data pipelines (`php-jobspy`, `freeworld-job-finder`).
