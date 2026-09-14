@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Amiri, Inter } from 'next/font/google'
 import Script from 'next/script'
+import { NavigationProgressBar } from '@/components/NavigationProgressBar'
 import './globals.css'
 
 const _amiri = Amiri({
@@ -93,6 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* End Google Tag Manager */}
       </head>
       <body className={`${_amiri.variable} ${_inter.variable} font-sans antialiased`}>
+        <NavigationProgressBar />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
