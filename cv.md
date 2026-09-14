@@ -2,7 +2,7 @@
 **Senior FullStack Engineer | Software Architect**  
 *Specialization: High-Concurrency Web Platforms | Modern PHP (Symfony / Drupal / WordPress) | React / Python FastAPI | Database Architecture*
 
-* **Location:** Cairo, Egypt (Available for Immediate Remote / B2B Contract | Open to Relocation to the Netherlands / EU)
+* **Location:** Cairo, Egypt (Available for Immediate Remote / B2B Contract | Open to Relocation)
 * **Email:** alex.seif@gmail.com
 * **Phone:** +201004006332
 * **LinkedIn:** [linkedin.com/in/alexseif](https://linkedin.com/in/alexseif)

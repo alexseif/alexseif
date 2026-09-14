@@ -2,7 +2,7 @@
 **Senior FullStack Engineer | Software Architect**  
 *Specialization: Modern PHP (Symfony / PHP 8.x) | TypeScript & React | High-Concurrency Web Platforms | Database Architecture*
 
-* **Location:** Cairo, Egypt (Relocating to Amsterdam / Netherlands | IND High Skilled Migrant Sponsorship Ready | 30% Ruling Eligible)
+* **Location:** Cairo, Egypt (Available for Immediate Remote / B2B Contract | Open to Relocation)
 * **Email:** alex.seif@gmail.com
 * **Phone:** +201004006332
 * **LinkedIn:** [linkedin.com/in/alexseif](https://linkedin.com/in/alexseif)
