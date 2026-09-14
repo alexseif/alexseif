@@ -34,22 +34,22 @@ def main():
     print("Target Role: Senior Software Architect (€90k+ Tier - Netherlands)")
     print("============================================================")
 
-    # 1. Update Resume.md
-    print("[1/4] Compiling Resume.md with updated project dossiers...")
-    res = subprocess.run([sys.executable, str(ROOT_DIR / "update_resume.py")], cwd=str(ROOT_DIR))
-    if res.returncode != 0:
-        print("[ERROR] Failed to compile Resume.md")
+    # 1. Verify cv.md canonical source
+    cv_path = ROOT_DIR / "cv.md"
+    if not cv_path.exists():
+        print(f"[ERROR] Canonical cv.md not found at {cv_path}")
         sys.exit(1)
+    print(f"[1/3] Verified canonical CV source: {cv_path.name}")
 
     # 2. Build Next.js
-    print("[2/4] Building Next.js production bundle with latest resume content...")
+    print("[2/3] Building Next.js production bundle from cv.md...")
     res = subprocess.run(["npm", "run", "build"], cwd=str(FRONTEND_DIR), stdout=subprocess.DEVNULL)
     if res.returncode != 0:
         print("[ERROR] Next.js build failed")
         sys.exit(1)
 
     # 3. Start temporary next server
-    print(f"[3/4] Launching headless Next.js server on port {PORT}...")
+    print(f"[3/3] Launching headless Next.js server on port {PORT} & generating PDF...")
     server_proc = subprocess.Popen(
         ["npx", "next", "start", "-p", str(PORT)],
         cwd=str(FRONTEND_DIR),
