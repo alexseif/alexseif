@@ -1,80 +1,34 @@
 import React from "react";
-import { FileCheck, ShieldCheck, Lock, Clock, ArrowRight } from "lucide-react";
-import { BrevoButton } from "./BrevoButton";
+import Link from "next/link";
+import { Landmark, ArrowRight } from "lucide-react";
 
 export const NGOPartnerSection = () => {
-  const deliverables = [
-    {
-      icon: FileCheck,
-      title: "Donor & Transparency Portals",
-      description: "High-integrity web platforms built for UN, GIZ, and EU reporting standards and public donor accountability."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Agency & Vendor Oversight",
-      description: "Independent technical review of third-party agency deliverables, validating code quality and data integrity before sign-off."
-    },
-    {
-      icon: Lock,
-      title: "Data Sovereignty & Security",
-      description: "Multilingual systems engineered with strict data sovereignty, GDPR compliance, and perimeter security zoning."
-    },
-    {
-      icon: Clock,
-      title: "Technical Retainer & Continuity",
-      description: "Direct architectural ownership and on-call engineering availability for critical operational cutovers."
-    }
-  ];
-
   return (
-    <section className="py-20 px-6 relative bg-card/10 border-t border-border/30">
+    <section className="py-12 px-6 relative bg-card/10 border-t border-border/30">
       <div className="max-w-6xl mx-auto">
-        <div className="space-y-16">
-          {/* Header */}
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
-              // Institutional & Civic Platforms
-            </p>
-            <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
-              Institutional & NGO Platforms
-            </h2>
-            <p className="text-foreground/80 font-mono text-sm md:text-base leading-relaxed text-center pt-2">
-              Transparency portals, donor reporting dashboards, and civic data systems require dedicated technical governance. I provide hands-on architectural ownership: ensuring multilingual data sovereignty, compliance with UN, EU, and GIZ institutional donors, and vendor accountability without agency overhead.
+        <div className="p-8 md:p-10 border border-border/50 bg-background/60 rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-primary/40 transition-colors">
+          <div className="space-y-3 max-w-2xl">
+            <div className="flex items-center gap-2">
+              <Landmark className="h-4 w-4 text-primary" />
+              <span className="text-primary text-xs font-mono tracking-widest uppercase">
+                Civic & Institutional Platforms // Governance
+              </span>
+            </div>
+            <h3 className="text-foreground text-xl md:text-2xl font-sans font-light tracking-wide">
+              NGO Technical Partner & Institutional Architecture
+            </h3>
+            <p className="text-foreground/75 text-sm md:text-base font-mono leading-relaxed">
+              Hands-on architectural ownership for donor transparency portals and civic platforms. Ensuring multilingual data sovereignty, UN, EU, and GIZ compliance, and independent vendor oversight.
             </p>
           </div>
 
-          {/* 4 Pillars Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deliverables.map((item, index) => (
-              <div
-                key={index}
-                className="bg-background border border-border/50 p-6 space-y-4 group hover:border-primary/50 transition-colors flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="h-10 w-10 bg-primary/10 flex items-center justify-center rounded-sm border border-primary/20">
-                    <item.icon className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                  </div>
-                  <h3 className="text-foreground font-sans font-medium uppercase tracking-wider text-sm">
-                    {item.title}
-                  </h3>
-                  <p className="text-foreground/70 font-mono text-xs leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="flex justify-center pt-4">
-            <BrevoButton
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono text-xs tracking-widest uppercase px-8 py-4 rounded-sm group shadow-md inline-flex items-center justify-center cursor-pointer transition-colors"
-              ariaLabel="Discuss Your Platform or Program"
-            >
-              Discuss Your Platform or Program
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </BrevoButton>
-          </div>
+          <Link
+            href="/ngo-technical-partner"
+            className="inline-flex items-center gap-2 shrink-0 bg-primary/10 text-primary border border-primary/40 hover:bg-primary/20 transition-all font-mono text-xs tracking-widest uppercase px-6 py-4 rounded-sm shadow-sm group whitespace-nowrap"
+          >
+            Explore Partnership
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>
