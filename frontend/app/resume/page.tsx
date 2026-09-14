@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,6 +23,68 @@ function flattenChildren(node: React.ReactNode): string {
     return flattenChildren((node as any).props.children);
   }
   return "";
+}
+
+function parseCvHeader(headerText: string) {
+  const lines = headerText.split("\n").map((l) => l.trim()).filter(Boolean);
+  let name = "";
+  let title = "";
+  let specialization = "";
+  let location = "";
+  let email = "";
+  let phone = "";
+  let linkedinUrl = "";
+  let linkedinText = "";
+  let githubUrl = "";
+  let githubText = "";
+  let portfolioUrl = "";
+
+  for (const line of lines) {
+    if (line.startsWith("# ")) {
+      name = line.replace(/^#\s+/, "").trim();
+    } else if (line.startsWith("**") && line.endsWith("**")) {
+      title = line.replace(/^\*\*/, "").replace(/\*\*$/, "").trim();
+    } else if (line.startsWith("*Specialization:")) {
+      specialization = line.replace(/^\*Specialization:\s*/, "").replace(/\*$/, "").trim();
+    } else if (line.includes("**Location:**")) {
+      location = line.replace(/^.*?\*\*Location:\*\*\s*/, "").trim();
+    } else if (line.includes("**Email:**")) {
+      email = line.replace(/^.*?\*\*Email:\*\*\s*/, "").trim();
+    } else if (line.includes("**Phone:**")) {
+      phone = line.replace(/^.*?\*\*Phone:\*\*\s*/, "").trim();
+    } else if (line.includes("**LinkedIn:**")) {
+      const match = line.match(/\[(.*?)\]\((.*?)\)/);
+      if (match) {
+        linkedinText = match[1];
+        linkedinUrl = match[2];
+      }
+    } else if (line.includes("**GitHub:**")) {
+      const match = line.match(/\[(.*?)\]\((.*?)\)/);
+      if (match) {
+        githubText = match[1];
+        githubUrl = match[2];
+      }
+    } else if (line.includes("**Portfolio")) {
+      const match = line.match(/\[(.*?)\]\((.*?)\)/);
+      if (match) {
+        portfolioUrl = match[2];
+      }
+    }
+  }
+
+  return {
+    name,
+    title,
+    specialization,
+    location,
+    email,
+    phone,
+    linkedinUrl,
+    linkedinText,
+    githubUrl,
+    githubText,
+    portfolioUrl,
+  };
 }
 
 function parseResumeContent(content: string) {
@@ -59,12 +120,16 @@ function parseResumeContent(content: string) {
 }
 
 export default function ResumePage() {
-  const filePath = path.join(process.cwd(), "../Resume.md");
+  const filePath = path.join(process.cwd(), "../cv.md");
   const fileContents = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(fileContents);
 
+  const parts = fileContents.split(/\n---\s*\n/);
+  const headerBlock = parts[0];
+  const bodyContent = parts.slice(1).join("\n---\n");
+
+  const header = parseCvHeader(headerBlock);
   const { summary, stack, portfolio, experience, credentials } =
-    parseResumeContent(content);
+    parseResumeContent(bodyContent);
   const processedExperience = experience.replace(
     /^\*\*(.*?)\*\*\s*\|\s*(.*?)$/gm,
     "###### $1 | $2"
@@ -134,23 +199,66 @@ export default function ResumePage() {
           {/* Header Block */}
           <header className="border-b-2 border-gray-900 pb-3 mb-3">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1 text-gray-900">
-              {data.name}
+              {header.name}
             </h1>
-            <h2 className="text-lg md:text-xl text-gray-700 font-semibold mb-2">
-              {data.title}
+            <h2 className="text-lg md:text-xl text-gray-700 font-semibold mb-1">
+              {header.title}
             </h2>
+            {header.specialization && (
+              <p className="text-xs md:text-sm text-gray-600 italic mb-2">
+                Specialization: {header.specialization}
+              </p>
+            )}
 
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs md:text-sm text-gray-600 font-medium">
-              <a href={"mailto:" + data.email} className="hover:text-black transition-colors">
-                {data.email}
-              </a>
-              <span>•</span>
-              <span>{data.phone}</span>
-              <span>•</span>
-              <span>{data.location}</span>
-              <span>•</span>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs md:text-sm text-gray-600 font-medium">
+              {header.email && (
+                <>
+                  <a href={`mailto:${header.email}`} className="hover:text-black transition-colors">
+                    {header.email}
+                  </a>
+                  <span>•</span>
+                </>
+              )}
+              {header.phone && (
+                <>
+                  <span>{header.phone}</span>
+                  <span>•</span>
+                </>
+              )}
+              {header.location && (
+                <>
+                  <span>{header.location}</span>
+                  <span>•</span>
+                </>
+              )}
+              {header.linkedinUrl && (
+                <>
+                  <a
+                    href={header.linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-black font-semibold text-gray-900 underline transition-colors"
+                  >
+                    {header.linkedinText || "LinkedIn"}
+                  </a>
+                  <span>•</span>
+                </>
+              )}
+              {header.githubUrl && (
+                <>
+                  <a
+                    href={header.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-black font-semibold text-gray-900 underline transition-colors"
+                  >
+                    {header.githubText || "GitHub"}
+                  </a>
+                  <span>•</span>
+                </>
+              )}
               <a
-                href={data.website || "https://alexseif.com"}
+                href={header.portfolioUrl || "https://alexseif.com"}
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-black font-semibold text-gray-900 underline transition-colors"
