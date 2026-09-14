@@ -18,7 +18,7 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Alex Seif",
-    "jobTitle": "Software Architect | Senior Full-Stack Engineer",
+    "jobTitle": "Software Architect | Full-Stack Engineer",
     "url": "https://alexseif.com",
     "sameAs": [
       "https://github.com/alexseif"
