@@ -19,13 +19,13 @@ const stats: Stat[] = [
   },
   {
     count: "40M+",
-    label: "Concurrent Citizens Served",
-    subtext: "Built to stay strong during peak traffic rushes.",
+    label: "Citizens Served Nationwide",
+    subtext: "Public sector infrastructure engineered for peak transactional stability.",
   },
   {
     count: "33%",
     label: "National Air Travel",
-    subtext: "Processing a third of our national airways' payments.",
+    subtext: "Solely engineered payment engine processing a third of domestic ticketing.",
   },
   {
     count: "15,800+",
