@@ -13,9 +13,9 @@ const stats: Stat[] = [
     subtext: "Digital web systems serving citizens directly.",
   },
   {
-    count: "55+",
-    label: "Architectural Systems",
-    subtext: "Documented enterprise deployments and engineering case studies.",
+    count: "20+ Years",
+    label: "Production Engineering",
+    subtext: "Hands-on delivery across enterprise web and decoupled architectures.",
   },
   {
     count: "40M+",
