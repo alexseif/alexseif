@@ -182,3 +182,19 @@
   animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Page entrance transition */
+@keyframes route-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.route-transition-enter {
+  animation: route-fade-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
