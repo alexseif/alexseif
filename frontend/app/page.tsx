@@ -6,6 +6,7 @@ import { NGOPartnerSection } from "@/components/home/NGOPartnerSection";
 import { CaseStudiesSection } from "@/components/home/CaseStudiesSection";
 import { PathDiscoverySection } from "@/components/home/PathDiscoverySection";
 import { WorldMapSection } from "@/components/home/WorldMapSection";
+import { FloatingActionDock } from "@/components/home/FloatingActionDock";
 import { Footer } from "@/components/Footer";
 
 export default async function HomePage() {
@@ -17,7 +18,7 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Alex Seif",
-    "jobTitle": "Software Architect & NGO Technical Partner",
+    "jobTitle": "Software Architect | Senior Full-Stack Engineer",
     "url": "https://alexseif.com",
     "sameAs": [
       "https://github.com/alexseif"
@@ -46,6 +47,7 @@ export default async function HomePage() {
         <CaseStudiesSection eliteProjects={eliteProjects} />
         <PathDiscoverySection />
         <WorldMapSection />
+        <FloatingActionDock />
         <Footer />
       </main>
     </>
