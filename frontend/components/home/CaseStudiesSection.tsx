@@ -62,6 +62,17 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
             ))}
           </div>
 
+          <div className="flex justify-center pt-4">
+            <Link href="/case-studies">
+              <Button
+                variant="outline"
+                className="font-mono text-xs tracking-widest uppercase border-primary/30 text-foreground hover:bg-primary/10 hover:text-primary transition-all px-8 py-6 rounded-sm cursor-pointer"
+              >
+                Access Complete Vault
+              </Button>
+            </Link>
+          </div>
+
           {/* Core Architectural Stack & Production Technologies */}
           <div className="pt-12 border-t border-border/40 space-y-6">
             <div className="space-y-1">
@@ -73,17 +84,6 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
               </h3>
             </div>
             <TechStackGrid />
-          </div>
-
-          <div className="flex justify-center pt-4">
-            <Link href="/case-studies">
-              <Button
-                variant="outline"
-                className="font-mono text-xs tracking-widest uppercase border-primary/30 text-foreground hover:bg-primary/10 hover:text-primary transition-all px-8 py-6 rounded-sm cursor-pointer"
-              >
-                Access Complete Vault
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
