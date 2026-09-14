@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TechStackGrid } from "@/components/home/TechStackGrid";
 
 export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) => {
   return (
@@ -61,7 +62,20 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
             ))}
           </div>
 
-          <div className="flex justify-center pt-8">
+          {/* Core Architectural Stack & Production Technologies */}
+          <div className="pt-12 border-t border-border/40 space-y-6">
+            <div className="space-y-1">
+              <span className="text-primary text-xs font-mono tracking-widest uppercase">
+                // PRODUCTION ARCHITECTURAL STACK
+              </span>
+              <h3 className="text-foreground text-lg md:text-xl font-sans font-light tracking-wide">
+                Core Technologies & Production Systems
+              </h3>
+            </div>
+            <TechStackGrid />
+          </div>
+
+          <div className="flex justify-center pt-4">
             <Link href="/case-studies">
               <Button
                 variant="outline"
