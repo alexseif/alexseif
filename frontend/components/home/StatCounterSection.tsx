@@ -73,26 +73,6 @@ export function StatCounterSection() {
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
       </div>
 
-      <div className="flex flex-col items-center justify-center px-6 relative pb-16">
-        <div className="text-center space-y-10 max-w-4xl relative z-10">
-          <div className="space-y-6">
-            <p
-              className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary leading-tight"
-              style={{
-                fontFamily: "var(--font-arabic)",
-                fontWeight: 700,
-                textShadow: "0 0 8px hsl(var(--primary) / 0.35)",
-              }}
-              dir="rtl"
-            >
-              «وَعَمَلَ أَيْدِينَا ثَبِّتْهُ»
-            </p>
-            <p className="text-foreground/70 tracking-[0.2em] uppercase font-sans">
-              “Establish the work of our hands.”
-            </p>
-          </div>
-        </div>
-      </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="space-y-16 md:space-y-24">
