@@ -41,9 +41,9 @@ export default async function HomePage() {
         <StatCounterSection />
         <CaseStudiesSection eliteProjects={eliteProjects} />
         <SpecializedOfferingsSection />
-        <FloatingActionDock />
         <Footer />
       </main>
+      <FloatingActionDock />
     </>
   );
 }

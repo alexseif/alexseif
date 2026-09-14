@@ -23,7 +23,7 @@ export const FloatingActionDock = () => {
           className="inline-flex items-center gap-2 bg-card/70 text-foreground hover:text-primary hover:border-primary/40 border border-border/60 transition-all font-mono text-xs tracking-wider uppercase px-4 py-2 rounded-full"
         >
           <FileText className="h-3.5 w-3.5" />
-          <span>Executive CV (PDF)</span>
+          <span>Resume</span>
         </Link>
       </nav>
     </aside>
