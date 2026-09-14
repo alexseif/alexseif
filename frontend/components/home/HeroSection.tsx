@@ -46,9 +46,19 @@ export const HeroSection = () => {
         </div>
 
         {/* Minimal High-Impact Core Pitch */}
-        <div className="pt-2">
+        <div className="pt-5 pb-1">
           <p className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-mono text-center">
-            20 years of copy-pasting until AI came along.
+            20 years of{" "}
+            <span className="relative inline-block group/edit cursor-pointer select-none">
+              <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs md:text-sm font-mono font-semibold text-primary tracking-wider uppercase whitespace-nowrap opacity-0 group-hover/edit:opacity-100 translate-y-1 group-hover/edit:translate-y-0 transition-all duration-300 pointer-events-none drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]">
+                Web Development
+              </span>
+              <span className="relative inline-block transition-colors duration-300 group-hover/edit:text-foreground/40">
+                copy-pasting
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] w-0 bg-primary group-hover/edit:w-full transition-all duration-300 ease-out" />
+              </span>
+            </span>{" "}
+            until AI came along.
           </p>
         </div>
 
