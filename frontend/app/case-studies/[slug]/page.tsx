@@ -63,7 +63,7 @@ export default async function CaseStudyPage({
       </h1>
     ),
     h2: ({ children }: { children?: ReactNode }) => (
-      <h2 className="text-2xl font-sans font-light tracking-wide text-foreground/90 mt-12 mb-6 border-b border-border/20 pb-2">
+      <h2 className="text-2xl font-sans font-light tracking-wide text-foreground mt-12 mb-6 border-b border-border/20 pb-2">
         {children}
       </h2>
     ),
@@ -74,17 +74,17 @@ export default async function CaseStudyPage({
       </h3>
     ),
     h4: ({ children }: { children?: ReactNode }) => (
-      <h4 className="text-lg font-sans font-medium tracking-wide text-foreground/90 mt-8 mb-3">
+      <h4 className="text-lg font-sans font-medium tracking-wide text-foreground mt-8 mb-3">
         {children}
       </h4>
     ),
     p: ({ children }: { children?: ReactNode }) => (
-      <p className="text-foreground/80 leading-relaxed mb-6 text-base md:text-lg font-light">
+      <p className="text-foreground leading-relaxed mb-6 text-base md:text-lg font-light">
         {children}
       </p>
     ),
     ul: ({ children }: { children?: ReactNode }) => (
-      <ul className="space-y-3 mb-8 text-foreground/80 leading-relaxed list-none ml-0 pl-0">
+      <ul className="space-y-3 mb-8 text-foreground leading-relaxed list-none ml-0 pl-0">
         {children}
       </ul>
     ),
@@ -110,14 +110,14 @@ export default async function CaseStudyPage({
       </a>
     ),
     blockquote: ({ children }: { children?: ReactNode }) => (
-      <blockquote className="border-l-2 border-primary/50 pl-6 my-8 text-foreground/75 italic bg-card/20 py-4 pr-4 rounded-r-sm">
+      <blockquote className="border-l-2 border-primary/50 pl-6 my-8 text-foreground italic bg-card/20 py-4 pr-4 rounded-r-sm">
         {children}
       </blockquote>
     ),
     // Monospace Blueprint Terminal Frame for Architecture Box Diagrams & Code Blocks
     pre: ({ children }: { children?: ReactNode }) => (
       <div className="my-8 border border-primary/30 bg-[#07090e] rounded-sm overflow-hidden shadow-2xl">
-        <div className="flex items-center justify-between px-4 py-2 bg-card/60 border-b border-border/40 text-xs font-mono text-foreground/60">
+        <div className="flex items-center justify-between px-4 py-2 bg-card/60 border-b border-border/40 text-xs font-mono text-foreground">
           <div className="flex items-center gap-2">
             <Cpu className="h-3.5 w-3.5 text-primary" />
             <span className="tracking-widest uppercase text-[11px] text-primary">
@@ -131,7 +131,7 @@ export default async function CaseStudyPage({
           </div>
         </div>
         <div className="p-4 md:p-6 overflow-x-auto">
-          <pre className="font-mono text-xs md:text-sm text-foreground/90 leading-relaxed whitespace-pre font-light">
+          <pre className="font-mono text-xs md:text-sm text-foreground leading-relaxed whitespace-pre font-light">
             {children}
           </pre>
         </div>
@@ -190,7 +190,7 @@ export default async function CaseStudyPage({
       </th>
     ),
     td: ({ children }: { children?: ReactNode }) => (
-      <td className="px-4 py-3 text-foreground/80 font-light text-sm">{children}</td>
+      <td className="px-4 py-3 text-foreground font-light text-sm">{children}</td>
     ),
   };
 
@@ -219,7 +219,7 @@ export default async function CaseStudyPage({
           <div className="mb-12 md:mb-20">
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-foreground/50 hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
+              className="inline-flex items-center gap-2 text-foreground hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
               Return to Project Vault
@@ -242,7 +242,7 @@ export default async function CaseStudyPage({
                     {project.title}
                   </h1>
                   {project.subtitle && (
-                    <p className="text-foreground/60 text-sm leading-relaxed">
+                    <p className="text-foreground text-sm leading-relaxed">
                       {project.subtitle}
                     </p>
                   )}
@@ -252,10 +252,10 @@ export default async function CaseStudyPage({
                 <div className="space-y-6 pb-8 border-b border-border/50">
                   {project.year > 0 && (
                     <div className="flex flex-col gap-1">
-                      <span className="text-[10px] text-foreground/40 font-mono tracking-widest uppercase">
+                      <span className="text-[10px] text-foreground font-mono tracking-widest uppercase">
                         Timeline
                       </span>
-                      <span className="text-foreground/90 font-mono text-sm">
+                      <span className="text-foreground font-mono text-sm">
                         {project.year}
                       </span>
                     </div>
@@ -263,10 +263,10 @@ export default async function CaseStudyPage({
 
                   {project.agency && (
                     <div className="flex flex-col gap-1">
-                      <span className="text-[10px] text-foreground/40 font-mono tracking-widest uppercase">
+                      <span className="text-[10px] text-foreground font-mono tracking-widest uppercase">
                         Engagement Role
                       </span>
-                      <div className="flex items-center gap-2 text-foreground/90 text-sm">
+                      <div className="flex items-center gap-2 text-foreground text-sm">
                         <ShieldAlert className="h-3.5 w-3.5 text-primary" />
                         {project.agency}
                       </div>
@@ -275,10 +275,10 @@ export default async function CaseStudyPage({
 
                   {project.industry && (
                     <div className="flex flex-col gap-1">
-                      <span className="text-[10px] text-foreground/40 font-mono tracking-widest uppercase">
+                      <span className="text-[10px] text-foreground font-mono tracking-widest uppercase">
                         Market Sector // Industry
                       </span>
-                      <div className="flex items-center gap-2 text-foreground/90 text-sm">
+                      <div className="flex items-center gap-2 text-foreground text-sm">
                         <Briefcase className="h-3.5 w-3.5 text-primary" />
                         {project.industry}
                       </div>
@@ -287,10 +287,10 @@ export default async function CaseStudyPage({
 
                   {project.client_type && (
                     <div className="flex flex-col gap-1">
-                      <span className="text-[10px] text-foreground/40 font-mono tracking-widest uppercase">
+                      <span className="text-[10px] text-foreground font-mono tracking-widest uppercase">
                         Architecture Identity
                       </span>
-                      <div className="flex items-center gap-2 text-foreground/90 text-sm">
+                      <div className="flex items-center gap-2 text-foreground text-sm">
                         <Building2 className="h-3.5 w-3.5 text-primary" />
                         {project.client_type}
                       </div>
@@ -299,10 +299,10 @@ export default async function CaseStudyPage({
 
                   {project.url && (
                     <div className="flex flex-col gap-1">
-                      <span className="text-[10px] text-foreground/40 font-mono tracking-widest uppercase">
+                      <span className="text-[10px] text-foreground font-mono tracking-widest uppercase">
                         Network Context
                       </span>
-                      <div className="flex items-center gap-2 text-foreground/90 text-sm">
+                      <div className="flex items-center gap-2 text-foreground text-sm">
                         <Server className="h-3.5 w-3.5 text-primary" />
                         {project.url}
                       </div>
@@ -314,8 +314,8 @@ export default async function CaseStudyPage({
                 {project.tech_stack && project.tech_stack.length > 0 && (
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
-                      <Code2 className="h-4 w-4 text-foreground/40" />
-                      <span className="text-[10px] text-foreground/40 font-mono tracking-widest uppercase">
+                      <Code2 className="h-4 w-4 text-foreground" />
+                      <span className="text-[10px] text-foreground font-mono tracking-widest uppercase">
                         Technical Stack
                       </span>
                     </div>

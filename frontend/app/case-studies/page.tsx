@@ -47,7 +47,7 @@ export default async function CaseStudiesIndex() {
           <div className="mb-12 md:mb-20">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-foreground/50 hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
+              className="inline-flex items-center gap-2 text-foreground hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
               Return to Core
@@ -66,7 +66,7 @@ export default async function CaseStudiesIndex() {
               <h1 className="text-3xl md:text-5xl font-sans font-light tracking-wide text-foreground leading-tight">
                 Architectural Vault & Case Studies
               </h1>
-              <p className="text-foreground/70 text-lg leading-relaxed pt-4">
+              <p className="text-foreground text-lg leading-relaxed pt-4">
                 Raw engineering validation. Access the complete index of architectural deployments,
                 mission-critical public infrastructure, and technical leadership engagements.
               </p>
@@ -102,12 +102,12 @@ export default async function CaseStudiesIndex() {
                                 {project.year}
                               </span>
                               {project.industry && (
-                                <span className="text-xs font-mono text-primary/80 tracking-wide uppercase">
+                                <span className="text-xs font-mono text-primary tracking-wide uppercase">
                                   // {project.industry}
                                 </span>
                               )}
                             </div>
-                            <ArrowRight className="h-4 w-4 text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all mr-6" />
+                            <ArrowRight className="h-4 w-4 text-foreground group-hover:text-primary group-hover:translate-x-1 transition-all mr-6" />
                           </div>
 
                           <h3 className="text-foreground text-2xl font-sans font-light tracking-wide group-hover:text-primary transition-colors">
@@ -120,7 +120,7 @@ export default async function CaseStudiesIndex() {
                             </p>
                           )}
 
-                          <p className="text-foreground/75 text-sm leading-relaxed line-clamp-3">
+                          <p className="text-foreground text-sm leading-relaxed line-clamp-3">
                             {project.subtitle}
                           </p>
                         </div>
@@ -136,7 +136,7 @@ export default async function CaseStudiesIndex() {
                               </span>
                             ))}
                             {project.tech_stack.length > 4 && (
-                              <span className="text-[10px] text-foreground/50 font-mono tracking-wider uppercase px-2 py-1">
+                              <span className="text-[10px] text-foreground font-mono tracking-wider uppercase px-2 py-1">
                                 +{project.tech_stack.length - 4}
                               </span>
                             )}
@@ -153,11 +153,11 @@ export default async function CaseStudiesIndex() {
             {archiveProjects.length > 0 && (
               <section className="space-y-8">
                 <div className="flex items-center gap-3 border-b border-border/40 pb-4">
-                  <Layers className="h-5 w-5 text-foreground/50" />
-                  <h2 className="text-xl md:text-2xl font-sans font-light tracking-wide text-foreground/90">
+                  <Layers className="h-5 w-5 text-foreground" />
+                  <h2 className="text-xl md:text-2xl font-sans font-light tracking-wide text-foreground">
                     Project Archive
                   </h2>
-                  <span className="text-xs font-mono text-foreground/40 ml-auto uppercase tracking-widest">
+                  <span className="text-xs font-mono text-foreground ml-auto uppercase tracking-widest">
                     [{archiveProjects.length} Systems]
                   </span>
                 </div>
@@ -173,17 +173,17 @@ export default async function CaseStudiesIndex() {
                                 {project.year}
                               </span>
                               {project.industry && (
-                                <span className="text-[11px] font-mono text-foreground/50 tracking-wide uppercase">
+                                <span className="text-[11px] font-mono text-foreground tracking-wide uppercase">
                                   // {project.industry}
                                 </span>
                               )}
                             </div>
-                            <ArrowRight className="h-4 w-4 text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                            <ArrowRight className="h-4 w-4 text-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                           </div>
                           <h3 className="text-foreground text-xl font-sans font-light tracking-wide group-hover:text-primary transition-colors">
                             {project.title}
                           </h3>
-                          <p className="text-foreground/70 text-sm leading-relaxed line-clamp-3">
+                          <p className="text-foreground text-sm leading-relaxed line-clamp-3">
                             {project.subtitle}
                           </p>
                         </div>
@@ -192,13 +192,13 @@ export default async function CaseStudiesIndex() {
                             {project.tech_stack.slice(0, 3).map((tech: string) => (
                               <span
                                 key={tech}
-                                className="text-[10px] text-foreground/50 font-mono tracking-wider uppercase bg-card px-2 py-1 border border-border/50"
+                                className="text-[10px] text-foreground font-mono tracking-wider uppercase bg-card px-2 py-1 border border-border/50"
                               >
                                 {tech}
                               </span>
                             ))}
                             {project.tech_stack.length > 3 && (
-                              <span className="text-[10px] text-foreground/50 font-mono tracking-wider uppercase px-2 py-1">
+                              <span className="text-[10px] text-foreground font-mono tracking-wider uppercase px-2 py-1">
                                 +{project.tech_stack.length - 3}
                               </span>
                             )}

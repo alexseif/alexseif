@@ -44,7 +44,7 @@ export default function RequirementsElicitationPage() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-foreground/50 hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
+              className="inline-flex items-center gap-2 text-foreground hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
               Return to Core
@@ -62,7 +62,7 @@ export default function RequirementsElicitationPage() {
             <h1 className="text-3xl md:text-5xl font-sans font-light tracking-wide text-foreground leading-tight">
               Requirements Elicitation & Software Architecture Consultation
             </h1>
-            <p className="text-foreground/80 text-lg md:text-xl font-mono leading-relaxed pt-2">
+            <p className="text-foreground text-lg md:text-xl font-mono leading-relaxed pt-2">
               Sound architecture decisions help most when the end goal is vague. When your vision is still evolving, we eliminate costly guesswork upfront by establishing decoupled boundaries and clean data foundations that allow your system to adapt without total rewrites.
             </p>
           </section>
@@ -78,8 +78,8 @@ export default function RequirementsElicitationPage() {
                 Architectural Clarity in Uncertain Environments
               </h2>
             </div>
-            <div className="md:col-span-8 space-y-6 text-foreground/80 font-mono text-sm md:text-base leading-relaxed">
-              <div className="p-5 border-l-2 border-primary bg-primary/5 text-foreground/90 space-y-2">
+            <div className="md:col-span-8 space-y-6 text-foreground font-mono text-sm md:text-base leading-relaxed">
+              <div className="p-5 border-l-2 border-primary bg-primary/5 text-foreground space-y-2">
                 <p className="font-semibold text-primary text-xs uppercase tracking-wider font-mono">
                   // The Architecture Paradox
                 </p>
@@ -116,7 +116,7 @@ export default function RequirementsElicitationPage() {
                 <h3 className="text-xl font-sans font-light text-foreground">
                   Domain & Constraint Elicitation
                 </h3>
-                <p className="text-foreground/75 font-mono text-sm leading-relaxed">
+                <p className="text-foreground font-mono text-sm leading-relaxed">
                   Deep-dive stakeholder sessions to extract the real business workflows, user roles, security boundaries, and SLA requirements.
                 </p>
               </div>
@@ -129,7 +129,7 @@ export default function RequirementsElicitationPage() {
                 <h3 className="text-xl font-sans font-light text-foreground">
                   Schema & Boundary Modeling
                 </h3>
-                <p className="text-foreground/75 font-mono text-sm leading-relaxed">
+                <p className="text-foreground font-mono text-sm leading-relaxed">
                   Relational data modeling (3NF/Star schemas), API payload specifications, asynchronous queue logic, and system topology mapping.
                 </p>
               </div>
@@ -142,7 +142,7 @@ export default function RequirementsElicitationPage() {
                 <h3 className="text-xl font-sans font-light text-foreground">
                   Architecture Blueprint Delivery
                 </h3>
-                <p className="text-foreground/75 font-mono text-sm leading-relaxed">
+                <p className="text-foreground font-mono text-sm leading-relaxed">
                   A comprehensive, turnkey Architecture Decision Record (ADR) and technical specification ready for immediate developer execution.
                 </p>
               </div>
@@ -185,7 +185,7 @@ export default function RequirementsElicitationPage() {
                     <h3 className="text-foreground font-sans text-base font-medium">
                       {item.title}
                     </h3>
-                    <p className="text-foreground/70 font-mono text-xs leading-relaxed">
+                    <p className="text-foreground font-mono text-xs leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -203,7 +203,7 @@ export default function RequirementsElicitationPage() {
               <h2 className="text-2xl md:text-4xl font-sans font-light tracking-wide text-foreground">
                 Validate Your Architecture Before You Build
               </h2>
-              <p className="text-foreground/80 font-mono text-sm md:text-base leading-relaxed">
+              <p className="text-foreground font-mono text-sm md:text-base leading-relaxed">
                 Whether you are starting a high-stakes new build, decoupling a fragile legacy system, or seeking vendor oversight, let's establish the architectural truth upfront.
               </p>
             </div>

@@ -98,7 +98,7 @@ export default function NGOPartnerPage() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-foreground/50 hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
+              className="inline-flex items-center gap-2 text-foreground hover:text-primary font-mono text-xs uppercase tracking-widest transition-colors group"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
               Return to Core
@@ -116,7 +116,7 @@ export default function NGOPartnerPage() {
             <h1 className="text-3xl md:text-5xl font-sans font-light tracking-wide text-foreground leading-tight">
               NGO Technical Partner & Institutional Architecture
             </h1>
-            <p className="text-foreground/80 text-lg md:text-xl font-mono leading-relaxed pt-2">
+            <p className="text-foreground text-lg md:text-xl font-mono leading-relaxed pt-2">
               Transparency portals, donor reporting dashboards, and civic platforms require dedicated technical governance. I provide hands-on architectural ownership: ensuring multilingual data sovereignty, institutional donor compliance, and vendor accountability without digital agency overhead.
             </p>
           </section>
@@ -132,8 +132,8 @@ export default function NGOPartnerPage() {
                 Why Civic Systems Require Independent Architecture
               </h2>
             </div>
-            <div className="md:col-span-8 space-y-6 text-foreground/80 font-mono text-sm md:text-base leading-relaxed">
-              <div className="p-5 border-l-2 border-primary bg-primary/5 text-foreground/90 space-y-2">
+            <div className="md:col-span-8 space-y-6 text-foreground font-mono text-sm md:text-base leading-relaxed">
+              <div className="p-5 border-l-2 border-primary bg-primary/5 text-foreground space-y-2">
                 <p className="font-semibold text-primary text-xs uppercase tracking-wider font-mono">
                   // The Institutional Dilemma
                 </p>
@@ -173,7 +173,7 @@ export default function NGOPartnerPage() {
                   <h3 className="text-foreground font-sans text-xl font-light tracking-wide">
                     {pillar.title}
                   </h3>
-                  <p className="text-foreground/75 font-mono text-sm leading-relaxed">
+                  <p className="text-foreground font-mono text-sm leading-relaxed">
                     {pillar.desc}
                   </p>
                 </div>
@@ -203,7 +203,7 @@ export default function NGOPartnerPage() {
                     <h4 className="text-foreground font-sans text-base font-medium">
                       {item.title}
                     </h4>
-                    <p className="text-foreground/70 font-mono text-xs leading-relaxed">
+                    <p className="text-foreground font-mono text-xs leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -222,13 +222,13 @@ export default function NGOPartnerPage() {
                 Case Study: North South Consultants Exchange (NSCE)
               </h3>
             </div>
-            <p className="text-foreground/80 font-mono text-sm md:text-base leading-relaxed">
+            <p className="text-foreground font-mono text-sm md:text-base leading-relaxed">
               NSCE is an international development consultancy tracking complex regional aid programs funded by UN agencies, GIZ, and the EU. Retained as Full-Stack Engineer and Architect to resolve widespread multilingual metadata corruption, decouple translation keys, and eliminate postmeta full-table scans with composite indexes.
             </p>
             <div>
               <Link
                 href="/case-studies/2025-nsce"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-mono text-xs tracking-widest uppercase font-medium group"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary font-mono text-xs tracking-widest uppercase font-medium group"
               >
                 Read Full NSCE Case Study
                 <ExternalLink className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -245,7 +245,7 @@ export default function NGOPartnerPage() {
               <h2 className="text-2xl md:text-4xl font-sans font-light tracking-wide text-foreground">
                 Discuss Your Platform or Program
               </h2>
-              <p className="text-foreground/80 font-mono text-sm md:text-base leading-relaxed">
+              <p className="text-foreground font-mono text-sm md:text-base leading-relaxed">
                 Whether you are launching a new donor portal, conducting vendor oversight, or preparing for an institutional audit, let's ensure your platform is built for lasting reliability.
               </p>
             </div>
