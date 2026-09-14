@@ -25,17 +25,17 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
                           {project.year}
                         </span>
                         {project.industry && (
-                          <span className="text-[11px] font-mono text-foreground/50 tracking-wide uppercase">
+                          <span className="text-[11px] font-mono text-foreground tracking-wide uppercase">
                             // {project.industry}
                           </span>
                         )}
                       </div>
-                      <ArrowRight className="h-4 w-4 text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                      <ArrowRight className="h-4 w-4 text-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                     </div>
                     <h3 className="text-foreground text-xl font-sans font-light tracking-wide group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-foreground/70 text-sm leading-relaxed">
+                    <p className="text-foreground text-sm leading-relaxed">
                       {project.subtitle}
                     </p>
                   </div>
@@ -44,13 +44,13 @@ export const CaseStudiesSection = ({ eliteProjects }: { eliteProjects: any[] }) 
                       {project.tech_stack.slice(0, 3).map((tech: string) => (
                         <span
                           key={tech}
-                          className="text-[10px] text-foreground/50 font-mono tracking-wider uppercase bg-card px-2 py-1 border border-border/50"
+                          className="text-[10px] text-foreground font-mono tracking-wider uppercase bg-card px-2 py-1 border border-border/50"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.tech_stack.length > 3 && (
-                        <span className="text-[10px] text-foreground/50 font-mono tracking-wider uppercase px-2 py-1">
+                        <span className="text-[10px] text-foreground font-mono tracking-wider uppercase px-2 py-1">
                           +{project.tech_stack.length - 3}
                         </span>
                       )}

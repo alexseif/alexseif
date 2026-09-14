@@ -14,12 +14,12 @@ export function Footer() {
             >
               أ. س.
             </p>
-            <p className="text-foreground/70 text-xs mt-2 tracking-wider uppercase">
+            <p className="text-foreground text-xs mt-2 tracking-wider uppercase">
               Alex Seif
             </p>
           </div>
 
-          <div className="flex items-center gap-8 text-xs text-foreground/70 font-mono">
+          <div className="flex items-center gap-8 text-xs text-foreground font-mono">
             <span title="Egypt">EG</span>
             <span title="United Arab Emirates">UAE</span>
             <span title="Kingdom Saudia of Arabia">KSA</span>
@@ -30,10 +30,10 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            <Link href="/resume" className="text-foreground/70/40 hover:text-primary transition-colors text-[10px] font-mono tracking-widest uppercase">
+            <Link href="/resume" className="text-foreground hover:text-primary transition-colors text-[10px] font-mono tracking-widest uppercase">
               [ Alex Seif CV.pdf ]
             </Link>
-            <p className="text-foreground/70/40 text-xs font-mono">
+            <p className="text-foreground text-xs font-mono">
               © MMXXVI
             </p>
             <Image

@@ -20,7 +20,7 @@ export const FloatingActionDock = () => {
 
         <Link
           href="/resume"
-          className="inline-flex items-center gap-2 bg-card/70 text-foreground/80 hover:text-primary hover:border-primary/40 border border-border/60 transition-all font-mono text-xs tracking-wider uppercase px-4 py-2 rounded-full"
+          className="inline-flex items-center gap-2 bg-card/70 text-foreground hover:text-primary hover:border-primary/40 border border-border/60 transition-all font-mono text-xs tracking-wider uppercase px-4 py-2 rounded-full"
         >
           <FileText className="h-3.5 w-3.5" />
           <span>Executive CV (PDF)</span>

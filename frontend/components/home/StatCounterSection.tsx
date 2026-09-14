@@ -44,7 +44,7 @@ function StatCard({ stat }: { stat: Stat }) {
     <div className="group flex flex-col space-y-5">
       <div className="flex items-center gap-6">
         <span
-          className="text-6xl md:text-7xl font-sans font-light text-foreground/90 tracking-tighter"
+          className="text-6xl md:text-7xl font-sans font-light text-foreground tracking-tighter"
           style={{ textShadow: "0 4px 24px hsl(var(--primary) / 0.15)" }}
         >
           {stat.count}
@@ -56,7 +56,7 @@ function StatCard({ stat }: { stat: Stat }) {
         <h3 className="text-lg md:text-xl font-sans text-primary tracking-wide">
           {stat.label}
         </h3>
-        <p className="text-[11px] md:text-xs text-foreground/70 font-mono tracking-[0.15em] uppercase leading-relaxed">
+        <p className="text-[11px] md:text-xs text-foreground font-mono tracking-[0.15em] uppercase leading-relaxed">
           {stat.subtext}
         </p>
       </div>

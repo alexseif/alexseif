@@ -28,7 +28,7 @@ export const SpecializedOfferingsSection = () => {
               <h3 className="text-foreground text-xl md:text-2xl font-sans font-light tracking-wide">
                 Requirements Elicitation & Architecture Consultation
               </h3>
-              <p className="text-foreground/75 text-sm md:text-base font-mono leading-relaxed">
+              <p className="text-foreground text-sm md:text-base font-mono leading-relaxed">
                 Eliminate costly architectural guesswork upfront. A focused sprint establishing decoupled system boundaries, data schemas, and build-ready blueprints before development begins.
               </p>
             </div>
@@ -56,7 +56,7 @@ export const SpecializedOfferingsSection = () => {
               <h3 className="text-foreground text-xl md:text-2xl font-sans font-light tracking-wide">
                 NGO Technical Partner & Civic Platforms
               </h3>
-              <p className="text-foreground/75 text-sm md:text-base font-mono leading-relaxed">
+              <p className="text-foreground text-sm md:text-base font-mono leading-relaxed">
                 Hands-on architectural ownership for donor transparency portals and civic systems. Ensuring multilingual data sovereignty, UN/EU/GIZ compliance, and independent vendor oversight.
               </p>
             </div>
