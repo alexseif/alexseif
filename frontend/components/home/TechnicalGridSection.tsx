@@ -10,19 +10,19 @@ export const TechnicalGridSection = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono">
-              // Web Architecture & Digital Platforms
+              // Systems Architecture & Production Engineering
             </p>
             <h2 className="text-foreground text-2xl md:text-3xl tracking-[0.2em] font-sans font-light uppercase">
               What I Actually Do
             </h2>
             <p className="text-foreground/75 text-sm md:text-base tracking-wide font-mono max-w-2xl mx-auto">
-              I design, rescue, and scale high-concurrency web applications, interactive portals, and enterprise websites:
+              I design, scale, and maintain high-concurrency web platforms, transactional engines, and data-intensive applications:
             </p>
           </div>
 
           {/* 3-Column Service Grid */}
           <div className="grid md:grid-cols-3 gap-px bg-border">
-            {/* 01: Custom Web Apps & New Platforms */}
+            {/* 01: High-Concurrency & Decoupled Platforms */}
             <div className="bg-background p-8 md:p-10 space-y-6 group hover:bg-card/50 transition-colors duration-500 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -32,14 +32,14 @@ export const TechnicalGridSection = () => {
                   <Globe className="h-5 w-5 text-primary transition-colors" />
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide leading-snug">
-                  Custom Web Apps & New Platforms
+                  High-Concurrency & Decoupled Platforms
                 </h3>
                 <p className="text-foreground/80 leading-relaxed font-mono text-sm">
-                  Designing scalable web applications, SaaS products, and interactive portals from scratch — establishing clean database schemas, fast API contracts, and rock-solid cloud setups before writing code.
+                  Architecting scalable platforms, Web GIS data pipelines, and transactional engines from scratch: establishing 3NF relational schemas, OpenAPI contracts, and deterministic cloud setups before writing code.
                 </p>
               </div>
               <div className="pt-4 flex flex-wrap gap-2 border-t border-border/40">
-                {["SaaS & Web Apps", "Interactive Portals", "Fast Web APIs"].map((tag) => (
+                {["Distributed Systems", "Decoupled APIs", "Web GIS & PostGIS"].map((tag) => (
                   <span
                     key={tag}
                     className="text-xs text-primary font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
@@ -50,7 +50,7 @@ export const TechnicalGridSection = () => {
               </div>
             </div>
 
-            {/* 02: Website Modernization & Speed */}
+            {/* 02: Zero-Downtime Migration & Performance */}
             <div className="bg-background p-8 md:p-10 space-y-6 group hover:bg-card/50 transition-colors duration-500 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -60,14 +60,14 @@ export const TechnicalGridSection = () => {
                   <RefreshCw className="h-5 w-5 text-primary transition-colors" />
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide leading-snug">
-                  Website Modernization & Speed
+                  Zero-Downtime Migration & Performance
                 </h3>
                 <p className="text-foreground/80 leading-relaxed font-mono text-sm">
-                  Decoupling sluggish web monoliths, optimizing database bottlenecks, and accelerating page load times under live production traffic with zero downtime to your users.
+                  Decoupling monolithic legacy platforms, resolving database query bottlenecks, and engineering sub-200ms latency under live production traffic with zero cutover downtime.
                 </p>
               </div>
               <div className="pt-4 flex flex-wrap gap-2 border-t border-border/40">
-                {["CMS Decoupling", "Web Performance", "Zero Downtime"].map((tag) => (
+                {["Database Normalization", "Redis Object Caching", "Zero Downtime"].map((tag) => (
                   <span
                     key={tag}
                     className="text-xs text-primary font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
@@ -78,7 +78,7 @@ export const TechnicalGridSection = () => {
               </div>
             </div>
 
-            {/* 03: Fractional Web Tech Lead */}
+            {/* 03: Architecture Ownership & Governance */}
             <div className="bg-background p-8 md:p-10 space-y-6 group hover:bg-card/50 transition-colors duration-500 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -88,14 +88,14 @@ export const TechnicalGridSection = () => {
                   <Users className="h-5 w-5 text-primary transition-colors" />
                 </div>
                 <h3 className="text-foreground text-xl font-sans font-light tracking-wide leading-snug">
-                  Fractional Web Tech Lead
+                  Architecture Ownership & Governance
                 </h3>
                 <p className="text-foreground/80 leading-relaxed font-mono text-sm">
-                  Acting as your embedded technical authority — overseeing developer teams and agencies, ensuring web data security & GDPR compliance, and eliminating technical debt across your digital estate.
+                  Providing end-to-end technical authority: establishing automated CI/CD quality gates, ensuring GDPR and PCI-DSS compliance, and eliminating architectural technical debt across systems.
                 </p>
               </div>
               <div className="pt-4 flex flex-wrap gap-2 border-t border-border/40">
-                {["Fractional CTO", "Agency Oversight", "Web Security"].map((tag) => (
+                {["Architecture Ownership", "GDPR & Compliance", "Deterministic CI/CD"].map((tag) => (
                   <span
                     key={tag}
                     className="text-xs text-primary font-mono border border-primary/20 bg-primary/5 px-2.5 py-1"
@@ -117,7 +117,7 @@ export const TechnicalGridSection = () => {
                 </span>
               </div>
               <h3 className="text-foreground text-xl md:text-2xl font-sans font-light tracking-wide">
-                Requirements Elicitation & Web Architecture Consultation
+                Requirements Elicitation & Software Architecture Consultation
               </h3>
               <p className="text-foreground/75 text-sm md:text-base font-mono leading-relaxed">
                 Sound architecture decisions help most when the end goal is vague. Before building a complex website or web app, a diagnostic consultation sprint establishes decoupled system boundaries and clean data foundations so your web platform can adapt without costly rewrites.
