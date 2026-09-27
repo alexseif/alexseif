@@ -4,7 +4,7 @@ title: "Intrade (Global Import & Export Product Catalog)"
 year: 2016
 client_name: "Intrade"
 client_type: "International Trade & Import/Export"
-industry: "International Trade & Logistics"
+industry: "Logistics & Global Trade"
 project_role: "Full-Stack Engineer"
 subtitle: "Delivered a structured B2B trade catalog and inquiry routing system on WordPress and PHP, optimizing product specification delivery for low-bandwidth global commercial partners."
 tech_stack:

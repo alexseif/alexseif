@@ -4,7 +4,7 @@ title: "The Greek Community of Alexandria (Portal & Transparency Engine)"
 year: 2015
 client_name: "The Greek Community of Alexandria (EKA)"
 client_type: "NGO & Historic Diaspora Institution"
-industry: "Non-Profit & Civic Diaspora"
+industry: "NGO, Non-Profit & Civic Impact"
 project_role: "Lead Full-Stack Engineer & Architect"
 subtitle: "Multilingual institutional publishing portal, transparency archive, and long-term Linux infrastructure for a historic civic diaspora body."
 tech_stack:
