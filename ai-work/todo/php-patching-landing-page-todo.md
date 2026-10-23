@@ -20,7 +20,7 @@
   - **Commands**: `npm run build` inside `frontend/`.
   - **Validation**: Clean build with zero TypeScript or route resolution errors.
 
-- [ ] **Task 5: Git Commit & Outcome Sign-Off**
+- [x] **Task 5: Git Commit & Outcome Sign-Off**
   - **Prerequisites**: Task 4 passes.
   - **Commands**: `git add . && git commit -m "feat(web): add php-emergency-patch landing page and php2shell redirect"`
   - **Validation**: Clean git working tree, ready for deployment.
