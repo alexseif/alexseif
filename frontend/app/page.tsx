@@ -1,4 +1,5 @@
 import { getSelectedProjects } from "@/lib/projects";
+import { EmergencyAlertBanner } from "@/components/home/EmergencyAlertBanner";
 import { HeroSection } from "@/components/home/HeroSection";
 import { StatCounterSection } from "@/components/home/StatCounterSection";
 import { CaseStudiesSection } from "@/components/home/CaseStudiesSection";
@@ -37,6 +38,7 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main className="min-h-screen bg-background overflow-x-hidden blueprint-grid">
+        <EmergencyAlertBanner />
         <HeroSection />
         <StatCounterSection />
         <CaseStudiesSection eliteProjects={eliteProjects} />
