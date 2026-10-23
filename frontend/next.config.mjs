@@ -13,6 +13,16 @@ const nextConfig = {
   // Enable standard HTTP ETags for 304 conditional validation
   generateEtags: true,
 
+  async redirects() {
+    return [
+      {
+        source: '/php2shell',
+        destination: '/php-emergency-patch',
+        permanent: false,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
