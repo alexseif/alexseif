@@ -5,7 +5,8 @@
   "scripts": {
     "validate:projects": "ajv validate -s schemas/project_schema.json -d \"projects/*.yaml\"",
     "validate:experience": "ajv validate -s schemas/experience_schema.json -d \"experience/*.yaml\"",
-    "build:pdf": "python3 scripts/generate_pdf.py"
+    "build:pdf": "python3 scripts/generate_pdf.py",
+    "audit": "npm audit --audit-level=high"
   },
   "dependencies": {
     "ajv-cli": "^5.0.0",
