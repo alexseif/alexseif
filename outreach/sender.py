@@ -21,20 +21,25 @@ from .config import (
 )
 from .db import log_dispatch
 
-DEFAULT_SUBJECT = "Question regarding {{Company}}'s PHP runtime patching"
+DEFAULT_SUBJECT = "Question regarding {{Company}}'s runtime patching (PHP & Node.js)"
 
 DEFAULT_BODY_TEMPLATE = """Hi {{FirstName}},
 
-When core PHP engine vulnerabilities emerge (such as php2shell CVE-2026-109618 / 109619), standard advice is either "put up a WAF" (which misses payload variants) or "run `apt upgrade`" (which often breaks production dependencies and legacy plugins).
+Two critical engine-level vulnerability waves recently hit production web fleets:
 
-I am a Principal PHP Software Architect with 20+ years of production experience. I help teams secure their systems with zero production downtime.
+1. PHP Core (php2shell CVE-2026-109618 / 109619): Stale memory allocators and worker state contamination under default PHP-FPM pools.
+2. Node.js October 2026 Advisory (CVE-2026-111497): Critical Brotli decoder buffer overflow permitting unauthenticated RCE on Node.js 22.x, 24.x, and 26.x.
+
+For web agencies managing multiple client deployments, standard advice ("put up a WAF" or "run `apt upgrade`") creates problems: WAFs miss compressed payload variations, and blind OS updates risk breaking production dependencies and custom plugins.
+
+I am a Principal Software Architect with 20+ years of production experience. I audit and patch production PHP and Node.js runtimes with zero service interruption.
 
 Standard Incident Remediation:
 - Fixed Entry Package: EUR 140 per site / application (includes full pre-patch backup, dependencies update, version upgrade, and zero-downtime runtime hotpatch).
 - Complex / Legacy Stacks: Sized by codebase architecture at EUR 75/hour.
-- Ongoing Retainers: Monthly outsourcing retainers available for continuous maintenance, billed either independently or through a registered corporate entity.
+- Ongoing Retainers: Monthly outsourcing retainers available for continuous fleet maintenance, billed either independently or through a registered corporate entity.
 
-If {{Company}} is running systems that cannot afford downtime but cannot stay exposed to engine-level exploits, I can audit and patch your setup today.
+If {{Company}} runs client applications that cannot afford downtime but cannot stay exposed to active RCE exploits, I can audit and patch your setup today.
 
 Are you available for a brief 10-minute sync this week?
 
