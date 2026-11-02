@@ -19,6 +19,8 @@ venv/
 .env
 __pycache__/
 *.pyc
+outreach/*.db
+outreach/targets.csv
 
 # Node
 /node_modules/
