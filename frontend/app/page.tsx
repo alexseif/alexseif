@@ -27,6 +27,8 @@ export default async function HomePage() {
       "Legacy Monolith Decoupling",
       "PHP/Symfony",
       "Agentic AI Engineering",
+      "Deterministic RAG Pipelines",
+      "Enterprise AI Systems",
       "Defensive Zero-Maintenance Engineering"
     ]
   };
