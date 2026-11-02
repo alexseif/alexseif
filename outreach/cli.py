@@ -15,6 +15,7 @@ from .db import (
 )
 from .enricher import enrich_domain
 from .sender import dispatch_target, apply_rate_limit
+from .harvester import harvest_presets, export_to_csv, import_to_db, PRESET_TARGETS
 from .config import (
     DAILY_SEND_LIMIT,
     OUTREACH_PROVIDER,
@@ -150,6 +151,21 @@ def cmd_send(args: argparse.Namespace) -> None:
     print("[+] Dispatch run finished.")
     show_status_summary()
 
+def cmd_harvest(args: argparse.Namespace) -> None:
+    regions = ["nl", "de", "uk"] if "all" in args.regions else args.regions
+    print(f"[*] Harvesting target agencies for regions: {', '.join(regions)}...")
+    targets = harvest_presets(regions)
+    print(f"[+] Found {len(targets)} qualified candidate agencies.")
+
+    if args.to_db:
+        added = import_to_db(targets)
+        print(f"[+] Imported {added} verified targets directly into database.")
+
+    csv_path = Path(args.output) if args.output else Path("outreach/targets.csv")
+    added_csv = export_to_csv(targets, csv_path)
+    print(f"[+] Saved {added_csv} verified targets to {csv_path}.")
+    show_status_summary()
+
 def show_status_summary() -> None:
     stats = get_stats()
     print("\n--- Pipeline Status ---")
@@ -182,6 +198,29 @@ def main() -> None:
     init_db()
     parser = argparse.ArgumentParser(description="PHP Emergency Patch Outreach Automation Agent")
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    # harvest
+    p_harvest = subparsers.add_parser("harvest", help="Harvest pre-qualified agencies by region")
+    p_harvest.add_argument(
+        "--regions",
+        "-r",
+        nargs="+",
+        default=["nl"],
+        choices=["nl", "de", "uk", "all"],
+        help="Target regions to harvest (default: nl)",
+    )
+    p_harvest.add_argument(
+        "--output",
+        "-o",
+        default="outreach/targets.csv",
+        help="CSV file destination (default: outreach/targets.csv)",
+    )
+    p_harvest.add_argument(
+        "--to-db",
+        action="store_true",
+        help="Automatically import harvested targets directly into SQLite database",
+    )
+    p_harvest.set_defaults(func=cmd_harvest)
 
     # import
     p_import = subparsers.add_parser("import", help="Import domains and companies from CSV")
