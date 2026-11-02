@@ -21,21 +21,21 @@ Key configuration settings:
 * `REPLY_TO_EMAIL`: alex.seif@gmail.com (so all prospect replies route to your primary inbox).
 * `HUNTER_API_KEY`: (Optional) For high-confidence executive email resolution.
 
-### 2. Prepare Targets
-Create a CSV file with target domains (see `outreach/targets.example.csv`):
-```csv
-domain,company,contact_name,title,email
-agency-alpha.nl,Agency Alpha,Jan de Vries,CTO,
-agency-beta.com,Agency Beta,,,
-```
-
-### 3. Import Targets
+### 2. Harvest Target Agencies (Automated)
+Generate verified candidate agencies across the Netherlands, Germany, and the UK:
 ```bash
-./venv/bin/python -m outreach.cli import --file outreach/targets.example.csv
+./venv/bin/python -m outreach.cli harvest --regions all --to-db
+```
+Or target specific regions (e.g., `--regions nl` or `--regions de` or `--regions uk`).
+
+### 3. Prepare Targets from CSV (Alternative)
+You can also manually edit `outreach/targets.csv` and import custom lists:
+```bash
+./venv/bin/python -m outreach.cli import --file outreach/targets.csv
 ```
 
 ### 4. Enrich Contacts
-Discovers decision-maker emails (CTOs, Tech Leads, Founders) via web scraping and optional API lookups:
+Discovers decision-maker emails (CTOs, Tech Leads, Founders) via website crawls:
 ```bash
 ./venv/bin/python -m outreach.cli enrich
 ```
