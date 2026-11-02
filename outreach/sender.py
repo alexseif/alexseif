@@ -32,7 +32,7 @@ Two critical engine-level vulnerability waves recently hit production web fleets
 
 For web agencies managing multiple client deployments, standard advice ("put up a WAF" or "run `apt upgrade`") creates problems: WAFs miss compressed payload variations, and blind OS updates risk breaking production dependencies and custom plugins.
 
-I am a Principal Software Architect with 20+ years of production experience. I audit and patch production PHP and Node.js runtimes with zero service interruption.
+I am a Software Architect with 20+ years of production experience. I audit and patch production PHP and Node.js runtimes with zero service interruption.
 
 Standard Incident Remediation:
 - Fixed Entry Package: EUR 140 per site / application (includes full pre-patch backup, dependencies update, version upgrade, and zero-downtime runtime hotpatch).
@@ -47,7 +47,7 @@ Technical overview: https://alexseif.com/php-emergency-patch
 
 Best regards,
 Alex Seif
-Principal Software Architect
+Software Architect
 alex.seif@gmail.com | +20 100 400 6332
 """
 
