@@ -184,7 +184,7 @@ def cmd_status(args: argparse.Namespace) -> None:
     # Show recent dispatches if any
     conn = get_connection()
     logs = conn.execute(
-        "SELECT l.*, t.company_name FROM dispatch_logs l JOIN targets t ON l.target_id = t.id ORDER BY l.id DESC LIMIT 5"
+        "SELECT l.*, t.company_name FROM dispatch_logs l JOIN targets t ON l.target_id = t.id ORDER BY l.id DESC LIMIT 10"
     ).fetchall()
     conn.close()
 
@@ -193,6 +193,67 @@ def cmd_status(args: argparse.Namespace) -> None:
         for log in logs:
             print(f"  [{log['sent_at']}] [{log['status'].upper()}] {log['recipient_email']} ({log['company_name']}) - {log['subject']}")
         print()
+
+def cmd_list(args: argparse.Namespace) -> None:
+    init_db()
+    status_filter = args.status if args.status != "all" else None
+    targets = get_targets(status=status_filter)
+    if not targets:
+        print(f"[*] No targets found matching status: {args.status}")
+        return
+
+    conn = get_connection()
+    print(f"\n{'ID':<4} {'Company':<22} {'Domain':<24} {'Email':<30} {'Status':<10} {'Sent At':<20}")
+    print("-" * 115)
+    for t in targets:
+        tid = t["id"]
+        company = (t["company_name"] or "")[:20]
+        domain = (t["domain"] or "")[:22]
+        email = (t["contact_email"] or "N/A")[:28]
+        status = t["status"].upper()
+
+        log = conn.execute(
+            "SELECT sent_at FROM dispatch_logs WHERE target_id = ? ORDER BY id DESC LIMIT 1", (tid,)
+        ).fetchone()
+        sent_at = log["sent_at"] if log else "-"
+
+        print(f"{tid:<4} {company:<22} {domain:<24} {email:<30} {status:<10} {sent_at:<20}")
+    conn.close()
+    print("-" * 115)
+    print(f"Total: {len(targets)} targets\n")
+
+def cmd_export(args: argparse.Namespace) -> None:
+    init_db()
+    out_file = Path(args.output or "outreach/campaign_report.csv")
+    targets = get_targets()
+    conn = get_connection()
+
+    with open(out_file, "w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "ID", "Company", "Domain", "Contact Name", "Contact First Name",
+            "Contact Title", "Contact Email", "Status", "Sent At", "Notes"
+        ])
+        for t in targets:
+            tid = t["id"]
+            log = conn.execute(
+                "SELECT sent_at FROM dispatch_logs WHERE target_id = ? ORDER BY id DESC LIMIT 1", (tid,)
+            ).fetchone()
+            sent_at = log["sent_at"] if log else ""
+            writer.writerow([
+                tid,
+                t["company_name"],
+                t["domain"],
+                t["contact_name"],
+                t["contact_first_name"],
+                t["contact_title"],
+                t["contact_email"],
+                t["status"],
+                sent_at,
+                t["notes"] or ""
+            ])
+    conn.close()
+    print(f"[+] Exported full tracking report to: {out_file}")
 
 def main() -> None:
     init_db()
@@ -252,6 +313,27 @@ def main() -> None:
     # status
     p_status = subparsers.add_parser("status", help="Show current pipeline metrics and recent activity")
     p_status.set_defaults(func=cmd_status)
+
+    # list
+    p_list = subparsers.add_parser("list", help="List targets with status and reach timestamps")
+    p_list.add_argument(
+        "--status",
+        "-s",
+        default="all",
+        choices=["all", "sent", "ready", "imported", "skipped", "failed"],
+        help="Filter targets by status (default: all)",
+    )
+    p_list.set_defaults(func=cmd_list)
+
+    # export
+    p_export = subparsers.add_parser("export", help="Export full campaign tracking report to CSV")
+    p_export.add_argument(
+        "--output",
+        "-o",
+        default="outreach/campaign_report.csv",
+        help="Path for CSV export (default: outreach/campaign_report.csv)",
+    )
+    p_export.set_defaults(func=cmd_export)
 
     args = parser.parse_args()
     args.func(args)

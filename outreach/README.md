@@ -56,3 +56,23 @@ Sends emails with rate-limiting delays (60 to 90 seconds between sends):
 ```bash
 ./venv/bin/python -m outreach.cli status
 ```
+
+### 8. Track Who Was Reached vs. Pending
+List all targets and their reach timestamps:
+```bash
+# View only contacted targets:
+./venv/bin/python -m outreach.cli list --status sent
+
+# View targets waiting to be sent:
+./venv/bin/python -m outreach.cli list --status ready
+
+# View entire roster:
+./venv/bin/python -m outreach.cli list --status all
+```
+
+### 9. Export Tracking Report to CSV
+Export a complete spreadsheet (openable in Excel, Google Sheets, or Numbers) anytime:
+```bash
+./venv/bin/python -m outreach.cli export
+```
+Report will be saved to `outreach/campaign_report.csv`.

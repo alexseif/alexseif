@@ -21,6 +21,7 @@ __pycache__/
 *.pyc
 outreach/*.db
 outreach/targets.csv
+outreach/campaign_report.csv
 
 # Node
 /node_modules/
