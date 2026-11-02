@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Terminal, Landmark, ArrowRight } from "lucide-react";
+import { Terminal, Landmark, Cpu, ArrowRight } from "lucide-react";
 
 export const SpecializedOfferingsSection = () => {
   return (
@@ -15,7 +15,7 @@ export const SpecializedOfferingsSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Card 1: Requirements Elicitation */}
           <div className="p-8 md:p-10 border border-border/50 bg-background/60 rounded-sm flex flex-col justify-between space-y-6 hover:border-primary/40 transition-colors">
             <div className="space-y-4">
@@ -67,6 +67,34 @@ export const SpecializedOfferingsSection = () => {
                 className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/40 hover:bg-primary/20 transition-all font-mono text-xs tracking-widest uppercase px-6 py-3.5 rounded-sm shadow-sm group"
               >
                 Explore Partnership
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3: Enterprise AI Architecture */}
+          <div className="p-8 md:p-10 border border-border/50 bg-background/60 rounded-sm flex flex-col justify-between space-y-6 hover:border-primary/40 transition-colors">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Cpu className="h-4 w-4 text-primary" />
+                <span className="text-primary text-xs font-mono tracking-widest uppercase">
+                  Autonomous Systems
+                </span>
+              </div>
+              <h3 className="text-foreground text-xl md:text-2xl font-sans font-light tracking-wide">
+                Enterprise AI Architecture & Agentic Systems
+              </h3>
+              <p className="text-foreground text-sm md:text-base font-mono leading-relaxed">
+                Grounded RAG pipelines, data-sovereign knowledge bases, and deterministic multi-agent automations engineered to survive hostile enterprise production constraints.
+              </p>
+            </div>
+
+            <div>
+              <Link
+                href="/ai-systems"
+                className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/40 hover:bg-primary/20 transition-all font-mono text-xs tracking-widest uppercase px-6 py-3.5 rounded-sm shadow-sm group"
+              >
+                Explore AI Systems
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
