@@ -11,6 +11,8 @@ import {
   Mail,
   Landmark,
   ExternalLink,
+  Bot,
+  Shield,
 } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
@@ -18,11 +20,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "NGO & Institutional Technical Partner | Alex Seif",
   description:
-    "Hands-on architectural governance and technical ownership for international development, donor transparency portals, and civic platforms complying with UN, EU, and GIZ standards.",
+    "Hands-on architectural governance, GDPR compliance, and private AI proposal generation for international development, donor transparency portals, and civic platforms complying with UN, EU, and GIZ standards.",
   openGraph: {
     title: "NGO & Institutional Technical Partner | Alex Seif",
     description:
-      "Direct architectural governance for donor reporting, multilingual data sovereignty, and independent vendor oversight without agency overhead.",
+      "Direct architectural governance for donor reporting, GDPR data sovereignty, private AI grant writing, and independent vendor oversight without agency overhead.",
     url: "https://alexseif.com/ngo-technical-partner",
   },
 };
@@ -40,11 +42,39 @@ export default function NGOPartnerPage() {
       url: "https://alexseif.com",
     },
     description:
-      "Architectural governance and hands-on technical ownership for international development programs, public sector accountability portals, and NGO digital systems.",
+      "Architectural governance, GDPR compliance, and private AI proposal automation for international development programs, public sector accountability portals, and NGO digital systems.",
     areaServed: ["Netherlands", "Europe", "Worldwide"],
   };
 
+  const directoryCards = [
+    {
+      icon: Bot,
+      title: "AI Proposal & Grant Drafting",
+      desc: "Turn years of past successful proposals and donor guidelines into drafted grant sections in hours without leaking confidential bids to public AI.",
+    },
+    {
+      icon: FileCheck,
+      title: "Donor Reporting Dashboards",
+      desc: "Replace messy spreadsheets with tamper-proof public transparency portals that satisfy UN, EU, and GIZ audit criteria.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Contractor & Vendor Oversight",
+      desc: "We review external software developers' code, database designs, and milestones before you approve their invoices.",
+    },
+    {
+      icon: Lock,
+      title: "GDPR & Beneficiary Protection",
+      desc: "Protect vulnerable community records and ensure total EU GDPR compliance, strict regional data residency, and encrypted backups.",
+    },
+  ];
+
   const pillars = [
+    {
+      icon: Bot,
+      title: "AI Proposal Generation & Workflow Automation",
+      desc: "Synthesizing your organization's archive of past successful grant proposals, evaluation reports, and institutional donor guidelines. We build private, automated pipelines that generate aligned, high-scoring draft proposals and field summaries in hours without human fatigue or public data leakage.",
+    },
     {
       icon: FileCheck,
       title: "Donor & Transparency Portals",
@@ -57,7 +87,7 @@ export default function NGOPartnerPage() {
     },
     {
       icon: Lock,
-      title: "Data Sovereignty & Security",
+      title: "Data Sovereignty & GDPR Compliance",
       desc: "Multilingual systems engineered with strict data isolation, GDPR compliance, and perimeter security zoning. Secure sensitive civic data across regional jurisdictions with zero data leaks.",
     },
     {
@@ -69,8 +99,16 @@ export default function NGOPartnerPage() {
 
   const deliverables = [
     {
+      title: "Private AI Proposal Generation Engine",
+      desc: "Automated grant drafting pipelines trained exclusively on your organization's past winning proposals and specific donor guidelines, hosted in private environments.",
+    },
+    {
       title: "Institutional Donor Compliance Audit",
       desc: "Comprehensive evaluation of existing data schemas and reporting workflows against UN, EU, and GIZ compliance mandates.",
+    },
+    {
+      title: "GDPR Beneficiary Data Protection Architecture",
+      desc: "Rigorous role-based access control (RBAC), right-to-be-forgotten workflows, and regional data residency that guarantee passing privacy audits.",
     },
     {
       title: "Multilingual Data Model Standardization",
@@ -117,8 +155,89 @@ export default function NGOPartnerPage() {
               NGO Technical Partner & Institutional Architecture
             </h1>
             <p className="text-foreground text-lg md:text-xl font-mono leading-relaxed pt-2">
-              Transparency portals, donor reporting dashboards, and civic platforms require dedicated technical governance. I provide hands-on architectural ownership: ensuring multilingual data sovereignty, institutional donor compliance, and vendor accountability without digital agency overhead.
+              Transparency portals, donor reporting dashboards, and civic platforms require dedicated technical governance. I provide hands-on architectural ownership: ensuring multilingual data sovereignty, GDPR compliance, private AI grant writing, and vendor accountability without digital agency overhead.
             </p>
+          </section>
+
+          {/* Plain-English Overview for Non-Technical Directors */}
+          <section className="space-y-6">
+            <div className="space-y-2">
+              <span className="text-primary text-xs font-mono tracking-widest uppercase">
+                // At A Glance: Practical Support for Program Leadership
+              </span>
+              <h2 className="text-2xl md:text-3xl font-sans font-light tracking-wide text-foreground">
+                How We Solve Your Digital Challenges
+              </h2>
+              <p className="text-foreground font-mono text-sm max-w-2xl leading-relaxed">
+                Clear, actionable support designed for non-technical program directors, grant officers, and country directors.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {directoryCards.map((card, idx) => {
+                const IconComponent = card.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="p-6 border border-border/50 bg-background/60 rounded-sm space-y-3 hover:border-primary/40 transition-colors flex flex-col justify-between"
+                  >
+                    <div className="space-y-3">
+                      <div className="h-10 w-10 bg-primary/10 flex items-center justify-center rounded-sm border border-primary/20">
+                        <IconComponent className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="text-foreground font-sans text-base font-medium">
+                        {card.title}
+                      </h3>
+                      <p className="text-foreground font-mono text-xs leading-relaxed">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Security & GDPR Trust Section */}
+          <section className="p-8 md:p-12 border border-primary/40 bg-card/30 rounded-sm space-y-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-primary font-mono text-xs uppercase tracking-wider">
+                <Shield className="h-4 w-4" />
+                // Compliance & Beneficiary Data Protection
+              </div>
+              <h2 className="text-2xl md:text-3xl font-sans font-light tracking-wide text-foreground">
+                GDPR-Compliant, Secure & Donor-Audit Ready
+              </h2>
+            </div>
+            <p className="text-foreground font-mono text-sm md:text-base leading-relaxed max-w-3xl">
+              Civic programs handle sensitive community and beneficiary records across regional borders. We engineer every platform to pass institutional audits from UN agencies, GIZ, and the European Union with zero compliance friction.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+              <div className="space-y-2 border-l border-primary/30 pl-4">
+                <h4 className="text-foreground font-sans text-sm font-semibold">
+                  Strict EU GDPR Alignment
+                </h4>
+                <p className="text-foreground font-mono text-xs leading-relaxed">
+                  Right-to-be-forgotten workflows, role-based data isolation, and consent logging built directly into the data model.
+                </p>
+              </div>
+              <div className="space-y-2 border-l border-primary/30 pl-4">
+                <h4 className="text-foreground font-sans text-sm font-semibold">
+                  Private, Zero-Leakage AI
+                </h4>
+                <p className="text-foreground font-mono text-xs leading-relaxed">
+                  Your grant proposals, donor correspondence, and internal budgets are never used to train public commercial AI models.
+                </p>
+              </div>
+              <div className="space-y-2 border-l border-primary/30 pl-4">
+                <h4 className="text-foreground font-sans text-sm font-semibold">
+                  Regional Data Residency
+                </h4>
+                <p className="text-foreground font-mono text-xs leading-relaxed">
+                  Sovereign cloud hosting or on-premise containment ensuring data remains within authorized geographic jurisdictions.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* The Core Challenge */}
@@ -150,32 +269,34 @@ export default function NGOPartnerPage() {
             </div>
           </section>
 
-          {/* 4 Governance Pillars */}
+          {/* 5 Governance Pillars */}
           <section className="space-y-10">
             <div className="space-y-3">
               <span className="text-primary text-xs font-mono tracking-widest uppercase">
-                // Four Pillars of Technical Stewardship
+                // Five Pillars of Technical Stewardship
               </span>
               <h2 className="text-2xl md:text-3xl font-sans font-light tracking-wide text-foreground">
                 How We Protect Your Digital Infrastructure
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {pillars.map((pillar, index) => (
                 <div
                   key={index}
-                  className="p-8 border border-border/50 bg-card/20 space-y-4 rounded-sm hover:border-primary/40 transition-colors"
+                  className="p-8 border border-border/50 bg-card/20 space-y-4 rounded-sm hover:border-primary/40 transition-colors flex flex-col justify-between"
                 >
-                  <div className="h-12 w-12 bg-primary/10 flex items-center justify-center rounded-sm border border-primary/20">
-                    <pillar.icon className="h-6 w-6 text-primary" />
+                  <div className="space-y-4">
+                    <div className="h-12 w-12 bg-primary/10 flex items-center justify-center rounded-sm border border-primary/20">
+                      <pillar.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-foreground font-sans text-xl font-light tracking-wide">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-foreground font-mono text-sm leading-relaxed">
+                      {pillar.desc}
+                    </p>
                   </div>
-                  <h3 className="text-foreground font-sans text-xl font-light tracking-wide">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-foreground font-mono text-sm leading-relaxed">
-                    {pillar.desc}
-                  </p>
                 </div>
               ))}
             </div>
@@ -246,7 +367,7 @@ export default function NGOPartnerPage() {
                 Discuss Your Platform or Program
               </h2>
               <p className="text-foreground font-mono text-sm md:text-base leading-relaxed">
-                Whether you are launching a new donor portal, conducting vendor oversight, or preparing for an institutional audit, let's ensure your platform is built for lasting reliability.
+                Whether you need private AI proposal generation, donor portal governance, or full GDPR compliance validation, let us ensure your platform is built for lasting reliability.
               </p>
             </div>
 
