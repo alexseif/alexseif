@@ -4,21 +4,26 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 from .config import DB_PATH
 
+_initialized_paths = set()
+
 def get_connection(db_path: Optional[Path] = None) -> sqlite3.Connection:
     path = db_path or DB_PATH
     conn = sqlite3.connect(path)
     conn.row_factory = sqlite3.Row
+    str_path = str(path)
+    if str_path not in _initialized_paths:
+        _init_db_with_conn(conn)
+        _initialized_paths.add(str_path)
     return conn
 
-def init_db(db_path: Optional[Path] = None) -> None:
-    conn = get_connection(db_path)
+def _init_db_with_conn(conn: sqlite3.Connection) -> None:
     with conn:
         conn.execute("""
             CREATE TABLE IF NOT EXISTS targets (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 domain TEXT UNIQUE NOT NULL,
                 company_name TEXT,
-                status TEXT NOT NULL DEFAULT 'imported', -- imported, enriched, ready, sent, failed, skipped
+                status TEXT NOT NULL DEFAULT 'imported',
                 contact_name TEXT,
                 contact_first_name TEXT,
                 contact_title TEXT,
@@ -38,11 +43,14 @@ def init_db(db_path: Optional[Path] = None) -> None:
                 body TEXT NOT NULL,
                 provider TEXT NOT NULL,
                 sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                status TEXT NOT NULL, -- success, failed, dry_run
+                status TEXT NOT NULL,
                 error_message TEXT,
                 FOREIGN KEY(target_id) REFERENCES targets(id)
             )
         """)
+
+def init_db(db_path: Optional[Path] = None) -> None:
+    conn = get_connection(db_path)
     conn.close()
 
 def upsert_target(
