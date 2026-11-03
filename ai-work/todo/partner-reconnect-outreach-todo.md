@@ -15,7 +15,7 @@
   - **Command**: `./venv/bin/python -m outreach.cli send --track partner`
   - **Validation**: Complete dry-run preview shows warm reconnect copy, zero em dashes, and valid UTM links.
 
-- [ ] **Task 4: Live Dispatch to 3 Partners & Campaign Export**
+- [x] **Task 4: Live Dispatch to 3 Partners & Campaign Export**
   - **Prerequisites**: Task 3 complete and verified.
   - **Command**: `./venv/bin/python -m outreach.cli send --track partner --live --yes`
   - **Validation**: 3 emails sent via Brevo SMTP relay with 100% success; exported to `outreach/campaign_report_partners.csv`.

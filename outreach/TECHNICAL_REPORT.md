@@ -8,9 +8,10 @@
 
 ## 1. Executive Technical Summary
 
-An automated, self-contained outbound intelligence and delivery engine was designed, implemented, and verified to conduct direct technical advisory outreach across two distinct tracks:
+An automated, self-contained outbound intelligence and delivery engine was designed, implemented, and verified to conduct direct technical advisory outreach across three distinct tracks:
 1. **Track 1 (Agencies):** Technical directors and CTOs at web development agencies and MSPs managing multi-client fleets across the Netherlands, Germany, and the United Kingdom.
 2. **Track 2 (Direct Clients):** Business owners, operations leads, and technical stakeholders at Dutch commercial entities, e-commerce stores, publishers, and institutions operating directly on WordPress, WooCommerce, and Drupal stacks.
+3. **Track 3 (Partners):** Leadership and technical directors at historical outsourcing collaborators and delivery partners (iSoft, Nile Tech, MeemDev) using personalized, relationship-aware advisory templates.
 
 The pipeline addresses two concurrent engine-level Remote Code Execution (RCE) vectors circulating in the wild:
 - **PHP Core (php2shell // CVE-2026-109618 & CVE-2026-109619):** Stale memory allocators and out-of-memory request corruption in default PHP-FPM worker pools.
@@ -113,16 +114,17 @@ Provides zero-cost technology detection by evaluating live HTTP responses:
 
 ## 4. Verification & Production Execution Metrics
 
-| Metric | Track 1 (Agencies) | Track 2 (Direct Clients) | Total |
-| :--- | :--- | :--- | :--- |
-| **Target Audience** | Digital agencies & MSPs | E-commerce, media, NGOs | All segments |
-| **Geographic Scope** | NL, DE, UK | Netherlands (.nl) | Western Europe |
-| **Primary Platforms** | Multi-tenant PHP & Node.js | WordPress, WooCommerce, Drupal | Web stacks |
-| **Total Ingested** | 22 | 17 | 39 |
-| **Fingerprint Confidence**| 85% to 90% | 85% to 90% | >85% average |
-| **Contact Discovery** | 22 / 22 (100%) | 17 / 17 (100%) | 39 / 39 (100%) |
-| **Successful Dispatches** | 22 | 17 | 39 |
-| **Failed / Bounced** | 0 | 0 | 0 |
-| **Delivery Success Rate** | **100.0%** | **100.0%** | **100.0%** |
+| Metric | Track 1 (Agencies) | Track 2 (Direct Clients) | Track 3 (Partners) | Total |
+| :--- | :--- | :--- | :--- | :--- |
+| **Target Audience** | Digital agencies & MSPs | E-commerce, media, NGOs | Historical dev partners | All segments |
+| **Geographic Scope** | NL, DE, UK | Netherlands (.nl) | Regional / Global | Multi-region |
+| **Primary Platforms** | Multi-tenant PHP & Node.js | WordPress, WooCommerce, Drupal | Web & software stacks | Web runtimes |
+| **Template Slug** | `agency_v1` | `direct_client_v1` | `partner_v1` | Versioned |
+| **Total Ingested** | 22 | 17 | 3 | 42 |
+| **Fingerprint Confidence**| 85% to 90% | 85% to 90% | Verified | >85% average |
+| **Contact Discovery** | 22 / 22 (100%) | 17 / 17 (100%) | 3 / 3 (100%) | 42 / 42 (100%) |
+| **Successful Dispatches** | 22 | 17 | 3 | 42 |
+| **Failed / Bounced** | 0 | 0 | 0 | 0 |
+| **Delivery Success Rate** | **100.0%** | **100.0%** | **100.0%** | **100.0%** |
 
-All 39 outbound transmissions executed with valid DKIM/SPF alignment through authenticated Brevo relay channels and were recorded in SQLite with full template and UTM attribution.
+All 42 outbound transmissions executed with valid DKIM/SPF alignment through authenticated Brevo relay channels and were recorded in SQLite with full template and UTM attribution.
