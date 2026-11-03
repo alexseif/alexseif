@@ -1,4 +1,4 @@
-# Sub-Spec: BuiltWith API Integration for Outreach Engine
+# Sub-Spec: BuiltWith MCP & API Integration for Direct End-Client Lead Generation
 
 > **Topic:** `outreach-builtwith-integration`  
 > **Status:** Draft / Under Review  
@@ -6,69 +6,95 @@
 
 ---
 
-## 1. Context & Business Value
+## 1. Context & Strategic Shift
 
-The outreach engine currently sources candidates via curated regional presets and search scraper heuristics. To scale prospect volume across Europe and ensure 100% stack precision, we are integrating the **BuiltWith API** (https://builtwith.com/).
+The initial outreach campaign targeted **digital web agencies** acting as their tier-3 white-label patching partner. This specification defines the transition to **direct end-client lead generation**: identifying and reaching business owners, e-commerce operators, and IT directors whose commercial websites actively run WordPress, Drupal, Magento, WooCommerce, or custom PHP backends.
 
-Integrating BuiltWith delivers two strategic advantages:
-1. **Automated Lead Generation (Lists API):** Query domains running vulnerable or target technologies (PHP, Laravel, WordPress, Magento, Node.js) filtered by country (Netherlands, Germany, UK).
-2. **Empirical Stack Verification (Lookup API):** Inspect a candidate agency or firm's live infrastructure before dispatching outreach, identifying exact CMS, server engines (Apache, Nginx, PHP-FPM), and frameworks.
+To support this transition without incurring upfront SaaS subscription fees, the system implements a **Dual-Engine Technographic Architecture**:
+1. **BuiltWith MCP & API Gateway:** Connects to the official BuiltWith MCP endpoint (`https://api.builtwith.com/mcp`) and REST API once an API key is available.
+2. **Zero-Cost Local Technographic Fingerprinter:** A built-in passive analyzer that scans public HTTP response headers, generator meta tags, cookie footprints, and script paths (`/wp-json/`, `/sites/default/`, `PHPSESSID`) to detect target technologies for free.
 
 ---
 
 ## 2. Functional Requirements
 
-### 2.1 Configuration & Authentication
-* **Config File:** `outreach/config.py` and `outreach/.env`.
-* **Environment Variable:** `BUILTWITH_API_KEY`.
-* **Graceful Degradation:** If `BUILTWITH_API_KEY` is absent or quota-depleted, the system must warn the user and cleanly fall back to local scraper heuristics without raising fatal exceptions.
+### 2.1 Technographic Discovery Engine (`outreach/technographics.py`)
+Implement an extensible detection module supporting two interchangeable providers:
 
-### 2.2 BuiltWith Client Module (`outreach/builtwith.py`)
-Implement a dedicated client with two primary capabilities:
+1. **Passive Fingerprinter (Zero-Cost Default):**
+   * Inspects HTTP response headers (`X-Powered-By`, `Server`, `Link: <.../wp-json/>`).
+   * Parses homepage and `<head>` markup:
+     * WordPress: `wp-content/`, `wp-includes/`, `<meta name="generator" content="WordPress...">`
+     * WooCommerce: `woocommerce-`, `wc-ajax`
+     * Drupal: `Drupal.settings`, `sites/default/files/`, `<meta name="generator" content="Drupal...">`
+     * Magento: `mage-`, `Mage.Cookies`, `/static/frontend/`
+     * Laravel / Symfony: CSRF cookie naming patterns (`XSRF-TOKEN`, `laravel_session`, `symfony`)
+     * Node.js / Next.js: `__NEXT_DATA__`, `_next/static/`
+   * Returns: `{is_php: bool, is_nodejs: bool, platform: str, web_server: str, confidence: int}`
 
-1. **Domain Technology Lookup (`lookup_domain(domain: str) -> Dict[str, Any]`):**
-   * Endpoint: `https://api.builtwith.com/v21/api.json?KEY={KEY}&LOOKUP={domain}`
-   * Extracts:
-     * `is_php`: Boolean indicating PHP detection.
-     * `is_nodejs`: Boolean indicating Node.js detection.
-     * `cms`: Detected CMS (WordPress, WooCommerce, Drupal, Magento, Joomla).
-     * `frameworks`: Detected frameworks (Laravel, Symfony, Express, Next.js).
-     * `web_server`: Detected server (Nginx, Apache, LiteSpeed).
-     * `raw_techs`: List of relevant infrastructure tags.
+2. **BuiltWith MCP & REST Client (`outreach/builtwith.py`):**
+   * MCP endpoint integration: `https://api.builtwith.com/mcp` via Bearer token auth.
+   * REST endpoint integration: `https://api.builtwith.com/v21/api.json?KEY={KEY}&LOOKUP={domain}`.
+   * BuiltWith MCP Registry search: Ability to query categories and MCP server tools via `https://builtwith.com/mcp-registry`.
+   * Caches all responses in SQLite table `builtwith_cache` to ensure zero redundant credit spend.
 
-2. **Technology List Harvesting (`fetch_tech_leads(tech: str, country: str, limit: int) -> List[Tuple[str, str]]`):**
-   * Endpoint: BuiltWith Lists API / Keyword Query.
-   * Pulls domain names and company titles matching combinations like `tech=Laravel&country=NL` or `tech=PHP&country=DE`.
+### 2.2 Target Persona & Audience Separation
+Separate outreach logic into two distinct campaign modes:
 
-### 2.3 Local Database Schema Migration (`outreach/db.py`)
-Enhance `targets` table to store verified stack telemetry:
-* `tech_stack`: TEXT (JSON array of detected technologies).
-* `tech_verified`: BOOLEAN (True if verified via BuiltWith).
-* `php_detected`: BOOLEAN.
-* `nodejs_detected`: BOOLEAN.
+* **Mode A: Agency Partner Outreach (Existing):**
+  * Target: Agency Founders, CTOs, Technical Directors.
+  * Pitch: Fleet-wide risk reduction, liability shield, white-label tier-3 escalation.
+* **Mode B: Direct End-Client Outreach (New):**
+  * Target: Managing Directors, Business Owners, Heads of E-Commerce, IT Managers.
+  * Pitch: Protecting business revenue, transactions, and customer data from in-the-wild exploits (php2shell and Node2Shell). Flat €140 fix with pre-patch backup, zero downtime, and no disruption to sales.
 
-Add persistent lookup caching in a new table `builtwith_cache` (`domain TEXT PRIMARY KEY, raw_json TEXT, cached_at TIMESTAMP`) to prevent redundant API credit consumption.
+### 2.3 Direct End-Client Email Template (`outreach/templates/direct_client.txt`)
+Create a dedicated template specifically calibrated for business owners:
 
-### 2.4 Harvester Integration (`outreach/harvester.py`)
-Add a BuiltWith mode to `harvester.py`:
-* Harvest target domains directly from BuiltWith technology queries.
-* Run DNS socket verification before saving to database or CSV.
+> **Subject:** Security notice regarding {{Domain}}'s web platform
+>
+> Hi {{FirstName}},
+>
+> Reaching out directly because {{Domain}} appears to run on {{DetectedPlatform}} (powered by PHP).
+>
+> Two critical security vulnerabilities (php2shell CVE-2026-109618 / 109619) are currently being exploited in the wild against default PHP server environments. For an active business website, standard advice ("run system upgrades") often breaks custom plugins or shopping carts, risking immediate downtime and lost sales.
+>
+> I am an independent Software Architect with 20+ years of production experience. I perform zero-downtime hotpatching to protect websites from exploitation without interrupting live customers.
+>
+> **Direct Remediation Pricing:**
+> * **Standard Patch Package:** EUR 140 flat per website (includes full pre-patch backup, system update, version upgrade, and zero-downtime hotpatch).
+> * **Custom Architectures:** Billed at EUR 75/hour for heavily customized platforms.
+> * **Monthly Maintenance:** Retainers available for continuous security coverage, billed independently or via a registered corporate entity.
+>
+> If your team hasn't patched the underlying server runtime yet, I can secure your site today.
+>
+> Would you like a quick 5-minute assessment of your setup?
+>
+> Technical overview: https://alexseif.com/php-emergency-patch
+>
+> Best regards,  
+> Alex Seif  
+> Software Architect  
+> alex.seif@gmail.com | +20 100 400 6332
 
-### 2.5 Dynamic Template Personalization (`outreach/sender.py`)
-Incorporate verified stack data into the email template:
-* Variable `{{DetectedStack}}`: Populated dynamically (e.g. "WordPress & PHP-FPM", "Laravel", or "Node.js").
-* Contextual opener fallback if stack data is generic.
+### 2.4 Database Schema Updates (`outreach/db.py`)
+Enhance `targets` table:
+* `audience_type`: TEXT NOT NULL DEFAULT 'agency' (options: `agency`, `direct_client`).
+* `detected_platform`: TEXT (e.g. `WordPress / WooCommerce`, `Drupal`, `Magento`, `Custom PHP`).
+* `detected_server`: TEXT (e.g. `Nginx`, `Apache`, `LiteSpeed`).
+* `tech_confidence`: INTEGER DEFAULT 0.
 
-### 2.6 CLI Commands (`outreach/cli.py`)
-* `python -m outreach.cli harvest --builtwith --tech "Laravel" --country "NL" --limit 50`
-* `python -m outreach.cli inspect <domain>`: Displays live BuiltWith tech stack lookup for a domain.
+### 2.5 CLI Operational Commands (`outreach/cli.py`)
+* `python -m outreach.cli fingerprint [--limit N]`: Runs passive technographic detection on imported candidate websites.
+* `python -m outreach.cli harvest --direct-clients`: Ingests candidate e-commerce and business domains.
+* `python -m outreach.cli send --audience direct_client`: Dispatches calibrated end-client copy.
 
 ---
 
 ## 3. Scope Boundaries & Constraints
 
-* **Do:** Cache all API responses in SQLite to conserve credits.
-* **Do:** Enforce timeout limits (8 seconds max) on external API calls.
-* **Do:** Respect anti-AI writing rules (short paragraphs, bullet points, zero em dashes).
-* **Don't:** Execute destructive database rebuilds; use `ALTER TABLE ... ADD COLUMN` or schema checks.
-* **Don't:** Make assumptions about exact minor PHP versions if BuiltWith only returns the parent technology family.
+* **Do:** Provide 100% functional passive technographic detection without requiring an active paid BuiltWith plan.
+* **Do:** Structure the code so plugging in a BuiltWith API key instantly upgrades the analyzer to official MCP/API data.
+* **Do:** Maintain strict separation between agency outreach and direct end-client outreach in templates and logs.
+* **Don't:** Send technical jargon to non-technical business owners; keep end-client copy focused on uptime, customer transactions, and fixed €140 pricing.
+* **Don't:** Run invasive vulnerability exploits against target websites; detection must remain strictly passive.

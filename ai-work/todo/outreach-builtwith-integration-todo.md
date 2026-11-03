@@ -1,31 +1,31 @@
-# Todo: BuiltWith API Integration for Outreach Engine
+# Todo: BuiltWith MCP & Technographic Direct-Client Outreach
 
-- [ ] **Task 1: Configuration & SQLite Caching Schema**
+- [ ] **Task 1: Database Schema Migration & Audience Fields**
   - **Prerequisites**: Approved `ai-work/spec/outreach-builtwith-integration-spec.md`.
-  - **Files**: `outreach/config.py`, `outreach/.env.example`, `outreach/db.py`
-  - **Validation**: `builtwith_cache` table created in `outreach.db`; `tech_stack`, `tech_verified`, `php_detected`, `nodejs_detected` columns present on `targets`; schema changes execute non-destructively on existing records.
+  - **File**: `outreach/db.py`
+  - **Validation**: `targets` table updated with `audience_type`, `detected_platform`, `detected_server`, `tech_confidence`; `builtwith_cache` table created; schema migration runs non-destructively without wiping existing target records.
 
-- [ ] **Task 2: Implement BuiltWith Client Module**
+- [ ] **Task 2: Implement Passive Technographic Fingerprinter**
   - **Prerequisites**: Task 1 complete.
-  - **File**: `outreach/builtwith.py`
-  - **Validation**: Unit test verifying `lookup_domain("example.com")` returns structured dictionary (`is_php`, `is_nodejs`, `cms`, `frameworks`, `web_server`); verifies responses write to SQLite cache and subsequent lookups read from cache.
+  - **File**: `outreach/technographics.py`
+  - **Validation**: Unit test against active sites confirming accurate detection of WordPress, WooCommerce, Drupal, and Magento; returns platform string, server string, and confidence score with zero paid API calls.
 
-- [ ] **Task 3: Integrate BuiltWith into Target Harvester**
+- [ ] **Task 3: Implement BuiltWith MCP & REST Client Bridge**
   - **Prerequisites**: Task 2 complete.
-  - **File**: `outreach/harvester.py`
-  - **Validation**: Function `harvest_builtwith(tech, country, limit)` successfully queries BuiltWith lists, validates domain reachability via DNS, and returns deduplicated candidate tuples.
+  - **File**: `outreach/builtwith.py`
+  - **Validation**: Client connects to `https://api.builtwith.com/mcp` and REST lookup endpoint when `BUILTWITH_API_KEY` is present; falls back gracefully to `technographics.py` when absent; caches responses in SQLite.
 
-- [ ] **Task 4: CLI Inspection and BuiltWith Harvesting Subcommands**
-  - **Prerequisites**: Tasks 2 & 3 complete.
-  - **File**: `outreach/cli.py`
-  - **Validation**: `python -m outreach.cli inspect <domain>` prints clean terminal report of detected technologies; `python -m outreach.cli harvest --builtwith` imports discovered domains into SQLite.
-
-- [ ] **Task 5: Dynamic Template Stack Personalization**
-  - **Prerequisites**: Task 4 complete.
+- [ ] **Task 4: Direct End-Client Email Template & Multi-Audience Dispatcher**
+  - **Prerequisites**: Task 1 & 2 complete.
   - **File**: `outreach/sender.py`
-  - **Validation**: `render_template` injects `{{DetectedStack}}` when available, falling back gracefully to generic runtime phrasing when unavailable.
+  - **Validation**: Implements separate templates for `agency` and `direct_client`; injects `{{DetectedPlatform}}` into context; verifies copy is free of em dashes and emphasizes business uptime and €140 flat rate.
 
-- [ ] **Task 6: Verification & End-to-End Test**
+- [ ] **Task 5: CLI Fingerprinting and Audience Commands**
+  - **Prerequisites**: Tasks 3 & 4 complete.
+  - **File**: `outreach/cli.py`
+  - **Validation**: `python -m outreach.cli fingerprint` inspects pending targets and populates platform telemetry; `python -m outreach.cli send --audience direct_client` routes correct copy.
+
+- [ ] **Task 6: Empirical Verification & End-to-End Test**
   - **Prerequisites**: Tasks 1-5 complete.
-  - **Commands**: Run inspect test on a sample domain, run dry-run dispatch with stack token check, verify zero unhandled exceptions.
-  - **Validation**: Dry-run preview displays verified stack data; report exports correctly to CSV.
+  - **Commands**: Run fingerprinting on sample domains, run dry-run dispatch with `--audience direct_client`, verify clean output and audit logging.
+  - **Validation**: Dry-run preview displays hyper-personalized end-client copy with detected platform tokens.
