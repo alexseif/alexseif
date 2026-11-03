@@ -20,7 +20,7 @@
   - **Command**: `./venv/bin/python -m outreach.cli enrich --track direct_client`
   - **Validation**: Contacts discovered, sanitized, role mailboxes formatted to `{Company} Team`, and status updated to `ready`.
 
-- [ ] **Task 5: Dry-Run Verification & UTM Audit**
+- [x] **Task 5: Dry-Run Verification & UTM Audit**
   - **Prerequisites**: Task 4 complete.
   - **Command**: `./venv/bin/python -m outreach.cli send --track direct_client`
   - **Validation**: Complete dry-run execution confirms personalized template rendering, zero em dashes, and valid UTM campaign URLs in `dispatch_logs`.

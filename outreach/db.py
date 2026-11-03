@@ -299,7 +299,7 @@ def log_dispatch(
             """,
             (target_id, recipient_email, subject, body, provider, template_slug, utm_url, status, error_message),
         )
-        if status in ("success", "dry_run"):
+        if status == "success":
             conn.execute(
                 "UPDATE targets SET status = 'sent', updated_at = CURRENT_TIMESTAMP WHERE id = ?",
                 (target_id,),
