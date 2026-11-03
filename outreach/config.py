@@ -30,6 +30,7 @@ SENDER_EMAIL = os.getenv("SENDER_EMAIL", "alex.seif@gmail.com")
 REPLY_TO_EMAIL = os.getenv("REPLY_TO_EMAIL", "alex.seif@gmail.com")
 
 HUNTER_API_KEY = os.getenv("HUNTER_API_KEY", "")
+BUILTWITH_API_KEY = os.getenv("BUILTWITH_API_KEY", "")
 
 MIN_DELAY_SECONDS = int(os.getenv("MIN_DELAY_SECONDS", "60"))
 MAX_DELAY_SECONDS = int(os.getenv("MAX_DELAY_SECONDS", "90"))
