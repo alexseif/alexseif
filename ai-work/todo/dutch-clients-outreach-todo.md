@@ -15,7 +15,7 @@
   - **Command**: `./venv/bin/python -m outreach.cli fingerprint --track direct_client`
   - **Validation**: Every target has `detected_platform`, `detected_server`, and `tech_confidence` populated with >80% confidence.
 
-- [ ] **Task 4: Contact Enrichment & Humanized Greeting Sanitization**
+- [x] **Task 4: Contact Enrichment & Humanized Greeting Sanitization**
   - **Prerequisites**: Task 3 complete.
   - **Command**: `./venv/bin/python -m outreach.cli enrich --track direct_client`
   - **Validation**: Contacts discovered, sanitized, role mailboxes formatted to `{Company} Team`, and status updated to `ready`.

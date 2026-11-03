@@ -165,9 +165,10 @@ def enrich_domain(domain: str, company_name: Optional[str] = None) -> Optional[E
         
         # Fallback to role email
         role_email, title = pool[0]
+        team_name = f"{company_name} Team" if company_name and not company_name.lower().endswith("team") else (company_name or "Team")
         return EnrichmentResult(
             email=role_email,
-            first_name=company_name or "Team",
+            first_name=team_name,
             title=title or "Technical Team",
             source="web_scrape",
             notes="Role inbox found via website crawl"
@@ -176,9 +177,10 @@ def enrich_domain(domain: str, company_name: Optional[str] = None) -> Optional[E
     # 3. Last-resort fallback if domain resolves
     try:
         socket.gethostbyname(domain_clean)
+        team_name = f"{company_name} Team" if company_name and not company_name.lower().endswith("team") else (company_name or "Team")
         return EnrichmentResult(
             email=f"info@{domain_clean}",
-            first_name=company_name or "Team",
+            first_name=team_name,
             title="Technical Team",
             source="heuristic_fallback",
             notes="Domain resolves; defaulted to info@ role address"
