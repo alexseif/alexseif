@@ -11,7 +11,10 @@ IGNORE_EMAIL_EXTENSIONS = {
     ".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".css", ".js", ".woff", ".woff2"
 }
 
-ROLE_EMAILS = {"info", "contact", "support", "sales", "office", "hello", "press", "jobs"}
+ROLE_EMAILS = {
+    "info", "contact", "support", "sales", "office", "hello", "press", 
+    "jobs", "service", "klantenservice", "redactie", "werkplaats", "donateurs", "helpdesk"
+}
 
 TECHNICAL_TITLES = [
     "cto", "chief technology officer", "technical director", "head of engineering",
@@ -92,7 +95,10 @@ def query_hunter_api(domain: str) -> Optional[EnrichmentResult]:
 
 def scrape_domain_pages(domain: str) -> List[Tuple[str, Optional[str]]]:
     """Scrapes common contact/about paths for email matches."""
-    paths = ["", "/contact", "/contact-us", "/about", "/about-us", "/team", "/over-ons", "/impressum"]
+    paths = [
+        "", "/contact", "/contact-us", "/klantenservice", "/over-ons",
+        "/about", "/about-us", "/colofon", "/team", "/privacy", "/impressum"
+    ]
     found_emails: List[Tuple[str, Optional[str]]] = []
     seen: Set[str] = set()
 
@@ -110,7 +116,7 @@ def scrape_domain_pages(domain: str) -> List[Tuple[str, Optional[str]]]:
                 text = resp.text
                 matches = EMAIL_REGEX.findall(text)
                 for email in matches:
-                    clean_email = email.lower().strip()
+                    clean_email = email.lower().strip().lstrip("u003e").strip(".")
                     if clean_email not in seen and is_valid_email(clean_email, domain):
                         seen.add(clean_email)
                         # Check context around the email for potential titles
