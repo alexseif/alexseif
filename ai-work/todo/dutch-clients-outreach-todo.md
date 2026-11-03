@@ -10,7 +10,7 @@
   - **Command**: `./venv/bin/python -m outreach.cli import --file outreach/targets_clients.csv --track direct_client`
   - **Validation**: Database status confirms 15+ targets in `imported` status under `track = 'direct_client'` without affecting existing agency records.
 
-- [ ] **Task 3: Run Technographic Fingerprinting Audit**
+- [x] **Task 3: Run Technographic Fingerprinting Audit**
   - **Prerequisites**: Task 2 complete.
   - **Command**: `./venv/bin/python -m outreach.cli fingerprint --track direct_client`
   - **Validation**: Every target has `detected_platform`, `detected_server`, and `tech_confidence` populated with >80% confidence.
