@@ -1,78 +1,90 @@
-# PHP Emergency Patch Outreach Automation Agent
+# Multi-Track PHP & Node.js Outreach Automation Agent
 
-A self-contained Python CLI pipeline to prospect, enrich, and dispatch calibrated cold outreach to digital agencies and PHP system operators.
+A self-contained Python CLI pipeline to prospect, fingerprint, enrich, and dispatch calibrated cold outreach across two distinct tracks:
+1. **Track 1 (`agency`):** Digital agencies and web bureaus managing multi-client PHP/Node.js fleets.
+2. **Track 2 (`direct_client`):** Direct business websites running WordPress, WooCommerce, Drupal, Magento, or PHP.
 
-## Pricing & Offer Structure Embedded in Copy
+## Pricing & Commercial Structure
 * Fixed Entry Package: EUR 140 per site / application (includes full pre-patch backup, dependencies update, version upgrade, and zero-downtime runtime hotpatch).
 * Complex / Legacy Stacks: Sized by codebase architecture at EUR 75/hour.
 * Ongoing Retainers: Monthly outsourcing retainers available, billed either independently or through a registered corporate entity.
 
-## Quick Start
+---
 
-### 1. Configuration
-Copy the template and configure your sender details:
-```bash
-cp outreach/.env.example outreach/.env
+## Technographic Intelligence & BuiltWith Bridge
+The system operates with a **dual-engine technographic architecture**:
+* **Passive Stack Fingerprinter (Zero-Cost Default):** Inspects public HTTP headers, generator tags, `/wp-json/`, cookies, and script footprints to detect WordPress, Drupal, Magento, and PHP for free.
+* **BuiltWith MCP & REST Gateway:** Automatically bridges to `https://api.builtwith.com/mcp` and REST lookup endpoints when `BUILTWITH_API_KEY` is present. Caches all lookups in SQLite table `builtwith_cache` to ensure zero redundant API credit spend.
+
+---
+
+## Dynamic UTM Link Attribution
+All landing page links (`https://alexseif.com/php-emergency-patch`) are automatically signed with recipient-specific UTM tracking parameters:
+```text
+?utm_source=outreach&utm_medium=email&utm_campaign={track}_{template_slug}&utm_content={domain}
 ```
-Key configuration settings:
-* `OUTREACH_PROVIDER`: `smtp` or `brevo`.
-* `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`: Credentials for your sending mailbox.
-* `SENDER_EMAIL`: Address that appears in the From header.
-* `REPLY_TO_EMAIL`: alex.seif@gmail.com (so all prospect replies route to your primary inbox).
-* `HUNTER_API_KEY`: (Optional) For high-confidence executive email resolution.
-
-### 2. Harvest Target Agencies (Automated)
-Generate verified candidate agencies across the Netherlands, Germany, and the UK:
-```bash
-./venv/bin/python -m outreach.cli harvest --regions all --to-db
-```
-Or target specific regions (e.g., `--regions nl` or `--regions de` or `--regions uk`).
-
-### 3. Prepare Targets from CSV (Alternative)
-You can also manually edit `outreach/targets.csv` and import custom lists:
-```bash
-./venv/bin/python -m outreach.cli import --file outreach/targets.csv
+Example:
+```text
+https://alexseif.com/php-emergency-patch?utm_source=outreach&utm_medium=email&utm_campaign=direct_client_v1&utm_content=acme-store.nl
 ```
 
-### 4. Enrich Contacts
-Discovers decision-maker emails (CTOs, Tech Leads, Founders) via website crawls:
-```bash
-./venv/bin/python -m outreach.cli enrich
-```
+---
 
-### 5. Safe Preview (Dry-Run)
-Previews rendered templates and recipient targeting without sending emails:
-```bash
-./venv/bin/python -m outreach.cli send
-```
+## Operational Commands
 
-### 6. Live Dispatch
-Sends emails with rate-limiting delays (60 to 90 seconds between sends):
+### 1. View Pipeline Status & Multi-Track Metrics
 ```bash
-./venv/bin/python -m outreach.cli send --live --limit 25
-```
-
-### 7. Pipeline Metrics & Status
-```bash
+# View combined summary across all tracks:
 ./venv/bin/python -m outreach.cli status
+
+# View agency track:
+./venv/bin/python -m outreach.cli status --track agency
+
+# View direct end-client track:
+./venv/bin/python -m outreach.cli status --track direct_client
 ```
 
-### 8. Track Who Was Reached vs. Pending
-List all targets and their reach timestamps:
+### 2. Inspect a Domain's Tech Stack
 ```bash
-# View only contacted targets:
-./venv/bin/python -m outreach.cli list --status sent
-
-# View targets waiting to be sent:
-./venv/bin/python -m outreach.cli list --status ready
-
-# View entire roster:
-./venv/bin/python -m outreach.cli list --status all
+./venv/bin/python -m outreach.cli inspect example.com
 ```
 
-### 9. Export Tracking Report to CSV
-Export a complete spreadsheet (openable in Excel, Google Sheets, or Numbers) anytime:
+### 3. Batch Fingerprint Imported Targets
 ```bash
-./venv/bin/python -m outreach.cli export
+./venv/bin/python -m outreach.cli fingerprint --track direct_client
 ```
-Report will be saved to `outreach/campaign_report.csv`.
+
+### 4. Template Registry & A/B Tracking
+View active email templates and their assigned campaign tracks:
+```bash
+./venv/bin/python -m outreach.cli templates
+```
+Templates are stored as plain text files in `outreach/templates/` (`agency_v1.txt`, `direct_client_v1.txt`).
+
+### 5. Import Direct End-Client Targets
+```bash
+./venv/bin/python -m outreach.cli import --file outreach/targets_clients.csv --track direct_client
+```
+
+### 6. Safe Preview (Dry-Run by Track)
+```bash
+# Preview agency outreach:
+./venv/bin/python -m outreach.cli send --track agency
+
+# Preview direct end-client outreach:
+./venv/bin/python -m outreach.cli send --track direct_client
+```
+
+### 7. Live Dispatch (with 60-90s Safety Delays)
+```bash
+./venv/bin/python -m outreach.cli send --track direct_client --live --limit 10
+```
+
+### 8. List Targets & Export Audit Reports
+```bash
+# List sent direct clients:
+./venv/bin/python -m outreach.cli list --track direct_client --status sent
+
+# Export complete report with UTM URLs and template slugs:
+./venv/bin/python -m outreach.cli export --output outreach/campaign_report.csv
+```
