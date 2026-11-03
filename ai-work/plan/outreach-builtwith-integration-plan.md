@@ -4,47 +4,47 @@ spec: ai-work/spec/outreach-builtwith-integration-spec.md
 status: under review
 ---
 
-# Plan: BuiltWith MCP & Passive Technographic Direct-Client Outreach
+# Plan: Multi-Track Outreach Engine, Template Versioning & UTM Attribution
 
 ## Description
-Build the technographic lead generation and stack verification layer to target direct website owners (WordPress, Drupal, Magento, WooCommerce, PHP). Implements a zero-cost local passive stack fingerprinter with an automated bridge to the official BuiltWith MCP server (`https://api.builtwith.com/mcp`) and REST API once an API key is connected.
+Implement a multi-track outreach pipeline partitioning Track 1 (Agencies) from Track 2 (Direct End-Clients). Introduces file-based and database template versioning, dynamic UTM parameter signing for analytics attribution, a zero-cost local passive technographic fingerprinter, and an automated bridge to the BuiltWith MCP server.
 
 ## Precedence Graph
 
 ```mermaid
 graph TD
-    T1["Task 1: Schema Migration & Audience Tagging"] --> T2["Task 2: Passive Technographic Fingerprinter"]
-    T2 --> T3["Task 3: BuiltWith MCP & REST Client Bridge"]
-    T2 --> T4["Task 4: Direct End-Client Template & Dispatcher"]
-    T3 --> T5["Task 5: CLI Fingerprinting & Audience Commands"]
-    T4 --> T6["Task 6: Verification & End-to-End Test"]
-    T5 --> T6
+    T1["Task 1: Multi-Track Schema & Template Registry"] --> T2["Task 2: Template Files & Dynamic UTM Builder"]
+    T1 --> T3["Task 3: Passive Technographic Fingerprinter"]
+    T2 --> T4["Task 4: BuiltWith MCP & REST Client Bridge"]
+    T2 --> T5["Task 5: Dispatcher Multi-Track & Template Logging"]
+    T3 --> T6["Task 6: CLI Multi-Track Commands & Export"]
+    T5 --> T7["Task 7: Verification & End-to-End Test"]
+    T6 --> T7
 ```
 
 ## Phased Plan
 
-### Phase 1: Database Schema & Technographic Engine
-* Extend `outreach/db.py` non-destructively with `audience_type`, `detected_platform`, `detected_server`, `tech_confidence`, and `builtwith_cache` table.
-* Implement `outreach/technographics.py` with passive HTTP header and HTML footprint analyzer (WordPress, WooCommerce, Drupal, Magento, Laravel, Next.js).
-* **Acceptance Criteria:** `technographics.py` accurately identifies WordPress and Drupal on live domains with zero external API calls.
+### Phase 1: Data Partitioning & Template Registry
+* Non-destructively migrate `targets` and `dispatch_logs` with `track`, `template_slug`, `utm_url`, and technographic fields.
+* Seed `templates` table and create `outreach/templates/agency_v1.txt` and `outreach/templates/direct_client_v1.txt`.
+* Implement dynamic UTM link builder in `outreach/sender.py`.
+* **Acceptance Criteria:** Database migration runs smoothly on existing 22 agency records without data loss; UTM generator produces valid tracking URLs.
 
-### Phase 2: BuiltWith MCP & API Gateway
-* Implement `outreach/builtwith.py` with HTTP client for `https://api.builtwith.com/mcp` and REST lookup endpoint.
-* Implement BuiltWith MCP Registry search helper for programmatic tool discovery.
-* Cache all responses in SQLite to guarantee zero redundant API credit consumption.
-* **Acceptance Criteria:** BuiltWith client reads credentials from `.env`, queries endpoint if key exists, caches to SQLite, or falls back seamlessly to local fingerprinter if key is missing.
+### Phase 2: Technographic Engine & BuiltWith Gateway
+* Implement `outreach/technographics.py` with passive header and markup detection for WordPress, WooCommerce, Drupal, Magento, and PHP.
+* Implement `outreach/builtwith.py` with MCP and REST endpoints, backed by SQLite caching in `builtwith_cache`.
+* **Acceptance Criteria:** Live inspection test correctly identifies CMS and server headers without external API keys.
 
-### Phase 3: Direct End-Client Outreach & CLI Integration
-* Add `direct_client` email template in `outreach/sender.py` focusing on business protection, customer transactions, and €140 fixed pricing.
-* Add `--audience` flag to `cli.py send` (`agency` vs `direct_client`).
-* Add `cli.py fingerprint` command to batch-analyze candidate websites.
-* **Acceptance Criteria:** Dry-run preview displays hyper-personalized end-client copy referencing detected platform (e.g. "WordPress / WooCommerce").
+### Phase 3: Multi-Track Dispatcher & CLI Control
+* Update `outreach/sender.py` to route the requested template by `template_slug` and log exact template versions and UTM URLs to `dispatch_logs`.
+* Enhance `cli.py` to support `--track [agency|direct_client|all]` across `status`, `list`, `send`, and `export`.
+* **Acceptance Criteria:** Dry-run preview displays hyper-personalized end-client copy with embedded UTM links and updates audit trail.
 
 ## Cost Estimates
 
 | Phase | Estimated Tokens | Estimated Cost (USD) |
 |---|---|---|
-| Phase 1: Schema & Passive Fingerprinter | ~4,000 | ~$0.016 |
-| Phase 2: BuiltWith MCP & API Gateway | ~3,500 | ~$0.014 |
-| Phase 3: Direct-Client Template & CLI | ~3,000 | ~$0.012 |
-| **Total** | **~10,500** | **~$0.042** |
+| Phase 1: Multi-Track Schema & UTM Builder | ~4,500 | ~$0.018 |
+| Phase 2: Technographic & BuiltWith Gateway | ~4,000 | ~$0.016 |
+| Phase 3: Multi-Track CLI & Verification | ~3,500 | ~$0.014 |
+| **Total** | **~12,000** | **~$0.048** |

@@ -1,31 +1,36 @@
-# Todo: BuiltWith MCP & Technographic Direct-Client Outreach
+# Todo: Multi-Track Outreach Engine, Template Versioning & UTM Attribution
 
-- [ ] **Task 1: Database Schema Migration & Audience Fields**
+- [ ] **Task 1: Multi-Track Database Schema Migration & Template Registry**
   - **Prerequisites**: Approved `ai-work/spec/outreach-builtwith-integration-spec.md`.
   - **File**: `outreach/db.py`
-  - **Validation**: `targets` table updated with `audience_type`, `detected_platform`, `detected_server`, `tech_confidence`; `builtwith_cache` table created; schema migration runs non-destructively without wiping existing target records.
+  - **Validation**: Schema adds `track`, `detected_platform`, `detected_server`, `tech_confidence` to `targets`; adds `template_slug`, `utm_url` to `dispatch_logs`; creates `templates` and `builtwith_cache` tables; existing 22 agency records remain intact with `track = 'agency'`.
 
-- [ ] **Task 2: Implement Passive Technographic Fingerprinter**
+- [ ] **Task 2: File-Based Template Registry & Dynamic UTM Builder**
+  - **Prerequisites**: Task 1 complete.
+  - **Files**: `outreach/templates/agency_v1.txt`, `outreach/templates/direct_client_v1.txt`, `outreach/sender.py`
+  - **Validation**: Function `build_utm_url(domain, track, template_slug)` correctly constructs parameter string; templates load from disk and substitute tokens including `{{LandingUrl}}`.
+
+- [ ] **Task 3: Implement Passive Technographic Fingerprinter**
   - **Prerequisites**: Task 1 complete.
   - **File**: `outreach/technographics.py`
   - **Validation**: Unit test against active sites confirming accurate detection of WordPress, WooCommerce, Drupal, and Magento; returns platform string, server string, and confidence score with zero paid API calls.
 
-- [ ] **Task 3: Implement BuiltWith MCP & REST Client Bridge**
-  - **Prerequisites**: Task 2 complete.
+- [ ] **Task 4: Implement BuiltWith MCP & REST Client Bridge**
+  - **Prerequisites**: Task 3 complete.
   - **File**: `outreach/builtwith.py`
   - **Validation**: Client connects to `https://api.builtwith.com/mcp` and REST lookup endpoint when `BUILTWITH_API_KEY` is present; falls back gracefully to `technographics.py` when absent; caches responses in SQLite.
 
-- [ ] **Task 4: Direct End-Client Email Template & Multi-Audience Dispatcher**
-  - **Prerequisites**: Task 1 & 2 complete.
+- [ ] **Task 5: Multi-Track Dispatcher & Audit Logger**
+  - **Prerequisites**: Tasks 2 & 4 complete.
   - **File**: `outreach/sender.py`
-  - **Validation**: Implements separate templates for `agency` and `direct_client`; injects `{{DetectedPlatform}}` into context; verifies copy is free of em dashes and emphasizes business uptime and €140 flat rate.
+  - **Validation**: Dispatches Track A or Track B with corresponding template; logs `template_slug` and `utm_url` to `dispatch_logs`; updates `targets.status` without cross-pollinating tracks.
 
-- [ ] **Task 5: CLI Fingerprinting and Audience Commands**
-  - **Prerequisites**: Tasks 3 & 4 complete.
-  - **File**: `outreach/cli.py`
-  - **Validation**: `python -m outreach.cli fingerprint` inspects pending targets and populates platform telemetry; `python -m outreach.cli send --audience direct_client` routes correct copy.
-
-- [ ] **Task 6: Empirical Verification & End-to-End Test**
+- [ ] **Task 6: CLI Multi-Track Commands and Export Filtering**
   - **Prerequisites**: Tasks 1-5 complete.
-  - **Commands**: Run fingerprinting on sample domains, run dry-run dispatch with `--audience direct_client`, verify clean output and audit logging.
-  - **Validation**: Dry-run preview displays hyper-personalized end-client copy with detected platform tokens.
+  - **File**: `outreach/cli.py`
+  - **Validation**: Commands `status`, `list`, `send`, and `export` accept `--track [agency|direct_client|all]`; exports separate or combined reports.
+
+- [ ] **Task 7: Empirical Verification & End-to-End Test**
+  - **Prerequisites**: Tasks 1-6 complete.
+  - **Commands**: Run fingerprinter test on sample domain, run dry-run dispatch with `--track direct_client`, verify UTM parameter presence and audit logging.
+  - **Validation**: Dry-run preview renders hyper-personalized end-client copy with verified UTM link; database records template slug and UTM URL.

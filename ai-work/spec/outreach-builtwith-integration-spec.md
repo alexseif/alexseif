@@ -1,100 +1,101 @@
-# Sub-Spec: BuiltWith MCP & API Integration for Direct End-Client Lead Generation
+# Sub-Spec: BuiltWith MCP, Multi-Track Architecture & UTM Attribution
 
 > **Topic:** `outreach-builtwith-integration`  
-> **Status:** Draft / Under Review  
+> **Status:** Draft / Ready for Review  
 > **Source Objective:** `ai-work/OBJECTIVE.md`  
 
 ---
 
-## 1. Context & Strategic Shift
+## 1. Context & Business Strategy
 
-The initial outreach campaign targeted **digital web agencies** acting as their tier-3 white-label patching partner. This specification defines the transition to **direct end-client lead generation**: identifying and reaching business owners, e-commerce operators, and IT directors whose commercial websites actively run WordPress, Drupal, Magento, WooCommerce, or custom PHP backends.
+The outreach engine is expanding from a single agency-focused pipeline into a **Multi-Track Lead Generation & Technographic Intelligence System**.
 
-To support this transition without incurring upfront SaaS subscription fees, the system implements a **Dual-Engine Technographic Architecture**:
-1. **BuiltWith MCP & API Gateway:** Connects to the official BuiltWith MCP endpoint (`https://api.builtwith.com/mcp`) and REST API once an API key is available.
-2. **Zero-Cost Local Technographic Fingerprinter:** A built-in passive analyzer that scans public HTTP response headers, generator meta tags, cookie footprints, and script paths (`/wp-json/`, `/sites/default/`, `PHPSESSID`) to detect target technologies for free.
+This specification formalizes three core architectural capabilities:
+1. **Multi-Track Data Partitioning:** Complete operational separation between Track A (**Digital Agencies**) and Track B (**Direct End-Clients**).
+2. **Template Versioning & A/B Tracking:** Archiving and logging exact template versions (`template_slug`) per dispatch to measure reply rates across iterations.
+3. **UTM Attribution Engine:** Dynamically signing call-to-action links with UTM parameters down to the company, track, and template version for analytics attribution.
+4. **BuiltWith MCP & Passive Technographics:** Connecting to the official BuiltWith MCP server (`https://api.builtwith.com/mcp`) when API credentials exist, while defaulting to an internal zero-cost passive fingerprinter.
 
 ---
 
 ## 2. Functional Requirements
 
-### 2.1 Technographic Discovery Engine (`outreach/technographics.py`)
-Implement an extensible detection module supporting two interchangeable providers:
+### 2.1 Multi-Track Campaign Architecture
+The system isolates targets and reporting into two distinct operational tracks:
+* **Track 1 (`agency`):** Digital development shops, web bureaus, and MSPs managing multiple client PHP/Node fleets.
+* **Track 2 (`direct_client`):** Direct business websites running WordPress, WooCommerce, Drupal, Magento, or custom PHP backends.
 
-1. **Passive Fingerprinter (Zero-Cost Default):**
-   * Inspects HTTP response headers (`X-Powered-By`, `Server`, `Link: <.../wp-json/>`).
-   * Parses homepage and `<head>` markup:
-     * WordPress: `wp-content/`, `wp-includes/`, `<meta name="generator" content="WordPress...">`
-     * WooCommerce: `woocommerce-`, `wc-ajax`
-     * Drupal: `Drupal.settings`, `sites/default/files/`, `<meta name="generator" content="Drupal...">`
-     * Magento: `mage-`, `Mage.Cookies`, `/static/frontend/`
-     * Laravel / Symfony: CSRF cookie naming patterns (`XSRF-TOKEN`, `laravel_session`, `symfony`)
-     * Node.js / Next.js: `__NEXT_DATA__`, `_next/static/`
-   * Returns: `{is_php: bool, is_nodejs: bool, platform: str, web_server: str, confidence: int}`
+Target records and dispatch logs must be strictly partitioned by `track`.
 
-2. **BuiltWith MCP & REST Client (`outreach/builtwith.py`):**
-   * MCP endpoint integration: `https://api.builtwith.com/mcp` via Bearer token auth.
-   * REST endpoint integration: `https://api.builtwith.com/v21/api.json?KEY={KEY}&LOOKUP={domain}`.
-   * BuiltWith MCP Registry search: Ability to query categories and MCP server tools via `https://builtwith.com/mcp-registry`.
-   * Caches all responses in SQLite table `builtwith_cache` to ensure zero redundant credit spend.
+### 2.2 Template Registry & Iteration Logging (`outreach/templates/` & `db.py`)
+To measure which pitch drives higher conversions:
+* **File-Based Template Storage:** Templates stored in `outreach/templates/` using a standardized naming schema:
+  * `agency_v1.txt`: Initial full-stack advisory template (already sent to 22 agencies).
+  * `direct_client_v1.txt`: Direct website owner revenue protection template.
+* **Database Tracking:**
+  * Add `templates` table storing `slug`, `track`, `subject`, `body`, `version`, and `is_active`.
+  * Update `dispatch_logs` table with `template_slug` and `utm_url` columns so every outgoing email is linked to its exact template iteration.
 
-### 2.2 Target Persona & Audience Separation
-Separate outreach logic into two distinct campaign modes:
+### 2.3 Dynamic UTM Link Attribution Generator (`outreach/sender.py`)
+All landing page URLs in dispatched emails must be dynamically signed:
+* **Base URL:** `https://alexseif.com/php-emergency-patch`
+* **Query Parameters:**
+  * `utm_source`: `outreach`
+  * `utm_medium`: `email`
+  * `utm_campaign`: `{track}_{template_slug}` (e.g. `direct_client_v1` or `agency_v1`)
+  * `utm_content`: `{domain}` (e.g. `acme-webshop.nl`)
+* **Output Format:**
+  `https://alexseif.com/php-emergency-patch?utm_source=outreach&utm_medium=email&utm_campaign=direct_client_v1&utm_content=acme-webshop.nl`
 
-* **Mode A: Agency Partner Outreach (Existing):**
-  * Target: Agency Founders, CTOs, Technical Directors.
-  * Pitch: Fleet-wide risk reduction, liability shield, white-label tier-3 escalation.
-* **Mode B: Direct End-Client Outreach (New):**
-  * Target: Managing Directors, Business Owners, Heads of E-Commerce, IT Managers.
-  * Pitch: Protecting business revenue, transactions, and customer data from in-the-wild exploits (php2shell and Node2Shell). Flat €140 fix with pre-patch backup, zero downtime, and no disruption to sales.
+### 2.4 Technographic Discovery & BuiltWith Gateway
+* **Passive Analyzer (`outreach/technographics.py`):** Scans public HTTP response headers (`X-Powered-By`, `Server`, `Link: <.../wp-json/>`), generator tags, and asset paths to detect WordPress, WooCommerce, Drupal, Magento, and PHP for free.
+* **BuiltWith MCP Gateway (`outreach/builtwith.py`):** Plugs into `https://api.builtwith.com/mcp` and REST endpoints when `BUILTWITH_API_KEY` is provided, caching all responses in SQLite table `builtwith_cache`.
 
-### 2.3 Direct End-Client Email Template (`outreach/templates/direct_client.txt`)
-Create a dedicated template specifically calibrated for business owners:
+### 2.5 Database Schema Additions (`outreach/db.py`)
+```sql
+-- Track partition and technographic fields on targets
+ALTER TABLE targets ADD COLUMN track TEXT NOT NULL DEFAULT 'agency'; -- 'agency' or 'direct_client'
+ALTER TABLE targets ADD COLUMN detected_platform TEXT;
+ALTER TABLE targets ADD COLUMN detected_server TEXT;
+ALTER TABLE targets ADD COLUMN tech_confidence INTEGER DEFAULT 0;
 
-> **Subject:** Security notice regarding {{Domain}}'s web platform
->
-> Hi {{FirstName}},
->
-> Reaching out directly because {{Domain}} appears to run on {{DetectedPlatform}} (powered by PHP).
->
-> Two critical security vulnerabilities (php2shell CVE-2026-109618 / 109619) are currently being exploited in the wild against default PHP server environments. For an active business website, standard advice ("run system upgrades") often breaks custom plugins or shopping carts, risking immediate downtime and lost sales.
->
-> I am an independent Software Architect with 20+ years of production experience. I perform zero-downtime hotpatching to protect websites from exploitation without interrupting live customers.
->
-> **Direct Remediation Pricing:**
-> * **Standard Patch Package:** EUR 140 flat per website (includes full pre-patch backup, system update, version upgrade, and zero-downtime hotpatch).
-> * **Custom Architectures:** Billed at EUR 75/hour for heavily customized platforms.
-> * **Monthly Maintenance:** Retainers available for continuous security coverage, billed independently or via a registered corporate entity.
->
-> If your team hasn't patched the underlying server runtime yet, I can secure your site today.
->
-> Would you like a quick 5-minute assessment of your setup?
->
-> Technical overview: https://alexseif.com/php-emergency-patch
->
-> Best regards,  
-> Alex Seif  
-> Software Architect  
-> alex.seif@gmail.com | +20 100 400 6332
+-- Template registry
+CREATE TABLE IF NOT EXISTS templates (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    slug TEXT UNIQUE NOT NULL,
+    track TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    body TEXT NOT NULL,
+    version INTEGER NOT NULL DEFAULT 1,
+    is_active BOOLEAN NOT NULL DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-### 2.4 Database Schema Updates (`outreach/db.py`)
-Enhance `targets` table:
-* `audience_type`: TEXT NOT NULL DEFAULT 'agency' (options: `agency`, `direct_client`).
-* `detected_platform`: TEXT (e.g. `WordPress / WooCommerce`, `Drupal`, `Magento`, `Custom PHP`).
-* `detected_server`: TEXT (e.g. `Nginx`, `Apache`, `LiteSpeed`).
-* `tech_confidence`: INTEGER DEFAULT 0.
+-- Template and UTM tracking on dispatch logs
+ALTER TABLE dispatch_logs ADD COLUMN template_slug TEXT;
+ALTER TABLE dispatch_logs ADD COLUMN utm_url TEXT;
 
-### 2.5 CLI Operational Commands (`outreach/cli.py`)
-* `python -m outreach.cli fingerprint [--limit N]`: Runs passive technographic detection on imported candidate websites.
-* `python -m outreach.cli harvest --direct-clients`: Ingests candidate e-commerce and business domains.
-* `python -m outreach.cli send --audience direct_client`: Dispatches calibrated end-client copy.
+-- BuiltWith response caching
+CREATE TABLE IF NOT EXISTS builtwith_cache (
+    domain TEXT PRIMARY KEY,
+    raw_json TEXT NOT NULL,
+    cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+### 2.6 CLI Enhancements (`outreach/cli.py`)
+* `python -m outreach.cli status --track [agency|direct_client|all]`
+* `python -m outreach.cli list --track [agency|direct_client] --status [sent|ready]`
+* `python -m outreach.cli send --track direct_client --live --limit 10`
+* `python -m outreach.cli export --track [agency|direct_client|all]`
+* `python -m outreach.cli templates list`: Displays registered templates and their dispatch counts.
 
 ---
 
 ## 3. Scope Boundaries & Constraints
 
-* **Do:** Provide 100% functional passive technographic detection without requiring an active paid BuiltWith plan.
-* **Do:** Structure the code so plugging in a BuiltWith API key instantly upgrades the analyzer to official MCP/API data.
-* **Do:** Maintain strict separation between agency outreach and direct end-client outreach in templates and logs.
-* **Don't:** Send technical jargon to non-technical business owners; keep end-client copy focused on uptime, customer transactions, and fixed €140 pricing.
-* **Don't:** Run invasive vulnerability exploits against target websites; detection must remain strictly passive.
+* **Do:** Keep the existing 22 dispatched agency records preserved under `track = 'agency'`.
+* **Do:** Automatically generate dynamic UTM links during template compilation.
+* **Do:** Store all templates as clean text files in `outreach/templates/` for easy editing.
+* **Don't:** Mix agency metrics with direct client metrics in status reports.
+* **Don't:** Hardcode static landing page URLs; all URLs must be processed through the UTM builder.
