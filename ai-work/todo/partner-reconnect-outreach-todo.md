@@ -10,7 +10,7 @@
   - **File**: `outreach/db.py`
   - **Validation**: 3 targets added with `track = 'partner'`, verified names, emails, and `status = 'ready'`.
 
-- [ ] **Task 3: Dry-Run Verification of Partner Template**
+- [x] **Task 3: Dry-Run Verification of Partner Template**
   - **Prerequisites**: Task 2 complete.
   - **Command**: `./venv/bin/python -m outreach.cli send --track partner`
   - **Validation**: Complete dry-run preview shows warm reconnect copy, zero em dashes, and valid UTM links.
