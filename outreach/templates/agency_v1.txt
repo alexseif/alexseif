@@ -1,0 +1,28 @@
+SUBJECT: Question regarding {{Company}}'s runtime patching (PHP & Node.js)
+
+Hi {{FirstName}},
+
+Two critical engine-level vulnerability waves recently hit production web fleets:
+
+1. PHP Core (php2shell CVE-2026-109618 / 109619): Stale memory allocators and worker state contamination under default PHP-FPM pools.
+2. Node.js October 2026 Advisory (CVE-2026-111497): Critical Brotli decoder buffer overflow permitting unauthenticated RCE on Node.js 22.x, 24.x, and 26.x.
+
+For web agencies managing multiple client deployments, standard advice ("put up a WAF" or "run `apt upgrade`") creates problems: WAFs miss compressed payload variations, and blind OS updates risk breaking production dependencies and custom plugins.
+
+I am a Software Architect with 20+ years of production experience. I audit and patch production PHP and Node.js runtimes with zero service interruption.
+
+Standard Incident Remediation:
+- Fixed Entry Package: EUR 140 per site / application (includes full pre-patch backup, dependencies update, version upgrade, and zero-downtime runtime hotpatch).
+- Complex / Legacy Stacks: Sized by codebase architecture at EUR 75/hour.
+- Ongoing Retainers: Monthly outsourcing retainers available for continuous fleet maintenance, billed either independently or through a registered corporate entity.
+
+If {{Company}} runs client applications that cannot afford downtime but cannot stay exposed to active RCE exploits, I can audit and patch your setup today.
+
+Are you available for a brief 10-minute sync this week?
+
+Technical overview: {{LandingUrl}}
+
+Best regards,
+Alex Seif
+Software Architect
+alex.seif@gmail.com | +20 100 400 6332

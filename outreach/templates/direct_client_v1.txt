@@ -1,0 +1,25 @@
+SUBJECT: Security notice regarding {{Domain}}'s web platform
+
+Hi {{FirstName}},
+
+Reaching out directly because {{Domain}} appears to run on {{DetectedPlatform}} (powered by PHP).
+
+Two critical security vulnerabilities (php2shell CVE-2026-109618 / 109619) are currently being exploited in the wild against default PHP server environments. For an active business website, standard advice ("run system upgrades") often breaks custom plugins or shopping carts, risking immediate downtime and lost sales.
+
+I am an independent Software Architect with 20+ years of production experience. I perform zero-downtime hotpatching to protect websites from exploitation without interrupting live customers.
+
+Direct Remediation Pricing:
+- Standard Patch Package: EUR 140 flat per website (includes full pre-patch backup, system update, version upgrade, and zero-downtime hotpatch).
+- Custom Architectures: Billed at EUR 75/hour for heavily customized platforms.
+- Monthly Maintenance: Retainers available for continuous security coverage, billed independently or via a registered corporate entity.
+
+If your team hasn't patched the underlying server runtime yet, I can secure your site today.
+
+Would you like a quick 5-minute assessment of your setup?
+
+Technical overview: {{LandingUrl}}
+
+Best regards,
+Alex Seif
+Software Architect
+alex.seif@gmail.com | +20 100 400 6332

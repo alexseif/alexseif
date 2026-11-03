@@ -1,6 +1,7 @@
 import time
 import random
 import smtplib
+from pathlib import Path
 from email.message import EmailMessage
 from typing import Dict, Any, Optional, Tuple
 import httpx
@@ -19,37 +20,42 @@ from .config import (
     MIN_DELAY_SECONDS,
     MAX_DELAY_SECONDS,
 )
-from .db import log_dispatch
+from .db import log_dispatch, upsert_template, get_template
 
-DEFAULT_SUBJECT = "Question regarding {{Company}}'s runtime patching (PHP & Node.js)"
+TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
 
-DEFAULT_BODY_TEMPLATE = """Hi {{FirstName}},
+def build_utm_url(domain: str, track: str = "agency", template_slug: str = "v1") -> str:
+    clean_domain = domain.strip().lower().replace("http://", "").replace("https://", "").strip("/")
+    campaign = template_slug if template_slug.startswith(f"{track}_") else f"{track}_{template_slug}"
+    return f"https://alexseif.com/php-emergency-patch?utm_source=outreach&utm_medium=email&utm_campaign={campaign}&utm_content={clean_domain}"
 
-Two critical engine-level vulnerability waves recently hit production web fleets:
+def load_template_file(template_slug: str, track: str = "agency") -> Tuple[str, str]:
+    template_file = TEMPLATES_DIR / f"{template_slug}.txt"
+    if template_file.exists():
+        content = template_file.read_text(encoding="utf-8")
+        lines = content.strip().split("\n")
+        subject = "Question regarding runtime patching"
+        body_lines = []
 
-1. PHP Core (php2shell CVE-2026-109618 / 109619): Stale memory allocators and worker state contamination under default PHP-FPM pools.
-2. Node.js October 2026 Advisory (CVE-2026-111497): Critical Brotli decoder buffer overflow permitting unauthenticated RCE on Node.js 22.x, 24.x, and 26.x.
+        if lines and lines[0].startswith("SUBJECT:"):
+            subject = lines[0].replace("SUBJECT:", "").strip()
+            body_lines = lines[1:]
+        else:
+            body_lines = lines
 
-For web agencies managing multiple client deployments, standard advice ("put up a WAF" or "run `apt upgrade`") creates problems: WAFs miss compressed payload variations, and blind OS updates risk breaking production dependencies and custom plugins.
+        body = "\n".join(body_lines).strip()
+        upsert_template(slug=template_slug, track=track, subject=subject, body=body)
+        return subject, body
 
-I am a Software Architect with 20+ years of production experience. I audit and patch production PHP and Node.js runtimes with zero service interruption.
+    # Fallback to DB if file doesn't exist
+    cached = get_template(template_slug)
+    if cached:
+        return cached["subject"], cached["body"]
 
-Standard Incident Remediation:
-- Fixed Entry Package: EUR 140 per site / application (includes full pre-patch backup, dependencies update, version upgrade, and zero-downtime runtime hotpatch).
-- Complex / Legacy Stacks: Sized by codebase architecture at EUR 75/hour.
-- Ongoing Retainers: Monthly outsourcing retainers available for continuous fleet maintenance, billed either independently or through a registered corporate entity.
-
-If {{Company}} runs client applications that cannot afford downtime but cannot stay exposed to active RCE exploits, I can audit and patch your setup today.
-
-Are you available for a brief 10-minute sync this week?
-
-Technical overview: https://alexseif.com/php-emergency-patch
-
-Best regards,
-Alex Seif
-Software Architect
-alex.seif@gmail.com | +20 100 400 6332
-"""
+    # Default fallback
+    subject = "Question regarding {{Company}}'s runtime patching (PHP & Node.js)"
+    body = "Hi {{FirstName}},\n\nPlease review your runtime patch status: {{LandingUrl}}\n\nBest regards,\nAlex Seif"
+    return subject, body
 
 def render_template(template: str, context: Dict[str, str]) -> str:
     content = template
@@ -105,26 +111,40 @@ def dispatch_target(
     target: Dict[str, Any],
     dry_run: bool = True,
     provider: Optional[str] = None,
-    subject_template: str = DEFAULT_SUBJECT,
-    body_template: str = DEFAULT_BODY_TEMPLATE,
+    template_slug: Optional[str] = None,
 ) -> Tuple[bool, str]:
     target_id = target["id"]
     recipient_email = target.get("contact_email")
     if not recipient_email:
         return False, "Target has no contact email"
 
-    first_name = target.get("contact_first_name") or target.get("company_name") or "there"
-    company = target.get("company_name") or target.get("domain") or "your company"
+    track = target.get("track") or "agency"
     domain = target.get("domain") or ""
+    company = target.get("company_name") or domain or "your company"
+    first_name = target.get("contact_first_name") or company
+
+    # Determine default template slug by track
+    active_slug = template_slug
+    if not active_slug:
+        active_slug = "direct_client_v1" if track == "direct_client" else "agency_v1"
+
+    utm_url = build_utm_url(domain=domain, track=track, template_slug=active_slug)
+    subject_raw, body_raw = load_template_file(active_slug, track=track)
+
+    detected_platform = target.get("detected_platform") or "WordPress / PHP"
+    detected_server = target.get("detected_server") or "Nginx / Apache"
 
     context = {
         "FirstName": first_name,
         "Company": company,
         "Domain": domain,
+        "LandingUrl": utm_url,
+        "DetectedPlatform": detected_platform,
+        "DetectedServer": detected_server,
     }
 
-    subject = render_template(subject_template, context)
-    body = render_template(body_template, context)
+    subject = render_template(subject_raw, context)
+    body = render_template(body_raw, context)
     active_provider = (provider or OUTREACH_PROVIDER).lower()
 
     if dry_run:
@@ -134,10 +154,12 @@ def dispatch_target(
             subject=subject,
             body=body,
             provider="dry_run",
+            template_slug=active_slug,
+            utm_url=utm_url,
             status="dry_run",
             error_message=None,
         )
-        return True, f"[DRY-RUN] Would send to {recipient_email} ({company}): '{subject}'"
+        return True, f"[DRY-RUN] [{track.upper()}] [{active_slug}] {recipient_email}: '{subject}' -> {utm_url}"
 
     # Live send
     success = False
@@ -160,12 +182,14 @@ def dispatch_target(
         subject=subject,
         body=body,
         provider=active_provider,
+        template_slug=active_slug,
+        utm_url=utm_url,
         status=status_str,
         error_message=err,
     )
 
     if success:
-        return True, f"Successfully dispatched to {recipient_email}"
+        return True, f"Successfully dispatched to {recipient_email} (Template: {active_slug})"
     return False, f"Failed sending to {recipient_email}: {err}"
 
 def apply_rate_limit(min_sec: int = MIN_DELAY_SECONDS, max_sec: int = MAX_DELAY_SECONDS) -> float:
