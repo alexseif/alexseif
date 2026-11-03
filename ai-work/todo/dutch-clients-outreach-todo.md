@@ -1,11 +1,11 @@
 # Todo: Dutch Direct Clients Outreach Campaign (Track 2)
 
-- [ ] **Task 1: Seed Qualified Dutch Direct Client Targets**
+- [x] **Task 1: Seed Qualified Dutch Direct Client Targets**
   - **Prerequisites**: Approved `ai-work/spec/dutch-clients-outreach-spec.md`.
   - **File**: `outreach/targets_clients.csv`
   - **Validation**: 15+ verified Dutch businesses running WordPress, WooCommerce, and Drupal formatted with valid DNS and company names.
 
-- [ ] **Task 2: Ingest Targets into Track 2 Database**
+- [x] **Task 2: Ingest Targets into Track 2 Database**
   - **Prerequisites**: Task 1 complete.
   - **Command**: `./venv/bin/python -m outreach.cli import --file outreach/targets_clients.csv --track direct_client`
   - **Validation**: Database status confirms 15+ targets in `imported` status under `track = 'direct_client'` without affecting existing agency records.
