@@ -5,7 +5,7 @@
   - **Files**: `outreach/templates/partner_v1.txt`, `outreach/cli.py`
   - **Validation**: Template loads from disk; CLI recognizes `partner` in `--track`.
 
-- [ ] **Task 2: Ingest & Populate 3 Partner Targets into Database**
+- [x] **Task 2: Ingest & Populate 3 Partner Targets into Database**
   - **Prerequisites**: Task 1 complete.
   - **File**: `outreach/db.py`
   - **Validation**: 3 targets added with `track = 'partner'`, verified names, emails, and `status = 'ready'`.
