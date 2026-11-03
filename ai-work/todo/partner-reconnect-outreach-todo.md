@@ -1,6 +1,6 @@
 # Todo: Partner Outreach Campaign (Track 3: partner)
 
-- [ ] **Task 1: Create Partner Email Template & Support Track in CLI**
+- [x] **Task 1: Create Partner Email Template & Support Track in CLI**
   - **Prerequisites**: Approved `ai-work/spec/partner-reconnect-outreach-spec.md`.
   - **Files**: `outreach/templates/partner_v1.txt`, `outreach/cli.py`
   - **Validation**: Template loads from disk; CLI recognizes `partner` in `--track`.

@@ -227,6 +227,7 @@ def show_status_summary(track: Optional[str] = None) -> None:
         stats_all = get_stats()
         stats_agency = get_stats(track="agency")
         stats_client = get_stats(track="direct_client")
+        stats_partner = get_stats(track="partner")
 
         print("\n--- Pipeline Summary (All Tracks) ---")
         print(f"  Total Targets:      {stats_all.get('total', 0)}")
@@ -237,6 +238,7 @@ def show_status_summary(track: Optional[str] = None) -> None:
         print("-------------------------------------")
         print(f"  Track 1 [AGENCY]:        {stats_agency.get('total', 0)} total | {stats_agency.get('sent', 0)} sent | {stats_agency.get('ready', 0)} ready")
         print(f"  Track 2 [DIRECT_CLIENT]: {stats_client.get('total', 0)} total | {stats_client.get('sent', 0)} sent | {stats_client.get('ready', 0)} ready")
+        print(f"  Track 3 [PARTNER]:       {stats_partner.get('total', 0)} total | {stats_partner.get('sent', 0)} sent | {stats_partner.get('ready', 0)} ready")
         print("-------------------------------------\n")
     else:
         stats = get_stats(track=track)
@@ -382,14 +384,14 @@ def main() -> None:
     # import
     p_import = subparsers.add_parser("import", help="Import domains and companies from CSV")
     p_import.add_argument("--file", "-f", required=True, help="Path to CSV file")
-    p_import.add_argument("--track", choices=["agency", "direct_client"], default="agency")
+    p_import.add_argument("--track", choices=["agency", "direct_client", "partner"], default="agency")
     p_import.set_defaults(func=cmd_import)
 
     # add
     p_add = subparsers.add_parser("add", help="Add a single domain manually")
     p_add.add_argument("domain", help="Target domain (e.g., example.com)")
     p_add.add_argument("--company", help="Company name")
-    p_add.add_argument("--track", choices=["agency", "direct_client"], default="agency")
+    p_add.add_argument("--track", choices=["agency", "direct_client", "partner"], default="agency")
     p_add.add_argument("--name", help="Contact person's full name")
     p_add.add_argument("--title", help="Contact job title")
     p_add.add_argument("--email", help="Contact email address")
@@ -403,20 +405,20 @@ def main() -> None:
 
     # fingerprint
     p_fp = subparsers.add_parser("fingerprint", help="Batch fingerprint targets to detect CMS and servers")
-    p_fp.add_argument("--track", choices=["agency", "direct_client", "all"], default="all")
+    p_fp.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
     p_fp.add_argument("--limit", "-l", type=int, default=None)
     p_fp.set_defaults(func=cmd_fingerprint)
 
     # enrich
     p_enrich = subparsers.add_parser("enrich", help="Discover decision-maker contacts for imported targets")
-    p_enrich.add_argument("--track", choices=["agency", "direct_client", "all"], default="all")
+    p_enrich.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
     p_enrich.add_argument("--limit", "-l", type=int, default=None)
     p_enrich.set_defaults(func=cmd_enrich)
 
     # send
     p_send = subparsers.add_parser("send", help="Send outreach emails (dry-run by default)")
-    p_send.add_argument("--track", choices=["agency", "direct_client", "all"], default="all")
-    p_send.add_argument("--template", "-t", help="Template slug override (e.g., agency_v1, direct_client_v1)")
+    p_send.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
+    p_send.add_argument("--template", "-t", help="Template slug override (e.g., agency_v1, direct_client_v1, partner_v1)")
     p_send.add_argument("--live", action="store_true", help="Execute real email dispatch (omit for dry-run)")
     p_send.add_argument("--yes", "-y", action="store_true", help="Skip confirmation prompt in live mode")
     p_send.add_argument("--limit", "-l", type=int, default=None)
@@ -425,24 +427,24 @@ def main() -> None:
 
     # status
     p_status = subparsers.add_parser("status", help="Show current pipeline metrics and recent activity")
-    p_status.add_argument("--track", choices=["agency", "direct_client", "all"], default="all")
+    p_status.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
     p_status.set_defaults(func=cmd_status)
 
     # list
     p_list = subparsers.add_parser("list", help="List targets with status, track, and reach timestamps")
-    p_list.add_argument("--track", choices=["agency", "direct_client", "all"], default="all")
+    p_list.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
     p_list.add_argument("--status", "-s", default="all", choices=["all", "sent", "ready", "imported", "skipped", "failed"])
     p_list.set_defaults(func=cmd_list)
 
     # export
     p_export = subparsers.add_parser("export", help="Export full campaign tracking report to CSV")
-    p_export.add_argument("--track", choices=["agency", "direct_client", "all"], default="all")
+    p_export.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
     p_export.add_argument("--output", "-o", default="outreach/campaign_report.csv")
     p_export.set_defaults(func=cmd_export)
 
     # templates
     p_tmpl = subparsers.add_parser("templates", help="List registered email templates")
-    p_tmpl.add_argument("--track", choices=["agency", "direct_client", "all"], default="all")
+    p_tmpl.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
     p_tmpl.set_defaults(func=cmd_templates)
 
     args = parser.parse_args()

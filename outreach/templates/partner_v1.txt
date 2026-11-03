@@ -1,0 +1,24 @@
+SUBJECT: Reconnecting // Quick security note on PHP & Node.js CVEs
+
+Hi {{FirstName}},
+
+Hope you and the team at {{Company}} are doing great.
+
+It has been a while since we collaborated on our previous projects, and I wanted to check in and see how things are going on your end.
+
+I am also reaching out because of two critical vulnerability waves currently hitting production servers in the wild:
+1. PHP Core (php2shell CVE-2026-109618 / 109619): Process memory contamination in default PHP-FPM pools.
+2. Node.js (CVE-2026-111497): Brotli buffer overflow enabling unauthenticated RCE on Node.js 22.x, 24.x, and 26.x.
+
+Because standard system upgrades often break legacy dependencies or custom extensions, I have been helping agencies and development teams with zero-downtime hotpatching to keep client platforms secure without service interruption.
+
+If {{Company}} has client applications or server fleets that need an extra pair of senior hands to audit or hotpatch, I would be glad to help out. Standard remediations run at a flat EUR 140 per site, with architectural retainers available for ongoing maintenance.
+
+Technical overview: {{LandingUrl}}
+
+Let's catch up soon regardless. How have things been with you?
+
+Best regards,
+Alex Seif
+Software Architect
+alex.seif@gmail.com | +20 100 400 6332

@@ -126,7 +126,12 @@ def dispatch_target(
     # Determine default template slug by track
     active_slug = template_slug
     if not active_slug:
-        active_slug = "direct_client_v1" if track == "direct_client" else "agency_v1"
+        if track == "partner":
+            active_slug = "partner_v1"
+        elif track == "direct_client":
+            active_slug = "direct_client_v1"
+        else:
+            active_slug = "agency_v1"
 
     utm_url = build_utm_url(domain=domain, track=track, template_slug=active_slug)
     subject_raw, body_raw = load_template_file(active_slug, track=track)
