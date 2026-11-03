@@ -25,7 +25,7 @@
   - **Command**: `./venv/bin/python -m outreach.cli send --track direct_client`
   - **Validation**: Complete dry-run execution confirms personalized template rendering, zero em dashes, and valid UTM campaign URLs in `dispatch_logs`.
 
-- [ ] **Task 6: Live Batch Dispatch & Audit Export**
+- [x] **Task 6: Live Batch Dispatch & Audit Export**
   - **Prerequisites**: Task 5 complete and user approval obtained.
   - **Command**: `./venv/bin/python -m outreach.cli send --track direct_client --live`
   - **Validation**: Live emails dispatched via Brevo SMTP relay with pacing delays; `outreach/campaign_report_clients.csv` exported.
