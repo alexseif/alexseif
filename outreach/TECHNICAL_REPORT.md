@@ -46,16 +46,14 @@ flowchart TD
 ## 3. Core Module Specifications
 
 ### 3.1 Database & Multi-Track State Management (`outreach/db.py`)
-State tracking is handled via a local SQLite database (`outreach/outreach.db`) ensuring complete idempotency and zero duplicate contacts.
-
-The schema supports multi-track segmentation, technographic signals, template versioning, and UTM link tracking:
+State tracking is handled via a local SQLite database (`outreach/outreach.db`) ensuring complete idempotency, zero duplicate contacts, and persistent opt-out governance:
 
 ```sql
 CREATE TABLE IF NOT EXISTS targets (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     domain TEXT UNIQUE NOT NULL,
     company_name TEXT,
-    track TEXT NOT NULL DEFAULT 'agency', -- agency vs direct_client
+    track TEXT NOT NULL DEFAULT 'agency', -- agency, direct_client, partner
     detected_platform TEXT,
     detected_server TEXT,
     tech_confidence INTEGER DEFAULT 0,
@@ -67,7 +65,10 @@ CREATE TABLE IF NOT EXISTS targets (
     source TEXT DEFAULT 'manual',
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    do_not_contact INTEGER DEFAULT 0,
+    do_not_contact_at TIMESTAMP,
+    do_not_contact_reason TEXT
 );
 
 CREATE TABLE IF NOT EXISTS dispatch_logs (
@@ -86,29 +87,38 @@ CREATE TABLE IF NOT EXISTS dispatch_logs (
 );
 ```
 
-### 3.2 Passive Technographic Fingerprinter (`outreach/technographics.py`)
+### 3.2 Opt-Out Controls & Compliance Governance
+To support international and Dutch spam compliance regulations (ACM / GDPR), the platform enforces strict opt-out controls:
+* **Schema Attributes**: `do_not_contact`, `do_not_contact_at`, and `do_not_contact_reason` persist opt-out events with complete audit trails.
+* **Query Exclusion**: `get_targets(include_opted_out=False)` filters out all opted-out domains from candidate and dispatch queues by default.
+* **Defensive Stop in Dispatcher**: `dispatch_target()` inspects the opt-out flag prior to network rendering and aborts immediately if flagged.
+* **CLI Subcommand**: `python -m outreach.cli optout <domain> --name "<name>" --title "<title>" --reason "<reason>"` enables instant record updates.
+* **Audit Example**: Hoppinger (`hoppinger.com`, Target ID 6) was flagged as opted-out on request from Julia Peek (Office Manager), preserving all dispatch history while preventing any future dispatches.
+
+### 3.3 Passive Technographic Fingerprinter (`outreach/technographics.py`)
 Provides zero-cost technology detection by evaluating live HTTP responses:
 - **Server Headers**: Reads `Server`, `X-Powered-By`, and CDN reverse proxies (Cloudflare, LiteSpeed, Nginx, Apache).
 - **Session Signatures**: Inspects cookie jars for `PHPSESSID`, Laravel session hashes, and frontend cookies.
 - **Link Headers & DOM Footprints**: Analyzes REST API endpoints (`/wp-json/`), WordPress scripts (`wp-content/`), WooCommerce markers, Drupal settings objects (`drupalSettings`), Magento frontend tokens (`mage-`), and Next.js hydration blocks.
 - **Scoring Engine**: Returns detected platform, server name, and a confidence score between 0% and 95%.
+- **Resilient Network Timeouts**: Configured with 12.0s connect/read timeouts to accommodate slow uplink DNS resolution.
 
-### 3.3 BuiltWith MCP & REST Client Bridge (`outreach/builtwith.py`)
+### 3.4 BuiltWith MCP & REST Client Bridge (`outreach/builtwith.py`)
 - Provides clean hooks into the BuiltWith MCP registry (`https://api.builtwith.com/mcp`) and REST lookup endpoint.
 - Incorporates local SQLite caching in `builtwith_cache` to eliminate duplicate external calls.
 - Transparently falls back to the free passive technographic fingerprinter when external API quota is unconfigured.
 
-### 3.4 Contact Discovery & Humanized Greeting Sanitizer (`outreach/enricher.py`)
+### 3.5 Contact Discovery & Humanized Greeting Sanitizer (`outreach/enricher.py`)
 - **Multi-Path Scraper**: Crawls common European and Dutch paths: `/`, `/contact`, `/contact-us`, `/klantenservice`, `/over-ons`, `/about`, `/colofon`, `/team`, `/privacy`, `/impressum`.
 - **Sanitization**: Strips HTML/Unicode artifacts (e.g. `\u003e`), removes non-email assets (`.png`, `.svg`), and prioritizes personal executive emails over generic role addresses.
 - **Humanized Greeting Protocol**: Avoids robotic mail-prefix greetings. When role addresses (`info@`, `service@`, `redactie@`) are identified, the contact is addressed as `{Company} Team` rather than "Hi Info," or "Hi Klantenservice,".
 
-### 3.5 Dynamic UTM Attribution & Delivery Engine (`outreach/sender.py`)
+### 3.6 Dynamic UTM Attribution & Delivery Engine (`outreach/sender.py`)
 - **Dynamic UTM Builder**: Generates track-specific and template-specific campaign URLs:
   `https://alexseif.com/php-emergency-patch?utm_source=outreach&utm_medium=email&utm_campaign={track}_{template_slug}&utm_content={domain}`
 - **Transport Protocol**: Python `smtplib` over TLS (`Port 587`) targeting `smtp-relay.brevo.com`.
 - **Velocity Safeguard**: Implements randomized jitter delays between 60.0 and 90.0 seconds per transmission, protecting sender reputation and inbox delivery.
-- **Template Registry**: Supports file-based templates (`agency_v1.txt` and `direct_client_v1.txt`) with automatic database caching and token substitution.
+- **Template Registry**: Supports file-based templates (`agency_v1.txt`, `direct_client_v1.txt`, `partner_v1.txt`) with automatic database caching and token substitution.
 
 ---
 
@@ -118,13 +128,14 @@ Provides zero-cost technology detection by evaluating live HTTP responses:
 | :--- | :--- | :--- | :--- | :--- |
 | **Target Audience** | Digital agencies & MSPs | E-commerce, media, NGOs | Historical dev partners | All segments |
 | **Geographic Scope** | NL, DE, UK | Netherlands (.nl) | Regional / Global | Multi-region |
-| **Primary Platforms** | Multi-tenant PHP & Node.js | WordPress, WooCommerce, Drupal | Web & software stacks | Web runtimes |
+| **Primary Platforms** | Multi-tenant PHP & Node.js | WordPress, WooCommerce, Drupal, Magento | Web & software stacks | Web runtimes |
 | **Template Slug** | `agency_v1` | `direct_client_v1` | `partner_v1` | Versioned |
-| **Total Ingested** | 22 | 17 | 3 | 42 |
+| **Total Ingested** | 22 | 34 (Batch 1: 17, Batch 2: 17) | 3 | 59 |
 | **Fingerprint Confidence**| 85% to 90% | 85% to 90% | Verified | >85% average |
-| **Contact Discovery** | 22 / 22 (100%) | 17 / 17 (100%) | 3 / 3 (100%) | 42 / 42 (100%) |
-| **Successful Dispatches** | 22 | 17 | 3 | 42 |
+| **Contact Discovery** | 22 / 22 (100%) | 34 / 34 (100%) | 3 / 3 (100%) | 59 / 59 (100%) |
+| **Successful Dispatches** | 22 | 34 | 3 | 59 |
 | **Failed / Bounced** | 0 | 0 | 0 | 0 |
+| **Opted Out (Do Not Contact)**| 1 (Hoppinger) | 0 | 0 | 1 |
 | **Delivery Success Rate** | **100.0%** | **100.0%** | **100.0%** | **100.0%** |
 
-All 42 outbound transmissions executed with valid DKIM/SPF alignment through authenticated Brevo relay channels and were recorded in SQLite with full template and UTM attribution.
+All 59 outbound transmissions executed with valid DKIM/SPF alignment through authenticated Brevo relay channels and were recorded in SQLite with full template and UTM attribution.

@@ -40,16 +40,16 @@ The campaign features three clearly structured engagement tiers:
 ### Track 1: Digital Agencies & MSPs (22 Verified Deliveries)
 Targeting technical leadership at web development agencies and MSPs across the Netherlands, Germany, and the United Kingdom managing extensive client portfolios:
 
-- **Netherlands:** Level Level (Rotterdam), Van Ons (Amsterdam), GRRR Agency (Amsterdam), Stuurlui (Utrecht), Social Brothers (Utrecht), Hoppinger (Rotterdam), Tallest (Eindhoven), Burst (Rotterdam), E-sites (Breda), Freshheads (Tilburg), Flatline Agency (Amsterdam), Clever Strategy (Harderwijk), Mars Media (Amsterdam), Miyagami (Amsterdam).
+- **Netherlands:** Level Level (Rotterdam), Van Ons (Amsterdam), GRRR Agency (Amsterdam), Stuurlui (Utrecht), Social Brothers (Utrecht), Hoppinger (Rotterdam - opted out on request), Tallest (Eindhoven), Burst (Rotterdam), E-sites (Breda), Freshheads (Tilburg), Flatline Agency (Amsterdam), Clever Strategy (Harderwijk), Mars Media (Amsterdam), Miyagami (Amsterdam).
 - **Germany:** byte5 digital media (Frankfurt), Ingold Solutions (Berlin), Webfactory GmbH (Bonn), Exponetly (Berlin), KULIMO (Berlin).
 - **United Kingdom:** Wholegrain Digital (London), Yellowball (London), Moove Agency (London).
 
-### Track 2: Direct Dutch Clients (17 Verified Deliveries)
-Targeting direct business owners, e-commerce stores, publishers, and institutions in the Netherlands with verified WordPress, WooCommerce, and Drupal platforms:
+### Track 2: Direct Dutch Clients (34 Verified Deliveries Across 2 Batches)
+Targeting direct business owners, e-commerce stores, publishers, and institutions in the Netherlands operating on verified WordPress, WooCommerce, Drupal, and Magento platforms:
 
-- **E-Commerce & Retail:** ThePhoneLab, WorkCycles Amsterdam, Brandpreventiewinkel, Muscle Meat, De Koffiejongens, FuturumShop, Plantje.nl.
-- **Publishers & Media:** Computable, iCulture, Androidworld, Duurzaam Ondernemen.
-- **Organizations & Institutions:** NWO (Dutch Research Council), Longfonds, VluchtelingenWerk Nederland, Youfone, Natuurmonumenten, Van Dijk Educatie.
+- **E-Commerce & Retail:** ThePhoneLab, WorkCycles Amsterdam, Brandpreventiewinkel, Muscle Meat, De Koffiejongens, FuturumShop, Plantje.nl, Multi Bier, Vedder & Vedder, Dille & Kamille.
+- **Publishers & Media:** Computable, iCulture, Androidworld, Duurzaam Ondernemen, Blogo Media, One More Thing, Manners Magazine, WANT, Taxence, Accountancy Vanmorgen, Salaris Vanmorgen.
+- **Organizations & Cultural Institutions:** NWO (Dutch Research Council), Longfonds, VluchtelingenWerk Nederland, Youfone, Natuurmonumenten, Van Dijk Educatie, Het Nederlandse Rode Kruis, Waddenvereniging, Stichting Vluchteling, Voedselbanken Nederland, Museumvereniging, Het Spoorwegmuseum, NEMO Science Museum.
 
 ### Track 3: Previous Outsourcing Partners & Collaborators (3 Verified Deliveries)
 Warm, relationship-aware advisory notes reconnecting with historical engineering delivery partners:
@@ -63,17 +63,18 @@ Warm, relationship-aware advisory notes reconnecting with historical engineering
 ## 4. Overall Campaign Delivery Performance
 
 ```
-Total Targets Discovered:               42
-Targets Passing DNS Verification:       42 (100.0%)
-Enriched Contact Inboxes:               42 (100.0%)
-Total Inbound Email Transmissions:     42
-Successful Mailbox Deliveries:          42 (100.0%)
+Total Targets Discovered:               59
+Targets Passing DNS Verification:       59 (100.0%)
+Enriched Contact Inboxes:               59 (100.0%)
+Total Email Transmissions:              59
+Successful Mailbox Deliveries:          59 (100.0%)
 Bounces / Delivery Failures:            0 (0.0%)
+Opt-Out Requests Honored:               1 (Hoppinger / Julia Peek)
 Delivery Rate:                          100.0%
 Pacing & Velocity:                      60 - 90 seconds randomized delay per dispatch
 ```
 
-Every transmission was delivered through authenticated Brevo relay channels with aligned SPF and DKIM signatures, personalized UTM links, and direct routing to `alex.seif@gmail.com`.
+Every transmission was delivered through authenticated Brevo relay channels with aligned SPF and DKIM signatures, personalized UTM links, and direct routing to `alex.seif@gmail.com`. All opt-out requests are permanently recorded in SQLite and automatically excluded from any future dispatches.
 
 ---
 
