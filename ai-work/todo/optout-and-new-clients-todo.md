@@ -1,6 +1,6 @@
 # Todo: Opt-Out Controls & Batch 2 Client Discovery
 
-- [ ] **Task 1: Implement Schema Migration for Opt-Out / Do-Not-Contact**
+- [x] **Task 1: Implement Schema Migration for Opt-Out / Do-Not-Contact**
   - **Prerequisites**: Approved `ai-work/spec/optout-and-new-clients-spec.md`.
   - **Files**: `outreach/db.py`, `outreach/sender.py`, `outreach/cli.py`
   - **Validation**: Columns `do_not_contact`, `do_not_contact_at`, `do_not_contact_reason` exist in `targets`; `get_targets` excludes opted-out targets; `optout` CLI command works.

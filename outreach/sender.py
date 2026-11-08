@@ -118,6 +118,10 @@ def dispatch_target(
     if not recipient_email:
         return False, "Target has no contact email"
 
+    if target.get("do_not_contact") == 1:
+        reason = target.get("do_not_contact_reason") or "Opt-out requested"
+        return False, f"Aborted: Target {domain or recipient_email} is marked do_not_contact ({reason})"
+
     track = target.get("track") or "agency"
     domain = target.get("domain") or ""
     company = target.get("company_name") or domain or "your company"

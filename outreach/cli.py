@@ -11,6 +11,7 @@ from .db import (
     update_target_contact,
     update_target_technographics,
     mark_target_status,
+    mark_opt_out,
     get_stats,
     get_connection,
     list_templates,
@@ -368,6 +369,25 @@ def cmd_templates(args: argparse.Namespace) -> None:
     print("-" * 80)
     print(f"Total: {len(templates)} templates\n")
 
+def cmd_optout(args: argparse.Namespace) -> None:
+    init_db()
+    target = args.target.strip()
+    reason = args.reason or "User requested removal from outreach"
+    ok = mark_opt_out(
+        target_identifier=target,
+        reason=reason,
+        contact_name=args.name,
+        contact_title=args.title,
+    )
+    if ok:
+        print(f"[+] Successfully marked '{target}' as DO NOT CONTACT (Opted-out).")
+        print(f"    Reason: {reason}")
+        if args.name:
+            print(f"    Contact: {args.name} ({args.title or 'N/A'})")
+        print("    Target preserved in database for audit and excluded from all future outreach.")
+    else:
+        print(f"[!] Target '{target}' not found in database. Check spelling or domain format.")
+
 def main() -> None:
     init_db()
     parser = argparse.ArgumentParser(description="Multi-Track PHP & Node.js Outreach Automation Agent")
@@ -446,6 +466,14 @@ def main() -> None:
     p_tmpl = subparsers.add_parser("templates", help="List registered email templates")
     p_tmpl.add_argument("--track", choices=["agency", "direct_client", "partner", "all"], default="all")
     p_tmpl.set_defaults(func=cmd_templates)
+
+    # optout
+    p_opt = subparsers.add_parser("optout", help="Flag a domain or email as DO NOT CONTACT (preserves record)")
+    p_opt.add_argument("target", help="Domain or contact email to mark as opted-out")
+    p_opt.add_argument("--reason", "-r", default="User requested removal from database", help="Reason for opt-out")
+    p_opt.add_argument("--name", help="Contact name of respondent (e.g., Office Manager)")
+    p_opt.add_argument("--title", help="Job title of respondent")
+    p_opt.set_defaults(func=cmd_optout)
 
     args = parser.parse_args()
     args.func(args)

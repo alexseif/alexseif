@@ -35,6 +35,9 @@ def _init_db_with_conn(conn: sqlite3.Connection) -> None:
                 tech_confidence INTEGER DEFAULT 0,
                 source TEXT DEFAULT 'manual',
                 notes TEXT,
+                do_not_contact INTEGER NOT NULL DEFAULT 0,
+                do_not_contact_at TIMESTAMP,
+                do_not_contact_reason TEXT,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
@@ -90,6 +93,12 @@ def _init_db_with_conn(conn: sqlite3.Connection) -> None:
             cursor.execute("ALTER TABLE targets ADD COLUMN detected_server TEXT")
         if "tech_confidence" not in target_cols:
             cursor.execute("ALTER TABLE targets ADD COLUMN tech_confidence INTEGER DEFAULT 0")
+        if "do_not_contact" not in target_cols:
+            cursor.execute("ALTER TABLE targets ADD COLUMN do_not_contact INTEGER NOT NULL DEFAULT 0")
+        if "do_not_contact_at" not in target_cols:
+            cursor.execute("ALTER TABLE targets ADD COLUMN do_not_contact_at TIMESTAMP")
+        if "do_not_contact_reason" not in target_cols:
+            cursor.execute("ALTER TABLE targets ADD COLUMN do_not_contact_reason TEXT")
 
         # Check dispatch_logs columns
         cursor.execute("PRAGMA table_info(dispatch_logs)")
@@ -253,11 +262,14 @@ def get_targets(
     status: Optional[str] = None,
     track: Optional[str] = None,
     limit: Optional[int] = None,
+    include_opted_out: bool = False,
     db_path: Optional[Path] = None,
 ) -> List[Dict[str, Any]]:
     conn = get_connection(db_path)
     query = "SELECT * FROM targets WHERE 1=1"
     params: List[Any] = []
+    if not include_opted_out:
+        query += " AND (do_not_contact IS NULL OR do_not_contact = 0)"
     if status:
         query += " AND status = ?"
         params.append(status)
@@ -274,6 +286,34 @@ def get_targets(
     rows = [dict(r) for r in cursor.fetchall()]
     conn.close()
     return rows
+
+def mark_opt_out(
+    target_identifier: str,
+    reason: Optional[str] = None,
+    contact_name: Optional[str] = None,
+    contact_title: Optional[str] = None,
+    db_path: Optional[Path] = None,
+) -> bool:
+    target_clean = target_identifier.strip().lower()
+    conn = get_connection(db_path)
+    with conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            UPDATE targets
+            SET do_not_contact = 1,
+                do_not_contact_at = CURRENT_TIMESTAMP,
+                do_not_contact_reason = ?,
+                contact_name = COALESCE(?, contact_name),
+                contact_title = COALESCE(?, contact_title),
+                updated_at = CURRENT_TIMESTAMP
+            WHERE domain = ? OR contact_email = ?
+            """,
+            (reason, contact_name, contact_title, target_clean, target_clean),
+        )
+        affected = cursor.rowcount > 0
+    conn.close()
+    return affected
 
 def log_dispatch(
     target_id: int,
