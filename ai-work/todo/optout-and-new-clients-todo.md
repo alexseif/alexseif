@@ -20,7 +20,7 @@
   - **Commands**: `./venv/bin/python -m outreach.cli import --file outreach/targets_clients_batch2.csv --track direct_client`, `./venv/bin/python -m outreach.cli fingerprint --track direct_client`, `./venv/bin/python -m outreach.cli enrich --track direct_client`
   - **Validation**: Batch 2 targets fingerprinted with >80% confidence, contact emails identified, team greetings humanized.
 
-- [ ] **Task 5: Dry-Run Simulation & User Review**
+- [x] **Task 5: Dry-Run Simulation & User Review**
   - **Prerequisites**: Task 4 complete.
   - **Command**: `./venv/bin/python -m outreach.cli send --track direct_client`
   - **Validation**: Dry-run preview verifies personalized template copy, zero em dashes, and valid UTM links.
