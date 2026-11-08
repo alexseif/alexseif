@@ -10,12 +10,12 @@
   - **Command**: `./venv/bin/python -m outreach.cli optout hoppinger.com --name "Julia Peek" --title "Office Manager" --reason "Not interested. Requested email removal."`
   - **Validation**: `hoppinger.com` has `do_not_contact = 1`, contact updated to Julia Peek, status preserved as `sent`, and never returned in `get_targets(status='ready')`.
 
-- [ ] **Task 3: Seed & Qualify Batch 2 Dutch Direct Client Targets**
+- [x] **Task 3: Seed & Qualify Batch 2 Dutch Direct Client Targets**
   - **Prerequisites**: Task 2 complete.
   - **File**: `outreach/targets_clients_batch2.csv`
   - **Validation**: 15+ verified Dutch businesses running WordPress, WooCommerce, and Drupal formatted with valid DNS and company names.
 
-- [ ] **Task 4: Import, Fingerprint & Enrich Batch 2 Targets**
+- [x] **Task 4: Import, Fingerprint & Enrich Batch 2 Targets**
   - **Prerequisites**: Task 3 complete.
   - **Commands**: `./venv/bin/python -m outreach.cli import --file outreach/targets_clients_batch2.csv --track direct_client`, `./venv/bin/python -m outreach.cli fingerprint --track direct_client`, `./venv/bin/python -m outreach.cli enrich --track direct_client`
   - **Validation**: Batch 2 targets fingerprinted with >80% confidence, contact emails identified, team greetings humanized.
