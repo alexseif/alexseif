@@ -5,7 +5,7 @@
   - **Files**: `outreach/db.py`, `outreach/sender.py`, `outreach/cli.py`
   - **Validation**: Columns `do_not_contact`, `do_not_contact_at`, `do_not_contact_reason` exist in `targets`; `get_targets` excludes opted-out targets; `optout` CLI command works.
 
-- [ ] **Task 2: Flag Hoppinger as Opted-Out with Reason & Contact Details**
+- [x] **Task 2: Flag Hoppinger as Opted-Out with Reason & Contact Details**
   - **Prerequisites**: Task 1 complete.
   - **Command**: `./venv/bin/python -m outreach.cli optout hoppinger.com --name "Julia Peek" --title "Office Manager" --reason "Not interested. Requested email removal."`
   - **Validation**: `hoppinger.com` has `do_not_contact = 1`, contact updated to Julia Peek, status preserved as `sent`, and never returned in `get_targets(status='ready')`.
