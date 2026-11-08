@@ -37,7 +37,7 @@ def fingerprint_domain(domain: str) -> TechnographicProfile:
     cookies_str = ""
 
     try:
-        with httpx.Client(timeout=8.0, follow_redirects=True, headers=headers, verify=False) as client:
+        with httpx.Client(timeout=12.0, follow_redirects=True, headers=headers, verify=False) as client:
             resp = client.get(target_url)
             response_text = resp.text
             resp_headers = {k.lower(): v for k, v in resp.headers.items()}
@@ -45,7 +45,7 @@ def fingerprint_domain(domain: str) -> TechnographicProfile:
     except Exception as e:
         # Retry with HTTP fallback if HTTPS fails
         try:
-            with httpx.Client(timeout=6.0, follow_redirects=True, headers=headers, verify=False) as client:
+            with httpx.Client(timeout=10.0, follow_redirects=True, headers=headers, verify=False) as client:
                 resp = client.get(f"http://{clean_domain}")
                 response_text = resp.text
                 resp_headers = {k.lower(): v for k, v in resp.headers.items()}
