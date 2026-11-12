@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "baseline-browser-mapping": "^2.11.19"
+  },
+  "overrides": {
+    "fast-json-patch": "^3.1.1"
   }
 }
